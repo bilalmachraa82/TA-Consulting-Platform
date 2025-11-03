@@ -1,0 +1,254 @@
+
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+    binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
+    output = "/home/ubuntu/ta_consulting_platform/nextjs_space/node_modules/.prisma/client"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+// NextAuth.js Tables
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  role          String    @default("user") // admin, user
+  accounts      Account[]
+  sessions      Session[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// TA Consulting Business Tables
+model Aviso {
+  id                String         @id @default(cuid())
+  nome              String
+  portal            Portal         @default(PORTUGAL2030)
+  programa          String
+  linha             String?
+  codigo            String
+  dataInicioSubmissao DateTime
+  dataFimSubmissao  DateTime
+  montanteMinimo    Float?
+  montanteMaximo    Float?
+  descrição         String?        @db.Text
+  link              String?
+  taxa              String?
+  regiao            String?
+  setoresElegiveis  String[]
+  dimensaoEmpresa   String[]
+  urgente           Boolean        @default(false)
+  ativo             Boolean        @default(true)
+  candidaturas      Candidatura[]
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+
+  @@map("avisos")
+}
+
+enum Portal {
+  PORTUGAL2030
+  PAPAC  
+  PRR
+}
+
+model Empresa {
+  id              String         @id @default(cuid())
+  nipc            String         @unique
+  nome            String
+  cae             String
+  setor           String
+  dimensao        DimensaoEmpresa @default(MICRO)
+  email           String
+  telefone        String?
+  morada          String?
+  localidade      String?
+  codigoPostal    String?
+  distrito        String?
+  regiao          String?
+  contactoNome    String?
+  contactoEmail   String?
+  contactoTelefone String?
+  notas           String?        @db.Text
+  ativa           Boolean        @default(true)
+  candidaturas    Candidatura[]
+  documentos      Documento[]
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  @@map("empresas")
+}
+
+enum DimensaoEmpresa {
+  MICRO
+  PEQUENA
+  MEDIA
+  GRANDE
+}
+
+model Candidatura {
+  id              String            @id @default(cuid())
+  empresaId       String
+  avisoId         String
+  estado          EstadoCandidatura @default(A_PREPARAR)
+  montanteSolicitado Float?
+  montanteAprovado   Float?
+  dataSubmissao   DateTime?
+  dataDecisao     DateTime?
+  observacoes     String?           @db.Text
+  documentosAnexos String[]
+  timeline        Json[]            // Array de eventos {data, evento, detalhes}
+  empresa         Empresa           @relation(fields: [empresaId], references: [id])
+  aviso           Aviso             @relation(fields: [avisoId], references: [id])
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  @@map("candidaturas")
+}
+
+enum EstadoCandidatura {
+  A_PREPARAR
+  SUBMETIDA
+  EM_ANALISE
+  APROVADA
+  REJEITADA
+  CANCELADA
+}
+
+model Documento {
+  id                String          @id @default(cuid())
+  empresaId         String
+  tipoDocumento     TipoDocumento
+  nome              String
+  cloudStoragePath  String          // S3 key
+  dataEmissao       DateTime?
+  dataValidade      DateTime?
+  statusValidade    StatusValidade  @default(VALIDO)
+  observacoes       String?
+  empresa           Empresa         @relation(fields: [empresaId], references: [id])
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+
+  @@map("documentos")
+}
+
+enum TipoDocumento {
+  CERTIDAO_AT
+  CERTIDAO_SS
+  CERTIFICADO_PME
+  LICENCA_ATIVIDADE
+  BALANCO
+  DEMONSTRACOES_FINANCEIRAS
+  OUTRO
+}
+
+enum StatusValidade {
+  VALIDO
+  A_EXPIRAR        // 30 dias ou menos
+  EXPIRADO
+  EM_FALTA
+}
+
+model Workflow {
+  id              String          @id @default(cuid())
+  nome            String
+  tipo            TipoWorkflow
+  ativo           Boolean         @default(true)
+  frequencia      String          // cron expression
+  ultimaExecucao  DateTime?
+  proximaExecucao DateTime?
+  parametros      Json?           // configurações específicas
+  logs            WorkflowLog[]
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  @@map("workflows")
+}
+
+enum TipoWorkflow {
+  SCRAPING_PORTUGAL2030
+  SCRAPING_PAPAC
+  SCRAPING_PRR
+  NOTIFICACAO_EMAIL
+  VALIDACAO_DOCUMENTOS
+  RELATORIO_MENSAL
+}
+
+model WorkflowLog {
+  id          String    @id @default(cuid())
+  workflowId  String
+  dataExecucao DateTime
+  sucesso     Boolean
+  mensagem    String?   @db.Text
+  dados       Json?     // dados específicos da execução
+  workflow    Workflow  @relation(fields: [workflowId], references: [id])
+  createdAt   DateTime  @default(now())
+
+  @@map("workflow_logs")
+}
+
+model Notificacao {
+  id          String          @id @default(cuid())
+  tipo        TipoNotificacao
+  destinatario String
+  assunto     String
+  conteudo    String          @db.Text
+  enviado     Boolean         @default(false)
+  dataEnvio   DateTime?
+  erro        String?
+  contexto    Json?           // dados adicionais sobre a notificação
+  createdAt   DateTime        @default(now())
+
+  @@map("notificacoes")
+}
+
+enum TipoNotificacao {
+  AVISO_URGENTE
+  DOCUMENTO_EXPIRA
+  CANDIDATURA_UPDATE
+  RELATORIO_MENSAL
+  SISTEMA
+}
