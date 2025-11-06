@@ -1,0 +1,30 @@
+[
+  {
+    "nome": "Apoio à Transição Energética em Empresas",
+    "portal": "PAPAC",
+    "programa": "Eficiência Energética",
+    "codigo": "PAPAC-EE-2024-01",
+    "dataInicioSubmissao": "2025-10-31T23:57:02.659639",
+    "dataFimSubmissao": "2025-11-08T23:57:02.659653",
+    "montanteMinimo": 50000.0,
+    "montanteMaximo": 500000.0,
+    "descricao": "Incentivo para projetos de eficiência energética e transição para energias renováveis",
+    "link": "https://www.papac.pt/avisos/ee-2024-01",
+    "urgente": true,
+    "ativo": true
+  },
+  {
+    "nome": "Descarbonização da Indústria",
+    "portal": "PAPAC",
+    "programa": "Indústria Verde",
+    "codigo": "PAPAC-IV-2024-02",
+    "dataInicioSubmissao": "2025-10-26T23:57:02.659657",
+    "dataFimSubmissao": "2025-11-12T23:57:02.659659",
+    "montanteMinimo": 100000.0,
+    "montanteMaximo": 1000000.0,
+    "descricao": "Apoio a projetos de descarbonização industrial e economia circular",
+    "link": "https://www.papac.pt/avisos/iv-2024-02",
+    "urgente": false,
+    "ativo": true
+  }
+]

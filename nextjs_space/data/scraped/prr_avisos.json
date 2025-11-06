@@ -1,0 +1,44 @@
+[
+  {
+    "nome": "Digitalização de PME - Componente C16",
+    "portal": "PRR",
+    "programa": "Transição Digital",
+    "codigo": "PRR-C16-i01-2024",
+    "dataInicioSubmissao": "2025-11-02T23:57:02.666396",
+    "dataFimSubmissao": "2025-11-10T23:57:02.666403",
+    "montanteMinimo": 25000.0,
+    "montanteMaximo": 300000.0,
+    "descricao": "Apoio à digitalização de PME através de soluções tecnológicas",
+    "link": "https://recuperarportugal.gov.pt/c16-i01/",
+    "urgente": true,
+    "ativo": true
+  },
+  {
+    "nome": "Inovação Empresarial - I&D",
+    "portal": "PRR",
+    "programa": "Capitalização e Inovação",
+    "codigo": "PRR-C05-i02-2024",
+    "dataInicioSubmissao": "2025-10-29T23:57:02.666406",
+    "dataFimSubmissao": "2025-11-15T23:57:02.666408",
+    "montanteMinimo": 50000.0,
+    "montanteMaximo": 750000.0,
+    "descricao": "Incentivo a projetos de I&D empresarial e inovação tecnológica",
+    "link": "https://recuperarportugal.gov.pt/c05-i02/",
+    "urgente": false,
+    "ativo": true
+  },
+  {
+    "nome": "Apoio ao Turismo Sustentável",
+    "portal": "PRR",
+    "programa": "Valorização do Território",
+    "codigo": "PRR-C14-i03-2024",
+    "dataInicioSubmissao": "2025-11-01T23:57:02.666410",
+    "dataFimSubmissao": "2025-11-11T23:57:02.666411",
+    "montanteMinimo": 30000.0,
+    "montanteMaximo": 400000.0,
+    "descricao": "Financiamento para projetos de turismo sustentável e regenerativo",
+    "link": "https://recuperarportugal.gov.pt/c14-i03/",
+    "urgente": true,
+    "ativo": true
+  }
+]
