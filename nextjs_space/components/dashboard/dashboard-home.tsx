@@ -1,9 +1,10 @@
 
-'use client'
+'use client';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+import { useEffect, useState } from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { 
   AlertTriangle, 
   FileText, 
@@ -15,27 +16,82 @@ import {
   Users,
   Building2,
   Calendar,
-} from 'lucide-react'
-import { motion } from 'framer-motion'
-import Link from 'next/link'
+  Download,
+  Mail,
+  Loader2,
+  Euro,
+  ClipboardList,
+} from 'lucide-react';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { StatsCard } from '@/components/modern/stats-card';
+import { Bar, Doughnut } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  ArcElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement, Title, Tooltip, Legend);
 
 interface KPIs {
-  totalAvisos: number
-  avisosUrgentes: number
-  candidaturasEmCurso: number
-  taxaSucesso: number
-  documentosExpirados: number
+  totalAvisos: number;
+  avisosUrgentes: number;
+  candidaturasEmCurso: number;
+  taxaSucesso: number;
+  documentosExpirados: number;
 }
 
 interface DashboardHomeProps {
-  kpis: KPIs
-  avisos: any[]
-  candidaturas: any[]
-  notificacoes: any[]
-  workflows: any[]
+  kpis: KPIs;
+  avisos: any[];
+  candidaturas: any[];
+  notificacoes: any[];
+  workflows: any[];
+}
+
+interface Metricas {
+  resumo: {
+    totalAvisos: number;
+    totalEmpresas: number;
+    totalCandidaturas: number;
+    totalDocumentos: number;
+    avisosUrgentes: number;
+    orcamentoDisponivel: number;
+    valorSolicitado: number;
+  };
+  graficos: {
+    candidaturasPorStatus: { status: string; total: number }[];
+    avisosPorPortal: { portal: string; total: number }[];
+    candidaturasPorMes: { mes: string; total: number }[];
+    topEmpresas: any[];
+  };
 }
 
 export function DashboardHome({ kpis, avisos, candidaturas, notificacoes, workflows }: DashboardHomeProps) {
+  const [metricas, setMetricas] = useState<Metricas | null>(null);
+  const [loadingMetricas, setLoadingMetricas] = useState(true);
+
+  useEffect(() => {
+    fetchMetricas();
+  }, []);
+
+  const fetchMetricas = async () => {
+    try {
+      const response = await fetch('/api/dashboard/metricas');
+      const data = await response.json();
+      setMetricas(data);
+    } catch (error) {
+      console.error('Erro ao buscar métricas:', error);
+    } finally {
+      setLoadingMetricas(false);
+    }
+  };
   const getUrgencyColor = (dataFim: Date) => {
     const now = new Date()
     const diasRestantes = Math.ceil((dataFim.getTime() - now.getTime()) / (1000 * 3600 * 24))
@@ -159,6 +215,124 @@ export function DashboardHome({ kpis, avisos, candidaturas, notificacoes, workfl
           </Card>
         </motion.div>
       </div>
+
+      {/* Gráficos Avançados */}
+      {loadingMetricas ? (
+        <div className="flex items-center justify-center py-12">
+          <Loader2 className="w-8 h-8 animate-spin text-primary" />
+        </div>
+      ) : metricas ? (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Gráfico de Avisos por Portal */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-primary" />
+                  Avisos por Portal
+                </CardTitle>
+                <CardDescription>Distribuição dos avisos ativos</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="h-[300px] flex items-center justify-center">
+                  <Bar
+                    data={{
+                      labels: metricas.graficos.avisosPorPortal.map((a) => a.portal),
+                      datasets: [
+                        {
+                          label: 'Avisos',
+                          data: metricas.graficos.avisosPorPortal.map((a) => a.total),
+                          backgroundColor: 'rgba(102, 126, 234, 0.8)',
+                          borderColor: 'rgba(102, 126, 234, 1)',
+                          borderWidth: 2,
+                          borderRadius: 8,
+                        },
+                      ],
+                    }}
+                    options={{
+                      responsive: true,
+                      maintainAspectRatio: false,
+                      plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                          padding: 12,
+                          cornerRadius: 8,
+                        },
+                      },
+                      scales: {
+                        y: {
+                          beginAtZero: true,
+                          grid: { display: false },
+                        },
+                        x: { grid: { display: false } },
+                      },
+                    }}
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          {/* Gráfico de Candidaturas por Status */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <ClipboardList className="w-5 h-5 text-secondary" />
+                  Candidaturas por Status
+                </CardTitle>
+                <CardDescription>Estado atual das candidaturas</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="h-[300px] flex items-center justify-center">
+                  <Doughnut
+                    data={{
+                      labels: metricas.graficos.candidaturasPorStatus.map((c) => c.status),
+                      datasets: [
+                        {
+                          data: metricas.graficos.candidaturasPorStatus.map((c) => c.total),
+                          backgroundColor: [
+                            'rgba(102, 126, 234, 0.8)',
+                            'rgba(118, 75, 162, 0.8)',
+                            'rgba(240, 147, 251, 0.8)',
+                            'rgba(79, 172, 254, 0.8)',
+                            'rgba(67, 233, 123, 0.8)',
+                          ],
+                          borderWidth: 0,
+                        },
+                      ],
+                    }}
+                    options={{
+                      responsive: true,
+                      maintainAspectRatio: false,
+                      plugins: {
+                        legend: {
+                          position: 'bottom',
+                          labels: { padding: 15, font: { size: 12 } },
+                        },
+                        tooltip: {
+                          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                          padding: 12,
+                          cornerRadius: 8,
+                        },
+                      },
+                    }}
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      ) : null}
 
       {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

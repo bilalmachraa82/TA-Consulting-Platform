@@ -3,7 +3,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Sparkles } from 'lucide-react';
+import { MessageCircle, X, Send, Sparkles, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
@@ -21,12 +21,13 @@ export function AIAssistant() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Olá! Sou o assistente TA Consulting. Como posso ajudar-te hoje? 🎯',
+      text: 'Olá! Sou o assistente inteligente da TA Consulting. Posso ajudar-te com avisos, candidaturas, empresas e muito mais! Como posso ajudar-te hoje? 🎯',
       isBot: true,
       timestamp: new Date(),
     },
   ]);
   const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -35,8 +36,8 @@ export function AIAssistant() {
     }
   }, [messages]);
 
-  const handleSend = () => {
-    if (!input.trim()) return;
+  const handleSend = async () => {
+    if (!input.trim() || isLoading) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -46,33 +47,103 @@ export function AIAssistant() {
     };
 
     setMessages((prev) => [...prev, userMessage]);
+    const currentInput = input;
     setInput('');
+    setIsLoading(true);
 
-    // Simular resposta do bot
-    setTimeout(() => {
-      const botResponse: Message = {
-        id: (Date.now() + 1).toString(),
-        text: getBotResponse(input),
-        isBot: true,
-        timestamp: new Date(),
-      };
-      setMessages((prev) => [...prev, botResponse]);
-    }, 1000);
-  };
+    try {
+      // Chamar API do chatbot com contexto
+      const response = await fetch('/api/chatbot', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: currentInput,
+          conversationHistory: messages,
+        }),
+      });
 
-  const getBotResponse = (query: string): string => {
-    const lowerQuery = query.toLowerCase();
-    
-    if (lowerQuery.includes('aviso') || lowerQuery.includes('candidatura')) {
-      return 'Temos 15 avisos ativos neste momento! Os mais urgentes são: "Transição Digital das PME" e "Eficiência Energética na Indústria". Queres ver mais detalhes? 📋';
-    } else if (lowerQuery.includes('prazo') || lowerQuery.includes('deadline')) {
-      return 'Os próximos prazos importantes são: Portugal 2030 (28/02/2025), PAPAC (31/03/2025) e PRR (20/03/2025). Posso enviar-te lembretes! ⏰';
-    } else if (lowerQuery.includes('empresa')) {
-      return 'Atualmente estás a gerir 3 empresas na plataforma. Queres adicionar uma nova empresa ou ver detalhes de alguma existente? 🏢';
-    } else if (lowerQuery.includes('ajuda') || lowerQuery.includes('help')) {
-      return 'Posso ajudar-te com:\n• Encontrar avisos relevantes\n• Gerir prazos e deadlines\n• Acompanhar candidaturas\n• Gerar relatórios\n• Enviar notificações\n\nO que precisas? 💡';
-    } else {
-      return 'Interessante! Deixa-me pesquisar isso para ti. Podes ser mais específico sobre o que procuras? Tenho acesso a todos os avisos, empresas e candidaturas. 🔍';
+      if (!response.ok) {
+        throw new Error('Erro ao processar mensagem');
+      }
+
+      // Processar stream de resposta
+      const reader = response.body?.getReader();
+      const decoder = new TextDecoder();
+      let botResponseText = '';
+      let partialRead = '';
+
+      const botMessageId = (Date.now() + 1).toString();
+
+      while (true) {
+        const { done, value } = await reader!.read();
+        if (done) break;
+
+        partialRead += decoder.decode(value, { stream: true });
+        const lines = partialRead.split('\n');
+        partialRead = lines.pop() || '';
+
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const data = line.slice(6);
+            if (data === '[DONE]') continue;
+
+            try {
+              const parsed = JSON.parse(data);
+              const content = parsed.choices?.[0]?.delta?.content || '';
+              if (content) {
+                botResponseText += content;
+                // Atualizar mensagem em tempo real
+                setMessages((prev) => {
+                  const lastMessage = prev[prev.length - 1];
+                  if (lastMessage?.id === botMessageId) {
+                    return [
+                      ...prev.slice(0, -1),
+                      { ...lastMessage, text: botResponseText },
+                    ];
+                  }
+                  return [
+                    ...prev,
+                    {
+                      id: botMessageId,
+                      text: botResponseText,
+                      isBot: true,
+                      timestamp: new Date(),
+                    },
+                  ];
+                });
+              }
+            } catch (e) {
+              // Ignorar JSON inválido
+            }
+          }
+        }
+      }
+
+      // Se não conseguiu atualizar via stream, adicionar mensagem final
+      if (!botResponseText) {
+        setMessages((prev) => [
+          ...prev,
+          {
+            id: botMessageId,
+            text: 'Desculpa, tive um problema ao processar a tua pergunta. Podes tentar novamente? 🔧',
+            isBot: true,
+            timestamp: new Date(),
+          },
+        ]);
+      }
+    } catch (error) {
+      console.error('Erro ao enviar mensagem:', error);
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: (Date.now() + 1).toString(),
+          text: 'Desculpa, ocorreu um erro ao processar a tua mensagem. Tenta novamente! 🔧',
+          isBot: true,
+          timestamp: new Date(),
+        },
+      ]);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -161,19 +232,31 @@ export function AIAssistant() {
 
               {/* Input */}
               <div className="p-4 border-t">
+                {isLoading && (
+                  <div className="flex items-center gap-2 mb-2 text-sm text-muted-foreground">
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <span>A pensar...</span>
+                  </div>
+                )}
                 <div className="flex gap-2">
                   <Input
                     placeholder="Escreve a tua pergunta..."
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                    onKeyPress={(e) => e.key === 'Enter' && !isLoading && handleSend()}
                     className="flex-1"
+                    disabled={isLoading}
                   />
                   <Button
                     onClick={handleSend}
                     className="bg-gradient-to-r from-primary to-secondary hover:opacity-90"
+                    disabled={isLoading}
                   >
-                    <Send className="w-4 h-4" />
+                    {isLoading ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <Send className="w-4 h-4" />
+                    )}
                   </Button>
                 </div>
               </div>
