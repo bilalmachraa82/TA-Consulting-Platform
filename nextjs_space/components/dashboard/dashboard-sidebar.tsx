@@ -18,6 +18,7 @@ import {
   AlertTriangle,
   ChevronLeft,
   ChevronRight,
+  Sparkles,
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
@@ -31,6 +32,11 @@ const navigation = [
     name: 'Avisos & Oportunidades',
     href: '/dashboard/avisos',
     icon: AlertTriangle,
+  },
+  {
+    name: 'Recomendações IA',
+    href: '/dashboard/recomendacoes',
+    icon: Sparkles,
   },
   {
     name: 'Empresas Clientes',

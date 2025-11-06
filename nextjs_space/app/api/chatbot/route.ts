@@ -73,6 +73,46 @@ export async function POST(request: NextRequest) {
       return aviso.ativo && dataFim >= hoje && dataFim <= daquiA14Dias;
     });
 
+    // Buscar alertas e recomendações
+    let alertasInfo = '';
+    let recomendacoesInfo = '';
+
+    try {
+      // Buscar alertas de alta prioridade
+      const baseUrl = request.url.split('/api/chatbot')[0];
+      const alertasResponse = await fetch(`${baseUrl}/api/alertas?prioridade=alta`);
+      if (alertasResponse.ok) {
+        const alertasData = await alertasResponse.json();
+        if (alertasData.alertas && alertasData.alertas.length > 0) {
+          alertasInfo = `\n🚨 ALERTAS IMPORTANTES (${alertasData.alertas.length}):\n`;
+          alertasData.alertas.slice(0, 3).forEach((alerta: any, index: number) => {
+            alertasInfo += `${index + 1}. ${alerta.titulo}\n   ${alerta.mensagem}\n`;
+          });
+        }
+      }
+
+      // Buscar recomendações para a primeira empresa
+      if (empresas.length > 0) {
+        const recomendacoesResponse = await fetch(`${baseUrl}/api/recomendacoes?empresaId=${empresas[0].id}&limite=3&scoreMinimo=60`);
+        if (recomendacoesResponse.ok) {
+          const recomendacoesData = await recomendacoesResponse.json();
+          if (recomendacoesData.recomendacoes && recomendacoesData.recomendacoes.length > 0) {
+            recomendacoesInfo = `\n✨ RECOMENDAÇÕES IA PARA ${empresas[0].nome} (Top 3):\n`;
+            recomendacoesData.recomendacoes.forEach((rec: any, index: number) => {
+              recomendacoesInfo += `${index + 1}. ${rec.aviso.titulo}\n`;
+              recomendacoesInfo += `   Score de Compatibilidade: ${rec.score}%\n`;
+              recomendacoesInfo += `   Prioridade: ${rec.prioridade}\n`;
+              if (rec.razoes.length > 0) {
+                recomendacoesInfo += `   Razão: ${rec.razoes[0]}\n`;
+              }
+            });
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Erro ao buscar alertas/recomendações:', error);
+    }
+
     // Construir contexto para o LLM
     const contexto = `
 Você é o Assistente Inteligente da TA Consulting, especializado em apoios financeiros e fundos europeus para empresas portuguesas.
@@ -110,6 +150,14 @@ ${candidaturas.slice(0, 5).map(c => `
   Valor: ${c.montanteSolicitado ? `€${c.montanteSolicitado.toLocaleString('pt-PT')}` : 'N/A'}
   Data: ${new Date(c.createdAt).toLocaleDateString('pt-PT')}
 `).join('\n')}
+${alertasInfo}
+${recomendacoesInfo}
+
+CAPACIDADES ESPECIAIS:
+- Sistema de Recomendações IA que analisa compatibilidade entre empresas e avisos
+- Sistema de Alertas Inteligentes para prazos urgentes e oportunidades
+- Análises detalhadas de compatibilidade com scoring de 0-100%
+- Acesso à página "Recomendações IA" no dashboard para análises personalizadas
 
 INSTRUÇÕES:
 1. Responda SEMPRE em português de Portugal
@@ -122,6 +170,10 @@ INSTRUÇÕES:
 8. Mantenha as respostas concisas mas informativas (máximo 250 palavras)
 9. NUNCA invente dados - use APENAS os dados fornecidos acima
 10. Se não tiver informação, diga "Não tenho essa informação neste momento"
+11. Quando perguntar sobre avisos adequados para uma empresa, mencione as RECOMENDAÇÕES IA acima
+12. Se houver ALERTAS, mencione-os quando relevante para a conversa
+13. Sugira sempre visitar a página "Recomendações IA" para análises detalhadas personalizadas
+14. Use os scores de compatibilidade das recomendações quando discutir adequação de avisos
 `;
 
     // Construir mensagens para o LLM com histórico
