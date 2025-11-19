@@ -121,9 +121,7 @@ export async function POST(request: NextRequest) {
     const aviso = await prisma.aviso.create({
       data: {
         ...data,
-        ativo: true,
-        dataCriacao: new Date(),
-        dataAtualizacao: new Date()
+        ativo: true
       }
     })
 

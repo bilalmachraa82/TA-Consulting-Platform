@@ -31,8 +31,7 @@ export async function POST(
         const updatedAviso = await prisma.aviso.update({
             where: { id: avisoId },
             data: {
-                enrichmentStatus: 'MANUAL_VERIFIED',
-                dataAtualizacao: new Date()
+                enrichmentStatus: 'MANUAL_VERIFIED'
             }
         })
 

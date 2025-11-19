@@ -35,8 +35,7 @@ export async function POST(
         const updatedAviso = await prisma.aviso.update({
             where: { id: avisoId },
             data: {
-                enrichmentStatus: 'FAILED', // Usando FAILED para indicar rejeição/problema
-                dataAtualizacao: new Date()
+                enrichmentStatus: 'VALIDATION_FAILED', // Usando FAILED para indicar rejeição/problema
             }
         })
 
