@@ -7,14 +7,14 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { 
+import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { 
+import {
   Table,
   TableBody,
   TableCell,
@@ -22,7 +22,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { 
+import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -31,7 +31,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog'
 import { Slider } from '@/components/ui/slider'
-import { 
+import {
   AlertTriangle,
   Search,
   Filter,
@@ -83,7 +83,7 @@ export function AvisosComponent() {
   const [data, setData] = useState<AvisosData | null>(null)
   const [loading, setLoading] = useState(true)
   const [selectedAvisos, setSelectedAvisos] = useState<string[]>([])
-  
+
   // Filtros
   const [filtros, setFiltros] = useState({
     portal: 'TODOS',
@@ -108,7 +108,7 @@ export function AvisosComponent() {
 
       const response = await fetch(`/api/avisos?${params}`)
       if (!response.ok) throw new Error('Erro ao carregar avisos')
-      
+
       const result = await response.json()
       setData(result)
     } catch (error) {
@@ -133,8 +133,8 @@ export function AvisosComponent() {
 
   const handleExport = async (formato: 'csv' | 'excel') => {
     try {
-      const avisoIds = selectedAvisos.length > 0 
-        ? selectedAvisos 
+      const avisoIds = selectedAvisos.length > 0
+        ? selectedAvisos
         : data?.avisos?.map(a => a.id) || []
 
       if (avisoIds.length === 0) {
@@ -178,10 +178,10 @@ export function AvisosComponent() {
   const getUrgencyBadge = (urgencia: string, diasRestantes: number) => {
     const colors = {
       alta: 'bg-red-100 text-red-800 border-red-200',
-      media: 'bg-yellow-100 text-yellow-800 border-yellow-200', 
+      media: 'bg-yellow-100 text-yellow-800 border-yellow-200',
       baixa: 'bg-green-100 text-green-800 border-green-200'
     }
-    
+
     return (
       <Badge className={`${colors[urgencia as keyof typeof colors]} border`}>
         {diasRestantes > 0 ? `${diasRestantes}d` : 'Expirado'}
@@ -195,7 +195,7 @@ export function AvisosComponent() {
       PRR: 'bg-green-100 text-green-800',
       PAPAC: 'bg-purple-100 text-purple-800'
     }
-    
+
     return (
       <Badge className={colors[portal as keyof typeof colors] || 'bg-gray-100 text-gray-800'}>
         {portal}
@@ -214,9 +214,9 @@ export function AvisosComponent() {
   return (
     <div className="space-y-6">
       {/* Filtros */}
-      <Card>
+      <Card className="dark:bg-slate-800 dark:border-slate-700">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex items-center gap-2 dark:text-gray-100">
             <Filter className="h-5 w-5" />
             Filtros & Pesquisa
           </CardTitle>
@@ -280,7 +280,7 @@ export function AvisosComponent() {
                 CSV
               </Button>
               <Button
-                variant="outline" 
+                variant="outline"
                 onClick={() => handleExport('excel')}
                 className="flex-1"
               >
@@ -311,15 +311,15 @@ export function AvisosComponent() {
       </Card>
 
       {/* Tabela de Avisos */}
-      <Card>
+      <Card className="dark:bg-slate-800 dark:border-slate-700">
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex items-center gap-2 dark:text-gray-100">
                 <AlertTriangle className="h-5 w-5" />
                 Avisos Ativos ({data?.pagination?.total || 0})
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="dark:text-gray-400">
                 {selectedAvisos.length > 0 && `${selectedAvisos.length} avisos selecionados`}
               </CardDescription>
             </div>
@@ -329,8 +329,8 @@ export function AvisosComponent() {
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
-                <TableRow>
-                  <TableHead className="w-12">
+                <TableRow className="dark:border-slate-700">
+                  <TableHead className="w-12 dark:text-gray-300">
                     <input
                       type="checkbox"
                       checked={selectedAvisos.length === data?.avisos?.length}
@@ -343,13 +343,13 @@ export function AvisosComponent() {
                       }}
                     />
                   </TableHead>
-                  <TableHead>Nome & Portal</TableHead>
-                  <TableHead>Programa</TableHead>
-                  <TableHead>Código</TableHead>
-                  <TableHead>Datas</TableHead>
-                  <TableHead>Montante</TableHead>
-                  <TableHead>Urgência</TableHead>
-                  <TableHead>Ações</TableHead>
+                  <TableHead className="dark:text-gray-300">Nome & Portal</TableHead>
+                  <TableHead className="dark:text-gray-300">Programa</TableHead>
+                  <TableHead className="dark:text-gray-300">Código</TableHead>
+                  <TableHead className="dark:text-gray-300">Datas</TableHead>
+                  <TableHead className="dark:text-gray-300">Montante</TableHead>
+                  <TableHead className="dark:text-gray-300">Urgência</TableHead>
+                  <TableHead className="dark:text-gray-300">Ações</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -359,7 +359,7 @@ export function AvisosComponent() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className="hover:bg-gray-50"
+                    className="hover:bg-gray-50 dark:hover:bg-slate-700/50 dark:border-slate-700"
                   >
                     <TableCell>
                       <input
@@ -376,7 +376,7 @@ export function AvisosComponent() {
                     </TableCell>
                     <TableCell>
                       <div>
-                        <div className="font-medium text-gray-900 mb-1">
+                        <div className="font-medium text-gray-900 dark:text-gray-100 mb-1">
                           {aviso.nome}
                         </div>
                         {getPortalBadge(aviso.portal)}
@@ -384,19 +384,19 @@ export function AvisosComponent() {
                     </TableCell>
                     <TableCell>
                       <div className="text-sm">
-                        <div className="font-medium">{aviso.programa}</div>
+                        <div className="font-medium dark:text-gray-200">{aviso.programa}</div>
                         {aviso.regiao && (
-                          <div className="text-gray-500">{aviso.regiao}</div>
+                          <div className="text-gray-500 dark:text-gray-400">{aviso.regiao}</div>
                         )}
                       </div>
                     </TableCell>
                     <TableCell>
-                      <code className="text-sm bg-gray-100 px-2 py-1 rounded">
+                      <code className="text-sm bg-gray-100 dark:bg-slate-900 dark:text-gray-300 px-2 py-1 rounded">
                         {aviso.codigo}
                       </code>
                     </TableCell>
                     <TableCell>
-                      <div className="text-sm space-y-1">
+                      <div className="text-sm space-y-1 dark:text-gray-300">
                         <div className="flex items-center gap-1">
                           <Calendar className="h-3 w-3" />
                           {new Date(aviso.dataInicioSubmissao).toLocaleDateString('pt-PT')}
@@ -408,7 +408,7 @@ export function AvisosComponent() {
                       </div>
                     </TableCell>
                     <TableCell>
-                      <div className="text-sm space-y-1">
+                      <div className="text-sm space-y-1 dark:text-gray-300">
                         {aviso.montanteMinimo && (
                           <div className="flex items-center gap-1">
                             <Euro className="h-3 w-3" />
@@ -417,12 +417,12 @@ export function AvisosComponent() {
                         )}
                         {aviso.montanteMaximo && (
                           <div className="flex items-center gap-1 font-medium">
-                            <Euro className="h-3 w-3 text-green-600" />
+                            <Euro className="h-3 w-3 text-green-600 dark:text-green-400" />
                             €{aviso.montanteMaximo.toLocaleString('pt-PT')}
                           </div>
                         )}
                         {aviso.taxa && (
-                          <Badge variant="outline">{aviso.taxa}</Badge>
+                          <Badge variant="outline" className="dark:border-gray-600 dark:text-gray-300">{aviso.taxa}</Badge>
                         )}
                       </div>
                     </TableCell>
@@ -463,7 +463,7 @@ export function AvisosComponent() {
                             </div>
                           </DialogContent>
                         </Dialog>
-                        
+
                         {aviso.link && (
                           <Button
                             variant="ghost"
@@ -487,7 +487,7 @@ export function AvisosComponent() {
           {data?.pagination && data.pagination.pages > 1 && (
             <div className="flex items-center justify-between mt-4">
               <div className="text-sm text-gray-500">
-                Página {data.pagination.page} de {data.pagination.pages} 
+                Página {data.pagination.page} de {data.pagination.pages}
                 ({data.pagination.total} avisos no total)
               </div>
               <div className="flex gap-2">
