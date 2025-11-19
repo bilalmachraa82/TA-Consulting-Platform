@@ -3,22 +3,23 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/db'
+import { logCreate } from '@/lib/audit'
 
 export const dynamic = "force-dynamic"
 
 export async function GET(request: NextRequest) {
   try {
     const session = await getServerSession(authOptions)
-    
+
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
     const { searchParams } = new URL(request.url)
-    
+
     // Filtros
     const portal = searchParams.get('portal')
-    const programa = searchParams.get('programa') 
+    const programa = searchParams.get('programa')
     const diasMin = searchParams.get('diasMin')
     const diasMax = searchParams.get('diasMax')
     const pesquisa = searchParams.get('pesquisa')
@@ -29,15 +30,15 @@ export async function GET(request: NextRequest) {
 
     // Construir filtros Prisma
     const where: any = { ativo: true }
-    
+
     if (portal && portal !== 'TODOS') {
       where.portal = portal
     }
-    
+
     if (programa && programa !== 'TODOS') {
       where.programa = { contains: programa, mode: 'insensitive' }
     }
-    
+
     if (pesquisa) {
       where.OR = [
         { nome: { contains: pesquisa, mode: 'insensitive' } },
@@ -49,12 +50,12 @@ export async function GET(request: NextRequest) {
     // Filtro por dias restantes
     if (diasMin || diasMax) {
       const now = new Date()
-      
+
       if (diasMin) {
         const dateMin = new Date(now.getTime() + parseInt(diasMin) * 24 * 60 * 60 * 1000)
         where.dataFimSubmissao = { ...where.dataFimSubmissao, gte: dateMin }
       }
-      
+
       if (diasMax) {
         const dateMax = new Date(now.getTime() + parseInt(diasMax) * 24 * 60 * 60 * 1000)
         where.dataFimSubmissao = { ...where.dataFimSubmissao, lte: dateMax }
@@ -81,7 +82,7 @@ export async function GET(request: NextRequest) {
     const now = new Date()
     const avisosComDias = avisos.map((aviso: any) => {
       const diasRestantes = Math.ceil((aviso.dataFimSubmissao.getTime() - now.getTime()) / (1000 * 3600 * 24))
-      
+
       return {
         ...aviso,
         diasRestantes,
@@ -102,6 +103,47 @@ export async function GET(request: NextRequest) {
 
   } catch (error) {
     console.error('Erro ao buscar avisos:', error)
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
+  }
+}
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    const session = await getServerSession(authOptions)
+
+    if (!session || session.user.role !== 'ADMIN') {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    const data = await request.json()
+
+    // Criar aviso
+    const aviso = await prisma.aviso.create({
+      data: {
+        ...data,
+        ativo: true,
+        dataCriacao: new Date(),
+        dataAtualizacao: new Date()
+      }
+    })
+
+    // Audit Log
+    await logCreate({
+      userId: session.user.id,
+      userName: session.user.name || 'Admin',
+      userEmail: session.user.email || '',
+      entity: 'Aviso',
+      entityId: aviso.id,
+      data: aviso,
+      category: 'COMPLIANCE',
+      request
+    })
+
+    return NextResponse.json(aviso, { status: 201 })
+
+  } catch (error) {
+    console.error('Erro ao criar aviso:', error)
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
   }
 }

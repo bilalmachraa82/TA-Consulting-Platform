@@ -3,13 +3,14 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/db'
+import { logCreate } from '@/lib/audit'
 
 export const dynamic = "force-dynamic"
 
 export async function GET(request: NextRequest) {
   try {
     const session = await getServerSession(authOptions)
-    
+
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
@@ -81,7 +82,7 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const session = await getServerSession(authOptions)
-    
+
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
@@ -124,6 +125,18 @@ export async function POST(request: NextRequest) {
         empresa: true,
         aviso: true
       }
+    })
+
+    // Audit Log
+    await logCreate({
+      userId: session.user.id,
+      userName: session.user.name || 'User',
+      userEmail: session.user.email || '',
+      entity: 'Candidatura',
+      entityId: novaCandidatura.id,
+      data: novaCandidatura,
+      category: 'BUSINESS',
+      request
     })
 
     return NextResponse.json(novaCandidatura, { status: 201 })

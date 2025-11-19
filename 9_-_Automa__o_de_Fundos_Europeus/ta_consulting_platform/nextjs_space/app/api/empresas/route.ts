@@ -3,13 +3,14 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/db'
+import { logCreate } from '@/lib/audit'
 
 export const dynamic = "force-dynamic"
 
 export async function GET(request: NextRequest) {
   try {
     const session = await getServerSession(authOptions)
-    
+
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
@@ -52,8 +53,8 @@ export async function GET(request: NextRequest) {
         take: limit,
         include: {
           candidaturas: {
-            select: { 
-              id: true, 
+            select: {
+              id: true,
               estado: true,
               montanteSolicitado: true,
               montanteAprovado: true
@@ -75,8 +76,8 @@ export async function GET(request: NextRequest) {
     const empresasEnriquecidas = empresas.map(empresa => {
       const candidaturasAprovadas = empresa.candidaturas.filter(c => c.estado === 'APROVADA')
       const totalFinanciamento = candidaturasAprovadas.reduce((sum, c) => sum + (c.montanteAprovado || 0), 0)
-      
-      const documentosExpirados = empresa.documentos.filter(d => 
+
+      const documentosExpirados = empresa.documentos.filter(d =>
         d.statusValidade === 'EXPIRADO' || d.statusValidade === 'A_EXPIRAR'
       ).length
 
@@ -110,7 +111,7 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const session = await getServerSession(authOptions)
-    
+
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
@@ -150,6 +151,18 @@ export async function POST(request: NextRequest) {
         contactoTelefone: data.contactoTelefone || '',
         notas: data.notas || ''
       }
+    })
+
+    // Audit Log
+    await logCreate({
+      userId: session.user.id,
+      userName: session.user.name || 'User',
+      userEmail: session.user.email || '',
+      entity: 'Empresa',
+      entityId: novaEmpresa.id,
+      data: novaEmpresa,
+      category: 'BUSINESS',
+      request
     })
 
     return NextResponse.json(novaEmpresa, { status: 201 })
