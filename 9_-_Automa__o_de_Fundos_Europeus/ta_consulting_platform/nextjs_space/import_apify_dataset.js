@@ -2,8 +2,15 @@ const { ApifyClient } = require('apify-client');
 const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient();
+// CRITICAL: APIFY_API_TOKEN must be set in .env file
+if (!process.env.APIFY_API_TOKEN) {
+  console.error('❌ APIFY_API_TOKEN not found in environment variables');
+  console.error('Please create a .env file with: APIFY_API_TOKEN=your_token_here');
+  process.exit(1);
+}
+
 const apifyClient = new ApifyClient({
-  token: process.env.APIFY_API_TOKEN || 'REDACTED_APIFY_TOKEN'
+  token: process.env.APIFY_API_TOKEN
 });
 
 // Dataset ID from the latest run (Portugal 2030 actor)
