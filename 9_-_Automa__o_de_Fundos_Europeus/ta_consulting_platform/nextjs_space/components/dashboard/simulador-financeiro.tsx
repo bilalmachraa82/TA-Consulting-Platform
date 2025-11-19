@@ -131,10 +131,10 @@ export function SimuladorFinanceiro() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Coluna da Esquerda: Inputs */}
             <div className="space-y-6">
-                <Card>
+                <Card className="dark:bg-slate-800 dark:border-slate-700">
                     <CardHeader>
-                        <CardTitle>Dados da Empresa (Ano Pré-Projeto)</CardTitle>
-                        <CardDescription>Insira os dados do último IES aprovado.</CardDescription>
+                        <CardTitle className="dark:text-gray-100">Dados da Empresa (Ano Pré-Projeto)</CardTitle>
+                        <CardDescription className="dark:text-gray-400">Insira os dados do último IES aprovado.</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <div className="grid grid-cols-2 gap-4">
@@ -164,29 +164,29 @@ export function SimuladorFinanceiro() {
                             </div>
                         </div>
 
-                        <div className="bg-muted/50 p-4 rounded-lg mt-4 grid grid-cols-3 gap-4 text-center">
+                        <div className="bg-muted/50 dark:bg-slate-900/50 p-4 rounded-lg mt-4 grid grid-cols-3 gap-4 text-center border dark:border-slate-600">
                             <div>
-                                <p className="text-xs text-muted-foreground">Autonomia Fin.</p>
-                                <p className={`text-lg font-bold ${autonomia < 0.15 ? 'text-red-500' : 'text-green-600'}`}>
+                                <p className="text-xs text-muted-foreground dark:text-gray-400">Autonomia Fin.</p>
+                                <p className={`text-lg font-bold ${autonomia < 0.15 ? 'text-red-500 dark:text-red-400' : 'text-green-600 dark:text-green-400'}`}>
                                     {(autonomia * 100).toFixed(1)}%
                                 </p>
                             </div>
                             <div>
-                                <p className="text-xs text-muted-foreground">EBITDA</p>
-                                <p className="text-lg font-bold">{ebitda.toLocaleString('pt-PT', { notation: 'compact' })}€</p>
+                                <p className="text-xs text-muted-foreground dark:text-gray-400">EBITDA</p>
+                                <p className="text-lg font-bold dark:text-gray-100">{ebitda.toLocaleString('pt-PT', { notation: 'compact' })}€</p>
                             </div>
                             <div>
-                                <p className="text-xs text-muted-foreground">Liquidez Geral</p>
-                                <p className="text-lg font-bold">{liquidez.toFixed(2)}</p>
+                                <p className="text-xs text-muted-foreground dark:text-gray-400">Liquidez Geral</p>
+                                <p className="text-lg font-bold dark:text-gray-100">{liquidez.toFixed(2)}</p>
                             </div>
                         </div>
                     </CardContent>
                 </Card>
 
-                <Card>
+                <Card className="dark:bg-slate-800 dark:border-slate-700">
                     <CardHeader>
-                        <CardTitle>Projeto de Investimento</CardTitle>
-                        <CardDescription>Projeção de fluxos de caixa para 5 anos.</CardDescription>
+                        <CardTitle className="dark:text-gray-100">Projeto de Investimento</CardTitle>
+                        <CardDescription className="dark:text-gray-400">Projeção de fluxos de caixa para 5 anos.</CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
                         <div className="grid grid-cols-2 gap-4">
@@ -213,22 +213,22 @@ export function SimuladorFinanceiro() {
                             ))}
                         </div>
 
-                        <div className="bg-muted/50 p-4 rounded-lg mt-4 grid grid-cols-3 gap-4 text-center">
+                        <div className="bg-muted/50 dark:bg-slate-900/50 p-4 rounded-lg mt-4 grid grid-cols-3 gap-4 text-center border dark:border-slate-600">
                             <div>
-                                <p className="text-xs text-muted-foreground">VAL (NPV)</p>
-                                <p className={`text-lg font-bold ${val > 0 ? 'text-green-600' : 'text-red-500'}`}>
+                                <p className="text-xs text-muted-foreground dark:text-gray-400">VAL (NPV)</p>
+                                <p className={`text-lg font-bold ${val > 0 ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
                                     {val.toLocaleString('pt-PT', { notation: 'compact', style: 'currency', currency: 'EUR' })}
                                 </p>
                             </div>
                             <div>
-                                <p className="text-xs text-muted-foreground">TIR (IRR)</p>
-                                <p className={`text-lg font-bold ${tir > 0.08 ? 'text-green-600' : 'text-yellow-600'}`}>
+                                <p className="text-xs text-muted-foreground dark:text-gray-400">TIR (IRR)</p>
+                                <p className={`text-lg font-bold ${tir > 0.08 ? 'text-green-600 dark:text-green-400' : 'text-yellow-600 dark:text-yellow-400'}`}>
                                     {(tir * 100).toFixed(1)}%
                                 </p>
                             </div>
                             <div>
-                                <p className="text-xs text-muted-foreground">Payback</p>
-                                <p className="text-lg font-bold">{payback > 0 ? payback.toFixed(1) + ' anos' : 'N/A'}</p>
+                                <p className="text-xs text-muted-foreground dark:text-gray-400">Payback</p>
+                                <p className="text-lg font-bold dark:text-gray-100">{payback > 0 ? payback.toFixed(1) + ' anos' : 'N/A'}</p>
                             </div>
                         </div>
 
@@ -252,7 +252,7 @@ export function SimuladorFinanceiro() {
             {/* Coluna da Direita: Resultados e Análise IA */}
             <div className="space-y-6">
                 {analysis ? (
-                    <Card className="border-primary/20 bg-primary/5 h-full">
+                    <Card className="border-primary/20 bg-primary/5 dark:bg-primary/10 dark:border-primary/30 h-full">
                         <CardHeader>
                             <div className="flex items-center justify-between">
                                 <CardTitle className="flex items-center gap-2">
@@ -264,8 +264,8 @@ export function SimuladorFinanceiro() {
                             </div>
                         </CardHeader>
                         <CardContent className="space-y-6">
-                            <div className="prose prose-sm max-w-none">
-                                <p className="text-justify leading-relaxed">{analysis.parecerTecnico}</p>
+                            <div className="prose prose-sm dark:prose-invert max-w-none">
+                                <p className="text-justify leading-relaxed dark:text-gray-200">{analysis.parecerTecnico}</p>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

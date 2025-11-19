@@ -24,33 +24,33 @@ export default async function UsersPage() {
         <div className="space-y-6 p-6">
             <div className="flex items-center justify-between">
                 <div>
-                    <h1 className="text-3xl font-bold tracking-tight">Gestão de Equipa</h1>
-                    <p className="text-muted-foreground">
+                    <h1 className="text-3xl font-bold tracking-tight dark:text-gray-100">Gestão de Equipa</h1>
+                    <p className="text-muted-foreground dark:text-gray-400">
                         Gerir permissões de acesso e atribuição de clientes aos consultores.
                     </p>
                 </div>
             </div>
 
-            <Card>
+            <Card className="dark:bg-slate-800 dark:border-slate-700">
                 <CardHeader>
-                    <CardTitle>Utilizadores ({users.length})</CardTitle>
+                    <CardTitle className="dark:text-gray-100">Utilizadores ({users.length})</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <Table>
                         <TableHeader>
-                            <TableRow>
-                                <TableHead>Nome</TableHead>
-                                <TableHead>Email</TableHead>
-                                <TableHead>Função (Role)</TableHead>
-                                <TableHead>Empresas Atribuídas</TableHead>
-                                <TableHead className="text-right">Ações</TableHead>
+                            <TableRow className="dark:border-slate-700">
+                                <TableHead className="dark:text-gray-300">Nome</TableHead>
+                                <TableHead className="dark:text-gray-300">Email</TableHead>
+                                <TableHead className="dark:text-gray-300">Função (Role)</TableHead>
+                                <TableHead className="dark:text-gray-300">Empresas Atribuídas</TableHead>
+                                <TableHead className="text-right dark:text-gray-300">Ações</TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
                             {users.map((user) => (
-                                <TableRow key={user.id}>
-                                    <TableCell className="font-medium">{user.name || 'Sem Nome'}</TableCell>
-                                    <TableCell>{user.email}</TableCell>
+                                <TableRow key={user.id} className="dark:border-slate-700">
+                                    <TableCell className="font-medium dark:text-gray-200">{user.name || 'Sem Nome'}</TableCell>
+                                    <TableCell className="dark:text-gray-300">{user.email}</TableCell>
                                     <TableCell>
                                         <Badge variant={user.role === 'ADMIN' ? 'destructive' : user.role === 'MANAGER' ? 'default' : 'secondary'}>
                                             {user.role}
@@ -65,7 +65,7 @@ export default async function UsersPage() {
                                                     </Badge>
                                                 ))
                                             ) : (
-                                                <span className="text-muted-foreground text-xs">Nenhuma</span>
+                                                <span className="text-muted-foreground dark:text-gray-500 text-xs">Nenhuma</span>
                                             )}
                                         </div>
                                     </TableCell>
