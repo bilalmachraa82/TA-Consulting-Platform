@@ -1,0 +1,715 @@
+generator client {
+    provider = "prisma-client-js"
+    binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  role          UserRole  @default(CONSULTANT)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  accounts      Account[]
+  sessions      Session[]
+  empresas      Empresa[] // Relation to managed companies
+}
+
+enum UserRole {
+  ADMIN
+  MANAGER
+  CONSULTANT
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Aviso {
+  // ========== EXISTING BASIC INFO (16 fields) ==========
+  id                  String              @id @default(cuid())
+  nome                String
+  portal              Portal              @default(PORTUGAL2030)
+  programa            String
+  linha               String?
+  codigo              String
+  dataInicioSubmissao DateTime
+  dataFimSubmissao    DateTime
+  montanteMinimo      Float?
+  montanteMaximo      Float?
+  descrição         String?
+  link                String?
+  taxa                String?
+  regiao              String?
+  setoresElegiveis    String[]
+  dimensaoEmpresa     String[]
+  urgente             Boolean             @default(false)
+  ativo               Boolean             @default(true)
+  createdAt           DateTime            @default(now())
+  updatedAt           DateTime            @updatedAt
+
+  // ========== NEW: ENRICHMENT METADATA ==========
+  enrichmentStatus    EnrichmentStatus    @default(BASIC)
+  enrichmentScore     Float?
+  dataSourceLog       Json?
+  lastEnrichedAt      DateTime?
+  enrichedBy          String?
+
+  // ========== NEW: FINANCIAL PARAMETERS (12 fields) ==========
+  taxaCofinanciamentoMin       Float?
+  taxaCofinanciamentoMax       Float?
+  taxaGrandeEmpresa            Float?
+  taxaMediaEmpresa             Float?
+  taxaPequenaEmpresa           Float?
+  taxaMicroEmpresa             Float?
+  limiteMinimoCandidatura      Decimal?  @db.Decimal(15, 2)
+  limiteMaximoCandidatura      Decimal?  @db.Decimal(15, 2)
+  limiteMaximoEmpresa          Decimal?  @db.Decimal(15, 2)
+  comparticipacaoPublicaMax    Float?
+  contribuicaoPropriaMin       Float?
+  percentagemFNR               Float?
+
+  // ========== NEW: GEOGRAPHIC SCOPE (5 fields) ==========
+  regiaoNUTS2                  String?
+  regiaoNUTS3                  String[]  @default([])
+  municipiosElegiveis          String[]  @default([])
+  abrangenciaGeografica        AbrangenciaGeografica?
+  limitacaoTerritorial         String?   @db.Text
+
+  // ========== NEW: ELIGIBILITY CRITERIA (10 fields) ==========
+  caeElegiveis                 Int[]     @default([])
+  caeExcluidos                 Int[]     @default([])
+  tiposBeneficiarios           TipoBeneficiario[]  @default([])
+  formaJuridicaRequerida       String[]  @default([])
+  situacaoRegularizada         Boolean   @default(true)
+  antiguidadeMinima            Int?
+  trabalhadoresMinimo          Int?
+  volumeNegociosMinimo         Decimal?  @db.Decimal(15, 2)
+  criacaoEmpregoObrigatoria    Boolean   @default(false)
+
+  // ========== NEW: FUNDING STRUCTURE (8 fields) ==========
+  fundoEstruturalPrincipal     FundoEstrutural?
+  fundosCofinanciamento        Json?
+  programaOperacionalCodigo    String?
+  eixoPrioritario              String?
+  prioridadeInvestimento       String?
+  objetivoEspecificoCodigo     String?
+  regimeAuxilio                RegimeAuxilio?
+  artigoGBER                   String?
+
+  // ========== NEW: INVESTMENT TYPES (6 fields) ==========
+  categoriasInvestimentoElegiveis  CategoriaInvestimento[]  @default([])
+  custosElegiveis              Json?
+  custosNaoElegiveis           Json?
+  tipoOperacao                 TipoOperacao?
+  tipoApoio                    TipoApoio?
+  reembolsavel                 Boolean   @default(false)
+
+  // ========== NEW: PROJECT REQUIREMENTS (7 fields) ==========
+  duracaoMinimaProjeto         Int?
+  duracaoMaximaProjeto         Int?
+  prazoExecucaoMeses           Int?
+  periodoManutencaoAnos        Int?
+  apresentacaoPlanoNegocios    Boolean   @default(false)
+  parecerTecnicoObrigatorio    Boolean   @default(false)
+  estudoViabilidadeObrigatorio Boolean   @default(false)
+
+  // ========== NEW: SUBMISSION & DEADLINES (5 fields) ==========
+  tipoSubmissao                TipoSubmissao?
+  fasesSubmissao               Int       @default(1)
+  prazoReclamacao              Int?
+  dataDecisaoEstimada          DateTime?
+  prazoContratacaoDias         Int?
+
+  // ========== NEW: COMPLIANCE & DOCUMENTATION (6 fields) ==========
+  documentosObrigatorios       String[]  @default([])
+  declaracoesNecessarias       String[]  @default([])
+  regulamentoURL               String?
+  anexosRegulamento            String[]  @default([])
+  baseLegalPrincipal           String?   @db.Text
+  normativoComunitario         String?   @db.Text
+
+  // ========== NEW: PDF PROCESSING (8 fields) ==========
+  pdfStoragePath               String?
+  pdfHash                      String?
+  pdfDownloadStatus            PDFStatus?            @default(NOT_STARTED)
+  pdfDownloadedAt              DateTime?
+  pdfExtractionStatus          PDFStatus?            @default(NOT_STARTED)
+  pdfExtractedText             String?               @db.Text
+  pdfExtractionQuality         Float?
+  pdfMetadata                  Json?
+
+  // ========== MIGRATION TRACKING ==========
+  migratedFromLegacy           Boolean   @default(false)
+  migrationVersion             String?
+  migrationErrors              String[]  @default([])
+
+  // ========== RELATIONS ==========
+  candidaturas        Candidatura[]
+  memorias            MemoriaDescritiva[]
+
+  @@index([enrichmentStatus])
+  @@index([enrichmentScore])
+  @@index([portal, enrichmentStatus])
+  @@index([regiaoNUTS2])
+  @@index([regimeAuxilio])
+  @@map("avisos")
+}
+
+// ========== LEGACY SNAPSHOT TABLE ==========
+model AvisoLegacy {
+  id        String   @id
+  snapshot  Json
+  createdAt DateTime @default(now())
+
+  @@map("avisos_legacy_snapshot")
+}
+
+model Empresa {
+  id               String              @id @default(cuid())
+  nipc             String              @unique
+  nome             String
+  cae              String
+  setor            String
+  dimensao         DimensaoEmpresa     @default(MICRO)
+  email            String
+  telefone         String?
+  morada           String?
+  localidade       String?
+  codigoPostal     String?
+  distrito         String?
+  regiao           String?
+  contactoNome     String?
+  contactoEmail    String?
+  contactoTelefone String?
+  notas            String?
+  ativa            Boolean             @default(true)
+  createdAt        DateTime            @default(now())
+  updatedAt        DateTime            @updatedAt
+  candidaturas     Candidatura[]
+  documentos       Documento[]
+  memorias         MemoriaDescritiva[]
+  gestores         User[]              // Relation to consultants/managers
+  
+  @@map("empresas")
+}
+
+model Candidatura {
+  id                 String            @id @default(cuid())
+  empresaId          String
+  avisoId            String
+  estado             EstadoCandidatura @default(A_PREPARAR)
+  montanteSolicitado Float?
+  montanteAprovado   Float?
+  dataSubmissao      DateTime?
+  dataDecisao        DateTime?
+  observacoes        String?
+  documentosAnexos   String[]
+  timeline           Json[]
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  aviso              Aviso             @relation(fields: [avisoId], references: [id])
+  empresa            Empresa           @relation(fields: [empresaId], references: [id])
+  complianceChecks   ComplianceCheck[] // Compliance engine relation
+
+  @@map("candidaturas")
+}
+
+model Documento {
+  id               String             @id @default(cuid())
+  empresaId        String
+  tipoDocumento    TipoDocumento
+  nome             String
+  cloudStoragePath String
+  dataEmissao      DateTime?
+  dataValidade     DateTime?
+  statusValidade   StatusValidade     @default(VALIDO)
+  observacoes      String?
+  createdAt        DateTime           @default(now())
+  updatedAt        DateTime           @updatedAt
+  empresa          Empresa            @relation(fields: [empresaId], references: [id])
+  evidences        DocumentEvidence[] // Document intelligence relation
+
+  @@map("documentos")
+}
+
+model Workflow {
+  id              String        @id @default(cuid())
+  nome            String
+  tipo            TipoWorkflow
+  ativo           Boolean       @default(true)
+  frequencia      String
+  ultimaExecucao  DateTime?
+  proximaExecucao DateTime?
+  parametros      Json?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  logs            WorkflowLog[]
+
+  @@map("workflows")
+}
+
+model WorkflowLog {
+  id           String   @id @default(cuid())
+  workflowId   String
+  dataExecucao DateTime
+  sucesso      Boolean
+  mensagem     String?
+  dados        Json?
+  createdAt    DateTime @default(now())
+  workflow     Workflow @relation(fields: [workflowId], references: [id])
+
+  @@map("workflow_logs")
+}
+
+model Notificacao {
+  id           String          @id @default(cuid())
+  tipo         TipoNotificacao
+  destinatario String
+  assunto      String
+  conteudo     String
+  enviado      Boolean         @default(false)
+  dataEnvio    DateTime?
+  erro         String?
+  contexto     Json?
+  createdAt    DateTime        @default(now())
+
+  @@map("notificacoes")
+}
+
+model APIConfig {
+  id              String      @id @default(cuid())
+  userId          String
+  provider        LLMProvider @default(ABACUS_AI)
+  abacusApiKey    String?
+  anthropicApiKey String?
+  openaiApiKey    String?
+  isActive        Boolean     @default(true)
+  chatbotModel    String      @default("claude-4-5-haiku")
+  memoriaModel    String      @default("claude-4-5-sonnet")
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@map("api_configs")
+}
+
+model MemoriaDescritiva {
+  id             String         @id @default(cuid())
+  empresaId      String
+  avisoId        String
+  titulo         String
+  status         StatusMemoria  @default(RASCUNHO)
+  dadosEmpresa   Json
+  dadosAviso     Json
+  dadosProjeto   Json?
+  modeloUsado    String?
+  tempoGeracao   Int?
+  qualityScore   Float?
+  erros          String[]
+  warnings       String[]
+  versao         Int            @default(1)
+  versaoAnterior String?
+  docxPath       String?
+  pdfPath        String?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  seccoes        MemoriaSecao[]
+  aviso          Aviso          @relation(fields: [avisoId], references: [id])
+  empresa        Empresa        @relation(fields: [empresaId], references: [id])
+
+  @@map("memorias_descritivas")
+}
+
+model MemoriaSecao {
+  id           String            @id @default(cuid())
+  memoriaId    String
+  numeroSeccao Int
+  titulo       String
+  conteudo     String
+  status       StatusSeccao      @default(NAO_GERADA)
+  tempoGeracao Int?
+  tokenCount   Int?
+  tabelas      Json[]
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  memoria      MemoriaDescritiva @relation(fields: [memoriaId], references: [id], onDelete: Cascade)
+
+  @@unique([memoriaId, numeroSeccao])
+  @@map("memoria_seccoes")
+}
+
+model KnowledgeBase {
+  id        String        @id @default(cuid())
+  tipo      TipoKnowledge
+  titulo    String
+  conteudo  String
+  embedding String?
+  metadados Json?
+  ativo     Boolean       @default(true)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@map("knowledge_base")
+}
+
+enum Portal {
+  PORTUGAL2030
+  PAPAC
+  PRR
+}
+
+enum DimensaoEmpresa {
+  MICRO
+  PEQUENA
+  MEDIA
+  GRANDE
+}
+
+enum EstadoCandidatura {
+  A_PREPARAR
+  SUBMETIDA
+  EM_ANALISE
+  APROVADA
+  REJEITADA
+  CANCELADA
+}
+
+enum TipoDocumento {
+  CERTIDAO_AT
+  CERTIDAO_SS
+  CERTIFICADO_PME
+  LICENCA_ATIVIDADE
+  BALANCO
+  DEMONSTRACOES_FINANCEIRAS
+  OUTRO
+}
+
+enum StatusValidade {
+  VALIDO
+  A_EXPIRAR
+  EXPIRADO
+  EM_FALTA
+}
+
+enum TipoWorkflow {
+  SCRAPING_PORTUGAL2030
+  SCRAPING_PAPAC
+  SCRAPING_PRR
+  NOTIFICACAO_EMAIL
+  VALIDACAO_DOCUMENTOS
+  RELATORIO_MENSAL
+}
+
+enum TipoNotificacao {
+  AVISO_URGENTE
+  DOCUMENTO_EXPIRA
+  CANDIDATURA_UPDATE
+  RELATORIO_MENSAL
+  SISTEMA
+}
+
+enum LLMProvider {
+  ABACUS_AI
+  ANTHROPIC
+  OPENAI
+}
+
+enum StatusMemoria {
+  RASCUNHO
+  EM_GERACAO
+  GERADA
+  APROVADA
+  ARQUIVADA
+  ERRO
+}
+
+enum StatusSeccao {
+  NAO_GERADA
+  EM_GERACAO
+  GERADA
+  EDITADA_MANUAL
+  APROVADA
+}
+
+enum TipoKnowledge {
+  AVISO_EXEMPLO
+  MEMORIA_EXEMPLO
+  TEMPLATE
+  BEST_PRACTICE
+  GLOSSARIO
+  REQUISITO_LEGAL
+}
+
+// ============================================================================
+// NEW ENUMS FOR ENHANCED SCHEMA
+// ============================================================================
+
+enum EnrichmentStatus {
+  BASIC
+  ENHANCED
+  AI_ENRICHED
+  MANUAL_VERIFIED
+  VALIDATION_FAILED
+}
+
+enum AbrangenciaGeografica {
+  REGIONAL
+  NACIONAL
+  CONTINENTAL
+  EUROPEU
+}
+
+enum TipoBeneficiario {
+  EMPRESAS
+  ASSOCIACOES
+  AUTARQUIAS
+  ONG
+  COOPERATIVAS
+  IPSS
+  ENSINO_INVESTIGACAO
+  PARTICULARES
+}
+
+enum FundoEstrutural {
+  FEDER
+  FSE_PLUS
+  FC
+  FTJ
+  FEAMPA
+}
+
+enum RegimeAuxilio {
+  GBER
+  DE_MINIMIS
+  NAO_APLICAVEL
+  AUXILIO_ESTATAL_NOTIFICADO
+}
+
+enum CategoriaInvestimento {
+  EQUIPAMENTO
+  CONSTRUCAO
+  SOFTWARE
+  FORMACAO
+  CONSULTORIA
+  ESTUDOS
+  MARKETING
+  CERTIFICACAO
+  INOVACAO
+  INVESTIGACAO
+}
+
+enum TipoOperacao {
+  INVESTIMENTO
+  FORMACAO
+  ESTUDOS
+  CONSULTORIA
+  MISTO
+}
+
+enum TipoApoio {
+  SUBSIDIO
+  CREDITO
+  GARANTIA
+  MISTO
+}
+
+enum TipoSubmissao {
+  BALCAO
+  CONCURSO
+  CONTINUA
+}
+
+enum PDFStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+  FAILED
+  SKIPPED
+}
+
+// ============================================================================
+// COMPLIANCE ENGINE MODELS (Sprint 1.1)
+// ============================================================================
+
+model ComplianceRule {
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Rule identification
+  programa    String   // "PT2030", "PRR", "PEPACC"
+  versao      String   // "2024", "2025"
+  ruleId      String   // "PT2030_ELIG_001", "PRR_INTENS_002"
+
+  // Rule details
+  categoria   String   // "eligibility", "intensity", "costs", "thresholds", "regional", "procedural"
+  titulo      String
+  descricao   String   @db.Text
+  baseLegal   String   // "DL_20A_2023_ART_14", "REG_EU_651_2014_ART_53"
+  formula     String?  @db.Text  // Python expression for evaluation
+  severidade  String   // "BLOQUEANTE", "AVISO", "INFO"
+  notas       String[] @default([])
+
+  // Status
+  ativo       Boolean  @default(true)
+
+  // Relations
+  checks      ComplianceCheck[]
+
+  @@unique([programa, versao, ruleId])
+  @@index([programa, versao, ativo])
+  @@index([categoria])
+  @@index([severidade])
+  @@map("compliance_rules")
+}
+
+model ComplianceCheck {
+  id              String   @id @default(cuid())
+  createdAt       DateTime @default(now())
+
+  // Foreign keys
+  candidaturaId   String
+  candidatura     Candidatura @relation(fields: [candidaturaId], references: [id], onDelete: Cascade)
+
+  ruleId          String
+  rule            ComplianceRule @relation(fields: [ruleId], references: [id])
+
+  // Check result
+  status          String   // "PASS", "FAIL", "WARNING", "SKIP"
+  valorEsperado   String?
+  valorObtido     String?
+  notas           String[] @default([])
+  evidencias      Json?    // Store any evidence data
+
+  // Metadata
+  timestamp       DateTime @default(now())
+  checkedBy       String?  // User ID who triggered check
+  programa        String   // Denormalized for quick queries
+  versao          String   // Denormalized for quick queries
+
+  @@index([candidaturaId, status])
+  @@index([ruleId])
+  @@index([programa, versao])
+  @@index([timestamp])
+  @@map("compliance_checks")
+}
+
+model DocumentEvidence {
+  id            String   @id @default(cuid())
+  createdAt     DateTime @default(now())
+
+  // Foreign key (Note: will be added to Documento model in Sprint 1.2)
+  documentoId   String
+  documento     Documento @relation(fields: [documentoId], references: [id], onDelete: Cascade)
+
+  // Chain of custody
+  sha256Hash    String
+  timestamp     DateTime @default(now())
+  signedBy      String?  // User ID
+  ipAddress     String?
+  userAgent     String?
+  fileSize      Int?     // Bytes
+  mimeType      String?
+
+  @@index([documentoId])
+  @@index([sha256Hash])
+  @@index([timestamp])
+  @@map("document_evidences")
+}
+
+// ============================================================================
+// AUDIT LOGS (Compliance & Rastreabilidade)
+// ============================================================================
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+
+  // User who performed the action
+  userId    String
+  userName  String?  // Denormalized for performance
+  userEmail String?  // Denormalized for performance
+
+  // Action details
+  action    AuditAction  // CREATE, UPDATE, DELETE, LOGIN, etc.
+  entity    String       // "Aviso", "Empresa", "Candidatura", etc.
+  entityId  String       // ID of the affected entity
+  
+  // Change tracking
+  changes   Json?        // Diff of changes (before/after)
+  metadata  Json?        // Additional context (IP, user agent, etc.)
+  
+  // Request context
+  ipAddress String?
+  userAgent String?
+  method    String?      // HTTP method (POST, PUT, DELETE)
+  path      String?      // Request path
+  
+  // Categorization
+  severity  AuditSeverity @default(INFO)  // INFO, WARNING, CRITICAL
+  category  String?       // "FINANCIAL", "COMPLIANCE", "ADMIN", etc.
+  
+  @@index([userId])
+  @@index([entity, entityId])
+  @@index([action])
+  @@index([createdAt])
+  @@index([severity])
+  @@map("audit_logs")
+}
+
+enum AuditAction {
+  CREATE
+  UPDATE
+  DELETE
+  LOGIN
+  LOGOUT
+  APPROVE
+  REJECT
+  EXPORT
+  IMPORT
+}
+
+enum AuditSeverity {
+  INFO
+  WARNING
+  CRITICAL
+}
+

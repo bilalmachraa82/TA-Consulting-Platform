@@ -1,0 +1,157 @@
+{
+  "version": "v1_enhanced_schema_2025_11_09",
+  "timestamp": "2025-11-10T09:02:02.528Z",
+  "totalAvisos": 5,
+  "avisos": [
+    {
+      "id": "cmhswxep70007vcmbvz0nip19",
+      "nome": "Apoio à Digitalização de PME",
+      "portal": "PORTUGAL2030",
+      "programa": "Programa Valorizar",
+      "linha": "Digitalização",
+      "codigo": "C-03-i02-01",
+      "dataInicioSubmissao": "2025-10-11T09:01:09.156Z",
+      "dataFimSubmissao": "2025-11-25T09:01:09.156Z",
+      "montanteMinimo": 5000,
+      "montanteMaximo": 50000,
+      "descrição": "Apoio financeiro para projetos de digitalização de pequenas e médias empresas",
+      "link": "https://portugal2030.pt/aviso-123",
+      "taxa": "75%",
+      "regiao": "Norte",
+      "setoresElegiveis": [
+        "Tecnologias de Informação",
+        "Comércio",
+        "Serviços"
+      ],
+      "dimensaoEmpresa": [
+        "MICRO",
+        "PEQUENA",
+        "MEDIA"
+      ],
+      "urgente": true,
+      "ativo": true,
+      "createdAt": "2025-11-10T09:01:09.163Z",
+      "updatedAt": "2025-11-10T09:01:47.623Z"
+    },
+    {
+      "id": "cmhswxep70009vcmb7u9c8kwy",
+      "nome": "Eficiência Energética na Indústria",
+      "portal": "PRR",
+      "programa": "Componente 13",
+      "linha": "Eficiência Energética",
+      "codigo": "PRR-C13-i02",
+      "dataInicioSubmissao": "2025-10-21T09:01:09.156Z",
+      "dataFimSubmissao": "2025-12-05T09:01:09.156Z",
+      "montanteMinimo": 10000,
+      "montanteMaximo": 200000,
+      "descrição": "Apoio a investimentos em eficiência energética no setor industrial",
+      "link": "https://recuperarportugal.gov.pt/aviso-456",
+      "taxa": "50%",
+      "regiao": null,
+      "setoresElegiveis": [
+        "Metalurgia",
+        "Têxtil",
+        "Alimentar"
+      ],
+      "dimensaoEmpresa": [
+        "PEQUENA",
+        "MEDIA",
+        "GRANDE"
+      ],
+      "urgente": false,
+      "ativo": true,
+      "createdAt": "2025-11-10T09:01:09.164Z",
+      "updatedAt": "2025-11-10T09:01:09.164Z"
+    },
+    {
+      "id": "cmhswxep70008vcmb09qsl55a",
+      "nome": "Apoio à Agricultura Sustentável",
+      "portal": "PAPAC",
+      "programa": "PAPAC 2030",
+      "linha": "Sustentabilidade Agrícola",
+      "codigo": "PAPAC-2030-01",
+      "dataInicioSubmissao": "2025-10-31T09:01:09.156Z",
+      "dataFimSubmissao": "2025-12-25T09:01:09.156Z",
+      "montanteMinimo": 3000,
+      "montanteMaximo": 75000,
+      "descrição": "Financiamento para práticas agrícolas sustentáveis e inovação no setor primário",
+      "link": "https://pepacc.pt/aviso-789",
+      "taxa": "60%",
+      "regiao": "Centro",
+      "setoresElegiveis": [
+        "Agricultura",
+        "Pecuária"
+      ],
+      "dimensaoEmpresa": [
+        "MICRO",
+        "PEQUENA"
+      ],
+      "urgente": false,
+      "ativo": true,
+      "createdAt": "2025-11-10T09:01:09.164Z",
+      "updatedAt": "2025-11-10T09:01:09.164Z"
+    },
+    {
+      "id": "cmhswxep8000avcmbun8vn9ga",
+      "nome": "Inovação no Turismo",
+      "portal": "PORTUGAL2030",
+      "programa": "Programa Competir+",
+      "linha": "Inovação Turística",
+      "codigo": "C-05-i01-02",
+      "dataInicioSubmissao": "2025-11-05T09:01:09.156Z",
+      "dataFimSubmissao": "2025-11-16T09:01:09.156Z",
+      "montanteMinimo": 8000,
+      "montanteMaximo": 100000,
+      "descrição": "Apoio a projetos inovadores no setor do turismo",
+      "link": "https://portugal2030.pt/aviso-101",
+      "taxa": "70%",
+      "regiao": "Algarve",
+      "setoresElegiveis": [
+        "Turismo e Hotelaria"
+      ],
+      "dimensaoEmpresa": [
+        "PEQUENA",
+        "MEDIA"
+      ],
+      "urgente": true,
+      "ativo": true,
+      "createdAt": "2025-11-10T09:01:09.164Z",
+      "updatedAt": "2025-11-10T09:01:44.246Z"
+    },
+    {
+      "id": "cmhswxep9000bvcmbflznbqar",
+      "nome": "Transição Digital da Economia",
+      "portal": "PRR",
+      "programa": "Componente 16",
+      "linha": "Digitalização Empresarial",
+      "codigo": "PRR-C16-i01",
+      "dataInicioSubmissao": "2025-10-01T09:01:09.156Z",
+      "dataFimSubmissao": "2026-01-09T09:01:09.156Z",
+      "montanteMinimo": 15000,
+      "montanteMaximo": 300000,
+      "descrição": "Financiamento para projetos de transformação digital das empresas",
+      "link": "https://recuperarportugal.gov.pt/aviso-202",
+      "taxa": "65%",
+      "regiao": null,
+      "setoresElegiveis": [
+        "Tecnologias de Informação",
+        "Serviços",
+        "Comércio",
+        "Indústria"
+      ],
+      "dimensaoEmpresa": [
+        "PEQUENA",
+        "MEDIA",
+        "GRANDE"
+      ],
+      "urgente": false,
+      "ativo": true,
+      "createdAt": "2025-11-10T09:01:09.165Z",
+      "updatedAt": "2025-11-10T09:01:09.165Z"
+    }
+  ],
+  "checksums": {
+    "md5": "6ab28e0e",
+    "recordCount": 5
+  }
+}
