@@ -2,6 +2,8 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { StatusValidade } from '@prisma/client';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth';
 
 // Esta API verifica todos os documentos e:
 // 1. Atualiza o statusValidade
@@ -9,13 +11,39 @@ import { StatusValidade } from '@prisma/client';
 
 export async function POST(request: Request) {
   try {
+    // 🔒 SECURITY: Require either CRON_SECRET or authenticated ADMIN
+    const authHeader = request.headers.get('authorization');
+    const cronSecret = process.env.CRON_SECRET;
+
+    // Check if it's a cron job with valid secret
+    const isValidCron = cronSecret && authHeader === `Bearer ${cronSecret}`;
+
+    // If not a valid cron, require admin authentication
+    if (!isValidCron) {
+      const session = await getServerSession(authOptions);
+
+      if (!session) {
+        return NextResponse.json(
+          { error: 'Unauthorized - Authentication required' },
+          { status: 401 }
+        );
+      }
+
+      if (session.user.role !== 'ADMIN') {
+        return NextResponse.json(
+          { error: 'Forbidden - Admin access required' },
+          { status: 403 }
+        );
+      }
+    }
+
     const hoje = new Date();
     const em7Dias = new Date(hoje);
     em7Dias.setDate(em7Dias.getDate() + 7);
-    
+
     const em15Dias = new Date(hoje);
     em15Dias.setDate(em15Dias.getDate() + 15);
-    
+
     const em30Dias = new Date(hoje);
     em30Dias.setDate(em30Dias.getDate() + 30);
 
@@ -51,7 +79,7 @@ export async function POST(request: Request) {
         alertas.expirados.push(doc);
       } else if (dataValidade <= em30Dias) {
         novoStatus = StatusValidade.A_EXPIRAR;
-        
+
         if (dataValidade <= em7Dias) {
           alertas.expiramEm7Dias.push(doc);
         } else if (dataValidade <= em15Dias) {
@@ -97,7 +125,7 @@ export async function POST(request: Request) {
 
       await prisma.workflow.update({
         where: { id: workflowValidacao.id },
-        data: { 
+        data: {
           ultimaExecucao: hoje,
           proximaExecucao: new Date(hoje.getTime() + 24 * 60 * 60 * 1000), // +1 dia
         },
@@ -142,7 +170,7 @@ async function criarNotificacoesEmail(alertas: any) {
     }
 
     const grupo = empresasMap.get(doc.empresaId);
-    
+
     if (alertas.expirados.includes(doc)) {
       grupo.expirados.push(doc);
     } else if (alertas.expiramEm7Dias.includes(doc)) {
@@ -157,7 +185,7 @@ async function criarNotificacoesEmail(alertas: any) {
   // Criar notificações por empresa
   for (const [empresaId, dados] of empresasMap.entries()) {
     const { empresa, expirados, em7dias, em15dias, em30dias } = dados;
-    
+
     let conteudoEmail = `
       <h2>⚠️ Alerta de Documentos - ${empresa.nome}</h2>
       <p>Olá,</p>
@@ -231,6 +259,7 @@ async function criarNotificacoesEmail(alertas: any) {
 }
 
 // Endpoint GET para verificação manual/cronjob
-export async function GET() {
-  return POST(new Request(''));
+export async function GET(request: Request) {
+  // Redirecionar para POST com a mesma request
+  return POST(request);
 }

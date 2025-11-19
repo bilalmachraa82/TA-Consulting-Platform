@@ -1,23 +1,44 @@
 
 import { PrismaClient, Portal, DimensaoEmpresa, EstadoCandidatura, TipoDocumento, StatusValidade, TipoWorkflow, TipoNotificacao } from '@prisma/client';
 import bcrypt from 'bcryptjs';
+import crypto from 'crypto';
 
 const prisma = new PrismaClient();
 
 async function main() {
   console.log('🌱 Seeding database...');
 
-  // Create admin user (hidden test account)
-  const adminUser = await prisma.user.upsert({
-    where: { email: 'john@doe.com' },
-    update: {},
-    create: {
-      email: 'john@doe.com',
-      password: await bcrypt.hash('johndoe123', 12),
-      name: 'Admin TA',
-      role: 'ADMIN',
-    },
+  // 🔒 SECURITY: Create admin user ONLY if doesn't exist (never update password)
+  const existingAdmin = await prisma.user.findUnique({
+    where: { email: 'john@doe.com' }
   });
+
+  let adminUser;
+  if (!existingAdmin) {
+    // Generate strong random password
+    const randomPassword = crypto.randomBytes(32).toString('hex');
+
+    adminUser = await prisma.user.create({
+      data: {
+        email: 'john@doe.com',
+        password: await bcrypt.hash(randomPassword, 12),
+        name: 'Admin TA',
+        role: 'ADMIN',
+      },
+    });
+
+    console.log('\n🔐 ═══════════════════════════════════════════════════════');
+    console.log('🔐 ADMIN USER CREATED');
+    console.log('🔐 ═══════════════════════════════════════════════════════');
+    console.log(`🔐 Email: john@doe.com`);
+    console.log(`🔐 Password: ${randomPassword}`);
+    console.log('🔐 ═══════════════════════════════════════════════════════');
+    console.log('🔐 ⚠️  SAVE THIS PASSWORD - It will NOT be shown again!');
+    console.log('🔐 ═══════════════════════════════════════════════════════\n');
+  } else {
+    adminUser = existingAdmin;
+    console.log('✅ Admin user already exists, skipping creation');
+  }
 
   // Create normal user
   const normalUser = await prisma.user.upsert({
