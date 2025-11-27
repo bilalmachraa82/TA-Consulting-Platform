@@ -1,8 +1,7 @@
-
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/db';
 
-const prisma = new PrismaClient();
+export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
   try {
@@ -70,10 +69,12 @@ export async function GET(request: NextRequest) {
     });
 
     // Processar top empresas
-    const empresasProcessadas = topEmpresas.map(empresa => ({
+    type EmpresaWithCandidaturas = typeof topEmpresas[number];
+    type CandidaturaItem = { montanteSolicitado: number | null };
+    const empresasProcessadas = topEmpresas.map((empresa: EmpresaWithCandidaturas) => ({
       ...empresa,
-      valorTotal: empresa.candidaturas.reduce((acc, c) => acc + (c.montanteSolicitado || 0), 0),
-    })).sort((a, b) => b.valorTotal - a.valorTotal);
+      valorTotal: empresa.candidaturas.reduce((acc: number, c: CandidaturaItem) => acc + (c.montanteSolicitado || 0), 0),
+    })).sort((a: { valorTotal: number }, b: { valorTotal: number }) => b.valorTotal - a.valorTotal);
 
     return NextResponse.json({
       resumo: {
@@ -86,11 +87,11 @@ export async function GET(request: NextRequest) {
         valorSolicitado: Number(valorTotalSolicitado._sum.montanteSolicitado || 0),
       },
       graficos: {
-        candidaturasPorStatus: candidaturasPorEstado.map(c => ({
+        candidaturasPorStatus: candidaturasPorEstado.map((c: { estado: string; _count: { estado: number } }) => ({
           status: c.estado,
           total: c._count.estado,
         })),
-        avisosPorPortal: avisosPorPortal.map(a => ({
+        avisosPorPortal: avisosPorPortal.map((a: { portal: string; _count: { portal: number } }) => ({
           portal: a.portal,
           total: a._count.portal,
         })),
@@ -98,10 +99,10 @@ export async function GET(request: NextRequest) {
           mes: m.mes,
           total: Number(m.total),
         })),
-        topEmpresas: empresasProcessadas.slice(0, 5).map(e => ({
+        topEmpresas: empresasProcessadas.slice(0, 5).map((e: EmpresaWithCandidaturas & { valorTotal: number }) => ({
           ...e,
           valorTotal: Number(e.valorTotal),
-          candidaturas: e.candidaturas.map((c: any) => ({
+          candidaturas: e.candidaturas.map((c: CandidaturaItem) => ({
             ...c,
             montanteSolicitado: Number(c.montanteSolicitado || 0),
           })),

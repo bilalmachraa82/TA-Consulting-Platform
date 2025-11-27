@@ -1,9 +1,8 @@
-
 import { NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/db';
 import { getServerSession } from 'next-auth';
 
-const prisma = new PrismaClient();
+export const dynamic = 'force-dynamic';
 
 // Sistema de alertas inteligentes
 function gerarAlertas(empresas: any[], avisos: any[], candidaturas: any[]) {

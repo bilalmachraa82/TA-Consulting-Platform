@@ -1,9 +1,8 @@
-
 import { NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/db';
 import { getServerSession } from 'next-auth';
 
-const prisma = new PrismaClient();
+export const dynamic = 'force-dynamic';
 
 // Sistema de análise de compatibilidade
 function calcularCompatibilidade(empresa: any, aviso: any): {
@@ -137,7 +136,10 @@ export async function GET(request: Request) {
     });
 
     // Calcular compatibilidade para cada aviso
-    const recomendacoes = avisos.map(aviso => {
+    type AvisoType = typeof avisos[number];
+    type RecomendacaoType = { aviso: AvisoType; score: number; razoes: string[]; alertas: string[]; prioridade: string };
+
+    const recomendacoes = avisos.map((aviso: AvisoType) => {
       const analise = calcularCompatibilidade(empresa, aviso);
       return {
         aviso,
@@ -150,8 +152,8 @@ export async function GET(request: Request) {
 
     // Filtrar e ordenar por score
     const recomendacoesFiltradas = recomendacoes
-      .filter(r => r.score >= scoreMinimo)
-      .sort((a, b) => b.score - a.score)
+      .filter((r: RecomendacaoType) => r.score >= scoreMinimo)
+      .sort((a: RecomendacaoType, b: RecomendacaoType) => b.score - a.score)
       .slice(0, limite);
 
     return NextResponse.json({

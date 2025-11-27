@@ -79,7 +79,7 @@ export async function GET(request: NextRequest) {
 
     // Calcular dias restantes para cada aviso
     const now = new Date()
-    const avisosComDias = avisos.map(aviso => {
+    const avisosComDias = avisos.map((aviso: { dataFimSubmissao: Date; candidaturas: { id: string }[] } & Record<string, unknown>) => {
       const diasRestantes = Math.ceil((aviso.dataFimSubmissao.getTime() - now.getTime()) / (1000 * 3600 * 24))
       
       return {

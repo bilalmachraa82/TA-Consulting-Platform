@@ -65,7 +65,8 @@ export async function GET(request: NextRequest) {
 
     // Processar avisos para incluir dias restantes
     const now = new Date()
-    const eventosCalendario = avisos.flatMap(aviso => {
+    type AvisoWithCandidaturas = typeof avisos[number];
+    const eventosCalendario = avisos.flatMap((aviso: AvisoWithCandidaturas) => {
       const diasRestantes = Math.ceil((aviso.dataFimSubmissao.getTime() - now.getTime()) / (1000 * 3600 * 24))
       
       const eventos = []
@@ -117,7 +118,7 @@ export async function GET(request: NextRequest) {
     if (view === 'calendario') {
       const eventosPorData: { [key: string]: any[] } = {}
       
-      eventosCalendario.forEach(evento => {
+      eventosCalendario.forEach((evento: { data: Date; tipo: string }) => {
         const dataKey = evento.data.toISOString().split('T')[0]
         if (!eventosPorData[dataKey]) {
           eventosPorData[dataKey] = []
@@ -132,9 +133,10 @@ export async function GET(request: NextRequest) {
       })
     } else {
       // Vista de lista - ordenada por data de deadline
+      type EventoCalendario = { data: Date; tipo: string };
       const eventosOrdenados = eventosCalendario
-        .filter(evento => evento.tipo === 'deadline')
-        .sort((a, b) => a.data.getTime() - b.data.getTime())
+        .filter((evento: EventoCalendario) => evento.tipo === 'deadline')
+        .sort((a: EventoCalendario, b: EventoCalendario) => a.data.getTime() - b.data.getTime())
 
       return NextResponse.json({
         view: 'lista',

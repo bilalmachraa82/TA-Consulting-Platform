@@ -1,6 +1,62 @@
-
-import { PrismaClient, Portal, DimensaoEmpresa, EstadoCandidatura, TipoDocumento, StatusValidade, TipoWorkflow, TipoNotificacao } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
+
+// Enums definidos localmente (compatíveis com Prisma)
+const Portal = {
+  PORTUGAL2030: 'PORTUGAL2030',
+  PAPAC: 'PAPAC',
+  PRR: 'PRR'
+} as const;
+
+const DimensaoEmpresa = {
+  MICRO: 'MICRO',
+  PEQUENA: 'PEQUENA',
+  MEDIA: 'MEDIA',
+  GRANDE: 'GRANDE'
+} as const;
+
+const EstadoCandidatura = {
+  A_PREPARAR: 'A_PREPARAR',
+  SUBMETIDA: 'SUBMETIDA',
+  EM_ANALISE: 'EM_ANALISE',
+  APROVADA: 'APROVADA',
+  REJEITADA: 'REJEITADA',
+  CANCELADA: 'CANCELADA'
+} as const;
+
+const TipoDocumento = {
+  CERTIDAO_AT: 'CERTIDAO_AT',
+  CERTIDAO_SS: 'CERTIDAO_SS',
+  CERTIFICADO_PME: 'CERTIFICADO_PME',
+  LICENCA_ATIVIDADE: 'LICENCA_ATIVIDADE',
+  BALANCO: 'BALANCO',
+  DEMONSTRACOES_FINANCEIRAS: 'DEMONSTRACOES_FINANCEIRAS',
+  OUTRO: 'OUTRO'
+} as const;
+
+const StatusValidade = {
+  VALIDO: 'VALIDO',
+  A_EXPIRAR: 'A_EXPIRAR',
+  EXPIRADO: 'EXPIRADO',
+  EM_FALTA: 'EM_FALTA'
+} as const;
+
+const TipoWorkflow = {
+  SCRAPING_PORTUGAL2030: 'SCRAPING_PORTUGAL2030',
+  SCRAPING_PAPAC: 'SCRAPING_PAPAC',
+  SCRAPING_PRR: 'SCRAPING_PRR',
+  NOTIFICACAO_EMAIL: 'NOTIFICACAO_EMAIL',
+  VALIDACAO_DOCUMENTOS: 'VALIDACAO_DOCUMENTOS',
+  RELATORIO_MENSAL: 'RELATORIO_MENSAL'
+} as const;
+
+const TipoNotificacao = {
+  AVISO_URGENTE: 'AVISO_URGENTE',
+  DOCUMENTO_EXPIRA: 'DOCUMENTO_EXPIRA',
+  CANDIDATURA_UPDATE: 'CANDIDATURA_UPDATE',
+  RELATORIO_MENSAL: 'RELATORIO_MENSAL',
+  SISTEMA: 'SISTEMA'
+} as const;
 
 const prisma = new PrismaClient();
 

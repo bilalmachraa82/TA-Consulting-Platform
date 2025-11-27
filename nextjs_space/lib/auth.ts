@@ -1,4 +1,3 @@
-
 import { NextAuthOptions } from 'next-auth'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import CredentialsProvider from 'next-auth/providers/credentials'
@@ -15,7 +14,7 @@ declare module 'next-auth' {
       role: string
     }
   }
-  
+
   interface User {
     role: string
   }
@@ -27,8 +26,17 @@ declare module 'next-auth/jwt' {
   }
 }
 
+// Create adapter lazily to avoid build-time errors
+const getAdapter = () => {
+  try {
+    return PrismaAdapter(prisma)
+  } catch {
+    return undefined
+  }
+}
+
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma),
+  adapter: getAdapter(),
   session: { strategy: 'jwt' },
   pages: {
     signIn: '/auth/login',

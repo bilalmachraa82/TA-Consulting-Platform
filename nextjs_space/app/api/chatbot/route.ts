@@ -1,8 +1,7 @@
-
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/db';
 
-const prisma = new PrismaClient();
+export const dynamic = 'force-dynamic';
 
 export async function POST(request: NextRequest) {
   try {
@@ -68,7 +67,11 @@ export async function POST(request: NextRequest) {
     const daquiA14Dias = new Date();
     daquiA14Dias.setDate(hoje.getDate() + 14);
 
-    const avisosUrgentes = avisos.filter((aviso) => {
+    type AvisoType = typeof avisos[number];
+    type EmpresaType = typeof empresas[number];
+    type CandidaturaType = typeof candidaturas[number];
+
+    const avisosUrgentes = avisos.filter((aviso: AvisoType) => {
       const dataFim = new Date(aviso.dataFimSubmissao);
       return aviso.ativo && dataFim >= hoje && dataFim <= daquiA14Dias;
     });
@@ -120,7 +123,7 @@ Você é o Assistente Inteligente da TA Consulting, especializado em apoios fina
 DADOS DISPONÍVEIS:
 
 📋 AVISOS (${avisos.length} total, ${avisosUrgentes.length} urgentes):
-${avisosUrgentes.slice(0, 10).map(a => `
+${avisosUrgentes.slice(0, 10).map((a: AvisoType) => `
 - ${a.nome} [${a.portal}]
   Código: ${a.codigo}
   Programa: ${a.programa || 'N/A'}
@@ -135,7 +138,7 @@ ${avisosUrgentes.slice(0, 10).map(a => `
 ${avisos.length > 10 ? `\n... e mais ${avisos.length - 10} avisos disponíveis` : ''}
 
 👥 EMPRESAS (${empresas.length} registadas):
-${empresas.slice(0, 5).map(e => `
+${empresas.slice(0, 5).map((e: EmpresaType) => `
 - ${e.nome} (NIPC: ${e.nipc})
   Setor: ${e.setor || 'N/A'}
   Dimensão: ${e.dimensao || 'N/A'}
@@ -143,7 +146,7 @@ ${empresas.slice(0, 5).map(e => `
 `).join('\n')}
 
 📝 CANDIDATURAS (${candidaturas.length} submetidas):
-${candidaturas.slice(0, 5).map(c => `
+${candidaturas.slice(0, 5).map((c: CandidaturaType) => `
 - ${c.empresa?.nome || 'N/A'} → ${c.aviso?.nome || 'N/A'}
   Portal: ${c.aviso?.portal || 'N/A'}
   Estado: ${c.estado}

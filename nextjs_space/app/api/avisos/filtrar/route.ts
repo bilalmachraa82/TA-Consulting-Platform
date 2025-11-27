@@ -1,10 +1,7 @@
-
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
-
-const prisma = new PrismaClient();
 
 export async function GET(request: NextRequest) {
   try {
@@ -84,9 +81,9 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       avisos,
       filtros: {
-        portais: portais.map(p => ({ valor: p.portal, total: p._count.portal })),
-        programas: programas.map(p => ({ valor: p.programa, total: p._count.programa })),
-        entidades: linhas.map(l => ({ valor: l.linha || 'N/A', total: (l._count as any).linha || 0 })),
+        portais: portais.map((p: { portal: string; _count: { portal: number } }) => ({ valor: p.portal, total: p._count.portal })),
+        programas: programas.map((p: { programa: string; _count: { programa: number } }) => ({ valor: p.programa, total: p._count.programa })),
+        entidades: linhas.map((l: { linha: string | null; _count: Record<string, number> }) => ({ valor: l.linha || 'N/A', total: l._count.linha || 0 })),
         areas: [], // Não existe no schema atual
       },
     });

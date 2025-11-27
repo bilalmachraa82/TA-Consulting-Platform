@@ -72,11 +72,15 @@ export async function GET(request: NextRequest) {
     ])
 
     // Enriquecer dados das empresas
-    const empresasEnriquecidas = empresas.map(empresa => {
-      const candidaturasAprovadas = empresa.candidaturas.filter(c => c.estado === 'APROVADA')
-      const totalFinanciamento = candidaturasAprovadas.reduce((sum, c) => sum + (c.montanteAprovado || 0), 0)
-      
-      const documentosExpirados = empresa.documentos.filter(d => 
+    type EmpresaWithRelations = typeof empresas[number];
+    type CandidaturaItem = { id: string; estado: string; montanteSolicitado: number | null; montanteAprovado: number | null };
+    type DocumentoItem = { id: string; statusValidade: string; tipoDocumento: string };
+
+    const empresasEnriquecidas = empresas.map((empresa: EmpresaWithRelations) => {
+      const candidaturasAprovadas = empresa.candidaturas.filter((c: CandidaturaItem) => c.estado === 'APROVADA')
+      const totalFinanciamento = candidaturasAprovadas.reduce((sum: number, c: CandidaturaItem) => sum + (c.montanteAprovado || 0), 0)
+
+      const documentosExpirados = empresa.documentos.filter((d: DocumentoItem) =>
         d.statusValidade === 'EXPIRADO' || d.statusValidade === 'A_EXPIRAR'
       ).length
 

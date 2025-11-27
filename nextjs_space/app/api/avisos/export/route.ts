@@ -26,7 +26,23 @@ export async function POST(request: NextRequest) {
     })
 
     const now = new Date()
-    const dadosExport = avisos.map(aviso => {
+
+    interface AvisoExport {
+      nome: string;
+      portal: string;
+      programa: string;
+      codigo: string;
+      dataInicioSubmissao: Date;
+      dataFimSubmissao: Date;
+      montanteMinimo: number | null;
+      montanteMaximo: number | null;
+      taxa: string | null;
+      regiao: string | null;
+      setoresElegiveis: string[];
+      link: string | null;
+    }
+
+    const dadosExport = avisos.map((aviso: AvisoExport) => {
       const diasRestantes = Math.ceil((aviso.dataFimSubmissao.getTime() - now.getTime()) / (1000 * 3600 * 24))
       
       return {
@@ -58,11 +74,11 @@ export async function POST(request: NextRequest) {
       const headers = Object.keys(dadosExport[0] || {})
       const csvContent = [
         headers.join(','),
-        ...dadosExport.map(row => 
-          headers.map(header => 
-            typeof row[header as keyof typeof row] === 'string' && (row[header as keyof typeof row] as string).includes(',')
-              ? `"${row[header as keyof typeof row]}"`
-              : row[header as keyof typeof row]
+        ...dadosExport.map((row: Record<string, string | number>) =>
+          headers.map(header =>
+            typeof row[header] === 'string' && row[header].toString().includes(',')
+              ? `"${row[header]}"`
+              : row[header]
           ).join(',')
         )
       ].join('\n')

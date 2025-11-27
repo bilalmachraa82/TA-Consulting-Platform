@@ -1,9 +1,5 @@
-
-import { Inter } from 'next/font/google'
 import './globals.css'
 import { Providers } from '@/components/providers'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const dynamic = "force-dynamic"
 
@@ -29,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt">
-      <body className={inter.className}>
+      <body className="font-sans antialiased">
         <Providers>
           {children}
         </Providers>

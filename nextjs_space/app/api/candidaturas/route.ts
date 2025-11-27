@@ -59,12 +59,13 @@ export async function GET(request: NextRequest) {
     })
 
     // Agrupar por estado para o kanban
+    type CandidaturaWithRelations = typeof candidaturas[number];
     const kanbanData = {
-      A_PREPARAR: candidaturas.filter(c => c.estado === 'A_PREPARAR'),
-      SUBMETIDA: candidaturas.filter(c => c.estado === 'SUBMETIDA'),
-      EM_ANALISE: candidaturas.filter(c => c.estado === 'EM_ANALISE'),
-      APROVADA: candidaturas.filter(c => c.estado === 'APROVADA'),
-      REJEITADA: candidaturas.filter(c => c.estado === 'REJEITADA')
+      A_PREPARAR: candidaturas.filter((c: CandidaturaWithRelations) => c.estado === 'A_PREPARAR'),
+      SUBMETIDA: candidaturas.filter((c: CandidaturaWithRelations) => c.estado === 'SUBMETIDA'),
+      EM_ANALISE: candidaturas.filter((c: CandidaturaWithRelations) => c.estado === 'EM_ANALISE'),
+      APROVADA: candidaturas.filter((c: CandidaturaWithRelations) => c.estado === 'APROVADA'),
+      REJEITADA: candidaturas.filter((c: CandidaturaWithRelations) => c.estado === 'REJEITADA')
     }
 
     return NextResponse.json({

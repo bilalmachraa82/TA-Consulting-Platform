@@ -1,5 +1,4 @@
-
-import { PrismaClient, Portal } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
@@ -8,6 +7,8 @@ import * as dotenv from 'dotenv';
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
 
 const prisma = new PrismaClient();
+
+type Portal = 'PORTUGAL2030' | 'PAPAC' | 'PRR';
 
 // Função para mapear portal
 function mapPortal(fonte: string): Portal {

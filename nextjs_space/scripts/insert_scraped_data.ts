@@ -1,7 +1,9 @@
-import { PrismaClient, Portal } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
+
+type Portal = 'PORTUGAL2030' | 'PAPAC' | 'PRR';
 
 // Carregar variáveis de ambiente
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
