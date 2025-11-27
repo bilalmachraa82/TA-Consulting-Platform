@@ -175,8 +175,6 @@ export async function GET(request: Request) {
       { error: 'Erro ao gerar recomendações' },
       { status: 500 }
     );
-  } finally {
-    await prisma.$disconnect();
   }
 }
 
@@ -281,7 +279,5 @@ Responde em português de forma concisa e prática.`
       { error: 'Erro ao gerar análise' },
       { status: 500 }
     );
-  } finally {
-    await prisma.$disconnect();
   }
 }

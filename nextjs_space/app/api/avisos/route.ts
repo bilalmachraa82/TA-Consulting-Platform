@@ -105,3 +105,158 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
   }
 }
+
+// Criar novo aviso
+export async function POST(request: NextRequest) {
+  try {
+    const session = await getServerSession(authOptions)
+
+    if (!session) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    const data = await request.json()
+
+    // Validações obrigatórias
+    if (!data.nome || !data.portal || !data.codigo || !data.dataInicioSubmissao || !data.dataFimSubmissao) {
+      return NextResponse.json({
+        error: 'Campos obrigatórios: nome, portal, codigo, dataInicioSubmissao, dataFimSubmissao'
+      }, { status: 400 })
+    }
+
+    // Verificar se código já existe
+    const avisoExistente = await prisma.aviso.findFirst({
+      where: { codigo: data.codigo }
+    })
+
+    if (avisoExistente) {
+      return NextResponse.json({ error: 'Já existe um aviso com este código' }, { status: 409 })
+    }
+
+    const novoAviso = await prisma.aviso.create({
+      data: {
+        nome: data.nome,
+        portal: data.portal,
+        programa: data.programa || '',
+        linha: data.linha || null,
+        codigo: data.codigo,
+        dataInicioSubmissao: new Date(data.dataInicioSubmissao),
+        dataFimSubmissao: new Date(data.dataFimSubmissao),
+        montanteMinimo: data.montanteMinimo ? parseFloat(data.montanteMinimo) : null,
+        montanteMaximo: data.montanteMaximo ? parseFloat(data.montanteMaximo) : null,
+        descrição: data.descricao || null,
+        link: data.link || null,
+        taxa: data.taxa || null,
+        regiao: data.regiao || null,
+        setoresElegiveis: data.setoresElegiveis || [],
+        dimensaoEmpresa: data.dimensaoEmpresa || [],
+        urgente: data.urgente || false,
+        ativo: true
+      }
+    })
+
+    return NextResponse.json(novoAviso, { status: 201 })
+
+  } catch (error) {
+    console.error('Erro ao criar aviso:', error)
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
+  }
+}
+
+// Atualizar aviso existente
+export async function PUT(request: NextRequest) {
+  try {
+    const session = await getServerSession(authOptions)
+
+    if (!session) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    const data = await request.json()
+
+    if (!data.id) {
+      return NextResponse.json({ error: 'ID do aviso é obrigatório' }, { status: 400 })
+    }
+
+    // Verificar se aviso existe
+    const avisoExistente = await prisma.aviso.findUnique({
+      where: { id: data.id }
+    })
+
+    if (!avisoExistente) {
+      return NextResponse.json({ error: 'Aviso não encontrado' }, { status: 404 })
+    }
+
+    const avisoAtualizado = await prisma.aviso.update({
+      where: { id: data.id },
+      data: {
+        nome: data.nome ?? avisoExistente.nome,
+        portal: data.portal ?? avisoExistente.portal,
+        programa: data.programa ?? avisoExistente.programa,
+        linha: data.linha !== undefined ? data.linha : avisoExistente.linha,
+        codigo: data.codigo ?? avisoExistente.codigo,
+        dataInicioSubmissao: data.dataInicioSubmissao ? new Date(data.dataInicioSubmissao) : avisoExistente.dataInicioSubmissao,
+        dataFimSubmissao: data.dataFimSubmissao ? new Date(data.dataFimSubmissao) : avisoExistente.dataFimSubmissao,
+        montanteMinimo: data.montanteMinimo !== undefined ? parseFloat(data.montanteMinimo) : avisoExistente.montanteMinimo,
+        montanteMaximo: data.montanteMaximo !== undefined ? parseFloat(data.montanteMaximo) : avisoExistente.montanteMaximo,
+        descrição: data.descricao !== undefined ? data.descricao : avisoExistente.descrição,
+        link: data.link !== undefined ? data.link : avisoExistente.link,
+        taxa: data.taxa !== undefined ? data.taxa : avisoExistente.taxa,
+        regiao: data.regiao !== undefined ? data.regiao : avisoExistente.regiao,
+        setoresElegiveis: data.setoresElegiveis ?? avisoExistente.setoresElegiveis,
+        dimensaoEmpresa: data.dimensaoEmpresa ?? avisoExistente.dimensaoEmpresa,
+        urgente: data.urgente ?? avisoExistente.urgente,
+        ativo: data.ativo ?? avisoExistente.ativo
+      }
+    })
+
+    return NextResponse.json(avisoAtualizado)
+
+  } catch (error) {
+    console.error('Erro ao atualizar aviso:', error)
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
+  }
+}
+
+// Eliminar aviso (soft delete)
+export async function DELETE(request: NextRequest) {
+  try {
+    const session = await getServerSession(authOptions)
+
+    if (!session) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    const { searchParams } = new URL(request.url)
+    const id = searchParams.get('id')
+
+    if (!id) {
+      return NextResponse.json({ error: 'ID do aviso é obrigatório' }, { status: 400 })
+    }
+
+    // Verificar se aviso existe
+    const avisoExistente = await prisma.aviso.findUnique({
+      where: { id },
+      include: { candidaturas: { select: { id: true } } }
+    })
+
+    if (!avisoExistente) {
+      return NextResponse.json({ error: 'Aviso não encontrado' }, { status: 404 })
+    }
+
+    // Soft delete - marcar como inativo
+    await prisma.aviso.update({
+      where: { id },
+      data: { ativo: false }
+    })
+
+    return NextResponse.json({
+      message: 'Aviso desativado com sucesso',
+      candidaturasAfetadas: avisoExistente.candidaturas.length
+    })
+
+  } catch (error) {
+    console.error('Erro ao eliminar aviso:', error)
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
+  }
+}

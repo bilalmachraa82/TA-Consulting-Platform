@@ -207,7 +207,5 @@ export async function GET(request: Request) {
       { error: 'Erro ao gerar alertas' },
       { status: 500 }
     );
-  } finally {
-    await prisma.$disconnect();
   }
 }
