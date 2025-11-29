@@ -99,25 +99,29 @@ export async function GET(request: NextRequest) {
     ])
 
     // Calcular KPIs principais
+    type AvisoType = typeof avisos[number];
+    type CandidaturaType = typeof candidaturas[number];
+    type WorkflowLogType = typeof workflows[number];
+
     const kpis = {
       totalAvisos: avisos.length,
-      avisosUrgentes: avisos.filter(aviso => {
+      avisosUrgentes: avisos.filter((aviso: AvisoType) => {
         const diasRestantes = Math.ceil((aviso.dataFimSubmissao.getTime() - new Date().getTime()) / (1000 * 3600 * 24))
         return diasRestantes <= 7 && diasRestantes > 0
       }).length,
       totalCandidaturas: candidaturas.length,
-      candidaturasAprovadas: candidaturas.filter(c => c.estado === 'APROVADA').length,
-      taxaAprovacao: candidaturas.length > 0 
-        ? Math.round((candidaturas.filter(c => c.estado === 'APROVADA').length / candidaturas.length) * 100)
+      candidaturasAprovadas: candidaturas.filter((c: CandidaturaType) => c.estado === 'APROVADA').length,
+      taxaAprovacao: candidaturas.length > 0
+        ? Math.round((candidaturas.filter((c: CandidaturaType) => c.estado === 'APROVADA').length / candidaturas.length) * 100)
         : 0,
       montanteTotal: candidaturas
-        .filter(c => c.estado === 'APROVADA')
-        .reduce((sum, c) => sum + (c.montanteAprovado || 0), 0),
+        .filter((c: CandidaturaType) => c.estado === 'APROVADA')
+        .reduce((sum: number, c: CandidaturaType) => sum + (c.montanteAprovado || 0), 0),
       novasEmpresas: empresas.length,
       documentosAdicionados: documentos.length,
       execucoesWorkflow: workflows.length,
       sucessoWorkflows: workflows.length > 0
-        ? Math.round((workflows.filter(w => w.sucesso).length / workflows.length) * 100)
+        ? Math.round((workflows.filter((w: WorkflowLogType) => w.sucesso).length / workflows.length) * 100)
         : 0
     }
 
@@ -185,15 +189,17 @@ export async function GET(request: NextRequest) {
     })
 
     // Obter nomes das empresas
+    type TopEmpresaItem = { empresaId: string; _count: { empresaId: number } };
     const empresasInfo = await prisma.empresa.findMany({
       where: {
-        id: { in: topEmpresas.map(e => e.empresaId) }
+        id: { in: topEmpresas.map((e: TopEmpresaItem) => e.empresaId) }
       },
       select: { id: true, nome: true }
     })
 
-    const topEmpresasComNomes = topEmpresas.map(item => {
-      const empresa = empresasInfo.find(e => e.id === item.empresaId)
+    type EmpresaInfoItem = { id: string; nome: string };
+    const topEmpresasComNomes = topEmpresas.map((item: TopEmpresaItem) => {
+      const empresa = empresasInfo.find((e: EmpresaInfoItem) => e.id === item.empresaId)
       return {
         nome: empresa?.nome || 'Empresa não encontrada',
         candidaturas: item._count.empresaId
@@ -216,8 +222,9 @@ export async function GET(request: NextRequest) {
       }
     })
 
+    type MontanteItem = typeof montantesPorPrograma[number];
     const programas: { [key: string]: number } = {}
-    montantesPorPrograma.forEach(candidatura => {
+    montantesPorPrograma.forEach((candidatura: MontanteItem) => {
       const programa = candidatura.aviso.programa
       if (!programas[programa]) {
         programas[programa] = 0
@@ -228,7 +235,7 @@ export async function GET(request: NextRequest) {
     const roiPorPrograma = Object.entries(programas).map(([programa, montante]) => ({
       programa,
       montante,
-      candidaturas: montantesPorPrograma.filter(c => c.aviso.programa === programa).length
+      candidaturas: montantesPorPrograma.filter((c: MontanteItem) => c.aviso.programa === programa).length
     }))
 
     return NextResponse.json({
@@ -242,11 +249,11 @@ export async function GET(request: NextRequest) {
       kpis,
       graficos: {
         evolucaoAvisos,
-        distribuicaoPortal: distribuicaoPortal.map(item => ({
+        distribuicaoPortal: distribuicaoPortal.map((item: { portal: string; _count: { portal: number } }) => ({
           portal: item.portal,
           count: item._count.portal
         })),
-        candidaturasPorEstado: candidaturasPorEstado.map(item => ({
+        candidaturasPorEstado: candidaturasPorEstado.map((item: { estado: string; _count: { estado: number } }) => ({
           estado: item.estado,
           count: item._count.estado
         })),

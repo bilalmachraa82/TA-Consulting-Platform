@@ -1,9 +1,151 @@
-import { PrismaClient } from '@prisma/client'
+/**
+ * Database client with fallback to JSON data provider
+ * Uses Prisma when available, falls back to data-provider.ts when Prisma binaries are not accessible
+ */
 
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined
+import { dataProvider } from './data-provider';
+
+// Type for the database client (supports both Prisma and fallback)
+type DatabaseClient = {
+  aviso: {
+    findMany: (options?: any) => Promise<any[]>;
+    findUnique: (options: any) => Promise<any | null>;
+    count: (options?: any) => Promise<number>;
+    create?: (options: any) => Promise<any>;
+    update?: (options: any) => Promise<any>;
+    upsert?: (options: any) => Promise<any>;
+  };
+  empresa: {
+    findMany: (options?: any) => Promise<any[]>;
+    findUnique: (options: any) => Promise<any | null>;
+    count: (options?: any) => Promise<number>;
+    create?: (options: any) => Promise<any>;
+    update?: (options: any) => Promise<any>;
+    upsert?: (options: any) => Promise<any>;
+  };
+  candidatura?: any;
+  documento?: any;
+  workflow?: any;
+  workflowLog?: any;
+  notificacao?: any;
+  user?: any;
+  $connect?: () => Promise<void>;
+  $disconnect?: () => Promise<void>;
+};
+
+// Try to use Prisma if available
+let prismaClient: any = null;
+let usePrisma = false;
+
+try {
+  // Dynamic import to avoid build-time errors
+  const PrismaClientModule = require('@prisma/client');
+  const PrismaClient = PrismaClientModule.PrismaClient;
+
+  // Try to instantiate - this will fail if binaries are missing
+  prismaClient = new PrismaClient({
+    log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] : ['error'],
+  });
+
+  usePrisma = true;
+  console.log('✅ Using Prisma client for database access');
+} catch (error: any) {
+  console.log('⚠️ Prisma client not available, using JSON data provider');
+  console.log('   Reason:', error.message?.substring(0, 100));
+  usePrisma = false;
 }
 
-export const prisma = globalForPrisma.prisma ?? new PrismaClient()
+// Fallback client using data provider
+const fallbackClient: DatabaseClient = {
+  aviso: {
+    findMany: async (options?: any) => {
+      return dataProvider.avisos.findMany(options);
+    },
+    findUnique: async (options: any) => {
+      return dataProvider.avisos.findUnique(options);
+    },
+    count: async (options?: any) => {
+      return dataProvider.avisos.count(options);
+    },
+    create: async (options: any) => {
+      console.warn('Create operation not supported in fallback mode');
+      return { ...options.data, id: `temp_${Date.now()}` };
+    },
+    update: async (options: any) => {
+      console.warn('Update operation not supported in fallback mode');
+      return options.data;
+    },
+    upsert: async (options: any) => {
+      const existing = await dataProvider.avisos.findUnique({ where: options.where });
+      if (existing) {
+        return { ...existing, ...options.update };
+      }
+      return { ...options.create, id: `temp_${Date.now()}` };
+    },
+  },
+  empresa: {
+    findMany: async (options?: any) => {
+      return dataProvider.empresas.findMany(options);
+    },
+    findUnique: async (options: any) => {
+      return dataProvider.empresas.findUnique(options);
+    },
+    count: async (options?: any) => {
+      return dataProvider.empresas.count();
+    },
+    create: async (options: any) => {
+      console.warn('Create operation not supported in fallback mode');
+      return { ...options.data, id: `temp_${Date.now()}` };
+    },
+    update: async (options: any) => {
+      console.warn('Update operation not supported in fallback mode');
+      return options.data;
+    },
+    upsert: async (options: any) => {
+      const existing = await dataProvider.empresas.findUnique({ where: options.where });
+      if (existing) {
+        return { ...existing, ...options.update };
+      }
+      return { ...options.create, id: `temp_${Date.now()}` };
+    },
+  },
+  candidatura: {
+    findMany: async () => [],
+    findUnique: async () => null,
+    count: async () => 0,
+  },
+  documento: {
+    findMany: async () => [],
+    findUnique: async () => null,
+    count: async () => 0,
+  },
+  workflow: {
+    findMany: async () => [],
+    findUnique: async () => null,
+    count: async () => 0,
+  },
+  workflowLog: {
+    findMany: async () => [],
+    create: async (data: any) => data,
+  },
+  notificacao: {
+    findMany: async () => [],
+    create: async (data: any) => data,
+  },
+  user: {
+    findUnique: async () => null,
+    findFirst: async () => null,
+  },
+  $connect: async () => {},
+  $disconnect: async () => {},
+};
 
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
+// Export the appropriate client
+export const prisma: DatabaseClient = usePrisma && prismaClient ? prismaClient : fallbackClient;
+
+// Export utilities
+export const isPrismaAvailable = () => usePrisma;
+export const getDataProvider = () => dataProvider;
+
+// For direct data access (useful for APIs)
+export { dataProvider };

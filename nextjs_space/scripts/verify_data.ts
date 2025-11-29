@@ -19,7 +19,7 @@ async function verifyData() {
     });
 
     console.log('📊 AVISOS POR PORTAL:');
-    avisosByPortal.forEach((item) => {
+    avisosByPortal.forEach((item: { portal: string; _count: { id: number } }) => {
       console.log(`  ${item.portal}: ${item._count.id} avisos`);
     });
 
@@ -47,7 +47,7 @@ async function verifyData() {
 
     if (avisosUrgentes.length > 0) {
       console.log(`\n🚨 AVISOS URGENTES (${avisosUrgentes.length}):`);
-      avisosUrgentes.forEach((aviso) => {
+      avisosUrgentes.forEach((aviso: { nome: string; portal: string; dataFimSubmissao: Date }) => {
         const deadline = new Date(aviso.dataFimSubmissao).toLocaleDateString('pt-PT');
         console.log(`  • ${aviso.nome} [${aviso.portal}] - Deadline: ${deadline}`);
       });
@@ -66,7 +66,7 @@ async function verifyData() {
     });
 
     console.log(`\n📋 ÚLTIMOS 5 AVISOS INSERIDOS:`);
-    latestAvisos.forEach((aviso, index) => {
+    latestAvisos.forEach((aviso: { nome: string; portal: string; programa: string; codigo: string }, index: number) => {
       console.log(`  ${index + 1}. [${aviso.portal}] ${aviso.nome}`);
       console.log(`     Código: ${aviso.codigo} | Programa: ${aviso.programa}`);
     });

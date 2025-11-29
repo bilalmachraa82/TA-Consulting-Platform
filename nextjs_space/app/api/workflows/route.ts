@@ -25,10 +25,13 @@ export async function GET(request: NextRequest) {
     })
 
     // Enriquecer workflows com estatísticas
-    const workflowsEnriquecidos = workflows.map(workflow => {
+    type WorkflowWithLogs = typeof workflows[number];
+    type LogItem = { sucesso: boolean; dataExecucao: Date };
+
+    const workflowsEnriquecidos = workflows.map((workflow: WorkflowWithLogs) => {
       const logsRecentes = workflow.logs.slice(0, 5)
       const totalExecucoes = workflow.logs.length
-      const execucoesSucesso = workflow.logs.filter(log => log.sucesso).length
+      const execucoesSucesso = workflow.logs.filter((log: LogItem) => log.sucesso).length
       const taxaSucesso = totalExecucoes > 0 ? Math.round((execucoesSucesso / totalExecucoes) * 100) : 0
 
       return {
@@ -37,7 +40,7 @@ export async function GET(request: NextRequest) {
           totalExecucoes,
           execucoesSucesso,
           taxaSucesso,
-          ultimaExecucaoSucesso: workflow.logs.find(log => log.sucesso)?.dataExecucao || null
+          ultimaExecucaoSucesso: workflow.logs.find((log: LogItem) => log.sucesso)?.dataExecucao || null
         },
         logsRecentes
       }

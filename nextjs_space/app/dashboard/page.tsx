@@ -46,20 +46,24 @@ export default async function DashboardPage() {
 
   // Calculate KPIs
   const now = new Date()
-  const avisos7Dias = avisos.filter(aviso => {
+  type AvisoType = typeof avisos[number];
+  type CandidaturaType = typeof candidaturas[number];
+  type DocumentoType = typeof documentos[number];
+
+  const avisos7Dias = avisos.filter((aviso: AvisoType) => {
     const diasRestantes = Math.ceil((aviso.dataFimSubmissao.getTime() - now.getTime()) / (1000 * 3600 * 24))
     return diasRestantes <= 7 && diasRestantes > 0
   }).length
 
-  const candidaturasEmCurso = candidaturas.filter(c => 
+  const candidaturasEmCurso = candidaturas.filter((c: CandidaturaType) =>
     ['A_PREPARAR', 'SUBMETIDA', 'EM_ANALISE'].includes(c.estado)
   ).length
 
-  const taxaSucesso = candidaturas.length > 0 
-    ? Math.round((candidaturas.filter(c => c.estado === 'APROVADA').length / candidaturas.length) * 100)
+  const taxaSucesso = candidaturas.length > 0
+    ? Math.round((candidaturas.filter((c: CandidaturaType) => c.estado === 'APROVADA').length / candidaturas.length) * 100)
     : 0
 
-  const documentosExpirados = documentos.filter(doc => 
+  const documentosExpirados = documentos.filter((doc: DocumentoType) =>
     doc.statusValidade === 'EXPIRADO' || doc.statusValidade === 'A_EXPIRAR'
   ).length
 

@@ -49,8 +49,9 @@ export async function GET(request: NextRequest) {
 
     // Atualizar status de validade baseado na data
     const now = new Date()
+    type DocWithEmpresa = typeof documentos[number];
     const documentosAtualizados = await Promise.all(
-      documentos.map(async (doc) => {
+      documentos.map(async (doc: DocWithEmpresa) => {
         if (!doc.dataValidade) return doc
 
         const diasParaExpirar = Math.ceil((doc.dataValidade.getTime() - now.getTime()) / (1000 * 3600 * 24))
