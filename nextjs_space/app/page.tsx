@@ -52,7 +52,7 @@ export default function HomePage() {
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
               Plataforma inteligente para monitorização automática de avisos, pré-preenchimento de candidaturas 
-              e gestão completa dos seus clientes nos portais Portugal 2030, PAPAC e PRR.
+              e gestão completa dos seus clientes nos portais Portugal 2030, PEPAC e PRR.
             </p>
           </div>
 

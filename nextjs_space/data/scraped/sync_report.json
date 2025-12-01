@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-12-01T00:38:22.556Z",
+  "duration": "4.0s",
+  "results": {
+    "portugal2030": 5,
+    "pepac": 6,
+    "prr": 8,
+    "total": 19
+  },
+  "ragInitialized": true,
+  "testSearch": {
+    "query": "inovação digital PME",
+    "resultsCount": 3
+  }
+}

@@ -46,7 +46,7 @@ const slides = [
     id: 5,
     title: 'Workflow 1: Scraping Automático',
     subtitle: 'Monitorização 24/7 dos Portais',
-    content: 'Portugal 2030 • PAPAC • PRR → Execução a cada 6 horas → Deteção automática de novos avisos → Extração de dados estruturados → Alertas para avisos urgentes (<8 dias)',
+    content: 'Portugal 2030 • PEPAC • PRR → Execução a cada 6 horas → Deteção automática de novos avisos → Extração de dados estruturados → Alertas para avisos urgentes (<8 dias)',
     image: 'https://cdn.abacus.ai/images/bcd8cb6f-4cdb-4410-80ec-a147a18a0e93.jpg',
     type: 'workflow' as const
   },
@@ -111,7 +111,7 @@ const slides = [
     id: 13,
     title: 'Casos Práticos',
     subtitle: 'Exemplos Reais de Sucesso',
-    content: 'TechInovação Lda: €35.000 aprovados em Digitalização PME → EcoSustentável SA: €120.000 em Eficiência Energética → AgroInova: Candidatura PAPAC em preparação',
+    content: 'TechInovação Lda: €35.000 aprovados em Digitalização PME → EcoSustentável SA: €120.000 em Eficiência Energética → AgroInova: Candidatura PEPAC em preparação',
     image: 'https://cdn.abacus.ai/images/193f9e19-7368-4b0a-a03c-cae6ac075489.png',
     type: 'content' as const
   },

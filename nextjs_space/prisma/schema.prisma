@@ -90,7 +90,7 @@ model Aviso {
 
 enum Portal {
   PORTUGAL2030
-  PAPAC  
+  PEPAC  
   PRR
 }
 
@@ -209,7 +209,7 @@ model Workflow {
 
 enum TipoWorkflow {
   SCRAPING_PORTUGAL2030
-  SCRAPING_PAPAC
+  SCRAPING_PEPAC
   SCRAPING_PRR
   NOTIFICACAO_EMAIL
   VALIDACAO_DOCUMENTOS

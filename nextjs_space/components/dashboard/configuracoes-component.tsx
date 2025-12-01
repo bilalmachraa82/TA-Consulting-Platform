@@ -102,7 +102,7 @@ export function ConfiguracoesComponent() {
     },
     scraping: {
       portugal2030: true,
-      papac: true,
+      pepac: true,
       prr: true,
       intervaloHoras: 6,
       timeoutSegundos: 30,
@@ -387,12 +387,12 @@ export function ConfiguracoesComponent() {
 
           <div className="flex items-center justify-between">
             <div>
-              <Label>PAPAC</Label>
-              <p className="text-sm text-gray-500">Monitor portal PAPAC</p>
+              <Label>PEPAC</Label>
+              <p className="text-sm text-gray-500">Monitor portal PEPAC</p>
             </div>
             <Switch
-              checked={configuracoes.scraping.papac}
-              onCheckedChange={(checked) => atualizarConfiguracao('scraping', 'papac', checked)}
+              checked={configuracoes.scraping.pepac}
+              onCheckedChange={(checked) => atualizarConfiguracao('scraping', 'pepac', checked)}
             />
           </div>
 

@@ -8,14 +8,14 @@ dotenv.config({ path: path.join(__dirname, '..', '.env') });
 
 const prisma = new PrismaClient();
 
-type Portal = 'PORTUGAL2030' | 'PAPAC' | 'PRR';
+type Portal = 'PORTUGAL2030' | 'PEPAC' | 'PRR';
 
 // Função para mapear portal
 function mapPortal(fonte: string): Portal {
   if (fonte.includes('Portugal 2030') || fonte === 'Portugal 2030') {
     return 'PORTUGAL2030';
-  } else if (fonte === 'PAPAC') {
-    return 'PAPAC';
+  } else if (fonte === 'PEPAC') {
+    return 'PEPAC';
   } else if (fonte === 'PRR') {
     return 'PRR';
   }
@@ -55,8 +55,8 @@ async function insertRealData() {
     const portugal2030Data = JSON.parse(
       fs.readFileSync(path.join(dataDir, 'portugal2030_avisos.json'), 'utf-8')
     );
-    const papacData = JSON.parse(
-      fs.readFileSync(path.join(dataDir, 'papac_avisos.json'), 'utf-8')
+    const pepacData = JSON.parse(
+      fs.readFileSync(path.join(dataDir, 'pepac_avisos.json'), 'utf-8')
     );
     const prrData = JSON.parse(
       fs.readFileSync(path.join(dataDir, 'prr_avisos.json'), 'utf-8')
@@ -64,7 +64,7 @@ async function insertRealData() {
 
     const allData = [
       ...portugal2030Data.map((item: any) => ({ ...item, source: 'Portugal 2030' })),
-      ...papacData.map((item: any) => ({ ...item, source: 'PAPAC' })),
+      ...pepacData.map((item: any) => ({ ...item, source: 'PEPAC' })),
       ...prrData.map((item: any) => ({ ...item, source: 'PRR' }))
     ];
 
