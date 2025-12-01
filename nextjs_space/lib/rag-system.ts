@@ -50,7 +50,7 @@ let isInitialized = false;
  */
 export async function loadAllAvisos(): Promise<AvisoEmbedding[]> {
   const dataDir = path.join(process.cwd(), 'data', 'scraped');
-  const files = ['portugal2030_avisos.json', 'papac_avisos.json', 'prr_avisos.json'];
+  const files = ['portugal2030_avisos.json', 'pepac_avisos.json', 'prr_avisos.json'];
   const avisos: AvisoEmbedding[] = [];
 
   for (const file of files) {

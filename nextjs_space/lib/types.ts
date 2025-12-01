@@ -1,7 +1,7 @@
 // ========== Prisma Enums ==========
 export enum Portal {
   PORTUGAL2030 = 'PORTUGAL2030',
-  PAPAC = 'PAPAC',
+  PEPAC = 'PEPAC',
   PRR = 'PRR'
 }
 
@@ -40,7 +40,7 @@ export enum StatusValidade {
 
 export enum TipoWorkflow {
   SCRAPING_PORTUGAL2030 = 'SCRAPING_PORTUGAL2030',
-  SCRAPING_PAPAC = 'SCRAPING_PAPAC',
+  SCRAPING_PEPAC = 'SCRAPING_PEPAC',
   SCRAPING_PRR = 'SCRAPING_PRR',
   NOTIFICACAO_EMAIL = 'NOTIFICACAO_EMAIL',
   VALIDACAO_DOCUMENTOS = 'VALIDACAO_DOCUMENTOS',

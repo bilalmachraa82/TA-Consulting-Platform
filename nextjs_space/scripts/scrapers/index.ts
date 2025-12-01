@@ -7,7 +7,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import axios from 'axios';
 import scrapePortugal2030 from './portugal2030-scraper';
-import scrapePAPAC from './papac-scraper';
+import scrapePEPAC from './pepac-scraper';
 import scrapePRR from './prr-scraper';
 
 const DATA_DIR = path.join(process.cwd(), 'data', 'scraped');
@@ -87,7 +87,7 @@ async function processAvisosPDFs(avisos: any[]): Promise<any[]> {
 // Função principal de scraping
 export async function runAllScrapers(): Promise<{
   portugal2030: any[];
-  papac: any[];
+  pepac: any[];
   prr: any[];
   total: number;
 }> {
@@ -98,7 +98,7 @@ export async function runAllScrapers(): Promise<{
 
   const results = {
     portugal2030: [] as any[],
-    papac: [] as any[],
+    pepac: [] as any[],
     prr: [] as any[],
     total: 0,
   };
@@ -111,12 +111,12 @@ export async function runAllScrapers(): Promise<{
     results.portugal2030 = await processAvisosPDFs(results.portugal2030);
     saveToJSON(results.portugal2030, 'portugal2030_avisos.json');
 
-    // 2. PAPAC
-    console.log('\n🌾 [2/3] PAPAC/PDR');
+    // 2. PEPAC
+    console.log('\n🌾 [2/3] PEPAC/PDR');
     console.log('-'.repeat(40));
-    results.papac = await scrapePAPAC();
-    results.papac = await processAvisosPDFs(results.papac);
-    saveToJSON(results.papac, 'papac_avisos.json');
+    results.pepac = await scrapePEPAC();
+    results.pepac = await processAvisosPDFs(results.pepac);
+    saveToJSON(results.pepac, 'pepac_avisos.json');
 
     // 3. PRR
     console.log('\n🔄 [3/3] PRR');
@@ -126,7 +126,7 @@ export async function runAllScrapers(): Promise<{
     saveToJSON(results.prr, 'prr_avisos.json');
 
     // Combinar todos os avisos
-    const allAvisos = [...results.portugal2030, ...results.papac, ...results.prr];
+    const allAvisos = [...results.portugal2030, ...results.pepac, ...results.prr];
     results.total = allAvisos.length;
 
     // Salvar arquivo consolidado
@@ -137,7 +137,7 @@ export async function runAllScrapers(): Promise<{
       lastUpdate: new Date().toISOString(),
       sources: {
         portugal2030: results.portugal2030.length,
-        papac: results.papac.length,
+        pepac: results.pepac.length,
         prr: results.prr.length,
       },
       total: results.total,
@@ -148,7 +148,7 @@ export async function runAllScrapers(): Promise<{
     console.log('\n' + '='.repeat(50));
     console.log('✅ SCRAPING COMPLETO!');
     console.log(`   📊 Portugal 2030: ${results.portugal2030.length} avisos`);
-    console.log(`   🌾 PAPAC: ${results.papac.length} avisos`);
+    console.log(`   🌾 PEPAC: ${results.pepac.length} avisos`);
     console.log(`   🔄 PRR: ${results.prr.length} avisos`);
     console.log(`   📄 Total: ${results.total} avisos`);
     console.log(`   📥 PDFs: ${allAvisos.filter(a => a.pdf_local).length} ficheiros`);

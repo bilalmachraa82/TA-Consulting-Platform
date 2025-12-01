@@ -3,7 +3,7 @@
  * Script Principal de Sincronização
  *
  * Executa:
- * 1. Scraping de todos os portais (Portugal 2030, PAPAC, PRR)
+ * 1. Scraping de todos os portais (Portugal 2030, PEPAC, PRR)
  * 2. Download de PDFs
  * 3. Sincronização com a base de dados
  * 4. Inicialização do sistema RAG
@@ -93,7 +93,7 @@ async function main() {
 ║     ✅ SINCRONIZAÇÃO COMPLETA!                               ║
 ║                                                              ║
 ║     📊 Portugal 2030: ${String(scrapingResults.portugal2030.length).padStart(3)} avisos                        ║
-║     🌾 PAPAC:         ${String(scrapingResults.papac.length).padStart(3)} avisos                        ║
+║     🌾 PEPAC:         ${String(scrapingResults.pepac.length).padStart(3)} avisos                        ║
 ║     🔄 PRR:           ${String(scrapingResults.prr.length).padStart(3)} avisos                        ║
 ║     ─────────────────────────────────                        ║
 ║     📋 TOTAL:         ${String(scrapingResults.total).padStart(3)} avisos                        ║
@@ -109,7 +109,7 @@ async function main() {
       duration: `${duration}s`,
       results: {
         portugal2030: scrapingResults.portugal2030.length,
-        papac: scrapingResults.papac.length,
+        pepac: scrapingResults.pepac.length,
         prr: scrapingResults.prr.length,
         total: scrapingResults.total,
       },

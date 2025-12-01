@@ -6,7 +6,7 @@ import * as path from 'path';
 // Enums definidos localmente (compatíveis com Prisma)
 const Portal = {
   PORTUGAL2030: 'PORTUGAL2030',
-  PAPAC: 'PAPAC',
+  PEPAC: 'PEPAC',
   PRR: 'PRR'
 } as const;
 
@@ -45,7 +45,7 @@ const StatusValidade = {
 
 const TipoWorkflow = {
   SCRAPING_PORTUGAL2030: 'SCRAPING_PORTUGAL2030',
-  SCRAPING_PAPAC: 'SCRAPING_PAPAC',
+  SCRAPING_PEPAC: 'SCRAPING_PEPAC',
   SCRAPING_PRR: 'SCRAPING_PRR',
   NOTIFICACAO_EMAIL: 'NOTIFICACAO_EMAIL',
   VALIDACAO_DOCUMENTOS: 'VALIDACAO_DOCUMENTOS',
@@ -85,11 +85,11 @@ interface AvisoJSON {
 }
 
 // Função para carregar dados reais dos JSON files
-function loadRealData(): { portugal2030: AvisoJSON[], papac: AvisoJSON[], prr: AvisoJSON[] } {
+function loadRealData(): { portugal2030: AvisoJSON[], pepac: AvisoJSON[], prr: AvisoJSON[] } {
   const dataDir = path.join(__dirname, '..', 'data', 'scraped');
 
   let portugal2030: AvisoJSON[] = [];
-  let papac: AvisoJSON[] = [];
+  let pepac: AvisoJSON[] = [];
   let prr: AvisoJSON[] = [];
 
   try {
@@ -104,14 +104,14 @@ function loadRealData(): { portugal2030: AvisoJSON[], papac: AvisoJSON[], prr: A
   }
 
   try {
-    const papacPath = path.join(dataDir, 'papac_avisos.json');
-    if (fs.existsSync(papacPath)) {
-      const content = fs.readFileSync(papacPath, 'utf-8');
-      papac = JSON.parse(content);
-      console.log(`📁 Loaded ${papac.length} avisos from papac_avisos.json`);
+    const pepacPath = path.join(dataDir, 'pepac_avisos.json');
+    if (fs.existsSync(pepacPath)) {
+      const content = fs.readFileSync(pepacPath, 'utf-8');
+      pepac = JSON.parse(content);
+      console.log(`📁 Loaded ${pepac.length} avisos from pepac_avisos.json`);
     }
   } catch (error) {
-    console.warn('⚠️ Could not load papac_avisos.json:', error);
+    console.warn('⚠️ Could not load pepac_avisos.json:', error);
   }
 
   try {
@@ -125,7 +125,7 @@ function loadRealData(): { portugal2030: AvisoJSON[], papac: AvisoJSON[], prr: A
     console.warn('⚠️ Could not load prr_avisos.json:', error);
   }
 
-  return { portugal2030, papac, prr };
+  return { portugal2030, pepac, prr };
 }
 
 // Função para ajustar datas para serem relevantes (não expiradas)
@@ -146,8 +146,8 @@ function mapPortal(fonte: string): string {
   if (fonte.toLowerCase().includes('portugal 2030') || fonte.toLowerCase() === 'portugal2030') {
     return Portal.PORTUGAL2030;
   }
-  if (fonte.toLowerCase().includes('papac') || fonte.toLowerCase().includes('pac')) {
-    return Portal.PAPAC;
+  if (fonte.toLowerCase().includes('pepac') || fonte.toLowerCase().includes('pac')) {
+    return Portal.PEPAC;
   }
   if (fonte.toLowerCase().includes('prr') || fonte.toLowerCase().includes('recuperar')) {
     return Portal.PRR;
@@ -357,7 +357,7 @@ async function main() {
   // Convert JSON avisos to database format
   const allJsonAvisos = [
     ...realData.portugal2030,
-    ...realData.papac,
+    ...realData.pepac,
     ...realData.prr
   ];
 
@@ -472,7 +472,7 @@ async function main() {
   }
 
   // AgroInova -> Agricultura (if exists)
-  const avisoAgri = createdAvisos.find(a => a.codigo === 'PAPAC_001');
+  const avisoAgri = createdAvisos.find(a => a.codigo === 'PEPAC_001');
   if (avisoAgri) {
     const cand3 = await prisma.candidatura.create({
       data: {
@@ -681,14 +681,14 @@ async function main() {
     }),
     prisma.workflow.create({
       data: {
-        nome: 'Scraping Portal PAPAC',
-        tipo: TipoWorkflow.SCRAPING_PAPAC,
+        nome: 'Scraping Portal PEPAC',
+        tipo: TipoWorkflow.SCRAPING_PEPAC,
         ativo: true,
         frequencia: '0 */8 * * *',
         ultimaExecucao: new Date(now.getTime() - 6 * 60 * 60 * 1000),
         proximaExecucao: new Date(now.getTime() + 2 * 60 * 60 * 1000),
         parametros: {
-          portals: ['https://www.dgadr.gov.pt/papac'],
+          portals: ['https://www.dgadr.gov.pt/pepac'],
           filters: ['Agricultura', 'Rural'],
         },
       },
@@ -775,7 +775,7 @@ async function main() {
         workflowId: workflows[1].id,
         dataExecucao: new Date(now.getTime() - 6 * 60 * 60 * 1000),
         sucesso: true,
-        mensagem: 'Scraping PAPAC concluído. 4 avisos encontrados.',
+        mensagem: 'Scraping PEPAC concluído. 4 avisos encontrados.',
         dados: { avisosNovos: 1, avisosAtualizados: 4, erros: 0 },
       },
     }),
@@ -903,7 +903,7 @@ async function main() {
   console.log(`   🏢 Companies: ${empresas.length}`);
   console.log(`   📋 Funding Opportunities: ${createdAvisos.length}`);
   console.log(`      - Portugal 2030: ${realData.portugal2030.length}`);
-  console.log(`      - PAPAC: ${realData.papac.length}`);
+  console.log(`      - PEPAC: ${realData.pepac.length}`);
   console.log(`      - PRR: ${realData.prr.length}`);
   console.log(`   📝 Applications: ${candidaturas.length}`);
   console.log(`   📄 Documents: ${documentos.length}`);

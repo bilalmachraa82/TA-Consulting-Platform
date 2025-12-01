@@ -168,10 +168,10 @@
     "scraped_at": "2025-12-01T00:38:20.837Z"
   },
   {
-    "id": "PAPAC_INVESTIMENTO_EXPLORACAO_2024",
+    "id": "PEPAC_INVESTIMENTO_EXPLORACAO_2024",
     "titulo": "Investimento na Exploração Agrícola - Aviso N.º 1/2024",
     "descricao": "Apoio ao investimento em explorações agrícolas para modernização de equipamentos, construção de infraestruturas produtivas e implementação de práticas agrícolas sustentáveis.",
-    "fonte": "PAPAC",
+    "fonte": "PEPAC",
     "programa": "PEPAC 2023-2027",
     "linha": "Investimento Agrícola",
     "data_abertura": "2024-10-01",
@@ -203,10 +203,10 @@
     "scraped_at": "2025-12-01T00:38:22.153Z"
   },
   {
-    "id": "PAPAC_JOVENS_AGRICULTORES_2024",
+    "id": "PEPAC_JOVENS_AGRICULTORES_2024",
     "titulo": "Jovens Agricultores - Primeira Instalação",
     "descricao": "Prémio para apoio à instalação de jovens agricultores, incluindo prémio à instalação e apoio ao investimento em explorações agrícolas viáveis.",
-    "fonte": "PAPAC",
+    "fonte": "PEPAC",
     "programa": "PEPAC 2023-2027",
     "linha": "Jovens Agricultores",
     "data_abertura": "2024-09-15",
@@ -238,10 +238,10 @@
     "scraped_at": "2025-12-01T00:38:22.153Z"
   },
   {
-    "id": "PAPAC_REGADIO_2024",
+    "id": "PEPAC_REGADIO_2024",
     "titulo": "Infraestruturas Coletivas de Regadio",
     "descricao": "Apoio ao investimento em infraestruturas coletivas de regadio, incluindo sistemas de distribuição, reservatórios e equipamentos de gestão da água.",
-    "fonte": "PAPAC",
+    "fonte": "PEPAC",
     "programa": "PEPAC 2023-2027",
     "linha": "Regadio",
     "data_abertura": "2024-08-01",
@@ -272,10 +272,10 @@
     "scraped_at": "2025-12-01T00:38:22.153Z"
   },
   {
-    "id": "PAPAC_FLORESTA_2024",
+    "id": "PEPAC_FLORESTA_2024",
     "titulo": "Prevenção e Restauro de Florestas",
     "descricao": "Apoio à prevenção de riscos naturais e restauro de áreas florestais afetadas por incêndios, incluindo limpeza de matos e plantação de espécies autóctones.",
-    "fonte": "PAPAC",
+    "fonte": "PEPAC",
     "programa": "PEPAC 2023-2027",
     "linha": "Floresta",
     "data_abertura": "2024-11-01",
@@ -305,10 +305,10 @@
     "scraped_at": "2025-12-01T00:38:22.153Z"
   },
   {
-    "id": "PAPAC_BIO_2024",
+    "id": "PEPAC_BIO_2024",
     "titulo": "Apoio à Agricultura Biológica",
     "descricao": "Pagamento anual por hectare para agricultores que adotem ou mantenham práticas de agricultura biológica certificada.",
-    "fonte": "PAPAC",
+    "fonte": "PEPAC",
     "programa": "PEPAC 2023-2027",
     "linha": "Agricultura Biológica",
     "data_abertura": "2024-06-01",
@@ -338,10 +338,10 @@
     "scraped_at": "2025-12-01T00:38:22.153Z"
   },
   {
-    "id": "PAPAC_TRANSFORMACAO_2024",
+    "id": "PEPAC_TRANSFORMACAO_2024",
     "titulo": "Investimento na Transformação e Comercialização de Produtos Agrícolas",
     "descricao": "Apoio ao investimento em unidades de transformação e comercialização de produtos agrícolas, incluindo equipamentos, instalações e certificações de qualidade.",
-    "fonte": "PAPAC",
+    "fonte": "PEPAC",
     "programa": "PEPAC 2023-2027",
     "linha": "Agroindústria",
     "data_abertura": "2024-10-15",

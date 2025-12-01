@@ -129,7 +129,7 @@ export function CalendarioComponent() {
     const colors = {
       PORTUGAL2030: 'bg-blue-100 text-blue-800',
       PRR: 'bg-green-100 text-green-800',
-      PAPAC: 'bg-purple-100 text-purple-800'
+      PEPAC: 'bg-purple-100 text-purple-800'
     }
     
     return (
@@ -360,7 +360,7 @@ export function CalendarioComponent() {
                   <SelectItem value="TODOS">Todos os Portais</SelectItem>
                   <SelectItem value="PORTUGAL2030">Portugal 2030</SelectItem>
                   <SelectItem value="PRR">PRR</SelectItem>
-                  <SelectItem value="PAPAC">PAPAC</SelectItem>
+                  <SelectItem value="PEPAC">PEPAC</SelectItem>
                 </SelectContent>
               </Select>
             </div>

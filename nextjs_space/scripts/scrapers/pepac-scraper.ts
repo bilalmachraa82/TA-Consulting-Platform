@@ -1,14 +1,14 @@
 /**
- * PAPAC / PDR 2020-2027 - Real Scraper
+ * PEPAC / PDR 2020-2027 - Real Scraper
  * Fonte: https://www.pdr.pt/ e https://www.dgadr.gov.pt/
  *
- * Este scraper extrai avisos reais do PAPAC e PDR (agricultura)
+ * Este scraper extrai avisos reais do PEPAC e PDR (agricultura)
  */
 
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 
-export interface AvisoPAPAC {
+export interface AvisoPEPAC {
   id: string;
   titulo: string;
   descricao: string;
@@ -39,11 +39,11 @@ const headers = {
   'Accept-Language': 'pt-PT,pt;q=0.9',
 };
 
-export async function scrapePAPAC(): Promise<AvisoPAPAC[]> {
-  console.log('🌾 Iniciando scraping de PAPAC/PDR...');
-  const avisos: AvisoPAPAC[] = [];
+export async function scrapePEPAC(): Promise<AvisoPEPAC[]> {
+  console.log('🌾 Iniciando scraping de PEPAC/PDR...');
+  const avisos: AvisoPEPAC[] = [];
 
-  // URLs oficiais do PAPAC e PDR
+  // URLs oficiais do PEPAC e PDR
   const urls = [
     'https://www.pdr.pt/avisos',
     'https://www.dgadr.gov.pt/descricao-do-plano-estrategico',
@@ -63,27 +63,27 @@ export async function scrapePAPAC(): Promise<AvisoPAPAC[]> {
 
         if (titulo && titulo.length > 15) {
           avisos.push({
-            id: `PAPAC_REAL_${Date.now()}_${i}`,
+            id: `PEPAC_REAL_${Date.now()}_${i}`,
             titulo,
             descricao: $el.find('p, .descricao, td:nth-child(2)').first().text().trim() || 'Ver detalhes',
-            fonte: 'PAPAC',
+            fonte: 'PEPAC',
             programa: 'PDR 2020-2027',
-            linha: extractLinhaPAPAC(titulo),
+            linha: extractLinhaPEPAC(titulo),
             data_abertura: extractDataFromText($el.text(), 'inicio') || new Date().toISOString().split('T')[0],
             data_fecho: extractDataFromText($el.text(), 'fim') || getFutureDate(90),
             montante_total: '0',
             montante_min: '5000',
             montante_max: '500000',
-            taxa_apoio: extractTaxaPAPAC($el.text()),
+            taxa_apoio: extractTaxaPEPAC($el.text()),
             regiao: 'Nacional',
             setor: 'Agricultura',
             url: link.startsWith('http') ? link : `https://www.pdr.pt${link}`,
             pdf_url: $el.find('a[href*=".pdf"]').attr('href'),
             status: 'Aberto',
-            tipo_beneficiario: extractBeneficiarioPAPAC(titulo),
+            tipo_beneficiario: extractBeneficiarioPEPAC(titulo),
             elegibilidade: 'Ver regulamento do aviso',
             documentos_necessarios: ['Formulário IFAP', 'Certidão Permanente', 'IRS/IRC'],
-            keywords: extractKeywordsPAPAC(titulo),
+            keywords: extractKeywordsPEPAC(titulo),
             scraped_at: new Date().toISOString(),
           });
         }
@@ -97,22 +97,22 @@ export async function scrapePAPAC(): Promise<AvisoPAPAC[]> {
 
   // Fallback com dados reais conhecidos
   if (avisos.length === 0) {
-    console.log('📋 Usando dados de fallback para PAPAC...');
-    return getFallbackPAPAC();
+    console.log('📋 Usando dados de fallback para PEPAC...');
+    return getFallbackPEPAC();
   }
 
-  console.log(`✅ Scraped ${avisos.length} avisos de PAPAC`);
+  console.log(`✅ Scraped ${avisos.length} avisos de PEPAC`);
   return avisos;
 }
 
-function getFallbackPAPAC(): AvisoPAPAC[] {
+function getFallbackPEPAC(): AvisoPEPAC[] {
   const now = new Date();
   return [
     {
-      id: 'PAPAC_INVESTIMENTO_EXPLORACAO_2024',
+      id: 'PEPAC_INVESTIMENTO_EXPLORACAO_2024',
       titulo: 'Investimento na Exploração Agrícola - Aviso N.º 1/2024',
       descricao: 'Apoio ao investimento em explorações agrícolas para modernização de equipamentos, construção de infraestruturas produtivas e implementação de práticas agrícolas sustentáveis.',
-      fonte: 'PAPAC',
+      fonte: 'PEPAC',
       programa: 'PEPAC 2023-2027',
       linha: 'Investimento Agrícola',
       data_abertura: '2024-10-01',
@@ -133,10 +133,10 @@ function getFallbackPAPAC(): AvisoPAPAC[] {
       scraped_at: now.toISOString(),
     },
     {
-      id: 'PAPAC_JOVENS_AGRICULTORES_2024',
+      id: 'PEPAC_JOVENS_AGRICULTORES_2024',
       titulo: 'Jovens Agricultores - Primeira Instalação',
       descricao: 'Prémio para apoio à instalação de jovens agricultores, incluindo prémio à instalação e apoio ao investimento em explorações agrícolas viáveis.',
-      fonte: 'PAPAC',
+      fonte: 'PEPAC',
       programa: 'PEPAC 2023-2027',
       linha: 'Jovens Agricultores',
       data_abertura: '2024-09-15',
@@ -157,10 +157,10 @@ function getFallbackPAPAC(): AvisoPAPAC[] {
       scraped_at: now.toISOString(),
     },
     {
-      id: 'PAPAC_REGADIO_2024',
+      id: 'PEPAC_REGADIO_2024',
       titulo: 'Infraestruturas Coletivas de Regadio',
       descricao: 'Apoio ao investimento em infraestruturas coletivas de regadio, incluindo sistemas de distribuição, reservatórios e equipamentos de gestão da água.',
-      fonte: 'PAPAC',
+      fonte: 'PEPAC',
       programa: 'PEPAC 2023-2027',
       linha: 'Regadio',
       data_abertura: '2024-08-01',
@@ -180,10 +180,10 @@ function getFallbackPAPAC(): AvisoPAPAC[] {
       scraped_at: now.toISOString(),
     },
     {
-      id: 'PAPAC_FLORESTA_2024',
+      id: 'PEPAC_FLORESTA_2024',
       titulo: 'Prevenção e Restauro de Florestas',
       descricao: 'Apoio à prevenção de riscos naturais e restauro de áreas florestais afetadas por incêndios, incluindo limpeza de matos e plantação de espécies autóctones.',
-      fonte: 'PAPAC',
+      fonte: 'PEPAC',
       programa: 'PEPAC 2023-2027',
       linha: 'Floresta',
       data_abertura: '2024-11-01',
@@ -203,10 +203,10 @@ function getFallbackPAPAC(): AvisoPAPAC[] {
       scraped_at: now.toISOString(),
     },
     {
-      id: 'PAPAC_BIO_2024',
+      id: 'PEPAC_BIO_2024',
       titulo: 'Apoio à Agricultura Biológica',
       descricao: 'Pagamento anual por hectare para agricultores que adotem ou mantenham práticas de agricultura biológica certificada.',
-      fonte: 'PAPAC',
+      fonte: 'PEPAC',
       programa: 'PEPAC 2023-2027',
       linha: 'Agricultura Biológica',
       data_abertura: '2024-06-01',
@@ -226,10 +226,10 @@ function getFallbackPAPAC(): AvisoPAPAC[] {
       scraped_at: now.toISOString(),
     },
     {
-      id: 'PAPAC_TRANSFORMACAO_2024',
+      id: 'PEPAC_TRANSFORMACAO_2024',
       titulo: 'Investimento na Transformação e Comercialização de Produtos Agrícolas',
       descricao: 'Apoio ao investimento em unidades de transformação e comercialização de produtos agrícolas, incluindo equipamentos, instalações e certificações de qualidade.',
-      fonte: 'PAPAC',
+      fonte: 'PEPAC',
       programa: 'PEPAC 2023-2027',
       linha: 'Agroindústria',
       data_abertura: '2024-10-15',
@@ -252,7 +252,7 @@ function getFallbackPAPAC(): AvisoPAPAC[] {
 }
 
 // Funções auxiliares
-function extractLinhaPAPAC(titulo: string): string {
+function extractLinhaPEPAC(titulo: string): string {
   const t = titulo.toLowerCase();
   if (t.includes('jovem') || t.includes('instalação')) return 'Jovens Agricultores';
   if (t.includes('regadio') || t.includes('água')) return 'Regadio';
@@ -263,12 +263,12 @@ function extractLinhaPAPAC(titulo: string): string {
   return 'Investimento Agrícola';
 }
 
-function extractTaxaPAPAC(text: string): string {
+function extractTaxaPEPAC(text: string): string {
   const match = text.match(/(\d{2,3})%/);
   return match ? match[1] : '50';
 }
 
-function extractBeneficiarioPAPAC(titulo: string): string {
+function extractBeneficiarioPEPAC(titulo: string): string {
   const t = titulo.toLowerCase();
   if (t.includes('jovem')) return 'Jovens agricultores (18-40 anos)';
   if (t.includes('coletiv')) return 'Organizações de produtores';
@@ -276,7 +276,7 @@ function extractBeneficiarioPAPAC(titulo: string): string {
   return 'Agricultores';
 }
 
-function extractKeywordsPAPAC(titulo: string): string[] {
+function extractKeywordsPEPAC(titulo: string): string[] {
   const keywords: string[] = ['agricultura'];
   const t = titulo.toLowerCase();
 
@@ -303,4 +303,4 @@ function getFutureDate(days: number): string {
   return date.toISOString().split('T')[0];
 }
 
-export default scrapePAPAC;
+export default scrapePEPAC;

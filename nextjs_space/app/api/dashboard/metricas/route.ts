@@ -23,7 +23,7 @@ export async function GET(request: NextRequest) {
     // Group by portal
     const avisosPorPortal = [
       { portal: 'PORTUGAL2030', total: avisos.filter(a => a.portal === 'PORTUGAL2030').length },
-      { portal: 'PAPAC', total: avisos.filter(a => a.portal === 'PAPAC').length },
+      { portal: 'PEPAC', total: avisos.filter(a => a.portal === 'PEPAC').length },
       { portal: 'PRR', total: avisos.filter(a => a.portal === 'PRR').length },
     ];
 

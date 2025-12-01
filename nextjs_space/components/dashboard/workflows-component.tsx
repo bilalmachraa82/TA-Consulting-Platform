@@ -74,8 +74,8 @@ const TIPOS_WORKFLOW = {
     icone: '🔍',
     cor: 'bg-blue-100 text-blue-800'
   },
-  SCRAPING_PAPAC: {
-    nome: 'Scraping PAPAC',
+  SCRAPING_PEPAC: {
+    nome: 'Scraping PEPAC',
     icone: '🌾',
     cor: 'bg-green-100 text-green-800'
   },

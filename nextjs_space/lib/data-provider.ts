@@ -11,7 +11,7 @@ import * as path from 'path';
 export interface Aviso {
   id: string;
   nome: string;
-  portal: 'PORTUGAL2030' | 'PAPAC' | 'PRR';
+  portal: 'PORTUGAL2030' | 'PEPAC' | 'PRR';
   programa: string;
   linha?: string;
   codigo: string;
@@ -80,12 +80,12 @@ interface AvisoJSON {
 let avisosCache: Aviso[] | null = null;
 let empresasCache: Empresa[] | null = null;
 
-function mapPortal(fonte: string): 'PORTUGAL2030' | 'PAPAC' | 'PRR' {
+function mapPortal(fonte: string): 'PORTUGAL2030' | 'PEPAC' | 'PRR' {
   if (fonte.toLowerCase().includes('portugal 2030') || fonte.toLowerCase() === 'portugal2030') {
     return 'PORTUGAL2030';
   }
-  if (fonte.toLowerCase().includes('papac') || fonte.toLowerCase().includes('pac')) {
-    return 'PAPAC';
+  if (fonte.toLowerCase().includes('pepac') || fonte.toLowerCase().includes('pac')) {
+    return 'PEPAC';
   }
   if (fonte.toLowerCase().includes('prr') || fonte.toLowerCase().includes('recuperar')) {
     return 'PRR';
@@ -111,7 +111,7 @@ function loadAvisosFromJSON(): Aviso[] {
 
   const files = [
     { file: 'portugal2030_avisos.json', offset: 30 },
-    { file: 'papac_avisos.json', offset: 45 },
+    { file: 'pepac_avisos.json', offset: 45 },
     { file: 'prr_avisos.json', offset: 60 },
   ];
 
@@ -471,7 +471,7 @@ export const dataProvider = {
       const avisosUrgentes = avisos.filter(a => a.urgente).length;
       const avisosPorPortal = {
         PORTUGAL2030: avisos.filter(a => a.portal === 'PORTUGAL2030').length,
-        PAPAC: avisos.filter(a => a.portal === 'PAPAC').length,
+        PEPAC: avisos.filter(a => a.portal === 'PEPAC').length,
         PRR: avisos.filter(a => a.portal === 'PRR').length,
       };
 

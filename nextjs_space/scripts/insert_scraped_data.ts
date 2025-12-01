@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
 
-type Portal = 'PORTUGAL2030' | 'PAPAC' | 'PRR';
+type Portal = 'PORTUGAL2030' | 'PEPAC' | 'PRR';
 
 // Carregar variáveis de ambiente
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
@@ -16,8 +16,8 @@ async function insertAvisos() {
   try {
     // Ler arquivos JSON
     const dataDir = path.join(__dirname, '..', 'data', 'scraped');
-    const papacData = JSON.parse(
-      fs.readFileSync(path.join(dataDir, 'papac_avisos.json'), 'utf-8')
+    const pepacData = JSON.parse(
+      fs.readFileSync(path.join(dataDir, 'pepac_avisos.json'), 'utf-8')
     );
     const prrData = JSON.parse(
       fs.readFileSync(path.join(dataDir, 'prr_avisos.json'), 'utf-8')
@@ -81,7 +81,7 @@ async function insertAvisos() {
       },
     ];
 
-    const allAvisos = [...portugal2030Data, ...papacData, ...prrData];
+    const allAvisos = [...portugal2030Data, ...pepacData, ...prrData];
 
     let inserted = 0;
     let updated = 0;

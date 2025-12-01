@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic"
 
 export const metadata = {
   title: 'TA Consulting - Automação de Fundos Europeus',
-  description: 'Plataforma completa de automação para gestão de avisos, candidaturas e clientes de fundos europeus (Portugal 2030, PAPAC, PRR)',
+  description: 'Plataforma completa de automação para gestão de avisos, candidaturas e clientes de fundos europeus (Portugal 2030, PEPAC, PRR)',
   metadataBase: new URL(process.env.NEXTAUTH_URL || 'http://localhost:3000'),
   icons: {
     icon: '/favicon.svg',
