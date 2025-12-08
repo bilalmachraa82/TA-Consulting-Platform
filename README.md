@@ -1,249 +1,176 @@
+# 🚀 TA Consulting Platform - Ultra-Avançada DeepAgent
 
-# 🚀 TA Consulting Platform
+Plataforma completa para automação de workflows de incentivos financeiros e fundos europeus para empresas portuguesas.
 
-**Plataforma Ultra-Avançada para Automação de Workflows de Incentivos Financeiros e Fundos Europeus**
+## 📋 Features
 
----
+### 🤖 Automação Inteligente
+- **3 Agentes Automatizados de Scraping:**
+  - 🇵🇹 **Portugal 2030** - Scraping automático de avisos com menos de 8 dias até deadline
+  - 📋 **PAPAC** - Extração de concursos públicos e avisos
+  - 🏗️ **PRR (Plano de Recuperação e Resiliência)** - Avisos abertos publicados recentemente
 
-## 📋 Descrição
+### 📊 Dashboard Completo
+- **Avisos:** Visualização e gestão de todos os avisos dos 3 portais
+- **Candidaturas:** Acompanhamento de candidaturas por empresa
+- **Empresas:** Gestão completa de empresas clientes (NIPC, CAE, setor, dimensão)
+- **Calendário:** Visualização de deadlines e datas importantes
+- **Documentos:** Gestão de documentos com validação automática
+- **Relatórios:** Estatísticas e análises detalhadas
+- **Workflows:** Monitorização dos agentes automatizados
 
-A **TA Consulting Platform** é uma solução completa e automatizada desenvolvida para empresas de consultoria que trabalham com incentivos financeiros e fundos europeus direcionados a empresas portuguesas. A plataforma automatiza o processo de monitorização, scraping e gestão de avisos de financiamento dos principais portais portugueses.
+### 🔐 Segurança & Autenticação
+- Sistema de autenticação com NextAuth.js
+- Gestão de utilizadores (admin/user)
+- Sessões seguras
 
-### 🎯 Principais Funcionalidades
+### 📧 Notificações
+- Email automático após cada execução de scraping
+- Relatórios semanais enviados via Gmail
+- Alertas de avisos urgentes
 
-- ✅ **Scraping Automatizado** de 3 portais principais:
-  - Portugal 2030
-  - PAPAC (Plano de Ação para o Pacto Ecológico Europeu)
-  - PRR (Plano de Recuperação e Resiliência)
+### 🗄️ Base de Dados
+- PostgreSQL com Prisma ORM
+- Schema completo para avisos, empresas, candidaturas, documentos
+- Sistema de prevenção de duplicados
 
-- ✅ **Dashboard Completo** com:
-  - Gestão de Avisos (com filtros avançados e alertas de urgência)
-  - Gestão de Empresas (NIPC, CAE, dimensão, região)
-  - Gestão de Candidaturas (timeline, estados, montantes)
-  - Gestão de Documentos (com controlo de validade)
-  - Calendário de Deadlines
-  - Relatórios e Estatísticas
-  - Monitor de Workflows Automatizados
+## 🛠️ Tech Stack
 
-- ✅ **Notificações Automáticas por Email** (Gmail/Outlook)
-- ✅ **Base de Dados PostgreSQL** com schema completo
-- ✅ **Autenticação Segura** com NextAuth.js
-- ✅ **Design Moderno e Responsivo** com Tailwind CSS e shadcn/ui
+- **Framework:** Next.js 14 (App Router)
+- **UI:** Tailwind CSS + shadcn/ui
+- **Autenticação:** NextAuth.js
+- **Base de Dados:** PostgreSQL + Prisma
+- **Email:** Gmail API
+- **Automação:** DeepAgent com scraping inteligente
+- **TypeScript:** Full type safety
 
----
+## 📅 Agendamento dos Agentes
 
-## 🏗️ Tecnologias Utilizadas
+- **Primeira Execução:** Sexta-feira, 6 de novembro de 2025 às 7:00 (horário de Lisboa)
+- **Execuções Recorrentes:** Todas as segundas-feiras às 9:00 (horário de Lisboa)
 
-### Frontend
-- **Next.js 14** (App Router)
-- **React 18**
-- **TypeScript**
-- **Tailwind CSS**
-- **shadcn/ui** (componentes)
-- **Recharts** (gráficos)
-- **React Query** (gestão de estado)
+## 🌐 Deploy
 
-### Backend
-- **Next.js API Routes**
-- **Prisma ORM**
-- **PostgreSQL**
-- **NextAuth.js** (autenticação)
+A plataforma está deployada e acessível em:
+**https://ta-consulting-platfo-tfdltj.abacusai.app**
 
-### Automação
-- **Agentes de Scraping** (execução semanal)
-- **Puppeteer/Playwright** (browser automation)
-- **Node-cron** (agendamento)
-
----
+**Credenciais de Teste:**
+- Email: `test@example.com`
+- Password: `password123`
 
 ## 📂 Estrutura do Projeto
 
 ```
 ta_consulting_platform/
-├── nextjs_space/
-│   ├── app/
-│   │   ├── api/              # API routes
-│   │   ├── auth/             # Login/Register
-│   │   ├── dashboard/        # Dashboard pages
-│   │   ├── apresentacao/     # Landing page
-│   │   └── ...
-│   ├── components/
-│   │   ├── dashboard/        # Dashboard components
-│   │   ├── ui/               # shadcn/ui components
-│   │   └── ...
-│   ├── lib/
-│   │   ├── auth.ts           # Auth configuration
-│   │   ├── db.ts             # Prisma client
-│   │   └── types.ts          # TypeScript types
-│   ├── prisma/
-│   │   └── schema.prisma     # Database schema
-│   └── ...
-├── scraping_data/            # Dados scraped (JSON)
-└── scraping_reports/         # Relatórios gerados (Markdown)
+├── nextjs_space/           # Aplicação Next.js
+│   ├── app/               # App Router
+│   │   ├── api/          # API Routes
+│   │   ├── auth/         # Autenticação
+│   │   └── dashboard/    # Dashboard pages
+│   ├── components/        # Componentes React
+│   │   ├── dashboard/    # Componentes do dashboard
+│   │   └── ui/           # Componentes UI (shadcn)
+│   ├── lib/              # Utilidades
+│   ├── prisma/           # Schema Prisma
+│   └── public/           # Assets públicos
+├── scraping_data/         # Dados extraídos pelos agentes
+└── scraping_reports/      # Relatórios gerados
 ```
 
----
-
-## 🚀 Getting Started
+## 🚀 Como Executar Localmente
 
 ### Pré-requisitos
-
-- Node.js 18+ 
-- PostgreSQL 14+
+- Node.js 18+
+- PostgreSQL
 - Yarn
 
 ### Instalação
 
-1. **Clone o repositório:**
-```bash
-git clone https://github.com/bilalmachraa82/TA-Consulting-Platform.git
-cd TA-Consulting-Platform
-```
-
-2. **Instale as dependências:**
 ```bash
 cd nextjs_space
 yarn install
 ```
 
-3. **Configure as variáveis de ambiente:**
+### Configuração
 
-Crie um ficheiro `.env` em `nextjs_space/`:
+Crie um arquivo `.env` com as seguintes variáveis:
 
 ```env
 # Database
-DATABASE_URL="postgresql://user:password@localhost:5432/ta_consulting"
+DATABASE_URL="postgresql://..."
 
 # NextAuth
-NEXTAUTH_SECRET="your-secret-key-here"
 NEXTAUTH_URL="http://localhost:3000"
+NEXTAUTH_SECRET="..."
 
 # Email (Gmail)
-EMAIL_USER="your-email@gmail.com"
-EMAIL_PASSWORD="your-app-password"
+GMAIL_USER="..."
+GMAIL_APP_PASSWORD="..."
 ```
 
-4. **Configure a base de dados:**
-```bash
-yarn prisma generate
-yarn prisma db push
-yarn prisma db seed
-```
+### Executar
 
-5. **Inicie o servidor de desenvolvimento:**
 ```bash
+# Desenvolvimento
 yarn dev
+
+# Produção
+yarn build
+yarn start
 ```
-
-A plataforma estará disponível em: **http://localhost:3000**
-
----
-
-## 👤 Credenciais de Teste
-
-**Admin:**
-- Email: `john@doe.com`
-- Password: `johndoe123`
-
-**Utilizador Normal:**
-- Email: `utilizador@taconsulting.pt`
-- Password: `123456`
-
----
-
-## 🤖 Agentes Automatizados
-
-A plataforma inclui **3 agentes de scraping** que executam automaticamente:
-
-### Agendamento:
-- **Primeira Execução:** Sexta-feira, 6 de Novembro de 2025 às 7:00
-- **Execuções Recorrentes:** Todas as Segundas-feiras às 9:00
-
-### Agentes:
-1. **Scraping Portugal 2030** - Extrai avisos com menos de 8 dias até deadline
-2. **Scraping PAPAC** - Extrai avisos com menos de 8 dias até deadline
-3. **Scraping PRR** - Extrai avisos publicados há menos de 8 dias
-
-### Outputs:
-- Dados em JSON (`/scraping_data/`)
-- Base de dados PostgreSQL (tabela `Aviso`)
-- Relatórios Markdown (`/scraping_reports/`)
-- Email com resumo para `bilal.machraa@gmail.com`
-
----
 
 ## 📊 Schema da Base de Dados
 
-### Principais Tabelas:
+### Principais Tabelas
 
-- **User** - Utilizadores (admin/user)
-- **Aviso** - Avisos de financiamento
-- **Empresa** - Empresas portuguesas (com NIPC, CAE, dimensão)
+- **Aviso** - Avisos de incentivos e fundos
+- **Empresa** - Empresas clientes
 - **Candidatura** - Candidaturas submetidas
-- **Documento** - Documentos das empresas (com validade)
-- **Workflow** - Workflows automatizados
+- **Documento** - Documentos das empresas
+- **Workflow** - Configuração dos agentes
 - **WorkflowLog** - Logs de execução
-- **Notificacao** - Notificações por email
+- **Notificacao** - Sistema de notificações
+
+## 🤖 Agentes Automatizados
+
+### AGENTE 1: Portugal 2030
+- **Portal:** https://portugal2030.pt/avisos/
+- **Filtro:** Avisos com menos de 8 dias até deadline
+- **Campos:** Nome, Programa, Código, Datas, Link, etc.
+
+### AGENTE 2: PAPAC
+- **Portal:** https://pepacc.pt/concursos/
+- **Filtro:** Concursos com menos de 8 dias até fim
+- **Campos:** Nome, Datas de início e fim, Link
+
+### AGENTE 3: PRR
+- **Portal:** https://recuperarportugal.gov.pt/candidaturas-prr/
+- **Filtro:** Avisos abertos publicados há menos de 8 dias
+- **Campos:** Linha, Sub Linha, Nome, Datas, Link
+
+## 📈 Relatórios
+
+Cada execução gera:
+- Arquivo JSON com dados extraídos (`scraping_data/`)
+- Relatório Markdown formatado (`scraping_reports/`)
+- Email com resumo enviado para `bilal.machraa@gmail.com`
+
+## 🔄 Workflow
+
+1. **Scraping:** Agentes extraem dados dos portais
+2. **Validação:** Verificação de duplicados
+3. **Base de Dados:** Inserção/atualização no PostgreSQL
+4. **Relatório:** Geração de relatório Markdown
+5. **Notificação:** Envio de email com resumo
+
+## 📝 Licença
+
+Propriedade de **TA Consulting**
+
+## 👥 Contato
+
+**Email:** bilal.machraa@gmail.com
 
 ---
 
-## 🌐 Deploy
-
-A plataforma está deployada e acessível em:
-
-**https://ta-consulting-platfo-tfdltj.abacusai.app**
-
----
-
-## 📝 Roadmap
-
-### Melhorias Futuras:
-- [ ] Agente IA integrado para assistência aos utilizadores
-- [ ] Google Analytics para tracking
-- [ ] Google SSO para autenticação
-- [ ] Exportação avançada (Excel, PDF)
-- [ ] Dashboard de estatísticas em tempo real
-- [ ] Notificações push (web notifications)
-- [ ] Sistema de templates para candidaturas
-- [ ] Integração com CRM
-- [ ] API REST pública
-
----
-
-## 🤝 Contribuir
-
-Contribuições são bem-vindas! Por favor:
-
-1. Fork o projeto
-2. Crie uma branch para a sua feature (`git checkout -b feature/MinhaFeature`)
-3. Commit as suas alterações (`git commit -m 'Adicionar MinhaFeature'`)
-4. Push para a branch (`git push origin feature/MinhaFeature`)
-5. Abra um Pull Request
-
----
-
-## 📧 Contacto
-
-**TA Consulting**
-- Email: bilal.machraa@gmail.com
-- Website: [ta-consulting-platfo-tfdltj.abacusai.app](https://ta-consulting-platfo-tfdltj.abacusai.app)
-
----
-
-## 📄 Licença
-
-Este projeto é propriedade de **TA Consulting**. Todos os direitos reservados.
-
----
-
-## 🙏 Agradecimentos
-
-- Next.js Team
-- Prisma Team
-- shadcn/ui
-- Vercel
-- Abacus.AI
-
----
-
-**Desenvolvido com ❤️ por TA Consulting**
+Desenvolvido com ❤️ por **DeepAgent**
