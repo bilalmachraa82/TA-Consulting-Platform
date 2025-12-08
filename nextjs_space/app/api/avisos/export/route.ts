@@ -3,13 +3,14 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/db'
+import { Aviso } from '@prisma/client'
 
 export const dynamic = "force-dynamic"
 
 export async function POST(request: NextRequest) {
   try {
     const session = await getServerSession(authOptions)
-    
+
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
@@ -26,25 +27,9 @@ export async function POST(request: NextRequest) {
     })
 
     const now = new Date()
-
-    interface AvisoExport {
-      nome: string;
-      portal: string;
-      programa: string;
-      codigo: string;
-      dataInicioSubmissao: Date;
-      dataFimSubmissao: Date;
-      montanteMinimo: number | null;
-      montanteMaximo: number | null;
-      taxa: string | null;
-      regiao: string | null;
-      setoresElegiveis: string[];
-      link: string | null;
-    }
-
-    const dadosExport = avisos.map((aviso: AvisoExport) => {
+    const dadosExport = avisos.map((aviso: Aviso) => {
       const diasRestantes = Math.ceil((aviso.dataFimSubmissao.getTime() - now.getTime()) / (1000 * 3600 * 24))
-      
+
       return {
         Nome: aviso.nome,
         Portal: aviso.portal,
@@ -74,11 +59,11 @@ export async function POST(request: NextRequest) {
       const headers = Object.keys(dadosExport[0] || {})
       const csvContent = [
         headers.join(','),
-        ...dadosExport.map((row: Record<string, string | number>) =>
+        ...dadosExport.map(row =>
           headers.map(header =>
-            typeof row[header] === 'string' && row[header].toString().includes(',')
-              ? `"${row[header]}"`
-              : row[header]
+            typeof row[header as keyof typeof row] === 'string' && (row[header as keyof typeof row] as string).includes(',')
+              ? `"${row[header as keyof typeof row]}"`
+              : row[header as keyof typeof row]
           ).join(',')
         )
       ].join('\n')
