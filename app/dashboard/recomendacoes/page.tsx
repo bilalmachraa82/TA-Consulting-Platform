@@ -41,7 +41,7 @@ export default function RecomendacoesPage() {
       if (!response.ok) throw new Error('Erro ao carregar empresas');
       const data = await response.json();
       setEmpresas(data);
-      
+
       if (data.length > 0) {
         setEmpresaSelecionada(data[0].id);
         carregarRecomendacoes(data[0].id);
@@ -83,7 +83,7 @@ export default function RecomendacoesPage() {
           avisoId
         })
       });
-      
+
       if (!response.ok) throw new Error('Erro ao gerar análise');
       const data = await response.json();
       setAnaliseDetalhada(data);
@@ -130,7 +130,7 @@ export default function RecomendacoesPage() {
             Avisos personalizados com base no perfil da empresa
           </p>
         </div>
-        
+
         <div className="w-[300px]">
           <Select value={empresaSelecionada} onValueChange={handleEmpresaChange}>
             <SelectTrigger>
@@ -163,7 +163,7 @@ export default function RecomendacoesPage() {
               </p>
             </CardContent>
           </Card>
-          
+
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium">Média Prioridade</CardTitle>
@@ -177,7 +177,7 @@ export default function RecomendacoesPage() {
               </p>
             </CardContent>
           </Card>
-          
+
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-medium">Total de Oportunidades</CardTitle>
@@ -214,7 +214,7 @@ export default function RecomendacoesPage() {
           {recomendacoes.map((recomendacao) => {
             const { aviso, score, razoes, alertas, prioridade } = recomendacao;
             const diasRestantes = Math.ceil((new Date(aviso.dataFimSubmissao).getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24));
-            
+
             return (
               <Card key={aviso.id} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
@@ -228,10 +228,10 @@ export default function RecomendacoesPage() {
                       </div>
                       <CardTitle className="text-xl mb-2">{aviso.nome}</CardTitle>
                       <CardDescription className="line-clamp-2">
-                        {aviso.descrição}
+                        {aviso.descricao}
                       </CardDescription>
                     </div>
-                    
+
                     <div className="flex flex-col items-end gap-2 ml-4">
                       <div className="flex items-center gap-2">
                         <Target className="h-4 w-4 text-muted-foreground" />
@@ -243,7 +243,7 @@ export default function RecomendacoesPage() {
                     </div>
                   </div>
                 </CardHeader>
-                
+
                 <CardContent className="space-y-4">
                   {/* Informações do Aviso */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
@@ -254,7 +254,7 @@ export default function RecomendacoesPage() {
                         <p className="font-medium">{diasRestantes} dias</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-2">
                       <Euro className="h-4 w-4 text-muted-foreground" />
                       <div>
@@ -262,7 +262,7 @@ export default function RecomendacoesPage() {
                         <p className="font-medium">{aviso.montanteMaximo ? `€${aviso.montanteMaximo.toLocaleString()}` : 'N/A'}</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-2">
                       <MapPin className="h-4 w-4 text-muted-foreground" />
                       <div>
@@ -270,7 +270,7 @@ export default function RecomendacoesPage() {
                         <p className="font-medium">{aviso.regiao || 'Nacional'}</p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-2">
                       <Building2 className="h-4 w-4 text-muted-foreground" />
                       <div>
@@ -317,7 +317,7 @@ export default function RecomendacoesPage() {
                   <div className="flex gap-2 pt-2">
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button 
+                        <Button
                           variant="default"
                           onClick={() => gerarAnaliseDetalhada(aviso.id)}
                         >
@@ -332,7 +332,7 @@ export default function RecomendacoesPage() {
                             Análise gerada por IA para {aviso.nome}
                           </DialogDescription>
                         </DialogHeader>
-                        
+
                         {loadingAnalise ? (
                           <div className="flex items-center justify-center py-12">
                             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
@@ -348,7 +348,7 @@ export default function RecomendacoesPage() {
                               </div>
                               <Progress value={analiseDetalhada.analise.score} className="h-2" />
                             </div>
-                            
+
                             {analiseDetalhada.recomendacoesIA && (
                               <div className="prose prose-sm max-w-none">
                                 <div className="whitespace-pre-wrap text-sm">
@@ -360,13 +360,13 @@ export default function RecomendacoesPage() {
                         )}
                       </DialogContent>
                     </Dialog>
-                    
+
                     <Button variant="outline" asChild>
                       <a href={aviso.link} target="_blank" rel="noopener noreferrer">
                         Ver Aviso Original
                       </a>
                     </Button>
-                    
+
                     <Button variant="outline">
                       Criar Candidatura
                     </Button>

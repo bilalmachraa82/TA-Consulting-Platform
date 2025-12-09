@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic';
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
-    
+
     const pesquisa = searchParams.get('pesquisa') || '';
     const portal = searchParams.get('portal') || '';
     const programa = searchParams.get('programa') || '';
@@ -24,14 +24,14 @@ export async function GET(request: NextRequest) {
       where.OR = [
         { nome: { contains: pesquisa, mode: 'insensitive' } },
         { codigo: { contains: pesquisa, mode: 'insensitive' } },
-        { descrição: { contains: pesquisa, mode: 'insensitive' } },
+        { descricao: { contains: pesquisa, mode: 'insensitive' } },
       ];
     }
 
     // Filtros específicos
     if (portal && portal !== 'todos') where.portal = portal;
     if (programa && programa !== 'todos') where.programa = { contains: programa, mode: 'insensitive' };
-    
+
     // Filtro de status
     if (status === 'Aberto') {
       where.ativo = true;

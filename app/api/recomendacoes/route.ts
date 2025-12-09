@@ -17,11 +17,11 @@ function calcularCompatibilidade(empresa: any, aviso: any): {
 
   // 1. Análise de setor (30 pontos)
   const setorEmpresa = empresa.setor?.toLowerCase() || '';
-  const descricaoAviso = aviso.descrição?.toLowerCase() || '';
+  const descricaoAviso = aviso.descricao?.toLowerCase() || '';
   const tituloAviso = aviso.nome?.toLowerCase() || '';
-  
+
   const setoresTexto = `${descricaoAviso} ${tituloAviso}`;
-  
+
   if (setorEmpresa && setoresTexto.includes(setorEmpresa)) {
     score += 30;
     razoes.push(`Setor ${empresa.setor} está alinhado com o aviso`);
@@ -48,7 +48,7 @@ function calcularCompatibilidade(empresa: any, aviso: any): {
 
   // 3. Análise de localização (15 pontos)
   const regiaoEmpresa = empresa.regiao?.toLowerCase() || '';
-  
+
   if (regiaoEmpresa && setoresTexto.includes(regiaoEmpresa)) {
     score += 15;
     razoes.push(`Localização em ${empresa.regiao} beneficia este programa`);
@@ -61,7 +61,7 @@ function calcularCompatibilidade(empresa: any, aviso: any): {
   const hoje = new Date();
   const dataLimite = new Date(aviso.dataFimSubmissao);
   const diasRestantes = Math.ceil((dataLimite.getTime() - hoje.getTime()) / (1000 * 60 * 60 * 24));
-  
+
   if (diasRestantes > 30) {
     score += 20;
     razoes.push(`Prazo confortável: ${diasRestantes} dias para submissão`);
@@ -80,7 +80,7 @@ function calcularCompatibilidade(empresa: any, aviso: any): {
 
   // 5. Análise de montante (15 pontos)
   const montanteMax = aviso.montanteMaximo || 0;
-  
+
   if (montanteMax > 500000) {
     score += 15;
     razoes.push(`Financiamento significativo disponível: até €${montanteMax.toLocaleString()}`);
@@ -234,7 +234,7 @@ EMPRESA:
 
 PROGRAMA:
 - Título: ${aviso.nome}
-- Descrição: ${aviso.descrição}
+- Descrição: ${aviso.descricao}
 - Montante máximo: ${aviso.montanteMaximo ? `€${aviso.montanteMaximo.toLocaleString()}` : 'N/A'}
 - Prazo: ${aviso.dataFimSubmissao}
 - Portal: ${aviso.portal}

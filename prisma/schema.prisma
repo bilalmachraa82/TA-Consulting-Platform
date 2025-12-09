@@ -74,7 +74,7 @@ model Aviso {
   dataFimSubmissao  DateTime
   montanteMinimo    Float?
   montanteMaximo    Float?
-  descrição         String?        @db.Text
+  descricao         String?        @map("descrição") @db.Text
   link              String?
   taxa              String?
   regiao            String?

@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
           id: true,
           nome: true,
           codigo: true,
-          descrição: true,
+          descricao: true,
           portal: true,
           programa: true,
           linha: true,

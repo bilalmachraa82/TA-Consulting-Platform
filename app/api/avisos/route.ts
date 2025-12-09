@@ -102,7 +102,7 @@ export async function POST(request: NextRequest) {
         dataFimSubmissao: new Date(data.dataFimSubmissao),
         montanteMinimo: data.montanteMinimo ? parseFloat(data.montanteMinimo) : null,
         montanteMaximo: data.montanteMaximo ? parseFloat(data.montanteMaximo) : null,
-        descrição: data.descricao || null,
+        descricao: data.descricao || null,
         link: data.link || null,
         taxa: data.taxa || null,
         regiao: data.regiao || null,
