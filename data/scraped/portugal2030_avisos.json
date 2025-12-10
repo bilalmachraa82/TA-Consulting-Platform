@@ -32,7 +32,8 @@
       "emprego",
       "internacionalização"
     ],
-    "scraped_at": "2025-12-01T00:38:20.837Z"
+    "scraped_at": "2025-12-10T21:29:08.041Z",
+    "pdf_local": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/data/pdfs/PT2030_SI_INOVACAO_2024.pdf"
   },
   {
     "id": "PT2030_QUALIFICACAO_2024",
@@ -65,7 +66,7 @@
       "certificação",
       "exportação"
     ],
-    "scraped_at": "2025-12-01T00:38:20.837Z"
+    "scraped_at": "2025-12-10T21:29:08.041Z"
   },
   {
     "id": "PT2030_DIGITAL_2024",
@@ -98,7 +99,7 @@
       "e-commerce",
       "cibersegurança"
     ],
-    "scraped_at": "2025-12-01T00:38:20.837Z"
+    "scraped_at": "2025-12-10T21:29:08.041Z"
   },
   {
     "id": "PT2030_I&D_2024",
@@ -132,7 +133,8 @@
       "tecnologia",
       "universidade"
     ],
-    "scraped_at": "2025-12-01T00:38:20.837Z"
+    "scraped_at": "2025-12-10T21:29:08.041Z",
+    "pdf_local": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/data/pdfs/PT2030_I&D_2024.pdf"
   },
   {
     "id": "PT2030_EFICIENCIA_ENERGETICA_2024",
@@ -165,6 +167,6 @@
       "solar",
       "descarbonização"
     ],
-    "scraped_at": "2025-12-01T00:38:20.837Z"
+    "scraped_at": "2025-12-10T21:29:08.041Z"
   }
 ]
