@@ -13,6 +13,10 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: { unoptimized: true },
+  webpack: (config) => {
+    config.resolve.alias['zod/v3'] = require.resolve('zod');
+    return config;
+  },
 };
 
 module.exports = nextConfig;

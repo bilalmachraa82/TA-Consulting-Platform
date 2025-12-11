@@ -1,12 +1,13 @@
-[
-  {
-    "lastUpdate": "2025-12-10T21:29:13.124Z",
-    "sources": {
-      "portugal2030": 5,
-      "pepac": 6,
-      "prr": 4
-    },
-    "total": 15,
-    "pdfsDownloaded": 2
-  }
-]
+{
+  "lastUpdate": "2025-12-10T23:46:38.553Z",
+  "sources": {
+    "portugal2030": 0,
+    "pepac": 0,
+    "prr": 0,
+    "europaCriativa": 0,
+    "horizonEurope": 0,
+    "ipdj": 0
+  },
+  "total": 0,
+  "success": true
+}

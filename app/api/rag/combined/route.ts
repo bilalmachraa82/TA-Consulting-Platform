@@ -1,147 +1,98 @@
-/**
- * Combined RAG API Endpoint
- * Combina pesquisa local (TF-IDF) com pesquisa web (Google)
- * para máxima cobertura de resultados
- */
-
 import { NextRequest, NextResponse } from 'next/server';
-import { searchAvisos, loadAllAvisos } from '@/lib/rag-system';
-import { searchAvisosWeb, WebSearchResult } from '@/lib/google-search-rag';
+import { searchLocalAvisos, loadLocalAvisos } from '@/lib/rag-local';
+import { searchAvisosWeb } from '@/lib/google-search-rag';
 
 export const dynamic = 'force-dynamic';
 
-interface CombinedResult {
+type CombinedResult = {
   id: string;
   titulo: string;
   descricao: string;
   fonte: string;
-  url: string | null;
   portal: string;
+  url?: string | null;
   score: number;
   source: 'local' | 'web';
-  dataFecho?: string;
-  montante?: string | number;
-  taxa?: string | number;
-}
+  dataFecho?: string | null;
+};
 
 // GET - Pesquisa combinada
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
     const query = searchParams.get('q') || searchParams.get('query') || '';
-    const includeWeb = searchParams.get('web') !== 'false'; // Por defeito inclui web
+    const includeWeb = searchParams.get('web') !== 'false';
     const limit = parseInt(searchParams.get('limit') || '20');
 
     if (!query) {
-      // Sem query, retornar todos os avisos locais
-      const allAvisos = await loadAllAvisos();
+      const allLocal = await loadLocalAvisos();
       return NextResponse.json({
         success: true,
         query: '',
-        results: allAvisos.map(a => ({
-          id: a.id,
-          titulo: a.titulo,
-          descricao: a.descricao,
-          fonte: a.metadata.fonte,
-          url: a.metadata.url,
-          portal: a.metadata.fonte,
+        results: allLocal.map(a => ({
+          ...a,
+          fonte: a.fonte || 'LOCAL',
+          portal: a.portal || 'LOCAL',
           score: 100,
           source: 'local' as const,
-          dataFecho: a.metadata.data_fecho,
-          montante: a.metadata.montante_max,
-          taxa: a.metadata.taxa_apoio,
         })),
-        total: allAvisos.length,
-        sources: { local: allAvisos.length, web: 0 },
+        total: allLocal.length,
+        sources: { local: allLocal.length, web: 0 },
       });
     }
 
-    const combinedResults: CombinedResult[] = [];
-    const seenUrls = new Set<string>();
+    const combined: CombinedResult[] = [];
+    const seen = new Set<string>();
 
-    // 1. Pesquisa local (RAG TF-IDF)
-    console.log(`🔍 Pesquisa local: "${query}"`);
-    const localResults = await searchAvisos(query, {}, Math.ceil(limit / 2));
-
+    // Local
+    const localResults = await searchLocalAvisos(query, Math.ceil(limit / 2));
     for (const r of localResults) {
-      const result: CombinedResult = {
-        id: r.aviso.id,
-        titulo: r.aviso.titulo,
-        descricao: r.aviso.descricao,
-        fonte: r.aviso.metadata.fonte || 'Local',
-        url: r.aviso.metadata.url || null,
-        portal: r.aviso.metadata.fonte || 'LOCAL',
-        score: Math.round(r.score * 100),
-        source: 'local',
-        dataFecho: r.aviso.metadata.data_fecho,
-        montante: r.aviso.metadata.montante_max,
-        taxa: r.aviso.metadata.taxa_apoio,
-      };
-
-      if (result.url) seenUrls.add(result.url);
-      combinedResults.push(result);
+      const key = r.url || r.id;
+      if (key) seen.add(key);
+      combined.push({ ...r, source: 'local' });
     }
 
-    // 2. Pesquisa web (Google Search)
-    let webResultsCount = 0;
+    // Web
+    let webCount = 0;
     if (includeWeb) {
-      console.log(`🌐 Pesquisa web: "${query}"`);
-      try {
-        const webResults = await searchAvisosWeb(query, { maxResults: Math.ceil(limit / 2) });
-
-        for (const r of webResults) {
-          // Evitar duplicados (mesmo URL)
-          if (r.url && seenUrls.has(r.url)) continue;
-
-          const result: CombinedResult = {
-            id: r.id,
-            titulo: r.titulo,
-            descricao: r.descricao,
-            fonte: r.fonte,
-            url: r.url,
-            portal: r.portal,
-            score: r.relevancia,
-            source: 'web',
-          };
-
-          if (r.url) seenUrls.add(r.url);
-          combinedResults.push(result);
-          webResultsCount++;
-        }
-      } catch (webError: any) {
-        console.error('Erro pesquisa web:', webError.message);
+      const webResults = await searchAvisosWeb(query, { maxResults: Math.ceil(limit / 2) });
+      for (const r of webResults) {
+        const key = r.url || r.id;
+        if (key && seen.has(key)) continue;
+        if (key) seen.add(key);
+        combined.push({
+          id: r.id,
+          titulo: r.titulo,
+          descricao: r.descricao,
+          fonte: r.fonte,
+          portal: r.portal,
+          url: r.url,
+          score: r.relevancia,
+          source: 'web',
+        });
+        webCount++;
       }
     }
 
-    // 3. Ordenar por score
-    combinedResults.sort((a, b) => b.score - a.score);
-
-    // 4. Limitar resultados
-    const finalResults = combinedResults.slice(0, limit);
+    combined.sort((a, b) => b.score - a.score);
+    const finalResults = combined.slice(0, limit);
 
     return NextResponse.json({
       success: true,
       query,
       results: finalResults,
       total: finalResults.length,
-      sources: {
-        local: localResults.length,
-        web: webResultsCount,
-      },
+      sources: { local: localResults.length, web: combined.filter(r => r.source === 'web').length },
       metadata: {
         timestamp: new Date().toISOString(),
         webSearchEnabled: includeWeb,
-        deduplicatedUrls: seenUrls.size,
+        deduplicatedUrls: seen.size,
       },
     });
   } catch (error: any) {
     console.error('Erro na pesquisa combinada:', error);
     return NextResponse.json(
-      {
-        success: false,
-        error: 'Erro ao pesquisar',
-        details: error.message,
-      },
+      { success: false, error: 'Erro ao pesquisar', details: error.message },
       { status: 500 }
     );
   }
@@ -166,7 +117,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Enriquecer query com contexto da empresa
     let enrichedQuery = query;
     if (empresa) {
       const extras = [];
@@ -178,59 +128,43 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const combinedResults: CombinedResult[] = [];
-    const seenUrls = new Set<string>();
+    const combined: CombinedResult[] = [];
+    const seen = new Set<string>();
 
-    // 1. Pesquisa local
-    const localResults = await searchAvisos(enrichedQuery, filters, Math.ceil(maxResults / 2));
+    const localResults = await searchLocalAvisos(enrichedQuery, Math.ceil(maxResults / 2), {
+      portal: filters.portal,
+    });
 
     for (const r of localResults) {
-      combinedResults.push({
-        id: r.aviso.id,
-        titulo: r.aviso.titulo,
-        descricao: r.aviso.descricao,
-        fonte: r.aviso.metadata.fonte || 'Local',
-        url: r.aviso.metadata.url || null,
-        portal: r.aviso.metadata.fonte || 'LOCAL',
-        score: Math.round(r.score * 100),
-        source: 'local',
-        dataFecho: r.aviso.metadata.data_fecho,
-        montante: r.aviso.metadata.montante_max,
-        taxa: r.aviso.metadata.taxa_apoio,
-      });
-      if (r.aviso.metadata.url) seenUrls.add(r.aviso.metadata.url);
+      const key = r.url || r.id;
+      if (key) seen.add(key);
+      combined.push({ ...r, source: 'local' });
     }
 
-    // 2. Pesquisa web
     let webCount = 0;
     if (includeWeb) {
-      try {
-        const webResults = await searchAvisosWeb(enrichedQuery, { maxResults: Math.ceil(maxResults / 2) });
-
-        for (const r of webResults) {
-          if (r.url && seenUrls.has(r.url)) continue;
-
-          combinedResults.push({
-            id: r.id,
-            titulo: r.titulo,
-            descricao: r.descricao,
-            fonte: r.fonte,
-            url: r.url,
-            portal: r.portal,
-            score: r.relevancia,
-            source: 'web',
-          });
-          webCount++;
-          if (r.url) seenUrls.add(r.url);
-        }
-      } catch (e: any) {
-        console.log('Web search skipped:', e.message);
+      const webResults = await searchAvisosWeb(enrichedQuery, { maxResults: Math.ceil(maxResults / 2) });
+      for (const r of webResults) {
+        const key = r.url || r.id;
+        if (key && seen.has(key)) continue;
+        if (filters.portal && r.portal !== filters.portal && filters.portal !== 'OUTRO') continue;
+        if (key) seen.add(key);
+        combined.push({
+          id: r.id,
+          titulo: r.titulo,
+          descricao: r.descricao,
+          fonte: r.fonte,
+          portal: r.portal,
+          url: r.url,
+          score: r.relevancia,
+          source: 'web',
+        });
+        webCount++;
       }
     }
 
-    // Ordenar e limitar
-    combinedResults.sort((a, b) => b.score - a.score);
-    const finalResults = combinedResults.slice(0, maxResults);
+    combined.sort((a, b) => b.score - a.score);
+    const finalResults = combined.slice(0, maxResults);
 
     return NextResponse.json({
       success: true,

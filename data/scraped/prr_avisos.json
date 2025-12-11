@@ -1,127 +1,42 @@
 [
   {
-    "id": "PRR_REAL_1765402153121_0",
-    "titulo": "PRR impulsiona primeira cirurgia robótica no Hospital de Faro e acelera modernização da ULS Algarve",
-    "descricao": "A Unidade Local de Saúde (ULS) do Algarve já realizou a primeira...",
+    "type": "aviso",
+    "id": "PRR_IAPMEI_transicao_digital_1765409806739",
+    "titulo": "Transição Digital",
+    "descricao": "Programa de incentivo PRR via IAPMEI",
     "fonte": "PRR",
-    "programa": "Plano de Recuperação e Resiliência",
-    "linha": "Investimento",
-    "componente": "PRR",
+    "programa": "PRR - IAPMEI",
+    "linha": "Incentivos Empresariais",
     "data_abertura": "2025-12-10",
-    "data_fecho": "2026-04-09",
+    "data_fecho": "2026-03-10",
     "montante_total": "0",
-    "montante_min": "50000",
-    "montante_max": "5000000",
-    "taxa_apoio": "70",
-    "regiao": "Nacional",
-    "setor": "Multisectorial",
-    "url": "https://recuperarportugal.gov.pt/2025/12/10/prr-impulsiona-primeira-cirurgia-robotica-no-hospital-de-faro-e-acelera-modernizacao-da-uls-algarve/",
+    "montante_min": "25000",
+    "montante_max": "1000000",
+    "taxa_apoio": "50",
+    "regiao": [
+      "Nacional"
+    ],
+    "setor": [
+      "Indústria",
+      "Serviços"
+    ],
+    "tipo_beneficiario": [
+      "PME"
+    ],
+    "url": "/PRODUTOS-E-SERVICOS/Industria-e-Sustentabilidade/Transformacao-digital.aspx",
+    "anexos": [],
     "status": "Aberto",
-    "tipo_beneficiario": "Empresas e Entidades Públicas",
-    "elegibilidade": "Ver regulamento",
+    "elegibilidade": "PME com projeto elegível",
     "documentos_necessarios": [
-      "Formulário",
-      "Projeto",
-      "Orçamentos"
+      "Formulário IAPMEI",
+      "Projeto"
     ],
     "keywords": [
-      "PRR",
-      "recuperação"
+      "prr",
+      "iapmei",
+      "pme",
+      "incentivo"
     ],
-    "scraped_at": "2025-12-10T21:29:13.122Z"
-  },
-  {
-    "id": "PRR_REAL_1765402153122_2",
-    "titulo": "Hospital de Alcobaça reforça capacidade de diagnóstico com novo Raio-X no Hospital de Alcobaça financiado pelo PRR",
-    "descricao": "A Unidade Local de Saúde da Região de Leiria (ULS RL) colocou...",
-    "fonte": "PRR",
-    "programa": "Plano de Recuperação e Resiliência",
-    "linha": "Investimento",
-    "componente": "PRR",
-    "data_abertura": "2025-12-10",
-    "data_fecho": "2026-04-09",
-    "montante_total": "0",
-    "montante_min": "50000",
-    "montante_max": "5000000",
-    "taxa_apoio": "70",
-    "regiao": "Nacional",
-    "setor": "Multisectorial",
-    "url": "https://recuperarportugal.gov.pt/2025/12/03/hospital-de-alcobaca-reforca-capacidade-de-diagnostico-com-novo-raio-x-no-hospital-de-alcobaca-financiado-pelo-prr/",
-    "status": "Aberto",
-    "tipo_beneficiario": "Empresas e Entidades Públicas",
-    "elegibilidade": "Ver regulamento",
-    "documentos_necessarios": [
-      "Formulário",
-      "Projeto",
-      "Orçamentos"
-    ],
-    "keywords": [
-      "PRR",
-      "recuperação"
-    ],
-    "scraped_at": "2025-12-10T21:29:13.122Z"
-  },
-  {
-    "id": "PRR_REAL_1765402153122_3",
-    "titulo": "PRR – Residência Estudantil de Valença",
-    "descricao": "Ver detalhes",
-    "fonte": "PRR",
-    "programa": "Plano de Recuperação e Resiliência",
-    "linha": "Investimento",
-    "componente": "PRR",
-    "data_abertura": "2025-12-10",
-    "data_fecho": "2026-04-09",
-    "montante_total": "0",
-    "montante_min": "50000",
-    "montante_max": "5000000",
-    "taxa_apoio": "70",
-    "regiao": "Nacional",
-    "setor": "Multisectorial",
-    "url": "https://recuperarportugal.gov.pt/2025/12/03/prr-residencia-estudantil-de-valenca/",
-    "status": "Aberto",
-    "tipo_beneficiario": "Empresas e Entidades Públicas",
-    "elegibilidade": "Ver regulamento",
-    "documentos_necessarios": [
-      "Formulário",
-      "Projeto",
-      "Orçamentos"
-    ],
-    "keywords": [
-      "PRR",
-      "recuperação"
-    ],
-    "scraped_at": "2025-12-10T21:29:13.122Z"
-  },
-  {
-    "id": "PRR_REAL_1765402153122_4",
-    "titulo": "BioShoes4All: inovação e sustentabilidade com apoio do PRR",
-    "descricao": "Ver detalhes",
-    "fonte": "PRR",
-    "programa": "Plano de Recuperação e Resiliência",
-    "linha": "Bioeconomia",
-    "componente": "C5 - Capitalização e Inovação",
-    "data_abertura": "2025-12-10",
-    "data_fecho": "2026-04-09",
-    "montante_total": "0",
-    "montante_min": "50000",
-    "montante_max": "5000000",
-    "taxa_apoio": "70",
-    "regiao": "Nacional",
-    "setor": "Multisectorial",
-    "url": "https://recuperarportugal.gov.pt/2025/11/26/bioshoes4all-inovacao-e-sustentabilidade-com-apoio-do-prr/",
-    "status": "Aberto",
-    "tipo_beneficiario": "Empresas e Entidades Públicas",
-    "elegibilidade": "Ver regulamento",
-    "documentos_necessarios": [
-      "Formulário",
-      "Projeto",
-      "Orçamentos"
-    ],
-    "keywords": [
-      "PRR",
-      "recuperação",
-      "inovação"
-    ],
-    "scraped_at": "2025-12-10T21:29:13.122Z"
+    "scraped_at": "2025-12-10T23:36:46.739Z"
   }
 ]

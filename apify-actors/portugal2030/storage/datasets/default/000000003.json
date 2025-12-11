@@ -1,0 +1,40 @@
+{
+	"type": "aviso",
+	"id": "PT2030_especializacao_inteligente_redes_e_capacitacao_ins_1765407582123",
+	"titulo": "Especialização inteligente, redes e capacitação institucional - Plataformas de Inovação e Colaboração",
+	"descricao": "Aviso Programa Regional do Algarve 2021-2027 - Ver documentos anexos",
+	"fonte": "Portugal 2030",
+	"programa": "Programa Regional do Algarve 2021-2027",
+	"linha": "Inovação",
+	"data_abertura": "2025-12-09",
+	"data_fecho": "2026-05-15",
+	"montante_total": "0",
+	"montante_min": "0",
+	"montante_max": "0",
+	"taxa_apoio": "Consultar PDF",
+	"regiao": [
+		"Nacional"
+	],
+	"setor": [
+		"Multisectorial"
+	],
+	"tipo_beneficiario": [
+		"Diversos"
+	],
+	"url": "https://portugal2030.pt/avisos/",
+	"pdf_url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2F9340e422-7642-43d5-b7ce-888076639b03%2F00a9229e-ffc8-45ca-b6d0-49d89a117eaf&filename=ALGARVE-2025-+42.pdf",
+	"anexos": [
+		{
+			"nome": "ALGARVE-2025- 42.pdf",
+			"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2F9340e422-7642-43d5-b7ce-888076639b03%2F00a9229e-ffc8-45ca-b6d0-49d89a117eaf&filename=ALGARVE-2025-+42.pdf",
+			"tipo": "pdf"
+		}
+	],
+	"status": "Aberto",
+	"elegibilidade": "Consultar regulamento",
+	"documentos_necessarios": [],
+	"keywords": [
+		"inovação"
+	],
+	"scraped_at": "2025-12-10T22:59:42.123Z"
+}

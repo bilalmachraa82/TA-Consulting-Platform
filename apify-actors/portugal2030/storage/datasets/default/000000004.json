@@ -1,0 +1,43 @@
+{
+	"type": "aviso",
+	"id": "PT2030_aquisicao_de_equipamentos_e_intervencao_em_infraes_1765407582130",
+	"titulo": "Aquisição de equipamentos e intervenção em Infraestruturas portuárias da RAA - 2º aviso",
+	"descricao": "Aviso Programa Temático para a Ação Climática e Sustentabilidade - Ver documentos anexos",
+	"fonte": "Portugal 2030",
+	"programa": "Programa Temático para a Ação Climática e Sustentabilidade",
+	"linha": "Investimento",
+	"data_abertura": "2025-12-05",
+	"data_fecho": "2026-02-20",
+	"montante_total": "624",
+	"montante_min": "0",
+	"montante_max": "0",
+	"taxa_apoio": "Consultar PDF",
+	"regiao": [
+		"Nacional"
+	],
+	"setor": [
+		"Multisectorial"
+	],
+	"tipo_beneficiario": [
+		"Diversos"
+	],
+	"url": "https://portugal2030.pt/avisos/",
+	"pdf_url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F11%2Feaa0c692-6023-4068-aa1e-680bc7799ac4%2F7563b071-55e0-4541-8bdc-6fb067d2b397&filename=Anexo+F+-+3.1+-+Infraestrutura_portu%C3%A1ria_RTE.pdf",
+	"anexos": [
+		{
+			"nome": "Anexo F - 3.1 - Infraestrutura_portuária_RTE.pdf",
+			"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F11%2Feaa0c692-6023-4068-aa1e-680bc7799ac4%2F7563b071-55e0-4541-8bdc-6fb067d2b397&filename=Anexo+F+-+3.1+-+Infraestrutura_portu%C3%A1ria_RTE.pdf",
+			"tipo": "pdf"
+		},
+		{
+			"nome": "Aviso PACS-2025-17.pdf",
+			"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2Feaa0c692-6023-4068-aa1e-680bc7799ac4%2F89f0364a-e70f-43a2-8475-63290a95932e&filename=Aviso+PACS-2025-17.pdf",
+			"tipo": "pdf"
+		}
+	],
+	"status": "Aberto",
+	"elegibilidade": "Consultar regulamento",
+	"documentos_necessarios": [],
+	"keywords": [],
+	"scraped_at": "2025-12-10T22:59:42.130Z"
+}

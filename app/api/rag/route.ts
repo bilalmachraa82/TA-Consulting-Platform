@@ -1,93 +1,103 @@
-/**
- * RAG API Endpoint
- * Pesquisa semântica de avisos com inteligência artificial
- */
-
 import { NextRequest, NextResponse } from 'next/server';
-import { searchAvisos, ragQuery, generateRAGPrompt, loadAllAvisos } from '@/lib/rag-system';
+import { searchAvisosWeb } from '@/lib/google-search-rag';
+import { loadLocalAvisos, searchLocalAvisos } from '@/lib/rag-local';
 
 export const dynamic = 'force-dynamic';
 
-// GET - Pesquisar avisos
+type RAGResult = {
+  id: string;
+  titulo: string;
+  descricao: string;
+  fonte: string;
+  portal: string;
+  url?: string | null;
+  data_fecho?: string | null;
+  score: number;
+  source: 'local' | 'web';
+};
+
+// GET - Pesquisa combinada (local + Google Search)
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
     const query = searchParams.get('q') || searchParams.get('query') || '';
-    const fonte = searchParams.get('fonte') || undefined;
-    const setor = searchParams.get('setor') || undefined;
-    const regiao = searchParams.get('regiao') || undefined;
-    const limit = parseInt(searchParams.get('limit') || '10');
+    const includeWeb = searchParams.get('web') !== 'false';
+    const limit = parseInt(searchParams.get('limit') || '20');
 
     if (!query) {
-      // Se não há query, retornar todos os avisos
-      const allAvisos = await loadAllAvisos();
+      const allLocal = await loadLocalAvisos();
       return NextResponse.json({
         success: true,
         query: '',
-        results: allAvisos.map(a => ({
-          id: a.id,
-          titulo: a.titulo,
-          descricao: a.descricao,
-          fonte: a.metadata.fonte,
-          programa: a.metadata.programa,
-          setor: a.metadata.setor,
-          regiao: a.metadata.regiao,
-          montante_max: a.metadata.montante_max,
-          taxa_apoio: a.metadata.taxa_apoio,
-          data_fecho: a.metadata.data_fecho,
-          url: a.metadata.url,
-          pdf_url: a.metadata.pdf_url,
-          keywords: a.metadata.keywords,
+        results: allLocal.map(a => ({
+          ...a,
+          fonte: a.fonte || 'LOCAL',
+          portal: a.portal || 'LOCAL',
+          score: 100,
+          source: 'local' as const,
         })),
-        total: allAvisos.length,
-        source: 'rag-system',
+        total: allLocal.length,
+        sources: { local: allLocal.length, web: 0 },
       });
     }
 
-    // Pesquisar com RAG
-    const results = await searchAvisos(query, {
-      fonte,
-      setor,
-      regiao,
-    }, limit);
+    const combined: RAGResult[] = [];
+    const seen = new Set<string>();
+
+    // 1) Local (JSON/dataProvider)
+    const localResults = await searchLocalAvisos(query, Math.ceil(limit / 2));
+    for (const r of localResults) {
+      const key = r.url || r.id;
+      if (key) seen.add(key);
+      combined.push({ ...r, fonte: r.fonte, portal: r.portal, source: 'local' });
+    }
+
+    // 2) Web (Google Search / fallback)
+    let webCount = 0;
+    if (includeWeb) {
+      const webResults = await searchAvisosWeb(query, { maxResults: Math.ceil(limit / 2) });
+      for (const r of webResults) {
+        const key = r.url || r.id;
+        if (key && seen.has(key)) continue;
+        if (key) seen.add(key);
+        combined.push({
+          id: r.id,
+          titulo: r.titulo,
+          descricao: r.descricao,
+          fonte: r.fonte,
+          portal: r.portal,
+          url: r.url,
+          score: r.relevancia,
+          source: 'web',
+        });
+        webCount++;
+      }
+    }
+
+    combined.sort((a, b) => b.score - a.score);
+    const finalResults = combined.slice(0, limit);
 
     return NextResponse.json({
       success: true,
       query,
-      results: results.map(r => ({
-        id: r.aviso.id,
-        titulo: r.aviso.titulo,
-        descricao: r.aviso.descricao,
-        fonte: r.aviso.metadata.fonte,
-        programa: r.aviso.metadata.programa,
-        setor: r.aviso.metadata.setor,
-        regiao: r.aviso.metadata.regiao,
-        montante_max: r.aviso.metadata.montante_max,
-        taxa_apoio: r.aviso.metadata.taxa_apoio,
-        data_fecho: r.aviso.metadata.data_fecho,
-        url: r.aviso.metadata.url,
-        pdf_url: r.aviso.metadata.pdf_url,
-        keywords: r.aviso.metadata.keywords,
-        score: Math.round(r.score * 100),
-        highlights: r.highlights,
-      })),
-      total: results.length,
-      source: 'rag-system',
+      results: finalResults,
+      total: finalResults.length,
+      sources: { local: localResults.length, web: includeWeb ? finalResults.filter(r => r.source === 'web').length : 0 },
     });
   } catch (error: any) {
     console.error('Erro na pesquisa RAG:', error);
     return NextResponse.json(
-      { success: false, error: 'Erro ao pesquisar avisos' },
+      { success: false, error: 'Erro ao pesquisar avisos', details: error.message },
       { status: 500 }
     );
   }
 }
 
-// POST - Query RAG completa com contexto
+// POST - Pesquisa com filtros e opção web
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { query, empresaContext, generateAnswer = false } = body;
+    const { query, includeWeb = true, portal, limit = 20 } = body;
 
     if (!query) {
       return NextResponse.json(
@@ -96,33 +106,52 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Executar query RAG
-    const ragContext = await ragQuery(query, empresaContext);
+    const combined: RAGResult[] = [];
+    const seen = new Set<string>();
 
-    const response: any = {
-      success: true,
-      query,
-      results: ragContext.results.map(r => ({
-        id: r.aviso.id,
-        titulo: r.aviso.titulo,
-        descricao: r.aviso.descricao,
-        metadata: r.aviso.metadata,
-        score: Math.round(r.score * 100),
-        highlights: r.highlights,
-      })),
-      total: ragContext.results.length,
-    };
-
-    // Gerar prompt para LLM se solicitado
-    if (generateAnswer) {
-      response.prompt = generateRAGPrompt(ragContext);
+    const localResults = await searchLocalAvisos(query, Math.ceil(limit / 2), { portal });
+    for (const r of localResults) {
+      const key = r.url || r.id;
+      if (key) seen.add(key);
+      combined.push({ ...r, fonte: r.fonte, portal: r.portal, source: 'local' });
     }
 
-    return NextResponse.json(response);
+    let webCount = 0;
+    if (includeWeb) {
+      const webResults = await searchAvisosWeb(query, { maxResults: Math.ceil(limit / 2) });
+      for (const r of webResults) {
+        const key = r.url || r.id;
+        if (key && seen.has(key)) continue;
+        if (portal && r.portal !== portal && portal !== 'OUTRO') continue;
+        if (key) seen.add(key);
+        combined.push({
+          id: r.id,
+          titulo: r.titulo,
+          descricao: r.descricao,
+          fonte: r.fonte,
+          portal: r.portal,
+          url: r.url,
+          score: r.relevancia,
+          source: 'web',
+        });
+        webCount++;
+      }
+    }
+
+    combined.sort((a, b) => b.score - a.score);
+    const finalResults = combined.slice(0, limit);
+
+    return NextResponse.json({
+      success: true,
+      query,
+      results: finalResults,
+      total: finalResults.length,
+      sources: { local: localResults.length, web: webCount },
+    });
   } catch (error: any) {
     console.error('Erro na query RAG:', error);
     return NextResponse.json(
-      { success: false, error: 'Erro ao processar query' },
+      { success: false, error: 'Erro ao processar query', details: error.message },
       { status: 500 }
     );
   }

@@ -1,0 +1,216 @@
+{
+	"success": true,
+	"fonte": "Portugal 2030",
+	"avisos": [
+		{
+			"id": "PT2030_monitorizacao_da_qualidade_do_ar_1765407582118",
+			"titulo": "Monitorização da Qualidade do Ar",
+			"descricao": "Aviso Programa Regional do Algarve 2021-2027 - Ver documentos anexos",
+			"fonte": "Portugal 2030",
+			"programa": "Programa Regional do Algarve 2021-2027",
+			"linha": "Investimento",
+			"data_abertura": "2025-12-09",
+			"data_fecho": "2026-04-27",
+			"montante_total": "0",
+			"montante_min": "0",
+			"montante_max": "0",
+			"taxa_apoio": "Consultar PDF",
+			"regiao": [
+				"Nacional"
+			],
+			"setor": [
+				"Multisectorial"
+			],
+			"tipo_beneficiario": [
+				"Diversos"
+			],
+			"url": "https://portugal2030.pt/avisos/",
+			"pdf_url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2F419e903e-cb35-49ba-b781-9f1d09ede834%2Fc49b2828-b25f-4f61-913f-b75cd8ce5c3e&filename=AVISO+ALGARVE-2025-43+-+MONITORIZA%C3%87%C3%83O+E+QUALIDADE+DO+AR.pdf",
+			"anexos": [
+				{
+					"nome": "AVISO ALGARVE-2025-43 - MONITORIZAÇÃO E QUALIDADE DO AR.pdf",
+					"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2F419e903e-cb35-49ba-b781-9f1d09ede834%2Fc49b2828-b25f-4f61-913f-b75cd8ce5c3e&filename=AVISO+ALGARVE-2025-43+-+MONITORIZA%C3%87%C3%83O+E+QUALIDADE+DO+AR.pdf",
+					"tipo": "pdf"
+				},
+				{
+					"nome": "ANEXO A.3 Medidas_DNSH_ Formulario.pdf",
+					"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2F419e903e-cb35-49ba-b781-9f1d09ede834%2F1b17dc33-8e63-4180-ba0f-7ca2b16d5f26&filename=ANEXO+A.3+Medidas_DNSH_+Formulario.pdf",
+					"tipo": "pdf"
+				}
+			],
+			"status": "Aberto",
+			"elegibilidade": "Consultar regulamento",
+			"documentos_necessarios": [],
+			"keywords": [],
+			"scraped_at": "2025-12-10T22:59:42.118Z"
+		},
+		{
+			"id": "PT2030_especializacao_inteligente_redes_e_capacitacao_ins_1765407582123",
+			"titulo": "Especialização inteligente, redes e capacitação institucional - Plataformas de Inovação e Colaboração",
+			"descricao": "Aviso Programa Regional do Algarve 2021-2027 - Ver documentos anexos",
+			"fonte": "Portugal 2030",
+			"programa": "Programa Regional do Algarve 2021-2027",
+			"linha": "Inovação",
+			"data_abertura": "2025-12-09",
+			"data_fecho": "2026-05-15",
+			"montante_total": "0",
+			"montante_min": "0",
+			"montante_max": "0",
+			"taxa_apoio": "Consultar PDF",
+			"regiao": [
+				"Nacional"
+			],
+			"setor": [
+				"Multisectorial"
+			],
+			"tipo_beneficiario": [
+				"Diversos"
+			],
+			"url": "https://portugal2030.pt/avisos/",
+			"pdf_url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2F9340e422-7642-43d5-b7ce-888076639b03%2F00a9229e-ffc8-45ca-b6d0-49d89a117eaf&filename=ALGARVE-2025-+42.pdf",
+			"anexos": [
+				{
+					"nome": "ALGARVE-2025- 42.pdf",
+					"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2F9340e422-7642-43d5-b7ce-888076639b03%2F00a9229e-ffc8-45ca-b6d0-49d89a117eaf&filename=ALGARVE-2025-+42.pdf",
+					"tipo": "pdf"
+				}
+			],
+			"status": "Aberto",
+			"elegibilidade": "Consultar regulamento",
+			"documentos_necessarios": [],
+			"keywords": [
+				"inovação"
+			],
+			"scraped_at": "2025-12-10T22:59:42.123Z"
+		},
+		{
+			"id": "PT2030_aquisicao_de_equipamentos_e_intervencao_em_infraes_1765407582130",
+			"titulo": "Aquisição de equipamentos e intervenção em Infraestruturas portuárias da RAA - 2º aviso",
+			"descricao": "Aviso Programa Temático para a Ação Climática e Sustentabilidade - Ver documentos anexos",
+			"fonte": "Portugal 2030",
+			"programa": "Programa Temático para a Ação Climática e Sustentabilidade",
+			"linha": "Investimento",
+			"data_abertura": "2025-12-05",
+			"data_fecho": "2026-02-20",
+			"montante_total": "624",
+			"montante_min": "0",
+			"montante_max": "0",
+			"taxa_apoio": "Consultar PDF",
+			"regiao": [
+				"Nacional"
+			],
+			"setor": [
+				"Multisectorial"
+			],
+			"tipo_beneficiario": [
+				"Diversos"
+			],
+			"url": "https://portugal2030.pt/avisos/",
+			"pdf_url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F11%2Feaa0c692-6023-4068-aa1e-680bc7799ac4%2F7563b071-55e0-4541-8bdc-6fb067d2b397&filename=Anexo+F+-+3.1+-+Infraestrutura_portu%C3%A1ria_RTE.pdf",
+			"anexos": [
+				{
+					"nome": "Anexo F - 3.1 - Infraestrutura_portuária_RTE.pdf",
+					"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F11%2Feaa0c692-6023-4068-aa1e-680bc7799ac4%2F7563b071-55e0-4541-8bdc-6fb067d2b397&filename=Anexo+F+-+3.1+-+Infraestrutura_portu%C3%A1ria_RTE.pdf",
+					"tipo": "pdf"
+				},
+				{
+					"nome": "Aviso PACS-2025-17.pdf",
+					"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2Feaa0c692-6023-4068-aa1e-680bc7799ac4%2F89f0364a-e70f-43a2-8475-63290a95932e&filename=Aviso+PACS-2025-17.pdf",
+					"tipo": "pdf"
+				}
+			],
+			"status": "Aberto",
+			"elegibilidade": "Consultar regulamento",
+			"documentos_necessarios": [],
+			"keywords": [],
+			"scraped_at": "2025-12-10T22:59:42.130Z"
+		},
+		{
+			"id": "PT2030_aquisicao_de_viaturas_de_combate_a_incendios_nos_a_1765407582137",
+			"titulo": "Aquisição de viaturas de combate a incêndios nos aeródromos dos Açores (ilhas da Graciosa, Pico e S. Jorge)",
+			"descricao": "Aviso Programa Temático para a Ação Climática e Sustentabilidade - Ver documentos anexos",
+			"fonte": "Portugal 2030",
+			"programa": "Programa Temático para a Ação Climática e Sustentabilidade",
+			"linha": "Investimento",
+			"data_abertura": "2025-12-05",
+			"data_fecho": "2026-04-20",
+			"montante_total": "0",
+			"montante_min": "0",
+			"montante_max": "0",
+			"taxa_apoio": "Consultar PDF",
+			"regiao": [
+				"Nacional"
+			],
+			"setor": [
+				"Multisectorial"
+			],
+			"tipo_beneficiario": [
+				"Diversos"
+			],
+			"url": "https://portugal2030.pt/avisos/",
+			"pdf_url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F11%2F46acc5bd-6d04-4279-8ebf-9cd8d382aaea%2Fa986a5a0-2489-402d-ab53-7cd31da57def&filename=Anexo+F+-+3.1+-+Infraestruturas_aeroportu%C3%A1rias_RTE.pdf",
+			"anexos": [
+				{
+					"nome": "Anexo F - 3.1 - Infraestruturas_aeroportuárias_RTE.pdf",
+					"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F11%2F46acc5bd-6d04-4279-8ebf-9cd8d382aaea%2Fa986a5a0-2489-402d-ab53-7cd31da57def&filename=Anexo+F+-+3.1+-+Infraestruturas_aeroportu%C3%A1rias_RTE.pdf",
+					"tipo": "pdf"
+				},
+				{
+					"nome": "Aviso PACS-2025-16.pdf",
+					"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2F46acc5bd-6d04-4279-8ebf-9cd8d382aaea%2F349b7ebf-8eff-43dc-902e-28eb4cc2044d&filename=Aviso+PACS-2025-16.pdf",
+					"tipo": "pdf"
+				}
+			],
+			"status": "Aberto",
+			"elegibilidade": "Consultar regulamento",
+			"documentos_necessarios": [],
+			"keywords": [],
+			"scraped_at": "2025-12-10T22:59:42.137Z"
+		},
+		{
+			"id": "PT2030_novo_sistema_de_iluminacao_da_pista_do_aerodromo_d_1765407582150",
+			"titulo": "Novo sistema de iluminação da pista do aeródromo da ilha do Pico",
+			"descricao": "Aviso Programa Temático para a Ação Climática e Sustentabilidade - Ver documentos anexos",
+			"fonte": "Portugal 2030",
+			"programa": "Programa Temático para a Ação Climática e Sustentabilidade",
+			"linha": "Investimento",
+			"data_abertura": "2025-12-05",
+			"data_fecho": "2026-04-20",
+			"montante_total": "0",
+			"montante_min": "0",
+			"montante_max": "0",
+			"taxa_apoio": "Consultar PDF",
+			"regiao": [
+				"Nacional"
+			],
+			"setor": [
+				"Multisectorial"
+			],
+			"tipo_beneficiario": [
+				"Diversos"
+			],
+			"url": "https://portugal2030.pt/avisos/",
+			"pdf_url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F11%2Faf4addb8-a759-441b-b36c-2e4898898901%2F7ad76093-b63c-4d14-9962-8ca5c38afae5&filename=Anexo+F+-+3.1+-+Infraestruturas_aeroportu%C3%A1rias_RTE.pdf",
+			"anexos": [
+				{
+					"nome": "Anexo F - 3.1 - Infraestruturas_aeroportuárias_RTE.pdf",
+					"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F11%2Faf4addb8-a759-441b-b36c-2e4898898901%2F7ad76093-b63c-4d14-9962-8ca5c38afae5&filename=Anexo+F+-+3.1+-+Infraestruturas_aeroportu%C3%A1rias_RTE.pdf",
+					"tipo": "pdf"
+				},
+				{
+					"nome": "Aviso PACS-2025-15.pdf",
+					"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2Faf4addb8-a759-441b-b36c-2e4898898901%2F40ffa2dc-273f-45db-99c1-a9f2e2781d92&filename=Aviso+PACS-2025-15.pdf",
+					"tipo": "pdf"
+				}
+			],
+			"status": "Aberto",
+			"elegibilidade": "Consultar regulamento",
+			"documentos_necessarios": [],
+			"keywords": [],
+			"scraped_at": "2025-12-10T22:59:42.150Z"
+		}
+	],
+	"errors": [],
+	"scraped_at": "2025-12-10T22:59:42.216Z",
+	"duration_ms": 7308
+}

@@ -1,0 +1,43 @@
+{
+	"type": "aviso",
+	"id": "PT2030_aquisicao_de_viaturas_de_combate_a_incendios_nos_a_1765407582137",
+	"titulo": "Aquisição de viaturas de combate a incêndios nos aeródromos dos Açores (ilhas da Graciosa, Pico e S. Jorge)",
+	"descricao": "Aviso Programa Temático para a Ação Climática e Sustentabilidade - Ver documentos anexos",
+	"fonte": "Portugal 2030",
+	"programa": "Programa Temático para a Ação Climática e Sustentabilidade",
+	"linha": "Investimento",
+	"data_abertura": "2025-12-05",
+	"data_fecho": "2026-04-20",
+	"montante_total": "0",
+	"montante_min": "0",
+	"montante_max": "0",
+	"taxa_apoio": "Consultar PDF",
+	"regiao": [
+		"Nacional"
+	],
+	"setor": [
+		"Multisectorial"
+	],
+	"tipo_beneficiario": [
+		"Diversos"
+	],
+	"url": "https://portugal2030.pt/avisos/",
+	"pdf_url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F11%2F46acc5bd-6d04-4279-8ebf-9cd8d382aaea%2Fa986a5a0-2489-402d-ab53-7cd31da57def&filename=Anexo+F+-+3.1+-+Infraestruturas_aeroportu%C3%A1rias_RTE.pdf",
+	"anexos": [
+		{
+			"nome": "Anexo F - 3.1 - Infraestruturas_aeroportuárias_RTE.pdf",
+			"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F11%2F46acc5bd-6d04-4279-8ebf-9cd8d382aaea%2Fa986a5a0-2489-402d-ab53-7cd31da57def&filename=Anexo+F+-+3.1+-+Infraestruturas_aeroportu%C3%A1rias_RTE.pdf",
+			"tipo": "pdf"
+		},
+		{
+			"nome": "Aviso PACS-2025-16.pdf",
+			"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2F46acc5bd-6d04-4279-8ebf-9cd8d382aaea%2F349b7ebf-8eff-43dc-902e-28eb4cc2044d&filename=Aviso+PACS-2025-16.pdf",
+			"tipo": "pdf"
+		}
+	],
+	"status": "Aberto",
+	"elegibilidade": "Consultar regulamento",
+	"documentos_necessarios": [],
+	"keywords": [],
+	"scraped_at": "2025-12-10T22:59:42.137Z"
+}

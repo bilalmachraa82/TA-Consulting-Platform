@@ -1,0 +1,24 @@
+{
+    "title": "ipdj Scraper",
+    "description": "Extrai avisos de fundos europeus do portal ipdj",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "maxPages": {
+            "title": "Máximo de Páginas",
+            "type": "integer",
+            "description": "Número máximo de páginas a processar",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 100,
+            "editor": "number"
+        },
+        "downloadPdfs": {
+            "title": "Download PDFs",
+            "type": "boolean",
+            "description": "Se deve fazer download dos PDFs",
+            "default": true,
+            "editor": "checkbox"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+	"id": "rjNTPrJQrwbUjkr",
+	"json": "{\"id\":\"rjNTPrJQrwbUjkr\",\"url\":\"https://recuperarportugal.gov.pt/candidaturas-prr/\",\"loadedUrl\":\"https://recuperarportugal.gov.pt/candidaturas-prr/\",\"uniqueKey\":\"https://recuperarportugal.gov.pt/candidaturas-prr\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-12-10T23:09:31.698Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://recuperarportugal.gov.pt/candidaturas-prr",
+	"url": "https://recuperarportugal.gov.pt/candidaturas-prr/"
+}

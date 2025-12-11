@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8">
+	    <title>Página Inicial | Compete 2030</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Compete 2030">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="theme-color" content="white">
+	  
+	  <link rel="icon" type="image/x-icon" href="/wp-content/themes/compete2030_theme/assets/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/compete2030_theme/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/compete2030_theme/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/compete2030_theme/assets/favicons/apple-touch-icon.png">
+
+    <link rel="icon" type="image/png" sizes="192x192"  href="/wp-content/themes/compete2030_theme/assets/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512"  href="/wp-content/themes/compete2030_theme/assets/favicons/android-chrome-512x512.png">
+
+    <link rel="mask-icon" href="/wp-content/themes/compete2030_theme/assets/favicons/safari-pinned-tab.svg">
+
+    <meta name="msapplication-TileImage" content="/wp-content/themes/compete2030_theme/assets/favicons/mstile-150x150.png">
+
+    <link rel="manifest" href="/wp-content/themes/compete2030_theme/assets/favicons/manifest.json">
+    <meta name="msapplication-config" content="/wp-content/themes/compete2030_theme/assets/favicons/site.webmanifest" />
+
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="alternate" href="https://www.compete2030.gov.pt/" hreflang="pt" />
+<link rel="alternate" href="https://www.compete2030.gov.pt/en/home/" hreflang="en" />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.10 - https://yoast.com/wordpress/plugins/seo/ -->
+	<link rel="canonical" href="https://www.compete2030.gov.pt/" />
+	<meta property="og:locale" content="pt_PT" />
+	<meta property="og:locale:alternate" content="en_GB" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Página Inicial - Compete 2030" />
+	<meta property="og:url" content="https://www.compete2030.gov.pt/" />
+	<meta property="og:site_name" content="Compete 2030" />
+	<meta property="article:publisher" content="https://www.facebook.com/Compete2030.eufunds" />
+	<meta property="article:modified_time" content="2025-01-07T01:03:21+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@FEEICOMPETE2030" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.compete2030.gov.pt/","url":"https://www.compete2030.gov.pt/","name":"Página Inicial - Compete 2030","isPartOf":{"@id":"https://www.compete2030.gov.pt/#website"},"about":{"@id":"https://www.compete2030.gov.pt/#organization"},"datePublished":"2023-06-02T15:53:07+00:00","dateModified":"2025-01-07T01:03:21+00:00","breadcrumb":{"@id":"https://www.compete2030.gov.pt/#breadcrumb"},"inLanguage":"pt-PT","potentialAction":[{"@type":"ReadAction","target":["https://www.compete2030.gov.pt/"]}]},{"@type":"BreadcrumbList","@id":"https://www.compete2030.gov.pt/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Início"}]},{"@type":"WebSite","@id":"https://www.compete2030.gov.pt/#website","url":"https://www.compete2030.gov.pt/","name":"Compete 2030","description":"O COMPETE2030 dispõe de uma dotação de 3.904 mil milhões de euros de fundos europeus para financiar investimentos essencialmente nas regiões do Norte Centro e Alentejo, com 3 Objetivos Estratégicos.","publisher":{"@id":"https://www.compete2030.gov.pt/#organization"},"alternateName":"Programa temático Inovação e Transição Digital","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.compete2030.gov.pt/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"pt-PT"},{"@type":"Organization","@id":"https://www.compete2030.gov.pt/#organization","name":"Programa temático Inovação e Transição Digital","url":"https://www.compete2030.gov.pt/","logo":{"@type":"ImageObject","inLanguage":"pt-PT","@id":"https://www.compete2030.gov.pt/#/schema/logo/image/","url":"/wp-content/uploads/2023/07/logo-compete-y.jpg","contentUrl":"/wp-content/uploads/2023/07/logo-compete-y.jpg","width":800,"height":600,"caption":"Programa temático Inovação e Transição Digital"},"image":{"@id":"https://www.compete2030.gov.pt/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/Compete2030.eufunds","https://twitter.com/FEEICOMPETE2030","https://www.linkedin.com/company/compete/","https://www.youtube.com/@COMPETE-2030","https://www.instagram.com/compete2030_/"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.compete2030.gov.pt/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.compete2030.gov.pt%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.compete2030.gov.pt/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.compete2030.gov.pt%2F&#038;format=xml" />
+<style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id='wp-block-library-inline-css' type='text/css'>
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=wp-block-library-inline-css */
+</style><style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--compete-2030-blue: #1c4f97;--wp--preset--color--compete-2030-green: #008000;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.7.7' type='text/css' media='all' />
+<link rel='stylesheet' id='FontInter-css' href='https://fonts.googleapis.com/css2?family=Inter%3Awght%40400%3B500%3B600%3B700%3B800&#038;display=swap&#038;ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='Flatpickr-css' href='/wp-content/themes/compete2030_theme/assets/css/flatpickr.min.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='SimpleCalendar-css' href='/wp-content/themes/compete2030_theme/assets/css/simple-calendar.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='Swiper-css' href='/wp-content/themes/compete2030_theme/assets/lib/swiper/swiper-bundle.min.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='LightGallery-css' href='/wp-content/themes/compete2030_theme/assets/lib/lightgallery/css/lightgallery-bundle.min.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='Style-css' href='/wp-content/themes/compete2030_theme/assets/css/style.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='StyleCustom-css' href='/wp-content/themes/compete2030_theme/style.css?ver=1.0.6' type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://www.compete2030.gov.pt/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.compete2030.gov.pt/wp-json/wp/v2/pages/9" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.compete2030.gov.pt/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.9" />
+<link rel='shortlink' href='https://www.compete2030.gov.pt/' />
+
+
+        
+    
+ 
+
+</head>
+
+
+<body >
+      <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page-->
+      <header class="fixed-top">
+        <a id="jump_main" class="visually-hidden-focusable" href="#main">Saltar para o conteúdo principal da página</a>
+        <input type="hidden" value="pt" id="current_lang"/>
+        <input type="hidden" value="/wp-content/themes/compete2030_theme" id="theme-path" />
+        <div class="container py-md-2 py-1 top-header">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex align-items-center"></div>
+                <div class="d-flex align-items-center">
+                    <!--a class="text-decoration-none me-md-5 me-3" href="#"><span class="d-md-inline d-none">Área reservada</span><i class="ms-md-2 ms-0 ai-user fs-lg"></i></a-->
+					<nav class="d-lg-block d-none" aria-label="Menu de opções de visualização de conteúdos">
+                        <button class="text-decoration-none me-md-5 me-3 dark-mode-btn" type="button">
+                            <span aria-hidden="true" class="d-none light-txt">Modo claro </span><span class="d-md-inline d-none dark-txt">Modo escuro</span>                        </button>
+                    </nav>
+                    <div class="dropdown langs" id="langs">
+                                    <button class="dropdown-toggle text-uppercase" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    pt
+                                    </button>
+                                <div class="dropdown-menu" aria-label="Selecione o idioma"><a class="active" href="https://www.compete2030.gov.pt/">PT</a><a class="" href="https://www.compete2030.gov.pt/en/home/">EN</a></div>
+                            </div>                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalId" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p>This page is only available in Portuguese.</p>
+                    </div>
+                    <div class="modal-footer flex-column flex-sm-row border-0 pt-0">
+                        <button class="btn btn-secondary w-100 w-sm-auto mb-3 mb-sm-0" type="button" data-bs-dismiss="modal">Cancel</button>
+                        <a href="https://www.compete2030.gov.pt/en/home/" class="btn btn-success1 w-100 w-sm-auto ms-sm-3">Proceed to English site</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="https://www.compete2030.gov.pt">
+                    <img id="logo-light" src="/wp-content/themes/compete2030_theme/assets/images/compete2030-vertical.svg" alt="Logótipo Compete 2030"/>
+                    <img id="logo-dark" src="/wp-content/themes/compete2030_theme/assets/images/compete2030-vertical-white.svg" alt="Logótipo Compete 2030"/>
+					<img id="logo-light-sticky" src="/wp-content/themes/compete2030_theme/assets/images/logo-compete-2030-H.svg" alt="Logótipo Compete 2030"/>
+                    <img id="logo-dark-sticky" src="/wp-content/themes/compete2030_theme/assets/images/compete2030-horizontal-white.svg" alt="Logótipo Compete 2030"/>
+                </a>
+                <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+                <nav class="collapse navbar-collapse justify-content-end" id="navbarNav" aria-label="Menu principal do compete 2030">
+					<a class="text-decoration-none d-lg-none d-flex justify-content-end fs-4 w-100 pt-3 pe-4 ps-4 pb-2" href="#searchModal" data-bs-toggle="modal"><i class="ai-search" aria-hidden="true"></i><span class="visually-hidden-focusable">Abrir formulário de pesquisa</span></a>
+                    <ul class="navbar-nav navbar-nav-scroll" style="--ar-scroll-height: 520px;">
+                        
+                                                                <li class="nav-item dropdown">
+                                            
+                                            <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">COMPETE 2030</a>
+                                            <ul class="dropdown-menu">
+                                                                                                    <li><a class="dropdown-item" href="https://www.compete2030.gov.pt/quem-somos/" >Quem Somos</a></li>
+                                                                                                    <li><a class="dropdown-item" href="https://www.compete2030.gov.pt/objetivos/" >Estrutura e Objetivos</a></li>
+                                                                                                    <li><a class="dropdown-item" href="https://www.compete2030.gov.pt/operacoes/" >Operações</a></li>
+                                                                                                    <li><a class="dropdown-item" href="https://www.compete2030.gov.pt/monitorizacao/" >Monitorização</a></li>
+                                                                                                    <li><a class="dropdown-item" href="https://www.compete2030.gov.pt/comite-de-acompanhamento/" >Comité de Acompanhamento</a></li>
+                                                                                                    <li><a class="dropdown-item" href="https://www.compete2030.gov.pt/avaliacao-ambiental-estrategica/" >Avaliação Ambiental Estratégica</a></li>
+                                                                                                    <li><a class="dropdown-item" href="https://www.compete2030.gov.pt/estrategia-anti-fraude/" >Estratégia Anti-Fraude</a></li>
+                                                                                            </ul>
+                                        </li>
+                                                                            <li class="nav-item dropdown">
+                                            
+                                            <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Avisos de Concursos</a>
+                                            <ul class="dropdown-menu">
+                                                                                                    <li><a class="dropdown-item" href="https://www.compete2030.gov.pt/avisos/" >Avisos</a></li>
+                                                                                                    <li><a class="dropdown-item" href="https://www.compete2030.gov.pt/perguntas-frequentes/" >Perguntas Frequentes</a></li>
+                                                                                                    <li><a class="dropdown-item" href="https://www.compete2030.gov.pt/guias/" >Guias</a></li>
+                                                                                            </ul>
+                                        </li>
+                                                                            <li class="nav-item">
+                                                                                    <a class="nav-link " href="https://www.compete2030.gov.pt/regulamentacao/" >Regulamentação</a>
+                                        </li>
+                                                                        <li class="nav-item dropdown">
+                                            
+                                            <a class="nav-link dropdown-toggle " href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Comunicação</a>
+                                            <ul class="dropdown-menu">
+                                                                                                    <li><a class="dropdown-item" href="https://www.compete2030.gov.pt/comunicacao/" >Notícias</a></li>
+                                                                                                    <li><a class="dropdown-item" href="/agenda" >Agenda</a></li>
+                                                                                                    <li><a class="dropdown-item" href="https://www.compete2030.gov.pt/regras-de-publicitacao/" >Regras de Publicitação</a></li>
+                                                                                            </ul>
+                                        </li>
+                                                            <li class="nav-item d-lg-block d-none"><a class="nav-link fs-4 p-2 mx-sm-1" href="#searchModal" data-bs-toggle="modal"><i class="ai-search" aria-hidden="true"></i><span class="visually-hidden-focusable">Abrir formulário de pesquisa</span></a></li>
+                    </ul>
+                    <div class="mt-3 ps-4 d-lg-none">
+                        <nav aria-label="Menu de opções de visualização de conteúdos">
+                            <button class="text-decoration-none dark-mode-btn" type="button">
+                                <span class="d-inline dark-txt">Modo escuro</span><span aria-hidden="true" class="d-none light-txt">Modo claro </span>                            </button>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
+        </div>
+      </header>
+      <!-- Search modal-->
+      <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" data-focus-input="#search">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header d-block position-relative border-0 pb-3">
+                        <form class="position-relative w-100 mt-2 mb-4"  role="search" method="get" action="https://www.compete2030.gov.pt">
+                            <button class="btn-close position-absolute top-50 end-0 translate-middle-y m-0 me-n1" type="reset" data-bs-dismiss="modal"></button>
+                            <i class="ai-search fs-xl position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                            <input class="form-control form-control-lg px-5" type="search" placeholder="Insira o termo ou assunto a pesquisa" required id="search" name="s" data-focus-on-open="[&quot;modal&quot;, &quot;#searchModal&quot;]">
+                        </form>
+                    </div>
+                </div>
+            </div>
+      </div>
+
+
+<!-- Page wrapper-->
+<main class="page-wrapper" id="main">
+	
+	<h1 class="visually-hidden-focusable">Compete2030</h1>
+    <section class="banner-home position-relative">
+      <div class="position-relative pb-5" style="height: 85vh; max-height: 680px;">
+        <!-- Background image slider-->
+        <div class="swiper swiper-scale-effect position-absolute start-0 w-100 h-100" data-swiper-options="{
+      &quot;effect&quot;: &quot;fade&quot;,
+      &quot;speed&quot;: 800,
+      &quot;autoplay&quot;: {
+        &quot;delay&quot;: 7000,
+        &quot;disableOnInteraction&quot;: false
+      },
+      &quot;pagination&quot;: {
+        &quot;el&quot;: &quot;.swiper-pagination&quot;,
+        &quot;clickable&quot;: true
+      }
+    }">
+          <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                                        <div class="swiper-slide-cover bg-position-top-center">
+                                    <video autoplay muted loop>
+                                        <source src="/wp-content/uploads/2023/06/Compete-2030_OL_6.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                                <div class="container position-relative zindex-2 p-lg-3 p-xl-5 mt-2">
+                            <div class="row pt-md-3 py-xxl-5">
+                                <div class="col py-5 px-lg-0 px-5">
+									                                            <p class="d-block fs-xl text-white mb-1" style="max-width: 600px;">Programa</p>
+                                                                        <h2 class="h2 display-5 text-white mb-4 fw-bold">Inovação e Transição Digital <br> Compete 2030</h2>                                    <p class="d-block fs-xl text-white mb-4" style="max-width: 600px;">Para um Portugal mais competitivo, sustentável e inclusivo preparado para o futuro</p>                                                                                <div class="position-relative d-inline-flex align-items-center">
+                                                                                                        <a  class="btn btn-light rounded-pill" href="https://www.youtube.com/watch?v=Qal10spgOII" data-bs-toggle="video">
+                                                            <span class="fw-semibold text-primary">veja o vídeo</span>
+                                                            <div class="p-1 rounded-circle bg-success ms-2">
+                                                                <i class="ai-play-filled text-white d-flex"></i>
+                                                            </div>
+                                                        </a>
+                                                                                                
+                                            </div>
+                                                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                                <div class="swiper-slide">
+                                                        <div class="swiper-slide-cover bg-position-top-center" style="background-image: url(/wp-content/uploads/2023/06/compete-brand-v0101-1.jpg);"></div>
+                                                <div class="container position-relative zindex-2 p-lg-3 p-xl-5 mt-2">
+                            <div class="row pt-md-3 py-xxl-5">
+                                <div class="col py-5 px-lg-0 px-5">
+									                                            <p class="d-block fs-xl text-white mb-1" style="max-width: 600px;">Programa Inovação e Transição Digital</p>
+                                                                        <h2 class="h2 display-5 text-white mb-4 fw-bold">+ competitivo <br> Inovar é o desafio do presente</h2>                                    <p class="d-block fs-xl text-white mb-4" style="max-width: 600px;">Objetivo Portugal + Competitivo: <br />
+mais digitalização, investigação e inovação, mais crescimento e mais competitividade das PME</p>                                                                                <div class="position-relative d-inline-flex align-items-center">
+                                                                                                        <a  class="btn btn-light rounded-pill" href="https://www.youtube.com/watch?v=Qal10spgOII" data-bs-toggle="video">
+                                                            <span class="fw-semibold text-primary">veja o vídeo</span>
+                                                            <div class="p-1 rounded-circle bg-success ms-2">
+                                                                <i class="ai-play-filled text-white d-flex"></i>
+                                                            </div>
+                                                        </a>
+                                                                                                
+                                            </div>
+                                                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                                <div class="swiper-slide">
+                                                        <div class="swiper-slide-cover bg-position-top-center" style="background-image: url(/wp-content/uploads/2023/06/compete-brand-v0102-1.jpg);"></div>
+                                                <div class="container position-relative zindex-2 p-lg-3 p-xl-5 mt-2">
+                            <div class="row pt-md-3 py-xxl-5">
+                                <div class="col py-5 px-lg-0 px-5">
+									                                            <p class="d-block fs-xl text-white mb-1" style="max-width: 600px;">Programa Inovação e Transição Digital</p>
+                                                                        <h2 class="h2 display-5 text-white mb-4 fw-bold">+ verde <br> A nova economia é sustentável</h2>                                    <p class="d-block fs-xl text-white mb-4" style="max-width: 600px;">Objetivo Portugal + Verde: <br />
+Mais descarbonização, energias renováveis e eficiência energética, mais economia circular e mobilidade sustentável.</p>                                                                                <div class="position-relative d-inline-flex align-items-center">
+                                                                                                        <a  class="btn btn-light rounded-pill" href="https://www.youtube.com/watch?v=Qal10spgOII" data-bs-toggle="video">
+                                                            <span class="fw-semibold text-primary">veja o vídeo</span>
+                                                            <div class="p-1 rounded-circle bg-success ms-2">
+                                                                <i class="ai-play-filled text-white d-flex"></i>
+                                                            </div>
+                                                        </a>
+                                                                                                
+                                            </div>
+                                                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                                <div class="swiper-slide">
+                                                        <div class="swiper-slide-cover bg-position-top-center" style="background-image: url(/wp-content/uploads/2023/06/compete-brand-v0103-2.jpg);"></div>
+                                                <div class="container position-relative zindex-2 p-lg-3 p-xl-5 mt-2">
+                            <div class="row pt-md-3 py-xxl-5">
+                                <div class="col py-5 px-lg-0 px-5">
+									                                            <p class="d-block fs-xl text-white mb-1" style="max-width: 600px;">Programa Inovação e Transição Digital</p>
+                                                                        <h2 class="h2 display-5 text-white mb-4 fw-bold">+ social <br> Capacitar é preparar o futuro</h2>                                    <p class="d-block fs-xl text-white mb-4" style="max-width: 600px;">Objetivo Portugal + Social: <br />
+Mais e melhor emprego, mais qualificação para jovens e (re)qualificação de adultos, melhor inclusão. </p>                                                                                <div class="position-relative d-inline-flex align-items-center">
+                                                                                                        <a  class="btn btn-light rounded-pill" href="https://www.youtube.com/watch?v=Qal10spgOII" data-bs-toggle="video">
+                                                            <span class="fw-semibold text-primary">veja o vídeo</span>
+                                                            <div class="p-1 rounded-circle bg-success ms-2">
+                                                                <i class="ai-play-filled text-white d-flex"></i>
+                                                            </div>
+                                                        </a>
+                                                                                                
+                                            </div>
+                                                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                      </div>
+          <div class="container position-relative">
+                <div class="p-lg-3 p-xl-5 swiper-pagination mb-4 justify-content-start px-lg-0 px-5"></div>
+          </div>
+        </div>
+        <!-- Content-->
+        </div>
+      </section>
+      <!-- Services-->
+      <section class="position-relative goals-section">
+        <div class="container pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
+            <h2 class="h1 text-center pt-2 pt-sm-3 pt-md-4 pt-xl-5 mt-lg-2 mt-xl-1">Objetivos COMPETE 2030</h2>
+            <p class="text-center pb-3 mb-3 mb-lg-4">Digitalização, Inovação e Qualificação, os motores de desenvolvimento para o país e para as suas empresas</p>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                                        <!-- Item-->
+                        <div class="col">
+                            <a class="card card-hover h-100 border-0 bg-secondary text-decoration-none overflow-hidden" href="/objetivos/objetivo-estrategico-1-portugal-mais-competitivo/">
+                                <div class="card-body d-flex align-items-end position-absolute top-0 start-0 w-100 h-100 opacity-0 bg-size-cover bg-position-center pb-4" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.3) 100%, rgba(0,0,0,0.3) 100%), url(/wp-content/uploads/2023/06/compete-brand-v0101-1.jpg)">
+                                    <div class="btn btn-icon btn-lg btn-outline-light rounded-circle pe-none mb-3"><i class="ai-arrow-right"></i></div>
+                                </div>
+                                <div class="card-body pb-3">
+                                                                                    <svg class="d-block mt-1 mt-sm-0 mb-4" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                    <g class="text-info">
+                                                    <path d="M20.0004 36.0226L10.982 21.3535C9.42594 23.3156 8.49609 25.7968 8.49609 28.4955C8.49609 34.8492 13.6467 39.9998 20.0004 39.9998C26.3541 39.9998 31.5047 34.8492 31.5047 28.4955C31.5047 25.7969 30.5749 23.3156 29.0188 21.3535L20.0004 36.0226Z" fill="currentColor"></path>
+                                                    </g>
+                                                    <g class="text-primary">
+                                                    <path d="M39.3962 0H0.605469L20.0009 31.5477L39.3962 0ZM25.7601 7.62359L20.0009 16.9914L14.2416 7.62359H25.7601Z" fill="currentColor"></path>
+                                                    </g>
+                                                </svg>
+                                                                                
+                                    <h3 class="h4">+ competitivo</h3>
+                                    <p class="mb-0">Apoiar a digitalização, a investigação e a inovação, gerando mais crescimento e competitividade das PME</p>
+                                </div>
+                                <div class="card-footer border-0 pt-3 mb-3">
+                                    <div class="btn btn-icon btn-lg btn-outline-primary rounded-circle pe-none"><i class="ai-arrow-right"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                                        <!-- Item-->
+                        <div class="col">
+                            <a class="card card-hover h-100 border-0 bg-secondary text-decoration-none overflow-hidden" href="/objetivos/objetivo-estrategico-2-portugal-mais-verde/">
+                                <div class="card-body d-flex align-items-end position-absolute top-0 start-0 w-100 h-100 opacity-0 bg-size-cover bg-position-center pb-4" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.3) 100%, rgba(0,0,0,0.3) 100%), url(/wp-content/uploads/2023/06/compete-brand-v0102-1.jpg)">
+                                    <div class="btn btn-icon btn-lg btn-outline-light rounded-circle pe-none mb-3"><i class="ai-arrow-right"></i></div>
+                                </div>
+                                <div class="card-body pb-3">
+                                                                                    <svg class="d-block mt-1 mt-sm-0 mb-4" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                                    <g class="text-primary">
+                                                    <path d="M25.2791 12.7502C28.1954 9.83389 28.1954 5.10556 25.2791 2.18921C22.3627 -0.727136 17.6344 -0.727137 14.718 2.18921C11.8017 5.10556 11.8017 9.83389 14.718 12.7502C17.6344 15.6666 22.3627 15.6666 25.2791 12.7502Z" fill="currentColor"></path>
+                                                    </g>
+                                                    <g class="text-info">
+                                                    <path d="M14.6859 29.3056C15.6559 27.0123 16.9202 24.8838 18.4577 22.9467C13.8666 17.9802 7.29664 14.8701 0 14.8701V40.0004H12.5259C12.5259 36.2925 13.2527 32.6942 14.6859 29.3056Z" fill="currentColor"></path>
+                                                    </g>
+                                                    <g class="text-primary">
+                                                    <path d="M40.0014 40.0004V14.8701C26.1223 14.8701 14.8711 26.1214 14.8711 40.0004H40.0014Z" fill="currentColor"></path>
+                                                    </g>
+                                                </svg>
+                                                                                
+                                    <h3 class="h4">+ verde</h3>
+                                    <p class="mb-0">Apoiar as empresas em projetos de descarbonização e de apoio à produção de energias renováveis</p>
+                                </div>
+                                <div class="card-footer border-0 pt-3 mb-3">
+                                    <div class="btn btn-icon btn-lg btn-outline-primary rounded-circle pe-none"><i class="ai-arrow-right"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                                        <!-- Item-->
+                        <div class="col">
+                            <a class="card card-hover h-100 border-0 bg-secondary text-decoration-none overflow-hidden" href="/objetivos/objetivo-estrategico-4-portugal-mais-social/">
+                                <div class="card-body d-flex align-items-end position-absolute top-0 start-0 w-100 h-100 opacity-0 bg-size-cover bg-position-center pb-4" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.3) 100%, rgba(0,0,0,0.3) 100%), url(/wp-content/uploads/2023/06/compete-brand-v0103-2.jpg)">
+                                    <div class="btn btn-icon btn-lg btn-outline-light rounded-circle pe-none mb-3"><i class="ai-arrow-right"></i></div>
+                                </div>
+                                <div class="card-body pb-3">
+                                                                                    <svg class="d-block mt-1 mt-sm-0 mb-4" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                                    <g class="text-info">
+                                                    <path d="M25,25h15v15H25V25z" fill="currentColor"></path>
+                                                    </g>
+                                                    <g class="text-primary">
+                                                    <path d="M10,20c0-5.5,4.5-10,10-10s10,4.5,10,10h10C40,9,31,0,20,0S0,9,0,20s9,20,20,20V30C14.5,30,10,25.5,10,20z" fill="currentColor"></path>
+                                                    </g>
+                                                </svg>
+                                                                                
+                                    <h3 class="h4">+ social</h3>
+                                    <p class="mb-0">Apoiar a adaptação de trabalhadores e das empresas à mudança, aumentando as suas competências</p>
+                                </div>
+                                <div class="card-footer border-0 pt-3 mb-3">
+                                    <div class="btn btn-icon btn-lg btn-outline-primary rounded-circle pe-none"><i class="ai-arrow-right"></i></div>
+                                </div>
+                            </a>
+                        </div>
+                       
+            </div>
+        </div>
+      </section>
+      <!-- Stats-->
+      <section class="position-relative stats-section">
+        <div class="container py-2 py-sm-3 py-md-4 py-lg-5 my-xl-3 my-xxl-5">
+            <div class="bg-blue py-4 py-md-5 px-lg-5">
+                <h2 class="text-center mb-4 h1 text-white">COMPETE 2030 em números</h2>
+                <h3 class="text-center h2 display-5 text-white mb-0">3.905 M€</h3>
+                <div class="row row-cols-2 row-cols-md-4 g-0">
+                                                <div class="col-md-6 col-lg-3 col-12 d-md-flex justify-content-center text-center text-md-start position-relative">
+                                <div class="position-absolute top-50 end-0 translate-middle-y border-end" style="height: 60px;"></div>
+                                <div class="p-3 px-sm-0 py-sm-4 text-center">
+                                    <div class="h2 display-5 text-white mb-0">2567 M€</div><span>OE1 Portugal + Competitivo</span>
+                                </div>
+                            </div>
+                                                <div class="col-md-6 col-lg-3 col-12 d-md-flex justify-content-center text-center text-md-start position-relative">
+                                <div class="position-absolute top-50 end-0 translate-middle-y border-end" style="height: 60px;"></div>
+                                <div class="p-3 px-sm-0 py-sm-4 text-center">
+                                    <div class="h2 display-5 text-white mb-0">815 M€</div><span>OE2 Portugal + Verde</span>
+                                </div>
+                            </div>
+                                                <div class="col-md-6 col-lg-3 col-12 d-md-flex justify-content-center text-center text-md-start position-relative">
+                                <div class="position-absolute top-50 end-0 translate-middle-y border-end" style="height: 60px;"></div>
+                                <div class="p-3 px-sm-0 py-sm-4 text-center">
+                                    <div class="h2 display-5 text-white mb-0">400 M€</div><span>OE4 Portugal + Social</span>
+                                </div>
+                            </div>
+                                                <div class="col-md-6 col-lg-3 col-12 d-md-flex justify-content-center text-center text-md-start position-relative">
+                                <div class="position-absolute top-50 end-0 translate-middle-y " style="height: 60px;"></div>
+                                <div class="p-3 px-sm-0 py-sm-4 text-center">
+                                    <div class="h2 display-5 text-white mb-0">123 M€</div><span>Assistência técnica</span>
+                                </div>
+                            </div>
+                                    </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Services-->
+      <section class="container pt-5 mt-lg-3 mt-xl-4 mt-xxl-5">
+        <h2 class="h1 text-center pt-2 pt-sm-3 pt-md-4 pt-xl-5 mt-lg-2 mt-xl-1">Em destaque</h2>
+        <p class="text-center pb-3 mb-3 mb-lg-4">Mantenha-se a par de todos os avisos e agenda Compete 2030</p>
+        <div class="row g-4">
+            <!-- Item-->
+                                <div class="col-lg-4 col-md-6 col-12">
+                        <div class="card border-0 bg-secondary">
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush mb-4 border-0">
+                                                                                <li class="list-group-item">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <span class="date">9 de Dezembro 2025</span>
+                                                    <div class="d-inline-block">
+                                                                                                                    <div class="badge border-success text-success fs-xs border ms-2 mb-1">Aberto</div>
+                                                                                                                        <div class="badge text-nav fs-xs border mt-2">Atualizado</div>
+                                                                                                            </div>
+                                                </div>
+                                                <a href="https://www.compete2030.gov.pt/avisos/sice-internacionalizacao-das-pme-operacoes-em-conjunto-mpr-2025-14/"><h3 class="card-title h4">SICE - Internacionalização das PME - Operações em conjunto</h3></a>
+                                            </li>
+                                                                                <li class="list-group-item">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <span class="date">7 de Novembro 2025</span>
+                                                    <div class="d-inline-block">
+                                                                                                                    <div class="badge border-danger text-danger fs-xs border ms-2 mb-1">Fechado</div>
+                                                                                                                        <div class="badge text-nav fs-xs border mt-2">Atualizado</div>
+                                                                                                            </div>
+                                                </div>
+                                                <a href="https://www.compete2030.gov.pt/avisos/siqrh-formacao-acao_compete2030-2025-7/"><h3 class="card-title h4">SIQRH - Formação Ação</h3></a>
+                                            </li>
+                                                                                <li class="list-group-item">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <span class="date">21 de Outubro 2025</span>
+                                                    <div class="d-inline-block">
+                                                                                                                    <div class="badge border-success text-success fs-xs border ms-2 mb-1">Aberto</div>
+                                                                                                                        <div class="badge text-nav fs-xs border mt-2">Atualizado</div>
+                                                                                                            </div>
+                                                </div>
+                                                <a href="https://www.compete2030.gov.pt/avisos/saccct-internacionalizacao-de-id_cand-programas-ue_mpr-2025-13/"><h3 class="card-title h4">SACCCT - Internacionalização de I&D - operações que visem o apoio à preparação e submissão de candidaturas a programas de I&D financiados pela União Europeia</h3></a>
+                                            </li>
+                                                                    </ul>
+                                <a href="https://www.compete2030.gov.pt/avisos/">
+                                    <div class="btn btn-icon btn-lg btn-outline-primary rounded-circle pe-none me-2 text"><i class="ai-arrow-right"></i></div>
+                                    <span class="text-primary fw-semibold">Ver todos</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                                    
+            <!-- Item-->
+                                <div class="col-lg-4 col-md-6 col-12">
+                        <div class="card border-0"> 
+                                                                <img src="/wp-content/uploads/2025/12/Site.jpg" class="card-img-top" alt="">
+                                                        <div class="card-body px-0">
+                                <div class="border-bottom">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <span class="date">9 de Dezembro 2025</span>
+                                        <div class="d-inline-block"><a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/comunicacao/?category=158">Notícias</a></div>
+                                    </div>
+                                    <a href="https://www.compete2030.gov.pt/comunicacao/6o-comite-de-acompanhamento-do-compete-2030/"><h4 class="card-title">6º Comité de Acompanhamento do COMPETE 2030</h4></a>
+                                </div>
+                            </div>
+                                                            <ul class="list-group list-group-flush mb-4 border-0">
+                                                                                <li class="list-group-item">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <span class="date">3 de Dezembro 2025</span>
+                                                    <div class="d-inline-block"><a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/comunicacao/?category=158">Notícias</a></div>
+                                                </div>
+                                                <a href="https://www.compete2030.gov.pt/comunicacao/cancro-da-mama-new-hope/"><h5 class="card-title">Cancro da Mama: New Hope</h5></a>
+                                            </li>
+                                                                                <li class="list-group-item">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <span class="date">21 de Novembro 2025</span>
+                                                    <div class="d-inline-block"><a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/comunicacao/?category=158">Notícias</a></div>
+                                                </div>
+                                                <a href="https://www.compete2030.gov.pt/comunicacao/promover-a-aceleracao-do-ciclo-de-inovacao/"><h5 class="card-title">Promover a aceleração do ciclo de Inovação</h5></a>
+                                            </li>
+                                                                    </ul>
+                                                        <a href="https://www.compete2030.gov.pt/comunicacao/">
+                                <div class="btn btn-icon btn-lg btn-outline-primary rounded-circle pe-none me-2"><i class="ai-arrow-right"></i></div>
+                                <span class="text-primary fw-semibold">Ver todos</span>
+                            </a>
+                        </div>  
+                    </div>
+                                              
+            <!-- Item-->
+                                <div class="col-lg-4 col-md-6 col-12 agenda-home">
+                                                        <div class="calendar-container"></div>
+                                <div class="border-bottom mb-2 pt-3 pb-3 ms-4 ps-2">
+                                    <h3 class="fw-semibold mb-0">
+                                        10 de Dezembro 2025                                    </h3>
+                                </div>
+                                                <div class="card border-0"> 
+                                                        <div class="card-body px-0">
+                                <div class="border-bottom">
+                                    <div class="d-flex align-items-center mb-3">
+                                                                                <div class="d-inline-block"><a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/agenda/">Agenda</a></div>
+                                    </div>
+                                    <a href="https://www.compete2030.gov.pt/agenda/rede-de-fornecedores-inovadores-webinar/"><h4 class="card-title">Rede de Fornecedores Inovadores (webinar)</h4></a>
+                                </div>
+                            </div>
+                                                        <a href="https://www.compete2030.gov.pt/agenda/">
+                                <div class="btn btn-icon btn-lg btn-outline-primary rounded-circle pe-none me-2"><i class="ai-arrow-right"></i></div>
+                                <span class="text-primary fw-semibold">Ver todos</span>
+                            </a>
+                        </div>  
+                    </div>
+                    </div>
+      </section>
+      
+    </main>
+
+<!-- Footer-->
+<footer class="footer pt-4 mt-lg-5 mt-4">
+    <div class="container">
+    <a href="https://www.compete2030.gov.pt/a-sua-opiniao/" class="text-decoration-none"><p class="ms-2 text-primary mb-4"><span class="text-primary fw-semibold">Dê-nos a sua opinião sobre esta página.</span> Esta página foi útil para si?</p></a>
+    </div>
+        <div class="footer-bg">
+            <!-- Subscription-->
+           <div class="container newsletter">
+			    <input type="hidden" id="your_email" value="O seu e-mail" />
+                <input type="hidden" id="subscribe" value="Subscrever" />
+                <input type="hidden" id="allow_width" value="Concordo com os" />
+                <input type="hidden" id="terms_conditions" value="Termos e Condições" />
+			   
+                <div class="position-relative bg-blue overflow-hidden">
+                    <div class="position-relative">
+                        <div class="row gy-md-5 gy-4 gx-xl-5">
+                            <div class="col-lg-6">
+                                <h2 class="h1 pb-2 mt-n2 text-white">Subscreva a newsletter Compete 2030</h2>
+                                <p class="text-white">Receba primeiro todas as novidades no seu email</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <script>(function() {
+	window.mc4wp = window.mc4wp || {
+		listeners: [],
+		forms: {
+			on: function(evt, cb) {
+				window.mc4wp.listeners.push(
+					{
+						event   : evt,
+						callback: cb
+					}
+				);
+			}
+		}
+	}
+})();
+</script><!-- Mailchimp for WordPress v4.9.5 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-107" method="post" data-id="107" data-name="Newsletter" ><div class="mc4wp-form-fields"><div class="input-group rounded-pill">
+	<input class="form-control" type="email" name="EMAIL" placeholder="O seu e-mail" required="">
+	<button class="btn btn-success2 rounded-pill" type="submit">Subscrever</button>
+</div>
+<div class="form-check mt-3 form-check-inline fs-sm text-white ps-5">
+	<label>
+		<input class="form-check-input" type="checkbox" name="AGREE_TO_TERMS" value="1" required=""><span id="agree_text">Concordo com os</span> <a class="text-white" href="https://www.compete2030.gov.pt/termos-e-condicoes/" target="_blank"> Termos e Condições</a>
+	</label>
+</div></div><label style="display: none !important;">Deixe este campo vazio se for humano: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1765402149" /><input type="hidden" name="_mc4wp_form_id" value="107" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" /><div class="mc4wp-response"></div></form><!-- / Mailchimp for WordPress Plugin -->                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row gy-md-5 gy-4 mb-md-5 mb-4 pb-lg-2">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-12 col-sm-6 col-12">
+                                <p><span class="fw-semibold">Morada:</span> <br>
+                                Edifício Expo 98<br />
+Av. D.João II, nº52 - 3º Piso<br />
+1990-096 Lisboa<br> 
+                                <a href="https://maps.app.goo.gl/Vhp1poffwnnacnTq5" target="_blank">Direções</a></p>
+                            </div>
+                            <div class="col-lg-12 col-sm-6 col-12">
+                                <p class="mb-0"><span class="fw-semibold">Contactos:</span> <br>
+                                Tel: 211 548 700 <br>
+                                info@compete2030.gov.pt                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 custom-flex">
+                        <div class="row row-cols-sm-3 row-cols-1">
+                            <div class="col">
+                                <ul class="nav flex-column mb-0 ps-lg-2 ps-0 ms-lg-1 ms-0">
+                                                                                <li class="nav-item mb-2">
+                                                                                            <a class="nav-link p-0" href="https://www.compete2030.gov.pt/contactos/" >Contactos</a>
+                                            </li>
+                                                                                <li class="nav-item mb-2">
+                                                                                            <a class="nav-link p-0" href="https://www.compete2030.gov.pt/denuncias/" >Denúncias</a>
+                                            </li>
+                                                                    </ul>
+                            </div>
+                            <div class="col">
+                                <ul class="nav flex-column mb-0">
+                                                                                <li class="nav-item mb-2">
+                                                                                            <a class="nav-link p-0" href="/recrutamentos/" >Recrutamento</a>
+                                            </li>
+                                                                                <li class="nav-item mb-2">
+                                                                                            <a class="nav-link p-0" href="https://www.compete2030.gov.pt/area-reservada/" >Área Reservada</a>
+                                            </li>
+                                                                    </ul>
+                            </div>
+                            <div class="col">
+                                <ul class="nav flex-column mb-0">
+                                                                                <li class="nav-item mb-2">
+                                                                                            <a class="nav-link p-0" href="https://www.compete2030.gov.pt/politica-de-privacidade/" >Política de Privacidade do COMPETE 2030 (RGPD)</a>
+                                            </li>
+                                                                                <li class="nav-item mb-2">
+                                                                                            <a class="nav-link p-0" href="https://www.compete2030.gov.pt/?page_id=259" >Acessibilidade</a>
+                                            </li>
+                                                                                <li class="nav-item mb-2">
+                                                                                            <a class="nav-link p-0" href="https://www.compete2030.gov.pt/termos-e-condicoes/" >Termos e Condições</a>
+                                            </li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-lg-0 mt-4">
+                            <div class="d-sm-flex d-block justify-content-lg-between justify-content-start align-items-center w-100">
+                                <p class="mb-sm-0 mb-2">Siga-nos nas redes sociais</p>
+                                <ul class="mb-0 ps-sm-4 ps-0 list-unstyled d-flex">
+                                                                                <li><a class="btn btn-secondary2 btn-icon btn-facebook rounded-circle me-2" href="https://www.facebook.com/Compete2030.eufunds" title="fb_link" aria-label="fb_link"><i aria-hidden="true" class="ai-facebook"></i></a></li>
+                                                                                                                    <li><a class="btn btn-secondary2 btn-icon btn-linkedin rounded-circle me-2" href="https://www.linkedin.com/company/compete/" target="_blank" title="lnk_link" aria-label="lnk_link"><i aria-hidden="true" class="ai-linkedin"></i></a></li>
+                                                                                                                    <li><a class="btn btn-secondary2 btn-icon btn-twitter rounded-circle me-2" href="https://twitter.com/FEEICOMPETE2030" target="_blank" title="tw_link" aria-label="tw_link"><i aria-hidden="true"></i></a></li>
+                                                                                                                    <li><a class="btn btn-secondary2 btn-icon btn-youtube rounded-circle me-2" href="https://www.youtube.com/@COMPETE-2030" target="_blank" title="yt_link" aria-label="yt_link"><i aria-hidden="true" class="ai-youtube"></i></a></li>
+                                                                                                                    <li><a class="btn btn-secondary2 btn-icon btn-instagram rounded-circle" href="https://www.instagram.com/compete2030_/" target="_blank" title="instagram_link" aria-label="instagram_link"><i aria-hidden="true" class="ai-instagram"></i></a></li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row pb-5 border-top pt-5">
+                    <div class="col-lg-6 col-12 mb-3 mb-md-0">
+                        <div class="d-flex align-items-center h-100">
+                            <p class="mb-0 fs-sm">© COMPETE 2030. Todos os direitos reservados.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 mb-2 mb-sm-0 mt-lg-0 mt-3">
+                        <div class="d-flex justify-content-lg-end justify-centent-start align-items-center h-100">
+                            <img  id="logo-footer2-light" src="/wp-content/themes/compete2030_theme/assets/images/barra-logos-compete-2030-UE-white.svg" alt="Lógotipo Compete 2030, Portugal 2030 e União Europeia" />
+                            <img  id="logo-footer2-dark" src="/wp-content/themes/compete2030_theme/assets/images/barra-logos-compete-2030-UE-white.svg" alt="Lógotipo Compete 2030, Portugal 2030 e União Europeia" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+	<!-- Back to top button-->
+    <a class="btn-scroll-top" href="#top" data-scroll>
+      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+      </svg><i class="ai-arrow-up"></i></a>
+
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>A carregar...</span>
+      </div>
+    </div>
+
+
+
+
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/compete2030_theme/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script>(function() {function maybePrefixUrlField () {
+  const value = this.value.trim()
+  if (value !== '' && value.indexOf('http') !== 0) {
+    this.value = 'http://' + value
+  }
+}
+
+const urlFields = document.querySelectorAll('.mc4wp-form input[type="url"]')
+for (let j = 0; j < urlFields.length; j++) {
+  urlFields[j].addEventListener('blur', maybePrefixUrlField)
+}
+})();</script><script type="text/javascript" src="/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.7.7" id="swv-js"></script>
+<script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https://www.compete2030.gov.pt/wp-json/","namespace":"contact-form-7/v1"}};
+//# sourceURL=contact-form-7-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.7.7" id="contact-form-7-js"></script>
+<script type="text/javascript" src="/wp-content/themes/compete2030_theme/assets/js/flatpickr.min.js?ver=1.0.0" id="Flatpickr-js"></script>
+<script type="text/javascript" src="/wp-content/themes/compete2030_theme/assets/js/rangePlugin.js?ver=1.0.0" id="RangePlugin-js"></script>
+<script type="text/javascript" src="/wp-content/themes/compete2030_theme/assets/js/jquery.min.js?ver=1.0.0" id="jQuery-js"></script>
+<script type="text/javascript" src="/wp-content/themes/compete2030_theme/assets/js/bootstrap.bundle.min.js?ver=1.0.0" id="BootstrapJS-js"></script>
+<script type="text/javascript" src="/wp-content/themes/compete2030_theme/assets/js/smooth-scroll.polyfills.min.js?ver=1.0.0" id="SmoothScroll-js"></script>
+<script type="text/javascript" src="/wp-content/themes/compete2030_theme/assets/js/jquery.simple-calendar.js?ver=1.0.0" id="jQuerySimpleCalendar-js"></script>
+<script type="text/javascript" src="/wp-content/themes/compete2030_theme/assets/lib/swiper/swiper-bundle.min.js?ver=1.0.0" id="SwiperJS-js"></script>
+<script type="text/javascript" src="/wp-content/themes/compete2030_theme/assets/lib/lightgallery/js/lightgallery.min.js?ver=1.0.0" id="LightGalleryJS-js"></script>
+<script type="text/javascript" src="/wp-content/themes/compete2030_theme/assets/lib/lightgallery/js/lg-video.min.js?ver=1.0.0" id="LightGalleryJS2-js"></script>
+<script type="text/javascript" src="/wp-content/themes/compete2030_theme/assets/js/imagesloaded.pkgd.min.js?ver=1.0.0" id="ImagesLoadedJS-js"></script>
+<script type="text/javascript" src="/wp-content/themes/compete2030_theme/assets/js/shuffle.min.js?ver=1.0.0" id="ShuffleJS-js"></script>
+<script type="text/javascript" src="/wp-content/themes/compete2030_theme/assets/js/main.js?ver=1.0.0" id="MainJS-js"></script>
+<script type="text/javascript" src="/wp-content/themes/compete2030_theme/assets/js/bootstrap-cookie-consent-settings.js?ver=1.0.0" id="cookiesConsent-js"></script>
+<script type="text/javascript" src="/wp-content/themes/compete2030_theme/index.js?ver=1.0.3" id="indexJS-js"></script>
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?render=6LdtygopAAAAAPddmQ-VGsmoMuz9cb_w6ZtyAo9N&amp;ver=3.0" id="google-recaptcha-js"></script>
+<script type="text/javascript" src="https://www.compete2030.gov.pt/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+<script type="text/javascript" id="wpcf7-recaptcha-js-extra">
+/* <![CDATA[ */
+var wpcf7_recaptcha = {"sitekey":"6LdtygopAAAAAPddmQ-VGsmoMuz9cb_w6ZtyAo9N","actions":{"homepage":"homepage","contactform":"contactform"}};
+//# sourceURL=wpcf7-recaptcha-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=5.7.7" id="wpcf7-recaptcha-js"></script>
+<script type="text/javascript" defer src="/wp-content/plugins/mailchimp-for-wp/assets/js/forms.js?ver=4.9.5" id="mc4wp-forms-api-js"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://www.compete2030.gov.pt/wp-includes/js/wp-emoji-release.min.js?ver=6.9"}}
+</script>
+<script type="module">
+/* <![CDATA[ */
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=https://www.compete2030.gov.pt/wp-includes/js/wp-emoji-loader.min.js
+/* ]]> */
+</script>
+
+
+    <script>
+        $(document).ready(function () {
+            app.init();
+			
+			var lng = 'pt';
+            var events_list = [
+                                      {
+                          startDate: '09/11/2025',
+                          endDate: '09/11/2025',
+                          summary: 'FORMAÇÃO - Programa Formação-ação (Sessão de Esclarecimento)',
+                          link: 'https://www.compete2030.gov.pt/agenda/formacao-programa-formacao-acao-sessao-de-esclarecimento/',
+                          type: 'event',
+                          categories: '<a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/agenda/">Agenda</a>'
+                        }
+                                            ,
+                                              {
+                          startDate: '05/08/2025',
+                          endDate: '05/08/2025',
+                          summary: 'Rede de Fornecedores Inovadores (webinar)',
+                          link: 'https://www.compete2030.gov.pt/agenda/rede-de-fornecedores-inovadores-webinar/',
+                          type: 'event',
+                          categories: '<a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/agenda/">Agenda</a>'
+                        }
+                                            ,
+                                              {
+                          startDate: '04/22/2025',
+                          endDate: '04/23/2025',
+                          summary: 'Inovação em Ação',
+                          link: 'https://www.compete2030.gov.pt/agenda/inovacao-em-acao/',
+                          type: 'event',
+                          categories: '<a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/agenda/">Agenda</a>'
+                        }
+                                            ,
+                                              {
+                          startDate: '03/06/2025',
+                          endDate: '03/06/2025',
+                          summary: 'Sessão de Encerramento do COMPETE 2020',
+                          link: 'https://www.compete2030.gov.pt/agenda/sessao-de-encerramento-do-compete-2020/',
+                          type: 'event',
+                          categories: '<a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/agenda/">Agenda</a>'
+                        }
+                                            ,
+                                              {
+                          startDate: '03/05/2025',
+                          endDate: '03/05/2025',
+                          summary: 'V Comité de Acompanhamento',
+                          link: 'https://www.compete2030.gov.pt/agenda/v-comite-de-acompanhamento/',
+                          type: 'event',
+                          categories: '<a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/agenda/">Agenda</a>'
+                        }
+                                            ,
+                                              {
+                          startDate: '02/11/2025',
+                          endDate: '02/11/2025',
+                          summary: 'O Portugal 2030 - Estratégias e Financiamento de IC&amp;IB através dos Fundos Estruturais Nacionais',
+                          link: 'https://www.compete2030.gov.pt/agenda/o-portugal-2030-estrategias-e-financiamento-de-icib-atraves-dos-fundos-estruturais-nacionais/',
+                          type: 'event',
+                          categories: '<a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/agenda/">Agenda</a>'
+                        }
+                                            ,
+                                              {
+                          startDate: '10/23/2024',
+                          endDate: '10/24/2024',
+                          summary: 'Comité de Acompanhamento',
+                          link: 'https://www.compete2030.gov.pt/agenda/comite-de-acompanhamento-23-e-24-de-outubro/',
+                          type: 'event',
+                          categories: '<a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/agenda/">Agenda</a>'
+                        }
+                                            ,
+                                              {
+                          startDate: '10/15/2024',
+                          endDate: '10/15/2024',
+                          summary: '6.ª Reunião da Rede de Inovação e Transição Digital ',
+                          link: 'https://www.compete2030.gov.pt/agenda/6a-reuniao-da-rede-de-inovacao-e-transicao-digital/',
+                          type: 'event',
+                          categories: '<a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/agenda/">Agenda</a>'
+                        }
+                                            ,
+                                              {
+                          startDate: '09/19/2024',
+                          endDate: '09/19/2024',
+                          summary: 'Webinar "Propriedade Industrial: Principais mitos e oportunidades de financiamento"',
+                          link: 'https://www.compete2030.gov.pt/agenda/webinar-propriedade-industrial-principais-mitos-e-oportunidades-de-financiamento/',
+                          type: 'event',
+                          categories: '<a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/agenda/">Agenda</a>'
+                        }
+                                            ,
+                                              {
+                          startDate: '07/23/2024',
+                          endDate: '07/23/2024',
+                          summary: 'Sessão de esclarecimentos sobre procedimentos de apresentação de pedidos de pagamento',
+                          link: 'https://www.compete2030.gov.pt/agenda/sessao-de-esclarecimentos-sobre-procedimentos-de-apresentacao-de-pedidos-de-pagamento/',
+                          type: 'event',
+                          categories: '<a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/agenda/">Agenda</a>'
+                        }
+                                            ,
+                                              {
+                          startDate: '01/23/2024',
+                          endDate: '01/23/2024',
+                          summary: 'Webinar dedicado ao concurso de projetos IC&DT',
+                          link: 'https://www.compete2030.gov.pt/agenda/webinar-dedicado-ao-concurso-de-projetos-icdt/',
+                          type: 'event',
+                          categories: '<a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/agenda/">Agenda</a>'
+                        }
+                                            ,
+                                              {
+                          startDate: '01/09/2024',
+                          endDate: '01/17/2024',
+                          summary: 'Novo modelo Custos Simplificados nas tipologias de I&D do PT 2030',
+                          link: 'https://www.compete2030.gov.pt/agenda/compete-2030-e-ani-organizam-roadshow-pt2030-pelo-pais/',
+                          type: 'event',
+                          categories: '<a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/agenda/">Agenda</a>'
+                        }
+                                            ,
+                                              {
+                          startDate: '10/20/2023',
+                          endDate: '10/20/2023',
+                          summary: 'Encontros da Economia',
+                          link: 'https://www.compete2030.gov.pt/agenda/encontros-da-economia-barreiro-20-de-outubro/',
+                          type: 'event',
+                          categories: '<a class="btn btn-outline-secondary mb-1 ms-2 py-1 px-2 btn-sm" href="https://www.compete2030.gov.pt/agenda/">Agenda</a>'
+                        }
+                                ];
+            app.initHome(events_list, lng);
+        });   
+    </script>
+
+</body>
+</html>

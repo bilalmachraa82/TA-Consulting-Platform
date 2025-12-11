@@ -1,0 +1,9 @@
+{
+	"id": "Y9r0ixQ6vKVLhkc",
+	"json": "{\"id\":\"Y9r0ixQ6vKVLhkc\",\"url\":\"https://portugal2030.pt/avisos/\",\"loadedUrl\":\"https://portugal2030.pt/avisos/\",\"uniqueKey\":\"https://portugal2030.pt/avisos\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-12-10T22:59:42.152Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://portugal2030.pt/avisos",
+	"url": "https://portugal2030.pt/avisos/"
+}

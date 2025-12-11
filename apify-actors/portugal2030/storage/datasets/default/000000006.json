@@ -1,0 +1,43 @@
+{
+	"type": "aviso",
+	"id": "PT2030_novo_sistema_de_iluminacao_da_pista_do_aerodromo_d_1765407582150",
+	"titulo": "Novo sistema de iluminação da pista do aeródromo da ilha do Pico",
+	"descricao": "Aviso Programa Temático para a Ação Climática e Sustentabilidade - Ver documentos anexos",
+	"fonte": "Portugal 2030",
+	"programa": "Programa Temático para a Ação Climática e Sustentabilidade",
+	"linha": "Investimento",
+	"data_abertura": "2025-12-05",
+	"data_fecho": "2026-04-20",
+	"montante_total": "0",
+	"montante_min": "0",
+	"montante_max": "0",
+	"taxa_apoio": "Consultar PDF",
+	"regiao": [
+		"Nacional"
+	],
+	"setor": [
+		"Multisectorial"
+	],
+	"tipo_beneficiario": [
+		"Diversos"
+	],
+	"url": "https://portugal2030.pt/avisos/",
+	"pdf_url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F11%2Faf4addb8-a759-441b-b36c-2e4898898901%2F7ad76093-b63c-4d14-9962-8ca5c38afae5&filename=Anexo+F+-+3.1+-+Infraestruturas_aeroportu%C3%A1rias_RTE.pdf",
+	"anexos": [
+		{
+			"nome": "Anexo F - 3.1 - Infraestruturas_aeroportuárias_RTE.pdf",
+			"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F11%2Faf4addb8-a759-441b-b36c-2e4898898901%2F7ad76093-b63c-4d14-9962-8ca5c38afae5&filename=Anexo+F+-+3.1+-+Infraestruturas_aeroportu%C3%A1rias_RTE.pdf",
+			"tipo": "pdf"
+		},
+		{
+			"nome": "Aviso PACS-2025-15.pdf",
+			"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2Faf4addb8-a759-441b-b36c-2e4898898901%2F40ffa2dc-273f-45db-99c1-a9f2e2781d92&filename=Aviso+PACS-2025-15.pdf",
+			"tipo": "pdf"
+		}
+	],
+	"status": "Aberto",
+	"elegibilidade": "Consultar regulamento",
+	"documentos_necessarios": [],
+	"keywords": [],
+	"scraped_at": "2025-12-10T22:59:42.150Z"
+}

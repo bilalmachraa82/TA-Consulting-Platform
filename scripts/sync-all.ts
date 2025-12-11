@@ -5,8 +5,7 @@
  * Executa:
  * 1. Scraping de todos os portais (Portugal 2030, PEPAC, PRR)
  * 2. Download de PDFs
- * 3. Sincronização com a base de dados
- * 4. Inicialização do sistema RAG
+ * 3. (Opcional) Integração com base de dados/RAG baseado em Google Search
  *
  * Uso: npx tsx scripts/sync-all.ts
  */
@@ -56,34 +55,7 @@ async function main() {
       console.log(`  📄 ${file}: ${count} registos (${(stats.size / 1024).toFixed(1)}KB)`);
     }
 
-    // 3. Inicializar RAG
-    console.log('\n🧠 FASE 3: Inicialização do Sistema RAG');
-    console.log('═'.repeat(50));
-
-    const ragSystem = await import('../lib/rag-system');
-    await ragSystem.initRAG();
-
-    // Testar pesquisa RAG
-    console.log('\n  🔍 Testando pesquisa RAG...');
-    const testResults = await ragSystem.searchAvisos('inovação digital PME', {}, 3);
-    console.log(`  ✅ Pesquisa teste: ${testResults.length} resultados encontrados`);
-
-    if (testResults.length > 0) {
-      console.log(`     Top resultado: "${testResults[0].aviso.titulo}" (${Math.round(testResults[0].score * 100)}%)`);
-    }
-
-    // 4. Sincronizar com base de dados
-    console.log('\n💾 FASE 4: Sincronização com Base de Dados');
-    console.log('═'.repeat(50));
-
-    try {
-      await ragSystem.syncToDatabase();
-    } catch (dbError: any) {
-      console.log(`  ⚠️ Sincronização DB skipped: ${dbError.message}`);
-      console.log('     (Os dados estão disponíveis via JSON fallback)');
-    }
-
-    // 5. Estatísticas finais
+    // 3. Estatísticas finais
     const endTime = Date.now();
     const duration = ((endTime - startTime) / 1000).toFixed(1);
 
@@ -113,11 +85,7 @@ async function main() {
         prr: scrapingResults.prr.length,
         total: scrapingResults.total,
       },
-      ragInitialized: true,
-      testSearch: {
-        query: 'inovação digital PME',
-        resultsCount: testResults.length,
-      },
+      ragInitialized: false,
     };
 
     const reportPath = path.join(dataDir, 'sync_report.json');
