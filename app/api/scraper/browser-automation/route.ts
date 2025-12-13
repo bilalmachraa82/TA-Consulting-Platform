@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { BrowserAutomation } from '@/lib/scraper/browser-automation';
 
+// Puppeteer só funciona em runtime Node.js
+export const runtime = 'nodejs';
+
 const PORTAL_CONFIGS = {
     'portugal2030': {
         name: 'Portugal 2030',

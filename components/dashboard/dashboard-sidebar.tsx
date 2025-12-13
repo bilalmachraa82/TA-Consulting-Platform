@@ -23,6 +23,20 @@ import {
 import { Button } from '@/components/ui/button'
 
 const navigation = [
+  // Consultant Portal Section
+  {
+    name: 'Minhas Empresas',
+    href: '/dashboard/minhas-empresas',
+    icon: Building2,
+    isNew: true,
+  },
+  {
+    name: 'Alertas Consolidados',
+    href: '/dashboard/alertas-consolidados',
+    icon: AlertTriangle,
+    isNew: true,
+  },
+  // Separator
   {
     name: 'Dashboard',
     href: '/dashboard',
@@ -31,7 +45,7 @@ const navigation = [
   {
     name: 'Avisos & Oportunidades',
     href: '/dashboard/avisos',
-    icon: AlertTriangle,
+    icon: TrendingUp,
   },
   {
     name: 'Recomendações IA',
@@ -41,7 +55,7 @@ const navigation = [
   {
     name: 'Empresas Clientes',
     href: '/dashboard/empresas',
-    icon: Building2,
+    icon: Users,
   },
   {
     name: 'Candidaturas',
@@ -56,7 +70,7 @@ const navigation = [
   {
     name: 'Documentação',
     href: '/dashboard/documentacao',
-    icon: Users,
+    icon: FileText,
   },
   {
     name: 'Workflows',
@@ -74,6 +88,7 @@ const navigation = [
     icon: Settings,
   },
 ]
+
 
 export function DashboardSidebar() {
   const pathname = usePathname()
@@ -97,7 +112,7 @@ export function DashboardSidebar() {
           {isCollapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
         </Button>
       </div>
-      
+
       <nav className="flex-1 px-3 py-4 space-y-1">
         {navigation.map((item) => {
           const isActive = pathname === item.href

@@ -526,7 +526,7 @@ export function DocumentacaoComponent() {
                   {documento.observacoes && (
                     <div className="text-sm">
                       <div className="text-gray-500">Observações</div>
-                      <div className="text-gray-700 italic">"{documento.observacoes}"</div>
+                      <div className="text-gray-700 italic">&quot;{documento.observacoes}&quot;</div>
                     </div>
                   )}
 

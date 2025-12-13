@@ -1,0 +1,36 @@
+{
+  "totalAvisos": 350,
+  "byPortal": [
+    {
+      "portal": "portugal2030",
+      "count": 100,
+      "success": true
+    },
+    {
+      "portal": "prr",
+      "count": 100,
+      "success": true
+    },
+    {
+      "portal": "pepac",
+      "count": 7,
+      "success": true
+    },
+    {
+      "portal": "horizonEurope",
+      "count": 100,
+      "success": true
+    },
+    {
+      "portal": "europaCriativa",
+      "count": 32,
+      "success": true
+    },
+    {
+      "portal": "ipdj",
+      "count": 11,
+      "success": true
+    }
+  ],
+  "scrapedAt": "2025-12-12T16:56:37.058Z"
+}

@@ -1,0 +1,103 @@
+{
+  "testCases": [
+    {
+      "id": "match-01",
+      "category": "matching",
+      "question": "Tenho um cliente com empresa de software (CAE 62010). Quais os avisos abertos hoje mais compatíveis? Dá 3 opções e justifica com base nas fontes."
+    },
+    {
+      "id": "match-02",
+      "category": "matching",
+      "question": "Tenho um cliente agrícola (CAE 01). Que avisos do PEPAC são mais adequados e porquê? Se não houver correspondência explícita, diz que não encontras.",
+      "portalFilter": "PEPAC"
+    },
+    {
+      "id": "recom-01",
+      "category": "recommendation",
+      "question": "Uma startup tecnológica em Lisboa quer I&D com parceiros europeus. Recomenda o melhor fundo/programa e dá 2-3 próximos passos concretos."
+    },
+    {
+      "id": "open-01",
+      "category": "status",
+      "question": "Quais são os avisos que estão abertos para candidatura AGORA? Lista os mais relevantes e indica o prazo (quando fecha).",
+      "expectedCodes": [
+        "FA0943/2024",
+        "FA0114/2025",
+        "FA0113/2025",
+        "FA0154/2025",
+        "FA0036/2025",
+        "1/C06-i08-RAM/2024"
+      ]
+    },
+    {
+      "id": "open-02",
+      "category": "status",
+      "question": "No portal PRR, quais avisos estão abertos hoje e quando fecham? (lista curta)",
+      "portalFilter": "PRR",
+      "expectedCodes": [
+        "1/C06-i08-RAM/2024",
+        "01/C07-i04.02/2021",
+        "01/C20-i01.01/2022",
+        "01/C07-i04.04/2022",
+        "01/C01-i03/2021"
+      ]
+    },
+    {
+      "id": "pt-elig-01",
+      "category": "eligibility",
+      "question": "No aviso FA0943/2024, que tipo de entidades podem candidatar-se (beneficiários elegíveis) e quais restrições principais?",
+      "portalFilter": "PT2030"
+    },
+    {
+      "id": "prr-deadline-01",
+      "category": "deadlines",
+      "question": "No aviso 1/C06-i08-RAM/2024, qual é o prazo/data limite de candidatura?",
+      "portalFilter": "PRR"
+    },
+    {
+      "id": "pepac-docs-01",
+      "category": "documents",
+      "question": "No aviso PEPACC-11124, que documentos/anexos são pedidos para a candidatura? Faz checklist.",
+      "portalFilter": "PEPAC"
+    },
+    {
+      "id": "horizon-01",
+      "category": "horizon",
+      "question": "Na call HORIZON-EIE-2026-01-CONNECT-02, qual é o objetivo e o prazo (deadline), e que tipo de entidade tipicamente participa? Se não estiver claro, diz que não encontras.",
+      "portalFilter": "HORIZON"
+    },
+    {
+      "id": "crea-01",
+      "category": "creative",
+      "question": "Na call CREA-CULT-2025-COOP-UA-1, qual é o deadline e qual o tema do aviso?",
+      "portalFilter": "EUROPA_CRIATIVA"
+    },
+    {
+      "id": "ipdj-01",
+      "category": "ipdj",
+      "question": "No programa IPDJ-apoio-e-financiamento-jovem, qual o tipo de apoio e como aceder/submeter pedido?",
+      "portalFilter": "IPDJ"
+    },
+    {
+      "id": "wrong-filter-01",
+      "category": "negative_filter",
+      "question": "Pergunta: No aviso 1/C06-i08-RAM/2024, quais são os beneficiários? (Deve falhar se o filtro estiver errado)",
+      "portalFilter": "PEPAC",
+      "shouldAdmitUnknown": true
+    },
+    {
+      "id": "neg-01",
+      "category": "negative",
+      "question": "Qual é a taxa de juro do BCE em Dezembro de 2025?",
+      "shouldRefuse": true
+    },
+    {
+      "id": "neg-02",
+      "category": "unknown",
+      "question": "Quanto tempo demora a aprovação de uma candidatura ao PRR?",
+      "shouldAdmitUnknown": true,
+      "portalFilter": "PRR"
+    }
+  ],
+  "createdAt": "2025-12-12T22:40:11.180Z"
+}

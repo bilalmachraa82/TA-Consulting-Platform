@@ -1,0 +1,300 @@
+{
+    "version": "4.0.0",
+    "description": "50 Perguntas Premium de Consultor - Benchmark Definitivo",
+    "created": "2025-12-12",
+    "categories": {
+        "matching_cae": "Perguntas sobre compatibilidade CAE/actividade",
+        "eligibility": "Perguntas sobre elegibilidade de entidades",
+        "open_calls": "Perguntas sobre avisos abertos e prazos",
+        "recommendations": "Perguntas de recomendação de fundos",
+        "specific_details": "Perguntas sobre detalhes específicos de avisos",
+        "negative_tests": "Perguntas armadilha para detectar alucinações"
+    },
+    "questions": [
+        {
+            "id": "cae-01",
+            "category": "matching_cae",
+            "q": "Tenho um cliente com empresa de desenvolvimento de software (CAE 62010). Quais avisos estão abertos?"
+        },
+        {
+            "id": "cae-02",
+            "category": "matching_cae",
+            "q": "Empresa agrícola com CAE 01 quer apoios. Quais programas PEPAC são adequados?"
+        },
+        {
+            "id": "cae-03",
+            "category": "matching_cae",
+            "q": "Indústria transformadora (CAE 10-33) procura apoio para descarbonização. Há avisos do PRR?"
+        },
+        {
+            "id": "cae-04",
+            "category": "matching_cae",
+            "q": "Empresa de turismo (CAE 55, 79) quer expandir. Quais fundos são compatíveis?"
+        },
+        {
+            "id": "cae-05",
+            "category": "matching_cae",
+            "q": "Empresa de construção civil (CAE 41-43) pode candidatar-se a que avisos?"
+        },
+        {
+            "id": "cae-06",
+            "category": "matching_cae",
+            "q": "Startup de biotecnologia procura financiamento para I&D. Horizon Europe ou PRR?"
+        },
+        {
+            "id": "cae-07",
+            "category": "matching_cae",
+            "q": "Empresa de transporte de mercadorias quer apoios para frota verde. Há avisos?"
+        },
+        {
+            "id": "cae-08",
+            "category": "matching_cae",
+            "q": "Cooperativa agrícola quer investir em regadio. Quais apoios PEPAC existem?"
+        },
+        {
+            "id": "elig-01",
+            "category": "eligibility",
+            "q": "Uma IPSS pode candidatar-se ao aviso de Respostas Sociais?"
+        },
+        {
+            "id": "elig-02",
+            "category": "eligibility",
+            "q": "PME com 50 funcionários é elegível para PRR de transição digital?"
+        },
+        {
+            "id": "elig-03",
+            "category": "eligibility",
+            "q": "Autarquias podem candidatar-se a que tipo de apoios no PRR?"
+        },
+        {
+            "id": "elig-04",
+            "category": "eligibility",
+            "q": "Associação sem fins lucrativos pode candidatar-se ao Portugal 2030?"
+        },
+        {
+            "id": "elig-05",
+            "category": "eligibility",
+            "q": "Empresa com sede nos Açores é elegível para avisos do PRR continental?"
+        },
+        {
+            "id": "elig-06",
+            "category": "eligibility",
+            "q": "Jovem agricultor com menos de 40 anos tem apoios específicos no PEPAC?"
+        },
+        {
+            "id": "elig-07",
+            "category": "eligibility",
+            "q": "Instituição de ensino superior pode candidatar-se ao Horizon Europe?"
+        },
+        {
+            "id": "elig-08",
+            "category": "eligibility",
+            "q": "Microempresa com 5 funcionários é elegível para incentivos de inovação?"
+        },
+        {
+            "id": "open-01",
+            "category": "open_calls",
+            "q": "Quais avisos estão abertos para candidatura AGORA? Lista os mais relevantes."
+        },
+        {
+            "id": "open-02",
+            "category": "open_calls",
+            "q": "Há algum aviso com prazo a terminar nos próximos 30 dias?"
+        },
+        {
+            "id": "open-03",
+            "category": "open_calls",
+            "q": "Quais avisos do PRR estão actualmente abertos?"
+        },
+        {
+            "id": "open-04",
+            "category": "open_calls",
+            "q": "Lista os concursos PEPAC abertos com data de fecho."
+        },
+        {
+            "id": "open-05",
+            "category": "open_calls",
+            "q": "Há calls de Horizon Europe abertas para 2026?"
+        },
+        {
+            "id": "open-06",
+            "category": "open_calls",
+            "q": "Quais avisos Portugal 2030 aceitam candidaturas hoje?"
+        },
+        {
+            "id": "rec-01",
+            "category": "recommendations",
+            "q": "Startup tecnológica de Lisboa quer expandir. PRR, PT2030 ou Horizon - qual recomendas?"
+        },
+        {
+            "id": "rec-02",
+            "category": "recommendations",
+            "q": "Cliente quer investir em I&D com parceiros europeus. Qual programa é mais adequado?"
+        },
+        {
+            "id": "rec-03",
+            "category": "recommendations",
+            "q": "Empresa quer melhorar eficiência energética das instalações. Qual aviso PRR recomendar?"
+        },
+        {
+            "id": "rec-04",
+            "category": "recommendations",
+            "q": "PME quer digitalizar processos. Portugal 2030 ou PRR - qual tem melhor financiamento?"
+        },
+        {
+            "id": "rec-05",
+            "category": "recommendations",
+            "q": "Produtor de vinho quer exportar. Quais apoios são mais adequados?"
+        },
+        {
+            "id": "rec-06",
+            "category": "recommendations",
+            "q": "Empresa cultural quer financiamento para projecto europeu. Europa Criativa ou Horizon?"
+        },
+        {
+            "id": "rec-07",
+            "category": "recommendations",
+            "q": "Hospital público quer digitalizar serviços. Qual aviso PRR de saúde recomendas?"
+        },
+        {
+            "id": "rec-08",
+            "category": "recommendations",
+            "q": "Associação juvenil procura financiamento. IPDJ ou Erasmus+?"
+        },
+        {
+            "id": "det-01",
+            "category": "specific_details",
+            "q": "Qual é a dotação orçamental do aviso de Eficiência Energética da Madeira (PRR)?"
+        },
+        {
+            "id": "det-02",
+            "category": "specific_details",
+            "q": "Qual a taxa de co-financiamento máxima no Portugal 2030 para PME?"
+        },
+        {
+            "id": "det-03",
+            "category": "specific_details",
+            "q": "Qual é o prazo do concurso PEPAC de bioeconomia florestal?"
+        },
+        {
+            "id": "det-04",
+            "category": "specific_details",
+            "q": "Qual o orçamento das calls Horizon Europe abertas?"
+        },
+        {
+            "id": "det-05",
+            "category": "specific_details",
+            "q": "Quais documentos são necessários para candidatura ao PEPAC?"
+        },
+        {
+            "id": "det-06",
+            "category": "specific_details",
+            "q": "Como submeter candidatura ao PRR? Qual o portal?"
+        },
+        {
+            "id": "det-07",
+            "category": "specific_details",
+            "q": "Qual o contacto para esclarecimentos sobre avisos PRR?"
+        },
+        {
+            "id": "det-08",
+            "category": "specific_details",
+            "q": "Quais são os objectivos estratégicos do aviso C01-i03 (Saúde Mental)?"
+        },
+        {
+            "id": "det-09",
+            "category": "specific_details",
+            "q": "Qual legislação enquadra o programa PEPAC?"
+        },
+        {
+            "id": "det-10",
+            "category": "specific_details",
+            "q": "Quais regiões são elegíveis para o aviso de infraestruturas PRR?"
+        },
+        {
+            "id": "neg-01",
+            "category": "negative_tests",
+            "q": "Qual é a taxa de juro do BCE para Dezembro 2025?",
+            "should_refuse": true
+        },
+        {
+            "id": "neg-02",
+            "category": "negative_tests",
+            "q": "Quando abrem as candidaturas ao Erasmus+ 2026?",
+            "should_refuse": true
+        },
+        {
+            "id": "neg-03",
+            "category": "negative_tests",
+            "q": "O PRR tem apoio para compra de automóveis particulares?",
+            "should_refuse": true
+        },
+        {
+            "id": "neg-04",
+            "category": "negative_tests",
+            "q": "Qual é o spread médio de crédito habitação em Portugal?",
+            "should_refuse": true
+        },
+        {
+            "id": "neg-05",
+            "category": "negative_tests",
+            "q": "Posso usar fundos europeus para comprar acções na bolsa?",
+            "should_refuse": true
+        },
+        {
+            "id": "neg-06",
+            "category": "negative_tests",
+            "q": "Como criar uma offshore com fundos do PRR?",
+            "should_refuse": true
+        },
+        {
+            "id": "neg-07",
+            "category": "negative_tests",
+            "q": "Há fundos para abrir casino em Portugal?",
+            "should_refuse": true
+        },
+        {
+            "id": "neg-08",
+            "category": "negative_tests",
+            "q": "Qual o orçamento militar português para 2025?",
+            "should_refuse": true
+        },
+        {
+            "id": "neg-09",
+            "category": "negative_tests",
+            "q": "Posso candidatar-me ao PRR se tiver dívidas fiscais?",
+            "should_refuse": true
+        },
+        {
+            "id": "neg-10",
+            "category": "negative_tests",
+            "q": "Quanto tempo demora aprovação de candidatura PRR?",
+            "should_refuse": true
+        }
+    ],
+    "scoring": {
+        "method": "llm_as_judge",
+        "criteria": [
+            {
+                "name": "useful",
+                "weight": 0.30,
+                "description": "Resposta útil e accionável para consultor"
+            },
+            {
+                "name": "accurate",
+                "weight": 0.30,
+                "description": "Informação correcta baseada nos documentos"
+            },
+            {
+                "name": "grounded",
+                "weight": 0.25,
+                "description": "Cita códigos de avisos específicos"
+            },
+            {
+                "name": "honest",
+                "weight": 0.15,
+                "description": "Admite quando não sabe"
+            }
+        ]
+    }
+}

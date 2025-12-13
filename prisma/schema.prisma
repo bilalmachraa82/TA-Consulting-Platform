@@ -4,13 +4,14 @@
 
 generator client {
     provider = "prisma-client-js"
-    previewFeatures = ["driverAdapters"]
+    previewFeatures = ["driverAdapters", "postgresqlExtensions"]
     binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x", "rhel-openssl-3.0.x"]
 }
 
 datasource db {
     provider = "postgresql"
     url      = env("DATABASE_URL")
+    extensions = [vector]
 }
 
 // NextAuth.js Tables
@@ -41,17 +42,18 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String    @unique
-  emailVerified DateTime?
-  image         String?
-  password      String?
-  role          String    @default("user") // admin, user
-  accounts      Account[]
-  sessions      Session[]
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
+  id              String    @id @default(cuid())
+  name            String?
+  email           String    @unique
+  emailVerified   DateTime?
+  image           String?
+  password        String?
+  role            String    @default("user") // admin, user, consultor
+  accounts        Account[]
+  sessions        Session[]
+  empresasGeridas Empresa[] // Empresas managed by this consultant
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
 }
 
 model VerificationToken {
@@ -82,42 +84,71 @@ model Aviso {
   dimensaoEmpresa   String[]
   urgente           Boolean        @default(false)
   ativo             Boolean        @default(true)
+  
+  // Operational Fields (Gemini / Scraper Enriched)
+  canalSubmissao    String?
+  preRequisitos     String[]
+  linksLegislacao   String[]
+  contacto          String?
+  notasAdicionais   String? @db.Text
+  
   candidaturas      Candidatura[]
+  chunks            AvisoChunk[]   // RAG Chunks
+
   createdAt         DateTime       @default(now())
   updatedAt         DateTime       @updatedAt
 
   @@map("avisos")
 }
 
+// RAG Vector Store
+model AvisoChunk {
+  id        String                 @id @default(cuid())
+  avisoId   String
+  aviso     Aviso                  @relation(fields: [avisoId], references: [id], onDelete: Cascade)
+  content   String                 @db.Text
+  embedding Unsupported("vector(768)")? 
+  metadata  Json?                  // Extra metadata like page number, section title
+  createdAt DateTime               @default(now())
+
+  @@map("aviso_chunks")
+}
+
 enum Portal {
   PORTUGAL2030
   PEPAC  
   PRR
+  HORIZON_EUROPE
+  EUROPA_CRIATIVA
+  IPDJ
+  BASE_GOV  // Contratos Públicos
 }
 
 model Empresa {
-  id              String         @id @default(cuid())
-  nipc            String         @unique
-  nome            String
-  cae             String
-  setor           String
-  dimensao        DimensaoEmpresa @default(MICRO)
-  email           String
-  telefone        String?
-  morada          String?
-  localidade      String?
-  codigoPostal    String?
-  distrito        String?
-  regiao          String?
-  contactoNome    String?
-  contactoEmail   String?
+  id               String         @id @default(cuid())
+  consultorId      String?        // Consultant managing this company
+  consultor        User?          @relation(fields: [consultorId], references: [id])
+  nipc             String         @unique
+  nome             String
+  cae              String
+  setor            String
+  dimensao         DimensaoEmpresa @default(MICRO)
+  email            String
+  telefone         String?
+  morada           String?
+  localidade       String?
+  codigoPostal     String?
+  distrito         String?
+  regiao           String?
+  contactoNome     String?
+  contactoEmail    String?
   contactoTelefone String?
-  notas           String?        @db.Text
-  ativa           Boolean        @default(true)
-  candidaturas    Candidatura[]
-  documentos      Documento[]
-  createdAt       DateTime       @default(now())
-  updatedAt       DateTime       @updatedAt
+  notas            String?        @db.Text
+  ativa            Boolean        @default(true)
+  candidaturas     Candidatura[]
+  documentos       Documento[]
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
 
   @@map("empresas")
 }
@@ -251,4 +282,24 @@ enum TipoNotificacao {
   CANDIDATURA_UPDATE
   RELATORIO_MENSAL
   SISTEMA
+}
+
+// Base.gov.pt - Contratos Públicos
+model ContratoPublico {
+  id                  String   @id @default(cuid())
+  tipo                String   // Ajuste Direto, Concurso Público, etc.
+  entidade            String   // Entidade adjudicante
+  objeto              String   @db.Text // Descrição do contrato
+  cpv                 String?  // Código CPV (classificação)
+  precoBase           Float?
+  dataPublicacao      DateTime
+  dataLimite          DateTime
+  link                String
+  regiao              String?
+  setorAlvo           String[] // CAEs relevantes
+  ativo               Boolean  @default(true)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@map("contratos_publicos")
 }

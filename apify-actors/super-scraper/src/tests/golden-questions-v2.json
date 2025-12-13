@@ -1,0 +1,260 @@
+{
+    "version": "2.0.0",
+    "description": "Golden Questions V2 - Focado nas necessidades reais dos consultores de fundos europeus",
+    "created": "2025-12-12",
+    "questions": [
+        {
+            "id": "op-01",
+            "category": "operational",
+            "question": "Quais são os prazos e datas limite deste aviso?",
+            "expected_keywords": [
+                "data",
+                "prazo",
+                "fecho",
+                "abertura",
+                "limite",
+                "candidatura"
+            ],
+            "requires_citation": true,
+            "priority": "critical",
+            "description": "Consultores precisam saber prazos para aconselhar clientes"
+        },
+        {
+            "id": "op-02",
+            "category": "operational",
+            "question": "Qual é a dotação orçamental disponível e taxa de financiamento?",
+            "expected_keywords": [
+                "dotação",
+                "euros",
+                "€",
+                "taxa",
+                "%",
+                "financiamento",
+                "apoio"
+            ],
+            "requires_citation": true,
+            "priority": "critical",
+            "description": "Informação financeira crítica para decisão de candidatura"
+        },
+        {
+            "id": "op-03",
+            "category": "eligibility",
+            "question": "Quem são os beneficiários elegíveis e quais os requisitos?",
+            "expected_keywords": [
+                "beneficiários",
+                "elegíveis",
+                "requisitos",
+                "PME",
+                "empresa",
+                "candidatar"
+            ],
+            "requires_citation": true,
+            "priority": "critical",
+            "description": "Determina se cliente pode candidatar-se"
+        },
+        {
+            "id": "op-04",
+            "category": "operational",
+            "question": "Quais documentos são necessários para submeter a candidatura?",
+            "expected_keywords": [
+                "documento",
+                "formulário",
+                "anexo",
+                "comprovativos",
+                "declaração"
+            ],
+            "requires_citation": true,
+            "priority": "high",
+            "description": "Lista de documentação obrigatória"
+        },
+        {
+            "id": "op-05",
+            "category": "operational",
+            "question": "Qual é o procedimento e canal de submissão da candidatura?",
+            "expected_keywords": [
+                "submissão",
+                "portal",
+                "balcão",
+                "online",
+                "candidatura",
+                "procedimento"
+            ],
+            "requires_citation": true,
+            "priority": "high",
+            "description": "Onde e como submeter"
+        },
+        {
+            "id": "op-06",
+            "category": "operational",
+            "question": "Quais são as despesas elegíveis neste programa?",
+            "expected_keywords": [
+                "despesas",
+                "elegíveis",
+                "custos",
+                "investimento",
+                "equipamento"
+            ],
+            "requires_citation": true,
+            "priority": "high",
+            "description": "O que pode ser financiado"
+        },
+        {
+            "id": "op-07",
+            "category": "scope",
+            "question": "Qual é o âmbito geográfico e sectorial deste aviso?",
+            "expected_keywords": [
+                "região",
+                "sector",
+                "área",
+                "território",
+                "nacional"
+            ],
+            "requires_citation": true,
+            "priority": "medium",
+            "description": "Onde e em que sectores se aplica"
+        },
+        {
+            "id": "cmp-01",
+            "category": "comparative",
+            "question": "Quais são as principais diferenças entre os apoios do PRR e do Portugal 2030?",
+            "expected_keywords": [
+                "PRR",
+                "Portugal 2030",
+                "diferença",
+                "comparar"
+            ],
+            "requires_citation": true,
+            "priority": "medium",
+            "description": "Análise comparativa entre programas",
+            "is_cross_portal": true
+        },
+        {
+            "id": "cmp-02",
+            "category": "comparative",
+            "question": "Qual programa tem melhor taxa de financiamento para PME?",
+            "expected_keywords": [
+                "PME",
+                "taxa",
+                "%",
+                "financiamento",
+                "melhor"
+            ],
+            "requires_citation": true,
+            "priority": "medium",
+            "description": "Comparação de taxas para decisão",
+            "is_cross_portal": true
+        },
+        {
+            "id": "sum-01",
+            "category": "summary",
+            "question": "Resume em 3 pontos principais as características deste aviso.",
+            "expected_keywords": [],
+            "requires_summary": true,
+            "priority": "medium",
+            "description": "Capacidade de síntese"
+        },
+        {
+            "id": "neg-01",
+            "category": "negative",
+            "question": "Qual é a taxa de juro do BCE para empréstimos em Dezembro 2025?",
+            "expected_keywords": [
+                "não",
+                "informação",
+                "disponível",
+                "fora"
+            ],
+            "should_refuse": true,
+            "is_negative_test": true,
+            "priority": "high",
+            "description": "Deve recusar responder - fora de contexto"
+        },
+        {
+            "id": "neg-02",
+            "category": "negative",
+            "question": "Quando abrem as candidaturas ao programa Erasmus+ 2026?",
+            "expected_keywords": [
+                "não",
+                "informação",
+                "disponível",
+                "fora"
+            ],
+            "should_refuse": true,
+            "is_negative_test": true,
+            "priority": "high",
+            "description": "Deve recusar responder - fora de contexto"
+        },
+        {
+            "id": "spec-01",
+            "category": "specific",
+            "question": "Qual é o código e identificador oficial deste aviso?",
+            "expected_keywords": [
+                "código",
+                "aviso",
+                "número",
+                "referência"
+            ],
+            "requires_citation": true,
+            "priority": "medium",
+            "description": "Identificação precisa"
+        },
+        {
+            "id": "spec-02",
+            "category": "specific",
+            "question": "Existe algum contacto ou linha de apoio para esclarecimento de dúvidas?",
+            "expected_keywords": [
+                "contacto",
+                "email",
+                "telefone",
+                "apoio",
+                "informação"
+            ],
+            "priority": "low",
+            "description": "Informação de contacto"
+        },
+        {
+            "id": "spec-03",
+            "category": "specific",
+            "question": "Qual é a legislação ou regulamento aplicável a este programa?",
+            "expected_keywords": [
+                "regulamento",
+                "portaria",
+                "legislação",
+                "DRE",
+                "decreto"
+            ],
+            "requires_citation": true,
+            "priority": "medium",
+            "description": "Enquadramento legal"
+        }
+    ],
+    "evaluation_criteria": {
+        "faithfulness": {
+            "weight": 0.25,
+            "description": "% de claims suportados pelo contexto dos documentos"
+        },
+        "groundedness": {
+            "weight": 0.20,
+            "description": "Respostas ancoradas com citações específicas"
+        },
+        "answer_relevance": {
+            "weight": 0.15,
+            "description": "Resposta directamente relacionada com a pergunta"
+        },
+        "negative_compliance": {
+            "weight": 0.15,
+            "description": "Recusa correta de perguntas fora de contexto"
+        },
+        "reactivity": {
+            "weight": 0.10,
+            "description": "Velocidade de resposta (latência)"
+        },
+        "clarity": {
+            "weight": 0.10,
+            "description": "Português claro e profissional"
+        },
+        "cost_efficiency": {
+            "weight": 0.05,
+            "description": "Custo por query"
+        }
+    }
+}

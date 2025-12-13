@@ -1,0 +1,458 @@
+{
+  "summary": {
+    "totalAvisos": 47,
+    "totalDocs": 51,
+    "models": [
+      {
+        "model": "gemini-2.5-flash",
+        "avgScore": 7.538461538461538,
+        "hallucinationRate": 0,
+        "avgLatency": 3455.6153846153848,
+        "count": 13,
+        "hallCount": 0
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "avgScore": 7.538461538461538,
+        "hallucinationRate": 0,
+        "avgLatency": 8549.307692307691,
+        "count": 13,
+        "hallCount": 0
+      },
+      {
+        "model": "gemini-2.0-flash",
+        "avgScore": 7.384615384615385,
+        "hallucinationRate": 0,
+        "avgLatency": 1569.8461538461538,
+        "count": 13,
+        "hallCount": 0
+      },
+      {
+        "model": "gemini-3-pro-preview",
+        "avgScore": 7.3076923076923075,
+        "hallucinationRate": 7.6923076923076925,
+        "avgLatency": 10278.23076923077,
+        "count": 13,
+        "hallCount": 1
+      }
+    ]
+  },
+  "results": [
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "q01",
+      "score": 7,
+      "latency": 1557,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "q02",
+      "score": 9,
+      "latency": 1278,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "q03",
+      "score": 7,
+      "latency": 1102,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "q04",
+      "score": 7,
+      "latency": 4914,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "q05",
+      "score": 7,
+      "latency": 3804,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "q06",
+      "score": 7,
+      "latency": 1074,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "q07",
+      "score": 7,
+      "latency": 1283,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "q08",
+      "score": 7,
+      "latency": 1791,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "q09",
+      "score": 7,
+      "latency": 821,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "q10",
+      "score": 7,
+      "latency": 781,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "hall-01",
+      "score": 8,
+      "latency": 738,
+      "hallucinated": false,
+      "hallucinationReason": "Recusou correctamente"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "hall-02",
+      "score": 8,
+      "latency": 672,
+      "hallucinated": false,
+      "hallucinationReason": "Recusou correctamente"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "hall-03",
+      "score": 8,
+      "latency": 593,
+      "hallucinated": false,
+      "hallucinationReason": "Recusou correctamente"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "q01",
+      "score": 7,
+      "latency": 5010,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "q02",
+      "score": 9,
+      "latency": 2346,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "q03",
+      "score": 7,
+      "latency": 4865,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "q04",
+      "score": 7,
+      "latency": 4268,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "q05",
+      "score": 7,
+      "latency": 4409,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "q06",
+      "score": 7,
+      "latency": 4865,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "q07",
+      "score": 9,
+      "latency": 2143,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "q08",
+      "score": 7,
+      "latency": 4697,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "q09",
+      "score": 7,
+      "latency": 3063,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "q10",
+      "score": 7,
+      "latency": 3619,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "hall-01",
+      "score": 8,
+      "latency": 1389,
+      "hallucinated": false,
+      "hallucinationReason": "Recusou correctamente"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "hall-02",
+      "score": 8,
+      "latency": 1804,
+      "hallucinated": false,
+      "hallucinationReason": "Recusou correctamente"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "hall-03",
+      "score": 8,
+      "latency": 2445,
+      "hallucinated": false,
+      "hallucinationReason": "Recusou correctamente"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "q01",
+      "score": 7,
+      "latency": 9462,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "q02",
+      "score": 9,
+      "latency": 9011,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "q03",
+      "score": 7,
+      "latency": 8514,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "q04",
+      "score": 7,
+      "latency": 8004,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "q05",
+      "score": 7,
+      "latency": 8222,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "q06",
+      "score": 7,
+      "latency": 9322,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "q07",
+      "score": 9,
+      "latency": 8147,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "q08",
+      "score": 7,
+      "latency": 8769,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "q09",
+      "score": 7,
+      "latency": 8769,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "q10",
+      "score": 7,
+      "latency": 7880,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "hall-01",
+      "score": 8,
+      "latency": 7868,
+      "hallucinated": false,
+      "hallucinationReason": "Recusou correctamente"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "hall-02",
+      "score": 8,
+      "latency": 7339,
+      "hallucinated": false,
+      "hallucinationReason": "Recusou correctamente"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "hall-03",
+      "score": 8,
+      "latency": 9834,
+      "hallucinated": false,
+      "hallucinationReason": "Recusou correctamente"
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "q01",
+      "score": 7,
+      "latency": 10531,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "q02",
+      "score": 9,
+      "latency": 11301,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "q03",
+      "score": 7,
+      "latency": 11065,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "q04",
+      "score": 7,
+      "latency": 10343,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "q05",
+      "score": 7,
+      "latency": 9930,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "q06",
+      "score": 7,
+      "latency": 10479,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "q07",
+      "score": 9,
+      "latency": 10761,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "q08",
+      "score": 7,
+      "latency": 10988,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "q09",
+      "score": 7,
+      "latency": 10893,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "q10",
+      "score": 7,
+      "latency": 9664,
+      "hallucinated": false,
+      "hallucinationReason": "OK"
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "hall-01",
+      "score": 8,
+      "latency": 9776,
+      "hallucinated": false,
+      "hallucinationReason": "Recusou correctamente"
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "hall-02",
+      "score": 8,
+      "latency": 6019,
+      "hallucinated": false,
+      "hallucinationReason": "Recusou correctamente"
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "hall-03",
+      "score": 5,
+      "latency": 11867,
+      "hallucinated": true,
+      "hallucinationReason": "Respondeu a pergunta fora de contexto"
+    }
+  ]
+}

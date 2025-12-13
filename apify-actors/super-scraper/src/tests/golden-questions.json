@@ -1,0 +1,386 @@
+{
+    "version": "1.0.0",
+    "description": "Golden Questions para benchmark de modelos Gemini RAG - Fundos Europeus",
+    "created": "2025-12-12",
+    "questions": [
+        {
+            "id": "prr-001",
+            "portal": "PRR",
+            "category": "programa",
+            "question": "Quais são os programas de apoio à transição digital disponíveis no PRR?",
+            "expected_keywords": [
+                "RE-C05",
+                "transição digital",
+                "digitalização",
+                "PME"
+            ],
+            "expected_answer_fragment": "transição digital",
+            "requires_citation": true,
+            "difficulty": "easy"
+        },
+        {
+            "id": "prr-002",
+            "portal": "PRR",
+            "category": "elegibilidade",
+            "question": "Quem pode candidatar-se aos apoios de descarbonização do PRR?",
+            "expected_keywords": [
+                "empresas",
+                "indústria",
+                "descarbonização",
+                "emissões"
+            ],
+            "requires_citation": true,
+            "difficulty": "medium"
+        },
+        {
+            "id": "prr-003",
+            "portal": "PRR",
+            "category": "financeiro",
+            "question": "Qual é a dotação orçamental total do Plano de Recuperação e Resiliência português?",
+            "expected_keywords": [
+                "16",
+                "mil milhões",
+                "euros"
+            ],
+            "expected_answer_fragment": "16",
+            "requires_citation": true,
+            "difficulty": "easy"
+        },
+        {
+            "id": "prr-004",
+            "portal": "PRR",
+            "category": "prazos",
+            "question": "Qual é o prazo limite para execução dos fundos do PRR?",
+            "expected_keywords": [
+                "2026",
+                "prazo",
+                "execução"
+            ],
+            "requires_citation": true,
+            "difficulty": "easy"
+        },
+        {
+            "id": "prr-005",
+            "portal": "PRR",
+            "category": "investimento",
+            "question": "Quais são as principais áreas de investimento do PRR em habitação?",
+            "expected_keywords": [
+                "habitação",
+                "arrendamento",
+                "acessível",
+                "reabilitação"
+            ],
+            "requires_citation": true,
+            "difficulty": "medium"
+        },
+        {
+            "id": "pt2030-001",
+            "portal": "PT2030",
+            "category": "programa",
+            "question": "Quais são os programas temáticos do Portugal 2030?",
+            "expected_keywords": [
+                "COMPETE",
+                "Pessoas",
+                "Sustentabilidade",
+                "Mar",
+                "Território"
+            ],
+            "requires_citation": true,
+            "difficulty": "medium"
+        },
+        {
+            "id": "pt2030-002",
+            "portal": "PT2030",
+            "category": "financeiro",
+            "question": "Qual é a dotação financeira total do Portugal 2030?",
+            "expected_keywords": [
+                "23",
+                "mil milhões",
+                "euros",
+                "FEDER",
+                "FSE"
+            ],
+            "expected_answer_fragment": "23",
+            "requires_citation": true,
+            "difficulty": "easy"
+        },
+        {
+            "id": "pt2030-003",
+            "portal": "PT2030",
+            "category": "fundos",
+            "question": "O que é o FEDER e para que serve?",
+            "expected_keywords": [
+                "Fundo Europeu",
+                "Desenvolvimento Regional",
+                "coesão",
+                "investimento"
+            ],
+            "requires_citation": true,
+            "difficulty": "easy"
+        },
+        {
+            "id": "pt2030-004",
+            "portal": "PT2030",
+            "category": "elegibilidade",
+            "question": "Quais são os requisitos para uma PME se candidatar a apoios do COMPETE 2030?",
+            "expected_keywords": [
+                "PME",
+                "inovação",
+                "competitividade",
+                "certificação"
+            ],
+            "requires_citation": true,
+            "difficulty": "hard"
+        },
+        {
+            "id": "pt2030-005",
+            "portal": "PT2030",
+            "category": "programa",
+            "question": "O que é o programa Pessoas 2030 e quais são os seus objectivos?",
+            "expected_keywords": [
+                "emprego",
+                "formação",
+                "qualificação",
+                "inclusão",
+                "FSE"
+            ],
+            "requires_citation": true,
+            "difficulty": "medium"
+        },
+        {
+            "id": "pt2030-006",
+            "portal": "PT2030",
+            "category": "regional",
+            "question": "Quais são as regiões elegíveis para apoios mais intensivos no Portugal 2030?",
+            "expected_keywords": [
+                "Norte",
+                "Centro",
+                "Alentejo",
+                "convergência",
+                "menos desenvolvidas"
+            ],
+            "requires_citation": true,
+            "difficulty": "medium"
+        },
+        {
+            "id": "pepac-001",
+            "portal": "PEPAC",
+            "category": "programa",
+            "question": "O que são os eco-regimes do PEPAC?",
+            "expected_keywords": [
+                "práticas agrícolas",
+                "ambiente",
+                "clima",
+                "biodiversidade"
+            ],
+            "requires_citation": true,
+            "difficulty": "medium"
+        },
+        {
+            "id": "pepac-002",
+            "portal": "PEPAC",
+            "category": "elegibilidade",
+            "question": "Quais são os apoios disponíveis para jovens agricultores no PEPAC?",
+            "expected_keywords": [
+                "jovens agricultores",
+                "instalação",
+                "primeira exploração",
+                "40 anos"
+            ],
+            "requires_citation": true,
+            "difficulty": "medium"
+        },
+        {
+            "id": "pepac-003",
+            "portal": "PEPAC",
+            "category": "financeiro",
+            "question": "Qual é o montante disponível para pagamentos directos no PEPAC?",
+            "expected_keywords": [
+                "pagamentos directos",
+                "hectare",
+                "euros"
+            ],
+            "requires_citation": true,
+            "difficulty": "hard"
+        },
+        {
+            "id": "pepac-004",
+            "portal": "PEPAC",
+            "category": "programa",
+            "question": "O que é a intervenção para agricultura biológica no PEPAC?",
+            "expected_keywords": [
+                "biológica",
+                "certificação",
+                "práticas sustentáveis"
+            ],
+            "requires_citation": true,
+            "difficulty": "medium"
+        },
+        {
+            "id": "cross-001",
+            "portal": "multi",
+            "category": "cross-portal",
+            "question": "Quais são os programas disponíveis para apoiar a digitalização de empresas em Portugal?",
+            "expected_keywords": [
+                "PRR",
+                "PT2030",
+                "digital",
+                "transformação"
+            ],
+            "expected_portals": [
+                "PRR",
+                "PT2030"
+            ],
+            "requires_citation": true,
+            "difficulty": "hard"
+        },
+        {
+            "id": "cross-002",
+            "portal": "multi",
+            "category": "cross-portal",
+            "question": "Quais fundos europeus apoiam projectos de sustentabilidade ambiental?",
+            "expected_keywords": [
+                "PRR",
+                "PT2030",
+                "PEPAC",
+                "sustentabilidade",
+                "ambiente"
+            ],
+            "expected_portals": [
+                "PRR",
+                "PT2030",
+                "PEPAC"
+            ],
+            "requires_citation": true,
+            "difficulty": "hard"
+        },
+        {
+            "id": "negative-001",
+            "portal": null,
+            "category": "negative",
+            "question": "Quem pode candidatar-se ao programa IPDJ?",
+            "expected_answer_fragment": "não tenho informação",
+            "expected_keywords": [
+                "não",
+                "disponível",
+                "informação",
+                "fora"
+            ],
+            "is_negative_test": true,
+            "should_refuse": true,
+            "difficulty": "easy"
+        },
+        {
+            "id": "negative-002",
+            "portal": null,
+            "category": "negative",
+            "question": "Qual é a taxa de juro do crédito habitação do Banco de Portugal?",
+            "expected_answer_fragment": "não tenho informação",
+            "expected_keywords": [
+                "não",
+                "disponível",
+                "informação",
+                "fora"
+            ],
+            "is_negative_test": true,
+            "should_refuse": true,
+            "difficulty": "easy"
+        },
+        {
+            "id": "negative-003",
+            "portal": null,
+            "category": "negative",
+            "question": "Quando é que vai abrir o próximo concurso do Erasmus+?",
+            "expected_answer_fragment": "não tenho informação",
+            "is_negative_test": true,
+            "should_refuse": true,
+            "difficulty": "easy"
+        },
+        {
+            "id": "numeric-001",
+            "portal": "PRR",
+            "category": "numeric",
+            "question": "Qual é a taxa máxima de co-financiamento para projectos de inovação no PRR?",
+            "expected_keywords": [
+                "70%",
+                "80%",
+                "co-financiamento",
+                "taxa"
+            ],
+            "requires_precise_number": true,
+            "requires_citation": true,
+            "difficulty": "hard"
+        },
+        {
+            "id": "numeric-002",
+            "portal": "PT2030",
+            "category": "numeric",
+            "question": "Qual é o investimento mínimo elegível para candidaturas ao SI Inovação?",
+            "expected_keywords": [
+                "mínimo",
+                "euros",
+                "investimento"
+            ],
+            "requires_precise_number": true,
+            "requires_citation": true,
+            "difficulty": "hard"
+        },
+        {
+            "id": "acronym-001",
+            "portal": "PT2030",
+            "category": "acronym",
+            "question": "O que significa a sigla FEDER?",
+            "expected_keywords": [
+                "Fundo Europeu",
+                "Desenvolvimento Regional"
+            ],
+            "requires_citation": false,
+            "difficulty": "easy"
+        },
+        {
+            "id": "acronym-002",
+            "portal": "PT2030",
+            "category": "acronym",
+            "question": "O que é o FSE+?",
+            "expected_keywords": [
+                "Fundo Social Europeu",
+                "emprego",
+                "inclusão"
+            ],
+            "requires_citation": false,
+            "difficulty": "easy"
+        },
+        {
+            "id": "filter-001",
+            "portal": "PRR",
+            "category": "filter_test",
+            "question": "Fala-me apenas sobre apoios do PRR, ignorando Portugal 2030 e PEPAC.",
+            "expected_portal_only": "PRR",
+            "test_metadata_filter": true,
+            "requires_citation": true,
+            "difficulty": "medium"
+        }
+    ],
+    "evaluation_criteria": {
+        "faithfulness": {
+            "weight": 0.30,
+            "description": "% de claims suportados pelo contexto"
+        },
+        "groundedness": {
+            "weight": 0.25,
+            "description": "Resposta ancorada em documentos com citações"
+        },
+        "answer_relevance": {
+            "weight": 0.20,
+            "description": "Resposta directamente relacionada com a pergunta"
+        },
+        "hallucination_rate": {
+            "weight": 0.15,
+            "description": "% de respostas com informação fabricada (lower is better)"
+        },
+        "negative_test_compliance": {
+            "weight": 0.10,
+            "description": "Modelo recusa correctamente perguntas fora de contexto"
+        }
+    }
+}

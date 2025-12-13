@@ -33,13 +33,28 @@
             "description": "Maximum number of items to fetch per portal",
             "default": 100,
             "minimum": 1,
-            "maximum": 500
+            "maximum": 2000
         },
         "onlyOpen": {
             "title": "Only open calls",
             "type": "boolean",
             "description": "Only fetch open/active funding calls",
             "default": true
+        },
+        "pepacUrls": {
+            "title": "PEPAC curated URLs",
+            "type": "array",
+            "description": "Optional curated PEPAC pages to scrape in addition to PEPACC API (útil para históricos ou fontes privadas)",
+            "items": {
+                "type": "string",
+                "format": "uri"
+            }
+        },
+        "ifapCookieHeader": {
+            "title": "IFAP Cookie header (optional)",
+            "type": "string",
+            "description": "Optional Cookie header to access authenticated IFAP/Liferay or other private sources",
+            "editor": "textarea"
         }
     }
 }

@@ -1,0 +1,50 @@
+{
+	"id": "PEPACC-10455",
+	"titulo": "Investimento produtivo agrícola – Modernização | Multissetores (2º Concurso)",
+	"descricao": "Candidaturas abertas de 28 de agosto de 2025 a 30 de dezembro de 2025 Perguntas frequentes",
+	"fonte": "PEPAC",
+	"programa": "PEPAC Continente",
+	"dataAbertura": "2025-08-28",
+	"dataFecho": "2025-12-30",
+	"regiao": "Nacional",
+	"url": "https://pepacc.pt/concursos/investimento-produtivo-agricola-modernizacao-multissetores-2o-concurso/",
+	"status": "Aberto",
+	"scrapedAt": "2025-12-12T16:53:42.571Z",
+	"documentos": [
+		{
+			"id": "PEPACC-doc-1",
+			"nome": "AVISO_Candidatura_211_Exploracoes-Agricolas_vc_09092025_vf.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/08/AVISO_Candidatura_211_Exploracoes-Agricolas_vc_09092025_vf.pdf",
+			"path": ""
+		},
+		{
+			"id": "PEPACC-doc-2",
+			"nome": "AVISO_Candidatura_211_02_Exploracoes-Agricolas_Prorrogacao_22.10.2025.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/10/AVISO_Candidatura_211_02_Exploracoes-Agricolas_Prorrogacao_22.10.2025.pdf",
+			"path": ""
+		},
+		{
+			"id": "PEPACC-doc-3",
+			"nome": "OT_211_Exploracoes-Agricolas_28082025.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/08/OT_211_Exploracoes-Agricolas_28082025.pdf",
+			"path": ""
+		},
+		{
+			"id": "PEPACC-doc-4",
+			"nome": "Anexo_OT_C.2.1.1_28082025-1.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/08/Anexo_OT_C.2.1.1_28082025-1.pdf",
+			"path": ""
+		},
+		{
+			"id": "PEPACC-doc-5",
+			"nome": "Versao-de-Trabalho-da-Portaria-n.o-274_2024_1-–-atualizada-a-2024-11-22.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2024/12/Versao-de-Trabalho-da-Portaria-n.o-274_2024_1-–-atualizada-a-2024-11-22.pdf",
+			"path": ""
+		}
+	]
+}

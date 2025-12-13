@@ -1,0 +1,613 @@
+{
+  "results": [
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "cae-01",
+      "question": "Tenho um cliente com uma empresa de desenvolvimento de software (CAE 62010). Quais avisos estão abertos e são compatíveis com esta atividade?",
+      "answer": "Com base nos avisos disponíveis, não encontro nenhum aviso que mencione especificamente o CAE 62010 (Atividades de programação informática). Sugiro consultar as páginas de cada um dos fundos para verificar se existe alguma oportunidade compatível:\n- PRR: https://recuperarportugal.gov.pt/\n- PEPAC: https://pepacc.pt/\n- Horizon Europe: https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home\n",
+      "evaluation": {
+        "useful": 2,
+        "accurate": 3,
+        "grounded": 5,
+        "honest": 9,
+        "overall": 2.8499999999999996,
+        "reasoning": "O modelo admite honestamente não encontrar avisos específicos para o CAE, mas falha em identificar oportunidades compatíveis mais amplas para desenvolvimento de software, tornando a resposta pouco útil e potencialmente imprecisa na sua implicação. Não fundamenta a sua afirmação de não encontrar avisos."
+      },
+      "latencyMs": 2187,
+      "tokens": {
+        "input": 7976,
+        "output": 109
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "cae-02",
+      "question": "Uma empresa agrícola (CAE 01) quer candidatar-se a fundos. Quais programas do PEPAC são mais adequados?",
+      "answer": "Para uma empresa agrícola com CAE 01, os seguintes programas do PEPAC parecem mais adequados:\n\n*   **PEPAC-10455 - Investimento produtivo agrícola – Modernização | Multissetores (2º Concurso)**: Este aviso apoia a modernização de empresas agrícolas em diversos setores. Candidaturas abertas até 30 de dezembro de 2025.\n*   **PEPAC-10517 - Investimento produtivo jovens agricultores (1º Concurso | 4º Período)**: Este aviso é específico para jovens agricultores que procuram investir na sua produção. Candidaturas abertas até 30 de dezembro de 2025.\n*   **PEPAC-10518 - Prémio instalação jovens agricultores (1º Concurso | 4º período)**: Este aviso oferece um prémio para a instalação de jovens agricultores. Candidaturas abertas até 30 de dezembro de 2025.\n*   **PEPAC-11059 - Restabelecimento do pot",
+      "evaluation": {
+        "useful": 9,
+        "accurate": 8,
+        "grounded": 10,
+        "honest": 10,
+        "overall": 9.1,
+        "reasoning": "A resposta é muito útil, listando programas específicos com códigos e prazos, e é bem fundamentada. Embora não mencione eco-regimes do contexto esperado, os programas de investimento são altamente relevantes e precisos para a questão."
+      },
+      "latencyMs": 2516,
+      "tokens": {
+        "input": 7970,
+        "output": 323
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "cae-03",
+      "question": "O meu cliente tem uma indústria transformadora (CAE 10-33). Há algum aviso do PRR para descarbonização ou eficiência energética?",
+      "answer": "Com base nos avisos disponíveis, não encontro nenhum aviso do PRR especificamente para descarbonização ou eficiência energética para indústrias transformadoras (CAE 10-33).\n\nNo entanto, o aviso \"01. Eficiência Energética em Edifícios Públicos da Madeira. (Aviso para Orientação Técnica N.º 1/ C21-i04-RAM 2024)\" pode ser relevante se o seu cliente for uma entidade pública na Madeira.\n\nSugiro consultar o site do PRR para obter informações mais detalhadas e atualizadas sobre os avisos disponíveis: https://recuperarportugal.gov.pt/",
+      "evaluation": {
+        "useful": 1,
+        "accurate": 5,
+        "grounded": 1,
+        "honest": 4,
+        "overall": 1.15,
+        "reasoning": "A resposta é imprecisa, pois existem avisos do PRR específicos para descarbonização e eficiência energética na indústria (C13-i01 e C13-i02). A sugestão de um aviso para edifícios públicos é irrelevante para o cliente."
+      },
+      "latencyMs": 1674,
+      "tokens": {
+        "input": 7973,
+        "output": 141
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "tipo-01",
+      "question": "O aviso sobre Fortalecimento das Respostas Sociais aplica-se a que tipo de entidades? Uma IPSS pode candidatar-se?",
+      "answer": "Sim, o aviso \"01. Fortalecimento das Respostas Sociais na Região Autónoma da Madeira (Aviso N.º 01/C03-i03-RAM/2022)\" aplica-se a Instituições da Economia Solidaria e Social, o que inclui IPSS.",
+      "evaluation": {
+        "useful": 10,
+        "accurate": 10,
+        "grounded": 10,
+        "honest": 10,
+        "overall": 10,
+        "reasoning": "A resposta é extremamente útil e precisa, identificando corretamente o aviso e as entidades elegíveis, incluindo as IPSS, e fundamentando a informação com a citação exata do aviso."
+      },
+      "latencyMs": 886,
+      "tokens": {
+        "input": 7970,
+        "output": 67
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "tipo-02",
+      "question": "Uma PME com 50 funcionários é elegível para os avisos do PRR sobre transição digital?",
+      "answer": "Com base nos avisos do PRR fornecidos, não encontro informação específica sobre elegibilidade de PMEs com 50 funcionários para avisos sobre transição digital. Sugiro consultar os documentos de cada aviso no site do PRR (recuperarportugal.gov.pt) ou contactar os pontos de contacto indicados em cada um.",
+      "evaluation": {
+        "useful": 6,
+        "accurate": 5,
+        "grounded": 2,
+        "honest": 10,
+        "overall": 5.3,
+        "reasoning": "O modelo é honesto ao admitir a falta de informação específica e oferece passos acionáveis. Contudo, não fornece qualquer contexto geral sobre a elegibilidade de PMEs para o PRR e não fundamenta a sua não-resposta com fontes específicas."
+      },
+      "latencyMs": 1170,
+      "tokens": {
+        "input": 7964,
+        "output": 71
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "tipo-03",
+      "question": "Autarquias podem candidatar-se a que tipo de apoios no PRR?",
+      "answer": "Com base nos avisos do PRR fornecidos, autarquias e áreas metropolitanas podem candidatar-se aos seguintes apoios:\n\n*   **01. Áreas de Acolhimento Empresarial (AAE) – Acessibilidades Rodoviárias (Aviso de Publicitação N.º 01/C07-i04.02/2021)**: Focado na requalificação da EN10-4. Setúbal/Mitrena, no âmbito do C7 (Infraestruturas).\n*   **01. C07-i04.04- m02: Acesso ao Avepark - Parque de Ciência e Tecnologia das Taipas (Guimarães). (AVISO Nº 01/C07-i04.04/2022)**: Visa melhorar o acesso ao Avepark, também no âmbito do C7 (Infraestruturas).\n*   **01. Eixo Rodoviário Aveiro – Águeda (Aviso de Publicitação N.º 01/C07-i02.02/2022)**: Relacionado com o C7 (Infraestruturas).\n\nRecomendo verificar a documentação específica de cada aviso para confirmar todos os critérios de elegibilidade e detalhes ",
+      "evaluation": {
+        "useful": 5,
+        "accurate": 9,
+        "grounded": 10,
+        "honest": 5,
+        "overall": 7.449999999999999,
+        "reasoning": "A resposta é bem fundamentada com avisos específicos, mas é demasiado restrita, focando apenas em infraestruturas e não abordando outros tipos de apoio relevantes para autarquias no PRR (ex: habitação, equipamentos sociais). Não admite esta limitação."
+      },
+      "latencyMs": 2249,
+      "tokens": {
+        "input": 7959,
+        "output": 286
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "abertos-01",
+      "question": "Quais são os avisos que estão abertos para candidatura AGORA? Lista-me os mais relevantes.",
+      "answer": "Estão abertos 37 avisos para candidatura. Aqui estão alguns dos mais relevantes, dependendo da área de interesse:\n\n**PRR (Portugal Recupera e Resiliência):**\n\n*   **Infraestruturas/Autarquias:**\n    *   \"01. Áreas de Acolhimento Empresarial (AAE) – Acessibilidades Rodoviárias (Aviso de Publicitação N.º 01/C07-i04.02/2021)\" - Requalificação da EN10-4. Setúbal/Mitrena.\n    *   \"01. C07-i04.04- m02: Acesso ao Avepark - Parque de Ciência e Tecnologia das Taipas (Guimarães). (AVISO Nº 01/C07-i04.04/2022)\"\n    *   \"01. Eixo Rodoviário Aveiro – Águeda (Aviso de Publicitação N.º 01/C07-i02.02/2022)\"\n*   **Saúde:**\n    *   \"01. Criar novas unidades de internamento em Hospitais Gerais (N.º 01/C01-i03/2021)\"\n    *   \"01. Dotar todos os centros de saúde com capacidade de dosear a proteína C reativa (P",
+      "evaluation": {
+        "useful": 8,
+        "accurate": 6,
+        "grounded": 9,
+        "honest": 4,
+        "overall": 7.049999999999999,
+        "reasoning": "A resposta é útil pela categorização e exemplos específicos, e bem fundamentada com números de aviso. Contudo, a precisão é comprometida por uma entrada incompleta na secção PEPAC, e falta honestidade ao não admitir essa incompletude."
+      },
+      "latencyMs": 5437,
+      "tokens": {
+        "input": 7963,
+        "output": 1024
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "abertos-02",
+      "question": "Há algum aviso do PEPAC com prazo a terminar em breve que deva alertar o meu cliente?",
+      "answer": "Sim, os seguintes avisos do PEPAC têm prazo a terminar em breve:\n\n*   **PEPAC-10455** - Investimento produtivo agrícola – Modernização | Multissetores (2º Concurso): Prazo até 30 de Dezembro de 2025.\n*   **PEPAC-10927** - Investimento produtivo bioeconomia – Modernização | Multissetores -Agroindústria (1º Concurso): Prazo até 30 de Dezembro de 2025.\n*   **PEPAC-10517** - Investimento produtivo jovens agricultores (1º Concurso | 4º Período): Prazo até 30 de Dezembro de 2025.\n*   **PEPAC-10518** - Prémio instalação jovens agricultores (1º Concurso | 4º período): Prazo até 30 de Dezembro de 2025.\n\nRecomendo verificar os critérios de elegibilidade específicos de cada um destes avisos no site do PEPAC para determinar se algum deles é adequado para o seu cliente.",
+      "evaluation": {
+        "useful": 3,
+        "accurate": 5,
+        "grounded": 9,
+        "honest": 3,
+        "overall": 5.1000000000000005,
+        "reasoning": "A resposta lista avisos específicos e bem fundamentados, mas as datas de fecho (Dezembro de 2025) não se enquadram na definição comum de 'em breve' (soon), tornando a resposta pouco útil para a urgência solicitada e potencialmente desonesta na sua afirmação inicial."
+      },
+      "latencyMs": 2245,
+      "tokens": {
+        "input": 7961,
+        "output": 250
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "recom-01",
+      "question": "Uma startup tecnológica de Lisboa quer expandir. Qual o fundo mais indicado: PRR, Portugal 2030 ou Horizon Europe?",
+      "answer": "Com base nos avisos disponíveis, o Horizon Europe parece ser o fundo mais indicado para uma startup tecnológica de Lisboa que procura expandir.\n\nAvisos relevantes do Horizon Europe:\n*   **HORIZON-EIE-2026-01-CONNECT-02 - Expanding Investment Ecosystems:** Este aviso visa aumentar o investimento estrangeiro em venture capital e facilitar a expansão de startups locais para regiões inovadoras.\n*   **HORIZON-EIE-2026-01-CONNECT-03 - Scaling up deep tech ecosystems:** Focado no desenvolvimento de ecossistemas de deep tech em torno de infraestruturas de pesquisa pan-europeias.\n*   **HORIZON-EIC-2026-STEP - EIC STEP Scale Up:** Oferece um orçamento significativo para apoiar o crescimento de empresas inovadoras.\n\nPróximos passos:\n1.  Analisar detalhadamente os critérios de elegibilidade e os objet",
+      "evaluation": {
+        "useful": 3,
+        "accurate": 1,
+        "grounded": 5,
+        "honest": 5,
+        "overall": 1.2,
+        "reasoning": "A resposta falha em comparar os fundos solicitados e, mais gravemente, os avisos específicos do Horizon Europe citados são inventados e não correspondem a avisos disponíveis, tornando a informação imprecisa e não fundamentada."
+      },
+      "latencyMs": 2224,
+      "tokens": {
+        "input": 7969,
+        "output": 247
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "recom-02",
+      "question": "O meu cliente quer investir em I&D com parceiros europeus. Qual programa é mais adequado?",
+      "answer": "Para investimento em I&D com parceiros europeus, os programas Horizon Europe são os mais adequados. Seguem alguns avisos relevantes:\n\n*   **HORIZON-CL4-2026-01-MAT-PROD-48**: Focado em melhorar a valorização e comercialização de resultados de I&D gerados pelo programa Horizon, com o objetivo de explorar o potencial comercial de resultados de investigação e envolver startups e PMEs na valorização. Prazo: 21 de Abril de 2026.\n*   **HORIZON-CID-2026-01-01**: Apoia a descarbonização de indústrias de uso intensivo de energia através de tecnologias inovadoras. Prazo: 15 de Setembro de 2026.\n*   **HORIZON-EIC-2026-STEP**: Oferece apoio para o crescimento de empresas através do EIC STEP Scale Up. Prazo: 25 de Novembro de 2026.\n\nRecomendo analisar os detalhes de cada aviso no portal da Comissão Eur",
+      "evaluation": {
+        "useful": 3,
+        "accurate": 1,
+        "grounded": 1,
+        "honest": 5,
+        "overall": 1.45,
+        "reasoning": "A resposta identifica corretamente o programa Horizon Europe, mas os avisos específicos (call IDs e prazos) parecem ser fabricados e não existem, tornando a informação detalhada imprecisa e não acionável. Não admite a falta de informação, inventando detalhes."
+      },
+      "latencyMs": 2605,
+      "tokens": {
+        "input": 7962,
+        "output": 266
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "recom-03",
+      "question": "Tenho uma empresa que quer melhorar a eficiência energética das instalações. Qual aviso do PRR devo recomendar?",
+      "answer": "Para empresas que procuram melhorar a eficiência energética das instalações na Madeira, recomendo o aviso \"01. Eficiência Energética em Edifícios Públicos da Madeira. (Aviso para Orientação Técnica N.º 1/ C21-i04-RAM 2024)\".\n\nEste aviso tem como objetivo o C21. REPowerEU e é destinado a Entidades Públicas.\n\nPróximos passos:\n*   Verificar a elegibilidade específica da empresa, consultando a documentação do aviso em [https://recuperarportugal.gov.pt/candidatura/01-eficiencia-energetica-em-edificios-publicos-da-madeira-aviso-n-o-1-c21-i04-ram/](https://recuperarportugal.gov.pt/candidatura/01-eficiencia-energetica-em-edificios-publicos-da-madeira-aviso-n-o-1-c21-i04-ram/)\n*   Contactar idr@madeira.gov.pt ou o número 291 214 000 para esclarecimentos adicionais.",
+      "evaluation": {
+        "useful": 2,
+        "accurate": 3,
+        "grounded": 10,
+        "honest": 4,
+        "overall": 4.6,
+        "reasoning": "A resposta recomenda um aviso destinado a 'Entidades Públicas' para uma 'empresa' (assumindo ser privada), o que torna a recomendação fundamentalmente incorreta e inútil para o consultor. Embora cite um aviso real e forneça links, falha na precisão da aplicação ao contexto do utilizador."
+      },
+      "latencyMs": 2398,
+      "tokens": {
+        "input": 7963,
+        "output": 269
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "pratico-01",
+      "question": "Como se submetem candidaturas ao PEPAC? Qual é o portal e qual o procedimento?",
+      "answer": "Com base nos avisos disponíveis, não encontro informação específica sobre como submeter candidaturas ao PEPAC. Sugiro consultar o site oficial do PEPAC em pepacc.pt.",
+      "evaluation": {
+        "useful": 3,
+        "accurate": 2,
+        "grounded": 1,
+        "honest": 9,
+        "overall": 3.0999999999999996,
+        "reasoning": "A resposta é honesta ao admitir que não encontra a informação. No entanto, falha em ser útil e precisa, pois a informação sobre o IFAP e o portal iSIP para candidaturas ao PEPAC é fundamental e facilmente acessível, indicando uma lacuna no conhecimento do modelo. A fundamentação é fraca, pois não cita fontes específicas para a sua não-resposta."
+      },
+      "latencyMs": 969,
+      "tokens": {
+        "input": 7961,
+        "output": 36
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "pratico-02",
+      "question": "Qual é a taxa máxima de co-financiamento que uma PME pode obter no PRR?",
+      "answer": "Com base nos avisos disponíveis, não encontro informação sobre taxas de co-financiamento para PMEs no PRR. Sugiro consultar o site oficial do PRR ou contactar os pontos de contacto indicados nos avisos para obter essa informação.",
+      "evaluation": {
+        "useful": 5,
+        "accurate": 3,
+        "grounded": 2,
+        "honest": 10,
+        "overall": 4.4,
+        "reasoning": "A resposta é honesta ao admitir que não encontrou a informação e útil ao sugerir próximos passos. Contudo, é imprecisa ao implicar uma ausência total de informação sobre taxas de apoio para PMEs no PRR (que existem e variam por aviso), e a sua fundamentação é demasiado genérica."
+      },
+      "latencyMs": 867,
+      "tokens": {
+        "input": 7962,
+        "output": 51
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "pratico-03",
+      "question": "Qual é a dotação orçamental disponível nos avisos de Horizon Europe abertos?",
+      "answer": "Com base nos avisos de Horizon Europe abertos, as dotações orçamentais disponíveis são:\n\n*   **HORIZON-EIE-2026-01-CONNECT-02:** €21,000,007\n*   **HORIZON-EIE-2026-01-CONNECT-01:** €21,000,007\n*   **HORIZON-EIE-2026-01-CONNECT-03:** €21,000,007\n*   **HORIZON-JU-ER-2025-EXPLR-01:** €296,400,015\n*   **HORIZON-JU-ER-2025-FA3-01:** €296,400,015\n*   **HORIZON-JU-ER-2025-FA4-01:** €296,400,015\n*   **HORIZON-EIC-2026-AIC-01:** €1,200,020\n*   **HORIZON-EIC-2026-AIC-02:** €1,200,020\n*   **HORIZON-EIC-2026-BAS-01-ECOSYSTEM:** €9,000,001\n*   **HORIZON-CL4-2026-01-MAT-PROD-48:** €141,500,076\n*   **HORIZON-CID-2026-01-01:** €80,000,016\n*   **HORIZON-EIC-2026-STEP:** €40,000,010\n\nAviso que alguns avisos não especificam a dotação orçamental.",
+      "evaluation": {
+        "useful": 9,
+        "accurate": 2,
+        "grounded": 8,
+        "honest": 10,
+        "overall": 6.8,
+        "reasoning": "A resposta é útil e honesta, citando avisos específicos. Contudo, a sua precisão é baixa, pois os avisos listados para 2025 e 2026 são provavelmente futuros e não 'abertos' no momento, e os valores orçamentais específicos podem ser fabricados."
+      },
+      "latencyMs": 2884,
+      "tokens": {
+        "input": 7960,
+        "output": 446
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "neg-01",
+      "question": "O meu cliente quer abrir um restaurante. Há fundos europeus para restauração?",
+      "answer": "Com base nos avisos disponíveis, não encontro nenhum fundo europeu especificamente para abrir um restaurante. Sugiro consultar o PEPAC e o Portugal 2030 para verificar se existem medidas de apoio ao investimento em atividades de restauração.",
+      "evaluation": {
+        "useful": 9,
+        "accurate": 9,
+        "grounded": 7,
+        "honest": 10,
+        "overall": 8.649999999999999,
+        "reasoning": "A resposta é muito útil e honesta, indicando corretamente a ausência de um fundo específico e sugerindo as plataformas nacionais e setoriais mais relevantes (Portugal 2030, PEPAC) para procurar apoios indiretos."
+      },
+      "latencyMs": 1306,
+      "tokens": {
+        "input": 7958,
+        "output": 49
+      }
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "neg-02",
+      "question": "Quanto tempo demora a aprovação de uma candidatura ao PRR?",
+      "answer": "Com base nos avisos do PRR fornecidos, não encontro informação sobre o tempo de aprovação de candidaturas. Sugiro consultar o site do PRR (recuperarportugal.gov.pt) ou contactar os pontos de contacto indicados em cada aviso para obter essa informação.",
+      "evaluation": {
+        "useful": 9,
+        "accurate": 10,
+        "grounded": 8,
+        "honest": 10,
+        "overall": 9.2,
+        "reasoning": "A resposta é muito útil ao admitir claramente a falta de informação e ao fornecer passos accionáveis e precisos para o consultor. Está bem fundamentada na sua própria limitação de dados."
+      },
+      "latencyMs": 1195,
+      "tokens": {
+        "input": 7954,
+        "output": 60
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "cae-01",
+      "question": "Tenho um cliente com uma empresa de desenvolvimento de software (CAE 62010). Quais avisos estão abertos e são compatíveis com esta atividade?",
+      "answer": "Para um cliente com uma empresa de desenvolvimento de software (CAE 62010), os seguintes avisos estão abertos e são potencialmente compatíveis com a atividade:\n\n**A",
+      "evaluation": {
+        "useful": 5,
+        "accurate": 5,
+        "grounded": 5,
+        "honest": 1,
+        "overall": 0.15,
+        "reasoning": "A resposta do modelo está incompleta, fornecendo apenas 'A' em vez de uma lista de avisos. Não é útil, precisa ou fundamentada, e não admite claramente a falta de informação."
+      },
+      "latencyMs": 5338,
+      "tokens": {
+        "input": 7978,
+        "output": 39
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "cae-02",
+      "question": "Uma empresa agrícola (CAE 01) quer candidatar-se a fundos. Quais programas do PEPAC são mais adequados?",
+      "answer": "Para uma empresa agrícola (CAE 01), os seguintes programas do PEPAC são os mais adequados com base nos avisos disponíveis:\n\n**Avisos Relevantes:**\n\n*   **PEPACC-10455:** **Investimento produtivo agrícola – Modernização | Multissetores (2º Concurso)**\n    *   **Prazo:** 30 de dezembro de 2025\n    *   **Relevância:** Este aviso é diretamente focado em investimento produtivo e modernização no setor agrícola, sendo altamente compatível com o CAE 01.\n*   **PEPACC-10927:** **Investimento produtivo bioeconomia – Modernização | Multissetores -Agroindústria (1º Concurso)**\n    *   **Prazo:** 30 de dezembro de 2025\n    *   **Relevância:** Ideal para empresas agrícolas que procuram modernizar-se e investir na bioeconomia, incluindo atividades de agroindústria.\n*   **PEPACC-10517:** **Investimento pro",
+      "evaluation": {
+        "useful": 7,
+        "accurate": 8,
+        "grounded": 10,
+        "honest": 4,
+        "overall": 7.6,
+        "reasoning": "A resposta é útil ao listar programas de investimento específicos com prazos, mas omite programas cruciais como os eco-regimes, que são altamente relevantes para empresas agrícolas no âmbito do PEPAC. Não admite esta limitação, apresentando a lista como os 'mais adequados'."
+      },
+      "latencyMs": 5166,
+      "tokens": {
+        "input": 7972,
+        "output": 369
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "cae-03",
+      "question": "O meu cliente tem uma indústria transformadora (CAE 10-33). Há algum aviso do PRR para descarbonização ou eficiência energética?",
+      "answer": "Com base nos avisos disponíveis, não encontro um aviso específico do PRR para descarbonização ou eficiência energética direcionado diretamente a empresas da indústria transformadora (CAE 10-33).",
+      "evaluation": {
+        "useful": 5,
+        "accurate": 5,
+        "grounded": 1,
+        "honest": 3,
+        "overall": 0.7,
+        "reasoning": "A resposta do modelo é imprecisa, pois existem avisos específicos do PRR para descarbonização e eficiência energética na indústria transformadora (e.g., Aviso N.º 01/C14-i01/2022 – Descarbonização da Indústria). Isso torna a resposta inútil e mal fundamentada, apesar de admitir claramente a sua incapacidade de encontrar um aviso específico."
+      },
+      "latencyMs": 6198,
+      "tokens": {
+        "input": 7975,
+        "output": 41
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "tipo-01",
+      "question": "O aviso sobre Fortalecimento das Respostas Sociais aplica-se a que tipo de entidades? Uma IPSS pode candidatar-se?",
+      "answer": "O aviso **01/C03-i03-RAM/2022 - Fortalecimento das Respostas Sociais na Região Autónoma da Madeira** aplica-se a:\n*   **Instituições da Economia Solidária e Social**\n*   **Entidades Públicas**\n\nSim, uma IPSS (Instituição Particular de Solidariedade Social) pode candidatar-se, uma vez que se enquadra na categoria de \"Instituições da Economia Solidária e Social\".\n\n**Avisos relevantes:**\n*   **01/C03-i03-RAM/2022** - Fortalecimento das Respostas Sociais na Região Autónoma da Madeira\n\n**Próximos passos recomendados:**\n1.  Consulte a documentação completa do aviso **01/C03-i03-RAM/2022** através do URL fornecido para verificar todos os requisitos específicos e critérios de elegibilidade.\n2.  Contacte o IDR (idr@madeira.gov.pt ou 291214000) para esclarecer quaisquer dúvidas sobre a elegibilidade",
+      "evaluation": {
+        "useful": 9,
+        "accurate": 10,
+        "grounded": 10,
+        "honest": 10,
+        "overall": 9.7,
+        "reasoning": "A resposta é muito útil e precisa, abordando diretamente a questão da elegibilidade das entidades e das IPSS, e está bem fundamentada no aviso específico. Os próximos passos são acionáveis, embora a falta de um URL direto para o aviso seja uma pequena falha."
+      },
+      "latencyMs": 3221,
+      "tokens": {
+        "input": 7972,
+        "output": 258
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "tipo-02",
+      "question": "Uma PME com 50 funcionários é elegível para os avisos do PRR sobre transição digital?",
+      "answer": "Com base nos avisos disponíveis, uma PME com 50 funcionários não é diretamente elegível para avisos do PRR que mencionem explicitamente \"transição digital\" para empresas privadas",
+      "evaluation": {
+        "useful": 1,
+        "accurate": 5,
+        "grounded": 1,
+        "honest": 1,
+        "overall": 0.7000000000000001,
+        "reasoning": "A resposta é factualmente incorreta, pois muitos avisos do PRR sobre transição digital foram direcionados a PME, incluindo as de 50 funcionários. Não cita fontes específicas e fornece informação enganosa."
+      },
+      "latencyMs": 5537,
+      "tokens": {
+        "input": 7966,
+        "output": 39
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "tipo-03",
+      "question": "Autarquias podem candidatar-se a que tipo de apoios no PRR?",
+      "answer": "Com base nos avisos disponíveis, as Autarquias podem candidatar-se a apoios no PRR focados principalmente em **Infraestruturas**.\n\n**Avisos relevantes:**\n\n*   **01/C07-i04.02/2021** - 01. Áreas de Acolhimento Empresarial (AAE) – Acessibilidades Rodoviárias\n    *   **Objectivo:** C7. Infraestruturas\n    *   **Descrição:** Requalificação da EN10-4. Setúbal/Mitrena\n*   **01/C07-i04.04/2022** - 01. C07-i04.04- m02: Acesso ao Avepark - Parque de Ciência e Tecnologia das Taipas (Guimarães).\n    *   **Objectivo:** C7. Infraestruturas\n*   **01/C07-i02.02/2022** - 01. Eixo Rodoviário Aveiro – Águeda\n    *   **Objectivo:** C7. Infraestruturas\n\n**Próximos passos recomendados:**\n\n1.  **Consultar a documentação:** Para cada aviso relevante, aceda ao URL fornecido e consulte a documentação completa para",
+      "evaluation": {
+        "useful": 8,
+        "accurate": 9,
+        "grounded": 10,
+        "honest": 7,
+        "overall": 8.65,
+        "reasoning": "A resposta é muito útil e bem fundamentada com avisos específicos para infraestruturas, tornando-a acionável. Contudo, foca-se exclusivamente em infraestruturas, não abordando outros tipos de apoio para autarquias (como habitação) que poderiam ser relevantes no PRR, o que limita a sua abrangência."
+      },
+      "latencyMs": 4816,
+      "tokens": {
+        "input": 7961,
+        "output": 296
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "abertos-01",
+      "question": "Quais são os avisos que estão abertos para candidatura AGORA? Lista-me os mais relevantes.",
+      "answer": "Todos os avisos fornecidos estão atualmente abertos para candidatura. Para um consultor, os avisos com prazos definidos são geralmente os mais relevantes para ação imediata.\n\nAqui estão os avisos abertos, com destaque para aqueles com prazos específicos:\n\n**Avisos com Prazos Definidos (Mais Relevantes para Ação Imediata):**\n\n*   **PEPAC**\n    *   **PEPACC-10455**: Investimento produtivo agrícola – Modernização | Multissetores (2º Concurso)\n        *   **Prazo:** 2025-12-30\n    *   **PEPACC-10927**: Investimento produtivo bioeconomia – Modernização | Multissetores -Agroindústria (1º Concurso)\n        *   **Prazo:** 2025-12-30\n    *   **PEPACC-10517**: Investimento produtivo jovens agricultores (1º Concurso | 4º Período)\n        *   **Prazo:** 2025-12-30\n    *   **PEPACC-10518**: Prémio inst",
+      "evaluation": {
+        "useful": 9,
+        "accurate": 8,
+        "grounded": 10,
+        "honest": 10,
+        "overall": 9.1,
+        "reasoning": "A resposta é muito útil, priorizando avisos com prazos definidos e fornecendo detalhes específicos. A precisão é ligeiramente afetada por um aviso listado na secção 'com prazos definidos' que não apresenta um prazo."
+      },
+      "latencyMs": 6333,
+      "tokens": {
+        "input": 7965,
+        "output": 874
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "abertos-02",
+      "question": "Há algum aviso do PEPAC com prazo a terminar em breve que deva alertar o meu cliente?",
+      "answer": "Sim, há vários avisos do PEPAC com prazos a terminar em breve, todos com data limite em dezembro de 2025 ou janeiro de 2026.\n\n**Avisos relevantes:**\n\n*   **PEPACC-10455** - Investimento produtivo agrícola – Modernização | Multissetores (2º Concurso)\n    *   **Prazo:** 2025-12-30\n*   **PEPACC-10927** - Investimento produtivo bioeconomia – Modernização | Multissetores",
+      "evaluation": {
+        "useful": 3,
+        "accurate": 3,
+        "grounded": 9,
+        "honest": 6,
+        "overall": 4.949999999999999,
+        "reasoning": "A resposta interpreta mal 'em breve', apresentando prazos com mais de um ano de antecedência. Além disso, falha em fornecer o prazo para um dos avisos listados, apesar de afirmar que todos têm prazos em 2025/2026."
+      },
+      "latencyMs": 5926,
+      "tokens": {
+        "input": 7963,
+        "output": 123
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "recom-01",
+      "question": "Uma startup tecnológica de Lisboa quer expandir. Qual o fundo mais indicado: PRR, Portugal 2030 ou Horizon Europe?",
+      "answer": "Com base nos avisos disponíveis, o fundo mais indicado para uma startup tecnológica de Lisboa que quer expandir é o **Horizon Europe**.\n\nOs avisos do Horizon Europe incluem programas especificamente desenhados para apoiar startups, o crescimento de ecossistemas de inovação e a capitalização de empresas tecnológicas.\n\n**Avisos relevantes do Horizon Europe:**\n\n*   **HORIZON-EIE-2026-01-CONNECT-02 - Expanding Investment Ecosystems:** Este aviso visa aumentar os investimentos de capital de risco e permitir o crescimento em fases posteriores para a expansão de startups locais.\n*   **HORIZON-EIE-2026-01-CONNECT-03 - Scaling up deep tech ecosystems:** Se a startup for de \"deep tech\", este aviso é altamente relevante para o desenvolvimento e escalonamento de tecnologias disruptivas.\n*   **HORIZON-",
+      "evaluation": {
+        "useful": 7,
+        "accurate": 2,
+        "grounded": 3,
+        "honest": 4,
+        "overall": 4.05,
+        "reasoning": "A resposta recomenda um fundo e tenta citar avisos específicos, o que é útil. No entanto, falha em comparar com os outros fundos mencionados e os avisos citados são maioritariamente futuros ou não existentes com os IDs e descrições apresentadas, tornando a informação imprecisa e pouco fundamentada."
+      },
+      "latencyMs": 7425,
+      "tokens": {
+        "input": 7971,
+        "output": 250
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "recom-02",
+      "question": "O meu cliente quer investir em I&D com parceiros europeus. Qual programa é mais adequado?",
+      "answer": "Para um cliente que pretende investir em I&D com parceiros europeus, o programa **Horizon Europe** é o mais adequado, uma vez que é o principal programa da União Europeia para financiamento de investigação e inovação colaborativa.\n\nCom base nos avisos disponíveis, os seguintes são os mais relevantes:\n\n*   **HOR",
+      "evaluation": {
+        "useful": 5,
+        "accurate": 10,
+        "grounded": 5,
+        "honest": 3,
+        "overall": 4.95,
+        "reasoning": "A resposta identifica corretamente o programa principal, mas falha em completar a lista de avisos, tornando-a incompleta e pouco acionável. Não há citação de fontes específicas e a interrupção abrupta não é uma admissão clara de falta de informação."
+      },
+      "latencyMs": 5672,
+      "tokens": {
+        "input": 7964,
+        "output": 69
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "recom-03",
+      "question": "Tenho uma empresa que quer melhorar a eficiência energética das instalações. Qual aviso do PRR devo recomendar?",
+      "answer": "Com base nos avisos disponíveis, não encontro um aviso específico do PRR que se destine a empresas privadas para a melhoria da eficiência energética das suas instalações.\n\nOs avisos do",
+      "evaluation": {
+        "useful": 1,
+        "accurate": 5,
+        "grounded": 5,
+        "honest": 3,
+        "overall": 0.75,
+        "reasoning": "A resposta é imprecisa, pois o PRR (Componente 11 - Descarbonização da Indústria, e o capítulo REPowerEU) inclui avisos e medidas para a eficiência energética em empresas privadas. A afirmação de não encontrar avisos específicos é, portanto, incorreta e não útil para o consultor."
+      },
+      "latencyMs": 5649,
+      "tokens": {
+        "input": 7965,
+        "output": 39
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "pratico-01",
+      "question": "Como se submetem candidaturas ao PEPAC? Qual é o portal e qual o procedimento?",
+      "answer": "Com base nos avisos disponíveis, as candidaturas ao PEPAC são geridas através do portal **PEPACC (pepacc.pt)**.\n\n**Portal:**\n*   O portal para os concursos PEPAC é **https://pepacc.pt**. Cada aviso tem um URL específico que remete para a página do concurso no portal.\n\n**Procedimento:**\n*   Com base nos avisos disponíveis, não encontro informação específica sobre o procedimento detalhado de submissão das candidaturas (e.g., passos, documentos necessários, formulários).\n\n**Próximos passos recomendados:**\n1.  Aceda ao URL específico do aviso de interesse no portal PEPACC.\n2.  Consulte a documentação e as orientações disponíveis na página do concurso para obter o procedimento detalhado de submissão.",
+      "evaluation": {
+        "useful": 3,
+        "accurate": 2,
+        "grounded": 5,
+        "honest": 9,
+        "overall": 4.1,
+        "reasoning": "A resposta é honesta ao admitir a falta de informação sobre o procedimento. No entanto, o portal indicado (pepacc.pt) não é o portal de submissão de candidaturas, o que torna a informação imprecisa e pouco útil para o consultor."
+      },
+      "latencyMs": 2945,
+      "tokens": {
+        "input": 7963,
+        "output": 173
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "pratico-02",
+      "question": "Qual é a taxa máxima de co-financiamento que uma PME pode obter no PRR?",
+      "answer": "Com base nos avisos disponíveis, não encontro informação específica sobre a taxa máxima de co-financiamento que uma PME pode obter no PRR.\n\nO aviso **PRR-50519 - 01. Instrumentos de capitalização para empresas da Madeira (Aviso nº1/C05-i07 RAM/2024)** é o único que menciona \"Empresas\" como beneficiários no âmbito do PRR, mas não detalha a taxa de co-financiamento.\n\n**Próximos passos recomendados:**\n*   Sugiro consultar os contactos fornecidos no aviso **PRR-50519** para obter informações detalhadas sobre as condições de financiamento: ide@madeira.gov.pt ou contacto telefónico 291202170.\n*   Consultar a documentação oficial do PRR ou os guias de candidaturas específicos para PME, caso existam, fora dos avisos fornecidos.",
+      "evaluation": {
+        "useful": 7,
+        "accurate": 9,
+        "grounded": 10,
+        "honest": 10,
+        "overall": 8.8,
+        "reasoning": "A resposta é muito honesta e bem fundamentada, admitindo claramente a falta de informação direta e citando um aviso específico. Oferece passos acionáveis, embora o aviso seja regional e possa não cobrir todas as PME."
+      },
+      "latencyMs": 3720,
+      "tokens": {
+        "input": 7964,
+        "output": 211
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "pratico-03",
+      "question": "Qual é a dotação orçamental disponível nos avisos de Horizon Europe abertos?",
+      "answer": "A dotação orçamental total disponível nos avisos abertos do programa Horizon Europe é de **€1.227.500.209**.\n\n**Avisos Relevantes:**\n\n*   **HORIZON-EIE-2026-01-CONNECT-02**: €21.000.007\n*   **HORIZON-EIE-2026-01-CONNECT-01**: €21.000.007\n*   **HORIZON-EIE-2026-01-CONNECT-03**: €21.000.007\n*   **HORIZON-",
+      "evaluation": {
+        "useful": 7,
+        "accurate": 2,
+        "grounded": 3,
+        "honest": 2,
+        "overall": 3.75,
+        "reasoning": "A resposta fornece um valor total e tenta listar avisos, o que é útil. Contudo, os avisos listados (e.g., HORIZON-EIE-2026) são provavelmente de anos futuros e não 'abertos' atualmente, comprometendo a precisão. A lista de avisos está incompleta e não cita fontes específicas, e o modelo não admite limitações."
+      },
+      "latencyMs": 5822,
+      "tokens": {
+        "input": 7962,
+        "output": 158
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "neg-01",
+      "question": "O meu cliente quer abrir um restaurante. Há fundos europeus para restauração?",
+      "answer": "Com base nos avisos disponíveis, encontro uma oportunidade que pode ser relevante para o seu cliente, mas com uma limitação geográfica importante.\n\n**Avisos Relevantes:**\n\n*   **",
+      "evaluation": {
+        "useful": 5,
+        "accurate": 5,
+        "grounded": 5,
+        "honest": 1,
+        "overall": 0.15,
+        "reasoning": "A resposta está gravemente incompleta, não fornecendo qualquer informação sobre a 'oportunidade' que afirma ter encontrado. Isso torna-a inútil, impossível de verificar quanto à precisão ou fundamentação, e não é uma admissão clara de falta de informação, mas sim uma falha na conclusão da resposta."
+      },
+      "latencyMs": 6152,
+      "tokens": {
+        "input": 7960,
+        "output": 40
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "neg-02",
+      "question": "Quanto tempo demora a aprovação de uma candidatura ao PRR?",
+      "answer": "Com base nos avisos disponíveis, não encontro informação específica sobre o tempo de aprovação de uma candidatura ao PRR. Os avisos fornecem detalhes sobre os objetivos, beneficiários e contactos para esclarecimentos, mas não sobre os prazos de avaliação e aprovação.\n\n**Próximos passos recomendados:**\nSugiro consultar os contactos fornecidos nos avisos específicos do PRR para obter essa informação, ou o portal Recuperar Portugal. Por exemplo:\n*   Para avisos da Madeira (RAM), contactar idr@madeira.gov.pt ou 291 214 000.\n*   Para avisos de Saúde, contactar prr@acss.min-saude.pt.\n*   Para avisos de Infraestruturas, contactar os contactos específicos da CCDR-N ou CCDRC.",
+      "evaluation": {
+        "useful": 10,
+        "accurate": 9,
+        "grounded": 8,
+        "honest": 10,
+        "overall": 9.2,
+        "reasoning": "A resposta admite claramente a falta de informação, explica o porquê e oferece passos concretos e úteis com contactos específicos para o consultor obter a informação desejada."
+      },
+      "latencyMs": 2495,
+      "tokens": {
+        "input": 7956,
+        "output": 179
+      }
+    }
+  ],
+  "timestamp": "2025-12-12T21:49:43.077Z"
+}

@@ -1,0 +1,483 @@
+{
+  "summary": {
+    "totalAvisos": 62,
+    "totalDocs": 110,
+    "models": [
+      {
+        "model": "gemini-2.0-flash",
+        "avgScore": 8.357142857142858,
+        "avgLatency": 3487.0714285714284,
+        "count": 14
+      },
+      {
+        "model": "gemini-2.5-flash",
+        "avgScore": 7.857142857142857,
+        "avgLatency": 4903.785714285715,
+        "count": 14
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "avgScore": 5.928571428571429,
+        "avgLatency": 9053.785714285714,
+        "count": 14
+      },
+      {
+        "model": "gemini-3-pro-preview",
+        "avgScore": 5.285714285714286,
+        "avgLatency": 11100.214285714286,
+        "count": 14
+      }
+    ],
+    "timestamp": "2025-12-12T22:16:56.414Z"
+  },
+  "results": [
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "cae-01",
+      "question": "Tenho um cliente com empresa de software (CAE 62). Quais avisos são compatíveis?",
+      "answer": "📋 Com base nos avisos disponíveis, não encontro nenhum que mencione explicitamente o CAE 62 como critério de elegibilidade. No entanto, alguns avisos podem ser relevantes dependendo do objetivo específico do projeto da empresa de software.\n\n📌 Avisos relevantes:\n*   **PRR-50519**: \"Instrumentos de capitalização para empresas da Madeira\" - Este aviso pode ser relevante se a empresa de software estiver localizada na Madeira e precisar de capitalização.\n*   **01/C16-i01/2022**: \"Academia Portugal Digital\" - Se a empresa estiver envolvida em formação e desenvolvimento de competências digitais, es",
+      "score": 9,
+      "latency": 4726
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "cae-02",
+      "question": "Empresa agrícola quer candidatar-se a fundos. Quais programas PEPAC são adequados?",
+      "answer": "📋 Os seguintes programas PEPAC podem ser adequados para uma empresa agrícola:\n\n*   **PEPACC-10455** - Investimento produtivo agrícola – Modernização | Multissetores (2º Concurso)\n*   **PEPACC-10517** - Investimento produtivo jovens agricultores (1º Concurso | 4º Período)\n*   **PEPACC-10518** - Prémio instalação jovens agricultores (1º Concurso | 4º período)\n*   **PEPACC-10927** - Investimento produtivo bioeconomia – Modernização | Multissetores -Agroindústria (1º Concurso)\n*   **PEPACC-11103** - Investimento produtivo bioeconomia – Modernização | Setor Florestal (2º Concurso)\n*   **PEPACC-110",
+      "score": 9,
+      "latency": 4108
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "cae-03",
+      "question": "Indústria transformadora quer apoios para descarbonização. Há avisos no PRR?",
+      "answer": "📋 Sim, existem avisos relevantes no PRR para apoiar a descarbonização da indústria transformadora.\n\n📌 Avisos relevantes:\n\n*   **PRR-50337**: \"Eficiência Energética em Edifícios Públicos da Madeira\" pode ser relevante se a indústria transformadora tiver edifícios públicos a necessitar de melhorias de eficiência energética.\n*   **01/C14-i02-RAM/2022**: \"Potenciação da eletricidade renovável no Arquipélago da Madeira\" pode ser relevante se a empresa estiver localizada na Madeira e pretender investir em eletricidade renovável.\n\n➡️ Próximo passo: Analisar os detalhes de cada aviso para verificar ",
+      "score": 9,
+      "latency": 2504
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "tipo-01",
+      "question": "Uma IPSS pode candidatar-se ao aviso de Respostas Sociais da Madeira?",
+      "answer": "📋 Sim, as Instituições da Economia Solidária e Social são elegíveis no aviso \"01. Fortalecimento das Respostas Sociais na Região Autónoma da Madeira (Aviso N.º 01/C03-i03-RAM/2022)\".\n\n📌 Avisos relevantes: \"01/C03-i03-RAM/2022\"\n➡️ Próximo passo: Consultar a documentação do aviso \"01/C03-i03-RAM/2022\" para verificar os critérios de elegibilidade específicos e os requisitos do projeto.",
+      "score": 9,
+      "latency": 2130
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "tipo-02",
+      "question": "Quais avisos permitem candidatura de autarquias?",
+      "answer": "📋 As autarquias podem ser beneficiárias nos seguintes avisos:\n\n📌 Avisos relevantes:\n*   \"01/C07-i04.02/2021\"\n*   \"01/C07-i04.04/2022\"\n*   \"01/C07-i02.02/2022\"\n*   \"01/C07-i04.03/2022\"\n*   \"01/C07-i03/2021\"\n*   \"01/C07-i03.04/2022\"\n*   \"01/C07-i03.02/2022\"\n*   \"01/C04-i02/2022\"\n\n➡️ Próximo passo: Analisar os avisos listados para verificar se os objetivos e critérios de elegibilidade se adequam ao projeto do seu cliente.",
+      "score": 9,
+      "latency": 3306
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "abertos-01",
+      "question": "Lista todos os avisos abertos AGORA para candidatura.",
+      "answer": "📋 Aqui estão os avisos abertos para candidatura neste momento:\n\n📌 Avisos relevantes: 1/C06-i08-RAM/2024, 01/C07-i04.02/2021, 01/C20-i01.01/2022, 01/C07-i04.04/2022, 01/C01-i03/2021, 01/C01-i07.01-RAM/2022, 01/C01-i07.02-RAM/2022, 01/C01-i07.03-RAM/2022, 01/C01-i01/2022, PRR-50337, 01/C07-i02.02/2022, 01/C01-i05.01-RAM/2022, 01/C03-i03-RAM/2022, 01/C17-i01.02/2022, PRR-50519, 01/C07-i04.03/2022, 01/C04-i01/2021, 01/C07-i03/2021, 01/C16-i01/2022, 01/C06-i03.02/2022, 01/C14-i02-RAM/2022, 01/C20-i03-RAM/2022, 01/C07-i03.04/2022, 01/C07-i03.02/2022, 01/C01-i02/2022, 01/C02-i03-RAM/2022, 01/C21-i1",
+      "score": 9,
+      "latency": 11214
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "abertos-02",
+      "question": "Há avisos com prazo a terminar em breve? Quais são urgentes?",
+      "answer": "📋 Sim, existem vários avisos com prazos de candidatura a terminar em breve.\n\n📌 Avisos urgentes (fecho até final de Dezembro 2025):\n*   **PEPACC-10455**: Investimento produtivo agrícola – Modernização | Multissetores (2º Concurso) - Fecho: 30/12/2025\n*   **PEPACC-10927**: Investimento produtivo bioeconomia – Modernização | Multissetores -Agroindústria (1º Concurso) - Fecho: 30/12/2025\n*   **PEPACC-10517**: Investimento produtivo jovens agricultores (1º Concurso | 4º Período) - Fecho: 30/12/2025\n*   **PEPACC-10518**: Prémio instalação jovens agricultores (1º Concurso | 4º período) - Fecho: 30/",
+      "score": 9,
+      "latency": 3297
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "recom-01",
+      "question": "Startup tech de Lisboa quer expandir. PRR, PT2030 ou Horizon - qual recomendas?",
+      "answer": "📋 Para uma startup tech de Lisboa que quer expandir, recomendo explorar as opções do PRR e Horizon Europe.\n\n📌 Avisos relevantes:\n*   **PRR-50519**: Instrumentos de capitalização para empresas da Madeira (atenção à localização)\n*   **Horizon Europe**: Vários avisos podem ser relevantes dependendo da área de atuação da startup (ver lista completa acima).\n\n➡️ Próximo passo:\n1.  **PRR**: Verificar se a startup se enquadra nos critérios de elegibilidade do aviso PRR-50519, apesar de ser direcionado à Madeira.\n2.  **Horizon Europe**: Analisar os avisos do Horizon Europe para identificar aqueles qu",
+      "score": 9,
+      "latency": 3038
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "recom-02",
+      "question": "Cliente quer fazer I&D com parceiros europeus. Qual programa é ideal?",
+      "answer": "📋 Existem várias opções no Horizonte Europa que apoiam projetos de I&D com parceiros europeus. A escolha ideal depende da área de atuação do seu cliente.\n\n📌 Avisos relevantes:\n*   **HORIZON-JU-ER-2025-EXPLR-01**: \"STUDIES ON RAIL INDUSTRY 5.0\" (Fecho: 2026-02-11)\n*   **HORIZON-JU-ER-2025-FA3-01**: \"INTELLIGENT & INTEGRATED ASSET MANAGEMENT\" (Fecho: 2026-02-11)\n*   **HORIZON-JU-ER-2025-FA4-01**: \"A SUSTAINABLE AND GREEN RAIL SYSTEM\" (Fecho: 2026-02-11)\n*   **HORIZON-CL5-2026-02-D4-02**: \"Smarter buildings as part of the energy system for increased efficiency and flexibility – Societal Readine",
+      "score": 8,
+      "latency": 7433
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "efic-01",
+      "question": "Há apoios para eficiência energética em edifícios públicos?",
+      "answer": "📋 Sim, existem apoios para eficiência energética em edifícios públicos.\n\n📌 Avisos relevantes:\n*   **PRR-50337**: \"Eficiência Energética em Edifícios Públicos da Madeira\"\n➡️ Próximo passo: Verificar os critérios de elegibilidade e condições específicas do aviso PRR-50337 para determinar se o projeto do seu cliente se qualifica.",
+      "score": 9,
+      "latency": 1554
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "prazo-01",
+      "question": "Qual é a dotação total disponível nos avisos de Horizon Europe abertos?",
+      "answer": "Não consigo calcular a dotação total exata com os dados fornecidos, pois nem todos os avisos de Horizon Europe listam a dotação.\n\n📌 Avisos relevantes: Todos os avisos de Horizon Europe\n➡️ Próximo passo: Verificar a dotação individualmente em cada aviso de Horizon Europe para obter o valor total.",
+      "score": 7,
+      "latency": 1644
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "docs-01",
+      "question": "Que documentos são necessários para candidatura ao PEPAC?",
+      "answer": "Não encontro essa informação nos avisos disponíveis.\n",
+      "score": 5,
+      "latency": 1127
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "neg-01",
+      "question": "Quanto tempo demora a aprovação de candidaturas PRR?",
+      "answer": "Não encontro essa informação nos avisos disponíveis.\n",
+      "score": 7,
+      "latency": 1124
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "neg-02",
+      "question": "O meu cliente quer financiamento para abrir restaurante. Há fundos?",
+      "answer": "Não encontro nenhum aviso que financie directamente a abertura de um restaurante.\n\n➡️ Próximo passo: Explorar outras opções de financiamento ou procurar avisos com objectivos mais amplos que possam incluir o seu projecto.",
+      "score": 9,
+      "latency": 1614
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "cae-01",
+      "question": "Tenho um cliente com empresa de software (CAE 62). Quais avisos são compatíveis?",
+      "answer": "📋 Para um cliente com uma empresa de software (CAE 62), os avisos mais compatíveis focam-se em inovação, digitalização, desenvolvimento de ecossistemas tecnológicos e",
+      "score": 6,
+      "latency": 5995
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "cae-02",
+      "question": "Empresa agrícola quer candidatar-se a fundos. Quais programas PEPAC são adequados?",
+      "answer": "📋 Para uma empresa agrícola que procura candidatar-se a fundos, os seguintes programas PEPAC são os mais adequados, focando-se em investimento produtivo, modernização e bioeconomia:\n\n*   **PEPACC-10455**: \"Investimento produtivo agrícola – Modernização | Multissetores (2º Concurso)\"\n    *   Este aviso é diretamente relevante para a modernização de atividades agrícolas.\n    *   Fecho: 30 de dezembro de 2025.\n*   **PEPACC-10927**: \"Investimento produtivo bioeconomia – Modernização | Multissetores -Agroindústria (1º Concurso)\"\n    *   Se a empresa agrícola tiver atividades de agroindústria ou na",
+      "score": 9,
+      "latency": 5060
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "cae-03",
+      "question": "Indústria transformadora quer apoios para descarbonização. Há avisos no PRR?",
+      "answer": "📋 Não encontro nos avisos PRR disponíveis apoios específicos para a descarbonização da indústria transformadora. Os avisos do PRR listados são direcionados a entidades públicas, escolas, autarquias, ou setores como a saúde e agricultura, e alguns são específicos para a Região Autónoma da Madeira.\n\n📌 Avisos relevantes: Nenhum aviso PRR diretamente aplicável.\n➡️ Próximo passo: Recomendo verificar se existem outros avisos fora do PRR que possam ser relevantes para a descarbonização da indústria transformadora, ou contactar as entidades gestoras do PRR para esclarecer se alguma das linhas de apo",
+      "score": 9,
+      "latency": 4228
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "tipo-01",
+      "question": "Uma IPSS pode candidatar-se ao aviso de Respostas Sociais da Madeira?",
+      "answer": "📋 Sim, uma IPSS (Instituição da Economia Solidária e Social) pode candidatar-se ao aviso de Fortalecimento das Respostas Sociais na Região Autónoma da Madeira.\n\n📌 Avisos relevantes:\n*   01/C03-i03-RAM/2022\n\n➡️ Próximo passo: Consulte a documentação do aviso 01/C03-i03-RAM/2022 para verificar os requisitos específicos e o processo de candidatura. Pode contactar o IDR através do 291214000 ou idr@madeira.gov.pt para mais informações.",
+      "score": 9,
+      "latency": 3977
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "tipo-02",
+      "question": "Quais avisos permitem candidatura de autarquias?",
+      "answer": "📋 Os avisos que permitem a candidatura de autarquias são os seguintes:\n\n*   **01/C07-i04.02/2021**: 01. Áreas de Acolhimento Empresarial (AAE) – Acessibilidades Rodoviárias\n*   **01/C07-i04.04/2022**: 01. C07-i04.04- m02: Acesso ao Avepark - Parque de Ciência e Tecnologia das Taipas (Guimarães).\n*   **01/C07-i02.02/2022**: 01. Eixo Rodoviário Aveiro – Águeda\n*   **01/C07-i04.03/2022**: 01. INVESTIMENTO RE - C07-i04.03 – “Áreas de Acolhimento Empresarial (AAE) – Acessibilidades Rodoviárias: Ligação do Parque Empresarial do Casarão ao IC2”\n*   **01/C07-i03/2021**: 01. Investimento RE-C07-i03-01",
+      "score": 9,
+      "latency": 4777
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "abertos-01",
+      "question": "Lista todos os avisos abertos AGORA para candidatura.",
+      "answer": "📋 Os avisos abertos para candidatura AGORA são:\n\n*   **1/C06-i08-RAM/2024** - 01. Ampliação do Edifício do CITMA (Aviso n.º1/C06-i08-RAM/2024)\n*   **01/C07-i04.02/2021** - 01. Áreas de Acolhimento Empresarial (AAE) – Acessibilidades Rodoviárias (Aviso de Publicitação N.º 01/C07-i04.02/2021)\n*   **01/C20-i01.01/2022** - 01. Assegurar o fornecimento de conetividade à internet de qualidade às escolas, e criar condições para a melhoria e utilização generalizada de recursos educativos digitais, incluindo nos processos de avaliação, bem como para a gestão eficiente do processo de transição digital ",
+      "score": 8,
+      "latency": 6592
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "abertos-02",
+      "question": "Há avisos com prazo a terminar em breve? Quais são urgentes?",
+      "answer": "📋 Sim, existem vários avisos com prazos de fecho em breve, especialmente no final de 2025 e início de 2026.\n\nOs avisos mais",
+      "score": 6,
+      "latency": 6186
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "recom-01",
+      "question": "Startup tech de Lisboa quer expandir. PRR, PT2030 ou Horizon - qual recomendas?",
+      "answer": "📋 Para uma startup tech de Lisboa que procura expandir, o programa **Horizon Europe** oferece as oportunidades mais diretas e relevantes para capitalização, escalabilidade e integração em ecossistemas de inovação",
+      "score": 7,
+      "latency": 5122
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "recom-02",
+      "question": "Cliente quer fazer I&D com parceiros europeus. Qual programa é ideal?",
+      "answer": "📋 O programa ideal para um cliente que quer fazer I&D com parceiros europeus é o **Horizon Europe**. Este programa é especificamente desenhado para financiar projetos de investigação e inov",
+      "score": 6,
+      "latency": 5443
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "efic-01",
+      "question": "Há apoios para eficiência energética em edifícios públicos?",
+      "answer": "📋 Sim, existe um apoio específico para eficiência energética em edifícios públicos na Região Autónoma da Madeira.\n\n📌 Avisos relevantes:\n*   **PRR-50337**: 01. Eficiência Energética em Edifícios Públicos da Madeira. (Aviso para Orientação Técnica N.º 1/ C21-i04-RAM 2024)\n\n➡️ Próximo passo: Para mais informações e esclarecimentos sobre o aviso PRR-50337, contacte idr@madeira.gov.pt ou o número 291 214 000.",
+      "score": 9,
+      "latency": 4503
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "prazo-01",
+      "question": "Qual é a dotação total disponível nos avisos de Horizon Europe abertos?",
+      "answer": "📋 A dotação total disponível nos avisos de Horizon Europe abertos é de **€2.949.900.410**.\n\n📌 Avisos relevantes:\n*",
+      "score": 6,
+      "latency": 4490
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "docs-01",
+      "question": "Que documentos são necessários para candidatura ao PEPAC?",
+      "answer": "📋 Não encontro essa informação nos avisos disponíveis. Os avisos PEPAC fornecidos indicam apenas as datas de abertura e fecho das candidaturas, mas não detalham os documentos necessários.\n\n📌 Avisos relevantes: PEPACC-11124, PEPACC-11103, PEPACC-11059, PEPACC-10455, PEPACC-10927, PEPACC-10517, PEPACC-10518\n➡️ Próximo passo: Deverá consultar a documentação específica de cada aviso PEPAC (se disponível externamente) ou contactar a entidade gestora para obter a lista de documentos necessários. O aviso PEPACC-10455 menciona \"Perguntas frequentes\", o que pode ser um bom ponto de partida para procu",
+      "score": 9,
+      "latency": 4058
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "neg-01",
+      "question": "Quanto tempo demora a aprovação de candidaturas PRR?",
+      "answer": "📋 Não encontro essa informação nos avisos disponíveis. Os avisos fornecidos detalham os objetivos, beneficiários e contactos, mas não especificam o tempo de aprovação das candidaturas PRR.\n\n📌 Avisos relevantes: Todos os avisos PRR listados.\n\n➡️ Próximo passo: Para obter informações sobre os prazos de aprovação, sugiro contactar diretamente as entidades gestoras dos avisos PRR relevantes para o seu cliente, utilizando os contactos fornecidos em cada aviso.",
+      "score": 9,
+      "latency": 3283
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "neg-02",
+      "question": "O meu cliente quer financiamento para abrir restaurante. Há fundos?",
+      "answer": "Não encontro avisos específicos para o financiamento da abertura de um restaurante nos dados fornecidos. A maioria dos avisos abertos são para entidades públicas, autarquias, escolas ou focados em setores",
+      "score": 8,
+      "latency": 4939
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "cae-01",
+      "question": "Tenho um cliente com empresa de software (CAE 62). Quais avisos são compatíveis?",
+      "answer": "",
+      "score": 5,
+      "latency": 8558
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "cae-02",
+      "question": "Empresa agrícola quer candidatar-se a fundos. Quais programas PEPAC são adequados?",
+      "answer": "",
+      "score": 5,
+      "latency": 9539
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "cae-03",
+      "question": "Indústria transformadora quer apoios para descarbonização. Há avisos no PRR?",
+      "answer": "",
+      "score": 5,
+      "latency": 9628
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "tipo-01",
+      "question": "Uma IPSS pode candidatar-se ao aviso de Respostas Sociais da Madeira?",
+      "answer": "📋 Sim, uma IPSS pode candidatar-se. As Instituições da Economia Solidária e Social são beneficiários elegíveis neste aviso.\n\n📌 **Avisos relevantes:**\n*   **01/C03-i03-RAM/2022**: Fortalecimento das Respostas Sociais na Região Autónoma da Madeira\n\n➡️ **Próximo passo:** Analisar a documentação do aviso para verificar as condições específicas de elegibilidade e as despesas apoiadas.",
+      "score": 9,
+      "latency": 6907
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "tipo-02",
+      "question": "Quais avisos permitem candidatura de autarquias?",
+      "answer": "",
+      "score": 5,
+      "latency": 8167
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "abertos-01",
+      "question": "Lista todos os avisos abertos AGORA para candidatura.",
+      "answer": "",
+      "score": 5,
+      "latency": 10236
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "abertos-02",
+      "question": "Há avisos com prazo a terminar em breve? Quais são urgentes?",
+      "answer": "",
+      "score": 5,
+      "latency": 9093
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "recom-01",
+      "question": "Startup tech de Lisboa quer expandir. PRR, PT2030 ou Horizon - qual recomendas?",
+      "answer": "",
+      "score": 5,
+      "latency": 9348
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "recom-02",
+      "question": "Cliente quer fazer I&D com parceiros europeus. Qual programa é ideal?",
+      "answer": "",
+      "score": 5,
+      "latency": 10687
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "efic-01",
+      "question": "Há apoios para eficiência energética em edifícios públicos?",
+      "answer": "",
+      "score": 5,
+      "latency": 9220
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "prazo-01",
+      "question": "Qual é a dotação total disponível nos avisos de Horizon Europe abertos?",
+      "answer": "",
+      "score": 5,
+      "latency": 7467
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "docs-01",
+      "question": "Que documentos são necessários para candidatura ao PEPAC?",
+      "answer": "📋 Não encontro essa informação nos avisos disponíveis. A documentação fornecida para os avisos do PEPAC não especifica a lista de documentos necessários para a candidatura.\n\n📌 **Avisos relevantes:**\n*   PEPACC-11124\n*   PEPACC-11103\n*   PEPACC-11059\n*   PEPACC-10455\n*   PEPACC-10927\n*   PEPACC-10517\n*   PEPACC-10518\n\n➡️ **Próximo passo:** Aconselho a consulta da documentação oficial de cada aviso específico no portal do PEPAC ou do IFAP para obter a lista detalhada e os formulários necessários.",
+      "score": 9,
+      "latency": 8999
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "neg-01",
+      "question": "Quanto tempo demora a aprovação de candidaturas PRR?",
+      "answer": "📋 Não encontro essa informação nos avisos disponíveis. Os textos fornecidos detalham os objectivos, beneficiários e datas de abertura dos avisos, mas não mencionam os prazos para análise e aprovação das candidaturas.\n\n📌 Avisos relevantes: Nenhum dos avisos listados contém informação sobre o tempo de aprovação.\n\n➡️ Próximo passo: Recomendo contactar diretamente a entidade gestora do aviso de interesse para obter uma estimativa do prazo de decisão. Por exemplo, para um projeto na área da saúde, pode utilizar o email `prr@acss.min-saude.pt` (mencionado no Aviso 01/C01-i01/2022) ou, para um proj",
+      "score": 10,
+      "latency": 9453
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "qid": "neg-02",
+      "question": "O meu cliente quer financiamento para abrir restaurante. Há fundos?",
+      "answer": "",
+      "score": 5,
+      "latency": 9451
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "cae-01",
+      "question": "Tenho um cliente com empresa de software (CAE 62). Quais avisos são compatíveis?",
+      "answer": "",
+      "score": 5,
+      "latency": 10882
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "cae-02",
+      "question": "Empresa agrícola quer candidatar-se a fundos. Quais programas PEPAC são adequados?",
+      "answer": "",
+      "score": 5,
+      "latency": 11907
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "cae-03",
+      "question": "Indústria transformadora quer apoios para descarbonização. Há avisos no PRR?",
+      "answer": "",
+      "score": 5,
+      "latency": 10832
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "tipo-01",
+      "question": "Uma IPSS pode candidatar-se ao aviso de Respostas Sociais da Madeira?",
+      "answer": "📋 **Sim, é elegível.**\n\nO aviso específico para a Madeira define explicitamente como beneficiários as **\"Instituições da Economia Solidaria e Social\"**, categoria na qual as IPSS se enquadram.\n\n📌 **Avisos relevantes:**\n*   **01/C03-i03-RAM/2022** - Fortalecimento das Respostas Sociais na Região Autónoma da Madeira\n\n➡️ **Próximo passo:**\nConsultar a documentação da **republicação de 12/09/2025**, que introduziu alterações aos pontos 1, 7 e 10 da Orientação Técnica. Contactar o IDR (idr@madeira.gov.pt) para validar o enquadramento específico do projeto.",
+      "score": 9,
+      "latency": 10828
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "tipo-02",
+      "question": "Quais avisos permitem candidatura de autarquias?",
+      "answer": "",
+      "score": 5,
+      "latency": 11056
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "abertos-01",
+      "question": "Lista todos os avisos abertos AGORA para candidatura.",
+      "answer": "",
+      "score": 5,
+      "latency": 11956
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "abertos-02",
+      "question": "Há avisos com prazo a terminar em breve? Quais são urgentes?",
+      "answer": "",
+      "score": 5,
+      "latency": 10817
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "recom-01",
+      "question": "Startup tech de Lisboa quer expandir. PRR, PT2030 ou Horizon - qual recomendas?",
+      "answer": "",
+      "score": 5,
+      "latency": 11579
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "recom-02",
+      "question": "Cliente quer fazer I&D com parceiros europeus. Qual programa é ideal?",
+      "answer": "",
+      "score": 5,
+      "latency": 10217
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "efic-01",
+      "question": "Há apoios para eficiência energética em edifícios públicos?",
+      "answer": "",
+      "score": 5,
+      "latency": 10736
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "prazo-01",
+      "question": "Qual é a dotação total disponível nos avisos de Horizon Europe abertos?",
+      "answer": "",
+      "score": 5,
+      "latency": 10376
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "docs-01",
+      "question": "Que documentos são necessários para candidatura ao PEPAC?",
+      "answer": "",
+      "score": 5,
+      "latency": 10523
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "neg-01",
+      "question": "Quanto tempo demora a aprovação de candidaturas PRR?",
+      "answer": "",
+      "score": 5,
+      "latency": 12333
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "qid": "neg-02",
+      "question": "O meu cliente quer financiamento para abrir restaurante. Há fundos?",
+      "answer": "",
+      "score": 5,
+      "latency": 11361
+    }
+  ]
+}

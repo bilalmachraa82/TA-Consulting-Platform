@@ -1,0 +1,840 @@
+{
+  "summary": {
+    "totalAvisos": 87,
+    "totalQuestions": 50,
+    "models": [
+      {
+        "model": "gemini-2.0-flash",
+        "avgScore": 8.034000000000002,
+        "hallucinationRate": 0,
+        "avgLatency": 2461.24,
+        "count": 50,
+        "byCategory": {
+          "matching_cae": 7.08125,
+          "eligibility": 7.674999999999999,
+          "open_calls": 7.083333333333333,
+          "recommendations": 7.3625,
+          "specific_details": 8.225,
+          "negative_tests": 10
+        }
+      },
+      {
+        "model": "gemini-2.5-flash",
+        "avgScore": 7.207999999999999,
+        "hallucinationRate": 0,
+        "avgLatency": 3882.24,
+        "count": 50,
+        "byCategory": {
+          "matching_cae": 5.2625,
+          "eligibility": 7.774999999999999,
+          "open_calls": 6.658333333333332,
+          "recommendations": 5.5875,
+          "specific_details": 7.145000000000001,
+          "negative_tests": 10
+        }
+      }
+    ]
+  },
+  "results": [
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "cae-01",
+      "category": "matching_cae",
+      "score": 7.1000000000000005,
+      "hallucinated": false,
+      "latency": 4306
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "cae-02",
+      "category": "matching_cae",
+      "score": 8.4,
+      "hallucinated": false,
+      "latency": 1936
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "cae-03",
+      "category": "matching_cae",
+      "score": 8,
+      "hallucinated": false,
+      "latency": 1450
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "cae-04",
+      "category": "matching_cae",
+      "score": 5.65,
+      "hallucinated": false,
+      "latency": 1088
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "cae-05",
+      "category": "matching_cae",
+      "score": 6.35,
+      "hallucinated": false,
+      "latency": 944
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "cae-06",
+      "category": "matching_cae",
+      "score": 8.85,
+      "hallucinated": false,
+      "latency": 2647
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "cae-07",
+      "category": "matching_cae",
+      "score": 5.65,
+      "hallucinated": false,
+      "latency": 1122
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "cae-08",
+      "category": "matching_cae",
+      "score": 6.65,
+      "hallucinated": false,
+      "latency": 3064
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "elig-01",
+      "category": "eligibility",
+      "score": 8.4,
+      "hallucinated": false,
+      "latency": 1413
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "elig-02",
+      "category": "eligibility",
+      "score": 6.55,
+      "hallucinated": false,
+      "latency": 1124
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "elig-03",
+      "category": "eligibility",
+      "score": 8.2,
+      "hallucinated": false,
+      "latency": 6543
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "elig-04",
+      "category": "eligibility",
+      "score": 8.4,
+      "hallucinated": false,
+      "latency": 1874
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "elig-05",
+      "category": "eligibility",
+      "score": 6.25,
+      "hallucinated": false,
+      "latency": 1179
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "elig-06",
+      "category": "eligibility",
+      "score": 8.65,
+      "hallucinated": false,
+      "latency": 1602
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "elig-07",
+      "category": "eligibility",
+      "score": 6.55,
+      "hallucinated": false,
+      "latency": 1163
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "elig-08",
+      "category": "eligibility",
+      "score": 8.4,
+      "hallucinated": false,
+      "latency": 2808
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "open-01",
+      "category": "open_calls",
+      "score": 5.3,
+      "hallucinated": false,
+      "latency": 8381
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "open-02",
+      "category": "open_calls",
+      "score": 5.75,
+      "hallucinated": false,
+      "latency": 1267
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "open-03",
+      "category": "open_calls",
+      "score": 6.050000000000001,
+      "hallucinated": false,
+      "latency": 9254
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "open-04",
+      "category": "open_calls",
+      "score": 9.1,
+      "hallucinated": false,
+      "latency": 2803
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "open-05",
+      "category": "open_calls",
+      "score": 8.65,
+      "hallucinated": false,
+      "latency": 5259
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "open-06",
+      "category": "open_calls",
+      "score": 7.65,
+      "hallucinated": false,
+      "latency": 5448
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "rec-01",
+      "category": "recommendations",
+      "score": 8.2,
+      "hallucinated": false,
+      "latency": 3970
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "rec-02",
+      "category": "recommendations",
+      "score": 8.65,
+      "hallucinated": false,
+      "latency": 2411
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "rec-03",
+      "category": "recommendations",
+      "score": 8.65,
+      "hallucinated": false,
+      "latency": 1894
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "rec-04",
+      "category": "recommendations",
+      "score": 6.65,
+      "hallucinated": false,
+      "latency": 1502
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "rec-05",
+      "category": "recommendations",
+      "score": 8.65,
+      "hallucinated": false,
+      "latency": 1825
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "rec-06",
+      "category": "recommendations",
+      "score": 7.25,
+      "hallucinated": false,
+      "latency": 1365
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "rec-07",
+      "category": "recommendations",
+      "score": 7.65,
+      "hallucinated": false,
+      "latency": 2597
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "rec-08",
+      "category": "recommendations",
+      "score": 3.1999999999999997,
+      "hallucinated": false,
+      "latency": 1232
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "det-01",
+      "category": "specific_details",
+      "score": 6.55,
+      "hallucinated": false,
+      "latency": 1265
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "det-02",
+      "category": "specific_details",
+      "score": 8.65,
+      "hallucinated": false,
+      "latency": 2449
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "det-03",
+      "category": "specific_details",
+      "score": 9.399999999999999,
+      "hallucinated": false,
+      "latency": 1978
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "det-04",
+      "category": "specific_details",
+      "score": 9.1,
+      "hallucinated": false,
+      "latency": 9390
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "det-05",
+      "category": "specific_details",
+      "score": 8.8,
+      "hallucinated": false,
+      "latency": 1934
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "det-06",
+      "category": "specific_details",
+      "score": 7.7,
+      "hallucinated": false,
+      "latency": 1827
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "det-07",
+      "category": "specific_details",
+      "score": 9.1,
+      "hallucinated": false,
+      "latency": 1907
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "det-08",
+      "category": "specific_details",
+      "score": 6.35,
+      "hallucinated": false,
+      "latency": 1814
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "det-09",
+      "category": "specific_details",
+      "score": 8.3,
+      "hallucinated": false,
+      "latency": 1518
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "det-10",
+      "category": "specific_details",
+      "score": 8.3,
+      "hallucinated": false,
+      "latency": 1543
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "neg-01",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 1254
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "neg-02",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 1221
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "neg-03",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 2077
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "neg-04",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 1059
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "neg-05",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 1474
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "neg-06",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 1493
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "neg-07",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 1291
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "neg-08",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 926
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "neg-09",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 1862
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "qid": "neg-10",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 1309
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "cae-01",
+      "category": "matching_cae",
+      "score": 1,
+      "hallucinated": false,
+      "latency": 4902
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "cae-02",
+      "category": "matching_cae",
+      "score": 8.65,
+      "hallucinated": false,
+      "latency": 4711
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "cae-03",
+      "category": "matching_cae",
+      "score": 6.049999999999999,
+      "hallucinated": false,
+      "latency": 3978
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "cae-04",
+      "category": "matching_cae",
+      "score": 4.45,
+      "hallucinated": false,
+      "latency": 5746
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "cae-05",
+      "category": "matching_cae",
+      "score": 4.55,
+      "hallucinated": false,
+      "latency": 4939
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "cae-06",
+      "category": "matching_cae",
+      "score": 6.15,
+      "hallucinated": false,
+      "latency": 6078
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "cae-07",
+      "category": "matching_cae",
+      "score": 4,
+      "hallucinated": false,
+      "latency": 5156
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "cae-08",
+      "category": "matching_cae",
+      "score": 7.25,
+      "hallucinated": false,
+      "latency": 2703
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "elig-01",
+      "category": "eligibility",
+      "score": 9.399999999999999,
+      "hallucinated": false,
+      "latency": 2489
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "elig-02",
+      "category": "eligibility",
+      "score": 6.299999999999999,
+      "hallucinated": false,
+      "latency": 4586
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "elig-03",
+      "category": "eligibility",
+      "score": 7.499999999999999,
+      "hallucinated": false,
+      "latency": 3322
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "elig-04",
+      "category": "eligibility",
+      "score": 9.399999999999999,
+      "hallucinated": false,
+      "latency": 3556
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "elig-05",
+      "category": "eligibility",
+      "score": 4.8999999999999995,
+      "hallucinated": false,
+      "latency": 5456
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "elig-06",
+      "category": "eligibility",
+      "score": 8.65,
+      "hallucinated": false,
+      "latency": 3386
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "elig-07",
+      "category": "eligibility",
+      "score": 7.4,
+      "hallucinated": false,
+      "latency": 5028
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "elig-08",
+      "category": "eligibility",
+      "score": 8.65,
+      "hallucinated": false,
+      "latency": 4366
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "open-01",
+      "category": "open_calls",
+      "score": 6.2,
+      "hallucinated": false,
+      "latency": 5698
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "open-02",
+      "category": "open_calls",
+      "score": 6.6,
+      "hallucinated": false,
+      "latency": 4550
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "open-03",
+      "category": "open_calls",
+      "score": 7.5,
+      "hallucinated": false,
+      "latency": 4722
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "open-04",
+      "category": "open_calls",
+      "score": 9.1,
+      "hallucinated": false,
+      "latency": 2643
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "open-05",
+      "category": "open_calls",
+      "score": 8.65,
+      "hallucinated": false,
+      "latency": 3507
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "open-06",
+      "category": "open_calls",
+      "score": 1.9,
+      "hallucinated": false,
+      "latency": 5636
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "rec-01",
+      "category": "recommendations",
+      "score": 6.15,
+      "hallucinated": false,
+      "latency": 5344
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "rec-02",
+      "category": "recommendations",
+      "score": 6.3,
+      "hallucinated": false,
+      "latency": 5020
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "rec-03",
+      "category": "recommendations",
+      "score": 5.1499999999999995,
+      "hallucinated": false,
+      "latency": 5840
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "rec-04",
+      "category": "recommendations",
+      "score": 5.6000000000000005,
+      "hallucinated": false,
+      "latency": 5350
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "rec-05",
+      "category": "recommendations",
+      "score": 8.4,
+      "hallucinated": false,
+      "latency": 4910
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "rec-06",
+      "category": "recommendations",
+      "score": 4.6,
+      "hallucinated": false,
+      "latency": 5278
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "rec-07",
+      "category": "recommendations",
+      "score": 2.15,
+      "hallucinated": false,
+      "latency": 5527
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "rec-08",
+      "category": "recommendations",
+      "score": 6.35,
+      "hallucinated": false,
+      "latency": 5554
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "det-01",
+      "category": "specific_details",
+      "score": 8.6,
+      "hallucinated": false,
+      "latency": 2600
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "det-02",
+      "category": "specific_details",
+      "score": 7.8999999999999995,
+      "hallucinated": false,
+      "latency": 3269
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "det-03",
+      "category": "specific_details",
+      "score": 9.1,
+      "hallucinated": false,
+      "latency": 2028
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "det-04",
+      "category": "specific_details",
+      "score": 6.6,
+      "hallucinated": false,
+      "latency": 5043
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "det-05",
+      "category": "specific_details",
+      "score": 8.5,
+      "hallucinated": false,
+      "latency": 2812
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "det-06",
+      "category": "specific_details",
+      "score": 6.2,
+      "hallucinated": false,
+      "latency": 2318
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "det-07",
+      "category": "specific_details",
+      "score": 3.2,
+      "hallucinated": false,
+      "latency": 4637
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "det-08",
+      "category": "specific_details",
+      "score": 9.1,
+      "hallucinated": false,
+      "latency": 3357
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "det-09",
+      "category": "specific_details",
+      "score": 8.3,
+      "hallucinated": false,
+      "latency": 2002
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "det-10",
+      "category": "specific_details",
+      "score": 3.95,
+      "hallucinated": false,
+      "latency": 5412
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "neg-01",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 1489
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "neg-02",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 1577
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "neg-03",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 4799
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "neg-04",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 1252
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "neg-05",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 1938
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "neg-06",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 1892
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "neg-07",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 2472
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "neg-08",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 1566
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "neg-09",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 2025
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "qid": "neg-10",
+      "category": "negative_tests",
+      "score": 10,
+      "hallucinated": false,
+      "latency": 1643
+    }
+  ]
+}
