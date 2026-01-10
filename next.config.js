@@ -11,7 +11,7 @@ const nextConfig = {
   // Output standalone for Docker optimization
   output: 'standalone',
   experimental: {
-    serverComponentsExternalPackages: ['puppeteer', '@sparticuz/chromium'],
+    serverComponentsExternalPackages: ['puppeteer', 'puppeteer-extra', 'puppeteer-extra-plugin-stealth', '@sparticuz/chromium'],
   },
   eslint: {
     ignoreDuringBuilds: true,
