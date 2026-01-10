@@ -185,7 +185,7 @@ export function evaluateMatch(lead: LeadInput, aviso: AvisoCriteria): MatchResul
     }
 
     let score = 0;
-    const weights = { regiao: 25, dimensao: 25, cae: 20, tipoProjeto: 15, investimento: 15 };
+    const weights = { regiao: 20, dimensao: 25, cae: 30, tipoProjeto: 15, investimento: 10 };
     if (regiaoMatch) score += weights.regiao;
     if (dimensaoMatch) score += weights.dimensao;
     if (caeMatch) score += weights.cae;
