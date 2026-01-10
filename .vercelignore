@@ -1,0 +1,12 @@
+# Vercel Ignore - Exclude large files
+__tests__/
+*.zip
+.next/cache/
+*.pack
+apify-actors/
+data/
+docs_archive/
+ingest-log.txt
+scraping_log*.txt
+test-*.js
+test-*.sh

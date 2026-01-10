@@ -1,0 +1,49 @@
+| Contexto        | Contexto     | Contexto             | Contexto            | Contexto                    | Contexto   | Contexto         | Contexto   | Contexto        | Identificação    | Identificação    | Identificação                                                                         | Identificação                     | Identificação      | Identificação    | Identificação    | Identificação    | Identificação    | Identificação       | Identificação     | Caracterização                 | Caracterização              | Caracterização   | Caracterização                     | Caracterização                   | Caracterização     | Caracterização                                | Caracterização                    | Caracterização                  | Caracterização      | Caracterização    | Caracterização                                | Caracterização                                          | Caracterização                                                | Caracterização   | Caracterização          | Caracterização          | Caracterização       | Enquadramento      | Enquadramento    | Enquadramento    | Enquadramento    | Enquadramento    | Enquadramento    | Enquadramento               | Enquadramento              | Enquadramento                    | Enquadramento    | Enquadramento    | Enquadramento              | Atividade            | Atividade                  | Atividade                                         | Atividade                       | Atividade   | Atividade   | Atividade   | Atividade          | Atividade       | Atividade        | Atividade        | Atividade        | Atividade                 | Atividade        | Atividade          | Atividade            | Atividade                | Atividade   | Atividade   | Atividade   | Atividade        | Atividade     | Atividade       | Atividade       | Atividade        | Atividade                 | Atividade     | Atividade        | Atividade           | Atividade               | Atividade         | Atividade              | Atividade                    | Atividade                           | Atividade                            | Atividade                          | Atividade                                 | Atividade                               |
+|-----------------|--------------|----------------------|---------------------|-----------------------------|------------|------------------|------------|-----------------|------------------|------------------|---------------------------------------------------------------------------------------|-----------------------------------|--------------------|------------------|------------------|------------------|------------------|---------------------|-------------------|--------------------------------|-----------------------------|------------------|------------------------------------|----------------------------------|--------------------|-----------------------------------------------|-----------------------------------|---------------------------------|---------------------|-------------------|-----------------------------------------------|---------------------------------------------------------|---------------------------------------------------------------|------------------|-------------------------|-------------------------|----------------------|--------------------|------------------|------------------|------------------|------------------|------------------|-----------------------------|----------------------------|----------------------------------|------------------|------------------|----------------------------|----------------------|----------------------------|---------------------------------------------------|---------------------------------|-------------|-------------|-------------|--------------------|-----------------|------------------|------------------|------------------|---------------------------|------------------|--------------------|----------------------|--------------------------|-------------|-------------|-------------|------------------|---------------|-----------------|-----------------|------------------|---------------------------|---------------|------------------|---------------------|-------------------------|-------------------|------------------------|------------------------------|-------------------------------------|--------------------------------------|------------------------------------|-------------------------------------------|-----------------------------------------|
+| Código Operação | Nº Atividade | Desginação Atividade | Nº Área de Formação | Designação Área de Formação | Nº Curso   | Designação Curso | Nº Ação    | Designação Ação | NIF              | NISS             | N.º Pedido de Proteção Internacional / N.º Autorização de Residência / N.º Passaporte | Tipo de Autorização de Residência | Data de Nascimento | Nome             | Género           | Nacionalidade    | Código postal    | Contatos - Telefone | Contatos - E-mail | Data de Inicio da participação | Data de fim da participação | Situação         | Situação Face ao Emprego à entrada | Situação Face ao Emprego à saída | Vínculo Contratual | Classificação Portuguesa das Profissões (CPP) | Habilitações Literárias à entrada | Habilitações Literárias à saída | Nivel QNQ à entrada | Nivel QNQ à saída | Procura emprego após terminada a participação | Estuda ou frequenta ação de formação no momento entrada | Estuda ou frequenta ação de formação terminada a participação | Número SIGO      | Número Processo Interno | Data de inicio do apoio | Data de fim do apoio | Tipo Enquadramento | Enquadramento    | Data de início   | Data de fim      | Duração (meses)  | Ano              | Tipo  Entidade Enquadradora | NIF  Entidade Enquadradora | Designação Entidade Enquadradora | Codigo UO        | Codigo IES       | País Entidade Enquadradora | Área de Estudo CNAEF | Área Científica (Frascati) | Código Postal do local de realização da atividade | País de realização da Atividade | Horas  Sala | Horas  PCT  | Horas  PS   | Horas  Consultoria | Horas  Mediação | Horas E-Learning | Horas B-Learning | Horas presencial | Horas online (presencial) | Horas  Síncronas | Horas  Assíncronas | Horas  (Hor Laboral) | Horas  (Hor Pós-Laboral) | Dias  Sala  | Dias  PCT   | Dias PS     | Dias Consultoria | Dias Mediação | Dias E-Learning | Dias B-Learning | Dias  Presencial | Dias  Online (Presencial) | Dias Síncrona | Dias  Assíncrona | Dias  (Hor Laboral) | Dias  (Hor Pós-Laboral) | Data de Inscrição | Data de Encaminhamento | Modalidade de Encaminhamento | Data de Entrada em Processo de RVCC | Data de Certificação Parcial Escolar | Data de Certificação Total Escolar | Data de Certificação Parcial Profissional | Data de Certificação Total Profissional |
+
+| Deve estar compreendida entre a data de início e de fim da operação A data de inicio da participação tem de ser maior ou igual à data de inicio da ação/atividade   | Deve estar compreendida entre a data de início e de fim da operação A data de fim da participação tem de ser menor ou igual à data de inicio do ação/atividade   |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+| Seleccão de 1 opção da lista de valores. Não pode ser submetido o saldo final sem o campo preenchido. E a situação face ao emprego tem que ser recolhida à data de inicio e à  data de fim da participação.   |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TD Situação Face ao Emprego                                                                                                                                                                                   |
+
+| A data de inicio do apoio tem de ser menor que a Data de fim do apoio.    | A data de fim do apoio tem de ser maior que a Data de inicio do apoio.    |
+|---------------------------------------------------------------------------|---------------------------------------------------------------------------|
+
+| TD Área Formação CNAEF   |
+|--------------------------|
+
+| TD Género   | TD PAIS    |
+|-------------|------------|
+
+| TD Situação   | TD Situação Face ao Emprego   |
+|---------------|-------------------------------|
+
+| TD Tipo Vinculo    |
+|--------------------|
+
+| TD Habilitações Literárias   |
+|------------------------------|
+
+| TD Nivel QNQ   |
+|----------------|
+
+| TDProcura emprego após terminada participacão   | TD Estuda ou frequenta ação de formação no momento entrada    | TD Estuda ou frequenta ação de formação terminada a participação   |
+|-------------------------------------------------|---------------------------------------------------------------|--------------------------------------------------------------------|
+
+| TD Tipo de Enquadramento (nível 1) Bolsa e medida ativa   | TD enquadramento -  2 nível   |
+|-----------------------------------------------------------|-------------------------------|
+
+| TD Tipo Entiddae Enquadradora   |
+|---------------------------------|
+
+| TD PAIS    | TD Área Formação CNAEF   | TD Área Científica   |
+|------------|--------------------------|----------------------|
+
+| TD PAIS    |
+|------------|
+
+| TD Modalidade de Encaminhamneto   |
+|-----------------------------------|

@@ -1,0 +1,26 @@
+{
+  "timestamp": "2025-12-14T16:53:07.350Z",
+  "totalAvisos": 1188,
+  "byPortal": [
+    {
+      "portal": "Portugal 2030",
+      "count": 239,
+      "duration": 96420
+    },
+    {
+      "portal": "PRR",
+      "count": 544,
+      "duration": 2104
+    },
+    {
+      "portal": "Horizon Europe",
+      "count": 355,
+      "duration": 353775
+    },
+    {
+      "portal": "Europa Criativa",
+      "count": 50,
+      "duration": 4610
+    }
+  ]
+}

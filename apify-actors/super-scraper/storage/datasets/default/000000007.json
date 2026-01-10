@@ -1,0 +1,88 @@
+{
+	"id": "PT2030-7083",
+	"codigo": "FA0108/2025",
+	"titulo": "Infraestruturas Verdes",
+	"descricao": "RSO2.7 - Proteção da natureza e biodiversidade",
+	"fonte": "Portugal 2030",
+	"programa": "MADEIRA 2030",
+	"dataAbertura": "2025-10-01",
+	"dataFecho": "2025-11-28",
+	"montante": "6500000",
+	"taxa": "85%",
+	"regiao": "RAM",
+	"url": "https://portugal2030.pt/aviso-2024/infraestruturas-verdes/",
+	"pdfUrl": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-232.octet-stream",
+	"status": "Fechado",
+	"scrapedAt": "2025-12-12T16:52:43.398Z",
+	"beneficiarios": [
+		"Instituto das Florestas e Conservação da Natureza"
+	],
+	"natureza": "Convite",
+	"modalidade": [
+		"Individual"
+	],
+	"fundo": [
+		"FEDER"
+	],
+	"tipologiaAcao": [
+		"RSO2.7-01 - Conservação da natureza",
+		"biodiversidade e património natural"
+	],
+	"tipologiaIntervencao": [
+		"RSO2.7-01-01 - Conservação da natureza",
+		"biodiversidade e património natural"
+	],
+	"tipologiaOperacao": [
+		"2040 - Infraestruturas verdes"
+	],
+	"prioridade": [
+		"2A - Madeira + Verde: Ação Climática e Transição Energética"
+	],
+	"objetivos": [
+		"RSO2.7 - Proteção da natureza e biodiversidade"
+	],
+	"nuts": [
+		"RAM"
+	],
+	"quadrimestre": "Q1",
+	"documentos": [
+		{
+			"id": "327B66C9-8EE9-4172-919C-6692B132D463",
+			"nome": "Anexo 01_Declaração de Compromisso_Beneficiário_v1.3_20241015.docx",
+			"tipo": "Anexo",
+			"url": "https://portugal2030.pt/wp-json/avisos/download?path=avisos%2F2025%2F11%2F706a4b78-ef3c-4654-b0ee-f694705d97a4%2F327b66c9-8ee9-4172-919c-6692b132d463",
+			"path": "avisos/2025/11/706a4b78-ef3c-4654-b0ee-f694705d97a4/327b66c9-8ee9-4172-919c-6692b132d463"
+		},
+		{
+			"id": "6299077E-50AC-422A-8B3D-F782C6EECDD5",
+			"nome": "Anexo 02_Enquadramento Regras Ambientais_OT_Licenciamento_v20240528.docx",
+			"tipo": "Anexo",
+			"url": "https://portugal2030.pt/wp-json/avisos/download?path=avisos%2F2025%2F11%2F706a4b78-ef3c-4654-b0ee-f694705d97a4%2F6299077e-50ac-422a-8b3d-f782c6eecdd5",
+			"path": "avisos/2025/11/706a4b78-ef3c-4654-b0ee-f694705d97a4/6299077e-50ac-422a-8b3d-f782c6eecdd5"
+		},
+		{
+			"id": "5715BCF0-A0A0-49D6-AFF4-0906600FDD2A",
+			"nome": "Anexo 03_Sustentabilidade_DF_VF.xlsx",
+			"tipo": "Anexo",
+			"url": "https://portugal2030.pt/wp-json/avisos/download?path=avisos%2F2025%2F11%2F706a4b78-ef3c-4654-b0ee-f694705d97a4%2F5715bcf0-a0a0-49d6-aff4-0906600fdd2a",
+			"path": "avisos/2025/11/706a4b78-ef3c-4654-b0ee-f694705d97a4/5715bcf0-a0a0-49d6-aff4-0906600fdd2a"
+		},
+		{
+			"id": "B5B4AED9-60F8-4191-A76C-9B2A8D16C746",
+			"nome": "Anexo 04_Orçamento Global.xlsx",
+			"tipo": "Anexo",
+			"url": "https://portugal2030.pt/wp-json/avisos/download?path=avisos%2F2025%2F11%2F706a4b78-ef3c-4654-b0ee-f694705d97a4%2Fb5b4aed9-60f8-4191-a76c-9b2a8d16c746",
+			"path": "avisos/2025/11/706a4b78-ef3c-4654-b0ee-f694705d97a4/b5b4aed9-60f8-4191-a76c-9b2a8d16c746"
+		},
+		{
+			"id": "184E0669-DDD6-4641-9A79-9A08235EBD5A",
+			"nome": "Aviso_CENTRO2030-2025-40_v1.pdf",
+			"tipo": "Aviso",
+			"url": "https://portugal2030.pt/wp-json/avisos/download?path=avisos%2F2025%2F12%2F706a4b78-ef3c-4654-b0ee-f694705d97a4%2F184e0669-ddd6-4641-9a79-9a08235ebd5a",
+			"path": "avisos/2025/12/706a4b78-ef3c-4654-b0ee-f694705d97a4/184e0669-ddd6-4641-9a79-9a08235ebd5a"
+		}
+	],
+	"dotacoes": {
+		"madeira": 6500000
+	}
+}

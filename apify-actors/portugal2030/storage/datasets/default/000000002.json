@@ -1,0 +1,43 @@
+{
+	"type": "aviso",
+	"id": "PT2030_monitorizacao_da_qualidade_do_ar_1765407582118",
+	"titulo": "Monitorização da Qualidade do Ar",
+	"descricao": "Aviso Programa Regional do Algarve 2021-2027 - Ver documentos anexos",
+	"fonte": "Portugal 2030",
+	"programa": "Programa Regional do Algarve 2021-2027",
+	"linha": "Investimento",
+	"data_abertura": "2025-12-09",
+	"data_fecho": "2026-04-27",
+	"montante_total": "0",
+	"montante_min": "0",
+	"montante_max": "0",
+	"taxa_apoio": "Consultar PDF",
+	"regiao": [
+		"Nacional"
+	],
+	"setor": [
+		"Multisectorial"
+	],
+	"tipo_beneficiario": [
+		"Diversos"
+	],
+	"url": "https://portugal2030.pt/avisos/",
+	"pdf_url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2F419e903e-cb35-49ba-b781-9f1d09ede834%2Fc49b2828-b25f-4f61-913f-b75cd8ce5c3e&filename=AVISO+ALGARVE-2025-43+-+MONITORIZA%C3%87%C3%83O+E+QUALIDADE+DO+AR.pdf",
+	"anexos": [
+		{
+			"nome": "AVISO ALGARVE-2025-43 - MONITORIZAÇÃO E QUALIDADE DO AR.pdf",
+			"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2F419e903e-cb35-49ba-b781-9f1d09ede834%2Fc49b2828-b25f-4f61-913f-b75cd8ce5c3e&filename=AVISO+ALGARVE-2025-43+-+MONITORIZA%C3%87%C3%83O+E+QUALIDADE+DO+AR.pdf",
+			"tipo": "pdf"
+		},
+		{
+			"nome": "ANEXO A.3 Medidas_DNSH_ Formulario.pdf",
+			"url": "https://portugal2030.pt/wp-json/avisos/download?container=siag-prod-container&path=avisos%2F2025%2F12%2F419e903e-cb35-49ba-b781-9f1d09ede834%2F1b17dc33-8e63-4180-ba0f-7ca2b16d5f26&filename=ANEXO+A.3+Medidas_DNSH_+Formulario.pdf",
+			"tipo": "pdf"
+		}
+	],
+	"status": "Aberto",
+	"elegibilidade": "Consultar regulamento",
+	"documentos_necessarios": [],
+	"keywords": [],
+	"scraped_at": "2025-12-10T22:59:42.118Z"
+}

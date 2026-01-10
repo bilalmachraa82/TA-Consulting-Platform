@@ -1,0 +1,71 @@
+{
+	"id": "PEPACC-11124",
+	"titulo": "Restabelecimento do potencial silvícola na sequência de catástrofes naturais, de fenómenos climatéricos adversos ou de acontecimentos catastróficos | Estabilização de emergência pós incêndio (2º Concurso)",
+	"descricao": "Candidaturas abertas de 10 de novembro a 12 de janeiro de 2026",
+	"fonte": "PEPAC",
+	"programa": "PEPAC Continente",
+	"dataAbertura": "2026-01-12",
+	"dataFecho": "2026-01-12",
+	"regiao": "Nacional",
+	"url": "https://pepacc.pt/concursos/restabelecimento-do-potencial-silvicola-na-sequencia-de-catastrofes-naturais-de-fenomenos-climatericos-adversos-ou-de-acontecimentos-catastroficos-estabilizacao-de-emergencia-pos-incendio2o-concur/",
+	"status": "Aberto",
+	"scrapedAt": "2025-12-12T16:53:42.570Z",
+	"documentos": [
+		{
+			"id": "PEPACC-doc-1",
+			"nome": "Aviso-02-C324-2025.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/11/Aviso-02-C324-2025.pdf",
+			"path": ""
+		},
+		{
+			"id": "PEPACC-doc-2",
+			"nome": "Aviso_02_C324_2025_Prorrogacao.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/11/Aviso_02_C324_2025_Prorrogacao.pdf",
+			"path": ""
+		},
+		{
+			"id": "PEPACC-doc-3",
+			"nome": "Aviso-02-C324-2025-Aditamento.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/11/Aviso-02-C324-2025-Aditamento.pdf",
+			"path": ""
+		},
+		{
+			"id": "PEPACC-doc-4",
+			"nome": "OT_29_2025_C324_02.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/11/OT_29_2025_C324_02.pdf",
+			"path": ""
+		},
+		{
+			"id": "PEPACC-doc-5",
+			"nome": "OT_29_2025_C324_02-Anexos.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/11/OT_29_2025_C324_02-Anexos.pdf",
+			"path": ""
+		},
+		{
+			"id": "PEPACC-doc-6",
+			"nome": "Manual-do-formulario_C324_Aviso-02_14.11.2025.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/11/Manual-do-formulario_C324_Aviso-02_14.11.2025.pdf",
+			"path": ""
+		},
+		{
+			"id": "PEPACC-doc-7",
+			"nome": "Portaria-n.o-125-2025-1.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/03/Portaria-n.o-125-2025-1.pdf",
+			"path": ""
+		},
+		{
+			"id": "PEPACC-doc-8",
+			"nome": "Consolidacao-Portaria-n.o-125_2025_1-Diario-da-Republica-n.o-57_2025-Serie-I-de-2025-03-21.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/09/Consolidacao-Portaria-n.o-125_2025_1-Diario-da-Republica-n.o-57_2025-Serie-I-de-2025-03-21.pdf",
+			"path": ""
+		}
+	]
+}

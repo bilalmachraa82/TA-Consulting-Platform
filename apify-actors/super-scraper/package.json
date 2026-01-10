@@ -1,0 +1,32 @@
+{
+    "name": "super-scraper",
+    "version": "1.0.0",
+    "description": "Unified scraper for 6 EU funding platforms",
+    "main": "dist/main.js",
+    "scripts": {
+        "start": "npx ts-node src/main.ts",
+        "build": "tsc",
+        "test": "npx ts-node src/test.ts",
+        "report": "npx ts-node src/report.ts"
+    },
+    "dependencies": {
+        "@anthropic-ai/sdk": "^0.71.2",
+        "@google/generative-ai": "^0.24.1",
+        "apify": "^3.1.0",
+        "apify-client": "^2.21.0",
+        "axios": "^1.6.0",
+        "crawlee": "^3.5.0",
+        "pdf-parse": "^1.1.1",
+        "playwright": "^1.57.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "@types/pdf-parse": "^1.1.5",
+        "dotenv": "^17.2.3",
+        "ts-node": "^10.9.0",
+        "typescript": "^5.0.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}

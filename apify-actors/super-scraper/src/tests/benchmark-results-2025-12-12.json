@@ -1,0 +1,1805 @@
+{
+  "timestamp": "2025-12-12T21:12:40.074Z",
+  "testFiles": 15,
+  "totalQuestions": 25,
+  "modelsCompared": [
+    "Gemini 2.5 Flash",
+    "Gemini 2.5 Pro",
+    "Gemini 2.0 Flash"
+  ],
+  "results": [
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "prr-001",
+      "question": "Quais são os programas de apoio à transição digital disponíveis no PRR?",
+      "answer": "No âmbito do PRR, o programa de apoio à transição digital disponível é a **Componente RE-C05: Capitalização e Inovação Empresarial**.\n\nEsta componente visa apoiar",
+      "latencyMs": 5320,
+      "inputTokens": 7029,
+      "outputTokens": 41,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [
+        "RE-C05",
+        "transição digital"
+      ],
+      "keywordsMissing": [
+        "digitalização",
+        "PME"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:06:25.765Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "prr-002",
+      "question": "Quem pode candidatar-se aos apoios de descarbonização do PRR?",
+      "answer": "Podem candidatar-se aos apoios de descarbonização do PRR:\n\n*   Empresas industriais com elevada intensidade energética.\n*   Instalações abrangidas pelo CELE (Comércio Europeu de Licenças de Emissão).\n*   Empresas dos setores prioritários, que incluem: Cimenteira, Siderurgia, Vidro, Cerâmica, Química, Pasta e papel.\n\nFonte: prr-02-descarbonizacao.md",
+      "latencyMs": 2695,
+      "inputTokens": 7030,
+      "outputTokens": 102,
+      "hasCitation": true,
+      "citationSources": [
+        "prr-02-descarbonizacao"
+      ],
+      "keywordsFound": [
+        "empresas",
+        "descarbonização"
+      ],
+      "keywordsMissing": [
+        "indústria",
+        "emissões"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:06:28.961Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "prr-003",
+      "question": "Qual é a dotação orçamental total do Plano de Recuperação e Resiliência português?",
+      "answer": "O Plano de Recuperação e Resiliência (PRR) de Portugal tem uma dotação total de 16,6 mil milhões de euros, dos quais 13,9 mil milhões são subvenções e 2,7 mil milhões são empréstimos.\n\nFonte: prr-01-transicao-digital.md",
+      "latencyMs": 1925,
+      "inputTokens": 7034,
+      "outputTokens": 72,
+      "hasCitation": true,
+      "citationSources": [
+        "prr-01-transicao-digital"
+      ],
+      "keywordsFound": [
+        "16",
+        "mil milhões",
+        "euros"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:06:31.389Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "prr-004",
+      "question": "Qual é o prazo limite para execução dos fundos do PRR?",
+      "answer": "Todos os projetos do PRR devem estar concluídos até 31 de Dezembro de 2026.\nFonte: prr-01-transicao-digital.md",
+      "latencyMs": 2446,
+      "inputTokens": 7027,
+      "outputTokens": 39,
+      "hasCitation": true,
+      "citationSources": [
+        "prr-01-transicao-digital"
+      ],
+      "keywordsFound": [
+        "2026"
+      ],
+      "keywordsMissing": [
+        "prazo",
+        "execução"
+      ],
+      "keywordScore": 0.3333333333333333,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:06:34.336Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "prr-005",
+      "question": "Quais são as principais áreas de investimento do PRR em habitação?",
+      "answer": "As principais áreas de investimento do PRR na habitação, que mobiliza 1.211 milhões de euros, são:\n\n1.  **Construção Nova**: Apoio à construção de novos fogos para arrendamento acessível, com uma comparticipação até 50.000€ por fogo.\n2.  **Reabilitação**: Apoio à reabilitação de edifícios degradados e à melhoria da eficiência energética, com um apoio até 40.000€ por fogo.\n3.  **Bolsa de Habitação**: Aquisição de frações autónomas para integração em bolsas de arrendamento público, com rendas regu...",
+      "latencyMs": 3158,
+      "inputTokens": 7028,
+      "outputTokens": 159,
+      "hasCitation": true,
+      "citationSources": [
+        "prr-03-habitacao"
+      ],
+      "keywordsFound": [
+        "habitação",
+        "arrendamento",
+        "acessível",
+        "reabilitação"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:06:37.995Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "pt2030-001",
+      "question": "Quais são os programas temáticos do Portugal 2030?",
+      "answer": "Os programas temáticos do Portugal 2030 são:\n\n1.  **COMPETE 2030** - Competitividade e Internacionalização\n2.  **Pessoas 2030** - Capital Humano (FSE+)\n3.  **Sustentável 2030** - Ambiente e Alterações Climáticas\n4.  **Mar 2030** - Economia Azul\n5.  **PROVERE 2030** - Valorização Económica de Recursos Endógenos\n\nFonte: pt2030-01-visao-global.md",
+      "latencyMs": 2171,
+      "inputTokens": 7028,
+      "outputTokens": 132,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-01-visao-global"
+      ],
+      "keywordsFound": [
+        "COMPETE",
+        "Pessoas",
+        "Mar"
+      ],
+      "keywordsMissing": [
+        "Sustentabilidade",
+        "Território"
+      ],
+      "keywordScore": 0.6,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:06:40.667Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "pt2030-002",
+      "question": "Qual é a dotação financeira total do Portugal 2030?",
+      "answer": "O Portugal 2030 mobiliza um total de 23 mil milhões de euros dos fundos europeus.\n\nFonte: pt2030-01-visao-global.md",
+      "latencyMs": 2800,
+      "inputTokens": 7029,
+      "outputTokens": 42,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-01-visao-global"
+      ],
+      "keywordsFound": [
+        "23",
+        "mil milhões",
+        "euros"
+      ],
+      "keywordsMissing": [
+        "FEDER",
+        "FSE"
+      ],
+      "keywordScore": 0.6,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:06:43.967Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "pt2030-003",
+      "question": "O que é o FEDER e para que serve?",
+      "answer": "O Fundo Europeu de Desenvolvimento Regional (FEDER) é um dos principais instrumentos financeiros da política de coesão da União Europeia.\n\nServe para:\n*   Reduzir as disparidades regionais.\n*   Promover a inovação e competitividade.\n*   Apoiar a transição para uma economia verde e digital.\n\nAs tipologias de investimento que apoia incluem infraestruturas, inovação empresarial, digitalização e eficiência energética. No âmbito do Portugal 2030, o FEDER mobiliza 11.500 milhões de euros.\n\nFonte: pt20...",
+      "latencyMs": 3908,
+      "inputTokens": 7024,
+      "outputTokens": 155,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-05-glossario",
+        "pt2030-01-visao-global"
+      ],
+      "keywordsFound": [
+        "Fundo Europeu",
+        "Desenvolvimento Regional",
+        "coesão",
+        "investimento"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:06:48.375Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "pt2030-004",
+      "question": "Quais são os requisitos para uma PME se candidatar a apoios do COMPETE 2030?",
+      "answer": "Para uma PME se candidatar a apoios do COMPETE 2030, os requisitos variam consoante o sistema de incentivos:\n\n*   **SI Inovação Produtiva**: As PME são elegíveis para projetos com um investimento mínimo de 500.000€ e um investimento máximo de 25.000.000€.\n*   **SI Empreendedorismo Qualificado**: As PME devem ser empresas com menos de 2 anos, apresentar projetos de base tecnológica e ter um investimento entre 50.000€ e 500.000€.\n*   **SI Internacionalização**: As PME são elegíveis para apoios à e...",
+      "latencyMs": 4177,
+      "inputTokens": 7037,
+      "outputTokens": 175,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-02-compete-inovacao"
+      ],
+      "keywordsFound": [
+        "PME",
+        "inovação"
+      ],
+      "keywordsMissing": [
+        "competitividade",
+        "certificação"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:06:53.053Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "pt2030-005",
+      "question": "O que é o programa Pessoas 2030 e quais são os seus objectivos?",
+      "answer": "O programa Pessoas 2030 é o programa temático financiado pelo Fundo Social Europeu Plus (FSE+) que visa promover o emprego, a educação e a inclusão social em Portugal.\n\nOs seus objetivos específicos são:\n1.  **Emprego e Empregabilidade**: Através de formação profissional, apoio à criação de emprego e estágios profissionais.\n2.  **Educação e Qualificação**: Através da redução do abandono escolar, ensino profissional e formação de adultos.\n3.  **Inclusão Social**: Através do apoio a grupos vulnerá...",
+      "latencyMs": 3295,
+      "inputTokens": 7033,
+      "outputTokens": 149,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-03-pessoas"
+      ],
+      "keywordsFound": [
+        "emprego",
+        "formação",
+        "qualificação",
+        "inclusão",
+        "FSE"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:06:56.849Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "pt2030-006",
+      "question": "Quais são as regiões elegíveis para apoios mais intensivos no Portugal 2030?",
+      "answer": "As regiões elegíveis para apoios mais intensivos no Portugal 2030 são o **Norte, Centro e Alentejo**.\n\nEstas regiões são consideradas menos desenvolvidas e, por isso, têm acesso a taxas de co-financiamento superiores. Por exemplo, no programa Pessoas 2030, estas regiões têm acesso a taxas de co-financiamento de 85%. No Sistema de Incentivos à Inovação Produtiva do COMPETE 2030, as PME nestas regiões podem ter taxas de apoio de 45%, enquanto em Lisboa é de 35% e no Algarve de 40%.\n\nFonte: Portuga...",
+      "latencyMs": 3463,
+      "inputTokens": 7034,
+      "outputTokens": 169,
+      "hasCitation": true,
+      "citationSources": [
+        "Portugal 2030 - Pessoas 2030, Portugal 2030 - COMPETE 2030"
+      ],
+      "keywordsFound": [
+        "Norte",
+        "Centro",
+        "Alentejo",
+        "menos desenvolvidas"
+      ],
+      "keywordsMissing": [
+        "convergência"
+      ],
+      "keywordScore": 0.8,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:07:00.813Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "pepac-001",
+      "question": "O que são os eco-regimes do PEPAC?",
+      "answer": "Os Eco-Regimes do PEPAC são regimes voluntários pelos quais os agricultores podem optar, para além das condicionalidades obrigatórias. Ao aderirem, recebem pagamentos adicionais por adotarem práticas benéficas para o clima e o ambiente.\n\nO orçamento para os Eco-Regimes é de 495 milhões de euros/ano, o que corresponde a 25% do envelope de pagamentos diretos.\n\nFonte: pepac-02-eco-regimes.md",
+      "latencyMs": 3312,
+      "inputTokens": 7025,
+      "outputTokens": 106,
+      "hasCitation": true,
+      "citationSources": [
+        "pepac-02-eco-regimes"
+      ],
+      "keywordsFound": [
+        "ambiente",
+        "clima"
+      ],
+      "keywordsMissing": [
+        "práticas agrícolas",
+        "biodiversidade"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:07:04.627Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "pepac-002",
+      "question": "Quais são os apoios disponíveis para jovens agricultores no PEPAC?",
+      "answer": "Os apoios disponíveis para jovens agricultores no PEPAC são:\n\n1.  **Prémio à Instalação (não reembolsável):**\n    *   Montante Base: ",
+      "latencyMs": 4711,
+      "inputTokens": 7028,
+      "outputTokens": 40,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [
+        "jovens agricultores",
+        "instalação"
+      ],
+      "keywordsMissing": [
+        "primeira exploração",
+        "40 anos"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:07:09.846Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "pepac-003",
+      "question": "Qual é o montante disponível para pagamentos directos no PEPAC?",
+      "answer": "O montante disponível para pagamentos directos no PEPAC é de 4.400 milhões de euros, provenientes do Fundo Europeu Agrícola de Garantia (FEAGA) no Pilar I.\n\nFonte: pepac-01-visao-geral.md",
+      "latencyMs": 2357,
+      "inputTokens": 7028,
+      "outputTokens": 60,
+      "hasCitation": true,
+      "citationSources": [
+        "pepac-01-visao-geral"
+      ],
+      "keywordsFound": [
+        "pagamentos directos",
+        "euros"
+      ],
+      "keywordsMissing": [
+        "hectare"
+      ],
+      "keywordScore": 0.6666666666666666,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:07:12.705Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "pepac-004",
+      "question": "O que é a intervenção para agricultura biológica no PEPAC?",
+      "answer": "A intervenção de Agricultura Biológica do PEPAC apoia a conversão e manutenção de sistemas de produção agrícola em modo biológico.\n\nTem um orçamento de 350 milhões de euros para o período 2023-2027 e uma meta de atingir 25% da Superfície Agrícola Utilizada (SAU) em modo biológico até 2030.\n\nOs apoios variam por tipologia de cultura e fase (conversão ou manutenção):\n*   **Culturas Arvenses**: 350€/ha/ano (conversão, 2 anos) e 280€/ha/ano (manutenção).\n*   **Culturas Permanentes (Vinha, Olival, Fr...",
+      "latencyMs": 2492,
+      "inputTokens": 7027,
+      "outputTokens": 336,
+      "hasCitation": true,
+      "citationSources": [
+        "pepac-04-agricultura-biologica"
+      ],
+      "keywordsFound": [
+        "biológica",
+        "certificação"
+      ],
+      "keywordsMissing": [
+        "práticas sustentáveis"
+      ],
+      "keywordScore": 0.6666666666666666,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:07:15.696Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "cross-001",
+      "question": "Quais são os programas disponíveis para apoiar a digitalização de empresas em Portugal?",
+      "answer": "Existem dois programas principais disponíveis para apoiar a digitalização de empresas em Portugal, com base nos documentos fornecidos:\n\n1.  **PRR - Componente RE-C05:",
+      "latencyMs": 5181,
+      "inputTokens": 7030,
+      "outputTokens": 40,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [
+        "PRR",
+        "digital"
+      ],
+      "keywordsMissing": [
+        "PT2030",
+        "transformação"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:07:21.378Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "cross-002",
+      "question": "Quais fundos europeus apoiam projectos de sustentabilidade ambiental?",
+      "answer": "Os fundos europeus que apoiam projetos de sustentabilidade ambiental, de acordo com os documentos fornecidos, são:\n\n*   **FEAGA (Fundo Europeu Agrícola",
+      "latencyMs": 5023,
+      "inputTokens": 7028,
+      "outputTokens": 38,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [
+        "sustentabilidade"
+      ],
+      "keywordsMissing": [
+        "PRR",
+        "PT2030",
+        "PEPAC",
+        "ambiente"
+      ],
+      "keywordScore": 0.2,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:07:26.902Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "negative-001",
+      "question": "Quem pode candidatar-se ao programa IPDJ?",
+      "answer": "Não tenho informação sobre isso nos documentos disponíveis.",
+      "latencyMs": 2007,
+      "inputTokens": 7024,
+      "outputTokens": 9,
+      "hasCitation": true,
+      "citationSources": [],
+      "keywordsFound": [
+        "não",
+        "informação"
+      ],
+      "keywordsMissing": [
+        "disponível",
+        "fora"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:07:29.412Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "negative-002",
+      "question": "Qual é a taxa de juro do crédito habitação do Banco de Portugal?",
+      "answer": "Não tenho informação sobre isso nos documentos disponíveis.",
+      "latencyMs": 2352,
+      "inputTokens": 7029,
+      "outputTokens": 9,
+      "hasCitation": true,
+      "citationSources": [],
+      "keywordsFound": [
+        "não",
+        "informação"
+      ],
+      "keywordsMissing": [
+        "disponível",
+        "fora"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:07:32.265Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "negative-003",
+      "question": "Quando é que vai abrir o próximo concurso do Erasmus+?",
+      "answer": "Não tenho informação sobre o programa Erasmus+ nos documentos disponíveis. A minha especialização é em fundos europeus portugueses como o PRR, Portugal 2030 e PEPAC.",
+      "latencyMs": 3884,
+      "inputTokens": 7025,
+      "outputTokens": 39,
+      "hasCitation": true,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:07:36.651Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "numeric-001",
+      "question": "Qual é a taxa máxima de co-financiamento para projectos de inovação no PRR?",
+      "answer": "A taxa máxima de co-financiamento para projectos de inovação no âmbito da componente RE-C05 (Capitalização e Inovação Empresarial) do PRR é de 75% para micro empresas.\n\nFonte: prr-01-transicao-digital.md",
+      "latencyMs": 2402,
+      "inputTokens": 7034,
+      "outputTokens": 62,
+      "hasCitation": true,
+      "citationSources": [
+        "prr-01-transicao-digital"
+      ],
+      "keywordsFound": [
+        "co-financiamento",
+        "taxa"
+      ],
+      "keywordsMissing": [
+        "70%",
+        "80%"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:07:39.554Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "numeric-002",
+      "question": "Qual é o investimento mínimo elegível para candidaturas ao SI Inovação?",
+      "answer": "O investimento mínimo elegível para candidaturas ao SI Inovação Produtiva é de 500.000€.\n\nFonte: Portugal 2030 - COMPETE 2030 (pt2030-02-compete-inovacao.md)",
+      "latencyMs": 1937,
+      "inputTokens": 7029,
+      "outputTokens": 61,
+      "hasCitation": true,
+      "citationSources": [
+        "Portugal 2030 - COMPETE 2030 (pt2030-02-compete-inovacao",
+        "pt2030-02-compete-inovacao"
+      ],
+      "keywordsFound": [
+        "mínimo",
+        "investimento"
+      ],
+      "keywordsMissing": [
+        "euros"
+      ],
+      "keywordScore": 0.6666666666666666,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:07:41.991Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "acronym-001",
+      "question": "O que significa a sigla FEDER?",
+      "answer": "A sigla FEDER significa **Fundo Europeu de Desenvolvimento Regional**.\n\nÉ um dos principais instrumentos financeiros da política de coesão da União Europeia, com os objetivos de reduzir as disparidades regionais, promover a inovação e competitividade, e apoiar a transição para uma economia verde e digital. As suas tipologias de investimento incluem infraestruturas, inovação empresarial, digitalização e eficiência energética.\n\nFonte: pt2030-05-glossario.md",
+      "latencyMs": 3074,
+      "inputTokens": 7022,
+      "outputTokens": 103,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-05-glossario"
+      ],
+      "keywordsFound": [
+        "Fundo Europeu",
+        "Desenvolvimento Regional"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:07:45.565Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "acronym-002",
+      "question": "O que é o FSE+?",
+      "answer": "O Fundo Social Europeu Plus (FSE+) é o principal instrumento da União Europeia para investir nas pessoas. O seu objetivo é promover o emprego, a educação e a inclusão social em Portugal. As suas áreas de atuação incluem emprego, educação e formação, inclusão social e condições de trabalho.\n\nNo âmbito do Portugal 2030, o FSE+ mobiliza um total de 7.800 milhões de euros. O programa temático Pessoas 2030 é financiado pelo FSE+.\n\nFonte: pt2030-05-glossario.md, pt2030-03-pessoas.md, pt2030-01-visao-g...",
+      "latencyMs": 4173,
+      "inputTokens": 7021,
+      "outputTokens": 154,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-05-glossario",
+        "pt2030-03-pessoas",
+        "pt2030-01-visao-global"
+      ],
+      "keywordsFound": [
+        "Fundo Social Europeu",
+        "emprego",
+        "inclusão"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:07:50.239Z"
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "questionId": "filter-001",
+      "question": "Fala-me apenas sobre apoios do PRR, ignorando Portugal 2030 e PEPAC.",
+      "answer": "O Plano de Recuperação e Resiliência (PRR) de Portugal tem uma dotação total de 16,6 mil milhões de euros, dos quais 13,",
+      "latencyMs": 6136,
+      "inputTokens": 7036,
+      "outputTokens": 38,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:07:56.877Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "prr-001",
+      "question": "Quais são os programas de apoio à transição digital disponíveis no PRR?",
+      "answer": "",
+      "latencyMs": 10298,
+      "inputTokens": 7029,
+      "outputTokens": 0,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [
+        "RE-C05",
+        "transição digital",
+        "digitalização",
+        "PME"
+      ],
+      "keywordScore": 0,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:08:07.676Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "prr-002",
+      "question": "Quem pode candidatar-se aos apoios de descarbonização do PRR?",
+      "answer": "Podem candidatar-se aos apoios de descarbonização do PRR (componente RE-C11) as empresas industriais com elevada intensidade energética e as instalações abrangidas pelo Comércio Europeu de Licenças de Emissão (CELE).\n\nOs sectores prioritários para este apoio são:\n*   Cimenteira\n*   Siderurgia\n*   Vidro\n*   Cerâmica\n*   Química\n*   Pasta e papel\n\nFonte: PRR - Plano de Recuperação e Resiliência, RE-C11 - Descarbonização da Indústria",
+      "latencyMs": 8744,
+      "inputTokens": 7030,
+      "outputTokens": 124,
+      "hasCitation": true,
+      "citationSources": [
+        "PRR - Plano de Recuperação e Resiliência, RE-C11 - Descarbonização da Indústria"
+      ],
+      "keywordsFound": [
+        "empresas",
+        "indústria",
+        "descarbonização"
+      ],
+      "keywordsMissing": [
+        "emissões"
+      ],
+      "keywordScore": 0.75,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:08:16.920Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "prr-003",
+      "question": "Qual é a dotação orçamental total do Plano de Recuperação e Resiliência português?",
+      "answer": "A dotação total do Plano de Recuperação e Resiliência (PRR) de Portugal é de 16,6 mil milhões de euros. Este montante é composto por 13,9 mil milhões de euros em subvenções e 2,7 mil milhões de euros em empréstimos.\n\nFonte: prr-01-transicao-digital.md (Portal: PRR)",
+      "latencyMs": 8065,
+      "inputTokens": 7034,
+      "outputTokens": 86,
+      "hasCitation": true,
+      "citationSources": [
+        "prr-01-transicao-digital"
+      ],
+      "keywordsFound": [
+        "16",
+        "mil milhões",
+        "euros"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:08:25.486Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "prr-004",
+      "question": "Qual é o prazo limite para execução dos fundos do PRR?",
+      "answer": "O prazo limite para a conclusão de todos os projectos do PRR é 31 de Dezembro de 2026.\n\nFonte: prr-01-transicao-digital.md",
+      "latencyMs": 5293,
+      "inputTokens": 7027,
+      "outputTokens": 43,
+      "hasCitation": true,
+      "citationSources": [
+        "prr-01-transicao-digital"
+      ],
+      "keywordsFound": [
+        "2026",
+        "prazo"
+      ],
+      "keywordsMissing": [
+        "execução"
+      ],
+      "keywordScore": 0.6666666666666666,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:08:31.281Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "prr-005",
+      "question": "Quais são as principais áreas de investimento do PRR em habitação?",
+      "answer": "As principais áreas de investimento do PRR em habitação, que tem uma dotação total de 1.211 milhões de euros, são as seguintes:\n\n*   **Construção Nova:** Apoio à construção de novos fogos destinados a arrendamento acessível, com uma comparticipação que pode ir até 50.000€ por fogo.\n*   **Reabilitação:** Apoio à reabilitação de edifícios degradados, incluindo a melhoria da sua eficiência energética, com um apoio de até 40.000€ por fogo.\n*   **Bolsa de Habitação:** Apoio à aquisição de frações aut...",
+      "latencyMs": 9401,
+      "inputTokens": 7028,
+      "outputTokens": 156,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [
+        "habitação",
+        "arrendamento",
+        "acessível",
+        "reabilitação"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:08:41.183Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "pt2030-001",
+      "question": "Quais são os programas temáticos do Portugal 2030?",
+      "answer": "Os programas temáticos do Portugal 2030 são os seguintes:\n\n1.  **COMPETE 2030** - Competitividade e Internacionalização\n2.  **Pessoas 2030** - Capital Humano (FSE+)\n3.  **Sustentável 2030** - Ambiente e Alterações Climáticas\n4.  **Mar 2030** - Economia Azul\n5.  **PROVERE 2030** - Valorização Económica de Recursos Endógenos\n\nFonte: pt2030-01-visao-global.md",
+      "latencyMs": 7937,
+      "inputTokens": 7028,
+      "outputTokens": 134,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-01-visao-global"
+      ],
+      "keywordsFound": [
+        "COMPETE",
+        "Pessoas",
+        "Mar"
+      ],
+      "keywordsMissing": [
+        "Sustentabilidade",
+        "Território"
+      ],
+      "keywordScore": 0.6,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:08:49.619Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "pt2030-002",
+      "question": "Qual é a dotação financeira total do Portugal 2030?",
+      "answer": "A dotação financeira total do Portugal 2030 é de 23 mil milhões de euros, mobilizados a partir de vários fundos europeus.\n\nA distribuição por fundo é a seguinte:\n*   **FEDER**: 11.500 milhões de euros\n*   **FSE+**: 7.800 milhões de euros\n*   **Fundo de Coesão**: 2.100 milhões de euros\n*   **FTJ**: 223 milhões de euros\n*   **FEAMPA**: 392 milhões de euros\n\nFonte: pt2030-01-visao-global.md",
+      "latencyMs": 7311,
+      "inputTokens": 7029,
+      "outputTokens": 143,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-01-visao-global"
+      ],
+      "keywordsFound": [
+        "23",
+        "mil milhões",
+        "euros",
+        "FEDER",
+        "FSE"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:08:57.431Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "pt2030-003",
+      "question": "O que é o FEDER e para que serve?",
+      "answer": "",
+      "latencyMs": 9300,
+      "inputTokens": 7024,
+      "outputTokens": 0,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [
+        "Fundo Europeu",
+        "Desenvolvimento Regional",
+        "coesão",
+        "investimento"
+      ],
+      "keywordScore": 0,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:09:07.232Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "pt2030-004",
+      "question": "Quais são os requisitos para uma PME se candidatar a apoios do COMPETE 2030?",
+      "answer": "",
+      "latencyMs": 9970,
+      "inputTokens": 7037,
+      "outputTokens": 0,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [
+        "PME",
+        "inovação",
+        "competitividade",
+        "certificação"
+      ],
+      "keywordScore": 0,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:09:17.703Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "pt2030-005",
+      "question": "O que é o programa Pessoas 2030 e quais são os seus objectivos?",
+      "answer": "",
+      "latencyMs": 8834,
+      "inputTokens": 7033,
+      "outputTokens": 0,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [
+        "emprego",
+        "formação",
+        "qualificação",
+        "inclusão",
+        "FSE"
+      ],
+      "keywordScore": 0,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:09:27.038Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "pt2030-006",
+      "question": "Quais são as regiões elegíveis para apoios mais intensivos no Portugal 2030?",
+      "answer": "",
+      "latencyMs": 9576,
+      "inputTokens": 7034,
+      "outputTokens": 0,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [
+        "Norte",
+        "Centro",
+        "Alentejo",
+        "convergência",
+        "menos desenvolvidas"
+      ],
+      "keywordScore": 0,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:09:37.115Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "pepac-001",
+      "question": "O que são os eco-regimes do PEPAC?",
+      "answer": "",
+      "latencyMs": 9737,
+      "inputTokens": 7025,
+      "outputTokens": 0,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [
+        "práticas agrícolas",
+        "ambiente",
+        "clima",
+        "biodiversidade"
+      ],
+      "keywordScore": 0,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:09:47.353Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "pepac-002",
+      "question": "Quais são os apoios disponíveis para jovens agricultores no PEPAC?",
+      "answer": "",
+      "latencyMs": 8898,
+      "inputTokens": 7028,
+      "outputTokens": 0,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [
+        "jovens agricultores",
+        "instalação",
+        "primeira exploração",
+        "40 anos"
+      ],
+      "keywordScore": 0,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:09:56.752Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "pepac-003",
+      "question": "Qual é o montante disponível para pagamentos directos no PEPAC?",
+      "answer": "O montante disponível para pagamentos directos (Pilar I) no PEPAC",
+      "latencyMs": 9036,
+      "inputTokens": 7028,
+      "outputTokens": 17,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [
+        "pagamentos directos"
+      ],
+      "keywordsMissing": [
+        "hectare",
+        "euros"
+      ],
+      "keywordScore": 0.3333333333333333,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:10:06.288Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "pepac-004",
+      "question": "O que é a intervenção para agricultura biológica no PEPAC?",
+      "answer": "",
+      "latencyMs": 9103,
+      "inputTokens": 7027,
+      "outputTokens": 0,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [
+        "biológica",
+        "certificação",
+        "práticas sustentáveis"
+      ],
+      "keywordScore": 0,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:10:15.893Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "cross-001",
+      "question": "Quais são os programas disponíveis para apoiar a digitalização de empresas em Portugal?",
+      "answer": "",
+      "latencyMs": 9072,
+      "inputTokens": 7030,
+      "outputTokens": 0,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [
+        "PRR",
+        "PT2030",
+        "digital",
+        "transformação"
+      ],
+      "keywordScore": 0,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:10:25.465Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "cross-002",
+      "question": "Quais fundos europeus apoiam projectos de sustentabilidade ambiental?",
+      "answer": "",
+      "latencyMs": 9433,
+      "inputTokens": 7028,
+      "outputTokens": 0,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [
+        "PRR",
+        "PT2030",
+        "PEPAC",
+        "sustentabilidade",
+        "ambiente"
+      ],
+      "keywordScore": 0,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:10:35.399Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "negative-001",
+      "question": "Quem pode candidatar-se ao programa IPDJ?",
+      "answer": "Não tenho informação sobre isso nos documentos disponíveis.",
+      "latencyMs": 9309,
+      "inputTokens": 7024,
+      "outputTokens": 9,
+      "hasCitation": true,
+      "citationSources": [],
+      "keywordsFound": [
+        "não",
+        "informação"
+      ],
+      "keywordsMissing": [
+        "disponível",
+        "fora"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:10:45.208Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "negative-002",
+      "question": "Qual é a taxa de juro do crédito habitação do Banco de Portugal?",
+      "answer": "Não tenho informação sobre isso nos documentos disponíveis.",
+      "latencyMs": 8722,
+      "inputTokens": 7029,
+      "outputTokens": 9,
+      "hasCitation": true,
+      "citationSources": [],
+      "keywordsFound": [
+        "não",
+        "informação"
+      ],
+      "keywordsMissing": [
+        "disponível",
+        "fora"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:10:54.431Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "negative-003",
+      "question": "Quando é que vai abrir o próximo concurso do Erasmus+?",
+      "answer": "",
+      "latencyMs": 9333,
+      "inputTokens": 7025,
+      "outputTokens": 0,
+      "hasCitation": true,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": false,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:11:04.263Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "numeric-001",
+      "question": "Qual é a taxa máxima de co-financiamento para projectos de inovação no PRR?",
+      "answer": "A taxa máxima de co-financiamento para projetos no âmbito da componente de Capitalização e Inovação Empresarial do PRR é de 75%.\n\nEsta taxa aplica-se a micro empresas. As taxas para as restantes empresas são:\n*   **Pequena empresa**: 70%\n*   **Média empresa**: 60%\n\nFonte: prr-01-transicao-digital.md",
+      "latencyMs": 8684,
+      "inputTokens": 7034,
+      "outputTokens": 91,
+      "hasCitation": true,
+      "citationSources": [
+        "prr-01-transicao-digital"
+      ],
+      "keywordsFound": [
+        "70%",
+        "co-financiamento",
+        "taxa"
+      ],
+      "keywordsMissing": [
+        "80%"
+      ],
+      "keywordScore": 0.75,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:11:13.447Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "numeric-002",
+      "question": "Qual é o investimento mínimo elegível para candidaturas ao SI Inovação?",
+      "answer": "O investimento mínimo elegível para candidaturas ao SI Inovação Produtiva é de 500.000€.\n\nFonte: pt2030-02-compete-inovacao.md",
+      "latencyMs": 7442,
+      "inputTokens": 7029,
+      "outputTokens": 45,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-02-compete-inovacao"
+      ],
+      "keywordsFound": [
+        "mínimo",
+        "investimento"
+      ],
+      "keywordsMissing": [
+        "euros"
+      ],
+      "keywordScore": 0.6666666666666666,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:11:21.390Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "acronym-001",
+      "question": "O que significa a sigla FEDER?",
+      "answer": "",
+      "latencyMs": 8839,
+      "inputTokens": 7022,
+      "outputTokens": 0,
+      "hasCitation": true,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [
+        "Fundo Europeu",
+        "Desenvolvimento Regional"
+      ],
+      "keywordScore": 0,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:11:30.730Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "acronym-002",
+      "question": "O que é o FSE+?",
+      "answer": "O Fundo Social Europeu Plus (FSE+) é o principal instrumento da União Europeia para investir nas pessoas.\n\nAs suas áreas de atuação são o emprego, a educação e formação, a inclusão social e as condições de trabalho. No âmbito do Portugal 2030, o FSE+ tem uma dotação total de 7.800 milhões de euros e financia o programa temático Pessoas 2030.\n\nFonte: pt2030-05-glossario.md, pt2030-01-visao-global.md, pt2030-03-pessoas.md",
+      "latencyMs": 9313,
+      "inputTokens": 7021,
+      "outputTokens": 138,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-05-glossario",
+        "pt2030-01-visao-global",
+        "pt2030-03-pessoas"
+      ],
+      "keywordsFound": [
+        "Fundo Social Europeu",
+        "emprego",
+        "inclusão"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:11:40.543Z"
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "questionId": "filter-001",
+      "question": "Fala-me apenas sobre apoios do PRR, ignorando Portugal 2030 e PEPAC.",
+      "answer": "",
+      "latencyMs": 8613,
+      "inputTokens": 7036,
+      "outputTokens": 0,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:11:49.657Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "prr-001",
+      "question": "Quais são os programas de apoio à transição digital disponíveis no PRR?",
+      "answer": "A componente RE-C05 do PRR visa apoiar a transição digital das PME portuguesas através de:\n1. Digitalização de processos empresariais\n2. Adoção de tecnologias de Indústria 4.0\n3. Comércio eletrónico e presença digital\n4. Cibersegurança empresarial\n\nFonte: prr-01-transicao-digital.md\n",
+      "latencyMs": 1548,
+      "inputTokens": 7027,
+      "outputTokens": 85,
+      "hasCitation": true,
+      "citationSources": [
+        "prr-01-transicao-digital"
+      ],
+      "keywordsFound": [
+        "RE-C05",
+        "transição digital",
+        "digitalização",
+        "PME"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:11:51.706Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "prr-002",
+      "question": "Quem pode candidatar-se aos apoios de descarbonização do PRR?",
+      "answer": "Podem candidatar-se aos apoios de descarbonização do PRR:\n1. Empresas industriais com elevada intensidade energética\n2. Instalações abrangidas pelo CELE (Comércio Europeu de Licenças de Emissão)\n3. Sectores prioritários: Cimenteira, Siderurgia, Vidro, Cerâmica, Química, Pasta e papel\n\nFonte: prr-02-descarbonizacao.md",
+      "latencyMs": 1404,
+      "inputTokens": 7028,
+      "outputTokens": 92,
+      "hasCitation": true,
+      "citationSources": [
+        "prr-02-descarbonizacao"
+      ],
+      "keywordsFound": [
+        "empresas",
+        "descarbonização"
+      ],
+      "keywordsMissing": [
+        "indústria",
+        "emissões"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:11:53.610Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "prr-003",
+      "question": "Qual é a dotação orçamental total do Plano de Recuperação e Resiliência português?",
+      "answer": "A dotação total do Plano de Recuperação e Resiliência (PRR) de Portugal é de 16,6 mil milhões de euros, dos quais 13,9 mil milhões são subvenções e 2,7 mil milhões são empréstimos.\n\nFonte: prr-01-transicao-digital.md\n",
+      "latencyMs": 1373,
+      "inputTokens": 7032,
+      "outputTokens": 73,
+      "hasCitation": true,
+      "citationSources": [
+        "prr-01-transicao-digital"
+      ],
+      "keywordsFound": [
+        "16",
+        "mil milhões",
+        "euros"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:11:55.484Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "prr-004",
+      "question": "Qual é o prazo limite para execução dos fundos do PRR?",
+      "answer": "Todos os projectos do PRR devem estar concluídos até 31 de Dezembro de 2026.\n\nFonte: prr-01-transicao-digital.md\n",
+      "latencyMs": 1017,
+      "inputTokens": 7025,
+      "outputTokens": 41,
+      "hasCitation": true,
+      "citationSources": [
+        "prr-01-transicao-digital"
+      ],
+      "keywordsFound": [
+        "2026"
+      ],
+      "keywordsMissing": [
+        "prazo",
+        "execução"
+      ],
+      "keywordScore": 0.3333333333333333,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:11:57.002Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "prr-005",
+      "question": "Quais são as principais áreas de investimento do PRR em habitação?",
+      "answer": "As principais áreas de investimento do PRR em habitação são:\n1. Construção Nova: Construção de fogos para arrendamento acessível, com comparticipação até 50.000€ por fogo.\n2. Reabilitação: Reabilitação de edifícios degradados, com melhoria de eficiência energética e apoio até 40.000€ por fogo.\n3. Bolsa de Habitação: Aquisição de frações autónomas, integração em bolsas de arrendamento público, com rendas reguladas por portaria.\n\nFonte: prr-03-habitacao.md",
+      "latencyMs": 1316,
+      "inputTokens": 7026,
+      "outputTokens": 130,
+      "hasCitation": true,
+      "citationSources": [
+        "prr-03-habitacao"
+      ],
+      "keywordsFound": [
+        "habitação",
+        "arrendamento",
+        "acessível",
+        "reabilitação"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:11:58.821Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "pt2030-001",
+      "question": "Quais são os programas temáticos do Portugal 2030?",
+      "answer": "Os programas temáticos do Portugal 2030 são:\n1. COMPETE 2030 - Competitividade e Internacionalização\n2. Pessoas 2030 - Capital Humano (FSE+)\n3. Sustentável 2030 - Ambiente e Alterações Climáticas\n4. Mar 2030 - Economia Azul\n5. PROVERE 2030 - Valorização Económica de Recursos Endógenos\n\nFonte: pt2030-01-visao-global.md\n",
+      "latencyMs": 1991,
+      "inputTokens": 7026,
+      "outputTokens": 117,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-01-visao-global"
+      ],
+      "keywordsFound": [
+        "COMPETE",
+        "Pessoas",
+        "Mar"
+      ],
+      "keywordsMissing": [
+        "Sustentabilidade",
+        "Território"
+      ],
+      "keywordScore": 0.6,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:01.313Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "pt2030-002",
+      "question": "Qual é a dotação financeira total do Portugal 2030?",
+      "answer": "O Portugal 2030 tem uma dotação financeira total de 23 mil milhões de euros. Fonte: pt2030-01-visao-global.md\n",
+      "latencyMs": 1041,
+      "inputTokens": 7027,
+      "outputTokens": 40,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-01-visao-global"
+      ],
+      "keywordsFound": [
+        "23",
+        "mil milhões",
+        "euros"
+      ],
+      "keywordsMissing": [
+        "FEDER",
+        "FSE"
+      ],
+      "keywordScore": 0.6,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:02.856Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "pt2030-003",
+      "question": "O que é o FEDER e para que serve?",
+      "answer": "O Fundo Europeu de Desenvolvimento Regional (FEDER) é um dos principais instrumentos financeiros da política de coesão da União Europeia. Os seus objetivos são reduzir as disparidades regionais, promover a inovação e competitividade e apoiar a transição para economia verde e digital. As tipologias de investimento incluem infraestruturas, inovação empresarial, digitalização e eficiência energética.\n\nFonte: pt2030-05-glossario.md\n",
+      "latencyMs": 1440,
+      "inputTokens": 7022,
+      "outputTokens": 97,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-05-glossario"
+      ],
+      "keywordsFound": [
+        "Fundo Europeu",
+        "Desenvolvimento Regional",
+        "coesão",
+        "investimento"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:04.799Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "pt2030-004",
+      "question": "Quais são os requisitos para uma PME se candidatar a apoios do COMPETE 2030?",
+      "answer": "Para se candidatar aos apoios do COMPETE 2030, uma PME deve cumprir os seguintes requisitos, dependendo do Sistema de Incentivos:\n\n**SI Inovação Produtiva:**\n*   Ser PME\n*   Investimento mínimo de 500.000€\n*   Investimento máximo de 25.000.000€\n\n**SI Empreendedorismo Qualificado:**\n*   Ser empresa com menos de 2 anos\n*   Desenvolver projectos de base tecnológica\n*   Investimento entre 50.000€ e 500.000€\n\nFonte: pt2030-02-compete-inovacao.md",
+      "latencyMs": 2092,
+      "inputTokens": 7035,
+      "outputTokens": 158,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-02-compete-inovacao"
+      ],
+      "keywordsFound": [
+        "PME",
+        "inovação"
+      ],
+      "keywordsMissing": [
+        "competitividade",
+        "certificação"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:07.397Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "pt2030-005",
+      "question": "O que é o programa Pessoas 2030 e quais são os seus objectivos?",
+      "answer": "O Pessoas 2030 é o programa temático financiado pelo Fundo Social Europeu Plus (FSE+) que visa promover o emprego, a educação e a inclusão social em Portugal. (Fonte: pt2030-03-pessoas.md)\n\nOs objectivos específicos do programa são:\n1. Emprego e Empregabilidade (Formação profissional, Apoio à criação de emprego, Estágios profissionais)\n2. Educação e Qualificação (Redução do abandono escolar, Ensino profissional, Formação de adultos)\n3. Inclusão Social (Apoio a grupos vulneráveis, Economia social...",
+      "latencyMs": 1687,
+      "inputTokens": 7031,
+      "outputTokens": 159,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-03-pessoas"
+      ],
+      "keywordsFound": [
+        "emprego",
+        "formação",
+        "qualificação",
+        "inclusão",
+        "FSE"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:09.585Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "pt2030-006",
+      "question": "Quais são as regiões elegíveis para apoios mais intensivos no Portugal 2030?",
+      "answer": "As regiões Norte, Centro e Alentejo são consideradas regiões menos desenvolvidas e têm acesso a taxas de co-financiamento superiores (85%) no programa Pessoas 2030. Fonte: pt2030-03-pessoas.md\n",
+      "latencyMs": 1113,
+      "inputTokens": 7032,
+      "outputTokens": 56,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-03-pessoas"
+      ],
+      "keywordsFound": [
+        "Norte",
+        "Centro",
+        "Alentejo",
+        "menos desenvolvidas"
+      ],
+      "keywordsMissing": [
+        "convergência"
+      ],
+      "keywordScore": 0.8,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:11.199Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "pepac-001",
+      "question": "O que são os eco-regimes do PEPAC?",
+      "answer": "Os Eco-Regimes são regimes voluntários pelos quais os agricultores podem optar para além das condicionalidades obrigatórias, recebendo pagamentos adicionais por adoptarem práticas benéficas para o clima e ambiente. Fonte: pepac-02-eco-regimes.md\n",
+      "latencyMs": 912,
+      "inputTokens": 7023,
+      "outputTokens": 60,
+      "hasCitation": true,
+      "citationSources": [
+        "pepac-02-eco-regimes"
+      ],
+      "keywordsFound": [
+        "ambiente",
+        "clima"
+      ],
+      "keywordsMissing": [
+        "práticas agrícolas",
+        "biodiversidade"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:12.611Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "pepac-002",
+      "question": "Quais são os apoios disponíveis para jovens agricultores no PEPAC?",
+      "answer": "O PEPAC oferece apoio à instalação de jovens agricultores pela primeira vez, visando promover a renovação geracional no setor agrícola.\n\n**Apoio Disponível:**\n\n1.  **Prémio à Instalação (não reembolsável):**\n\n    *   Zona Normal: 30.000€\n    *   Zona Desfavorecida: 35.000€\n    *   Zona de Montanha: 40.000€\n    *   Majorações cumulativas até +40% do prémio base (ex: +10% agricultura biológica, +10% regadio eficiente, +15% produção animal).\n2.  **Apoio ao Investimento:**\n\n    *   Investimento eleg...",
+      "latencyMs": 2321,
+      "inputTokens": 7026,
+      "outputTokens": 236,
+      "hasCitation": true,
+      "citationSources": [
+        "pepac-03-jovens-agricultores"
+      ],
+      "keywordsFound": [
+        "jovens agricultores",
+        "instalação"
+      ],
+      "keywordsMissing": [
+        "primeira exploração",
+        "40 anos"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:15.432Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "pepac-003",
+      "question": "Qual é o montante disponível para pagamentos directos no PEPAC?",
+      "answer": "O montante disponível para pagamentos directos (Pilar I) no PEPAC é de 4.400 milhões de euros. Fonte: pepac-01-visao-geral.md\n",
+      "latencyMs": 953,
+      "inputTokens": 7026,
+      "outputTokens": 44,
+      "hasCitation": true,
+      "citationSources": [
+        "pepac-01-visao-geral"
+      ],
+      "keywordsFound": [
+        "pagamentos directos",
+        "euros"
+      ],
+      "keywordsMissing": [
+        "hectare"
+      ],
+      "keywordScore": 0.6666666666666666,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:16.886Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "pepac-004",
+      "question": "O que é a intervenção para agricultura biológica no PEPAC?",
+      "answer": "A intervenção de Agricultura Biológica do PEPAC apoia a conversão e manutenção de sistemas de produção agrícola em modo biológico. O orçamento para 2023-2027 é de 350 milhões de euros, com a meta de atingir 25% da SAU em modo biológico até 2030.\n\nExistem apoios diferentes consoante a tipologia:\n*   Culturas Arvenses: 350€/ha/ano (Conversão), 280€/ha/ano (Manutenção)\n*   Culturas Permanentes: 600€/ha/ano (Conversão), 450€/ha/ano (Manutenção)\n*   Horticultura: 700€/ha/ano (Conversão), 550€/ha/ano ...",
+      "latencyMs": 3592,
+      "inputTokens": 7025,
+      "outputTokens": 406,
+      "hasCitation": true,
+      "citationSources": [
+        "pepac-04-agricultura-biologica"
+      ],
+      "keywordsFound": [
+        "biológica",
+        "certificação"
+      ],
+      "keywordsMissing": [
+        "práticas sustentáveis"
+      ],
+      "keywordScore": 0.6666666666666666,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:20.979Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "cross-001",
+      "question": "Quais são os programas disponíveis para apoiar a digitalização de empresas em Portugal?",
+      "answer": "O PRR (Plano de Recuperação e Resiliência) e o PT2030 (Portugal 2030) oferecem programas para apoiar a digitalização de empresas em Portugal.\n\nNo âmbito do PRR, a componente RE-C05 - Capitalização e Inovação Empresarial visa apoiar a transição digital das PME portuguesas através da digitalização de processos empresariais, adoção de tecnologias de Indústria 4.0, comércio eletrónico e presença digital e cibersegurança empresarial. Fonte: prr-01-transicao-digital.md\n\nNo PT2030, o COMPETE 2030 visa ...",
+      "latencyMs": 1740,
+      "inputTokens": 7028,
+      "outputTokens": 186,
+      "hasCitation": true,
+      "citationSources": [
+        "prr-01-transicao-digital",
+        "pt2030-02-compete-inovacao"
+      ],
+      "keywordsFound": [
+        "PRR",
+        "PT2030",
+        "digital"
+      ],
+      "keywordsMissing": [
+        "transformação"
+      ],
+      "keywordScore": 0.75,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:23.220Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "cross-002",
+      "question": "Quais fundos europeus apoiam projectos de sustentabilidade ambiental?",
+      "answer": "O Sustentável 2030 apoia investimentos em ambiente, alterações climáticas e transição para uma economia de baixo carbono, com financiamento do FEDER e do Fundo de Coesão. Fonte: pt2030-04-sustentavel.md\n",
+      "latencyMs": 1171,
+      "inputTokens": 7026,
+      "outputTokens": 60,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-04-sustentavel"
+      ],
+      "keywordsFound": [
+        "PT2030",
+        "ambiente"
+      ],
+      "keywordsMissing": [
+        "PRR",
+        "PEPAC",
+        "sustentabilidade"
+      ],
+      "keywordScore": 0.4,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:24.892Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "negative-001",
+      "question": "Quem pode candidatar-se ao programa IPDJ?",
+      "answer": "Não tenho informação sobre isso nos documentos disponíveis.",
+      "latencyMs": 676,
+      "inputTokens": 7022,
+      "outputTokens": 9,
+      "hasCitation": true,
+      "citationSources": [],
+      "keywordsFound": [
+        "não",
+        "informação"
+      ],
+      "keywordsMissing": [
+        "disponível",
+        "fora"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:26.069Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "negative-002",
+      "question": "Qual é a taxa de juro do crédito habitação do Banco de Portugal?",
+      "answer": "Não tenho informação sobre isso nos documentos disponíveis.",
+      "latencyMs": 684,
+      "inputTokens": 7027,
+      "outputTokens": 9,
+      "hasCitation": true,
+      "citationSources": [],
+      "keywordsFound": [
+        "não",
+        "informação"
+      ],
+      "keywordsMissing": [
+        "disponível",
+        "fora"
+      ],
+      "keywordScore": 0.5,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:27.253Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "negative-003",
+      "question": "Quando é que vai abrir o próximo concurso do Erasmus+?",
+      "answer": "Não tenho informação sobre isso nos documentos disponíveis.",
+      "latencyMs": 760,
+      "inputTokens": 7023,
+      "outputTokens": 9,
+      "hasCitation": true,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:28.512Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "numeric-001",
+      "question": "Qual é a taxa máxima de co-financiamento para projectos de inovação no PRR?",
+      "answer": "Não tenho informação sobre isso nos documentos disponíveis.",
+      "latencyMs": 802,
+      "inputTokens": 7032,
+      "outputTokens": 9,
+      "hasCitation": false,
+      "citationSources": [],
+      "keywordsFound": [],
+      "keywordsMissing": [
+        "70%",
+        "80%",
+        "co-financiamento",
+        "taxa"
+      ],
+      "keywordScore": 0,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:29.814Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "numeric-002",
+      "question": "Qual é o investimento mínimo elegível para candidaturas ao SI Inovação?",
+      "answer": "O investimento mínimo elegível para candidaturas ao SI Inovação é de 500.000€.\nFonte: pt2030-02-compete-inovacao.md\n",
+      "latencyMs": 1344,
+      "inputTokens": 7027,
+      "outputTokens": 44,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-02-compete-inovacao"
+      ],
+      "keywordsFound": [
+        "mínimo",
+        "investimento"
+      ],
+      "keywordsMissing": [
+        "euros"
+      ],
+      "keywordScore": 0.6666666666666666,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:31.658Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "acronym-001",
+      "question": "O que significa a sigla FEDER?",
+      "answer": "FEDER significa Fundo Europeu de Desenvolvimento Regional. É um dos principais instrumentos financeiros da política de coesão da União Europeia, com os objetivos de reduzir as disparidades regionais, promover a inovação e competitividade e apoiar a transição para economia verde e digital.\nFonte: pt2030-05-glossario.md",
+      "latencyMs": 1311,
+      "inputTokens": 7020,
+      "outputTokens": 74,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-05-glossario"
+      ],
+      "keywordsFound": [
+        "Fundo Europeu",
+        "Desenvolvimento Regional"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:33.528Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "acronym-002",
+      "question": "O que é o FSE+?",
+      "answer": "O Fundo Social Europeu Plus (FSE+) é o principal instrumento da UE para investir nas pessoas, nas áreas de emprego, educação e formação, inclusão social e condições de trabalho. Fonte: pt2030-05-glossario.md\n",
+      "latencyMs": 1142,
+      "inputTokens": 7019,
+      "outputTokens": 55,
+      "hasCitation": true,
+      "citationSources": [
+        "pt2030-05-glossario"
+      ],
+      "keywordsFound": [
+        "Fundo Social Europeu",
+        "emprego",
+        "inclusão"
+      ],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:35.170Z"
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "questionId": "filter-001",
+      "question": "Fala-me apenas sobre apoios do PRR, ignorando Portugal 2030 e PEPAC.",
+      "answer": "O Plano de Recuperação e Resiliência (PRR) de Portugal tem uma dotação total de 16,6 mil milhões de euros, dos quais 13,9 mil milhões são subvenções e 2,7 mil milhões são empréstimos. Fonte: prr-01-transicao-digital.md\n\nO PRR inclui as seguintes componentes:\n*   **RE-C05: Capitalização e Inovação Empresarial**: Visa apoiar a transição digital das PME portuguesas através da digitalização de processos, adoção de tecnologias da Indústria 4.0, comércio eletrónico e cibersegurança. Fonte: prr-01-tran...",
+      "latencyMs": 3894,
+      "inputTokens": 7034,
+      "outputTokens": 392,
+      "hasCitation": true,
+      "citationSources": [
+        "prr-01-transicao-digital",
+        "prr-02-descarbonizacao",
+        "prr-03-habitacao",
+        "prr-04-saude",
+        "prr-05-qualificacoes"
+      ],
+      "keywordsFound": [],
+      "keywordsMissing": [],
+      "keywordScore": 1,
+      "refusedCorrectly": true,
+      "hallucinationDetected": false,
+      "timestamp": "2025-12-12T21:12:39.565Z"
+    }
+  ],
+  "metrics": [
+    {
+      "model": "Gemini 2.5 Flash",
+      "totalQuestions": 25,
+      "avgLatencyMs": 3375.96,
+      "avgKeywordScore": 0.6813333333333332,
+      "citationRate": 0.8,
+      "negativeTestAccuracy": 1,
+      "hallucinationRate": 0,
+      "estimatedCostUSD": 0.0585407,
+      "totalInputTokens": 175719,
+      "totalOutputTokens": 2330
+    },
+    {
+      "model": "Gemini 2.5 Pro",
+      "totalQuestions": 25,
+      "avgLatencyMs": 8810.52,
+      "avgKeywordScore": 0.43066666666666664,
+      "citationRate": 0.48,
+      "negativeTestAccuracy": 0.6666666666666666,
+      "hallucinationRate": 0,
+      "estimatedCostUSD": 0.22959874999999996,
+      "totalInputTokens": 175719,
+      "totalOutputTokens": 995
+    },
+    {
+      "model": "Gemini 2.0 Flash",
+      "totalQuestions": 25,
+      "avgLatencyMs": 1492.96,
+      "avgKeywordScore": 0.6993333333333334,
+      "citationRate": 0.96,
+      "negativeTestAccuracy": 1,
+      "hallucinationRate": 0,
+      "estimatedCostUSD": 0.0186233,
+      "totalInputTokens": 175669,
+      "totalOutputTokens": 2641
+    }
+  ],
+  "recommendation": "## Recomendação\n\n**Modelo Recomendado: Gemini 2.0 Flash** (Score: 86.1/100)\n\n### Justificação:\n- Precisão (keywords): 69.9%\n- Taxa de citação: 96.0%\n- Taxa de alucinação: 0.0%\n- Latência média: 1493ms\n- Custo estimado (25 queries): $0.0186\n\n### Alternativa:\nGemini 2.5 Flash (Score: 81.1/100) - Mais preciso em alguns casos"
+}

@@ -1,0 +1,2465 @@
+{
+  "selectedAvisos": {
+    "PT2030": [
+      {
+        "id": "PT2030-251009",
+        "codigo": "FA0943/2024",
+        "titulo": "Capacitação da rede nacional de acolhimento de requerentes e beneficiários de proteção internacional",
+        "programa": "FAMI 2030",
+        "dataAbertura": "2026-01-01",
+        "dataFecho": "2026-04-30",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://portugal2030.pt/aviso-2024/capacitacao-da-rede-nacional-de-acolhimento-de-requerentes-e-beneficiarios-de-protecao-internacional/",
+        "fonte": "Portugal 2030",
+        "scrapedAt": "2025-12-12T22:13:57.300Z",
+        "beneficiarios": [
+          "Entidades públicas e privadas sem fins lucrativos ou equiparadas",
+          "autarquias locais",
+          "comunidades intermunicipais",
+          "áreas metropolitanas",
+          "organizações internacionais."
+        ],
+        "modalidade": [
+          "Individual | Parceria"
+        ],
+        "fundo": [
+          "FAMI"
+        ],
+        "taxa": 75,
+        "documentos": [
+          {
+            "id": "251251",
+            "nome": "FA0943/2024.pdf",
+            "tipo": "Aviso",
+            "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-238.octet-stream",
+            "formato": "pdf"
+          }
+        ]
+      },
+      {
+        "id": "PT2030-251003",
+        "codigo": "FA0114/2025",
+        "titulo": "Mobilidade Sustentável",
+        "programa": "MADEIRA 2030",
+        "dataAbertura": "2025-11-03",
+        "dataFecho": "2025-12-19",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://portugal2030.pt/aviso-2024/mobilidade-sustentavel/",
+        "fonte": "Portugal 2030",
+        "scrapedAt": "2025-12-12T22:13:58.875Z",
+        "beneficiarios": [
+          "Municipios / Entidades do Setor Público"
+        ],
+        "modalidade": [
+          "Individual"
+        ],
+        "fundo": [
+          "FEDER"
+        ],
+        "taxa": 85,
+        "documentos": [
+          {
+            "id": "251248",
+            "nome": "FA0114/2025.pdf",
+            "tipo": "Aviso",
+            "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-235.octet-stream",
+            "formato": "pdf"
+          }
+        ]
+      },
+      {
+        "id": "PT2030-251001",
+        "codigo": "FA0113/2025",
+        "titulo": "Proteção e conservação da natureza e biodiversidade",
+        "programa": "MADEIRA 2030",
+        "dataAbertura": "2025-11-03",
+        "dataFecho": "2025-12-19",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://portugal2030.pt/aviso-2024/protecao-e-conservacao-da-natureza-e-biodiversidade/",
+        "fonte": "Portugal 2030",
+        "scrapedAt": "2025-12-12T22:13:59.371Z",
+        "beneficiarios": [
+          "Municipios / Entidades do Setor Público"
+        ],
+        "modalidade": [
+          "Individual"
+        ],
+        "fundo": [
+          "FEDER"
+        ],
+        "taxa": 85,
+        "documentos": [
+          {
+            "id": "251247",
+            "nome": "FA0113/2025.pdf",
+            "tipo": "Aviso",
+            "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-234.octet-stream",
+            "formato": "pdf"
+          }
+        ]
+      },
+      {
+        "id": "PT2030-250989",
+        "codigo": "FA0154/2025",
+        "titulo": "Medidas de adaptação às alterações climáticas",
+        "programa": "SUSTENTAVEL 2030",
+        "dataAbertura": "2026-05-04",
+        "dataFecho": "2026-08-31",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://portugal2030.pt/aviso-2024/medidas-de-adaptacao-as-alteracoes-climaticas-2/",
+        "fonte": "Portugal 2030",
+        "scrapedAt": "2025-12-12T22:14:02.843Z",
+        "beneficiarios": [
+          "SREI – Secretaria Regional de Equipamentos e Infraestruturas/Direção Regional de Planeamento",
+          "Recursos e Gestão de Obras Publicas (SREI//DRPRGOP)"
+        ],
+        "modalidade": [
+          "Individual"
+        ],
+        "fundo": [
+          "FC"
+        ],
+        "taxa": 85,
+        "documentos": [
+          {
+            "id": "251241",
+            "nome": "FA0154/2025.pdf",
+            "tipo": "Aviso",
+            "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-228.octet-stream",
+            "formato": "pdf"
+          }
+        ]
+      },
+      {
+        "id": "PT2030-250985",
+        "codigo": "FA0036/2025",
+        "titulo": "Proteção civil e gestão integrada de riscos – Prevenção e mitigação de riscos associados a derrocada de taludes ou para suporte de terras – 3º aviso",
+        "programa": "SUSTENTAVEL 2030",
+        "dataAbertura": "2026-02-02",
+        "dataFecho": "2026-05-29",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://portugal2030.pt/aviso-2024/protecao-civil-e-gestao-integrada-de-riscos-prevencao-e-mitigacao-de-riscos-associados-a-derrocada-de-taludes-ou-para-suporte-de-terras-3o-aviso/",
+        "fonte": "Portugal 2030",
+        "scrapedAt": "2025-12-12T22:14:03.997Z",
+        "beneficiarios": [
+          "SREI – Secretaria Regional dos Equipamentos e Infraestruturas/Direção Regional de Estradas (SREI/DREstradas)"
+        ],
+        "modalidade": [
+          "Individual"
+        ],
+        "fundo": [
+          "FC"
+        ],
+        "taxa": 85,
+        "documentos": [
+          {
+            "id": "251239",
+            "nome": "FA0036/2025.pdf",
+            "tipo": "Aviso",
+            "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-226.octet-stream",
+            "formato": "pdf"
+          }
+        ]
+      }
+    ],
+    "PRR": [
+      {
+        "id": "PRR-49016",
+        "codigo": "1/C06-i08-RAM/2024",
+        "titulo": "01. Ampliação do Edifício do CITMA (Aviso n.º1/C06-i08-RAM/2024)",
+        "programa": "Plano de Recuperação e Resiliência",
+        "dataAbertura": "",
+        "dataFecho": "",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://recuperarportugal.gov.pt/candidatura/01-ampliacao-do-edificio-do-citma-aviso-n-o1-c06-i08-ram-2024/",
+        "fonte": "PRR",
+        "scrapedAt": "2025-12-12T22:14:40.513Z",
+        "descricao": "Data da Orientação Técnica: 24/07/2024 Ver documentação aqui Contacto para informações e Esclarecimentos: idr@madeira.gov.pt ou contacto telefónico 291 214 000.",
+        "fundo": [
+          "PRR"
+        ],
+        "beneficiarios": [
+          "Entidades Públicas"
+        ],
+        "objetivoEstrategico": "C6. Qualificações e Competências",
+        "objetivoEspecifico": "C06.i08 RAM: Ampliação do Edifício do CITMA",
+        "linha": "C6. Qualificações e Competências",
+        "subLinha": "C06.i08 RAM: Ampliação do Edifício do CITMA",
+        "dataAviso": "",
+        "documentos": [
+          {
+            "id": "PRR-doc-0",
+            "nome": "aqui",
+            "tipo": "PDF",
+            "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/08/OTE_C06-i08-RAM.pdf",
+            "formato": "pdf"
+          }
+        ]
+      },
+      {
+        "id": "PRR-6524",
+        "codigo": "01/C07-i04.02/2021",
+        "titulo": "01. Áreas de Acolhimento Empresarial (AAE) – Acessibilidades Rodoviárias (Aviso de Publicitação N.º 01/C07-i04.02/2021)",
+        "programa": "Plano de Recuperação e Resiliência",
+        "dataAbertura": "",
+        "dataFecho": "",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://recuperarportugal.gov.pt/candidatura/investimento-c07-i04-02-areas-de-acolhimento-empresarial-aae-acessibilidades-rodoviarias-sub-investimento-aviso-n-o-01-c07-i04-02-2021/",
+        "fonte": "PRR",
+        "scrapedAt": "2025-12-12T22:14:40.515Z",
+        "descricao": "Requalificação da EN10-4. Setúbal/Mitrena Data do Aviso de Publicitação: 28/12/2021 Ver documentação aqui Para obtenção de informações e esclarecimentos poderá ser utilizado o seguinte contacto: 21 383 71 67 Data de Republicação do Aviso de Publicitação: 12/03/2025 Ver documentação aqui Para obtenção de informações e esclarecimentos poderá ser utilizado o seguinte contacto: 21 383 71 67",
+        "fundo": [
+          "PRR"
+        ],
+        "beneficiarios": [
+          "Autarquias e Áreas Metropolitanas"
+        ],
+        "objetivoEstrategico": "C7. Infraestruturas",
+        "objetivoEspecifico": "C07-i04.02: Áreas de Acolhimento Empresarial (AAE) – Acessibilidades Rodoviárias - EN10-4. Setúbal/ Mitrena e Ligação da A8 à Área Empresarial das Palhagueiras em Torres Vedras",
+        "linha": "C7. Infraestruturas",
+        "subLinha": "C07-i04.02: Áreas de Acolhimento Empresarial (AAE) – Acessibilidades Rodoviárias - EN10-4. Setúbal/ Mitrena e Ligação da A8 à Área Empresarial das Palhagueiras em Torres Vedras",
+        "dataAviso": "2025-03-12",
+        "documentos": [
+          {
+            "id": "PRR-doc-0",
+            "nome": "aqui",
+            "tipo": "PDF",
+            "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/02/AVISOpublicitacaoSetubal_final-3.pdf",
+            "formato": "pdf"
+          },
+          {
+            "id": "PRR-doc-1",
+            "nome": "aqui",
+            "tipo": "PDF",
+            "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2025/03/Aviso-Republicacao-2-Contrato-ST-5.pdf",
+            "formato": "pdf"
+          }
+        ]
+      },
+      {
+        "id": "PRR-6629",
+        "codigo": "01/C20-i01.01/2022",
+        "titulo": "01. Assegurar o fornecimento de conetividade à internet de qualidade às escolas, e criar condições para a melhoria e utilização generalizada de recursos educativos digitais, incluindo nos processos de avaliação, bem como para a gestão eficiente do processo de transição digital no sistema educativo (Aviso n.º 01/C20-i01.01/2022)",
+        "programa": "Plano de Recuperação e Resiliência",
+        "dataAbertura": "",
+        "dataFecho": "",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://recuperarportugal.gov.pt/candidatura/assegurar-o-fornecimento-de-conetividade-a-internet-de-qualidade-as-escolas-e-criar-condicoes-para-a-melhoria-e-utilizacao-generalizada-de-recursos-educativos-digitais-incluindo-nos-processos-de-ava/",
+        "fonte": "PRR",
+        "scrapedAt": "2025-12-12T22:14:40.516Z",
+        "descricao": "Data da Orientação Técnica: 17/01/2022 Ver Documentação aqui Contacto para informações e Esclarecimentos: projetos-PRR@sec-geral.mec.pt Data de Republicação: 28/04/2022 Ver Documentação aqui Contacto para informações e Esclarecimentos: projetos-PRR@sec-geral.mec.pt Data de 2ª Republicação: 24/06/2022 Ver Documentação aqui Contacto para informações e Esclarecimentos: projetos-PRR@sec-geral.mec.pt",
+        "fundo": [
+          "PRR"
+        ],
+        "beneficiarios": [
+          "Escolas"
+        ],
+        "objetivoEstrategico": "C20. Escola Digital",
+        "objetivoEspecifico": "C20-i01.01: Transição Digital na Educação",
+        "linha": "C20. Escola Digital",
+        "subLinha": "C20-i01.01: Transição Digital na Educação",
+        "dataAviso": "2022-06-24",
+        "documentos": [
+          {
+            "id": "PRR-doc-0",
+            "nome": "aqui",
+            "tipo": "PDF",
+            "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/02/Orientacao-Tecnica_SGEC_17_01_2022-1.pdf",
+            "formato": "pdf"
+          },
+          {
+            "id": "PRR-doc-1",
+            "nome": "aqui",
+            "tipo": "PDF",
+            "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/02/Orientacao-Tecnica_SGEC_28_04_2022-Republicacao.pdf",
+            "formato": "pdf"
+          },
+          {
+            "id": "PRR-doc-2",
+            "nome": "aqui",
+            "tipo": "PDF",
+            "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/02/Orientacao_Tecnica-SGEC-2.a-Rep-24-06-2022.pdf",
+            "formato": "pdf"
+          }
+        ]
+      },
+      {
+        "id": "PRR-7474",
+        "codigo": "01/C07-i04.04/2022",
+        "titulo": "01. C07-i04.04- m02: Acesso ao Avepark - Parque de Ciência e Tecnologia das Taipas (Guimarães). (AVISO Nº 01/C07-i04.04/2022)",
+        "programa": "Plano de Recuperação e Resiliência",
+        "dataAbertura": "",
+        "dataFecho": "",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://recuperarportugal.gov.pt/candidatura/c07-i04-04-m02-acesso-ao-avepark-parque-de-ciencia-e-tecnologia-das-taipas-guimaraes-aviso-no-01-c07-i04-04-2022/",
+        "fonte": "PRR",
+        "scrapedAt": "2025-12-12T22:14:40.516Z",
+        "descricao": "Data de Aviso: 24/01/2022 Ver documentação Aqui Contacto para informações e Esclarecimentos: prr_aae@ccdr-n.pt ; 226 086 300",
+        "fundo": [
+          "PRR"
+        ],
+        "beneficiarios": [
+          "Autarquias e Áreas Metropolitanas"
+        ],
+        "objetivoEstrategico": "C7. Infraestruturas",
+        "objetivoEspecifico": "C07-i04.04 - Áreas de Acolhimento Empresarial (AAE) – Acessibilidades Rodoviárias",
+        "linha": "C7. Infraestruturas",
+        "subLinha": "C07-i04.04 - Áreas de Acolhimento Empresarial (AAE) – Acessibilidades Rodoviárias",
+        "dataAviso": "2022-01-24",
+        "documentos": [
+          {
+            "id": "PRR-doc-0",
+            "nome": "Aqui",
+            "tipo": "PDF",
+            "url": "https://www.ccdr-n.pt/storage/app/media/2022/PRR/avisomaiscontratoguima-3.pdf",
+            "formato": "pdf"
+          }
+        ]
+      },
+      {
+        "id": "PRR-4310",
+        "codigo": "01/C01-i03/2021",
+        "titulo": "01. Criar novas unidades de internamento em Hospitais Gerais (N.º 01/C01-i03/2021)",
+        "programa": "Plano de Recuperação e Resiliência",
+        "dataAbertura": "",
+        "dataFecho": "",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://recuperarportugal.gov.pt/candidatura/n-o-01-c01-i03-2021-2/",
+        "fonte": "PRR",
+        "scrapedAt": "2025-12-12T22:14:40.516Z",
+        "descricao": "Data de Aviso de Publicação: 21/10/2021 Ver documentação aqui Data de Republicação do Aviso: 16/11/2021 Ver documentação aqui Data de 2ª Republicação do Aviso: 07/04/2022 Ver documentação aqui Contacto para informações e Esclarecimentos: prr@acss.min-saude.pt Data de 3ª Republicação do Aviso: 12/01/2023 Ver documentação aqui Contacto para informações e Esclarecimentos: prr@acss.min-saude.pt Data de 4ª Republicação do Aviso: 12/07/2023 Ver documentação aqui Contacto para informações e Esclarecimentos: prr@acss.min-saude.pt",
+        "fundo": [
+          "PRR"
+        ],
+        "beneficiarios": [
+          "Entidades Públicas"
+        ],
+        "objetivoEstrategico": "C1. Serviço Nacional de Saúde",
+        "objetivoEspecifico": "C01-i03: Conclusão da Reforma da Saúde Mental e Implementação da Estratégia para as Demências",
+        "linha": "C1. Serviço Nacional de Saúde",
+        "subLinha": "C01-i03: Conclusão da Reforma da Saúde Mental e Implementação da Estratégia para as Demências",
+        "dataAviso": "2023-07-12",
+        "documentos": [
+          {
+            "id": "PRR-doc-0",
+            "nome": "aqui",
+            "tipo": "PDF",
+            "url": "https://www.acss.min-saude.pt/wp-content/uploads/2021/07/OT_SM_i3.01_16.11.2021.pdf",
+            "formato": "pdf"
+          },
+          {
+            "id": "PRR-doc-1",
+            "nome": "aqui",
+            "tipo": "PDF",
+            "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/10/OT_SM_i3.01_27012022-4.pdf",
+            "formato": "pdf"
+          },
+          {
+            "id": "PRR-doc-2",
+            "nome": "aqui",
+            "tipo": "PDF",
+            "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/10/OT1_i03_repub_20230112_signed.pdf",
+            "formato": "pdf"
+          },
+          {
+            "id": "PRR-doc-3",
+            "nome": "aqui",
+            "tipo": "PDF",
+            "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/10/OT1_i301_4arepub_12julho2023.pdf",
+            "formato": "pdf"
+          }
+        ]
+      }
+    ],
+    "PEPAC": [
+      {
+        "id": "PEPACC-11124",
+        "codigo": "PEPACC-11124",
+        "titulo": "Restabelecimento do potencial silvícola na sequência de catástrofes naturais, de fenómenos climatéricos adversos ou de acontecimentos catastróficos | Estabilização de emergência pós incêndio (2º Concurso)",
+        "programa": "PEPAC Continente",
+        "dataAbertura": "2026-01-12",
+        "dataFecho": "2026-01-12",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://pepacc.pt/concursos/restabelecimento-do-potencial-silvicola-na-sequencia-de-catastrofes-naturais-de-fenomenos-climatericos-adversos-ou-de-acontecimentos-catastroficos-estabilizacao-de-emergencia-pos-incendio2o-concur/",
+        "fonte": "PEPAC",
+        "scrapedAt": "2025-12-12T22:14:41.819Z",
+        "descricao": "Candidaturas abertas de 10 de novembro a 12 de janeiro de 2026",
+        "documentos": [
+          {
+            "id": "PEPACC-doc-1",
+            "nome": "Aviso-02-C324-2025.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/11/Aviso-02-C324-2025.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-2",
+            "nome": "Aviso_02_C324_2025_Prorrogacao.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/11/Aviso_02_C324_2025_Prorrogacao.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-3",
+            "nome": "Aviso-02-C324-2025-Aditamento.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/11/Aviso-02-C324-2025-Aditamento.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-4",
+            "nome": "OT_29_2025_C324_02.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/11/OT_29_2025_C324_02.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-5",
+            "nome": "OT_29_2025_C324_02-Anexos.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/11/OT_29_2025_C324_02-Anexos.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-6",
+            "nome": "Manual-do-formulario_C324_Aviso-02_14.11.2025.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/11/Manual-do-formulario_C324_Aviso-02_14.11.2025.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-7",
+            "nome": "Portaria-n.o-125-2025-1.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/03/Portaria-n.o-125-2025-1.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-8",
+            "nome": "Consolidacao-Portaria-n.o-125_2025_1-Diario-da-Republica-n.o-57_2025-Serie-I-de-2025-03-21.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/09/Consolidacao-Portaria-n.o-125_2025_1-Diario-da-Republica-n.o-57_2025-Serie-I-de-2025-03-21.pdf",
+            "formato": "pdf",
+            "path": ""
+          }
+        ]
+      },
+      {
+        "id": "PEPACC-11103",
+        "codigo": "PEPACC-11103",
+        "titulo": "Investimento produtivo bioeconomia – Modernização | Setor Florestal (2º Concurso)",
+        "programa": "PEPAC Continente",
+        "dataAbertura": "2025-11-06",
+        "dataFecho": "2026-01-22",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://pepacc.pt/concursos/investimento-produtivo-bioeconomia-modernizacao-setor-florestal-2o-concurso/",
+        "fonte": "PEPAC",
+        "scrapedAt": "2025-12-12T22:14:41.819Z",
+        "descricao": "Candidaturas abertas de 6 de novembro de 2025 a 22 de janeiro de 2026",
+        "documentos": [
+          {
+            "id": "PEPACC-doc-1",
+            "nome": "AVISO_311_02_2025_Floresta.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/11/AVISO_311_02_2025_Floresta.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-2",
+            "nome": "OT_31_2025_C311.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/11/OT_31_2025_C311.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-3",
+            "nome": "Portaria-n.o-348_2024_1.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2024/12/Portaria-n.o-348_2024_1.pdf",
+            "formato": "pdf",
+            "path": ""
+          }
+        ]
+      },
+      {
+        "id": "PEPACC-11059",
+        "codigo": "PEPACC-11059",
+        "titulo": "Restabelecimento do potencial produtivo (2º Concurso)",
+        "programa": "PEPAC Continente",
+        "dataAbertura": "2025-10-31",
+        "dataFecho": "2026-01-16",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://pepacc.pt/concursos/restabelecimento-do-potencial-produtivo-2o-concurso/",
+        "fonte": "PEPAC",
+        "scrapedAt": "2025-12-12T22:14:41.819Z",
+        "descricao": "De 31 de outubro de 2025 a 16 de janeiro de 2026",
+        "documentos": [
+          {
+            "id": "PEPACC-doc-1",
+            "nome": "0008500104.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/10/0008500104.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-2",
+            "nome": "OT_30_2025.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/10/OT_30_2025.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-3",
+            "nome": "Portaria-n.o-240_2025_1.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/05/Portaria-n.o-240_2025_1.pdf",
+            "formato": "pdf",
+            "path": ""
+          }
+        ]
+      },
+      {
+        "id": "PEPACC-10455",
+        "codigo": "PEPACC-10455",
+        "titulo": "Investimento produtivo agrícola – Modernização | Multissetores (2º Concurso)",
+        "programa": "PEPAC Continente",
+        "dataAbertura": "2025-08-28",
+        "dataFecho": "2025-12-30",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://pepacc.pt/concursos/investimento-produtivo-agricola-modernizacao-multissetores-2o-concurso/",
+        "fonte": "PEPAC",
+        "scrapedAt": "2025-12-12T22:14:41.819Z",
+        "descricao": "Candidaturas abertas de 28 de agosto de 2025 a 30 de dezembro de 2025 Perguntas frequentes",
+        "documentos": [
+          {
+            "id": "PEPACC-doc-1",
+            "nome": "AVISO_Candidatura_211_Exploracoes-Agricolas_vc_09092025_vf.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/08/AVISO_Candidatura_211_Exploracoes-Agricolas_vc_09092025_vf.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-2",
+            "nome": "AVISO_Candidatura_211_02_Exploracoes-Agricolas_Prorrogacao_22.10.2025.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/10/AVISO_Candidatura_211_02_Exploracoes-Agricolas_Prorrogacao_22.10.2025.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-3",
+            "nome": "OT_211_Exploracoes-Agricolas_28082025.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/08/OT_211_Exploracoes-Agricolas_28082025.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-4",
+            "nome": "Anexo_OT_C.2.1.1_28082025-1.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/08/Anexo_OT_C.2.1.1_28082025-1.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-5",
+            "nome": "Versao-de-Trabalho-da-Portaria-n.o-274_2024_1-–-atualizada-a-2024-11-22.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2024/12/Versao-de-Trabalho-da-Portaria-n.o-274_2024_1-–-atualizada-a-2024-11-22.pdf",
+            "formato": "pdf",
+            "path": ""
+          }
+        ]
+      },
+      {
+        "id": "PEPACC-10927",
+        "codigo": "PEPACC-10927",
+        "titulo": "Investimento produtivo bioeconomia – Modernização | Multissetores -Agroindústria (1º Concurso)",
+        "programa": "PEPAC Continente",
+        "dataAbertura": "2025-12-30",
+        "dataFecho": "2025-12-30",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://pepacc.pt/concursos/investimento-produtivo-bioeconomia-modernizacao-multissetores-agroindustria-1o-concurso/",
+        "fonte": "PEPAC",
+        "scrapedAt": "2025-12-12T22:14:41.819Z",
+        "descricao": "Candidaturas abertas de 10 de outubro a 30 de dezembro de 2025",
+        "documentos": [
+          {
+            "id": "PEPACC-doc-1",
+            "nome": "AVISO_311_01_2025_Agroindustria.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/10/AVISO_311_01_2025_Agroindustria.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-2",
+            "nome": "OT_28_C311_2025_Agroindustria.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2025/10/OT_28_C311_2025_Agroindustria.pdf",
+            "formato": "pdf",
+            "path": ""
+          },
+          {
+            "id": "PEPACC-doc-3",
+            "nome": "Portaria-n.o-348_2024_1.pdf",
+            "tipo": "PDF",
+            "url": "https://pepacc.pt/wp-content/uploads/2024/12/Portaria-n.o-348_2024_1.pdf",
+            "formato": "pdf",
+            "path": ""
+          }
+        ]
+      }
+    ],
+    "HORIZON": [
+      {
+        "id": "HE-HORIZON-EIE-2026-01-CONNECT-02",
+        "codigo": "HORIZON-EIE-2026-01-CONNECT-02",
+        "titulo": "Expanding Investment Ecosystems",
+        "programa": "Horizon Europe",
+        "dataAbertura": "2025-09-10",
+        "dataFecho": "2026-01-20",
+        "dotacao": 21000007,
+        "status": "Aberto",
+        "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIE-2026-01-CONNECT-02",
+        "fonte": "Horizon Europe",
+        "scrapedAt": "2025-12-12T22:20:38.547Z",
+        "descricao": "Expected Outcome:Project results are expected to contribute to all of the following expected outcomes:Increased foreign[1] venture investments from funds from 'strong' or 'innovation leader' innovator regions and enabling later-stage growth for expansion to these regions of local start-ups from less connected and developed innovation ecosystems ('emerging” or 'moderate' innovator regions);Increased foreign investors’ awareness and access to the flow of local deals from 'emerging' or 'moderate' i",
+        "fundo": [
+          "Horizon Europe"
+        ],
+        "documentos": []
+      },
+      {
+        "id": "HE-HORIZON-EIE-2026-01-CONNECT-01",
+        "codigo": "HORIZON-EIE-2026-01-CONNECT-01",
+        "titulo": "European network of national competence centers for innovation procurement",
+        "programa": "Horizon Europe",
+        "dataAbertura": "2025-09-10",
+        "dataFecho": "2026-01-20",
+        "dotacao": 21000007,
+        "status": "Aberto",
+        "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIE-2026-01-CONNECT-01",
+        "fonte": "Horizon Europe",
+        "scrapedAt": "2025-12-12T22:20:51.872Z",
+        "descricao": "Expected Outcome:Project results are expected to contribute to all of the following expected outcomes:Enhanced capacity of public procurers to carry out PCPs and PPIs;Increased amount of PCPs and PPIs taking place at national level and across borders by transnational buyer groups;Enhanced awareness among companies, in particular startups and SMEs, of the possibilities offered by innovation procurements to grow their business, by promoting national innovation procurement business opportunities to",
+        "fundo": [
+          "Horizon Europe"
+        ],
+        "documentos": []
+      },
+      {
+        "id": "HE-HORIZON-EIE-2026-01-CONNECT-03",
+        "codigo": "HORIZON-EIE-2026-01-CONNECT-03",
+        "titulo": "Scaling up deep tech ecosystems",
+        "programa": "Horizon Europe",
+        "dataAbertura": "2025-09-10",
+        "dataFecho": "2026-01-20",
+        "dotacao": 21000007,
+        "status": "Aberto",
+        "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIE-2026-01-CONNECT-03",
+        "fonte": "Horizon Europe",
+        "scrapedAt": "2025-12-12T22:20:51.875Z",
+        "descricao": "Expected Outcome:Project results are expected to contribute to all of the following expected outcomes:Enhanced development of deep tech[1] ecosystems around pan-European research infrastructures[2] to generate, scale and deploy breakthrough technologies with market and societal value;Increased involvement of industry, including SMEs, with research infrastructures to raise the technology level and competitiveness of companies and generate market opportunities, including through the generation of ",
+        "fundo": [
+          "Horizon Europe"
+        ],
+        "documentos": []
+      },
+      {
+        "id": "HE-HORIZON-CL5-2026-01-D6-14",
+        "codigo": "HORIZON-CL5-2026-01-D6-14",
+        "titulo": "Predicting and avoiding road crashes based on Artificial Intelligence (AI) and big data",
+        "programa": "Horizon Europe",
+        "dataAbertura": "2025-09-25",
+        "dataFecho": "2026-01-20",
+        "dotacao": 192000028,
+        "status": "Aberto",
+        "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL5-2026-01-D6-14",
+        "fonte": "Horizon Europe",
+        "scrapedAt": "2025-12-12T22:21:09.883Z",
+        "descricao": "Expected Outcome:Project results are expected to contribute to all the following expected outcomes:Knowledge of high-risk locations along the road network becoming available, before crashes actually occur, enabling road authorities to deploy appropriate countermeasures proactively;Predictive identification of safety-critical situations based on data from multiple sources and enabling real-time interventions to avoid crashes;Determination of the optimal sample size to allow for reliable real-time",
+        "fundo": [
+          "Horizon Europe"
+        ],
+        "documentos": []
+      },
+      {
+        "id": "HE-HORIZON-CL5-2026-01-D6-08",
+        "codigo": "HORIZON-CL5-2026-01-D6-08",
+        "titulo": "Accelerating freight transport and logistics digital innovation",
+        "programa": "Horizon Europe",
+        "dataAbertura": "2025-09-25",
+        "dataFecho": "2026-01-20",
+        "dotacao": 192000028,
+        "status": "Aberto",
+        "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL5-2026-01-D6-08",
+        "fonte": "Horizon Europe",
+        "scrapedAt": "2025-12-12T22:21:09.883Z",
+        "descricao": "Expected Outcome:The proposals are expected to contribute to all the following outcomes:Extended functionalities of electronic Freight Transport Information (eFTI) platforms beyond the required actions forming part of the implementation of Regulation 2020/1056[1] for: new use cases, solutions and applications, enabling harmonised electronic business-to-business (B2B) information sharing and exchange in multimodal logistics chains and hubs such as those related to greenhouse gases (GHG) reporting",
+        "fundo": [
+          "Horizon Europe"
+        ],
+        "documentos": []
+      }
+    ],
+    "EUROPA_CRIATIVA": [
+      {
+        "id": "EC-CREA-CULT-2025-COOP-UA-1",
+        "codigo": "CREA-CULT-2025-COOP-UA-1",
+        "titulo": "ZMINA: Finanțarea semințelor de reziliență",
+        "programa": "Europa Criativa",
+        "dataAbertura": "2025-10-06",
+        "dataFecho": "2025-12-05",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2025-COOP-UA-1",
+        "fonte": "Europa Criativa",
+        "scrapedAt": "2025-12-12T22:21:17.638Z",
+        "documentos": []
+      },
+      {
+        "id": "EC-CREA-MEDIA-2026-FILMSALES",
+        "codigo": "CREA-MEDIA-2026-FILMSALES",
+        "titulo": "European Film Sales",
+        "programa": "Europa Criativa",
+        "dataAbertura": "2026-04-28",
+        "dataFecho": "2026-06-18",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-FILMSALES",
+        "fonte": "Europa Criativa",
+        "scrapedAt": "2025-12-12T22:21:17.638Z",
+        "descricao": "Objective:Expected results:Improvement in the trans-national distribution of recent non-national European films.Increase in the investment in the production, acquisition, promotion, theatrical and online distribution of non-national European films.Develop links between the production and distribution sector thus improving the competitive position of non-national European films.Description of the activities:There are two phases for the funded activities:1. The generation of a potential fund which will be attributed according to the performance of the company on the European market.2. The implementation of the action - the potential fund thus generated by each company must be reinvested in:-minimum guarantees or advances paid for the international sales rights on eligible non-national Europe",
+        "documentos": []
+      },
+      {
+        "id": "EC-CREA-MEDIA-2026-CINNET",
+        "codigo": "CREA-MEDIA-2026-CINNET",
+        "titulo": "Networks of European Cinemas",
+        "programa": "Europa Criativa",
+        "dataAbertura": "2026-04-07",
+        "dataFecho": "2026-07-09",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-CINNET",
+        "fonte": "Europa Criativa",
+        "scrapedAt": "2025-12-12T22:21:17.638Z",
+        "descricao": "Objective:The aim of the support is to create and operate a network of cinemas with a view to:Encourage cinema operators to screen a significant proportion of non- national European films through incentives and collaborative projects;Contribute to raise and increase the interest of the audience for non-national films including through the development of activities for young cinema-goers;Help those cinemas to adapt their strategy to the changing environment including by promoting innovative approaches in terms of audience reach and engagement, as well as partnerships with other film industry operators as well as with local cultural institutions;Encourage exchange of best practices, knowledge sharing and other forms of cross border collaboration amongst members of the network Contribute to t",
+        "documentos": []
+      },
+      {
+        "id": "EC-CREA-MEDIA-2026-DEVMINISLATE",
+        "codigo": "CREA-MEDIA-2026-DEVMINISLATE",
+        "titulo": "European mini-slate development",
+        "programa": "Europa Criativa",
+        "dataAbertura": "2026-04-08",
+        "dataFecho": "2026-09-17",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-DEVMINISLATE",
+        "fonte": "Europa Criativa",
+        "scrapedAt": "2025-12-12T22:21:33.974Z",
+        "descricao": "Scope:The objective of the European mini-slate development support is to foster the competitiveness of European independent production companies and to increase their economic weight on the market. The aim is also to increase the capacity of audiovisual producers to develop projects with the potential to circulate throughout Europe and beyond, and to facilitate European and international coproduction.The support will also provide an entry point for emerging talent, giving them the opportunity to direct a short film supported by the strong foundation provided by experienced companies.Expected resultsA stronger position on European and international markets for companies selected under European slate development.Increased quality, feasibility, cross-border potential and market value of Europ",
+        "documentos": []
+      }
+    ],
+    "IPDJ": [
+      {
+        "id": "IPDJ-apoio-e-financiamento-jovem",
+        "codigo": "IPDJ-apoio-e-financiamento-jovem",
+        "titulo": "Navegação",
+        "programa": "Apoio Jovem",
+        "dataAbertura": "",
+        "dataFecho": "",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://ipdj.gov.pt/apoio-e-financiamento-jovem",
+        "fonte": "IPDJ",
+        "scrapedAt": "2025-12-12T22:24:49.446Z",
+        "descricao": "Juventude - IPDJ Navegação Passar para o Conteúdo Juventude O IPDJ Sobre Missão e Atribuições Lei Orgânica e Estatutos Identidade Gráfica Orgânica IPDJ Conselho Diretivo Estrutura Organizacional Instrumentos de gestão Documentos de Gestão Documentos de Recursos Humanos Documentos Financeiros Projetos cofinanciados Plano Nacional para a Juventude Consulta de documentos administrativos Contactos SERVIÇOS Sede Direção Regional do Norte Direção Regional do Centro Direção Regional de Lisboa e Vale do Tejo Direção Regional do Alentejo Direção Regional do Algarve Casa do Desporto Central de Pagamentos Centro de Juventude de Lisboa Centro Desportivo Nacional do Jamor Medicina Desportiva Movijovem Museu Nacional do Desporto Rede Ponto JA LEGISLAÇÃO Desporto Juventude APOIO E FINANCIAMENTO Juventude",
+        "documentos": []
+      },
+      {
+        "id": "IPDJ-paj-programa-de-apoio-juvenil",
+        "codigo": "IPDJ-paj-programa-de-apoio-juvenil",
+        "titulo": "Navegação",
+        "programa": "PAJ",
+        "dataAbertura": "",
+        "dataFecho": "",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://ipdj.gov.pt/paj-programa-de-apoio-juvenil",
+        "fonte": "IPDJ",
+        "scrapedAt": "2025-12-12T22:24:50.915Z",
+        "descricao": "PAJ - Programa de Apoio Juvenil - IPDJ Navegação Passar para o Conteúdo PAJ - Programa de Apoio Juvenil O IPDJ Sobre Missão e Atribuições Lei Orgânica e Estatutos Identidade Gráfica Orgânica IPDJ Conselho Diretivo Estrutura Organizacional Instrumentos de gestão Documentos de Gestão Documentos de Recursos Humanos Documentos Financeiros Projetos cofinanciados Plano Nacional para a Juventude Consulta de documentos administrativos Contactos SERVIÇOS Sede Direção Regional do Norte Direção Regional do Centro Direção Regional de Lisboa e Vale do Tejo Direção Regional do Alentejo Direção Regional do Algarve Casa do Desporto Central de Pagamentos Centro de Juventude de Lisboa Centro Desportivo Nacional do Jamor Medicina Desportiva Movijovem Museu Nacional do Desporto Rede Ponto JA LEGISLAÇÃO Despor",
+        "documentos": []
+      },
+      {
+        "id": "IPDJ-paacj-programa-de-apoio-as-associacoes-de-carater-juvenil",
+        "codigo": "IPDJ-paacj-programa-de-apoio-as-associacoes-de-carater-juvenil",
+        "titulo": "Navegação",
+        "programa": "PAACJ",
+        "dataAbertura": "",
+        "dataFecho": "",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://ipdj.gov.pt/paacj-programa-de-apoio-as-associacoes-de-carater-juvenil",
+        "fonte": "IPDJ",
+        "scrapedAt": "2025-12-12T22:24:52.306Z",
+        "descricao": "PAACJ - Programa de Apoio às Associações de Caráter Juvenil - IPDJ Navegação Passar para o Conteúdo PAACJ - Programa de Apoio às Associações de Caráter Juvenil O IPDJ Sobre Missão e Atribuições Lei Orgânica e Estatutos Identidade Gráfica Orgânica IPDJ Conselho Diretivo Estrutura Organizacional Instrumentos de gestão Documentos de Gestão Documentos de Recursos Humanos Documentos Financeiros Projetos cofinanciados Plano Nacional para a Juventude Consulta de documentos administrativos Contactos SERVIÇOS Sede Direção Regional do Norte Direção Regional do Centro Direção Regional de Lisboa e Vale do Tejo Direção Regional do Alentejo Direção Regional do Algarve Casa do Desporto Central de Pagamentos Centro de Juventude de Lisboa Centro Desportivo Nacional do Jamor Medicina Desportiva Movijovem Mu",
+        "documentos": []
+      },
+      {
+        "id": "IPDJ-pae-programa-de-apoio-estudantil",
+        "codigo": "IPDJ-pae-programa-de-apoio-estudantil",
+        "titulo": "Navegação",
+        "programa": "PAE",
+        "dataAbertura": "",
+        "dataFecho": "",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://ipdj.gov.pt/pae-programa-de-apoio-estudantil",
+        "fonte": "IPDJ",
+        "scrapedAt": "2025-12-12T22:24:54.202Z",
+        "descricao": "PAE - Programa de Apoio Estudantil - IPDJ Navegação Passar para o Conteúdo PAE - Programa de Apoio Estudantil O IPDJ Sobre Missão e Atribuições Lei Orgânica e Estatutos Identidade Gráfica Orgânica IPDJ Conselho Diretivo Estrutura Organizacional Instrumentos de gestão Documentos de Gestão Documentos de Recursos Humanos Documentos Financeiros Projetos cofinanciados Plano Nacional para a Juventude Consulta de documentos administrativos Contactos SERVIÇOS Sede Direção Regional do Norte Direção Regional do Centro Direção Regional de Lisboa e Vale do Tejo Direção Regional do Alentejo Direção Regional do Algarve Casa do Desporto Central de Pagamentos Centro de Juventude de Lisboa Centro Desportivo Nacional do Jamor Medicina Desportiva Movijovem Museu Nacional do Desporto Rede Ponto JA LEGISLAÇÃO ",
+        "documentos": []
+      },
+      {
+        "id": "IPDJ-pai-programa-de-apoio-infraestrutural",
+        "codigo": "IPDJ-pai-programa-de-apoio-infraestrutural",
+        "titulo": "Navegação",
+        "programa": "PAI",
+        "dataAbertura": "",
+        "dataFecho": "",
+        "dotacao": 0,
+        "status": "Aberto",
+        "url": "https://ipdj.gov.pt/pai-programa-de-apoio-infraestrutural",
+        "fonte": "IPDJ",
+        "scrapedAt": "2025-12-12T22:24:55.829Z",
+        "descricao": "PAI - Programa de Apoio Infraestrutural - IPDJ Navegação Passar para o Conteúdo PAI - Programa de Apoio Infraestrutural O IPDJ Sobre Missão e Atribuições Lei Orgânica e Estatutos Identidade Gráfica Orgânica IPDJ Conselho Diretivo Estrutura Organizacional Instrumentos de gestão Documentos de Gestão Documentos de Recursos Humanos Documentos Financeiros Projetos cofinanciados Plano Nacional para a Juventude Consulta de documentos administrativos Contactos SERVIÇOS Sede Direção Regional do Norte Direção Regional do Centro Direção Regional de Lisboa e Vale do Tejo Direção Regional do Alentejo Direção Regional do Algarve Casa do Desporto Central de Pagamentos Centro de Juventude de Lisboa Centro Desportivo Nacional do Jamor Medicina Desportiva Movijovem Museu Nacional do Desporto Rede Ponto JA L",
+        "documentos": []
+      }
+    ]
+  },
+  "files": [
+    {
+      "kind": "aviso_md",
+      "portal": "PT2030",
+      "avisoId": "INDEX",
+      "avisoCodigo": "INDEX",
+      "displayName": "INDEX__dataset-index.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/dataset-index.md",
+      "sourceUrl": "local://dataset-index",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "INDEX"
+        },
+        {
+          "key": "docType",
+          "stringValue": "dataset_index"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "PT2030",
+      "avisoId": "PT2030-251009",
+      "avisoCodigo": "FA0943/2024",
+      "displayName": "PT2030__FA0943_2024__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PT2030__FA0943_2024__aviso.md",
+      "sourceUrl": "https://portugal2030.pt/aviso-2024/capacitacao-da-rede-nacional-de-acolhimento-de-requerentes-e-beneficiarios-de-protecao-internacional/",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PT2030"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "FA0943/2024"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PT2030-251009"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://portugal2030.pt/aviso-2024/capacitacao-da-rede-nacional-de-acolhimento-de-requerentes-e-beneficiarios-de-protecao-internacional/"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PT2030",
+      "avisoId": "PT2030-251009",
+      "avisoCodigo": "FA0943/2024",
+      "displayName": "PT2030__FA0943_2024__FA0943_2024.pdf.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PT2030__FA0943_2024__FA0943_2024.pdf.pdf",
+      "sourceUrl": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-238.octet-stream",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PT2030"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "FA0943/2024"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PT2030-251009"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-238.octet-stream"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "PT2030",
+      "avisoId": "PT2030-251003",
+      "avisoCodigo": "FA0114/2025",
+      "displayName": "PT2030__FA0114_2025__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PT2030__FA0114_2025__aviso.md",
+      "sourceUrl": "https://portugal2030.pt/aviso-2024/mobilidade-sustentavel/",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PT2030"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "FA0114/2025"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PT2030-251003"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://portugal2030.pt/aviso-2024/mobilidade-sustentavel/"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PT2030",
+      "avisoId": "PT2030-251003",
+      "avisoCodigo": "FA0114/2025",
+      "displayName": "PT2030__FA0114_2025__FA0114_2025.pdf.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PT2030__FA0114_2025__FA0114_2025.pdf.pdf",
+      "sourceUrl": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-235.octet-stream",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PT2030"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "FA0114/2025"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PT2030-251003"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-235.octet-stream"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "PT2030",
+      "avisoId": "PT2030-251001",
+      "avisoCodigo": "FA0113/2025",
+      "displayName": "PT2030__FA0113_2025__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PT2030__FA0113_2025__aviso.md",
+      "sourceUrl": "https://portugal2030.pt/aviso-2024/protecao-e-conservacao-da-natureza-e-biodiversidade/",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PT2030"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "FA0113/2025"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PT2030-251001"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://portugal2030.pt/aviso-2024/protecao-e-conservacao-da-natureza-e-biodiversidade/"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PT2030",
+      "avisoId": "PT2030-251001",
+      "avisoCodigo": "FA0113/2025",
+      "displayName": "PT2030__FA0113_2025__FA0113_2025.pdf.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PT2030__FA0113_2025__FA0113_2025.pdf.pdf",
+      "sourceUrl": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-234.octet-stream",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PT2030"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "FA0113/2025"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PT2030-251001"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-234.octet-stream"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "PT2030",
+      "avisoId": "PT2030-250989",
+      "avisoCodigo": "FA0154/2025",
+      "displayName": "PT2030__FA0154_2025__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PT2030__FA0154_2025__aviso.md",
+      "sourceUrl": "https://portugal2030.pt/aviso-2024/medidas-de-adaptacao-as-alteracoes-climaticas-2/",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PT2030"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "FA0154/2025"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PT2030-250989"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://portugal2030.pt/aviso-2024/medidas-de-adaptacao-as-alteracoes-climaticas-2/"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PT2030",
+      "avisoId": "PT2030-250989",
+      "avisoCodigo": "FA0154/2025",
+      "displayName": "PT2030__FA0154_2025__FA0154_2025.pdf.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PT2030__FA0154_2025__FA0154_2025.pdf.pdf",
+      "sourceUrl": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-228.octet-stream",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PT2030"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "FA0154/2025"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PT2030-250989"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-228.octet-stream"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "PT2030",
+      "avisoId": "PT2030-250985",
+      "avisoCodigo": "FA0036/2025",
+      "displayName": "PT2030__FA0036_2025__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PT2030__FA0036_2025__aviso.md",
+      "sourceUrl": "https://portugal2030.pt/aviso-2024/protecao-civil-e-gestao-integrada-de-riscos-prevencao-e-mitigacao-de-riscos-associados-a-derrocada-de-taludes-ou-para-suporte-de-terras-3o-aviso/",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PT2030"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "FA0036/2025"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PT2030-250985"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://portugal2030.pt/aviso-2024/protecao-civil-e-gestao-integrada-de-riscos-prevencao-e-mitigacao-de-riscos-associados-a-derrocada-de-taludes-ou-para-suporte-de-terras-3o-aviso/"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PT2030",
+      "avisoId": "PT2030-250985",
+      "avisoCodigo": "FA0036/2025",
+      "displayName": "PT2030__FA0036_2025__FA0036_2025.pdf.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PT2030__FA0036_2025__FA0036_2025.pdf.pdf",
+      "sourceUrl": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-226.octet-stream",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PT2030"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "FA0036/2025"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PT2030-250985"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-226.octet-stream"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "PRR",
+      "avisoId": "PRR-49016",
+      "avisoCodigo": "1/C06-i08-RAM/2024",
+      "displayName": "PRR__1_C06-i08-RAM_2024__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PRR__1_C06-i08-RAM_2024__aviso.md",
+      "sourceUrl": "https://recuperarportugal.gov.pt/candidatura/01-ampliacao-do-edificio-do-citma-aviso-n-o1-c06-i08-ram-2024/",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PRR"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "1/C06-i08-RAM/2024"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PRR-49016"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://recuperarportugal.gov.pt/candidatura/01-ampliacao-do-edificio-do-citma-aviso-n-o1-c06-i08-ram-2024/"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PRR",
+      "avisoId": "PRR-49016",
+      "avisoCodigo": "1/C06-i08-RAM/2024",
+      "displayName": "PRR__1_C06-i08-RAM_2024__aqui.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PRR__1_C06-i08-RAM_2024__aqui.pdf",
+      "sourceUrl": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/08/OTE_C06-i08-RAM.pdf",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PRR"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "1/C06-i08-RAM/2024"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PRR-49016"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/08/OTE_C06-i08-RAM.pdf"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "PRR",
+      "avisoId": "PRR-6524",
+      "avisoCodigo": "01/C07-i04.02/2021",
+      "displayName": "PRR__01_C07-i04.02_2021__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PRR__01_C07-i04.02_2021__aviso.md",
+      "sourceUrl": "https://recuperarportugal.gov.pt/candidatura/investimento-c07-i04-02-areas-de-acolhimento-empresarial-aae-acessibilidades-rodoviarias-sub-investimento-aviso-n-o-01-c07-i04-02-2021/",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PRR"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "01/C07-i04.02/2021"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PRR-6524"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://recuperarportugal.gov.pt/candidatura/investimento-c07-i04-02-areas-de-acolhimento-empresarial-aae-acessibilidades-rodoviarias-sub-investimento-aviso-n-o-01-c07-i04-02-2021/"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PRR",
+      "avisoId": "PRR-6524",
+      "avisoCodigo": "01/C07-i04.02/2021",
+      "displayName": "PRR__01_C07-i04.02_2021__aqui.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PRR__01_C07-i04.02_2021__aqui.pdf",
+      "sourceUrl": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/02/AVISOpublicitacaoSetubal_final-3.pdf",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PRR"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "01/C07-i04.02/2021"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PRR-6524"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/02/AVISOpublicitacaoSetubal_final-3.pdf"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "PRR",
+      "avisoId": "PRR-6629",
+      "avisoCodigo": "01/C20-i01.01/2022",
+      "displayName": "PRR__01_C20-i01.01_2022__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PRR__01_C20-i01.01_2022__aviso.md",
+      "sourceUrl": "https://recuperarportugal.gov.pt/candidatura/assegurar-o-fornecimento-de-conetividade-a-internet-de-qualidade-as-escolas-e-criar-condicoes-para-a-melhoria-e-utilizacao-generalizada-de-recursos-educativos-digitais-incluindo-nos-processos-de-ava/",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PRR"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "01/C20-i01.01/2022"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PRR-6629"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://recuperarportugal.gov.pt/candidatura/assegurar-o-fornecimento-de-conetividade-a-internet-de-qualidade-as-escolas-e-criar-condicoes-para-a-melhoria-e-utilizacao-generalizada-de-recursos-educativos-digitais-incluindo-nos-processos-de-ava/"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PRR",
+      "avisoId": "PRR-6629",
+      "avisoCodigo": "01/C20-i01.01/2022",
+      "displayName": "PRR__01_C20-i01.01_2022__aqui.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PRR__01_C20-i01.01_2022__aqui.pdf",
+      "sourceUrl": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/02/Orientacao-Tecnica_SGEC_17_01_2022-1.pdf",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PRR"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "01/C20-i01.01/2022"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PRR-6629"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/02/Orientacao-Tecnica_SGEC_17_01_2022-1.pdf"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "PRR",
+      "avisoId": "PRR-7474",
+      "avisoCodigo": "01/C07-i04.04/2022",
+      "displayName": "PRR__01_C07-i04.04_2022__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PRR__01_C07-i04.04_2022__aviso.md",
+      "sourceUrl": "https://recuperarportugal.gov.pt/candidatura/c07-i04-04-m02-acesso-ao-avepark-parque-de-ciencia-e-tecnologia-das-taipas-guimaraes-aviso-no-01-c07-i04-04-2022/",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PRR"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "01/C07-i04.04/2022"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PRR-7474"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://recuperarportugal.gov.pt/candidatura/c07-i04-04-m02-acesso-ao-avepark-parque-de-ciencia-e-tecnologia-das-taipas-guimaraes-aviso-no-01-c07-i04-04-2022/"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PRR",
+      "avisoId": "PRR-7474",
+      "avisoCodigo": "01/C07-i04.04/2022",
+      "displayName": "PRR__01_C07-i04.04_2022__Aqui.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PRR__01_C07-i04.04_2022__Aqui.pdf",
+      "sourceUrl": "https://www.ccdr-n.pt/storage/app/media/2022/PRR/avisomaiscontratoguima-3.pdf",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PRR"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "01/C07-i04.04/2022"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PRR-7474"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://www.ccdr-n.pt/storage/app/media/2022/PRR/avisomaiscontratoguima-3.pdf"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "PRR",
+      "avisoId": "PRR-4310",
+      "avisoCodigo": "01/C01-i03/2021",
+      "displayName": "PRR__01_C01-i03_2021__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PRR__01_C01-i03_2021__aviso.md",
+      "sourceUrl": "https://recuperarportugal.gov.pt/candidatura/n-o-01-c01-i03-2021-2/",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PRR"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "01/C01-i03/2021"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PRR-4310"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://recuperarportugal.gov.pt/candidatura/n-o-01-c01-i03-2021-2/"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "PEPAC",
+      "avisoId": "PEPACC-11124",
+      "avisoCodigo": "PEPACC-11124",
+      "displayName": "PEPAC__PEPACC-11124__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PEPAC__PEPACC-11124__aviso.md",
+      "sourceUrl": "https://pepacc.pt/concursos/restabelecimento-do-potencial-silvicola-na-sequencia-de-catastrofes-naturais-de-fenomenos-climatericos-adversos-ou-de-acontecimentos-catastroficos-estabilizacao-de-emergencia-pos-incendio2o-concur/",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PEPAC"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "PEPACC-11124"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PEPACC-11124"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://pepacc.pt/concursos/restabelecimento-do-potencial-silvicola-na-sequencia-de-catastrofes-naturais-de-fenomenos-climatericos-adversos-ou-de-acontecimentos-catastroficos-estabilizacao-de-emergencia-pos-incendio2o-concur/"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PEPAC",
+      "avisoId": "PEPACC-11124",
+      "avisoCodigo": "PEPACC-11124",
+      "displayName": "PEPAC__PEPACC-11124__Aviso-02-C324-2025.pdf.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PEPAC__PEPACC-11124__Aviso-02-C324-2025.pdf.pdf",
+      "sourceUrl": "https://pepacc.pt/wp-content/uploads/2025/11/Aviso-02-C324-2025.pdf",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PEPAC"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "PEPACC-11124"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PEPACC-11124"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://pepacc.pt/wp-content/uploads/2025/11/Aviso-02-C324-2025.pdf"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "PEPAC",
+      "avisoId": "PEPACC-11103",
+      "avisoCodigo": "PEPACC-11103",
+      "displayName": "PEPAC__PEPACC-11103__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PEPAC__PEPACC-11103__aviso.md",
+      "sourceUrl": "https://pepacc.pt/concursos/investimento-produtivo-bioeconomia-modernizacao-setor-florestal-2o-concurso/",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PEPAC"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "PEPACC-11103"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PEPACC-11103"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://pepacc.pt/concursos/investimento-produtivo-bioeconomia-modernizacao-setor-florestal-2o-concurso/"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PEPAC",
+      "avisoId": "PEPACC-11103",
+      "avisoCodigo": "PEPACC-11103",
+      "displayName": "PEPAC__PEPACC-11103__AVISO_311_02_2025_Floresta.pdf.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PEPAC__PEPACC-11103__AVISO_311_02_2025_Floresta.pdf.pdf",
+      "sourceUrl": "https://pepacc.pt/wp-content/uploads/2025/11/AVISO_311_02_2025_Floresta.pdf",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PEPAC"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "PEPACC-11103"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PEPACC-11103"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://pepacc.pt/wp-content/uploads/2025/11/AVISO_311_02_2025_Floresta.pdf"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "PEPAC",
+      "avisoId": "PEPACC-11059",
+      "avisoCodigo": "PEPACC-11059",
+      "displayName": "PEPAC__PEPACC-11059__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PEPAC__PEPACC-11059__aviso.md",
+      "sourceUrl": "https://pepacc.pt/concursos/restabelecimento-do-potencial-produtivo-2o-concurso/",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PEPAC"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "PEPACC-11059"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PEPACC-11059"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://pepacc.pt/concursos/restabelecimento-do-potencial-produtivo-2o-concurso/"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PEPAC",
+      "avisoId": "PEPACC-11059",
+      "avisoCodigo": "PEPACC-11059",
+      "displayName": "PEPAC__PEPACC-11059__0008500104.pdf.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PEPAC__PEPACC-11059__0008500104.pdf.pdf",
+      "sourceUrl": "https://pepacc.pt/wp-content/uploads/2025/10/0008500104.pdf",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PEPAC"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "PEPACC-11059"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PEPACC-11059"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://pepacc.pt/wp-content/uploads/2025/10/0008500104.pdf"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "PEPAC",
+      "avisoId": "PEPACC-10455",
+      "avisoCodigo": "PEPACC-10455",
+      "displayName": "PEPAC__PEPACC-10455__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PEPAC__PEPACC-10455__aviso.md",
+      "sourceUrl": "https://pepacc.pt/concursos/investimento-produtivo-agricola-modernizacao-multissetores-2o-concurso/",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PEPAC"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "PEPACC-10455"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PEPACC-10455"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://pepacc.pt/concursos/investimento-produtivo-agricola-modernizacao-multissetores-2o-concurso/"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PEPAC",
+      "avisoId": "PEPACC-10455",
+      "avisoCodigo": "PEPACC-10455",
+      "displayName": "PEPAC__PEPACC-10455__AVISO_Candidatura_211_Exploracoes-Agricolas_vc_09092025_vf.pdf.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PEPAC__PEPACC-10455__AVISO_Candidatura_211_Exploracoes-Agricolas_vc_09092025_vf.pdf.pdf",
+      "sourceUrl": "https://pepacc.pt/wp-content/uploads/2025/08/AVISO_Candidatura_211_Exploracoes-Agricolas_vc_09092025_vf.pdf",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PEPAC"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "PEPACC-10455"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PEPACC-10455"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://pepacc.pt/wp-content/uploads/2025/08/AVISO_Candidatura_211_Exploracoes-Agricolas_vc_09092025_vf.pdf"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "PEPAC",
+      "avisoId": "PEPACC-10927",
+      "avisoCodigo": "PEPACC-10927",
+      "displayName": "PEPAC__PEPACC-10927__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PEPAC__PEPACC-10927__aviso.md",
+      "sourceUrl": "https://pepacc.pt/concursos/investimento-produtivo-bioeconomia-modernizacao-multissetores-agroindustria-1o-concurso/",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PEPAC"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "PEPACC-10927"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PEPACC-10927"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://pepacc.pt/concursos/investimento-produtivo-bioeconomia-modernizacao-multissetores-agroindustria-1o-concurso/"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PEPAC",
+      "avisoId": "PEPACC-10927",
+      "avisoCodigo": "PEPACC-10927",
+      "displayName": "PEPAC__PEPACC-10927__AVISO_311_01_2025_Agroindustria.pdf.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PEPAC__PEPACC-10927__AVISO_311_01_2025_Agroindustria.pdf.pdf",
+      "sourceUrl": "https://pepacc.pt/wp-content/uploads/2025/10/AVISO_311_01_2025_Agroindustria.pdf",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PEPAC"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "PEPACC-10927"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PEPACC-10927"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://pepacc.pt/wp-content/uploads/2025/10/AVISO_311_01_2025_Agroindustria.pdf"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "HORIZON",
+      "avisoId": "HE-HORIZON-EIE-2026-01-CONNECT-02",
+      "avisoCodigo": "HORIZON-EIE-2026-01-CONNECT-02",
+      "displayName": "HORIZON__HORIZON-EIE-2026-01-CONNECT-02__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/HORIZON__HORIZON-EIE-2026-01-CONNECT-02__aviso.md",
+      "sourceUrl": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIE-2026-01-CONNECT-02",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "HORIZON"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "HORIZON-EIE-2026-01-CONNECT-02"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "HE-HORIZON-EIE-2026-01-CONNECT-02"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIE-2026-01-CONNECT-02"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "HORIZON",
+      "avisoId": "HE-HORIZON-EIE-2026-01-CONNECT-01",
+      "avisoCodigo": "HORIZON-EIE-2026-01-CONNECT-01",
+      "displayName": "HORIZON__HORIZON-EIE-2026-01-CONNECT-01__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/HORIZON__HORIZON-EIE-2026-01-CONNECT-01__aviso.md",
+      "sourceUrl": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIE-2026-01-CONNECT-01",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "HORIZON"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "HORIZON-EIE-2026-01-CONNECT-01"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "HE-HORIZON-EIE-2026-01-CONNECT-01"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIE-2026-01-CONNECT-01"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "HORIZON",
+      "avisoId": "HE-HORIZON-EIE-2026-01-CONNECT-03",
+      "avisoCodigo": "HORIZON-EIE-2026-01-CONNECT-03",
+      "displayName": "HORIZON__HORIZON-EIE-2026-01-CONNECT-03__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/HORIZON__HORIZON-EIE-2026-01-CONNECT-03__aviso.md",
+      "sourceUrl": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIE-2026-01-CONNECT-03",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "HORIZON"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "HORIZON-EIE-2026-01-CONNECT-03"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "HE-HORIZON-EIE-2026-01-CONNECT-03"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIE-2026-01-CONNECT-03"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "HORIZON",
+      "avisoId": "HE-HORIZON-CL5-2026-01-D6-14",
+      "avisoCodigo": "HORIZON-CL5-2026-01-D6-14",
+      "displayName": "HORIZON__HORIZON-CL5-2026-01-D6-14__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/HORIZON__HORIZON-CL5-2026-01-D6-14__aviso.md",
+      "sourceUrl": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL5-2026-01-D6-14",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "HORIZON"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "HORIZON-CL5-2026-01-D6-14"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "HE-HORIZON-CL5-2026-01-D6-14"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL5-2026-01-D6-14"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "HORIZON",
+      "avisoId": "HE-HORIZON-CL5-2026-01-D6-08",
+      "avisoCodigo": "HORIZON-CL5-2026-01-D6-08",
+      "displayName": "HORIZON__HORIZON-CL5-2026-01-D6-08__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/HORIZON__HORIZON-CL5-2026-01-D6-08__aviso.md",
+      "sourceUrl": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL5-2026-01-D6-08",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "HORIZON"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "HORIZON-CL5-2026-01-D6-08"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "HE-HORIZON-CL5-2026-01-D6-08"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-CL5-2026-01-D6-08"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "EUROPA_CRIATIVA",
+      "avisoId": "EC-CREA-CULT-2025-COOP-UA-1",
+      "avisoCodigo": "CREA-CULT-2025-COOP-UA-1",
+      "displayName": "EUROPA_CRIATIVA__CREA-CULT-2025-COOP-UA-1__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/EUROPA_CRIATIVA__CREA-CULT-2025-COOP-UA-1__aviso.md",
+      "sourceUrl": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2025-COOP-UA-1",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "EUROPA_CRIATIVA"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "CREA-CULT-2025-COOP-UA-1"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "EC-CREA-CULT-2025-COOP-UA-1"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2025-COOP-UA-1"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "EUROPA_CRIATIVA",
+      "avisoId": "EC-CREA-MEDIA-2026-FILMSALES",
+      "avisoCodigo": "CREA-MEDIA-2026-FILMSALES",
+      "displayName": "EUROPA_CRIATIVA__CREA-MEDIA-2026-FILMSALES__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/EUROPA_CRIATIVA__CREA-MEDIA-2026-FILMSALES__aviso.md",
+      "sourceUrl": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-FILMSALES",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "EUROPA_CRIATIVA"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "CREA-MEDIA-2026-FILMSALES"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "EC-CREA-MEDIA-2026-FILMSALES"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-FILMSALES"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "EUROPA_CRIATIVA",
+      "avisoId": "EC-CREA-MEDIA-2026-CINNET",
+      "avisoCodigo": "CREA-MEDIA-2026-CINNET",
+      "displayName": "EUROPA_CRIATIVA__CREA-MEDIA-2026-CINNET__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/EUROPA_CRIATIVA__CREA-MEDIA-2026-CINNET__aviso.md",
+      "sourceUrl": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-CINNET",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "EUROPA_CRIATIVA"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "CREA-MEDIA-2026-CINNET"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "EC-CREA-MEDIA-2026-CINNET"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-CINNET"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "EUROPA_CRIATIVA",
+      "avisoId": "EC-CREA-MEDIA-2026-DEVMINISLATE",
+      "avisoCodigo": "CREA-MEDIA-2026-DEVMINISLATE",
+      "displayName": "EUROPA_CRIATIVA__CREA-MEDIA-2026-DEVMINISLATE__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/EUROPA_CRIATIVA__CREA-MEDIA-2026-DEVMINISLATE__aviso.md",
+      "sourceUrl": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-DEVMINISLATE",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "EUROPA_CRIATIVA"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "CREA-MEDIA-2026-DEVMINISLATE"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "EC-CREA-MEDIA-2026-DEVMINISLATE"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-MEDIA-2026-DEVMINISLATE"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "IPDJ",
+      "avisoId": "IPDJ-apoio-e-financiamento-jovem",
+      "avisoCodigo": "IPDJ-apoio-e-financiamento-jovem",
+      "displayName": "IPDJ__IPDJ-apoio-e-financiamento-jovem__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/IPDJ__IPDJ-apoio-e-financiamento-jovem__aviso.md",
+      "sourceUrl": "https://ipdj.gov.pt/apoio-e-financiamento-jovem",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "IPDJ"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "IPDJ-apoio-e-financiamento-jovem"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "IPDJ-apoio-e-financiamento-jovem"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://ipdj.gov.pt/apoio-e-financiamento-jovem"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "IPDJ",
+      "avisoId": "IPDJ-paj-programa-de-apoio-juvenil",
+      "avisoCodigo": "IPDJ-paj-programa-de-apoio-juvenil",
+      "displayName": "IPDJ__IPDJ-paj-programa-de-apoio-juvenil__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/IPDJ__IPDJ-paj-programa-de-apoio-juvenil__aviso.md",
+      "sourceUrl": "https://ipdj.gov.pt/paj-programa-de-apoio-juvenil",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "IPDJ"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "IPDJ-paj-programa-de-apoio-juvenil"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "IPDJ-paj-programa-de-apoio-juvenil"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://ipdj.gov.pt/paj-programa-de-apoio-juvenil"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "IPDJ",
+      "avisoId": "IPDJ-paacj-programa-de-apoio-as-associacoes-de-carater-juvenil",
+      "avisoCodigo": "IPDJ-paacj-programa-de-apoio-as-associacoes-de-carater-juvenil",
+      "displayName": "IPDJ__IPDJ-paacj-programa-de-apoio-as-associacoes-de-carater-juvenil__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/IPDJ__IPDJ-paacj-programa-de-apoio-as-associacoes-de-carater-juvenil__aviso.md",
+      "sourceUrl": "https://ipdj.gov.pt/paacj-programa-de-apoio-as-associacoes-de-carater-juvenil",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "IPDJ"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "IPDJ-paacj-programa-de-apoio-as-associacoes-de-carater-juvenil"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "IPDJ-paacj-programa-de-apoio-as-associacoes-de-carater-juvenil"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://ipdj.gov.pt/paacj-programa-de-apoio-as-associacoes-de-carater-juvenil"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "IPDJ",
+      "avisoId": "IPDJ-pae-programa-de-apoio-estudantil",
+      "avisoCodigo": "IPDJ-pae-programa-de-apoio-estudantil",
+      "displayName": "IPDJ__IPDJ-pae-programa-de-apoio-estudantil__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/IPDJ__IPDJ-pae-programa-de-apoio-estudantil__aviso.md",
+      "sourceUrl": "https://ipdj.gov.pt/pae-programa-de-apoio-estudantil",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "IPDJ"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "IPDJ-pae-programa-de-apoio-estudantil"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "IPDJ-pae-programa-de-apoio-estudantil"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://ipdj.gov.pt/pae-programa-de-apoio-estudantil"
+        }
+      ]
+    },
+    {
+      "kind": "aviso_md",
+      "portal": "IPDJ",
+      "avisoId": "IPDJ-pai-programa-de-apoio-infraestrutural",
+      "avisoCodigo": "IPDJ-pai-programa-de-apoio-infraestrutural",
+      "displayName": "IPDJ__IPDJ-pai-programa-de-apoio-infraestrutural__aviso.md",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/IPDJ__IPDJ-pai-programa-de-apoio-infraestrutural__aviso.md",
+      "sourceUrl": "https://ipdj.gov.pt/pai-programa-de-apoio-infraestrutural",
+      "mimeType": "text/markdown",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "IPDJ"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "IPDJ-pai-programa-de-apoio-infraestrutural"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "IPDJ-pai-programa-de-apoio-infraestrutural"
+        },
+        {
+          "key": "docType",
+          "stringValue": "aviso_md"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://ipdj.gov.pt/pai-programa-de-apoio-infraestrutural"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PRR",
+      "avisoId": "PRR-7711",
+      "avisoCodigo": "01/C01-i07.01-RAM/2022",
+      "displayName": "PRR__01_C01-i07.01-RAM_2022__aqui.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PRR__01_C01-i07.01-RAM_2022__aqui.pdf",
+      "sourceUrl": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/05/OTE_C1-7_01_22.03.2022_RM-1.pdf",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PRR"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "01/C01-i07.01-RAM/2022"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PRR-7711"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/05/OTE_C1-7_01_22.03.2022_RM-1.pdf"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PRR",
+      "avisoId": "PRR-7761",
+      "avisoCodigo": "01/C01-i07.02-RAM/2022",
+      "displayName": "PRR__01_C01-i07.02-RAM_2022__aqui.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PRR__01_C01-i07.02-RAM_2022__aqui.pdf",
+      "sourceUrl": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/05/OTE_C1-7_01_22.03.2022_RM-2.pdf",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PRR"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "01/C01-i07.02-RAM/2022"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PRR-7761"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/05/OTE_C1-7_01_22.03.2022_RM-2.pdf"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PRR",
+      "avisoId": "PRR-7719",
+      "avisoCodigo": "01/C01-i07.03-RAM/2022",
+      "displayName": "PRR__01_C01-i07.03-RAM_2022__aqui.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PRR__01_C01-i07.03-RAM_2022__aqui.pdf",
+      "sourceUrl": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/05/OTE_C1-7_01_16.03.2022_RM-4.pdf",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PRR"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "01/C01-i07.03-RAM/2022"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PRR-7719"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/05/OTE_C1-7_01_16.03.2022_RM-4.pdf"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PRR",
+      "avisoId": "PRR-6409",
+      "avisoCodigo": "01/C01-i01/2022",
+      "displayName": "PRR__01_C01-i01_2022__aqui.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PRR__01_C01-i01_2022__aqui.pdf",
+      "sourceUrl": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/01/OT_CSP_i1.06_20220127-9.pdf",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PRR"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "01/C01-i01/2022"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PRR-6409"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/01/OT_CSP_i1.06_20220127-9.pdf"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PRR",
+      "avisoId": "PRR-50337",
+      "avisoCodigo": "PRR-50337",
+      "displayName": "PRR__PRR-50337__aqui.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PRR__PRR-50337__aqui.pdf",
+      "sourceUrl": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/10/OTE_C21-i04_SREI_28062024_vf_v2.pdf",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PRR"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "PRR-50337"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PRR-50337"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/10/OTE_C21-i04_SREI_28062024_vf_v2.pdf"
+        }
+      ]
+    },
+    {
+      "kind": "attachment",
+      "portal": "PRR",
+      "avisoId": "PRR-8579",
+      "avisoCodigo": "01/C07-i02.02/2022",
+      "displayName": "PRR__01_C07-i02.02_2022__aqui.pdf",
+      "localPath": "/Users/bilal/Programaçao/TA consulting pltaform ai/TA-Consulting-Platform/apify-actors/super-scraper/src/tests/benchmark-file-search-2025-12-12T22-13-52-829Z/dataset/PRR__01_C07-i02.02_2022__aqui.pdf",
+      "sourceUrl": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/07/AVISO-DE-PUBLICITACAO__C07-i02.02_CCDRCentro_ERAA_vf.pdf",
+      "mimeType": "application/pdf",
+      "customMetadata": [
+        {
+          "key": "portal",
+          "stringValue": "PRR"
+        },
+        {
+          "key": "avisoCodigo",
+          "stringValue": "01/C07-i02.02/2022"
+        },
+        {
+          "key": "avisoId",
+          "stringValue": "PRR-8579"
+        },
+        {
+          "key": "docType",
+          "stringValue": "attachment"
+        },
+        {
+          "key": "sourceUrl",
+          "stringValue": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/07/AVISO-DE-PUBLICITACAO__C07-i02.02_CCDRCentro_ERAA_vf.pdf"
+        }
+      ]
+    }
+  ],
+  "totalFiles": 50,
+  "createdAt": "2025-12-12T22:25:59.756Z"
+}

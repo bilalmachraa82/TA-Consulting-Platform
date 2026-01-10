@@ -1,0 +1,21 @@
+{
+    "name": "horizon-europe-scraper",
+    "version": "1.0.0",
+    "description": "Apify Actor para scraping de avisos do Portugal 2030",
+    "main": "src/main.ts",
+    "scripts": {
+        "start": "npx tsx src/main.ts",
+        "build": "echo 'No build needed'",
+        "test": "jest"
+    },
+    "dependencies": {
+        "apify": "^3.1.0",
+        "crawlee": "^3.5.0",
+        "playwright": "^1.40.0",
+        "tsx": "^4.7.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "typescript": "^5.0.0"
+    }
+}

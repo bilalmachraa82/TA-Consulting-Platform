@@ -1,0 +1,1678 @@
+{
+  "results": [
+    {
+      "model": "gemini-2.5-flash",
+      "testCaseId": "match-01",
+      "question": "Tenho um cliente com empresa de software (CAE 62010). Quais os avisos abertos hoje mais compatíveis? Dá 3 opções e justifica com base nas fontes.",
+      "answer": "Não encontrei essa informação nas fontes disponíveis para este filtro que permitam identificar explicitamente avisos abertos hoje mais compatíveis para uma empresa com o CAE 620",
+      "latencyMs": 7045,
+      "usage": {
+        "promptTokenCount": 196,
+        "candidatesTokenCount": 58,
+        "totalTokenCount": 1715
+      },
+      "citations": {
+        "citationCount": 4,
+        "citedSources": [
+          {
+            "title": "2ejrcjw7msfa"
+          },
+          {
+            "title": "103o766k16ik"
+          },
+          {
+            "title": "ujp0wvx58ddc"
+          },
+          {
+            "title": "zoyrfsu3wuwq"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PRR",
+        "PT2030"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:40:18.228Z",
+      "eval": {
+        "useful": 1,
+        "grounded": 10,
+        "honest": 10,
+        "clarity": 8,
+        "hallucinationRisk": 1,
+        "overall": 6.800000000000001,
+        "reasoning": "A resposta é honesta ao admitir que não encontrou a informação, o que é crucial para um avaliador de qualidade. É bem fundamentada porque se baseia na ausência de dados nas fontes fornecidas. A clareza é boa, embora pudesse ser ligeiramente melhor se explicasse brevemente o que o filtro 'sem filtro'"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "testCaseId": "match-02",
+      "question": "Tenho um cliente agrícola (CAE 01). Que avisos do PEPAC são mais adequados e porquê? Se não houver correspondência explícita, diz que não encontras.",
+      "portalFilter": "PEPAC",
+      "metadataFilter": "portal = \"PEPAC\"",
+      "answer": "Para um cliente agrícola com CAE 01, os seguintes avisos do PEPAC parecem ser os mais adequados, com base na informação disponível:\n\n1.  **AG PEPACC/Aviso 02/C.2.1.1/2025 - C.2.1.1 \"Investimento Produtivo Agrícola - Modernização\" - Explorações Agrícolas - Aviso Multissetorial**\n    *   **Porquê é adequado:** Este aviso visa especificamente reforçar a competitividade, melhorar o desempenho e garantir a viabilidade e sustentabilidade das explorações agrícolas. Apoia o aumento da produção, a criação de valor, a melhoria da qualidade dos produtos e a introdução de métodos e produtos inovadores, incluindo para o desempenho ambiental das explorações agrícolas. Dada a natureza agrícola do cliente (CAE 01), este aviso é diretamente relevante para investimentos na própria exploração.\n\n2.  **AG PEPACC/Aviso 01/C.3.1.1/2025 - C.3.1.1 \"Investimento produtivo na Bioeconomia - Modernização\" - Aviso Agroindústria**\n    *   **Porquê é adequado:** Embora focado na \"Agroindústria\", este aviso visa apoiar o desenvolvimento da Bioeconomia para potenciar a competitividade do setor agrícola e florestal. Prevê o apoio a investimentos em empresas da Bioeconomia associadas à agricultura ou floresta, com o objetivo de melhorar o desempenho competitivo através do aumento da produção, criação de valor baseada no conhecimento, processos e produtos inovadores, melhoria da qualidade e gestão eficiente de recursos. Os beneficiários elegíveis são pessoas singulares ou coletivas que se dediquem à transformação ou comercialização de produtos agrícolas. Se o cliente agrícola (CAE",
+      "latencyMs": 6255,
+      "usage": {
+        "promptTokenCount": 199,
+        "candidatesTokenCount": 402,
+        "totalTokenCount": 1618
+      },
+      "citations": {
+        "citationCount": 3,
+        "citedSources": [
+          {
+            "title": "28eiwjk1ke3l"
+          },
+          {
+            "title": "bu8cvzuoqz1r"
+          },
+          {
+            "title": "87bsnb6h2hf9"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PEPAC"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:40:28.223Z",
+      "eval": {
+        "useful": 8,
+        "grounded": 9,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 8.8,
+        "reasoning": "A resposta identifica corretamente dois avisos relevantes para o CAE 01, explicando o porquê da sua adequação. As citações parecem suportar as informações fornecidas. A estrutura é clara e o português correto. O modelo não inventa avisos e admite implicitamente que estes são os mais adequados 'com b"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "testCaseId": "recom-01",
+      "question": "Uma startup tecnológica em Lisboa quer I&D com parceiros europeus. Recomenda o melhor fundo/programa e dá 2-3 próximos passos concretos.",
+      "answer": "Para uma startup tecnológica em Lisboa que pretende desenvolver atividades de I&D com parceiros europeus, o programa **HORIZON-EIE-2026-01-CONNECT-03: Scaling up deep tech ecosystems** do Horizon Europe é uma opção relevante a considerar. [citePara uma startup tecnológica em Lisboa que pretende desenvolver atividades de I&D com parceiros europeus, o programa **HORIZON-EIE-2026-01-CONNECT-03: Scaling up deep tech ecosystems** do Horizon Europe é uma opção relevante a considerar. [cite",
+      "latencyMs": 6186,
+      "usage": {
+        "promptTokenCount": 190,
+        "candidatesTokenCount": 145,
+        "totalTokenCount": 1866
+      },
+      "citations": {
+        "citationCount": 4,
+        "citedSources": [
+          {
+            "title": "103o766k16ik"
+          },
+          {
+            "title": "d8f5gjqehpj2"
+          },
+          {
+            "title": "7mnkne0yijzp"
+          },
+          {
+            "title": "9qx873n5eqcw"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PT2030",
+        "HORIZON"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:40:38.157Z",
+      "eval": {
+        "useful": 4,
+        "grounded": 5,
+        "honest": 5,
+        "clarity": 5,
+        "hallucinationRisk": 5,
+        "overall": 4.2,
+        "reasoning": "A resposta identifica um programa do Horizon Europe, o que é um bom ponto de partida. No entanto, o programa específico 'HORIZON-EIE-2026-01-CONNECT-03: Scaling up deep tech ecosystems' parece ser uma alucinação ou uma referência a um call muito específico e futuro, não sendo o mais genérico ou imed"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "testCaseId": "open-01",
+      "question": "Quais são os avisos que estão abertos para candidatura AGORA? Lista os mais relevantes e indica o prazo (quando fecha).",
+      "answer": "Com base na informação disponível, seguem os avisos que se encontram abertos para candidatura, com os respetivos prazos de fecho:\n\n**Avisos com prazos de fecho definidos:**\n\n*   **PT2030:**\n    *   **Mobilidade Sustentável (FA0114/2025)**: Fecha a 19 de dezembro de 2025.\n    *   **Proteção e conservação da natureza e biodiversidade (FA0113/2025)**: Fecha a 19 de dezembro de 2025.\n    *   **Capacitação da rede nacional de acolhimento de requerentes e beneficiários de proteção internacional (FA0943/2024)**: Fecha a 30 de abril de 2026.\n    *   **Proteção civil e gestão integrada de riscos – Prevenção e mitigação de riscos associados a derrocada de taludes ou para suporte de terras (FA0036/2025)**: Fecha a 29 de maio de 2026.\n    *   **Medidas de adaptação às alterações climáticas (FA0154/2025)**: Fecha a 31 de agosto de 2026.\n\n*   **PEPAC:**\n    *   **Investimento produtivo agrícola – Modernização | Multissetores (2º Concurso) (PEPACC-10455)**: Fecha a 30 de dezembro de 2025.\n    *   **Investimento produtivo bioeconomia – Modernização | Multissetores -Agroindústria (1º Concurso) (PEPACC-10927)**: Fecha a 30 de dezembro de 2025.\n    *   **Restabelecimento do potencial produtivo (2º Concurso) (PEPACC-11059)**: Fecha a 16 de janeiro de 2026.\n    *   **Restabelecimento do potencial silvícola na sequência de catástrofes naturais, de fenómenos climatericos adversos ou de acontecimentos catastróficos (PEPACC-11124)**: Fecha a 12 de janeiro de 2026.\n",
+      "latencyMs": 6100,
+      "usage": {
+        "promptTokenCount": 183,
+        "candidatesTokenCount": 521,
+        "totalTokenCount": 1382
+      },
+      "citations": {
+        "citationCount": 3,
+        "citedSources": [
+          {
+            "title": "103o766k16ik"
+          },
+          {
+            "title": "28eiwjk1ke3l"
+          },
+          {
+            "title": "87bsnb6h2hf9"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PT2030",
+        "PEPAC"
+      ],
+      "portalLeakage": false,
+      "expectedCodesScore": 0.8333333333333334,
+      "timestamp": "2025-12-12T22:40:47.933Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 10,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 9.4,
+        "reasoning": "A resposta é muito útil para um consultor de fundos, pois lista os avisos abertos com os respetivos prazos de fecho, organizados por programa (PT2030 e PEPAC). As informações parecem estar bem ancoradas nas fontes citadas. A linguagem é clara e a estrutura facilita a leitura e a identificação dos av"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "testCaseId": "open-02",
+      "question": "No portal PRR, quais avisos estão abertos hoje e quando fecham? (lista curta)",
+      "portalFilter": "PRR",
+      "metadataFilter": "portal = \"PRR\"",
+      "answer": "",
+      "latencyMs": 5548,
+      "usage": {
+        "promptTokenCount": 177,
+        "candidatesTokenCount": 0,
+        "totalTokenCount": 649
+      },
+      "citations": {
+        "citationCount": 0,
+        "citedSources": []
+      },
+      "inferredCitedPortals": [],
+      "portalLeakage": false,
+      "expectedCodesScore": 0,
+      "timestamp": "2025-12-12T22:40:57.226Z",
+      "eval": {
+        "useful": 1,
+        "grounded": 1,
+        "honest": 1,
+        "clarity": 1,
+        "hallucinationRisk": 8,
+        "overall": 0.19999999999999996,
+        "reasoning": "A resposta do modelo está vazia, o que significa que não forneceu nenhuma informação. Embora isso possa ser interpretado como 'honesto' no sentido de não inventar, não é útil e não demonstra clareza. O risco de alucinação é alto porque, se o modelo tivesse tentado responder, a probabilidade de inven"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "testCaseId": "pt-elig-01",
+      "question": "No aviso FA0943/2024, que tipo de entidades podem candidatar-se (beneficiários elegíveis) e quais restrições principais?",
+      "portalFilter": "PT2030",
+      "metadataFilter": "portal = \"PT2030\"",
+      "answer": "Para o aviso FA0943/2024, as entidades que podem candidatar-se (beneficiários elegíveis) são as seguintes:\n*   Entidades públicas e privadas sem fins lucrativos ou equiparadas.\n*   Autarquias locais.\n*   Comunidades intermunicipais.\n*   Áreas metropolitanas.\n*   Organizações internacionais.\n\nRelativamente às restrições principais, as fontes disponíveis não detalham restrições específicas para as entidades elegíveis além da sua tipologia. O aviso tem como objetivo a capacitação da rede nacional de acolhimento de requerentes e beneficiários de proteção internacional e insere-se no Programa FAMI 2030. O período de candidaturas decorre entre janeiro e abril de 2026, e a modalidade de apresentação pode ser individual ou em parceria.\n\n**Próximos passos práticos para o consultor:**\n1.  **Verificar a tipologia da entidade:** Confirmar se a entidade que pretende candidatar-se se enquadra numa das categorias de beneficiários elegíveis.\n2.  **Consultar o aviso completo:** Aceder ao documento FA0943/2024.pdf (disponível em https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-238.octet-stream) para verificar se existem outras condições ou restrições detalhadas que não foram extraídas para o resumo.\n3.  **Analisar as ações elegíveis:** Embora não explicitado na pergunta, é crucial entender as ações que são financiáveis para garantir que o projeto da entidade se alinha com os objetivos do aviso.\n4.  **Prazos de candidatura:** Tomar nota que o período de candidaturas é de janeiro a abril de 2026.",
+      "latencyMs": 5825,
+      "usage": {
+        "promptTokenCount": 192,
+        "candidatesTokenCount": 455,
+        "totalTokenCount": 1377
+      },
+      "citations": {
+        "citationCount": 4,
+        "citedSources": [
+          {
+            "title": "7ah8kavmu2jr"
+          },
+          {
+            "title": "0ep96dublwux"
+          },
+          {
+            "title": "3d8aqzwu6rpn"
+          },
+          {
+            "title": "drr7e22f077e"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PT2030"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:41:06.944Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 9,
+        "honest": 9,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 8.9,
+        "reasoning": "A resposta é muito útil para um consultor, listando claramente os beneficiários elegíveis e as restrições (ou a falta delas, com a devida honestidade). As citações suportam a informação apresentada. A linguagem é clara e a estrutura é lógica, com 'próximos passos práticos' que são acionáveis. O risc"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "testCaseId": "prr-deadline-01",
+      "question": "No aviso 1/C06-i08-RAM/2024, qual é o prazo/data limite de candidatura?",
+      "portalFilter": "PRR",
+      "metadataFilter": "portal = \"PRR\"",
+      "answer": "Não encontrei essa informação nas fontes disponíveis para este filtro. As informações indicam que o aviso 1/C06-i08-RAM/2024 está \"Aberto\" e a data da Orientação Técnica é 24/07/2024, mas não especificam um prazo ou data limite de candidatura.\n\nPara obter informações sobre o prazo de candidatura, o consultor pode considerar os seguintes próximos passos:\n*   Contactar o IDR (Instituto de Desenvolvimento Regional) através do email idr@madeira.gov.pt ou do contacto telefónico 291 214 000, conforme indicado na descrição do aviso.\n*   Consultar o URL oficial do aviso no Portal PRR: https://recuperarportugal.gov.pt/candidatura/01-ampliacao-do-edificio-do-citma-aviso-n-o1-c06-i08-ram-2024/ para verificar se há atualizações ou documentos adicionais que especifiquem o prazo.",
+      "latencyMs": 3932,
+      "usage": {
+        "promptTokenCount": 186,
+        "candidatesTokenCount": 272,
+        "totalTokenCount": 1114
+      },
+      "citations": {
+        "citationCount": 3,
+        "citedSources": [
+          {
+            "title": "84yrj4w89j33"
+          },
+          {
+            "title": "ov0beq2n4qbc"
+          },
+          {
+            "title": "hyr9m55iiizf"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PRR"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:41:14.705Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 9,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 9.1,
+        "reasoning": "A resposta é muito útil, pois não só admite não ter a informação direta, mas também fornece passos acionáveis e contatos para o consultor obter a informação. Está bem ancorada nas fontes citadas, que parecem ser relevantes para o aviso em questão. A honestidade em admitir a falta de informação diret"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "testCaseId": "pepac-docs-01",
+      "question": "No aviso PEPACC-11124, que documentos/anexos são pedidos para a candidatura? Faz checklist.",
+      "portalFilter": "PEPAC",
+      "metadataFilter": "portal = \"PEPAC\"",
+      "answer": "Para a candidatura ao aviso PEPACC-11124, os seguintes documentos/anexos são disponibilizados como referência e parte integrante do processo de candidatura:\n\n**",
+      "latencyMs": 5944,
+      "usage": {
+        "promptTokenCount": 182,
+        "candidatesTokenCount": 63,
+        "totalTokenCount": 1529
+      },
+      "citations": {
+        "citationCount": 3,
+        "citedSources": [
+          {
+            "title": "a3sxyvmxzbmf"
+          },
+          {
+            "title": "ckmfaon9piqr"
+          },
+          {
+            "title": "28eiwjk1ke3l"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PEPAC"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:41:24.049Z",
+      "eval": {
+        "useful": 2,
+        "grounded": 0,
+        "honest": 0,
+        "clarity": 2,
+        "hallucinationRisk": 8,
+        "overall": 0.19999999999999996,
+        "reasoning": "A resposta não lista os documentos/anexos pedidos, que era o cerne da pergunta. Em vez disso, afirma que 'os seguintes documentos/anexos são disponibilizados como referência e parte integrante do processo de candidatura', mas não os lista. As citações não levam a nenhuma informação relevante sobre o"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "testCaseId": "horizon-01",
+      "question": "Na call HORIZON-EIE-2026-01-CONNECT-02, qual é o objetivo e o prazo (deadline), e que tipo de entidade tipicamente participa? Se não estiver claro, diz que não encontras.",
+      "portalFilter": "HORIZON",
+      "metadataFilter": "portal = \"HORIZON\"",
+      "answer": "Para a call HORIZON-EIE-2026-01-CONNECT-02, o objetivo e o prazo são os seguintes:\n\n**Objetivo:**\nOs resultados esperados do projeto devem contribuir para os seguintes resultados:\n*   Aumento dos investimentos de capital de risco estrangeiros provenientes de fundos de regiões inovadoras \"fortes\" ou \"líderes em inovação\".\n*   Possibilitar o crescimento em fases posteriores para a expansão para estas regiões de startups locais de ecossistemas de inovação menos conectados e desenvolvidos (\"emergentes\" ou \"moderados\").\n*   Aumento da consciencialização dos investidores estrangeiros e do seu acesso ao fluxo de negócios locais de regiões inovadoras \"emergentes\" ou \"moderadas\".\n\n**Prazo (deadline):**\nA data de fecho para esta call é 20 de janeiro de 2026.\n\n**Tipo de entidade tipicamente participa:**\nCom base nos objetivos, as entidades que tipicamente participam incluem fundos de capital de risco (venture investments from funds) de regiões inovadoras \"fortes\" ou \"líderes em inovação\", e startups locais de ecossistemas de inovação \"emergentes\" ou \"moderados\".\n\n**Próximos passos práticos para o consultor:**\n1.  **Analisar o perfil do cliente:** Avaliar se o cliente é um fundo de capital de risco ou uma startup e se se enquadra nas regiões mencionadas (investidor de região \"forte\" ou startup de região \"emergente\").\n2.  **Detalhar a proposta:** Desenvolver uma proposta que demonstre claramente como o projeto contribuirá para os resultados esperados, focando no aumento de investimentos estrangeiros e no crescimento de startups.\n3.  **Verificar elegibilidade:** Confirmar todos os critérios de elegibilidade específicos no portal do Horizon Europe para esta call.\n4.  **Preparar documentação:** Iniciar a preparação de toda a documentação necessária com bastante antecedência, considerando o prazo de 20 de janeiro de 2026.",
+      "latencyMs": 5872,
+      "usage": {
+        "promptTokenCount": 208,
+        "candidatesTokenCount": 480,
+        "totalTokenCount": 1577
+      },
+      "citations": {
+        "citationCount": 5,
+        "citedSources": [
+          {
+            "title": "7mnkne0yijzp"
+          },
+          {
+            "title": "wn27gdhiitiv"
+          },
+          {
+            "title": "d8f5gjqehpj2"
+          },
+          {
+            "title": "9qx873n5eqcw"
+          },
+          {
+            "title": "dss5o53m9d58"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "HORIZON"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:41:33.687Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 9,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 9.1,
+        "reasoning": "A resposta é muito útil para um consultor, fornecendo informações claras e acionáveis sobre o objetivo, prazo e tipo de entidades participantes. As citações indicam que a informação está bem ancorada. A estrutura é clara e o português é excelente. O risco de alucinação é baixo, pois a resposta se ba"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "testCaseId": "crea-01",
+      "question": "Na call CREA-CULT-2025-COOP-UA-1, qual é o deadline e qual o tema do aviso?",
+      "portalFilter": "EUROPA_CRIATIVA",
+      "metadataFilter": "portal = \"EUROPA_CRIATIVA\"",
+      "answer": "Para a call CREA-CULT-2025-COOP-UA-1, o prazo de fecho é 5 de dezembro de 2025. O tema do aviso é \"ZMINA: Finanțarea semințelor de reziliență\".",
+      "latencyMs": 2318,
+      "usage": {
+        "promptTokenCount": 187,
+        "candidatesTokenCount": 96,
+        "totalTokenCount": 722
+      },
+      "citations": {
+        "citationCount": 4,
+        "citedSources": [
+          {
+            "title": "3e9xrrjdj24c"
+          },
+          {
+            "title": "ozknq2nzbjk6"
+          },
+          {
+            "title": "tw1am2u3bcwt"
+          },
+          {
+            "title": "ay13cr939f0n"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "EUROPA_CRIATIVA"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:41:39.738Z",
+      "eval": {
+        "useful": 7,
+        "grounded": 8,
+        "honest": 9,
+        "clarity": 8,
+        "hallucinationRisk": 2,
+        "overall": 7.7,
+        "reasoning": "A resposta fornece o deadline e o tema do aviso, que são informações cruciais para um consultor de fundos. As citações indicam que a informação está ancorada em fontes. O tema está em romeno, o que pode ser um pequeno inconveniente, mas não invalida a utilidade da informação. Não há indícios de aluc"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "testCaseId": "ipdj-01",
+      "question": "No programa IPDJ-apoio-e-financiamento-jovem, qual o tipo de apoio e como aceder/submeter pedido?",
+      "portalFilter": "IPDJ",
+      "metadataFilter": "portal = \"IPDJ\"",
+      "answer": "Não encontrei essa informação nas fontes disponíveis para este filtro. As fontes indicam a existência do programa \"IPDJ-apoio-e-financiamento-jovem\" e o seu status como \"Aberto\", com o URL `https://ipdj.gov.pt/apoio-e-financiamento-jovem`. No entanto, não detalham o tipo específico de apoio oferecido nem o processo para aceder ou submeter um pedido.\n\n**Próximos passos práticos para o consultor:**\n\n1.  **Aceder ao URL oficial:** Recomenda-se visitar diretamente o website `https://ipdj.gov.pt/apoio-e-financiamento-jovem` para obter informações detalhadas sobre o tipo de apoio e os procedimentos de candidatura.\n2.  **Contactar o IPDJ:** Caso a informação não seja clara no website, o consultor poderá contactar diretamente o IPDJ através dos contactos disponíveis no portal para esclarecer dúvidas sobre o programa.",
+      "latencyMs": 4133,
+      "usage": {
+        "promptTokenCount": 187,
+        "candidatesTokenCount": 244,
+        "totalTokenCount": 1144
+      },
+      "citations": {
+        "citationCount": 5,
+        "citedSources": [
+          {
+            "title": "lclw2639tvo8"
+          },
+          {
+            "title": "c56iekgems98"
+          },
+          {
+            "title": "kpxx385tyh6u"
+          },
+          {
+            "title": "hkx9d8khb603"
+          },
+          {
+            "title": "m3rsqgwcbijb"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "IPDJ"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:41:47.223Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 10,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 9.4,
+        "reasoning": "A resposta é muito útil porque, apesar de não encontrar a informação específica, direciona o consultor para os próximos passos práticos e o URL correto. É totalmente ancorada nas citações, admitindo honestamente a falta de detalhe. A linguagem é clara, estruturada e as ações sugeridas são diretas. O"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "testCaseId": "wrong-filter-01",
+      "question": "Pergunta: No aviso 1/C06-i08-RAM/2024, quais são os beneficiários? (Deve falhar se o filtro estiver errado)",
+      "portalFilter": "PEPAC",
+      "metadataFilter": "portal = \"PEPAC\"",
+      "answer": "Não encontrei essa informação nas fontes disponíveis para este filtro.",
+      "latencyMs": 2743,
+      "usage": {
+        "promptTokenCount": 194,
+        "candidatesTokenCount": 47,
+        "totalTokenCount": 821
+      },
+      "citations": {
+        "citationCount": 4,
+        "citedSources": [
+          {
+            "title": "ckmfaon9piqr"
+          },
+          {
+            "title": "qg38rqtw50cx"
+          },
+          {
+            "title": "28eiwjk1ke3l"
+          },
+          {
+            "title": "87bsnb6h2hf9"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PEPAC"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:41:53.618Z",
+      "eval": {
+        "useful": 8,
+        "grounded": 10,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 9.100000000000001,
+        "reasoning": "A resposta é útil porque informa ao consultor que a informação não foi encontrada sob o filtro aplicado, o que é uma informação relevante. É bem fundamentada, pois o modelo indica que não encontrou a informação nas fontes disponíveis para o filtro. É honesta ao admitir a falta de informação. A clare"
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "testCaseId": "neg-01",
+      "question": "Qual é a taxa de juro do BCE em Dezembro de 2025?",
+      "answer": "Não encontrei essa informação nas fontes disponíveis para este filtro. As fontes mencionam a \"taxa de refinanciamento do Banco Central Europeu (REFI)\" em relação a critérios de rentabilidade para candidaturas, mas não especificam a taxa de juro do BCE para Dezembro de 2025.",
+      "latencyMs": 2829,
+      "usage": {
+        "promptTokenCount": 175,
+        "candidatesTokenCount": 87,
+        "totalTokenCount": 770
+      },
+      "citations": {
+        "citationCount": 4,
+        "citedSources": [
+          {
+            "title": "bu8cvzuoqz1r"
+          },
+          {
+            "title": "28eiwjk1ke3l"
+          },
+          {
+            "title": "97hvya7062zw"
+          },
+          {
+            "title": "docf3a5pbue5"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PEPAC",
+        "PT2030",
+        "PRR"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:41:59.962Z",
+      "eval": {
+        "useful": 5,
+        "grounded": 10,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 0,
+        "overall": 8.3,
+        "reasoning": "A resposta é útil na medida em que informa o consultor que a informação não está disponível, evitando que ele procure em vão. É perfeitamente ancorada e honesta ao admitir a falta de informação. A clareza é boa, e o risco de alucinação é nulo, pois não inventa dados."
+      }
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "testCaseId": "neg-02",
+      "question": "Quanto tempo demora a aprovação de uma candidatura ao PRR?",
+      "portalFilter": "PRR",
+      "metadataFilter": "portal = \"PRR\"",
+      "answer": "Não encontrei essa informação nas fontes disponíveis para este filtro sobre o tempo exato de aprovação de uma candidatura inicial ao PRR.\n\nNo entanto, as fontes indicam que a calendarização do processo de análise e decisão, incluindo a data limite para a comunicação da decisão aos Beneficiários Finais, deve ser especificada nos avisos de abertura de candidaturas.\n\nRelativamente aos pedidos de pagamento (reembolso ou adiantamento), os prazos mencionados são:\n*   Para pedidos de reembolso, a entidade responsável (como o IDR, IP-RAM ou ACSS, I.P.) tem 30 dias úteis a partir da data de receção para analisar o pedido, deliberar e emitir a ordem de pagamento ou comunicar os motivos da recusa. Este prazo pode ser suspenso se forem solicitados esclarecimentos adicionais.\n*   Se for emitido um pagamento a título de adiantamento, a sua conversão em pagamento a título de reembolso, através da validação do pedido correspondente, deve ocorrer num prazo não superior a 60 dias úteis.\n\n**Próximos passos práticos para o consultor:**\n1.  **Consultar o Aviso de Abertura:** Para cada concurso específico do PRR, o consultor deve verificar o Aviso de Abertura da candidatura, pois este documento deverá detalhar a calendarização do processo de análise e decisão, incluindo a data limite para a comunicação da decisão aos Beneficiários Finais.\n2.  **Acompanhar o estado da candidatura:** Manter um acompanhamento ativo do estado da candidatura através dos canais de comunicação indicados no aviso.",
+      "latencyMs": 4713,
+      "usage": {
+        "promptTokenCount": 169,
+        "candidatesTokenCount": 365,
+        "totalTokenCount": 1063
+      },
+      "citations": {
+        "citationCount": 5,
+        "citedSources": [
+          {
+            "title": "docf3a5pbue5"
+          },
+          {
+            "title": "hyr9m55iiizf"
+          },
+          {
+            "title": "14pv7kfton66"
+          },
+          {
+            "title": "ov0beq2n4qbc"
+          },
+          {
+            "title": "ujp0wvx58ddc"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PRR"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:42:08.646Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 9,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 9.1,
+        "reasoning": "A resposta é muito útil para um consultor, pois, embora admita não ter a informação exata para a aprovação inicial, fornece os passos práticos para obtê-la (consultar o aviso de abertura) e detalha os prazos para pedidos de pagamento, que são informações relevantes. A honestidade em admitir a falta "
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "testCaseId": "match-01",
+      "question": "Tenho um cliente com empresa de software (CAE 62010). Quais os avisos abertos hoje mais compatíveis? Dá 3 opções e justifica com base nas fontes.",
+      "answer": "Não encontrei essa informação nas fontes disponíveis para este filtro.\n\nA pesquisa retornou uma lista de avisos abertos, mas nenhum deles especifica a elegibilidade para empresas de software ou para o CAE 62010. Os avisos encontrados destinam-se a áreas como infraestruturas rodoviárias, proteção da natureza, agricultura, setor florestal, apoio juvenil e outros que não se relacionam diretamente com a atividade de desenvolvimento de software.",
+      "latencyMs": 10386,
+      "usage": {
+        "promptTokenCount": 196,
+        "candidatesTokenCount": 121,
+        "totalTokenCount": 2127
+      },
+      "citations": {
+        "citationCount": 3,
+        "citedSources": [
+          {
+            "title": "zoyrfsu3wuwq"
+          },
+          {
+            "title": "2ejrcjw7msfa"
+          },
+          {
+            "title": "103o766k16ik"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PRR",
+        "PT2030"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:42:22.752Z",
+      "eval": {
+        "useful": 2,
+        "grounded": 8,
+        "honest": 9,
+        "clarity": 8,
+        "hallucinationRisk": 1,
+        "overall": 6.300000000000001,
+        "reasoning": "A resposta é honesta ao admitir que não encontrou a informação, o que é crucial para um avaliador de qualidade. Está bem fundamentada nas fontes citadas, indicando que a pesquisa foi feita e os resultados não eram relevantes. A clareza é boa, explicando o porquê da não compatibilidade dos avisos enc"
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "testCaseId": "match-02",
+      "question": "Tenho um cliente agrícola (CAE 01). Que avisos do PEPAC são mais adequados e porquê? Se não houver correspondência explícita, diz que não encontras.",
+      "portalFilter": "PEPAC",
+      "metadataFilter": "portal = \"PEPAC\"",
+      "answer": "Com base na informação disponível, identifiquei os seguintes avisos do PEPAC que podem ser adequados para um cliente com atividade agrícola (CAE 01).\n\n### Avisos PEPAC Relevantes\n\n#### 1. Aviso AG PEPACC/Aviso 02/C.2.1.1/2025: Investimento Produtivo Agrícola - Modernização\n\nEste aviso parece ser o mais diretamente alinhado com um cliente cuja atividade principal é a produção agrícola.\n\n*   **Porquê é adequado?**\n    *   **Objetivo Principal:** O aviso visa reforçar a competitividade, melhorar o desempenho e garantir a sustentabilidade das explorações agrícolas. Os apoios destinam-se a aumentar a produção, criar valor, melhorar a qualidade dos produtos e introduzir métodos inovadores.\n    *   **Beneficiários:** Destina-se a pessoas singulares ou coletivas que exerçam atividade agrícola. Isto enquadra diretamente um cliente com CAE do grupo 01.\n    *   **Prioridades:** Foca-se em aumentar a competitividade das explorações agrícolas, com ênfase em tecnologia e digitalização, e contribuir para a atenuação das alterações climáticas.\n\n#### 2. Aviso AG PEPACC/Aviso 01/C.3.1.1/2025: Investimento produtivo na Bioeconomia - Modernização (Aviso Agroindústria)\n\nEste aviso pode ser relevante se o projeto do seu cliente envolver a transformação ou comercialização de produtos agrícolas, indo além da simples produção primária.\n\n*   **Porquê é adequado?**\n    *   **Objetivo Principal:** Apoiar o desenvolvimento da Bioeconomia para potenciar a competitividade do setor agrícola, através de investimentos que melhorem o desempenho competitivo, aumentem a produção e criem valor.\n    *   **Beneficiários:** Destina-se a pessoas singulares ou coletivas dedicadas à transformação ou comercialização de produtos agrícolas. Se o seu cliente, para além da produção (CAE 01), também realiza atividades de transformação, este aviso pode ser uma excelente opção.\n    *   **Foco:** O aviso apoia a criação de valor baseada em conhecimento, processos e produtos inovadores, melhoria da qualidade e gestão eficiente de recursos, incluindo o uso de energias renováveis.\n\n### Próximos Passos (Checklist para o Consultor)\n\nPara determinar qual o aviso mais adequado e preparar uma candidatura de sucesso, sugiro os seguintes passos:\n\n1.  **Analisar o Projeto do Cliente:**\n    *   O investimento é exclusivamente para a produção agrícola (ex: modernização de estufas, compra de maquinaria, sistemas de rega)? Se sim, o **Aviso de \"Investimento Produtivo Agrícola\"** (Aviso 02/C.2.1.1/2025) é provavelmente o mais indicado.\n    *   O projeto inclui uma componente de transformação ou comercialização do produto agrícola (ex: construção de uma unidade para embalamento, transformação de fruta em compota, lagar de azeite)? Se sim, o **Aviso de \"Bioeconomia - Agroindústria\"** (Aviso 01/C.3.1.1/2025) deve ser considerado.\n\n2.  **Verificar a Elegibilidade do Beneficiário:**\n    *   Confirmar que o cliente cumpre todos os requisitos definidos como \"beneficiário elegível\" em cada um dos avisos.\n    *   Consultar em detalhe as portarias mencionadas nos avisos (Portaria n.º 274/2024/1 e Portaria n.º 348/2024/1) para verificar todas as condições de elegibilidade específicas.\n\n3.  **Confirmar a Área Geográfica:**\n",
+      "latencyMs": 16848,
+      "usage": {
+        "promptTokenCount": 199,
+        "candidatesTokenCount": 856,
+        "totalTokenCount": 2950
+      },
+      "citations": {
+        "citationCount": 2,
+        "citedSources": [
+          {
+            "title": "28eiwjk1ke3l"
+          },
+          {
+            "title": "bu8cvzuoqz1r"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PEPAC"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:42:43.406Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 9,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 9.1,
+        "reasoning": "A resposta é muito útil para um consultor, identificando avisos relevantes e explicando o porquê da adequação. Está bem ancorada nas informações fornecidas (embora as 'citações' sejam apenas identificadores internos e não links diretos para os documentos, o que é uma limitação do formato de entrada)"
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "testCaseId": "recom-01",
+      "question": "Uma startup tecnológica em Lisboa quer I&D com parceiros europeus. Recomenda o melhor fundo/programa e dá 2-3 próximos passos concretos.",
+      "answer": "Com base na necessidade de uma startup tecnológica realizar I&D com parceiros europeus, o programa mais adequado é o **Horizon Europe**. Este programa foi desenhado especificamente para financiar projetos de investigação e inovação que envolvam consórcios pan-europeus.\n\n### **Programa Recomendado: Horizon Europe**\n\nO Horizon Europe é o principal programa de financiamento da União Europeia para a investigação e inovação. É particularmente relevante porque se foca em projetos colaborativos que juntam parceiros de diferentes países europeus, incluindo empresas (como PMEs e startups), universidades e centros de investigação.\n\nDentro do Horizon Europe, existem várias `calls` (convites à apresentação de propostas) abertas que podem ser relevantes para uma startup tecnológica, tais como:\n*   **Scaling up deep tech ecosystems**: Focada no desenvolvimento de ecossistemas de tecnologias de ponta (\"deep tech\") em torno de infraestruturas de investigação pan-europeias para gerar e escalar tecnologias disruptivas.\n*   **Expanding Investment Ecosystems**: Visa aumentar o investimento de capital de risco estrangeiro em startups de ecossistemas de inovação menos desenvolvidos.\n*   **Accelerating freight transport and logistics digital innovation**: Destinada a projetos de inovação digital no setor dos transportes e logística.\n\n### **Próximos Passos para o Consultor**\n\nPara apoiar a startup, sugiro a seguinte checklist de ações concretas:\n\n1.  **Analisar as `calls` específicas**: Navegar no portal de oportunidades da Comissão Europeia para o Horizon Europe e identificar a `call` que melhor se alinha com a área tecnológica e o projeto de I&D da startup. É crucial verificar os \"Expected Outcomes\" (resultados esperados) de cada `call` para garantir o alinhamento.\n2.  **Construir o Consórcio**: O Horizon Europe exige, na maioria dos casos, um consórcio com parceiros de diferentes Estados-Membros. O próximo passo é identificar e contactar potenciais parceiros europeus (outras empresas, universidades, centros de I&D) que possam complementar as competências da startup e contribuir para os objetivos do projeto. A própria plataforma da Comissão Europeia tem ferramentas para a procura de parceiros.\n3.  **Preparar a Proposta**: Iniciar a preparação da candidatura, que é um processo exigente. A proposta deve detalhar a excelência científica do projeto, o seu impacto potencial (a nível de mercado e social) e a qualidade do plano de implementação. Recomenda-se começar este processo com bastante antecedência em relação à data de fecho da `call`, que para muitas das oportunidades relevantes será em janeiro de 2026.",
+      "latencyMs": 14837,
+      "usage": {
+        "promptTokenCount": 190,
+        "candidatesTokenCount": 595,
+        "totalTokenCount": 2557
+      },
+      "citations": {
+        "citationCount": 4,
+        "citedSources": [
+          {
+            "title": "d8f5gjqehpj2"
+          },
+          {
+            "title": "7mnkne0yijzp"
+          },
+          {
+            "title": "9qx873n5eqcw"
+          },
+          {
+            "title": "103o766k16ik"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "HORIZON",
+        "PT2030"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:43:01.837Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 9,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 9.1,
+        "reasoning": "A resposta é muito útil, identificando corretamente o Horizon Europe como o programa mais adequado e fornecendo exemplos de 'calls' relevantes. Os próximos passos são concretos e acionáveis para um consultor. A informação está bem ancorada nas fontes citadas, e a linguagem é clara e estruturada. O r"
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "testCaseId": "open-01",
+      "question": "Quais são os avisos que estão abertos para candidatura AGORA? Lista os mais relevantes e indica o prazo (quando fecha).",
+      "answer": "Com base na informação disponível e considerando a data atual (12 de dezembro de 2025), estes são os avisos mais relevantes que se encontram abertos para candidatura:\n\n### Avisos com Prazo Definido\n\n**Portugal 2030**\n*   **Mobilidade Sustentável (FA0114/2025):** Este aviso encerra a **19 de dezembro de 2025**.\n*   **Proteção e conservação da natureza e biodiversidade (FA0113/2025):** O prazo para candidatura termina a **19 de dezembro de 2025**.\n*   **Capacitação da rede nacional de acolhimento de requerentes e beneficiários de proteção internacional (FA0943/2024):** As candidaturas estão abertas até **30 de abril de 2026**. Os beneficiários incluem entidades públicas e privadas sem fins lucrativos, autarquias, comunidades intermunicipais, áreas metropolitanas e organizações internacionais.\n*   **Proteção civil e gestão integrada de riscos (FA0036/2025):** O prazo de submissão vai até **29 de maio de 2026**.\n*   **Medidas de adaptação às alterações climáticas (FA0154/2025):** As candidaturas podem ser submetidas até **31 de agosto de 2026**.\n\n**PEPAC (Plano Estratégico da Política Agrícola Comum)**\n*   **Investimento produtivo agrícola – Modernização | Multissetores (PEPACC-10455):** O prazo para candidatura termina a **30 de dezembro de 2025**.\n*   **Investimento produtivo bioeconomia – Modernização | Multissetores - Agroindústria (PEPACC-10927):** Encerra a **30 de dezembro de 2025**.\n*   **Restabelecimento do potencial silvícola (PEPACC-11124):** As candidaturas fecham a **12 de janeiro de 2026**.\n*   **Restabelecimento do potencial produtivo (PEPACC-11059):** O prazo termina a **16 de janeiro de 2026**.\n*   **Investimento produtivo bioeconomia – Modernização | Setor Florestal (PEPACC-11103):** As candidaturas podem ser submetidas até **22 de janeiro de 2026**.\n\n**Horizon Europe**\n*   Vários avisos relacionados com ecossistemas de investimento, inovação, \"deep tech\", inteligência artificial e logística de transportes encerram a **20 de janeiro de 2026**.\n\n**Europa Criativa**\n*   **European Film Sales (CREA-MEDIA-2026-FILMSALES):** O prazo de candidatura termina a **18 de junho de 2026**.\n*   **Networks of European Cinemas (CREA-MEDIA-2026-CINNET):** As candidaturas estão abertas até **9 de julho de 2026**.\n*   **European mini-slate development (CREA-MEDIA-2026-DEVMINISLATE):** O prazo final é **17 de setembro de 2026**.\n\n### Avisos Abertos em Contínuo (sem prazo definido)\n\n*   **PRR (Plano de Recuperação e Resiliência):** Existem diversos avisos abertos sem data de fecho definida, focados em áreas como Áreas de Acolhimento Empresarial, conectividade em",
+      "latencyMs": 11537,
+      "usage": {
+        "promptTokenCount": 183,
+        "candidatesTokenCount": 837,
+        "totalTokenCount": 1580
+      },
+      "citations": {
+        "citationCount": 3,
+        "citedSources": [
+          {
+            "title": "103o766k16ik"
+          },
+          {
+            "title": "7ah8kavmu2jr"
+          },
+          {
+            "title": "28eiwjk1ke3l"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PT2030",
+        "PEPAC"
+      ],
+      "portalLeakage": false,
+      "expectedCodesScore": 0.8333333333333334,
+      "timestamp": "2025-12-12T22:43:17.273Z",
+      "eval": {
+        "useful": 8,
+        "grounded": 7,
+        "honest": 9,
+        "clarity": 9,
+        "hallucinationRisk": 2,
+        "overall": 7.8999999999999995,
+        "reasoning": "A resposta é bastante útil para um consultor, listando avisos relevantes com prazos claros. A estrutura é boa e o português claro. No entanto, a data de 12 de dezembro de 2025 é uma alucinação, pois a data atual é 2024. Além disso, a citação para o PRR é genérica e não aponta para avisos específicos"
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "testCaseId": "open-02",
+      "question": "No portal PRR, quais avisos estão abertos hoje e quando fecham? (lista curta)",
+      "portalFilter": "PRR",
+      "metadataFilter": "portal = \"PRR\"",
+      "answer": "Com base na informação disponível, estes são os avisos que se encontram atualmente abertos no portal do PRR:\n\n*   **Ampliação do Edifício do CITMA (Aviso n.º1/C06-i08-RAM/2024)**: Este aviso destina-se a entidades públicas. Não foi encontrada a data de fecho nas fontes disponíveis para este filtro.\n*   **Acesso ao Avepark - Parque de Ciência e Tecnologia das Taipas (Guimarães) (AVISO Nº 01/C07-i04.04/2022)**: Dirigido a autarquias e áreas metropolitanas. Não foi encontrada a data de fecho nas fontes disponíveis para este filtro.\n*   **Áreas de Acolhimento Empresarial (AAE) – Acessibilidades Rodoviárias (Aviso de Publicitação N.º 01/C07-i04.02/2021)**: Os beneficiários são autarquias e áreas metropolitanas. Não foi encontrada a data de fecho nas fontes disponíveis para este filtro.\n*   **Conetividade à internet de qualidade às escolas (Aviso n.º 01/C20-i01.01/2022)**: Destinado a escolas, para assegurar o fornecimento de internet e a utilização de recursos digitais. Não foi encontrada a data de fecho nas fontes disponíveis para este filtro.\n*   **Criar novas unidades de internamento em Hospitais Gerais (N.º 01/C01-i03/2021)**: Os beneficiários são entidades públicas. Não foi encontrada a data de fecho nas fontes disponíveis para este filtro.\n\nNão encontrei as datas de fecho para os avisos listados nas fontes disponíveis para este filtro.",
+      "latencyMs": 7206,
+      "usage": {
+        "promptTokenCount": 177,
+        "candidatesTokenCount": 427,
+        "totalTokenCount": 1116
+      },
+      "citations": {
+        "citationCount": 5,
+        "citedSources": [
+          {
+            "title": "84yrj4w89j33"
+          },
+          {
+            "title": "29fg5zp6xnsl"
+          },
+          {
+            "title": "zoyrfsu3wuwq"
+          },
+          {
+            "title": "63r1309lyvp7"
+          },
+          {
+            "title": "tq7fit1jm7n0"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PRR"
+      ],
+      "portalLeakage": false,
+      "expectedCodesScore": 1,
+      "timestamp": "2025-12-12T22:43:28.237Z",
+      "eval": {
+        "useful": 4,
+        "grounded": 8,
+        "honest": 10,
+        "clarity": 8,
+        "hallucinationRisk": 2,
+        "overall": 6.999999999999999,
+        "reasoning": "A resposta lista avisos que estão abertos, o que é útil. No entanto, a falta das datas de fecho, que é uma parte crucial da pergunta, diminui a utilidade prática. A resposta é honesta ao admitir que não encontrou as datas de fecho e as citações indicam que a informação sobre os avisos abertos está a"
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "testCaseId": "pt-elig-01",
+      "question": "No aviso FA0943/2024, que tipo de entidades podem candidatar-se (beneficiários elegíveis) e quais restrições principais?",
+      "portalFilter": "PT2030",
+      "metadataFilter": "portal = \"PT2030\"",
+      "answer": "Com base na informação disponível para o aviso **FA0943/2024**, intitulado \"Capacitação da rede nacional de acolhimento de requerentes e beneficiários de proteção internacional\", as entidades que podem candidatar-se e as principais condições são as seguintes.\n\n### Beneficiários Elegíveis\n\nPodem candidatar-se a este aviso as seguintes tipologias de entidades:\n*   Entidades públicas.\n*   Entidades privadas sem fins lucrativos ou equiparadas.\n*   Autarquias locais.\n*   Comunidades intermunicipais.\n*   Áreas metropolitanas.\n*   Organizações internacionais.\n\nAs candidaturas podem ser apresentadas de forma individual ou em parceria.\n\n### Restrições Principais\n\nAs fontes disponíveis não detalham restrições específicas para além da natureza das entidades elegíveis. A principal limitação implícita é que as entidades candidatas devem ser, por natureza, **públicas ou privadas sem fins lucrativos**.\n\n### Próximos Passos (Checklist para o Consultor)\n\n1.  **Verificar a Natureza Jurídica do Cliente**: Confirme se a entidade que pretende apoiar se enquadra numa das categorias de beneficiários elegíveis (pública, privada sem fins lucrativos, autarquia, etc.).\n2.  **Analisar o Enquadramento do Projeto**: O projeto deve estar alinhado com os objetivos do aviso, que se focam na capacitação da rede de acolhimento para proteção internacional, no âmbito do Fundo para o Asilo, a Migração e a Integração (FAMI 2030).\n3.  **Avaliar a Modalidade de Candidatura**: Decidir se a candidatura será submetida de forma individual ou se é vantajoso estabelecer uma parceria com outras entidades elegíveis para reforçar a proposta.\n4.  **Aguardar a Abertura do Aviso**: O período previsto para a submissão de candidaturas decorre entre janeiro e abril de 2026. É crucial preparar a documentação necessária atempadamente.\n5.  **Consultar o Documento Oficial do Aviso**: Assim que for publicado, analisar detalhadamente o texto completo do aviso de concurso para identificar todos os requisitos, critérios de elegibilidade e de avaliação, e despesas elegíveis. O resumo atual não substitui a leitura integral do aviso.",
+      "latencyMs": 9140,
+      "usage": {
+        "promptTokenCount": 192,
+        "candidatesTokenCount": 547,
+        "totalTokenCount": 1360
+      },
+      "citations": {
+        "citationCount": 4,
+        "citedSources": [
+          {
+            "title": "7ah8kavmu2jr"
+          },
+          {
+            "title": "0ep96dublwux"
+          },
+          {
+            "title": "97hvya7062zw"
+          },
+          {
+            "title": "3d8aqzwu6rpn"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PT2030"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:43:41.371Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 9,
+        "honest": 9,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 8.9,
+        "reasoning": "A resposta é muito útil para um consultor, fornecendo informações claras sobre os beneficiários elegíveis e as restrições. Está bem ancorada nas fontes citadas, que parecem ser documentos oficiais ou resumos do aviso. A honestidade é demonstrada ao admitir que as fontes não detalham restrições espec"
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "testCaseId": "prr-deadline-01",
+      "question": "No aviso 1/C06-i08-RAM/2024, qual é o prazo/data limite de candidatura?",
+      "portalFilter": "PRR",
+      "metadataFilter": "portal = \"PRR\"",
+      "answer": "",
+      "latencyMs": 8988,
+      "usage": {
+        "promptTokenCount": 186,
+        "candidatesTokenCount": 0,
+        "totalTokenCount": 1085
+      },
+      "citations": {
+        "citationCount": 0,
+        "citedSources": []
+      },
+      "inferredCitedPortals": [],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:43:53.929Z",
+      "eval": {
+        "useful": 0,
+        "grounded": 0,
+        "honest": 10,
+        "clarity": 8,
+        "hallucinationRisk": 0,
+        "overall": 3.6,
+        "reasoning": "A resposta do modelo está vazia, o que implica que não encontrou a informação. Isso é um sinal de honestidade e ausência de alucinação. No entanto, para ser mais útil e claro, o modelo deveria ter explicitamente declarado 'Não encontrei a informação sobre o prazo/data limite de candidatura para o av"
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "testCaseId": "pepac-docs-01",
+      "question": "No aviso PEPACC-11124, que documentos/anexos são pedidos para a candidatura? Faz checklist.",
+      "portalFilter": "PEPAC",
+      "metadataFilter": "portal = \"PEPAC\"",
+      "answer": "Com base na informação disponível, a candidatura ao aviso PEPACC-11124, referente ao \"Restabelecimento do potencial silvícola [...] Estabilização de emergência pós incêndio\", requer a submissão de um formulário eletrónico acompanhado dos documentos obrigatórios.\n\n### Checklist de Documentos e Anexos\n\nPara a formalização da candidatura, são necessários os seguintes elementos:\n\n*   **Formulário de Candidatura Eletrónico**: O preenchimento e submissão são feitos online, através do portal da Agricultura ou do portal do PEPAC Continente.\n*   **Documentos Obrigatórios**: A candidatura deve ser acompanhada de todos os documentos considerados obrigatórios. A documentação de suporte lista vários ficheiros relevantes, incluindo:\n    *   Aviso-02-C324-2025.pdf\n    *   OT\\_29\\_2025\\_C324\\_02.pdf (Orientação Técnica)\n    *   OT\\_29\\_2025\\_C324\\_02-Anexos.pdf (Anexos à Orientação Técnica)\n    *   Manual-do-formulario\\_C324\\_Aviso-02\\_14.11.2025.pdf\n*   **Anexo I**: O aviso menciona especificamente um \"ANEXO I\" que contém a lista de freguesias presentes nos relatórios de estabilização de emergência do ICNF, I.P.\n\n### Próximos Passos para o Consultor\n\n1.  **Aceder aos Portais Oficiais**: Visitar o portal da Agricultura (agricultura.gov.pt) ou o portal do PEPAC Continente (pepacc.pt) para encontrar o formulário eletrónico e os documentos de apoio.\n2.  **Consultar a Documentação de Apoio**: Fazer o download e ler atentamente a Orientação Técnica (OT) e os seus anexos, pois estes documentos detalham as regras de preenchimento e os requisitos específicos da candidatura.\n3.  **Verificar a Elegibilidade Geográfica**: Confirmar se a área de intervenção do projeto se localiza numa das freguesias listadas no Anexo I do aviso.\n4.  **Reunir a Documentação Obrigatória**: Compilar todos os documentos exigidos pela Orientação Técnica antes de iniciar o preenchimento do formulário online.\n5.  **Submeter a Candidatura**: Preencher e submeter o formulário eletrónico dentro do prazo estipulado, que, segundo as fontes, decorre de 10 de novembro de 2025 a 12 de janeiro de 2026.",
+      "latencyMs": 13969,
+      "usage": {
+        "promptTokenCount": 182,
+        "candidatesTokenCount": 614,
+        "totalTokenCount": 2295
+      },
+      "citations": {
+        "citationCount": 3,
+        "citedSources": [
+          {
+            "title": "ckmfaon9piqr"
+          },
+          {
+            "title": "bu8cvzuoqz1r"
+          },
+          {
+            "title": "a3sxyvmxzbmf"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PEPAC"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:44:12.039Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 9,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 9.1,
+        "reasoning": "A resposta é muito útil para um consultor, fornecendo um checklist claro e passos acionáveis. Está bem ancorada nas fontes fornecidas, sem inventar informações. A linguagem é clara e a estrutura facilita a compreensão. O risco de alucinação é baixo, pois todas as informações parecem derivar das font"
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "testCaseId": "horizon-01",
+      "question": "Na call HORIZON-EIE-2026-01-CONNECT-02, qual é o objetivo e o prazo (deadline), e que tipo de entidade tipicamente participa? Se não estiver claro, diz que não encontras.",
+      "portalFilter": "HORIZON",
+      "metadataFilter": "portal = \"HORIZON\"",
+      "answer": "Com base na informação encontrada, apresento os detalhes sobre a call **HORIZON-EIE-2026-01-CONNECT-02**, intitulada \"Expanding Investment Ecosystems\".\n\n### Objetivo\nO objetivo desta call é contribuir para os seguintes resultados:\n*   Aumentar os investimentos de capital de risco estrangeiros provenientes de fundos de regiões inovadoras fortes ou líderes (\"strong\" ou \"innovation leader\").\n*   Facilitar o crescimento em fases mais avançadas para startups locais de ecossistemas de inovação menos conectados e desenvolvidos (regiões inovadoras \"emergentes\" ou \"moderadas\"), permitindo a sua expansão para as regiões mais fortes.\n*   Aumentar a consciencialização e o acesso de investidores estrangeiros ao fluxo de oportunidades de negócio locais das regiões inovadoras \"emergentes\" ou \"moderadas\".\n\n### Prazo (Deadline)\n*   **Data de abertura:** 10 de setembro de 2025.\n*   **Data de fecho (deadline):** 20 de janeiro de 2026.\n\n### Tipo de Entidade Participante\nA descrição dos resultados esperados sugere que as entidades tipicamente envolvidas neste tipo de projeto são aquelas que operam no ecossistema de investimento e inovação. Embora não especifique uma lista de entidades elegíveis, o foco está em:\n*   **Fundos de capital de risco (Venture Capital)**, especialmente de regiões inovadoras fortes.\n*   **Startups** de ecossistemas de inovação emergentes ou moderados que procuram investimento para escalar.\n*   **Entidades que promovem a ligação** entre investidores e startups de diferentes ecossistemas europeus.\n\n### Próximos Passos (Checklist para o Consultor)\n1.  **Analisar o Perfil do Cliente:** Verifique se o seu cliente se enquadra no perfil de uma startup de uma região \"emergente\" ou \"moderada\" que necessita de investimento para escalar, ou de um fundo de investimento que procura expandir o seu portfólio para estas regiões.\n2.  **Validar o Enquadramento Regional:** Confirme a classificação da região do seu cliente segundo o *European Innovation Scoreboard* para determinar se se qualifica como \"emergente\" ou \"moderada\".\n3.  **Mapear Parceiros Potenciais:** Comece a identificar potenciais parceiros para o consórcio, como fundos de investimento de regiões \"líderes\" ou outras entidades que possam facilitar a ligação entre ecossistemas.\n4.  **Rever a Documentação Oficial:** Aceda ao link do portal de oportunidades da Comissão Europeia para obter os documentos detalhados da call, incluindo critérios de elegibilidade específicos, regras de financiamento e o modelo de proposta. O URL é: `https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/HORIZON-EIE-2026-01-CONNECT-02`.\n5.  **Agendar o Trabalho:** Tendo em conta o prazo de 20 de janeiro de 2026, defina um cronograma retroativo para a preparação da proposta, alocando tempo suficiente para a formação do consórcio, redação e revisão.",
+      "latencyMs": 11954,
+      "usage": {
+        "promptTokenCount": 208,
+        "candidatesTokenCount": 755,
+        "totalTokenCount": 1625
+      },
+      "citations": {
+        "citationCount": 5,
+        "citedSources": [
+          {
+            "title": "7mnkne0yijzp"
+          },
+          {
+            "title": "wn27gdhiitiv"
+          },
+          {
+            "title": "d8f5gjqehpj2"
+          },
+          {
+            "title": "9qx873n5eqcw"
+          },
+          {
+            "title": "dss5o53m9d58"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "HORIZON"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:44:27.747Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 9,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 9.1,
+        "reasoning": "A resposta é muito útil para um consultor, fornecendo informações claras e acionáveis sobre o objetivo, prazo e tipo de entidades participantes. As citações indicam que a informação está bem ancorada. A secção 'Próximos Passos' é um excelente bónus que aumenta a utilidade prática. A resposta não inv"
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "testCaseId": "crea-01",
+      "question": "Na call CREA-CULT-2025-COOP-UA-1, qual é o deadline e qual o tema do aviso?",
+      "portalFilter": "EUROPA_CRIATIVA",
+      "metadataFilter": "portal = \"EUROPA_CRIATIVA\"",
+      "answer": "Com base na informação disponível, aqui estão os detalhes sobre a call **CREA-CULT-2025-COOP-UA-1**:\n\n*   **Tema do Aviso:** O título do aviso é \"ZMINA: Finanțarea semințelor de reziliență\".\n*   **Deadline:** A data de fecho para submissão de candidaturas é **5 de dezembro de 2025**.\n\nEste aviso insere-se no programa Europa Criativa e a sua data de abertura está prevista para 6 de outubro de 2025.\n\n### Próximos Passos (Checklist para o Consultor)\n\n1.  **Análise de Elegibilidade:** Validar se o perfil do seu cliente e a natureza do projeto se enquadram nos objetivos específicos do",
+      "latencyMs": 10962,
+      "usage": {
+        "promptTokenCount": 187,
+        "candidatesTokenCount": 205,
+        "totalTokenCount": 2988
+      },
+      "citations": {
+        "citationCount": 4,
+        "citedSources": [
+          {
+            "title": "3e9xrrjdj24c"
+          },
+          {
+            "title": "ozknq2nzbjk6"
+          },
+          {
+            "title": "tw1am2u3bcwt"
+          },
+          {
+            "title": "ay13cr939f0n"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "EUROPA_CRIATIVA"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:44:42.555Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 10,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 9.4,
+        "reasoning": "A resposta é muito útil para um consultor, fornecendo diretamente as informações solicitadas (deadline e tema) e adicionando contexto relevante (programa e data de abertura). Está bem ancorada nas citações fornecidas, sem inventar informações. A linguagem é clara, estruturada e inclui um 'Próximos P"
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "testCaseId": "ipdj-01",
+      "question": "No programa IPDJ-apoio-e-financiamento-jovem, qual o tipo de apoio e como aceder/submeter pedido?",
+      "portalFilter": "IPDJ",
+      "metadataFilter": "portal = \"IPDJ\"",
+      "answer": "Com base na informação disponível, o programa \"IPDJ-apoio-e-financiamento-jovem\" é uma designação geral para uma área de atuação do Instituto Português do Desporto e Juventude (IPDJ). Dentro desta área, existem vários programas específicos, cada um com os seus próprios objetivos e processos.\n\nOs documentos mencionam os seguintes programas de apoio do IPDJ:\n*   **PAJ - Programa de Apoio Juvenil**.\n*   **PAACJ - Programa de Apoio às Associações de Caráter Juvenil**.\n*   **PAE - Programa de Apoio Estudantil**.\n*   **PAI - Programa de Apoio Infraestrutural**.\n\nNão encontrei essa informação nas fontes disponíveis para este filtro sobre o tipo de apoio específico e o processo de submissão para o programa geral \"IPDJ-apoio-e-financiamento-jovem\". A informação detalhada sobre o tipo de apoio e como aceder/submeter um pedido estará, muito provavelmente, nos regulamentos de cada um dos programas específicos mencionados acima (PAJ, PAACJ, PAE, PAI).\n\n### **Próximos Passos (Checklist para o Consultor)**\n\nPara poder aconselhar o seu cliente de forma eficaz, sugiro os seguintes passos:\n\n1.  **Clarificar o Perfil do Cliente:**\n    *   É uma pessoa singular (jovem), uma associação juvenil, uma associação de estudantes, ou outro tipo de entidade?\n    *   Qual a natureza do projeto ou da necessidade de financiamento? (ex: organizar um evento, comprar equipamento, realizar obras numa sede, etc.)\n\n2.  **Identificar o Programa Adequado:**\n    *   Com base no perfil do cliente e do projeto, identifique qual dos programas específicos (PAJ, PAACJ, PAE, PAI) é o mais indicado.\n\n3.  **Analisar o Regulamento Específico:**\n    *   Aceda ao portal do IPDJ e procure o regulamento do programa específico identificado.\n    *   Verifique detalhadamente os seguintes pontos no regulamento:\n        *   **Beneficiários elegíveis:** Quem se pode candidatar.\n        *   **Tipologia de apoio:** Se é um apoio financeiro (reembolsável ou não reembolsável), técnico, logístico, etc.\n        *   **Despesas elegíveis:** Que tipo de custos podem ser financiados.\n        *   **Prazos de candidatura:** As datas de abertura e fecho para a submissão de pedidos.\n        *   **Processo de submissão:** Como e onde submeter a candidatura (normalmente através de uma plataforma online do IPDJ).\n        *   **Critérios de avaliação:** Como os projetos serão avaliados e selecionados.\n\n4.  **Preparar a Candidatura:**\n    *   Reúna toda a documentação exigida pelo regulamento.\n    *   Elabore a proposta de projeto de acordo com os formulários e os critérios de avaliação.\n    *   Submeta a candidatura dentro do prazo estipulado.\n\nPara avançar, o passo mais importante é **identificar qual dos programas específicos se adequa ao seu cliente**.",
+      "latencyMs": 10771,
+      "usage": {
+        "promptTokenCount": 187,
+        "candidatesTokenCount": 728,
+        "totalTokenCount": 1668
+      },
+      "citations": {
+        "citationCount": 5,
+        "citedSources": [
+          {
+            "title": "lclw2639tvo8"
+          },
+          {
+            "title": "c56iekgems98"
+          },
+          {
+            "title": "kpxx385tyh6u"
+          },
+          {
+            "title": "hkx9d8khb603"
+          },
+          {
+            "title": "m3rsqgwcbijb"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "IPDJ"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:44:57.272Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 9,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 9.1,
+        "reasoning": "A resposta é extremamente útil para um consultor, pois não só admite a falta de informação direta para o termo genérico, mas também desagrega o problema, identificando os programas específicos do IPDJ e fornecendo um checklist acionável e bem estruturado para os próximos passos. A honestidade em adm"
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "testCaseId": "wrong-filter-01",
+      "question": "Pergunta: No aviso 1/C06-i08-RAM/2024, quais são os beneficiários? (Deve falhar se o filtro estiver errado)",
+      "portalFilter": "PEPAC",
+      "metadataFilter": "portal = \"PEPAC\"",
+      "answer": "Não encontrei essa informação nas fontes disponíveis para este filtro. Os documentos analisados não contêm qualquer referência ao aviso \"1/C06-i08-RAM/2024\".",
+      "latencyMs": 7488,
+      "usage": {
+        "promptTokenCount": 194,
+        "candidatesTokenCount": 74,
+        "totalTokenCount": 1210
+      },
+      "citations": {
+        "citationCount": 4,
+        "citedSources": [
+          {
+            "title": "qg38rqtw50cx"
+          },
+          {
+            "title": "ckmfaon9piqr"
+          },
+          {
+            "title": "28eiwjk1ke3l"
+          },
+          {
+            "title": "87bsnb6h2hf9"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PEPAC"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:45:08.320Z",
+      "eval": {
+        "useful": 8,
+        "grounded": 10,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 9.100000000000001,
+        "reasoning": "A resposta é útil porque indica claramente que a informação não foi encontrada sob o filtro aplicado, o que é crucial para um consultor. É bem fundamentada, pois as citações mostram que foram feitas tentativas de busca. A honestidade é alta ao admitir a falta de informação. A clareza é boa, e o risc"
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "testCaseId": "neg-01",
+      "question": "Qual é a taxa de juro do BCE em Dezembro de 2025?",
+      "answer": "",
+      "latencyMs": 9946,
+      "usage": {
+        "promptTokenCount": 175,
+        "candidatesTokenCount": 0,
+        "totalTokenCount": 1074
+      },
+      "citations": {
+        "citationCount": 0,
+        "citedSources": []
+      },
+      "inferredCitedPortals": [],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:45:22.376Z",
+      "eval": {
+        "useful": 1,
+        "grounded": 1,
+        "honest": 10,
+        "clarity": 8,
+        "hallucinationRisk": 1,
+        "overall": 4.1000000000000005,
+        "reasoning": "A resposta do modelo está vazia, o que é a forma mais honesta de lidar com uma pergunta sobre o futuro que não pode ser respondida com dados atuais. Não há alucinação, e a clareza é máxima por não haver conteúdo. A utilidade é baixa porque não fornece a informação, mas é alta no sentido de não engan"
+      }
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "testCaseId": "neg-02",
+      "question": "Quanto tempo demora a aprovação de uma candidatura ao PRR?",
+      "portalFilter": "PRR",
+      "metadataFilter": "portal = \"PRR\"",
+      "answer": "Com base na informação disponível, não é possível estabelecer um prazo único e fixo para a aprovação de uma candidatura ao PRR, uma vez que este depende do que está estipulado em cada Aviso de Abertura de Concurso.\n\nA documentação indica que cada Aviso deve especificar \"a calendarização do processo de análise e decisão, incluindo a data limite para a comunicação da decisão aos Beneficiários Finais\". Isto significa que o prazo concreto de aprovação varia consoante a medida de investimento e o concurso específico ao qual a candidatura é submetida.\n\nEmbora os documentos mencionem prazos específicos para outras fases do processo, como 30 ou 60 dias úteis para a análise e pagamento de pedidos de reembolso, estes prazos referem-se à fase pós-aprovação, quando o projeto já está em execução, e não ao tempo de decisão sobre a candidatura em si.\n\n---\n\n### **Próximos Passos para o Consultor (Checklist):**\n\n1.  **Analisar o Aviso de Abertura de Concurso:**\n    *   Identifique o Aviso de Abertura específico para a medida de investimento do seu cliente.\n    *   Localize a secção que detalha o cronograma do processo de análise e decisão.\n    *   Anote a data limite estipulada para a comunicação da decisão final aos candidatos.\n\n2.  **Preparar a Candidatura de Forma Exaustiva:**\n    *   Assegure que todos os documentos e requisitos de elegibilidade exigidos no Aviso estão completos e corretos antes da submissão. A necessidade de pedidos de esclarecimento por parte da entidade gestora pode atrasar o processo.\n\n3.  **Monitorizar as Plataformas Oficiais:**\n    *   Acompanhe o estado da candidatura através do portal onde a mesma foi submetida (ex: Balcão dos Fundos).\n    *   Esteja atento a notificações ou pedidos de informação adicional por parte das entidades gestoras.\n\n4.  **Gerir as Expectativas do Cliente:**\n    *   Comunique ao seu cliente que o prazo de aprovação é o que está definido no Aviso específico e não um prazo geral do PRR.\n    *   Informe-o de que o tempo de análise pode variar e que a decisão será comunicada até à data limite indicada no concurso.",
+      "latencyMs": 12522,
+      "usage": {
+        "promptTokenCount": 169,
+        "candidatesTokenCount": 517,
+        "totalTokenCount": 2189
+      },
+      "citations": {
+        "citationCount": 5,
+        "citedSources": [
+          {
+            "title": "docf3a5pbue5"
+          },
+          {
+            "title": "14pv7kfton66"
+          },
+          {
+            "title": "hyr9m55iiizf"
+          },
+          {
+            "title": "ujp0wvx58ddc"
+          },
+          {
+            "title": "ov0beq2n4qbc"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PRR"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:45:38.813Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 9,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 9.1,
+        "reasoning": "A resposta é muito útil para um consultor, pois não só responde à pergunta de forma precisa e fundamentada, como também oferece um checklist de 'Próximos Passos' que é altamente acionável. Está bem ancorada nos documentos citados, admitindo a impossibilidade de um prazo fixo e explicando o porquê. A"
+      }
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "testCaseId": "match-01",
+      "question": "Tenho um cliente com empresa de software (CAE 62010). Quais os avisos abertos hoje mais compatíveis? Dá 3 opções e justifica com base nas fontes.",
+      "answer": "",
+      "latencyMs": 14046,
+      "usage": {
+        "promptTokenCount": 317,
+        "candidatesTokenCount": 0,
+        "totalTokenCount": 1216
+      },
+      "citations": {
+        "citationCount": 0,
+        "citedSources": []
+      },
+      "inferredCitedPortals": [],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:45:56.520Z",
+      "eval": {
+        "useful": 0,
+        "grounded": 0,
+        "honest": 0,
+        "clarity": 0,
+        "hallucinationRisk": 10,
+        "overall": 0,
+        "reasoning": "A resposta do modelo está vazia, o que a torna inútil, não fundamentada, não clara e com alto risco de alucinação, pois não fornece qualquer informação. Não há conteúdo para avaliar em termos de utilidade, fundamentação ou clareza."
+      }
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "testCaseId": "match-02",
+      "question": "Tenho um cliente agrícola (CAE 01). Que avisos do PEPAC são mais adequados e porquê? Se não houver correspondência explícita, diz que não encontras.",
+      "portalFilter": "PEPAC",
+      "metadataFilter": "portal = \"PEPAC\"",
+      "answer": "Com base nos documentos recuperados do PEPAC (Continente), a análise para o seu cliente com **CAE 01 (Agricultura)** é a seguinte:\n\n### 1. Aviso Mais Adequado Encontrado\n**Aviso C.2.1.1 - Investimento Produtivo Agrícola - Modernização (Aviso Multissetorial)**\n*   **Referência:** AG PEPACC/Aviso 02/C.2.1.1/2025\n*   **Porquê:** Este é o aviso que corresponde diretamente à atividade de produção primária (CAE 01).\n    *   **Beneficiários:** Define explicitamente como elegíveis \"Pessoas singulares ou coletivas que exerçam atividade agrícola\".\n    *   **Objetivo:** Visa reforçar a competitividade e viabilidade das explorações agrícolas através do aumento da produção, criação de valor e melhoria da qualidade.\n    *   **Tipologia de Investimento:** Apoia a modernização, incluindo a melhoria da eficiência dos recursos e investimentos relacionados com a proteção dos recursos naturais.\n\n### 2. Outros Avisos (Com Reservas)\n**Aviso C.3.1.1 - Investimento Produtivo na Bioeconomia - Modernização (Agroindústria)**\n*   **Referência:** AG PEPACC/Aviso 01/C.3.1.1/2025\n*   **Análise:** Este aviso é destinado à **transformação ou comercialização** de produtos agrícolas.\n*   **Adequação:** Só é adequado se o seu cliente, além da produção (CAE 01), tiver uma componente industrial de transformação (ex: lagar, adega, embalamento) que se enquadre na bioeconomia. Caso contrário, o foco deve ser o C.2.1.1.\n\n> **Nota Importante:** Nas fontes disponíveis para esta pesquisa, **não encontrei** os avisos específicos para \"Instalação de Jovens Agricultores\" ou \"Pequenos Investimentos\" abertos neste momento. Deves verificar no portal do PEPAC se estes avisos específicos foram publicados recentemente,",
+      "latencyMs": 22851,
+      "usage": {
+        "promptTokenCount": 340,
+        "candidatesTokenCount": 461,
+        "totalTokenCount": 6250
+      },
+      "citations": {
+        "citationCount": 0,
+        "citedSources": []
+      },
+      "inferredCitedPortals": [],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:46:23.128Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 7,
+        "honest": 9,
+        "clarity": 9,
+        "hallucinationRisk": 2,
+        "overall": 8.200000000000001,
+        "reasoning": "A resposta é muito útil para um consultor, identificando o aviso mais adequado e explicando o porquê. A distinção entre o C.2.1.1 e o C.3.1.1 é clara e pertinente. A honestidade em admitir que não encontrou avisos específicos para 'Jovens Agricultores' ou 'Pequenos Investimentos' é um ponto forte. E"
+      }
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "testCaseId": "recom-01",
+      "question": "Uma startup tecnológica em Lisboa quer I&D com parceiros europeus. Recomenda o melhor fundo/programa e dá 2-3 próximos passos concretos.",
+      "answer": "Com base nos documentos recuperados, a melhor recomendação disponível para uma startup tecnológica em Lisboa que procura I&D com parceiros europeus é o programa **Horizon Europe**.\n\nEmbora programas como o \"Eurostars\" sejam comuns para este perfil, **não encontrei avisos abertos ou informação específica sobre o Eurostars ou avisos gerais de \"SI I&D Internacional\" do Portugal 2030 nas fontes disponíveis.**\n\nPortanto, a recomendação foca-se nas oportunidades concretas do **Horizon Europe** identificadas nos documentos:\n\n### Recomendação: Horizon Europe (Ecossistemas de Inovação e",
+      "latencyMs": 33989,
+      "usage": {
+        "promptTokenCount": 365,
+        "candidatesTokenCount": 130,
+        "totalTokenCount": 15951
+      },
+      "citations": {
+        "citationCount": 0,
+        "citedSources": []
+      },
+      "inferredCitedPortals": [],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:47:00.556Z",
+      "eval": {
+        "useful": 6,
+        "grounded": 0,
+        "honest": 8,
+        "clarity": 7,
+        "hallucinationRisk": 4,
+        "overall": 4.3999999999999995,
+        "reasoning": "A resposta identifica corretamente o Horizon Europe como um programa relevante. No entanto, a justificação para não mencionar o Eurostars ou Portugal 2030 baseia-se na 'não-encontragem' de avisos abertos, o que não significa que não sejam programas relevantes ou que não existam. A ausência de citaçõ"
+      }
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "testCaseId": "open-01",
+      "question": "Quais são os avisos que estão abertos para candidatura AGORA? Lista os mais relevantes e indica o prazo (quando fecha).",
+      "answer": "",
+      "latencyMs": 13348,
+      "usage": {
+        "promptTokenCount": 312,
+        "candidatesTokenCount": 0,
+        "totalTokenCount": 1211
+      },
+      "citations": {
+        "citationCount": 0,
+        "citedSources": []
+      },
+      "inferredCitedPortals": [],
+      "portalLeakage": false,
+      "expectedCodesScore": 0,
+      "timestamp": "2025-12-12T22:47:17.650Z",
+      "eval": {
+        "useful": 0,
+        "grounded": 0,
+        "honest": 10,
+        "clarity": 5,
+        "hallucinationRisk": 10,
+        "overall": 2,
+        "reasoning": "A resposta do modelo está completamente vazia, o que a torna inútil. Não há dados para avaliar a utilidade, o enraizamento, a clareza ou o risco de alucinação. A honestidade é alta porque não inventou nada, mas isso é um subproduto da ausência de conteúdo. O assistente não conseguiu responder à perg"
+      }
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "testCaseId": "open-02",
+      "question": "No portal PRR, quais avisos estão abertos hoje e quando fecham? (lista curta)",
+      "portalFilter": "PRR",
+      "metadataFilter": "portal = \"PRR\"",
+      "answer": "Com base nos documentos recuperados para a data de hoje (12 de dezembro de 2025), a maioria dos avisos com estado",
+      "latencyMs": 43855,
+      "usage": {
+        "promptTokenCount": 299,
+        "candidatesTokenCount": 30,
+        "totalTokenCount": 40552
+      },
+      "citations": {
+        "citationCount": 0,
+        "citedSources": []
+      },
+      "inferredCitedPortals": [],
+      "portalLeakage": false,
+      "expectedCodesScore": 0,
+      "timestamp": "2025-12-12T22:48:05.268Z",
+      "eval": {
+        "useful": 0,
+        "grounded": 0,
+        "honest": 0,
+        "clarity": 0,
+        "hallucinationRisk": 10,
+        "overall": 0,
+        "reasoning": "A resposta do modelo não fornece a informação solicitada (quais avisos estão abertos e quando fecham). Em vez disso, começa uma frase que não é concluída e não apresenta dados concretos. A data mencionada (12 de dezembro de 2025) é futura, o que pode ser um erro ou uma tentativa de simular dados, ma"
+      }
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "testCaseId": "pt-elig-01",
+      "question": "No aviso FA0943/2024, que tipo de entidades podem candidatar-se (beneficiários elegíveis) e quais restrições principais?",
+      "portalFilter": "PT2030",
+      "metadataFilter": "portal = \"PT2030\"",
+      "answer": "",
+      "latencyMs": 14434,
+      "usage": {
+        "promptTokenCount": 354,
+        "candidatesTokenCount": 0,
+        "totalTokenCount": 1253
+      },
+      "citations": {
+        "citationCount": 0,
+        "citedSources": []
+      },
+      "inferredCitedPortals": [],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:48:23.629Z",
+      "eval": {
+        "useful": 0,
+        "grounded": 0,
+        "honest": 0,
+        "clarity": 0,
+        "hallucinationRisk": 10,
+        "overall": 0,
+        "reasoning": "A resposta do modelo está completamente vazia, o que a torna inútil, não fundamentada, não clara e com alto risco de alucinação, pois não fornece nenhuma informação. Não há sinais de grounding."
+      }
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "testCaseId": "prr-deadline-01",
+      "question": "No aviso 1/C06-i08-RAM/2024, qual é o prazo/data limite de candidatura?",
+      "portalFilter": "PRR",
+      "metadataFilter": "portal = \"PRR\"",
+      "answer": "Com base nos documentos recuperados para o aviso **1/C06-i08-RAM/2024** (Ampliação do Edifício do CITMA), informo o seguinte:\n\n**Não encontrei uma data limite de candidatura explícita** (dia/mês/ano) nas fontes disponíveis.\n\nIsto deve-se à natureza específica deste aviso, que é uma **Orientação Técnica Específica (OTE)** dirigida a um beneficiário pré-determinado, e não um concurso aberto à concorrência geral.\n\n**Detalhes encontrados nos documentos:**\n*   **Estado:** Aberto.\n*   **Data da Orientação Técnica:** 24/07/2024.\n*   **Beneficiário Final:** Secretaria Regional do Equipamento Social (SREI).\n*   **Processo:** A formalização do apoio é feita mediante a **assinatura de contrato** entre o IDR, IP-RAM e a SREI, através de submissão eletrónica.\n*   **Prazos de Execução (Marcos):** Os documentos referem marcos de execução, como a conclusão de trabalhos contratuais prevista para o 2.º trimestre de 2026 (2026-T2).\n\n**Checklist para o Consultor:**\n1.  **Confirmar Beneficiário:** Visto que o aviso designa a SREI, confirme se o seu cliente é esta entidade ou se está a tentar enquadrar um parceiro/fornecedor (neste caso, o aviso não se aplica diretamente como candidatura, mas sim como contratação pública lançada pela SREI).\n2.  **Contactar o IDR, IP-RAM:** Para obter a data limite interna para a submissão do contrato (caso esteja a apoiar a SREI), utilize os contactos oficiais indicados no aviso: `idr@madeira.gov.pt` ou `291 214 000`.",
+      "latencyMs": 33167,
+      "usage": {
+        "promptTokenCount": 254,
+        "candidatesTokenCount": 426,
+        "totalTokenCount": 15129
+      },
+      "citations": {
+        "citationCount": 0,
+        "citedSources": []
+      },
+      "inferredCitedPortals": [],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:49:00.551Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 8,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 8.8,
+        "reasoning": "A resposta é muito útil porque não só admite não ter encontrado a data limite de candidatura (o que é honesto e correto para este tipo de aviso), como também explica o porquê (OTE para beneficiário pré-determinado). Além disso, fornece detalhes relevantes sobre o aviso, como o beneficiário, o estado"
+      }
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "testCaseId": "pepac-docs-01",
+      "question": "No aviso PEPACC-11124, que documentos/anexos são pedidos para a candidatura? Faz checklist.",
+      "portalFilter": "PEPAC",
+      "metadataFilter": "portal = \"PEPAC\"",
+      "answer": "",
+      "latencyMs": 28300,
+      "usage": {
+        "promptTokenCount": 298,
+        "candidatesTokenCount": 0,
+        "totalTokenCount": 16319
+      },
+      "citations": {
+        "citationCount": 0,
+        "citedSources": []
+      },
+      "inferredCitedPortals": [],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:49:32.415Z",
+      "eval": {
+        "useful": 1,
+        "grounded": 0,
+        "honest": 0,
+        "clarity": 1,
+        "hallucinationRisk": 10,
+        "overall": 0,
+        "reasoning": "A resposta do modelo não fornece nenhuma informação sobre os documentos/anexos solicitados no aviso PEPACC-11124. Não há sinais de grounding, o que indica que a resposta não está ancorada em nenhuma fonte de informação. A resposta é completamente vazia, o que a torna inútil para um consultor de fund"
+      }
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "testCaseId": "horizon-01",
+      "question": "Na call HORIZON-EIE-2026-01-CONNECT-02, qual é o objetivo e o prazo (deadline), e que tipo de entidade tipicamente participa? Se não estiver claro, diz que não encontras.",
+      "portalFilter": "HORIZON",
+      "metadataFilter": "portal = \"HORIZON\"",
+      "answer": "",
+      "latencyMs": 15309,
+      "usage": {
+        "promptTokenCount": 438,
+        "candidatesTokenCount": 0,
+        "totalTokenCount": 1337
+      },
+      "citations": {
+        "citationCount": 0,
+        "citedSources": []
+      },
+      "inferredCitedPortals": [],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:49:51.752Z",
+      "eval": {
+        "useful": 0,
+        "grounded": 0,
+        "honest": 10,
+        "clarity": 0,
+        "hallucinationRisk": 0,
+        "overall": 2,
+        "reasoning": "A resposta do modelo está vazia, o que significa que não encontrou a informação. Neste caso, a honestidade é máxima, pois não inventou nada. No entanto, a utilidade e clareza são nulas porque não há conteúdo. O risco de alucinação é zero porque não há alucinação."
+      }
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "testCaseId": "crea-01",
+      "question": "Na call CREA-CULT-2025-COOP-UA-1, qual é o deadline e qual o tema do aviso?",
+      "portalFilter": "EUROPA_CRIATIVA",
+      "metadataFilter": "portal = \"EUROPA_CRIATIVA\"",
+      "answer": "Com base nos documentos recuperados, aqui estão os detalhes para o aviso **CREA-CULT-2025-COOP-UA-1**:\n\n**1. Deadline (Prazo de Submissão):**\nO prazo de fecho para este aviso é **05 de dezembro de 2025**.\n\n**2. Tema do Aviso:**\nO título identificado nas fontes para este código é **\"ZMINA: Finanțarea semințelor de reziliență\"** (ZMINA: Financiamento de sementes de resiliência).\n*Nota: O código \"COOP-UA\" indica tipicamente ações de cooperação focadas na Ucrânia no âmbito do programa Europa Criativa.*\n\n**Próximos Passos para o Consultor (Checklist):**\n*   **Validar Elegibilidade:** Confirmar se o consórcio ou entidade cumpre os requisitos específicos para cooperação com a Ucrânia (dado o código UA).\n*   **Analisar o Caderno de Encargos:** Aceder ao link oficial (indicado na fonte como `https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/CREA-CULT-2025-COOP-UA-1`) para obter a descrição detalhada dos objetivos, uma vez que o excerto disponível contém apenas o título.\n*   **Calendário:** Marcar a data de abertura (**06 de outubro de 2025**) e o fecho (**05 de dezembro de 2025**) no planeamento do cliente.\n\n*Fonte: Documento '3e9xrrjdj24c'",
+      "latencyMs": 14390,
+      "usage": {
+        "promptTokenCount": 371,
+        "candidatesTokenCount": 370,
+        "totalTokenCount": 1269
+      },
+      "citations": {
+        "citationCount": 0,
+        "citedSources": []
+      },
+      "inferredCitedPortals": [],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:50:10.024Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 8,
+        "honest": 9,
+        "clarity": 9,
+        "hallucinationRisk": 2,
+        "overall": 8.5,
+        "reasoning": "A resposta é muito útil para um consultor, fornecendo as informações solicitadas (deadline e tema) e adicionando passos práticos e relevantes. Está bem estruturada e clara. A nota sobre 'COOP-UA' é uma inferência lógica e útil, mas não é uma citação direta, o que justifica não ser 100% grounded. A f"
+      }
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "testCaseId": "ipdj-01",
+      "question": "No programa IPDJ-apoio-e-financiamento-jovem, qual o tipo de apoio e como aceder/submeter pedido?",
+      "portalFilter": "IPDJ",
+      "metadataFilter": "portal = \"IPDJ\"",
+      "answer": "Com base nos documentos recuperados, **não encontrei essa informação nas fontes disponíveis para este filtro.**\n\nO documento específico identificado como `IPDJ-apoio-e-financiamento-jovem` contém apenas a estrutura de navegação do portal do IPDJ (menus e rodapés), sem detalhar o regulamento, o tipo de apoio (ex: fundo perdido ou empréstimo) ou o método de submissão para este programa específico.\n\nNo entanto, a pesquisa identificou que \"Apoio e Financiamento\" no IPDJ funciona como uma categoria que agrega vários programas específicos.\n\n**Próximos Passos para o Consultor (Checklist):**\n1.  **Identificar o Programa Específico:** Confirme se o seu cliente se enquadra num dos sub-programas listados na estrutura do IPDJ, pois cada um terá regras distintas:\n    *   **PAJ:** Programa de Apoio Juvenil.\n    *   **PAACJ:** Programa de Apoio às Associações de Caráter Juvenil.\n    *   **PAE:** Programa de Apoio Estudantil.\n    *   **PAI:** Programa de Apoio Infraestrutural.\n2.  **Consultar Regulamentos Específicos:** Pesquise diretamente pelos regulamentos destes acrónimos (PAJ, PAACJ, etc.) para obter as taxas de financiamento e formulários de candidatura, uma vez que o documento geral não possui estes dados.",
+      "latencyMs": 25524,
+      "usage": {
+        "promptTokenCount": 292,
+        "candidatesTokenCount": 314,
+        "totalTokenCount": 10447
+      },
+      "citations": {
+        "citationCount": 5,
+        "citedSources": [
+          {
+            "title": "c56iekgems98"
+          },
+          {
+            "title": "kpxx385tyh6u"
+          },
+          {
+            "title": "lclw2639tvo8"
+          },
+          {
+            "title": "hkx9d8khb603"
+          },
+          {
+            "title": "m3rsqgwcbijb"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "IPDJ"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:50:39.500Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 10,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 9.4,
+        "reasoning": "A resposta é extremamente útil para um consultor, pois não só admite a falta de informação direta, mas também fornece um caminho claro e acionável para encontrar a informação necessária. É bem fundamentada ao indicar que o documento recuperado é apenas uma estrutura de navegação e ao listar os sub-p"
+      }
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "testCaseId": "wrong-filter-01",
+      "question": "Pergunta: No aviso 1/C06-i08-RAM/2024, quais são os beneficiários? (Deve falhar se o filtro estiver errado)",
+      "portalFilter": "PEPAC",
+      "metadataFilter": "portal = \"PEPAC\"",
+      "answer": "Não encontrei essa informação nas fontes disponíveis para este filtro.\n\nOs documentos recuperados referem-se a outros avisos (ex: AG PEPACC/Aviso 02/C.2.1.1/2025 e AG PEPACC/Aviso 02/C.3.1.1/2025), mas não contêm o texto ou detalhes específicos do **Aviso 1/C06-i08-RAM/2024**.\n\n**Checklist para o Consultor:**\n1.  **Verificar a Fonte:** Confirme se o aviso \"1/C06-i08-RAM/2024\" (referente à Região Autónoma da Madeira e à Componente 6 - Cultura) já foi publicado oficialmente ou se o código está correto.\n2.  **Consultar o Portal Recuperar Portugal:** Aceda diretamente à secção de avisos abertos ou à página específica da RAM no portal do PRR.\n3.  **Validar o Código:** O código \"C06-i08\" refere-se tipicamente a \"Digitalização de acervos e gestão do património cultural\" (ou similar na RAM). Confirme se é este o investimento pretendido.",
+      "latencyMs": 28524,
+      "usage": {
+        "promptTokenCount": 282,
+        "candidatesTokenCount": 270,
+        "totalTokenCount": 41253
+      },
+      "citations": {
+        "citationCount": 5,
+        "citedSources": [
+          {
+            "title": "bu8cvzuoqz1r"
+          },
+          {
+            "title": "87bsnb6h2hf9"
+          },
+          {
+            "title": "ckmfaon9piqr"
+          },
+          {
+            "title": "qg38rqtw50cx"
+          },
+          {
+            "title": "28eiwjk1ke3l"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PEPAC"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:51:11.824Z",
+      "eval": {
+        "useful": 8,
+        "grounded": 9,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 8.8,
+        "reasoning": "A resposta é muito útil porque, embora não encontre a informação específica, explica o porquê e fornece um checklist acionável para o consultor. É honesta ao admitir que não encontrou a informação para o filtro aplicado e é clara na sua comunicação. O risco de alucinação é baixo porque não inventa i"
+      }
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "testCaseId": "neg-01",
+      "question": "Qual é a taxa de juro do BCE em Dezembro de 2025?",
+      "answer": "Não encontrei essa informação nas fontes disponíveis para este filtro.\n\nOs documentos recuperados contêm referências a avisos de candidatura (como o PEPAC) que mencionam a taxa de refinanciamento do Banco Central Europeu (REFI) como critério de avaliação (ex: \"Se TIR maior + 1,5% que a taxa de refinanciamento do BCE à data de abertura do aviso\"), mas não especificam o valor da taxa para Dezembro de 2025.\n\nComo assistente focado em fundos, a minha base de conhecimento contém regulamentos e avisos de abertura, não previsões macroeconómicas ou dados de mercado futuro.\n\n**Sugestão para o Consultor:**\nPara obter esta informação, deve consultar fontes oficiais de informação financeira ou o site do Banco Central Europeu para dados históricos ou previsões atuais, dependendo da data em que se encontra. Se o objetivo é calcular a viabilidade de um projeto para uma candidatura, verifique a data exata de abertura do aviso em questão, pois é essa a data de referência tipicamente usada para a taxa REFI nos critérios de seleção.",
+      "latencyMs": 6836,
+      "usage": {
+        "promptTokenCount": 229,
+        "candidatesTokenCount": 234,
+        "totalTokenCount": 2832
+      },
+      "citations": {
+        "citationCount": 4,
+        "citedSources": [
+          {
+            "title": "bu8cvzuoqz1r"
+          },
+          {
+            "title": "docf3a5pbue5"
+          },
+          {
+            "title": "28eiwjk1ke3l"
+          },
+          {
+            "title": "97hvya7062zw"
+          }
+        ]
+      },
+      "inferredCitedPortals": [
+        "PEPAC",
+        "PRR",
+        "PT2030"
+      ],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:51:22.654Z",
+      "eval": {
+        "useful": 8,
+        "grounded": 9,
+        "honest": 10,
+        "clarity": 9,
+        "hallucinationRisk": 1,
+        "overall": 8.8,
+        "reasoning": "A resposta é muito útil porque, embora não forneça a informação solicitada (que é uma previsão e não um dado factual presente), explica claramente o porquê de não a ter e direciona o consultor para as fontes corretas. A honestidade é exemplar ao admitir a falta de informação e ao explicar as limitaç"
+      }
+    },
+    {
+      "model": "gemini-3-pro-preview",
+      "testCaseId": "neg-02",
+      "question": "Quanto tempo demora a aprovação de uma candidatura ao PRR?",
+      "portalFilter": "PRR",
+      "metadataFilter": "portal = \"PRR\"",
+      "answer": "Com base nos documentos analisados, **não existe um prazo único e universal** para a aprovação de candidaturas ao PRR (Plano de Recuperação e Resiliência).\n\nA documentação indica explicitamente que a calendarização do processo de análise e decisão é definida especificamente em cada concurso.\n\nAqui estão os detalhes encontrados nas fontes:\n\n### 1. Prazo de Decisão da Candidatura\n*   **Onde encontrar:** O prazo de decisão varia conforme o aviso. Os documentos estabelecem que cada Aviso de Abertura de Concurso deve identificar obrigatoriamente *\"o prazo para apresentação de candidaturas [...] e a calendarização do processo de análise e decisão, incluindo a data limite para a comunicação da decisão aos Beneficiários Finais\"*.\n*   **Conclusão:** Como consultor, deve consultar o ponto específico do **Aviso de Abertura** (geralmente na secção de \"Análise e Decisão\") para saber o prazo exato daquele fundo específico.\n\n### 2. Prazos de Pagamento (Após Aprovação)\nEmbora o prazo de aprovação inicial varie, os documentos recuperados definem prazos concretos para a fase de execução (pagamentos), que são úteis para gerir as expectativas do cliente:\n*   **Análise de Pedidos de Reembolso:** A entidade gestora (ex: IDR, IP-RAM ou ACSS, I.P.) tem um prazo de **30 dias úteis** (contados da receção do pedido) para analisar, deliberar e emitir a ordem de pagamento ou comunicar a",
+      "latencyMs": 18312,
+      "usage": {
+        "promptTokenCount": 268,
+        "candidatesTokenCount": 338,
+        "totalTokenCount": 4611
+      },
+      "citations": {
+        "citationCount": 0,
+        "citedSources": []
+      },
+      "inferredCitedPortals": [],
+      "portalLeakage": false,
+      "timestamp": "2025-12-12T22:51:44.555Z",
+      "eval": {
+        "useful": 9,
+        "grounded": 8,
+        "honest": 9,
+        "clarity": 9,
+        "hallucinationRisk": 2,
+        "overall": 8.5,
+        "reasoning": "A resposta é muito útil para um consultor, pois explica claramente que não há um prazo único e onde o cliente pode encontrar a informação específica (no Aviso de Abertura). A estrutura é lógica e fácil de seguir. Embora não haja citações explícitas com números de documento, a informação parece ser b"
+      }
+    }
+  ],
+  "createdAt": "2025-12-12T23:05:06.359Z",
+  "storeName": "fileSearchStores/tabenchfilesearch20251212t2-fxnlnrytnjnp"
+}

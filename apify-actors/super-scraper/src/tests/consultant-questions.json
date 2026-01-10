@@ -1,0 +1,147 @@
+{
+    "version": "3.0.0",
+    "description": "Perguntas REAIS de Consultores - Focadas no dia-a-dia de quem ajuda empresas a encontrar fundos",
+    "created": "2025-12-12",
+    "context": "Consultor a usar a app para ajudar clientes empresariais",
+    "questions": [
+        {
+            "id": "cae-01",
+            "category": "matching",
+            "question": "Tenho um cliente com uma empresa de desenvolvimento de software (CAE 62010). Quais avisos estão abertos e são compatíveis com esta atividade?",
+            "expected_context": "Deve identificar avisos relacionados com tecnologia, digitalização, inovação",
+            "evaluation": "semantic",
+            "priority": "critical"
+        },
+        {
+            "id": "cae-02",
+            "category": "matching",
+            "question": "Uma empresa agrícola (CAE 01) quer candidatar-se a fundos. Quais programas do PEPAC são mais adequados?",
+            "expected_context": "Deve mencionar PEPAC, eco-regimes, jovens agricultores ou investimentos",
+            "evaluation": "semantic",
+            "priority": "critical"
+        },
+        {
+            "id": "cae-03",
+            "category": "matching",
+            "question": "O meu cliente tem uma indústria transformadora (CAE 10-33). Há algum aviso do PRR para descarbonização ou eficiência energética?",
+            "expected_context": "Deve mencionar descarbonização, eficiência energética, indústria",
+            "evaluation": "semantic",
+            "priority": "critical"
+        },
+        {
+            "id": "tipo-01",
+            "category": "eligibility",
+            "question": "O aviso sobre Fortalecimento das Respostas Sociais aplica-se a que tipo de entidades? Uma IPSS pode candidatar-se?",
+            "expected_context": "Deve mencionar IPSS, economia social, entidades públicas",
+            "evaluation": "semantic",
+            "priority": "high"
+        },
+        {
+            "id": "tipo-02",
+            "category": "eligibility",
+            "question": "Uma PME com 50 funcionários é elegível para os avisos do PRR sobre transição digital?",
+            "expected_context": "Deve confirmar elegibilidade PME ou indicar condições",
+            "evaluation": "semantic",
+            "priority": "high"
+        },
+        {
+            "id": "tipo-03",
+            "category": "eligibility",
+            "question": "Autarquias podem candidatar-se a que tipo de apoios no PRR?",
+            "expected_context": "Deve mencionar infraestruturas, habitação, ou apoios específicos",
+            "evaluation": "semantic",
+            "priority": "high"
+        },
+        {
+            "id": "abertos-01",
+            "category": "status",
+            "question": "Quais são os avisos que estão abertos para candidatura AGORA? Lista-me os mais relevantes.",
+            "expected_context": "Deve listar avisos com status Aberto",
+            "evaluation": "semantic",
+            "priority": "critical"
+        },
+        {
+            "id": "abertos-02",
+            "category": "status",
+            "question": "Há algum aviso do PEPAC com prazo a terminar em breve que deva alertar o meu cliente?",
+            "expected_context": "Deve mencionar datas de fecho próximas se houver",
+            "evaluation": "semantic",
+            "priority": "high"
+        },
+        {
+            "id": "recom-01",
+            "category": "recommendation",
+            "question": "Uma startup tecnológica de Lisboa quer expandir. Qual o fundo mais indicado: PRR, Portugal 2030 ou Horizon Europe?",
+            "expected_context": "Deve comparar fundos e recomendar com base no perfil",
+            "evaluation": "semantic",
+            "priority": "critical"
+        },
+        {
+            "id": "recom-02",
+            "category": "recommendation",
+            "question": "O meu cliente quer investir em I&D com parceiros europeus. Qual programa é mais adequado?",
+            "expected_context": "Deve mencionar Horizon Europe ou similares",
+            "evaluation": "semantic",
+            "priority": "high"
+        },
+        {
+            "id": "recom-03",
+            "category": "recommendation",
+            "question": "Tenho uma empresa que quer melhorar a eficiência energética das instalações. Qual aviso do PRR devo recomendar?",
+            "expected_context": "Deve identificar avisos de eficiência energética, REPowerEU",
+            "evaluation": "semantic",
+            "priority": "high"
+        },
+        {
+            "id": "pratico-01",
+            "category": "practical",
+            "question": "Como se submetem candidaturas ao PEPAC? Qual é o portal e qual o procedimento?",
+            "expected_context": "Deve mencionar IFAP, iSIP ou processo de candidatura",
+            "evaluation": "semantic",
+            "priority": "medium"
+        },
+        {
+            "id": "pratico-02",
+            "category": "practical",
+            "question": "Qual é a taxa máxima de co-financiamento que uma PME pode obter no PRR?",
+            "expected_context": "Deve mencionar percentagem ou indicar que varia",
+            "evaluation": "semantic",
+            "priority": "medium"
+        },
+        {
+            "id": "pratico-03",
+            "category": "practical",
+            "question": "Qual é a dotação orçamental disponível nos avisos de Horizon Europe abertos?",
+            "expected_context": "Deve mencionar valores em euros",
+            "evaluation": "semantic",
+            "priority": "medium"
+        },
+        {
+            "id": "neg-01",
+            "category": "negative",
+            "question": "O meu cliente quer abrir um restaurante. Há fundos europeus para restauração?",
+            "expected_context": "Pode indicar que não há ou sugerir alternativas se houver",
+            "evaluation": "semantic",
+            "is_edge_case": true,
+            "priority": "medium"
+        },
+        {
+            "id": "neg-02",
+            "category": "negative",
+            "question": "Quanto tempo demora a aprovação de uma candidatura ao PRR?",
+            "expected_context": "Deve indicar que não tem essa informação nos documentos",
+            "should_admit_unknown": true,
+            "priority": "high"
+        }
+    ],
+    "evaluation_method": {
+        "type": "semantic_llm_judge",
+        "description": "Em vez de keywords exactas, usar LLM para avaliar se a resposta é útil, correcta e baseada nos documentos",
+        "criteria": [
+            "Resposta é útil para o consultor?",
+            "Informação está correcta e baseada nos documentos?",
+            "Cita fontes específicas?",
+            "Indica claramente quando não sabe?"
+        ]
+    }
+}

@@ -1,0 +1,1624 @@
+[
+  {
+    "id": "PT2030-251009",
+    "codigo": "FA0943/2024",
+    "titulo": "Capacitação da rede nacional de acolhimento de requerentes e beneficiários de proteção internacional",
+    "programa": "FAMI 2030",
+    "dataAbertura": "2026-01-01",
+    "dataFecho": "2026-04-30",
+    "dotacao": 0,
+    "status": "Aberto",
+    "url": "https://portugal2030.pt/aviso-2024/capacitacao-da-rede-nacional-de-acolhimento-de-requerentes-e-beneficiarios-de-protecao-internacional/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:35.742Z",
+    "beneficiarios": [
+      "Entidades públicas e privadas sem fins lucrativos ou equiparadas",
+      "autarquias locais",
+      "comunidades intermunicipais",
+      "áreas metropolitanas",
+      "organizações internacionais."
+    ],
+    "modalidade": [
+      "Individual | Parceria"
+    ],
+    "fundo": [
+      "FAMI"
+    ],
+    "taxa": 75,
+    "documentos": [
+      {
+        "id": "251251",
+        "nome": "FA0943/2024.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-238.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-251007",
+    "codigo": "FA0029/2025",
+    "titulo": "Estudos e investigações académicas",
+    "programa": "FAMI 2030",
+    "dataAbertura": "2025-10-01",
+    "dataFecho": "2025-11-28",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://portugal2030.pt/aviso-2024/estudos-e-investigacoes-academicas/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:36.052Z",
+    "beneficiarios": [
+      "Podem aceder aos apoios as entidades da administração pública central",
+      "entidades do ensino superior e centros de investigação ou laboratórios colaborativos acreditados pela FCT."
+    ],
+    "modalidade": [
+      "Individual | Parceria"
+    ],
+    "fundo": [
+      "FAMI"
+    ],
+    "taxa": 75,
+    "documentos": [
+      {
+        "id": "251250",
+        "nome": "FA0029/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-237.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-251005",
+    "codigo": "FA0103/2025",
+    "titulo": "Saúde – Equipamentos Hospitalares",
+    "programa": "MADEIRA 2030",
+    "dataAbertura": "2025-09-01",
+    "dataFecho": "2025-10-15",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://portugal2030.pt/aviso-2024/saude-equipamentos-hospitalares/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:36.393Z",
+    "beneficiarios": [
+      "Serviço de Saúde da Região Autónoma da Madeira"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FEDER"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251249",
+        "nome": "FA0103/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-236.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-251003",
+    "codigo": "FA0114/2025",
+    "titulo": "Mobilidade Sustentável",
+    "programa": "MADEIRA 2030",
+    "dataAbertura": "2025-11-03",
+    "dataFecho": "2025-12-19",
+    "dotacao": 0,
+    "status": "Aberto",
+    "url": "https://portugal2030.pt/aviso-2024/mobilidade-sustentavel/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:36.703Z",
+    "beneficiarios": [
+      "Municipios / Entidades do Setor Público"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FEDER"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251248",
+        "nome": "FA0114/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-235.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-251001",
+    "codigo": "FA0113/2025",
+    "titulo": "Proteção e conservação da natureza e biodiversidade",
+    "programa": "MADEIRA 2030",
+    "dataAbertura": "2025-11-03",
+    "dataFecho": "2025-12-19",
+    "dotacao": 0,
+    "status": "Aberto",
+    "url": "https://portugal2030.pt/aviso-2024/protecao-e-conservacao-da-natureza-e-biodiversidade/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:37.135Z",
+    "beneficiarios": [
+      "Municipios / Entidades do Setor Público"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FEDER"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251247",
+        "nome": "FA0113/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-234.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-250999",
+    "codigo": "FA0112/2025",
+    "titulo": "Infraestruturas verdes – ITI",
+    "programa": "MADEIRA 2030",
+    "dataAbertura": "2025-09-01",
+    "dataFecho": "2025-10-15",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://portugal2030.pt/aviso-2024/infraestruturas-verdes-iti/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:37.427Z",
+    "beneficiarios": [
+      "Município do Funchal"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FEDER"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251246",
+        "nome": "FA0112/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-233.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-250997",
+    "codigo": "FA0108/2025",
+    "titulo": "Infraestruturas Verdes",
+    "programa": "MADEIRA 2030",
+    "dataAbertura": "2025-10-01",
+    "dataFecho": "2025-11-28",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://portugal2030.pt/aviso-2024/infraestruturas-verdes/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:37.733Z",
+    "beneficiarios": [
+      "Instituto das Florestas e Conservação da Natureza"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FEDER"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251245",
+        "nome": "FA0108/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-232.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-250995",
+    "codigo": "FA0109/2025",
+    "titulo": "Resíduos em Baixa",
+    "programa": "MADEIRA 2030",
+    "dataAbertura": "2025-09-01",
+    "dataFecho": "2025-10-31",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://portugal2030.pt/aviso-2024/residuos-em-baixa/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:38.057Z",
+    "beneficiarios": [
+      "Municipios / Entidades do Setor Público"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FEDER"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251244",
+        "nome": "FA0109/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-231.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-250993",
+    "codigo": "FA0101/2025",
+    "titulo": "Ciclo Urbano da Água – Redes de Abastecimento de Água em Baixa",
+    "programa": "MADEIRA 2030",
+    "dataAbertura": "2025-09-01",
+    "dataFecho": "2025-09-30",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://portugal2030.pt/aviso-2024/ciclo-urbano-da-agua-redes-de-abastecimento-de-agua-em-baixa/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:38.372Z",
+    "beneficiarios": [
+      "Municipios / Entidades do Setor Público"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FEDER"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251243",
+        "nome": "FA0101/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-230.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-250991",
+    "codigo": "FA0102/2025",
+    "titulo": "Ciclo Urbano da Água – Redes de Recolha de Águas Residuais",
+    "programa": "MADEIRA 2030",
+    "dataAbertura": "2025-09-15",
+    "dataFecho": "2025-10-31",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://portugal2030.pt/aviso-2024/ciclo-urbano-da-agua-redes-de-recolha-de-aguas-residuais/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:38.730Z",
+    "beneficiarios": [
+      "Municipios / Entidades do Setor Público"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FEDER"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251242",
+        "nome": "FA0102/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-229.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-250989",
+    "codigo": "FA0154/2025",
+    "titulo": "Medidas de adaptação às alterações climáticas",
+    "programa": "SUSTENTAVEL 2030",
+    "dataAbertura": "2026-05-04",
+    "dataFecho": "2026-08-31",
+    "dotacao": 0,
+    "status": "Aberto",
+    "url": "https://portugal2030.pt/aviso-2024/medidas-de-adaptacao-as-alteracoes-climaticas-2/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:39.034Z",
+    "beneficiarios": [
+      "SREI – Secretaria Regional de Equipamentos e Infraestruturas/Direção Regional de Planeamento",
+      "Recursos e Gestão de Obras Publicas (SREI//DRPRGOP)"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FC"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251241",
+        "nome": "FA0154/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-228.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-250987",
+    "codigo": "FA0150/2025",
+    "titulo": "Medidas de adaptação às alterações climáticas",
+    "programa": "SUSTENTAVEL 2030",
+    "dataAbertura": "2025-10-01",
+    "dataFecho": "2025-11-28",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://portugal2030.pt/aviso-2024/medidas-de-adaptacao-as-alteracoes-climaticas/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:39.353Z",
+    "beneficiarios": [
+      "SREI – Secretaria Regional de Equipamentos e Infraestruturas/Direção Regional de Planeamento",
+      "Recursos e Gestão de Obras Publicas (SREI//DRPRGOP)"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FC"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251240",
+        "nome": "FA0150/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-227.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-250985",
+    "codigo": "FA0036/2025",
+    "titulo": "Proteção civil e gestão integrada de riscos – Prevenção e mitigação de riscos associados a derrocada de taludes ou para suporte de terras – 3º aviso",
+    "programa": "SUSTENTAVEL 2030",
+    "dataAbertura": "2026-02-02",
+    "dataFecho": "2026-05-29",
+    "dotacao": 0,
+    "status": "Aberto",
+    "url": "https://portugal2030.pt/aviso-2024/protecao-civil-e-gestao-integrada-de-riscos-prevencao-e-mitigacao-de-riscos-associados-a-derrocada-de-taludes-ou-para-suporte-de-terras-3o-aviso/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:39.654Z",
+    "beneficiarios": [
+      "SREI – Secretaria Regional dos Equipamentos e Infraestruturas/Direção Regional de Estradas (SREI/DREstradas)"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FC"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251239",
+        "nome": "FA0036/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-226.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-250983",
+    "codigo": "FA0033/2025",
+    "titulo": "Proteção civil e gestão integrada de riscos – Prevenção e mitigação de riscos associados a derrocada de taludes ou para suporte de terras – 2º aviso",
+    "programa": "SUSTENTAVEL 2030",
+    "dataAbertura": "2025-10-01",
+    "dataFecho": "2025-11-28",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://portugal2030.pt/aviso-2024/protecao-civil-e-gestao-integrada-de-riscos-prevencao-e-mitigacao-de-riscos-associados-a-derrocada-de-taludes-ou-para-suporte-de-terras-2o-aviso/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:39.950Z",
+    "beneficiarios": [
+      "SREI – Secretaria Regional dos Equipamentos e Infraestruturas/Direção Regional de Estradas (SREI/DREstradas)"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FC"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251238",
+        "nome": "FA0033/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-225.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-250981",
+    "codigo": "FA0151/2025",
+    "titulo": "Reforço da capacidade de Apoio à Decisão e Análise Integrada de Riscos",
+    "programa": "SUSTENTAVEL 2030",
+    "dataAbertura": "2025-10-01",
+    "dataFecho": "2025-12-31",
+    "dotacao": 0,
+    "status": "Aberto",
+    "url": "https://portugal2030.pt/aviso-2024/reforco-da-capacidade-de-apoio-a-decisao-e-analise-integrada-de-riscos/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:40.251Z",
+    "beneficiarios": [
+      "Serviço Regional de Proteção Civil",
+      "IP-RAM"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FC"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251237",
+        "nome": "FA0151/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-224.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-250979",
+    "codigo": "FA0932/2024",
+    "titulo": "Intervenções de gestão conservação reflorestação e ordenamento da Floresta com vista à prevenção e combate a incêndios Florestais",
+    "programa": "SUSTENTAVEL 2030",
+    "dataAbertura": "2026-02-02",
+    "dataFecho": "2026-05-29",
+    "dotacao": 0,
+    "status": "Aberto",
+    "url": "https://portugal2030.pt/aviso-2024/intervencoes-de-gestao-conservacao-reflorestacao-e-ordenamento-da-floresta-com-vista-a-prevencao-e-combate-a-incendios-florestais/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:40.543Z",
+    "beneficiarios": [
+      "IFCN IP-RAM - Instituto das Florestas e Conservação da Natureza - Instituto Público - Região Autónoma da Madeira"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FC"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251236",
+        "nome": "FA0932/2024.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-223.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-250977",
+    "codigo": "FA0106/2025",
+    "titulo": "Eficiência Energética em Infraestruturas da Administração Publica Regional",
+    "programa": "MADEIRA 2030",
+    "dataAbertura": "2025-10-01",
+    "dataFecho": "2025-11-28",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://portugal2030.pt/aviso-2024/eficiencia-energetica-em-infraestruturas-da-administracao-publica-regional/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:40.846Z",
+    "beneficiarios": [
+      "Entidades da Administração Pública Regional"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FEDER"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251235",
+        "nome": "FA0106/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-222.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-250975",
+    "codigo": "FA0133/2025",
+    "titulo": "Eficiência Energética III",
+    "programa": "MADEIRA 2030",
+    "dataAbertura": "2026-05-04",
+    "dataFecho": "2026-06-30",
+    "dotacao": 0,
+    "status": "Aberto",
+    "url": "https://portugal2030.pt/aviso-2024/eficiencia-energetica-iii/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:41.231Z",
+    "beneficiarios": [
+      "PME e NPME"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FEDER"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251234",
+        "nome": "FA0133/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-221.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-250973",
+    "codigo": "FA0130/2025",
+    "titulo": "Eficiência Energética II",
+    "programa": "MADEIRA 2030",
+    "dataAbertura": "2025-11-03",
+    "dataFecho": "2025-12-19",
+    "dotacao": 0,
+    "status": "Aberto",
+    "url": "https://portugal2030.pt/aviso-2024/eficiencia-energetica-ii/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:41.563Z",
+    "beneficiarios": [
+      "PME e NPME"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FEDER"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251233",
+        "nome": "FA0130/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-220.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PT2030-250971",
+    "codigo": "FA0129/2025",
+    "titulo": "FUNCIONAMENTO 2030 – T 5º aviso",
+    "programa": "MADEIRA 2030",
+    "dataAbertura": "2025-10-15",
+    "dataFecho": "2025-11-24",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://portugal2030.pt/aviso-2024/funcionamento-2030-t-5o-aviso/",
+    "fonte": "Portugal 2030",
+    "scrapedAt": "2025-12-14T22:07:41.855Z",
+    "beneficiarios": [
+      "PME e NPME"
+    ],
+    "modalidade": [
+      "Individual"
+    ],
+    "fundo": [
+      "FEDER"
+    ],
+    "taxa": 85,
+    "documentos": [
+      {
+        "id": "251232",
+        "nome": "FA0129/2025.pdf",
+        "tipo": "Aviso",
+        "url": "https://portugal2030.pt/wp-content/uploads/sites/3/2025/09/unnamed-file.pdf-219.octet-stream",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PT2030"
+  },
+  {
+    "id": "PRR-16635",
+    "codigo": "01/C06-i07/2023",
+    "titulo": "01. Reforma e Modernização da Medicina (Aviso de Abertura de Concurso N.º 01/C06-i07/2023)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2023-12-05",
+    "dataFecho": "2024-01-22",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/01-reforma-e-modernizacao-da-medicina-aviso-de-abertura-de-concurso-n-o-01-c06-i07-2023/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.662Z",
+    "descricao": "Data de Aviso de Concurso: 05/12/2023 Submissão de Candidaturas aqui De 02/01/2024 até às 23h59m de 22/01/2024 Ver documentação aqui Contacto para informações e Esclarecimentos: impulso.digitais@dges.gov.pt",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Instituições de Ensino Superior"
+    ],
+    "objetivoEstrategico": "C6. Qualificações e Competências",
+    "objetivoEspecifico": "C06-i07: Impulso Mais Digital",
+    "linha": "C6. Qualificações e Competências",
+    "subLinha": "C06-i07: Impulso Mais Digital",
+    "dataAviso": "2023-12-05",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2023/12/Impulso-Digital_Modernizacao_Medicina_aviso-de-abertura-1.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-49016",
+    "codigo": "1/C06-i08-RAM/2024",
+    "titulo": "01. Ampliação do Edifício do CITMA (Aviso n.º1/C06-i08-RAM/2024)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "",
+    "dataFecho": "",
+    "dotacao": 0,
+    "status": "Aberto",
+    "url": "https://recuperarportugal.gov.pt/candidatura/01-ampliacao-do-edificio-do-citma-aviso-n-o1-c06-i08-ram-2024/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.662Z",
+    "descricao": "Data da Orientação Técnica: 24/07/2024 Ver documentação aqui Contacto para informações e Esclarecimentos: idr@madeira.gov.pt ou contacto telefónico 291 214 000.",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Entidades Públicas"
+    ],
+    "objetivoEstrategico": "C6. Qualificações e Competências",
+    "objetivoEspecifico": "C06.i08 RAM: Ampliação do Edifício do CITMA",
+    "linha": "C6. Qualificações e Competências",
+    "subLinha": "C06.i08 RAM: Ampliação do Edifício do CITMA",
+    "dataAviso": "",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/08/OTE_C06-i08-RAM.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-16996",
+    "codigo": "01/C06-i09.04/2023",
+    "titulo": "01. - Programa de Recuperação/Reabilitação de Escolas – Alentejo | Modernização dos estabelecimentos públicos de ensino dos 2.º e 3.º ciclos e secundário (Aviso de Abertura de Concurso N.º 01/C06-i09.04/2023)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2024-01-02",
+    "dataFecho": "2024-04-30",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/01-programa-de-recuperacao-reabilitacao-de-escolas-alentejo-modernizacao-dos-estabelecimentos-publicos-de-ensino-dos-2-o-e-3-o-ciclos-e-secundario-aviso-de-abertura-de-concurso-n-o-01/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.662Z",
+    "descricao": "Data de Aviso de Concurso: 02/01/2024 Submissão de Candidaturas aqui De 03/01/2024 até às 19h de 29/03/2024 Ver documentação Aqui Contacto para informações e Esclarecimentos: prr_escolasalentejo@ccdr-a.gov.pt 266740360; Veja aqui exemplo de como submeter uma candidatura Data de Aviso de Republicação: 25/01/2024 Submissão de Candidaturas aqui De 03/01/2024 até às 19h de 29/03/2024 Ver documentação Aqui Alteração dos pontos 6 e 10 e Anexo C Contacto para informações e Esclarecimentos: prr_escolasalentejo@ccdr-a.gov.pt 266740360 Veja aqui exemplo de como submeter uma candidatura Data de 2.ª Republicação do Aviso: 01/03/2024 Submissão de Candidaturas aqui De 03/01/2024 até às 19h de 30/04/2024 Ver documentação AquiAlteração dos pontos 2, 3, 9 e 11 Contacto para informações e Esclarecimentos: p",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Autarquias e Áreas Metropolitanas"
+    ],
+    "objetivoEstrategico": "C6. Qualificações e Competências",
+    "objetivoEspecifico": "C06-i09: Programa de Recuperação/Reabilitação de Escolas",
+    "linha": "C6. Qualificações e Competências",
+    "subLinha": "C06-i09: Programa de Recuperação/Reabilitação de Escolas",
+    "dataAviso": "2024-03-01",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/01/2024.01.02-AVISO-ESCOLAS-PRR_vfinal-3.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-1",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/01/AVISO-ESCOLAS-PRR_republicacao.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-2",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/01/AVISO-ESCOLAS-PRR_2a-republicacao.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-16587",
+    "codigo": "01/C16-i04/2023",
+    "titulo": "01. 1º Aviso de Abertura de Concurso no âmbito do Investimento \"Investimento TD-C16-i04: Indústria 4.0\" (Aviso de Abertura de Concurso n.º 01/C16-i04/2023)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2023-12-05",
+    "dataFecho": "2023-12-20",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/01-1o-aviso-de-abertura-de-concurso-no-ambito-do-investimento-investimento-td-c16-i04-industria-4-0-aviso-de-abertura-de-concurso-n-o-01-c16-i04-2023/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.663Z",
+    "descricao": "Data do Aviso: 30/11/2023 Submissão de Candidaturas aqui Entre 5/12/2023 e 20/12/2023 A apresentação das candidaturas é realizada através de formulário electrónico, disponível nas páginas eletrónicas do IAPMEI, com registo e autenticação no Balcão dos Fundos. Ver documentação Aqui Contatos para informações e esclarecimentos: IAPMEI – Agência para a Competitividade e Inovação, I.P. – info@iapmei.pt | 808 201 201 ou 213 836 237",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Empresas"
+    ],
+    "objetivoEstrategico": "C16. Empresas 4.0",
+    "objetivoEspecifico": "C16-i04: Indústria 4.0",
+    "linha": "C16. Empresas 4.0",
+    "subLinha": "C16-i04: Indústria 4.0",
+    "dataAviso": "2023-11-30",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2023/11/Aviso-01_C16-i04_2023_Industria4.0-Publicacao.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-9536",
+    "codigo": "01/C06-i03.01/2022",
+    "titulo": "01. AAC - Projetos Locais Promotores de Qualificações de Nível B1/B2/B3 (Aviso de Abertura de Concurso N.º 01/C06-i03.01/2022)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2022-09-19",
+    "dataFecho": "2022-11-15",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/01-aac-projetos-locais-promotores-de-qualificacoes-de-nivel-b1-b2-b3-aviso-de-abertura-de-concurso-n-o-01-c06-i03-01-2022/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.663Z",
+    "descricao": "Data do Aviso: 19/09/2022 Submissão de Candidaturas aqui até 31/10/2022 Ver Documentação aqui Data de Aviso de Republicação: 27/10/2022 Submissão de Candidaturas aqui até 15/11/2022 Ver documentação aqui Contacto para informações e esclarecimentos: projetos.locais@anqep.gov.pt, 21 394 37 00 Veja aqui exemplo de como submeter uma candidatura Data de Aviso de 2ª Republicação: 31/10/2022 Submissão de Candidaturas aqui até 15/11/2022 Ver documentação aqui Contacto para informações e esclarecimentos: projetos.locais@anqep.gov.pt, 21 394 37 00 Veja aqui exemplo de como submeter uma candidatura",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Instituições da Economia Solidaria e Social",
+      "Empresas",
+      "Escolas",
+      "Autarquias e Áreas Metropolitanas",
+      "Entidades Públicas"
+    ],
+    "objetivoEstrategico": "C6. Qualificações e Competências",
+    "objetivoEspecifico": "C06-i03.01 - Incentivo Adultos - Projetos Locais Promotores de Qualificações de Nível B1/B2/B3",
+    "linha": "C6. Qualificações e Competências",
+    "subLinha": "C06-i03.01 - Incentivo Adultos - Projetos Locais Promotores de Qualificações de Nível B1/B2/B3",
+    "dataAviso": "2022-10-31",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/09/Aviso-Abertura-Concurso-Projetos_Locais_Promotores_Qualificacoes_Nivel_B1_B2_B3_v.final_13.09.2022.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-1",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "/wp-content/uploads/2022/09/Aviso-Abertura-Concurso-Projetos_Locais_Promotores_Qualificacoes_Nivel_B1_B2_B3_v.republicacao_25.10.2022.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-2",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "/wp-content/uploads/2022/09/Aviso-Abertura-Concurso-Projetos_Locais_Promotores_Qualificacoes_Nivel_B1_B2_B3_v.republicacao_31.10.2022_VF_limpa-1.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-4328",
+    "codigo": "01/C06-i04.02/2021",
+    "titulo": "01. Alargamento da Rede de Clubes Ciência Viva na Escola (Aviso de Abertura de Concurso N.º 01/C06-i04.02/2021)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2021-10-20",
+    "dataFecho": "2021-12-30",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/n-o-01-c06-i04-02-2021/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.663Z",
+    "descricao": "Data do aviso: 20/10/2021 A submissão de Candidaturas decorre entre dia 20 de outubro e 30 de dezembro de 2021 aqui. Ver documentação aqui. Os pedidos de informação e de esclarecimentos devem ser apresentados por escrito e remetido para o seguinte endereço de correio eletrónico: clubes@cienciaviva.pt.",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Escolas"
+    ],
+    "objetivoEstrategico": "C6. Qualificações e Competências",
+    "objetivoEspecifico": "C06-i04.02: Impulso Jovens STEAM - Rede Ciência Viva",
+    "linha": "C6. Qualificações e Competências",
+    "subLinha": "C06-i04.02: Impulso Jovens STEAM - Rede Ciência Viva",
+    "dataAviso": "2021-10-20",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://webstorage.cienciaviva.pt/public/pt.cienciaviva.clubes/AvisoPRR_2021_CCVnE.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-14659",
+    "codigo": "01/C01-i09.01/2023",
+    "titulo": "01. Alargar o Desporto Escolar Reforçar o projeto Desporto Escolar Comunidade (Aviso n.º 01/C01-i09.01/2023)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2023-06-15",
+    "dataFecho": "2023-07-28",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/01-alargar-o-desporto-escolar-reforcar-o-projeto-desporto-escolar-comunidade-aviso-n-o-01-c01-i09-01-2023/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.663Z",
+    "descricao": "Data de Publicação do Aviso: 12/06/2023 Submissão de Candidaturas aqui, de 15/06/2023 até 28/07/2023 Ver documentação aqui Contacto para informações e esclarecimentos: decomunidade@dge.mec.pt; suava@ipdj.pt; 213 934 559",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Escolas"
+    ],
+    "objetivoEstrategico": "C1. Serviço Nacional de Saúde",
+    "objetivoEspecifico": "C01-i09 - Sistema Universal de Apoio à Vida Ativa",
+    "linha": "C1. Serviço Nacional de Saúde",
+    "subLinha": "C01-i09 - Sistema Universal de Apoio à Vida Ativa",
+    "dataAviso": "2023-06-12",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2023/06/C01-i09-SUAVA-DE-COMUNIDADE-AVISO-ass.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-5703",
+    "codigo": "01/C15-i05/2021",
+    "titulo": "01. Apoio à aquisição de veículos limpos para o transporte coletivo de passageiros mediante procedimento de concurso competitivo (N.º 01/C15-i05/2021)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2021-12-06",
+    "dataFecho": "2022-01-31",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/apoio-a-aquisicao-de-veiculos-limpos-para-o-transporte-coletivo-de-passageiros-mediante-procedimento-de-concurso-competitivo/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.664Z",
+    "descricao": "Data do Aviso: 03/12/2021 Submissão de Candidaturas aqui entre o dia 06/12/2021 e 31/01/2022 Ver documentação aqui Contacto para informações e Esclarecimentos: apoioveiculoslimpos@fundoambiental.pt",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Empresas",
+      "Autarquias e Áreas Metropolitanas",
+      "Empresas Públicas"
+    ],
+    "objetivoEstrategico": "C15. Mobilidade Sustentável",
+    "objetivoEspecifico": "C15-i05: Descarbonização dos Transportes Públicos",
+    "linha": "C15. Mobilidade Sustentável",
+    "subLinha": "C15-i05: Descarbonização dos Transportes Públicos",
+    "dataAviso": "2021-12-03",
+    "documentos": [],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-6015",
+    "codigo": "01/C11-i01/2021",
+    "titulo": "01. Apoio à elaboração de roteiros de descarbonização da indústria e capacitação das empresas (Aviso N.º 01/C11-i01/2021)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2021-12-30",
+    "dataFecho": "2023-05-30",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/apoio-a-elaboracao-de-roteiros-de-descarbonizacao-da-industria-e-capacitacao-das-empresas-aviso-n-o-01-c11-i01-2021/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.664Z",
+    "descricao": "Data do Aviso: 30/12/2021 Submissão de Candidaturas aqui até 31/03/2022 Ver Documentação aqui Republicação do Aviso: 18/03/2022 Submissão de Candidaturas aqui até 18/04/2022 Ver Documentação aqui Contacto para informações e Esclarecimentos: info@iapmei.pt 2ª Republicação do Aviso: 30/05/2023 Ver Documentação aqui (Alteração do Ponto 10) Contacto para informações e Esclarecimentos: info@iapmei.pt",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Empresas",
+      "Instituições do Sistema Cientifico e Tecnológico"
+    ],
+    "objetivoEstrategico": "C11. Descarb. da Indústria",
+    "objetivoEspecifico": "C11-i01: Descarbonização da Indústria",
+    "linha": "C11. Descarb. da Indústria",
+    "subLinha": "C11-i01: Descarbonização da Indústria",
+    "dataAviso": "2021-12-30",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/12/30.12.2021-Aviso-C11_m4-vf.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-1",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/12/2.aRepublicacao_Aviso01.C11-i01.2021-5.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-4343",
+    "codigo": "01/C14-i01/2021",
+    "titulo": "01. Apoio à produção de hidrogénio renovável e outros gases renováveis (Aviso de Abertura de Concurso N.º 01/C14-i01/2021)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2025-09-28",
+    "dataFecho": "2025-12-30",
+    "dotacao": 0,
+    "status": "Aberto",
+    "url": "https://recuperarportugal.gov.pt/candidatura/n-o-01-c14-i01-2021/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.671Z",
+    "descricao": "Apoiar projetos de produção de gases de origem renovável, na aceção da alínea bb) do artigo 3.º do Decreto-Lei n.º 62/2020, de 28 de agosto. Data do Aviso: 28/09/2021 Submissão de Candidaturas aqui entre o dia 28.09.2021 e 30.12.2021 Ver documentação aqui e republicação aqui Para obtenção de informações e esclarecimentos poderá ser utilizado o seguinte contacto: gases_renovaveis@fundoambiental.pt Republicação do Aviso: 23/11/2021 Submissão de Candidaturas aqui entre o dia 28.09.2021 e 30.12.2021 Ver documentação de republicação aqui 2ª Republicação do Aviso: 15/12/2021 Submissão de Candidaturas aqui entre o dia 28.09.2021 e 31/01/2022 Ver documentação de republicação aqui 4ª Republicação do Aviso: 24/01/2022 Submissão de Candidaturas aqui entre o dia 28.09.2021 e 31/01/2022 Ver documentaçã",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Empresas",
+      "Entidades Públicas"
+    ],
+    "objetivoEstrategico": "C14. Hidrogénio e Renováveis",
+    "objetivoEspecifico": "TC-C14-i01: Hidrogénio e Gases Renováveis",
+    "linha": "C14. Hidrogénio e Renováveis",
+    "subLinha": "TC-C14-i01: Hidrogénio e Gases Renováveis",
+    "dataAviso": "2021-09-28",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/09/2021-Aviso-AC-TC-C14-i1_VFinal.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-1",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/11/2021-Aviso-AC-TC-C14-i1_VFinal-publicacao_rv.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-2",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/10/2021-Aviso-AC-TC-C14-i1_VFinal-publicacao_rv2.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-3",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/10/Prorrogacao-Aviso-TC-C14-i01-1.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-4",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/10/Alteracao-Aviso-TC-C14-i01-4.a-republicacao.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-5",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/10/5.a-republicacao-Aviso-TC-C14-i01-2022_01_26.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-6",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/10/6.a-republicacao-Aviso-TC-C14-i01-2023_03_31_VF_3-pos-EMRP.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-4329",
+    "codigo": "PRR-4329",
+    "titulo": "01. Apoio à reconversão de Áreas de Acolhimento Empresarial Existentes para uma dimensão mais Resiliente, mais Verde e mais Digital",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2021-06-30",
+    "dataFecho": "2021-12-02",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/n-o-01-c7-i01-2021/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.671Z",
+    "descricao": "Criar espaços de demonstração, em linha com as novas agendas climáticas e digitais, testando soluções integradas que mobilizem para uma agenda de mudança sobre o papel destes espaços e a sua articulação com a estruturação de clusters e cadeias de valor de especialização produtiva, escaláveis para outras áreas no futuro. 1º Fase – (N.º 01/C07-i01/2021) Data do Aviso: 30/06/2021 Submissão de Candidaturas de “Manifestação de Interesse” até 15/09/2021 CCDR Algarve CCDR Lisboa e Vale do Tejo CCDR Alentejo CCDR Centro CCDR Norte Ver Documentação PRR – AAE – Lista de Manifestações de Interesse aptas a passar à 2ª fase Aviso N.º 01/C7-i01/2021 (Deliberação conjunta das CCDR de 13 de outubro de 2021) Informação Vinculativa Aqui 2º Fase – (N.º 02/C07-i01/2021) Data do Aviso de Abertura de Concurso: ",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Empresas",
+      "Autarquias e Áreas Metropolitanas"
+    ],
+    "objetivoEstrategico": "C7. Infraestruturas",
+    "objetivoEspecifico": "RE-C07-i01: Áreas de Acolhimento Empresarial (AAE)",
+    "linha": "C7. Infraestruturas",
+    "subLinha": "RE-C07-i01: Áreas de Acolhimento Empresarial (AAE)",
+    "dataAviso": "2021-11-22",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "Ver Documentação",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/06/PRR_C07_i01_AVISO_AAE_29_06_2021.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-1",
+        "nome": "PRR – AAE – Lista de Manifestações de Interesse aptas a passar à 2ª fase Aviso N.º 01/C7-i01/2021",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/10/20211015_Proplistamanifinteresse13102021.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-2",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/07/Informacao-Vinculativa-Aviso-02_C07-i01_2021.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-3",
+        "nome": "Ver Documentação",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/10/Aviso-PRR-AAE-02C7i012021_VF-3.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-4",
+        "nome": "Relatório final referente à 2º fase do Aviso n.º 02/C07-i01/2021 – Áreas de Acolhimento Empresarial (AAE)",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/10/Relatorio-final-referente-a-2o-fase-do-Aviso-n.o-02C07-i012021-Areas-de-Acolhimento-Empresarial-AAE-Deliberacao-conjunta-das-CCDR-janeiro-de-2022.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-6792",
+    "codigo": "01/C13-i03/2022",
+    "titulo": "01. Apoio à Renovação e Aumento do Desempenho Energético dos Edifícios de Serviços (Aviso n.º 01/C13-i03/2022)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2022-02-28",
+    "dataFecho": "2022-07-29",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/apoio-a-renovacao-e-aumento-do-desempenho-energetico-dos-edificios-de-servicos-aviso-n-o-01-c13-i03-2022/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.671Z",
+    "descricao": "Data do Aviso: 28/02/2022 Submissão de Candidaturas aqui até 31/05/2022. Ver documentação aqui Contacto para informações e Esclarecimentos: geral@fundoambiental.pt Data de Republicação: 31/03/2022 Submissão de Candidaturas aqui entre 28/02/2022 e 31/05/2022 Ver documentação aqui Data de 2ª Republicação: 13/04/2022 Submissão de Candidaturas aqui entre 28/02/2022 e 31/05/2022 Ver documentação aqui Contacto para informações e Esclarecimentos: geral@fundoambiental.pt Data de 3ª Republicação: 17/05/2022 Submissão de Candidaturas aqui entre 28/02/2022 e 29/07/2022 ( até às 18h00) Ver documentação aqui Contacto para informações e Esclarecimentos: geral@fundoambiental.pt Data de 4ª Republicação: 13/03/2023 Ver documentação aqui (alteração ponto 7.2) Contacto para informações e Esclarecimentos: ger",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Instituições da Economia Solidaria e Social",
+      "Empresas"
+    ],
+    "objetivoEstrategico": "C13. Eficiência Energética em Edifícios",
+    "objetivoEspecifico": "C13-i03: Eficiência energética em edifícios de serviços",
+    "linha": "C13. Eficiência Energética em Edifícios",
+    "subLinha": "C13-i03: Eficiência energética em edifícios de serviços",
+    "dataAviso": "2023-03-13",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/02/Aviso-C13-Edificios-Servicos_FINAL.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-1",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/02/Aviso-C13-Edificios-Servicos_1.a-Republicacao.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-2",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/02/Aviso-C13-Edificios-Servicos_2.a-Republicacao.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-3",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/02/Aviso-C13-Edificios-Servicos_3.a-Republicacao_alt-data.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-4",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/02/Aviso-C13-Edificios-Servicos_4.a-Republicacao_alt-dotacao.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-18215",
+    "codigo": "01/C10-i07/2024",
+    "titulo": "01. Apoio à transição energética e descarbonização do transporte marítimo de mercadorias e passageiros (Aviso de Abertura de Concurso n.º 01/C10-i07/2024)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2024-01-31",
+    "dataFecho": "2024-04-12",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/01-apoio-a-transicao-energetica-e-descarbonizacao-do-transporte-maritimo-de-mercadorias-e-passageiros-aviso-de-abertura-de-concurso-n-o-01-c10-i07-2024/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.672Z",
+    "descricao": "Data do Aviso de Concurso: 31/01/2024 Submissão de Candidaturas aqui, até 12/03/2024 Ver documentação Aqui Contacto para informações e Esclarecimentos: email: info@iapmei.pt; Linha Azul do IAPMEI em 808 201 201 ou do 213 836 237 Data de Republicação do Aviso de Concurso: 08/03/2024 Submissão de Candidaturas aqui, até 12/04/2024 Ver documentação Aqui Alteração dos pontos 8.1 / 13.4 / alínea iii) do anexo II Contacto para informações e Esclarecimentos: email: info@iapmei.pt; Linha Azul do IAPMEI em 808 201 201 ou do 213 836 237",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Empresas"
+    ],
+    "objetivoEstrategico": "C10. Mar",
+    "objetivoEspecifico": "C10.i07: Green Shipping",
+    "linha": "C10. Mar",
+    "subLinha": "C10.i07: Green Shipping",
+    "dataAviso": "2024-03-08",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/01/Aviso07.C10-i07.2024_Navegacao-Ecologica_VF.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-1",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/01/Repub_Aviso-01.C10-i07.2024_NavEco.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-5985",
+    "codigo": "01/C10-i02/2021",
+    "titulo": "01. Apoio à transição energética e redução do impacto ambiental para empresas do setor da Pesca e da Aquicultura (Aviso N.º 01/C10-i02/2021)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2021-12-30",
+    "dataFecho": "2022-03-04",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/apoio-a-transicao-energetica-e-reducao-do-impacto-ambiental-para-empresas-do-setor-da-pesca-e-da-aquicultura-aviso-n-o-01-c10-i02-2021/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.672Z",
+    "descricao": "Data do Aviso: 30/12/2021 Submissão de Candidaturas aqui entre 30/12/2021 e 15/02/2022 Ver documentação aqui Data de Republicação: 01/02/2022 Submissão de Candidaturas aqui entre 30/12/2021 e 01/03/2022 Ver documentação aqui Data de 2ª Republicação: 28/02/2022 Submissão de Candidaturas aqui entre 30/12/2021 e 04/03/2022 Ver documentação aqui Contacto para informações e Esclarecimentos: 213 035 700 Data de 3ª Republicação: 08/09/2023 Submissão de Candidaturas aqui entre 30/12/2021 e 04/03/2022 Ver documentação Aqui (Alteração Ponto 12. g) Contacto para informações e Esclarecimentos: 213 035 700",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Empresas"
+    ],
+    "objetivoEstrategico": "C10. Mar",
+    "objetivoEspecifico": "C10-i02: Transição Verde e Digital e Segurança nas Pescas",
+    "linha": "C10. Mar",
+    "subLinha": "C10-i02: Transição Verde e Digital e Segurança nas Pescas",
+    "dataAviso": "2023-09-08",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/12/Republicacao-AVISO-PRR-Pescas-Fileira-do-Pescado-28.02.2022-2.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-1",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2021/12/Republicacao_A_AVISO-PRR-Pescas-Fileira-do-Pescado-28.02.2022-2.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-47024",
+    "codigo": "01/C21-i05/2024",
+    "titulo": "01. Apoio ao Desenvolvimento de uma Indústria Ecológica (Aviso N.º 01/C21-i05/2024)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2024-06-11",
+    "dataFecho": "2024-06-11",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/01-apoio-ao-desenvolvimento-de-uma-industria-ecologica-aviso-n-o-01-c21-i05-2024/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.672Z",
+    "descricao": "Data do Aviso: 07/06/202 Submissão de Candidaturas aqui Ver Documentação aqui Contactos e esclarecimentos: info@iapmei.pt Data de Republicação do Aviso: 11/06/2024 Submissão de Candidaturas aqui Ver documentação aqui Alterações: Ponto 10 Contacto para informações e Esclarecimentos: info@iapmei.pt",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Empresas"
+    ],
+    "objetivoEstrategico": "C21. REPowerEU",
+    "objetivoEspecifico": "RP-C21-i05: Apoio ao desenvolvimento de uma indústria ecológica",
+    "linha": "C21. REPowerEU",
+    "subLinha": "RP-C21-i05: Apoio ao desenvolvimento de uma indústria ecológica",
+    "dataAviso": "2024-06-11",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/06/Aviso-C21-i05-Apoio-ao-desenvolvimento-industria-Ecologica.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-1",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/06/Republicacao_-Aviso-C21-i05-Apoio-ao-desenvolvimento-industria-Ecologica-1-002-2.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-18345",
+    "codigo": "01/C01-i10/2024",
+    "titulo": "01. Aquisição de equipamento médico pesado e sistemas cirúrgicos robóticos para as Unidades de Saúde do SNS (Aviso n.º01/C01-i10/2024)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2024-02-12",
+    "dataFecho": "2025-12-03",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/03-aquisicao-de-equipamento-medico-pesado-e-sistemas-cirurgicos-roboticos-para-as-unidades-de-saude-do-sns-aviso-n-o01-c01-i10-2024/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.672Z",
+    "descricao": "https://recuperarportugal.gov.pt/wp-content/uploads/2025/12/AC01-C01-i10-2024_7.a-Rep_03dezembro2025_equip.pesado.pdf Data do Aviso: 12/02/2024 Ver Documentação Aqui Submissão de Candidaturas aqui de 12/02/2024 até às 19h de 09/03/2024 Contacto para informações e Esclarecimentos: prr@acss.minsaude.pt Data da Republicação do Aviso: 21/02/2024 Ver Documentação Aqui Alteração ao ponto 16 e anexo II Submissão de Candidaturas aqui de 12/02/2024 até às 19h de 09/03/2024 Contacto para informações e Esclarecimentos: prr@acss.minsaude.pt Data da 2.ª Republicação do Aviso: 20/01/2025 Ver Documentação Aqui Alteração ao ponto 16 e anexo II Contacto para informações e Esclarecimentos: prr@acss.minsaude.pt Data da 3.ª Republicação do Aviso: 21/01/2025 Ver Documentação Aqui Alteração ao ponto 16 e anexo ",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Entidades Públicas"
+    ],
+    "objetivoEstrategico": "C1. Serviço Nacional de Saúde",
+    "objetivoEspecifico": "C01-i10 - Programa de Modernização Tecnológica do SNS",
+    "linha": "C1. Serviço Nacional de Saúde",
+    "subLinha": "C01-i10 - Programa de Modernização Tecnológica do SNS",
+    "dataAviso": "2025-12-03",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/02/Aviso_PMTSNS_i010_12.02.2024_final_pdf.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-1",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/02/Aviso_PMTSNS_i010_rep_21.02.2024-1.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-2",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2025/01/Aviso_1_2aRepublicacao_emp-1.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-3",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2025/01/Aviso_1_3aRepublicacao_emp.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-4",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2025/03/Aviso_1_4aRepublicacao_Pesados_Rep-2.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-5",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2025/09/Aviso_1_5aRepublicacao_Pesados_Rep-VF-3.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-6",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2025/11/AC01-C01-i10-2024_6.a-Rep_12novembro2025_equip.pesado.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-7",
+        "nome": "Aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2025/12/AC01-C01-i10-2024_7.a-Rep_03dezembro2025_equip.pesado.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-7774",
+    "codigo": "01/C01-i04/2022",
+    "titulo": "01. Aquisição dos equipamentos para o Hospital de Proximidade de Sintra (Aviso n.º 01/C01-i04/2022)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2022-05-09",
+    "dataFecho": "2022-05-20",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/aquisicao-dos-equipamentos-para-o-hospital-de-proximidade-de-sintra-aviso-n-o-01-c01-i04-2022/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.672Z",
+    "descricao": "Data do Aviso: 06/05/2022 A submissão de Candidaturas aqui de 09/05/2022 até 20/05/2022 Ver Documentação aqui Contacto para informações e Esclarecimentos: prr@acss.minsaude.pt Data de Republicação do Aviso: 12/07/2023 Ver Documentação aqui Contacto para informações e Esclarecimentos: prr@acss.minsaude.pt",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Empresas Públicas"
+    ],
+    "objetivoEstrategico": "C1. Serviço Nacional de Saúde",
+    "objetivoEspecifico": "C01-i04: Modernização e renovação de áreas hospitalares e equipamentos para hospitais",
+    "linha": "C1. Serviço Nacional de Saúde",
+    "subLinha": "C01-i04: Modernização e renovação de áreas hospitalares e equipamentos para hospitais",
+    "dataAviso": "2023-07-12",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/05/1.AC_Hospitais_Assinado-1.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-1",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/05/AC1_i4.01.3_1arep_12julho2023.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-49663",
+    "codigo": "01/C19-i08/2024",
+    "titulo": "01. Aquisição e desenvolvimento de Plataformas de Gestão Urbana (Aviso de Abertura de Concurso N.º 01/C19-i08/2024)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "2024-09-16",
+    "dataFecho": "2024-11-15",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/01-aquisicao-e-desenvolvimento-de-plataformas-de-gestao-urbana/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.672Z",
+    "descricao": "Data do Aviso: 16/09/2024 A submissão de Candidaturas decorre entre dia 16 de setembro a 31 de outubro de 2024 aqui Ver Documentação aqui ou no site da AMA. Anexo I Aqui Anexo II Aqui Os pedidos de informação e de esclarecimentos devem ser enviados para o seguinte endereço de correio eletrónico: avisos.prr@ama.pt Data da republicação do Aviso: 30/10/2024 A submissão de Candidaturas decorre entre dia 16 de setembro a 15 de novembro de 2024 aqui Ver Documentação aqui ou no site da AMA. Anexo I Aqui Anexo II Aqui Os pedidos de informação e de esclarecimentos devem ser enviados para o seguinte endereço de correio eletrónico: avisos.prr@ama.pt",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Autarquias e Áreas Metropolitanas"
+    ],
+    "objetivoEstrategico": "C19. Administração Pública Mais Eficiente",
+    "objetivoEspecifico": "C19-i08 - Territórios Inteligentes - AMA",
+    "linha": "C19. Administração Pública Mais Eficiente",
+    "subLinha": "C19-i08 - Territórios Inteligentes - AMA",
+    "dataAviso": "2024-10-30",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/09/20240912-Aviso-PGU.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-1",
+        "nome": "Aqui",
+        "tipo": "Anexo",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/10/Anexo-I-Caraterizacao-da-candidatura-sistemas-e-Beneficiarios_21out24.xlsx",
+        "formato": "xlsx"
+      },
+      {
+        "id": "PRR-doc-2",
+        "nome": "Aqui",
+        "tipo": "Anexo",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/09/Anexo-II-Declaração-Compromisso.docx",
+        "formato": "docx"
+      },
+      {
+        "id": "PRR-doc-3",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/10/20241030-Aviso-PGU_republicacao.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-4",
+        "nome": "Aqui",
+        "tipo": "Anexo",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/10/Anexo_I_Caraterizacao_candidatura_sistemas_Beneficiarios_30out24.xlsx",
+        "formato": "xlsx"
+      },
+      {
+        "id": "PRR-doc-5",
+        "nome": "Aqui",
+        "tipo": "Anexo",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2024/10/Anexo_II_Declaracao_Compromisso.docx",
+        "formato": "docx"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-6524",
+    "codigo": "01/C07-i04.02/2021",
+    "titulo": "01. Áreas de Acolhimento Empresarial (AAE) – Acessibilidades Rodoviárias (Aviso de Publicitação N.º 01/C07-i04.02/2021)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "",
+    "dataFecho": "",
+    "dotacao": 0,
+    "status": "Aberto",
+    "url": "https://recuperarportugal.gov.pt/candidatura/investimento-c07-i04-02-areas-de-acolhimento-empresarial-aae-acessibilidades-rodoviarias-sub-investimento-aviso-n-o-01-c07-i04-02-2021/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.672Z",
+    "descricao": "Requalificação da EN10-4. Setúbal/Mitrena Data do Aviso de Publicitação: 28/12/2021 Ver documentação aqui Para obtenção de informações e esclarecimentos poderá ser utilizado o seguinte contacto: 21 383 71 67 Data de Republicação do Aviso de Publicitação: 12/03/2025 Ver documentação aqui Para obtenção de informações e esclarecimentos poderá ser utilizado o seguinte contacto: 21 383 71 67",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Autarquias e Áreas Metropolitanas"
+    ],
+    "objetivoEstrategico": "C7. Infraestruturas",
+    "objetivoEspecifico": "C07-i04.02: Áreas de Acolhimento Empresarial (AAE) – Acessibilidades Rodoviárias - EN10-4. Setúbal/ Mitrena e Ligação da A8 à Área Empresarial das Palhagueiras em Torres Vedras",
+    "linha": "C7. Infraestruturas",
+    "subLinha": "C07-i04.02: Áreas de Acolhimento Empresarial (AAE) – Acessibilidades Rodoviárias - EN10-4. Setúbal/ Mitrena e Ligação da A8 à Área Empresarial das Palhagueiras em Torres Vedras",
+    "dataAviso": "2025-03-12",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/02/AVISOpublicitacaoSetubal_final-3.pdf",
+        "formato": "pdf"
+      },
+      {
+        "id": "PRR-doc-1",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2025/03/Aviso-Republicacao-2-Contrato-ST-5.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  },
+  {
+    "id": "PRR-7565",
+    "codigo": "01/C07-i01.04/2022",
+    "titulo": "01. Áreas de Acolhimento Empresarial de Nova Geração (Aviso N.º 01/C07-i01.04/2022)",
+    "programa": "Plano de Recuperação e Resiliência",
+    "dataAbertura": "",
+    "dataFecho": "",
+    "dotacao": 0,
+    "status": "Fechado",
+    "url": "https://recuperarportugal.gov.pt/candidatura/areas-de-acolhimento-empresarial-de-nova-geracao-aviso-n-o-01-c07-i01-04-2022/",
+    "fonte": "PRR",
+    "scrapedAt": "2025-12-14T22:07:43.672Z",
+    "descricao": "Data de Aviso de Publicação: 10/08/2021 Ver documentação aqui Contacto para informações e Esclarecimentos: prr_aae@ccdr-a.gov.pt",
+    "fundo": [
+      "PRR"
+    ],
+    "beneficiarios": [
+      "Autarquias e Áreas Metropolitanas"
+    ],
+    "objetivoEstrategico": "C7. Infraestruturas",
+    "objetivoEspecifico": "C07-i01.04 - Áreas de Acolhimento Empresarial (AAE)",
+    "linha": "C7. Infraestruturas",
+    "subLinha": "C07-i01.04 - Áreas de Acolhimento Empresarial (AAE)",
+    "dataAviso": "2021-08-10",
+    "documentos": [
+      {
+        "id": "PRR-doc-0",
+        "nome": "aqui",
+        "tipo": "PDF",
+        "url": "https://recuperarportugal.gov.pt/wp-content/uploads/2022/04/PRR_C07_i01_AVISO_AAE_06_08_2021-2.pdf",
+        "formato": "pdf"
+      }
+    ],
+    "portal": "PRR"
+  }
+]

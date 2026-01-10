@@ -1,0 +1,550 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters", "postgresqlExtensions"]
+  binaryTargets   = ["native", "linux-musl-arm64-openssl-3.0.x", "rhel-openssl-3.0.x"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [vector]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id              String       @id @default(cuid())
+  name            String?
+  email           String       @unique
+  emailVerified   DateTime?
+  image           String?
+  password        String?
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+  role            String       @default("user")
+  accounts        Account[]
+  sessions        Session[]
+  empresasGeridas Empresa[]
+  teamMemberships TeamMember[]
+  notificationPreferences NotificationPreference[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Aviso {
+  id                  String        @id @default(cuid())
+  nome                String
+  portal              Portal        @default(PORTUGAL2030)
+  programa            String
+  linha               String?
+  codigo              String    @unique
+  dataInicioSubmissao DateTime
+  dataFimSubmissao    DateTime
+  montanteMinimo      Float?
+  montanteMaximo      Float?
+  descricao           String?       @map("descrição")
+  link                String?
+  taxa                String?
+  regiao              String?
+  setoresElegiveis    String[]
+  dimensaoEmpresa     String[]
+  urgente             Boolean       @default(false)
+  ativo               Boolean       @default(true)
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+  canalSubmissao      String?
+  contacto            String?
+  linksLegislacao     String[]
+  notasAdicionais     String?
+  preRequisitos       String[]
+  anexos              Json?
+  chunks              AvisoChunk[]
+  candidaturas        Candidatura[]
+
+  @@map("avisos")
+}
+
+model AvisoChunk {
+  id        String                 @id @default(cuid())
+  avisoId   String
+  content   String
+  embedding Unsupported("vector")?
+  metadata  Json?
+  createdAt DateTime               @default(now())
+  aviso     Aviso                  @relation(fields: [avisoId], references: [id], onDelete: Cascade)
+
+  @@map("aviso_chunks")
+}
+
+model Empresa {
+  id               String          @id @default(cuid())
+  nipc             String          @unique
+  nome             String
+  cae              String
+  setor            String
+  dimensao         DimensaoEmpresa @default(MICRO)
+  email            String
+  telefone         String?
+  morada           String?
+  localidade       String?
+  codigoPostal     String?
+  distrito         String?
+  regiao           String?
+  contactoNome     String?
+  contactoEmail    String?
+  contactoTelefone String?
+  notas            String?
+  ativa            Boolean         @default(true)
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  consultorId      String?
+  teamId           String?
+  candidaturas     Candidatura[]
+  documentos       Documento[]
+  consultor        User?           @relation(fields: [consultorId], references: [id])
+  team             Team?           @relation(fields: [teamId], references: [id])
+
+  @@map("empresas")
+}
+
+model Candidatura {
+  id                 String              @id @default(cuid())
+  empresaId          String
+  avisoId            String
+  estado             EstadoCandidatura   @default(A_PREPARAR)
+  programId          String?             // Template ID (e.g. "pt2030-inovacao")
+  montanteSolicitado Float?
+  montanteAprovado   Float?
+  dataSubmissao      DateTime?
+  dataDecisao        DateTime?
+  observacoes        String?
+  documentosAnexos   String[]
+  timeline           Json[]
+  createdAt          DateTime            @default(now())
+  updatedAt          DateTime            @updatedAt
+  aviso              Aviso               @relation(fields: [avisoId], references: [id])
+  empresa            Empresa             @relation(fields: [empresaId], references: [id])
+  milestones         Milestone[]
+  pedidosPagamento   PedidoPagamento[]
+  sectionStates      CandidaturaSectionState[]
+
+  @@map("candidaturas")
+}
+
+// Estado de cada secção do workflow de candidatura
+model CandidaturaSectionState {
+  id            String       @id @default(cuid())
+  candidaturaId String
+  sectionId     String       // ID da secção no template (e.g. "caracterizacao_empresa")
+  status        SectionStatus @default(PENDING)
+  content       String?      @db.Text
+  aiSuggestion  String?      @db.Text
+  approvedBy    String?
+  approvedAt    DateTime?
+  version       Int          @default(1)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  candidatura   Candidatura  @relation(fields: [candidaturaId], references: [id], onDelete: Cascade)
+
+  @@unique([candidaturaId, sectionId])
+  @@map("candidatura_section_states")
+}
+
+enum SectionStatus {
+  PENDING
+  DRAFT
+  REVIEW
+  APPROVED
+  REJECTED
+}
+
+model Documento {
+  id               String         @id @default(cuid())
+  empresaId        String
+  tipoDocumento    TipoDocumento
+  nome             String
+  cloudStoragePath String
+  dataEmissao      DateTime?
+  dataValidade     DateTime?
+  statusValidade   StatusValidade @default(VALIDO)
+  observacoes      String?
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  empresa          Empresa        @relation(fields: [empresaId], references: [id])
+
+  @@map("documentos")
+}
+
+model Workflow {
+  id              String        @id @default(cuid())
+  nome            String
+  tipo            TipoWorkflow
+  ativo           Boolean       @default(true)
+  frequencia      String
+  ultimaExecucao  DateTime?
+  proximaExecucao DateTime?
+  parametros      Json?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  logs            WorkflowLog[]
+
+  @@map("workflows")
+}
+
+model WorkflowLog {
+  id           String   @id @default(cuid())
+  workflowId   String
+  dataExecucao DateTime
+  sucesso      Boolean
+  mensagem     String?
+  dados        Json?
+  createdAt    DateTime @default(now())
+  workflow     Workflow @relation(fields: [workflowId], references: [id])
+
+  @@map("workflow_logs")
+}
+
+model Notificacao {
+  id           String          @id @default(cuid())
+  tipo         TipoNotificacao
+  destinatario String
+  assunto      String
+  conteudo     String
+  enviado      Boolean         @default(false)
+  dataEnvio    DateTime?
+  erro         String?
+  contexto     Json?
+  createdAt    DateTime        @default(now())
+
+  @@map("notificacoes")
+}
+
+model ContratoPublico {
+  id             String   @id @default(cuid())
+  tipo           String
+  entidade       String
+  objeto         String
+  cpv            String?
+  precoBase      Float?
+  dataPublicacao DateTime
+  dataLimite     DateTime
+  link           String
+  regiao         String?
+  setorAlvo      String[]
+  ativo          Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("contratos_publicos")
+}
+
+model Lead {
+  id                 String    @id @default(cuid())
+  nif                String    @unique
+  nome               String
+  nomeEmpresa        String?
+  email              String
+  telefone           String?
+  cae                String?
+  atividade          String?
+  dimensaoDeclarada  String?
+  faturacaoEstimada  Float?
+  empregados         Int?
+  distrito           String?
+  concelho           String?
+  scoreElegibilidade Int?
+  matchesInfo        Json?
+  status             String    @default("NOVO")
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  alertasAtivos      Boolean   @default(false)
+  consentMarketing   Boolean   @default(false)
+  lastAlertSentAt    DateTime?
+  investimentoVal    Float?
+  tipoProjeto        String?
+  lastDripEmailId    String?
+  lastDripEmailSentAt DateTime?
+  convertedAt        DateTime?
+  unsubscribedAt     DateTime?
+
+  @@map("leads")
+}
+
+enum Portal {
+  PORTUGAL2030
+  PEPAC
+  PRR
+  HORIZON_EUROPE
+  EUROPA_CRIATIVA
+  IPDJ
+  BASE_GOV
+}
+
+enum DimensaoEmpresa {
+  MICRO
+  PEQUENA
+  MEDIA
+  GRANDE
+}
+
+enum EstadoCandidatura {
+  A_PREPARAR
+  SUBMETIDA
+  EM_ANALISE
+  APROVADA
+  REJEITADA
+  CANCELADA
+}
+
+enum TipoDocumento {
+  CERTIDAO_AT
+  CERTIDAO_SS
+  CERTIFICADO_PME
+  LICENCA_ATIVIDADE
+  BALANCO
+  DEMONSTRACOES_FINANCEIRAS
+  OUTRO
+}
+
+enum StatusValidade {
+  VALIDO
+  A_EXPIRAR
+  EXPIRADO
+  EM_FALTA
+}
+
+enum TipoWorkflow {
+  SCRAPING_PORTUGAL2030
+  SCRAPING_PEPAC
+  SCRAPING_PRR
+  NOTIFICACAO_EMAIL
+  VALIDACAO_DOCUMENTOS
+  RELATORIO_MENSAL
+}
+
+enum TipoNotificacao {
+  AVISO_URGENTE
+  DOCUMENTO_EXPIRA
+  CANDIDATURA_UPDATE
+  RELATORIO_MENSAL
+  SISTEMA
+}
+
+
+model NotificationPreference {
+  id        String   @id @default(cuid())
+  userId    String
+  type      String
+  channels  String[] // ['email', 'push', 'slack']
+  enabled   Boolean  @default(true)
+  quietFrom String?  // "22:00"
+  quietTo   String?  // "08:00"
+  user      User     @relation(fields: [userId], references: [id])
+  
+  @@unique([userId, type])
+  @@map("notification_preferences")
+}
+
+model NotificationLog {
+  id        String   @id @default(cuid())
+  userId    String
+  type      String
+  channel   String
+  payload   Json
+  sentAt    DateTime @default(now())
+  readAt    DateTime?
+  clickedAt DateTime?
+
+  @@map("notification_logs")
+}
+
+// =============================================
+// V2.0 - Team Collaboration
+// =============================================
+
+model Team {
+  id        String       @id @default(cuid())
+  nome      String
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  membros   TeamMember[]
+  empresas  Empresa[]
+  integrations Integration[]
+
+  @@map("teams")
+}
+
+model TeamMember {
+  id        String   @id @default(cuid())
+  teamId    String
+  userId    String
+  role      TeamRole @default(MEMBER)
+  createdAt DateTime @default(now())
+  team      Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([teamId, userId])
+  @@map("team_members")
+}
+
+enum TeamRole {
+  OWNER
+  ADMIN
+  MEMBER
+  VIEWER
+}
+
+// =============================================
+// V2.0 - Post-Award Management
+// =============================================
+
+model Milestone {
+  id             String          @id @default(cuid())
+  candidaturaId  String
+  titulo         String
+  descricao      String?
+  dataLimite     DateTime
+  dataConclusao  DateTime?
+  estado         MilestoneEstado @default(PENDENTE)
+  valorAssociado Float?
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  candidatura    Candidatura     @relation(fields: [candidaturaId], references: [id], onDelete: Cascade)
+
+  @@map("milestones")
+}
+
+enum MilestoneEstado {
+  PENDENTE
+  EM_PROGRESSO
+  CONCLUIDO
+  ATRASADO
+}
+
+model PedidoPagamento {
+  id            String                @id @default(cuid())
+  candidaturaId String
+  numero        Int
+  montante      Float
+  dataSubmissao DateTime?
+  dataPagamento DateTime?
+  estado        PedidoPagamentoEstado @default(RASCUNHO)
+  documentos    String[]
+  observacoes   String?
+  createdAt     DateTime              @default(now())
+  updatedAt     DateTime              @updatedAt
+  candidatura   Candidatura           @relation(fields: [candidaturaId], references: [id], onDelete: Cascade)
+
+  @@map("pedidos_pagamento")
+}
+
+enum PedidoPagamentoEstado {
+  RASCUNHO
+  SUBMETIDO
+  EM_ANALISE
+  APROVADO
+  REJEITADO
+  PAGO
+}
+
+// =============================================
+// V3.0 - Candidaturas Históricas (RAG + SQL Híbrido)
+// =============================================
+
+model CandidaturaHistorica {
+  id              String   @id @default(cuid())
+  
+  // Metadata extraída do path/ficheiros
+  programa        String   // PRR, P2030, PDR2020, P2020, IPDJ, etc.
+  subPrograma     String?  // VOUCHERS, IA nas PME, etc.
+  cliente         String   // Nome da empresa/entidade
+  ano             Int?     // Ano da candidatura (extraído da data do ficheiro)
+  
+  // Campos factuais (populados por LLM ou manual posteriormente)
+  montanteSolicitado  Float?
+  montanteAprovado    Float?
+  estadoFinal         EstadoCandidaturaHistorica?
+  taxaCofinanciamento Float?
+  
+  // Referências aos ficheiros originais
+  documentos      Json     // [{nome, path, tipo, prioridade, geminiFileUri?}]
+  totalDocumentos Int      @default(0)
+  
+  // Sync com Gemini RAG Store
+  ragStatus       RagStatus @default(PENDING)
+  ragStoreId      String?   // ID da store onde foi indexado
+  ragIndexedAt    DateTime?
+  
+  // Origem e metadata
+  zipOrigem       String    // Nome do ZIP de onde veio
+  prioridade      String    // ALTA, MEDIA, BAIXA (baseado nos docs)
+  
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  
+  @@index([programa, ano])
+  @@index([cliente])
+  @@index([estadoFinal])
+  @@index([ragStatus])
+  @@map("candidaturas_historicas")
+}
+
+enum EstadoCandidaturaHistorica {
+  APROVADA
+  REJEITADA
+  DESISTIDA
+  EM_ANALISE
+  DESCONHECIDO
+}
+
+enum RagStatus {
+  PENDING
+  PROCESSING
+  INDEXED
+  FAILED
+}
+
+model Integration {
+  id           String   @id @default(cuid())
+  teamId       String
+  type         String   // 'SLACK' | 'TEAMS'
+  webhookUrl   String?
+  accessToken  String?  // encrypted presumably
+  channelId    String?
+  channelName  String?
+  enabled      Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  team         Team     @relation(fields: [teamId], references: [id])
+  
+  @@map("integrations")
+}

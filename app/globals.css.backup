@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Ultra Modern Color Palette */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* Primary: Rich Blue-Purple */
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Vibrant Teal */
+    --secondary: 173 58% 39%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Accent: Energetic Orange */
+    --accent: 24.6 95% 53.1%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 262.1 83.3% 57.8%;
+    --radius: 0.75rem;
+
+    /* Success: Fresh Green */
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning: Bright Amber */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Info: Cool Cyan */
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    /* Gradient Stops */
+    --gradient-from: 262.1 83.3% 57.8%;
+    --gradient-via: 173 58% 39%;
+    --gradient-to: 24.6 95% 53.1%;
+  }
+
+  .dark {
+    /* Dark Mode: Deep Space Theme */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 7%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary: Luminous Purple */
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Electric Teal */
+    --secondary: 173 80% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Accent: Neon Orange */
+    --accent: 20.5 90.2% 48.2%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 263.4 70% 50.4%;
+
+    --success: 142.1 70.6% 45.3%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    /* Dark Gradient Stops */
+    --gradient-from: 263.4 70% 50.4%;
+    --gradient-via: 173 80% 40%;
+    --gradient-to: 20.5 90.2% 48.2%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Enhanced Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl lg:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl lg:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl lg:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl lg:text-2xl;
+  }
+}
+
+@layer components {
+
+  /* Modern Card with Glow Effect */
+  .card-modern {
+    @apply bg-card text-card-foreground rounded-2xl border border-border shadow-lg backdrop-blur-sm;
+    @apply hover:shadow-xl transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--card) / 0.8) 100%);
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg,
+        hsl(var(--gradient-from)) 0%,
+        hsl(var(--gradient-via)) 50%,
+        hsl(var(--gradient-to)) 100%);
+  }
+
+  /* Gradient Background */
+  .bg-gradient {
+    background-image: linear-gradient(135deg,
+        hsl(var(--gradient-from) / 0.1) 0%,
+        hsl(var(--gradient-via) / 0.1) 50%,
+        hsl(var(--gradient-to) / 0.1) 100%);
+  }
+
+  /* Glassmorphism Effect */
+  .glass {
+    @apply backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10;
+  }
+
+  /* Floating Animation */
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Pulse Glow Animation */
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+    }
+
+    50% {
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.8);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Shimmer Effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg,
+        transparent,
+        hsl(var(--primary) / 0.1),
+        transparent);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Status Badges */
+  .badge-success {
+    @apply bg-success/10 text-success border-success/20 dark:bg-success/20;
+  }
+
+  .badge-warning {
+    @apply bg-warning/10 text-warning border-warning/20 dark:bg-warning/20;
+  }
+
+  .badge-info {
+    @apply bg-info/10 text-info border-info/20 dark:bg-info/20;
+  }
+
+  .badge-urgent {
+    @apply bg-destructive/10 text-destructive border-destructive/20 dark:bg-destructive/20 animate-pulse;
+  }
+}
+
+@layer utilities {
+
+  /* Custom Scrollbar */
+  .scrollbar-modern::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-modern::-webkit-scrollbar-track {
+    @apply bg-muted rounded-full;
+  }
+
+  .scrollbar-modern::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full hover:bg-primary/70 transition-colors;
+  }
+
+  /* Text Shadow */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Smooth Transitions */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Grid Background Pattern */
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}

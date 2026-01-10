@@ -1,0 +1,63 @@
+{
+  "timestamp": "2025-12-14T16:44:24.098Z",
+  "results": [
+    {
+      "portal": "Portugal 2030",
+      "status": "OK",
+      "count": 10,
+      "duration": 890,
+      "sample": {
+        "codigo": "FA0943/2024",
+        "titulo": "Capacitação da rede nacional de acolhimento de req"
+      }
+    },
+    {
+      "portal": "PRR",
+      "status": "OK",
+      "count": 10,
+      "duration": 2393,
+      "sample": {
+        "id": "PRR-16635",
+        "titulo": "01. Reforma e Modernização da Medicina (Aviso de A"
+      }
+    },
+    {
+      "portal": "PEPAC",
+      "status": "FAIL",
+      "count": 0,
+      "duration": 151
+    },
+    {
+      "portal": "Horizon Europe (CORDIS)",
+      "status": "OK",
+      "count": 10,
+      "duration": 119480,
+      "sample": {
+        "id": "HE-HORIZON-EIE-2026-01-CONNECT-02",
+        "titulo": "Expanding Investment Ecosystems"
+      }
+    },
+    {
+      "portal": "Europa Criativa",
+      "status": "OK",
+      "count": 10,
+      "duration": 724,
+      "sample": {
+        "id": "EC-CREA-MEDIA-2023-CODEV",
+        "titulo": "European Co-development"
+      }
+    },
+    {
+      "portal": "IPDJ",
+      "status": "OK",
+      "count": 1,
+      "duration": 848
+    }
+  ],
+  "summary": {
+    "total": 41,
+    "ok": 5,
+    "fallback": 0,
+    "fail": 1
+  }
+}

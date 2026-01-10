@@ -1,0 +1,1143 @@
+[dotenv@17.2.3] injecting env (24) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+🚀 INICIANDO INGESTÃO PROD (Gemini Files + Metadata)
+════════════════════════════════════════════════════
+
+🌐 1. Scraping de dados frescos dos 6 portais...
+   - PT2030 (Abertos)...
+    📡 Portugal 2030: Fetching avisos via WP REST...
+    ✅ Portugal 2030: 178 avisos extraídos
+   - PRR (Abertos)...
+    📡 PRR: Fetching candidaturas via admin-ajax...
+    ✅ PRR: 106 avisos extraídos (ajax)
+   - PEPAC (Abertos)...
+    📡 PEPAC/PEPACC: Fetching concursos via API...
+    ✅ PEPAC/PEPACC: 7 avisos extraídos
+   - Horizon Europe (Open)...
+   - IPDJ (Abertos/Perenes)...
+    📡 IPDJ: Fetching páginas de apoios...
+    ✅ IPDJ: 9 programas extraídos
+
+📋 Total Documentos Identificados: 332
+
+📂 Store existente encontrada: EU_FUNDS_PROD_2025-12-15 (fileSearchStores/eufundsprod20251215-chdm089wbves)
+
+📤 3. Upload & Importação (332 docs)...
+   Processing batch 1-10...
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 16141 chars (was 541385 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 38151 chars (was 378021 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 4827 chars (was 1192247 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 31229 chars (was 422644 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 35254 chars (was 412130 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 11317 chars (was 613907 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 39356 chars (was 1349939 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 31018 chars (was 946761 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 39106 chars (was 1387173 bytes)
+    ⚠️ PDF Text Extraction too small (0 chars), keeping original.
+   Processing batch 11-20...
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 40758 chars (was 420625 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 42544 chars (was 365702 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 36055 chars (was 422254 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 40756 chars (was 420628 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 34080 chars (was 411536 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 34096 chars (was 333864 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 41225 chars (was 428925 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 40756 chars (was 420628 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 42830 chars (was 470422 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 31128 chars (was 477523 bytes)
+   Processing batch 21-30...
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 38809 chars (was 358020 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 42392 chars (was 424154 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 48194 chars (was 491106 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 50729 chars (was 509658 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 41051 chars (was 385729 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 39210 chars (was 1028336 bytes)
+    ✨ PDF Optimization: Extracted 10513 chars (was 2874045 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 108448 chars (was 4743016 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 55103 chars (was 2189532 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 47659 chars (was 4228749 bytes)
+   Processing batch 31-40...
+    ✨ PDF Optimization: Extracted 189831 chars (was 520479 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 26768 chars (was 395694 bytes)
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 36643 chars (was 352738 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 52304 chars (was 396583 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 34462 chars (was 555508 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 35240 chars (was 400340 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 26324 chars (was 812527 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 43213 chars (was 1626056 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 106976 chars (was 4702864 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 53832 chars (was 2061327 bytes)
+   Processing batch 41-50...
+      ❌ Falha 01_C06-i03.02_2022_aqui.pdf: Invalid URL
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 30091 chars (was 408471 bytes)
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 36638 chars (was 390591 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 41111 chars (was 379906 bytes)
+    ✨ PDF Optimization: Extracted 31507 chars (was 254010 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 15909 chars (was 296332 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 22238 chars (was 348995 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 21402 chars (was 348345 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 22311 chars (was 688225 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 18221 chars (was 816302 bytes)
+   Processing batch 51-60...
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 45650 chars (was 499048 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 39018 chars (was 415925 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 44911 chars (was 534898 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 43517 chars (was 531520 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 75206 chars (was 675153 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 42541 chars (was 1155091 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 100478 chars (was 1879959 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 76746 chars (was 2073432 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 81470 chars (was 2221709 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 85756 chars (was 2183865 bytes)
+   Processing batch 61-70...
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 60399 chars (was 433075 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 4219 chars (was 743845 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 50457 chars (was 553770 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 53985 chars (was 505606 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 67735 chars (was 591528 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 66210 chars (was 966127 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 50885 chars (was 436780 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 66039 chars (was 582491 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 60265 chars (was 1488667 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 5419 chars (was 2965001 bytes)
+   Processing batch 71-80...
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 40886 chars (was 451158 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 47139 chars (was 502812 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 37647 chars (was 559693 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 56770 chars (was 615553 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 41837 chars (was 511920 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 59867 chars (was 624251 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 26586 chars (was 591069 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 39308 chars (was 429592 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 37098 chars (was 1618812 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 35349 chars (was 1161380 bytes)
+   Processing batch 81-90...
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 32945 chars (was 381330 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 35042 chars (was 381090 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 34649 chars (was 437180 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 89184 chars (was 1747010 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 90317 chars (was 1741264 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 93531 chars (was 1796287 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 88602 chars (was 1743385 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 86780 chars (was 1743699 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 94154 chars (was 1800053 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 92105 chars (was 1798984 bytes)
+   Processing batch 91-100...
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ⚠️ PDF Text Extraction too small (43 chars), keeping original.
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 38252 chars (was 400575 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 37119 chars (was 350119 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 27274 chars (was 384412 bytes)
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 35736 chars (was 402599 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 36132 chars (was 415836 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 34481 chars (was 433106 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 9459 chars (was 949461 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+    ✨ PDF Optimization: Extracted 10475 chars (was 962215 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 4343 chars (was 1139821 bytes)
+   Processing batch 101-110...
+    ✨ PDF Optimization: Extracted 40303 chars (was 304231 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 38539 chars (was 408515 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 38523 chars (was 438463 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 43158 chars (was 580276 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 46926 chars (was 491933 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 35201 chars (was 465670 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 24902 chars (was 1097200 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 47758 chars (was 1515999 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 26509 chars (was 1466885 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 45587 chars (was 1464273 bytes)
+   Processing batch 111-120...
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 46096 chars (was 415908 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 64275 chars (was 1116567 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 56980 chars (was 506207 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 44213 chars (was 428321 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 50100 chars (was 507934 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 57022 chars (was 506289 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 45944 chars (was 521108 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 69429 chars (was 755267 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 69575 chars (was 996546 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 63979 chars (was 1116213 bytes)
+   Processing batch 121-130...
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ⚠️ PDF Text Extraction too small (43 chars), keeping original.
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 106945 chars (was 648006 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 105660 chars (was 737146 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 107219 chars (was 758014 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 106986 chars (was 693192 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 106898 chars (was 667896 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 107205 chars (was 751013 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 107072 chars (was 756068 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+Warning: fontRes not available
+    ✨ PDF Optimization: Extracted 10414 chars (was 962029 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 104757 chars (was 2099921 bytes)
+   Processing batch 131-140...
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 39014 chars (was 366437 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 23936 chars (was 427185 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 37234 chars (was 337838 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 45293 chars (was 488201 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 34240 chars (was 450499 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 34021 chars (was 425255 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 108273 chars (was 924433 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 104902 chars (was 2027512 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 104699 chars (was 1910112 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 38452 chars (was 1222433 bytes)
+   Processing batch 141-150...
+      ❌ Falha 04_C01-i01_2022_aqui.pdf: Invalid URL
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 32803 chars (was 373042 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 39067 chars (was 326675 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 31884 chars (was 399926 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 36598 chars (was 369505 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 57713 chars (was 673194 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 34680 chars (was 367667 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 47300 chars (was 1000336 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 80837 chars (was 1587651 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 84405 chars (was 1614186 bytes)
+   Processing batch 151-160...
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 32393 chars (was 370000 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 30430 chars (was 436714 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 33985 chars (was 364615 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 84571 chars (was 709151 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 85223 chars (was 711603 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 84902 chars (was 679233 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 87978 chars (was 818889 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 87140 chars (was 2130492 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 87159 chars (was 2251167 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 53729 chars (was 7104474 bytes)
+   Processing batch 161-170...
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 31937 chars (was 370302 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 31295 chars (was 395002 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 35070 chars (was 362937 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 41300 chars (was 400282 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 33857 chars (was 453942 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 96701 chars (was 822610 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 122562 chars (was 2381418 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 82906 chars (was 1426814 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 82810 chars (was 1419474 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 122255 chars (was 2071814 bytes)
+   Processing batch 171-180...
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 26046 chars (was 367896 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 38697 chars (was 443744 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 25861 chars (was 488579 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 25875 chars (was 960732 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 25349 chars (was 267918 bytes)
+    ✨ PDF Optimization: Extracted 46968 chars (was 425976 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 25514 chars (was 483101 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 25945 chars (was 959793 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 25840 chars (was 976461 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 26092 chars (was 1044288 bytes)
+   Processing batch 181-190...
+      ❌ Falha 05_C01-i03_2022_aqui.pdf: Invalid URL
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 37217 chars (was 373973 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 45469 chars (was 371527 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 35748 chars (was 404897 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 33169 chars (was 392212 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 41440 chars (was 423048 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 36808 chars (was 344614 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 45279 chars (was 423662 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 41572 chars (was 435499 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 44340 chars (was 933149 bytes)
+   Processing batch 191-200...
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 38441 chars (was 432722 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 34368 chars (was 467725 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 36917 chars (was 358299 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 33375 chars (was 539975 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 22770 chars (was 475172 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 41304 chars (was 378878 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 34082 chars (was 441358 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 64541 chars (was 832041 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 22895 chars (was 943030 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 23751 chars (was 958357 bytes)
+   Processing batch 201-210...
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 41816 chars (was 401947 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 100530 chars (was 568543 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 55820 chars (was 790354 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 37063 chars (was 476974 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 50817 chars (was 599348 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 117221 chars (was 655321 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 48330 chars (was 535314 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 44637 chars (was 617216 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 116214 chars (was 864558 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 39226 chars (was 928590 bytes)
+   Processing batch 211-220...
+      ❌ Falha 08_C01-i03_2022_aqui.pdf: Invalid URL
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 48882 chars (was 395719 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 37282 chars (was 285295 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 35825 chars (was 430513 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 47733 chars (was 395172 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 62712 chars (was 942330 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 35653 chars (was 635791 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 51947 chars (was 604739 bytes)
+    ⚠️ PDF Text Extraction too small (0 chars), keeping original.
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 48733 chars (was 1041115 bytes)
+   Processing batch 221-230...
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 72064 chars (was 503735 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 35505 chars (was 363593 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 31942 chars (was 289113 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 38063 chars (was 430873 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 38370 chars (was 400681 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 36748 chars (was 698227 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 75718 chars (was 724216 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 38614 chars (was 938826 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 38157 chars (was 911674 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 32630 chars (was 969141 bytes)
+   Processing batch 231-240...
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 39280 chars (was 359607 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 43069 chars (was 406481 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 26574 chars (was 269382 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 39715 chars (was 380192 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 47788 chars (was 406860 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 64254 chars (was 1003823 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 32208 chars (was 929877 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 64007 chars (was 1244765 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 113043 chars (was 1780547 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 126949 chars (was 1828909 bytes)
+   Processing batch 241-250...
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 36742 chars (was 609901 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 42600 chars (was 411736 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 35236 chars (was 425216 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 24667 chars (was 341944 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 24853 chars (was 871313 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 25176 chars (was 866169 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 24783 chars (was 870242 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 26977 chars (was 903302 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 27198 chars (was 920446 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 27183 chars (was 1019145 bytes)
+   Processing batch 251-260...
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 14314 chars (was 276069 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 14247 chars (was 228606 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 49234 chars (was 392005 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 44783 chars (was 354830 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 45497 chars (was 488275 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 47801 chars (was 538255 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 23432 chars (was 363151 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 39806 chars (was 406857 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 52003 chars (was 900147 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 32502 chars (was 605086 bytes)
+   Processing batch 261-270...
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 48840 chars (was 411674 bytes)
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 48787 chars (was 417684 bytes)
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 48125 chars (was 477341 bytes)
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 50120 chars (was 401714 bytes)
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 48537 chars (was 443641 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 49668 chars (was 459891 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 24170 chars (was 348736 bytes)
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 48233 chars (was 479416 bytes)
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 48857 chars (was 416747 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 25537 chars (was 754753 bytes)
+   Processing batch 271-280...
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 50551 chars (was 467905 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 28247 chars (was 994271 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 29278 chars (was 1063777 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 82112 chars (was 905739 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 26161 chars (was 1553344 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 28433 chars (was 2646706 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 30307 chars (was 2727967 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 27714 chars (was 1616482 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 28810 chars (was 2448343 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 29665 chars (was 3666197 bytes)
+   Processing batch 281-290...
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 47483 chars (was 356775 bytes)
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 21098 chars (was 276552 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 47139 chars (was 331227 bytes)
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 47555 chars (was 421010 bytes)
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 42152 chars (was 379192 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 27679 chars (was 357857 bytes)
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 47545 chars (was 420878 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 29147 chars (was 756879 bytes)
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 46489 chars (was 705888 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 26411 chars (was 815268 bytes)
+   Processing batch 291-300...
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 17345 chars (was 442995 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 57052 chars (was 920679 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 57103 chars (was 922874 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 70788 chars (was 653328 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 36324 chars (was 384985 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 36319 chars (was 407229 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 25700 chars (was 815830 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 60121 chars (was 750587 bytes)
+Warning: TT: undefined function: 32
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 36827 chars (was 336662 bytes)
+Warning: TT: undefined function: 32
+    ✨ PDF Optimization: Extracted 25823 chars (was 816708 bytes)
+   Processing batch 301-310...
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 905 chars (was 242146 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 935 chars (was 240051 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 17198 chars (was 391250 bytes)
+    ✨ PDF Optimization: Extracted 57946 chars (was 490347 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 16318 chars (was 565630 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 56680 chars (was 511790 bytes)
+    ✨ PDF Optimization: Extracted 75879 chars (was 867674 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 25961 chars (was 1528573 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 66796 chars (was 1659896 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 123988 chars (was 1861368 bytes)
+   Processing batch 311-320...
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 1115 chars (was 244061 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 12939 chars (was 316679 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 4336 chars (was 295412 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 14336 chars (was 463934 bytes)
+    ✨ PDF Optimization: Extracted 75879 chars (was 867674 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 68631 chars (was 646104 bytes)
+    ✨ PDF Optimization: Extracted 65377 chars (was 797192 bytes)
+    ✨ PDF Optimization: Extracted 71746 chars (was 826267 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 50792 chars (was 1547089 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 56077 chars (was 1840555 bytes)
+   Processing batch 321-330...
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 22403 chars (was 322818 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 18572 chars (was 461013 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 21225 chars (was 607165 bytes)
+    ✨ PDF Optimization: Extracted 26292 chars (was 475665 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 50270 chars (was 516490 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 15692 chars (was 442972 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+Warning: TT: invalid function id: 136
+Warning: TT: invalid function id: 136
+    ✨ PDF Optimization: Extracted 30057 chars (was 474324 bytes)
+    ✨ PDF Optimization: Extracted 31983 chars (was 677784 bytes)
+    ✨ PDF Optimization: Extracted 55768 chars (was 787727 bytes)
+Warning: TT: undefined function: 21
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 100913 chars (was 1535479 bytes)
+   Processing batch 331-332...
+Warning: TT: undefined function: 21
+    ✨ PDF Optimization: Extracted 22403 chars (was 322818 bytes)
+    ✨ PDF Optimization: Extracted 55768 chars (was 787727 bytes)
+
+🏁 Ingestão Concluída!
+   Sucessos: 328
+   Falhas: 4
+   Store ID: fileSearchStores/eufundsprod20251215-chdm089wbves (Guardado em rag-store.json)

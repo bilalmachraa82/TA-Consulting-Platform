@@ -1,0 +1,42 @@
+| MULTISSETORES                                    | MULTISSETORES                                    | MULTISSETORES                                    | MULTISSETORES                                    | MULTISSETORES                                               |
+|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------|-------------------------------------------------------------|
+| VGO = 0,15 A + 0,20 B + 0,25 C + 0,20 D + 0,20 E | VGO = 0,15 A + 0,20 B + 0,25 C + 0,20 D + 0,20 E | VGO = 0,15 A + 0,20 B + 0,25 C + 0,20 D + 0,20 E | VGO = 0,15 A + 0,20 B + 0,25 C + 0,20 D + 0,20 E | VGO = 0,15 A + 0,20 B + 0,25 C + 0,20 D + 0,20 E            |
+| VGO = 0,15 A + 0,20 B + 0,25 C + 0,20 D + 0,20 E | VGO = 0,15 A + 0,20 B + 0,25 C + 0,20 D + 0,20 E | VGO = 0,15 A + 0,20 B + 0,25 C + 0,20 D + 0,20 E | VGO = 0,15 A + 0,20 B + 0,25 C + 0,20 D + 0,20 E | VGO = 0,15 A + 0,20 B + 0,25 C + 0,20 D + 0,20 E            |
+| Cirtério                                         | Pontuação                                        | %                                                | TOTAL                                            | OBS                                                         |
+| A. Risco                                         | 0.0                                              | 0.15                                             | 0                                                | seguro de colheitas e Inv gestão de risco                   |
+| B. Dimensão do investimento                      | 20.0                                             | 0.2                                              | 4                                                | Valor do investimento                                       |
+| C. Organização da produção                       | None                                             | 0.25                                             | 0                                                | OP, AP multiprodutos, reconhecidos no setor do investimento |
+| D. Soluções Digitais                             | 20.0                                             | 0.2                                              | 4                                                | Inv em soluções digitais.                                   |
+| E. Modo de Produção                              | None                                             | 0.2                                              | 0                                                | MPB, PI, DOP, IGP outro                                     |
+| TOTAIS                                           | TOTAIS                                           | 1                                                | 8                                                | 8                                                           |
+
+| Se inferior a 500 K   |
+|-----------------------|
+
+| AGRO INDÚSTRIA                                                     | AGRO INDÚSTRIA                                                     | AGRO INDÚSTRIA                                                     | AGRO INDÚSTRIA                                                     | AGRO INDÚSTRIA                                                                                                  |
+|--------------------------------------------------------------------|--------------------------------------------------------------------|--------------------------------------------------------------------|--------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| VGO = 0,15 A + 0,10 B + 0,20 C + 0,10 D + 0,20 E + 0,10 F + 0,15 G | VGO = 0,15 A + 0,10 B + 0,20 C + 0,10 D + 0,20 E + 0,10 F + 0,15 G | VGO = 0,15 A + 0,10 B + 0,20 C + 0,10 D + 0,20 E + 0,10 F + 0,15 G | VGO = 0,15 A + 0,10 B + 0,20 C + 0,10 D + 0,20 E + 0,10 F + 0,15 G | VGO = 0,15 A + 0,10 B + 0,20 C + 0,10 D + 0,20 E + 0,10 F + 0,15 G                                              |
+| VGO = 0,15 A + 0,10 B + 0,20 C + 0,10 D + 0,20 E + 0,10 F + 0,15 G | VGO = 0,15 A + 0,10 B + 0,20 C + 0,10 D + 0,20 E + 0,10 F + 0,15 G | VGO = 0,15 A + 0,10 B + 0,20 C + 0,10 D + 0,20 E + 0,10 F + 0,15 G | VGO = 0,15 A + 0,10 B + 0,20 C + 0,10 D + 0,20 E + 0,10 F + 0,15 G | VGO = 0,15 A + 0,10 B + 0,20 C + 0,10 D + 0,20 E + 0,10 F + 0,15 G                                              |
+| Cirtério                                                           | Pontuação                                                          | %                                                                  | TOTAL                                                              | OBS                                                                                                             |
+| A. Investimento em energias renováveis                             | 20.0                                                               | 0.15                                                               | 3                                                                  | Apresenta inv energias renováveis                                                                               |
+| B. Organização da Produção                                         | 0.0                                                                | 0.1                                                                | 0                                                                  | OP, AP multiprodutos, reconhecidos no setor do investimento no ano anterior ao da submissão cand                |
+| C. Rentabilidade                                                   | 20.0                                                               | 0.2                                                                | 4                                                                  | Se TIR maior + 1,5% que a taxa de refinanciamento do Banco Central Europeu (REFI), à data de abertura do aviso. |
+| D. Certificações de qualidade                                      | 0.0                                                                | 0.1                                                                | 0                                                                  | Certificações ISO ou outras                                                                                     |
+| E. Criação de Empregos                                             | 20.0                                                               | 0.2                                                                | 4                                                                  | Criação líquida de emprego                                                                                      |
+| F. Dimensão do investimento                                        | 20.0                                                               | 0.1                                                                | 2                                                                  | Investimento total da candidatura                                                                               |
+| G. Utilização e valorização de subprodutos no processo produtivo   | 0.0                                                                | 0.15                                                               | 0                                                                  | Investimentos que permitem a utilização e valorização de subprodutos.                                           |
+| TOTAIS                                                             | TOTAIS                                                             | 1.0                                                                | 13                                                                 | 13                                                                                                              |
+
+|   3 |
+|-----|
+|   0 |
+|   4 |
+|   0 |
+|   4 |
+|   2 |
+|   0 |
+|  13 |
+
+| Se criar 3 postos              |
+|--------------------------------|
+| Se investimento < 1000000euros |

@@ -1,0 +1,50 @@
+{
+	"id": "PEPACC-10517",
+	"titulo": "Investimento produtivo jovens agricultores (1º Concurso | 4º Período)",
+	"descricao": "Candidaturas abertas de 5 de setembro a 30 de dezembro de 2025",
+	"fonte": "PEPAC",
+	"programa": "PEPAC Continente",
+	"dataAbertura": "2025-12-30",
+	"dataFecho": "2025-12-30",
+	"regiao": "Nacional",
+	"url": "https://pepacc.pt/concursos/investimento-produtivo-jovens-agricultores-1o-concurso-4o-periodo/",
+	"status": "Aberto",
+	"scrapedAt": "2025-12-12T16:53:42.571Z",
+	"documentos": [
+		{
+			"id": "PEPACC-doc-1",
+			"nome": "AVISO_Candidatura_222_05092025_4periodo.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/09/AVISO_Candidatura_222_05092025_4periodo.pdf",
+			"path": ""
+		},
+		{
+			"id": "PEPACC-doc-2",
+			"nome": "OT_222_-Investimento_05092025_4periodo.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/09/OT_222_-Investimento_05092025_4periodo.pdf",
+			"path": ""
+		},
+		{
+			"id": "PEPACC-doc-3",
+			"nome": "OT_222_-Investimento_Anexo_05092025_4periodo.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/09/OT_222_-Investimento_Anexo_05092025_4periodo.pdf",
+			"path": ""
+		},
+		{
+			"id": "PEPACC-doc-4",
+			"nome": "Tabela-VPP_05.2025.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2025/02/Tabela-VPP_05.2025.pdf",
+			"path": ""
+		},
+		{
+			"id": "PEPACC-doc-5",
+			"nome": "Portaria-n.o-303-A_2024_1.pdf",
+			"tipo": "PDF",
+			"url": "https://pepacc.pt/wp-content/uploads/2024/11/Portaria-n.o-303-A_2024_1.pdf",
+			"path": ""
+		}
+	]
+}

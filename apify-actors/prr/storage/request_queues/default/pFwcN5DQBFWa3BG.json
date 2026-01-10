@@ -1,0 +1,9 @@
+{
+	"id": "pFwcN5DQBFWa3BG",
+	"json": "{\"id\":\"pFwcN5DQBFWa3BG\",\"url\":\"https://www.fundoambiental.pt/apoios/candidaturas-abertas.aspx\",\"loadedUrl\":\"https://www.fundoambiental.pt/wwwbase/raiz/Erro.aspx?aspxerrorpath=/apoios/candidaturas-abertas.aspx\",\"uniqueKey\":\"https://www.fundoambiental.pt/apoios/candidaturas-abertas.aspx\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"state\":4}},\"handledAt\":\"2025-12-10T23:09:32.858Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://www.fundoambiental.pt/apoios/candidaturas-abertas.aspx",
+	"url": "https://www.fundoambiental.pt/apoios/candidaturas-abertas.aspx"
+}

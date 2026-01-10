@@ -1,0 +1,10 @@
+{
+    "actorSpecification": 1,
+    "name": "super-scraper",
+    "title": "Super Scraper - EU Funding Platforms",
+    "description": "Unified scraper for Portugal 2030, PRR, PEPAC, Horizon Europe, Europa Criativa, and IPDJ",
+    "version": "1.0.0",
+    "buildTag": "latest",
+    "input": "./input_schema.json",
+    "dockerfile": "./Dockerfile"
+}

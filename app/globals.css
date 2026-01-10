@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 
+     * ULTRATHINK PALETTE: "Ethereal Porcelain" (Light Mode)
+     * Concept: Clean, crisp, high-end ceramic feel. 
+     * Avoids "pure white" blindness by using very subtle cool grays.
+     */
+
+    /* Background: Slate-50 variant (Cool off-white) */
+    --background: 210 20% 98%;
+
+    /* Foreground: Slate-900 (Deep, readable text) */
+    --foreground: 222.2 47.4% 11.2%;
+
+    /* Card: Pure White to float above the off-white background */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    /* Popover: Slightly elevated */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    /* Primary: Electric Blue (Vibrant, actionable) */
+    --primary: 221.2 83.2% 53.3%;
+    /* #2563eb */
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary: Light Blue-Grey */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    /* Muted: Subtle backgrounds for tabs, disabled states */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Accent: Hover states */
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    /* Destructive: Red */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders: Subtle definition */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    /* Focus ring matches Primary */
+
+    --radius: 0.75rem;
+
+    /* Custom Gradients - Light */
+    --gradient-from: 210 20% 98%;
+    --gradient-via: 221.2 83.2% 53.3%;
+    --gradient-to: 180 100% 50%;
+    /* Cyan accent */
+  }
+
+  .dark {
+    /* 
+     * ULTRATHINK PALETTE: "Abyssal Midnight" (Dark Mode)
+     * Concept: Deep space, bioluminescent accents.
+     * Starts at Slate-950 and goes deeper. 
+     */
+
+    /* Background: Slate-950 (Deepest Navy) */
+    --background: 222.2 84% 4.9%;
+
+    /* Foreground: Slate-50 (Starlight White) */
+    --foreground: 210 40% 98%;
+
+    /* Card: Slate-900 (Slightly lighter than bg, glass base) */
+    /* Handled by components with opacity, but base is Slate-900 */
+    --card: 222.2 84% 6.5%;
+    --card-foreground: 210 40% 98%;
+
+    /* Popover: Slate-900 */
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary: Neon Blue (Pure Blue, no purple tint) */
+    --primary: 210 100% 50%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    /* Secondary: Deep slate for secondary actions */
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted: Slate-800 */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* Accent: Slate-800 hover */
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Destructive: Deep Red */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders: Extremely subtle Slate-800 */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+
+    /* Custom Gradients - Dark */
+    --gradient-from: 222.2 84% 4.9%;
+    --gradient-via: 217.2 91.2% 59.8%;
+    --gradient-to: 158 64% 52%;
+    /* Emerald accent */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* 
+ * ULTRATHINK UTILITIES 
+ * Bespoke animations and glass effects 
+ */
+
+/* Premium Glass - Adapts to theme */
+.glass {
+  @apply bg-white/70 dark:bg-slate-900/50 backdrop-blur-xl border border-white/20 dark:border-slate-800 shadow-md;
+}
+
+/* Modern Scrollbar */
+.scrollbar-modern::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-modern::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.scrollbar-modern::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 dark:bg-slate-800 rounded-full transition-colors hover:bg-slate-300 dark:hover:bg-slate-700;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* 
+ * PREMIUM DASHBOARD LAYER
+ * Aligned with Presentation glassmorphism effects
+ */
+
+/* Premium Card with glow effect */
+.card-premium {
+  @apply bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-xl;
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.card-premium:hover {
+  box-shadow: 0 0 60px rgba(59, 130, 246, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Gradient text for big numbers */
+.stat-number {
+  @apply text-4xl font-bold;
+  background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Action button with gradient */
+.action-button {
+  @apply font-semibold transition-all duration-200;
+  background: linear-gradient(135deg, #2563eb 0%, #0891b2 100%);
+}
+
+.action-button:hover {
+  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* Subtle fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animation-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Verdict badge glow effects */
+.verdict-apto {
+  @apply bg-emerald-500/20 border-2 border-emerald-500/50;
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
+}
+
+.verdict-risco {
+  @apply bg-amber-500/20 border-2 border-amber-500/50;
+  box-shadow: 0 0 30px rgba(245, 158, 11, 0.2);
+}
+
+.verdict-excluido {
+  @apply bg-red-500/20 border-2 border-red-500/50;
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.2);
+}
+
+/* Premium progress bar */
+.progress-premium {
+  @apply h-3 rounded-full overflow-hidden bg-slate-800;
+}
+
+.progress-premium-fill {
+  @apply h-full rounded-full transition-all duration-500;
+  background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 50%, #10b981 100%);
+}
+
+/* Premium Dialog with glassmorphism */
+.dialog-premium {
+  @apply bg-slate-900/95 backdrop-blur-xl border border-slate-700;
+  box-shadow: 0 0 60px rgba(59, 130, 246, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Score ring animation */
+@keyframes scoreGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+  }
+}
+
+.score-ring {
+  animation: scoreGlow 2s ease-in-out infinite;
+}
