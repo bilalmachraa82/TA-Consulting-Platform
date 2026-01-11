@@ -9,7 +9,7 @@ import { prisma } from '@/lib/db';
 import { Resend } from 'resend';
 import { slackClient } from '@/lib/integrations/slack/client';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY || 're_mock_key_for_build');
 
 // Tipos de notificação suportados
 export type NotificationType =
