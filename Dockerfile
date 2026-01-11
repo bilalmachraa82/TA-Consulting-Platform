@@ -1,84 +1,71 @@
-# Base image with Node.js and Chrome dependencies
-FROM node:18-bullseye-slim AS base
+FROM node:18-alpine AS base
 
-# Install OpenSSL and other dependencies for Prisma & Puppeteer
-RUN apt-get update -y && apt-get install -y openssl \
-    wget \
-    gnupg \
-    ca-certificates \
-    procps \
-    libxss1 \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install Chrome for Puppeteer
-# Note: Puppeteer installs its own chrome, but having dependencies is crucial
-RUN apt-get update \
-    && apt-get install -y wget gnupg \
-    && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
-    && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
-    && apt-get update \
-    && apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 \
-    --no-install-recommends \
-    && rm -rf /var/lib/apt/lists/*
-
-# Set up the application directory
+# Install dependencies only when needed
+FROM base AS deps
+# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
+RUN apk add --no-cache libc6-compat python3 make g++
 WORKDIR /app
 
-# Install dependencies (only production needed, but we install all for build)
+# Install dependencies based on the preferred package manager
 COPY package.json package-lock.json* ./
-# Install ALL dependencies including devDeps for build
 RUN npm ci
 
-# Copy output of prisma generate safely
-COPY prisma ./prisma/
-RUN npx prisma generate
-
-# Copy the rest of the source code
+# Rebuild the source code only when needed
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Build the application
-# Increase memory limit for build just in case
-ENV NODE_OPTIONS="--max-old-space-size=4096"
+# Next.js collects completely anonymous telemetry data about general usage.
+# Learn more here: https://nextjs.org/telemetry
+# Uncomment the following line in case you want to disable telemetry during the build.
+ENV NEXT_TELEMETRY_DISABLED 1
+
 RUN npm run build
 
 # Production image, copy all the files and run next
-FROM node:18-bullseye-slim AS runner
+FROM base AS runner
 WORKDIR /app
 
-ENV NODE_ENV=production
-# Telemetry disabled
-ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED 1
 
-# Install runtime dependencies for Puppeteer & Prisma
-RUN apt-get update -y && apt-get install -y openssl \
-    wget \
-    gnupg \
+# Install Chromium and dependencies for Puppeteer
+# Installs: chromium (includes needed libs), nss, freetype, harfbuzz, ca-certificates, ttf-freefont
+RUN apk add --no-cache \
+    chromium \
+    nss \
+    freetype \
+    harfbuzz \
     ca-certificates \
-    procps \
-    libxss1 \
-    google-chrome-stable \
-    && rm -rf /var/lib/apt/lists/*
+    ttf-freefont \
+    nodejs \
+    yarn
 
-# Create a non-root user
+# Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
+    PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Copy necessary files from base build
-COPY --from=base /app/public ./public
-COPY --from=base /app/.next/standalone ./
-COPY --from=base /app/.next/static ./.next/static
+COPY --from=builder /app/public ./public
 
-# Set permission for prerender cache
+# Set the correct permission for prerender cache
 RUN mkdir .next
 RUN chown nextjs:nodejs .next
 
-# Switch to non-root user
+# Automatically leverage output traces to reduce image size
+# https://nextjs.org/docs/advanced-features/output-file-tracing
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
 USER nextjs
 
-# Expose port
 EXPOSE 3000
-ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
 
-# Start the application
+ENV PORT 3000
+
+# server.js is created by next build from the standalone output
+# https://nextjs.org/docs/pages/api-reference/next-config-js/output
 CMD ["node", "server.js"]
