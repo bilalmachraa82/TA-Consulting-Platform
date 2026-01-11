@@ -1,13 +1,13 @@
 
-FROM node:18-alpine AS deps
-RUN apk add --no-cache libc6-compat python3 make g++
+FROM node:20-alpine AS deps
+RUN apk add --no-cache libc6-compat python3 make g++ openssl
 WORKDIR /app
 
 COPY package.json package-lock.json* ./
 COPY prisma ./prisma/
 RUN npm ci --legacy-peer-deps
 
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -17,7 +17,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN npm run build
 
-FROM node:18-alpine AS runner
+FROM node:20-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
