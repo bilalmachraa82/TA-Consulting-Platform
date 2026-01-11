@@ -1,10 +1,10 @@
-import { FinalPresentationComponent } from '@/components/presentation/final-presentation-v2'
+import { PitchFernandoPremium } from '@/components/presentation/pitch-fernando-premium'
 
 export const metadata = {
-  title: 'Proposta Comercial V2 - TA Consulting',
-  description: 'Proposta de parceria para o Sistema Operativo de Consultoria (Bitrix + AI)',
+  title: 'Proposta Comercial V3 - TA Consulting',
+  description: 'Sistema Operativo de Consultoria (Bitrix + AI) - Enterprise Edition',
 }
 
 export default function PresentationPage() {
-  return <FinalPresentationComponent />
+  return <PitchFernandoPremium />
 }

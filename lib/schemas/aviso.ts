@@ -10,7 +10,8 @@ export const PortalEnum = z.enum([
   'BASE_GOV'
 ]);
 
-export const CreateAvisoSchema = z.object({
+// Base schema without refinements for reusability
+export const BaseAvisoSchema = z.object({
   nome: z.string().min(1, 'Nome é obrigatório').max(200),
   portal: PortalEnum,
   codigo: z.string().min(1, 'Código é obrigatório'),
@@ -22,7 +23,9 @@ export const CreateAvisoSchema = z.object({
   objetivo: z.string().optional(),
   descricao: z.string().optional(),
   ativo: z.boolean().default(true),
-}).refine(
+});
+
+export const CreateAvisoSchema = BaseAvisoSchema.refine(
   (data) => {
     if (!data.dataInicioSubmissao || !data.dataFimSubmissao) return true;
     return data.dataFimSubmissao > data.dataInicioSubmissao;
@@ -30,7 +33,11 @@ export const CreateAvisoSchema = z.object({
   { message: "Data fim deve ser posterior a data início" }
 );
 
-export const UpdateAvisoSchema = CreateAvisoSchema.partial();
+// Fix: Apply partial to the base object schema, not the refined effect
+export const UpdateAvisoSchema = BaseAvisoSchema.partial();
+
+// Export as AvisoSchema for scrapers/cache consumers
+export const AvisoSchema = BaseAvisoSchema;
 
 export type CreateAvisoInput = z.infer<typeof CreateAvisoSchema>;
 export type UpdateAvisoInput = z.infer<typeof UpdateAvisoSchema>;

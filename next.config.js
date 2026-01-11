@@ -35,7 +35,7 @@ const nextConfig = {
   experimental: {
     serverComponentsExternalPackages: ['puppeteer', 'puppeteer-extra', 'puppeteer-extra-plugin-stealth', '@sparticuz/chromium'],
     // Otimizações de CSS (experimental)
-    optimizeCss: true,
+    // optimizeCss: true,
   },
 
   eslint: {

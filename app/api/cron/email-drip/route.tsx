@@ -1,5 +1,7 @@
 
 import { NextResponse } from 'next/server';
+
+export const dynamic = 'force-dynamic';
 import { prisma } from '@/lib/db';
 import { Resend } from 'resend';
 import { LEAD_NURTURING_SEQUENCE } from '@/lib/email/drip-sequences';
