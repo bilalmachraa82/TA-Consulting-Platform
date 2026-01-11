@@ -1,7 +1,6 @@
 
 'use client';
 
-import { useEffect, useState } from 'react';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { PremiumCard } from '@/components/ui/premium-card';
 import { Badge } from '@/components/ui/badge';
@@ -17,13 +16,16 @@ import {
   Users,
   Building2,
   Calendar,
-  Loader2,
   ClipboardList,
   ArrowUpRight,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
+
+// PERFORMANCE: Dynamic imports centralizados (reduz bundle size inicial)
+import { ChartBar, ChartDoughnut } from '@/lib/dynamic-imports';
+
+// Chart.js registration (singleton, não impacta bundle)
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -34,16 +36,6 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-
-// Dynamic imports for charts - reduces initial bundle size
-const Bar = dynamic(() => import('react-chartjs-2').then(mod => mod.Bar), {
-  ssr: false,
-  loading: () => <div className="h-[300px] flex items-center justify-center"><Loader2 className="w-6 h-6 animate-spin text-blue-500" /></div>
-});
-const Doughnut = dynamic(() => import('react-chartjs-2').then(mod => mod.Doughnut), {
-  ssr: false,
-  loading: () => <div className="h-[300px] flex items-center justify-center"><Loader2 className="w-6 h-6 animate-spin text-blue-500" /></div>
-});
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement, Title, Tooltip, Legend);
 
@@ -81,25 +73,7 @@ interface Metricas {
   };
 }
 
-export function DashboardHome({ kpis, avisos, candidaturas, notificacoes, workflows }: DashboardHomeProps) {
-  const [metricas, setMetricas] = useState<Metricas | null>(null);
-  const [loadingMetricas, setLoadingMetricas] = useState(true);
-
-  useEffect(() => {
-    fetchMetricas();
-  }, []);
-
-  const fetchMetricas = async () => {
-    try {
-      const response = await fetch('/api/dashboard/metricas');
-      const data = await response.json();
-      setMetricas(data);
-    } catch (error) {
-      console.error('Erro ao buscar métricas:', error);
-    } finally {
-      setLoadingMetricas(false);
-    }
-  };
+export function DashboardHome({ kpis, avisos, candidaturas, notificacoes, workflows, metricas }: DashboardHomeProps & { metricas?: Metricas | null }) {
   const getUrgencyColor = (dataFim: Date) => {
     const now = new Date()
     const diasRestantes = Math.ceil((dataFim.getTime() - now.getTime()) / (1000 * 3600 * 24))
@@ -217,11 +191,7 @@ export function DashboardHome({ kpis, avisos, candidaturas, notificacoes, workfl
       </div>
 
       {/* Analytics Section */}
-      {loadingMetricas ? (
-        <div className="flex items-center justify-center py-24">
-          <Loader2 className="w-8 h-8 animate-spin text-blue-500" />
-        </div>
-      ) : metricas ? (
+      {metricas ? (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Chart 1: Avisos por Portal */}
           <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5 }}>
@@ -235,13 +205,12 @@ export function DashboardHome({ kpis, avisos, candidaturas, notificacoes, workfl
               </CardHeader>
               <CardContent>
                 <div className="h-[300px] flex items-center justify-center">
-                  <Bar
+                  <ChartBar
                     data={{
                       labels: metricas.graficos.avisosPorPortal.map((a) => a.portal),
                       datasets: [
                         {
                           label: 'Avisos',
-                          data: metricas.graficos.avisosPorPortal.map((a) => a.total),
                           data: metricas.graficos.avisosPorPortal.map((a) => a.total),
                           backgroundColor: [
                             'rgba(59, 130, 246, 0.6)',
@@ -273,7 +242,6 @@ export function DashboardHome({ kpis, avisos, candidaturas, notificacoes, workfl
                           borderColor: 'rgba(255, 255, 255, 0.1)',
                           borderWidth: 1,
                           displayColors: false,
-                          backdropFilter: 'blur(10px)'
                         },
                       },
                       scales: {
@@ -316,7 +284,7 @@ export function DashboardHome({ kpis, avisos, candidaturas, notificacoes, workfl
               </CardHeader>
               <CardContent>
                 <div className="h-[300px] flex items-center justify-center">
-                  <Doughnut
+                  <ChartDoughnut
                     data={{
                       labels: metricas.graficos.candidaturasPorStatus.map((c) => c.status),
                       datasets: [

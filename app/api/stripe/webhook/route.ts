@@ -11,6 +11,53 @@ import Stripe from 'stripe';
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
+/**
+ * Tolerância máxima para o timestamp do webhook (em milissegundos)
+ * 5 minutos é recomendado pela Stripe para prevenir replay attacks
+ */
+const WEBHOOK_TOLERANCE_MS = 5 * 60 * 1000;
+
+/**
+ * Extrai e valida o timestamp da assinatura do Stripe
+ * Prevenir replay attacks verificando que o webhook é recente
+ */
+function validateWebhookTimestamp(signature: string | null): { valid: boolean; error?: string } {
+    if (!signature) {
+        return { valid: false, error: 'Missing signature' };
+    }
+
+    try {
+        // A assinatura do Stripe tem formato: t={timestamp},v1={signature},...
+        const parts = signature.split(',');
+        const timestampPart = parts.find(part => part.startsWith('t='));
+
+        if (!timestampPart) {
+            return { valid: false, error: 'Invalid signature format - missing timestamp' };
+        }
+
+        const timestamp = parseInt(timestampPart.split('=')[1], 10);
+
+        if (isNaN(timestamp)) {
+            return { valid: false, error: 'Invalid timestamp format' };
+        }
+
+        const webhookTimestamp = timestamp * 1000; // Converter para milissegundos
+        const now = Date.now();
+        const timeDifference = Math.abs(now - webhookTimestamp);
+
+        if (timeDifference > WEBHOOK_TOLERANCE_MS) {
+            return {
+                valid: false,
+                error: `Webhook timestamp expired. Difference: ${Math.floor(timeDifference / 1000)}s (max: ${WEBHOOK_TOLERANCE_MS / 1000}s)`
+            };
+        }
+
+        return { valid: true };
+    } catch (error) {
+        return { valid: false, error: 'Failed to parse signature timestamp' };
+    }
+}
+
 export async function POST(request: NextRequest) {
     // Check if Stripe is configured
     if (!stripe) {
@@ -20,13 +67,32 @@ export async function POST(request: NextRequest) {
         );
     }
 
+    // Verificar se STRIPE_WEBHOOK_SECRET existe
+    if (!webhookSecret) {
+        console.error('STRIPE_WEBHOOK_SECRET not configured');
+        return NextResponse.json(
+            { error: 'Webhook configuration error' },
+            { status: 500 }
+        );
+    }
+
     const body = await request.text();
     const signature = request.headers.get('stripe-signature');
 
-    if (!signature || !webhookSecret) {
+    if (!signature) {
         return NextResponse.json(
-            { error: 'Missing signature or webhook secret' },
+            { error: 'Missing webhook signature' },
             { status: 400 }
+        );
+    }
+
+    // Verificar timestamp para prevenir replay attacks
+    const timestampValidation = validateWebhookTimestamp(signature);
+    if (!timestampValidation.valid) {
+        console.error('Webhook timestamp validation failed:', timestampValidation.error);
+        return NextResponse.json(
+            { error: timestampValidation.error || 'Invalid webhook timestamp' },
+            { status: 401 }
         );
     }
 

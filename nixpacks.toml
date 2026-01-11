@@ -1,8 +1,10 @@
+providers = ['node', 'google_chrome']
+
 [phases.setup]
-aptPkgs = ["chromium", "libglib2.0-0", "libnss3", "libnspr4", "libgconf-2-4", "libfontconfig1"]
+nixPkgs = ['nodejs', 'google-chrome']
 
 [phases.build]
-cmds = ["npm run build"]
+cmds = ['npm ci', 'npm run build']
 
 [start]
-cmd = "npm run start"
+cmd = 'npm start'

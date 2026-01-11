@@ -389,7 +389,7 @@ export function AvisosComponent() {
             {/* View Mode Toggle for Pedro */}
             <div className="flex items-center gap-2 bg-slate-100 p-1 rounded-lg">
               <Button
-                variant={density === 'normal' ? 'white' : 'ghost'}
+                variant={density === 'normal' ? 'default' : 'ghost'}
                 size="sm"
                 onClick={() => setDensity('normal')}
                 className={density === 'normal' ? 'shadow-sm' : ''}
@@ -397,7 +397,7 @@ export function AvisosComponent() {
                 <Users className="h-4 w-4 mr-2" /> Normal
               </Button>
               <Button
-                variant={density === 'compact' ? 'white' : 'ghost'}
+                variant={density === 'compact' ? 'default' : 'ghost'}
                 size="sm"
                 onClick={() => setDensity('compact')}
                 className={density === 'compact' ? 'shadow-sm text-emerald-700 bg-white' : 'text-slate-500'}

@@ -1,4 +1,3 @@
-
 import { getServerSession } from 'next-auth'
 import { redirect } from 'next/navigation'
 import { authOptions } from '@/lib/auth'
@@ -67,6 +66,12 @@ export default async function DashboardPage() {
     doc.statusValidade === 'EXPIRADO' || doc.statusValidade === 'A_EXPIRAR'
   ).length
 
+  // Fetch metricas no servidor
+  const metricasResponse = await fetch(`${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/api/dashboard/metricas`, {
+    cache: 'no-store'
+  })
+  const metricas = metricasResponse.ok ? await metricasResponse.json() : null
+
   return (
     <DashboardHome
       kpis={{
@@ -80,6 +85,7 @@ export default async function DashboardPage() {
       candidaturas={candidaturas}
       notificacoes={notificacoes}
       workflows={workflows}
+      metricas={metricas}
     />
   )
 }

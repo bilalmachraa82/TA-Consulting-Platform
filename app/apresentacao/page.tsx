@@ -1,11 +1,10 @@
-
-import { PresentationComponent } from '@/components/presentation/presentation-component'
+import { FinalPresentationComponent } from '@/components/presentation/final-presentation-v2'
 
 export const metadata = {
-  title: 'Apresentação - Automação de Fundos Europeus | TA Consulting',
-  description: 'Formação interativa sobre automação de processos para fundos europeus - Portugal 2030, PEPAC e PRR',
+  title: 'Proposta Comercial V2 - TA Consulting',
+  description: 'Proposta de parceria para o Sistema Operativo de Consultoria (Bitrix + AI)',
 }
 
 export default function PresentationPage() {
-  return <PresentationComponent />
+  return <FinalPresentationComponent />
 }

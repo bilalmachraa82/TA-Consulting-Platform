@@ -1,0 +1,18 @@
+
+> dev
+> next dev -p 3002
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3002
+  - Environments: .env.local, .env
+  - Experiments (use with caution):
+    · optimizeCss
+
+ ✓ Starting...
+ ✓ Ready in 1190ms
+ ○ Compiling /apresentacao ...
+ ✓ Compiled /apresentacao in 3.4s (1429 modules)
+ GET /apresentacao 200 in 3522ms
+ ✓ Compiled in 330ms (714 modules)
+ GET /apresentacao 200 in 377ms
+[?25h

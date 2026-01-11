@@ -3,8 +3,13 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma, isPrismaAvailable } from '@/lib/db'
+import { getCachedAvisosWithFilters, getCachedAvisosCount, getCacheHeaders } from '@/lib/cache'
+import { revalidateAvisos } from '@/lib/revalidate'
 
-export const dynamic = "force-dynamic"
+// Cache: Revalida a cada 5 minutos para GET
+export const revalidate = 300
+
+// POST/PUT/DELETE continuam dinâmicos
 
 // Helper para verificar permissões de escrita
 async function checkWritePermission() {
@@ -20,50 +25,30 @@ async function checkWritePermission() {
 
 export async function GET(request: NextRequest) {
   try {
-    // Allow unauthenticated access for demo purposes
     const { searchParams } = new URL(request.url)
 
     // Filtros
     const portal = searchParams.get('portal')
     const page = parseInt(searchParams.get('page') || '1')
-    const limit = parseInt(searchParams.get('limit') || '100') // Increased default limit
-
-    let avisos: any[] = []
-    let total = 0
-
-    // Build where clause - use ativo filter only if not "all"
+    const limit = parseInt(searchParams.get('limit') || '100')
     const showAll = searchParams.get('all') === 'true'
-    const where: any = showAll ? {} : { ativo: true }
-    if (portal && portal !== 'TODOS') {
-      where.portal = portal
-    }
 
-    // Use prisma directly for real database access
-    avisos = await prisma.aviso.findMany({
-      where,
-      orderBy: { dataFimSubmissao: 'asc' },
-      skip: (page - 1) * limit,
-      take: limit,
+    // Buscar avisos com cache
+    const allAvisos = await getCachedAvisosWithFilters({
+      portal: portal || undefined,
+      showAll
     })
 
-    total = await prisma.aviso.count({ where })
+    // Paginar em memória (já temos os dados em cache)
+    const start = (page - 1) * limit
+    const end = start + limit
+    const paginatedAvisos = allAvisos.slice(start, end)
 
-    // Calcular dias restantes para cada aviso
-    const now = new Date()
-    const avisosComDias = avisos.map((aviso) => {
-      const dataFim = new Date(aviso.dataFimSubmissao)
-      const diasRestantes = Math.ceil((dataFim.getTime() - now.getTime()) / (1000 * 3600 * 24))
-
-      return {
-        ...aviso,
-        diasRestantes,
-        urgencia: diasRestantes <= 7 ? 'alta' : diasRestantes <= 15 ? 'media' : 'baixa',
-        totalCandidaturas: 0
-      }
-    })
+    // Buscar total com cache
+    const total = await getCachedAvisosCount()
 
     return NextResponse.json({
-      avisos: avisosComDias,
+      avisos: paginatedAvisos,
       pagination: {
         total,
         pages: Math.ceil(total / limit),
@@ -71,6 +56,8 @@ export async function GET(request: NextRequest) {
         limit
       },
       source: isPrismaAvailable() ? 'database' : 'json-files'
+    }, {
+      headers: getCacheHeaders(60, 300) // Cache: 1min, SWR: 5min
     })
 
   } catch (error) {
@@ -133,6 +120,9 @@ export async function POST(request: NextRequest) {
       }
     })
 
+    // Revalidar cache após criação
+    revalidateAvisos()
+
     return NextResponse.json(novoAviso, { status: 201 })
 
   } catch (error) {
@@ -180,6 +170,9 @@ export async function PUT(request: NextRequest) {
       }
     })
 
+    // Revalidar cache após atualização
+    revalidateAvisos()
+
     return NextResponse.json(avisoAtualizado)
 
   } catch (error) {
@@ -221,6 +214,9 @@ export async function DELETE(request: NextRequest) {
       where: { id },
       data: { ativo: false }
     })
+
+    // Revalidar cache após deleção
+    revalidateAvisos()
 
     return NextResponse.json({ message: 'Aviso desativado com sucesso' })
 

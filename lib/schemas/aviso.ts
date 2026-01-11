@@ -1,36 +1,36 @@
 import { z } from 'zod';
 
-export const AvisoSchema = z.object({
-    titulo: z.string().describe("Título do aviso ou concurso"),
-    descricao: z.string().optional().describe("Descrição resumida do aviso"),
-    id: z.string().optional().describe("Código ou identificador único do aviso se disponível"),
+export const PortalEnum = z.enum([
+  'PORTUGAL2030',
+  'PEPAC',
+  'PRR',
+  'HORIZON_EUROPE',
+  'EUROPA_CRIATIVA',
+  'IPDJ',
+  'BASE_GOV'
+]);
 
-    // Datas
-    data_abertura: z.string().optional().describe("Data de abertura no formato YYYY-MM-DD"),
-    data_fecho: z.string().optional().describe("Data de fecho ou deadline no formato YYYY-MM-DD"),
+export const CreateAvisoSchema = z.object({
+  nome: z.string().min(1, 'Nome é obrigatório').max(200),
+  portal: PortalEnum,
+  codigo: z.string().min(1, 'Código é obrigatório'),
+  programa: z.string().optional(),
+  dataInicioSubmissao: z.coerce.date().optional(),
+  dataFimSubmissao: z.coerce.date().optional(),
+  montanteMinimo: z.number().positive().optional(),
+  montanteMaximo: z.number().positive().optional(),
+  objetivo: z.string().optional(),
+  descricao: z.string().optional(),
+  ativo: z.boolean().default(true),
+}).refine(
+  (data) => {
+    if (!data.dataInicioSubmissao || !data.dataFimSubmissao) return true;
+    return data.dataFimSubmissao > data.dataInicioSubmissao;
+  },
+  { message: "Data fim deve ser posterior a data início" }
+);
 
-    // Financeiro
-    montante_total: z.string().optional().describe("Montante total ou orçamento disponível (apenas números)"),
-    taxa_apoio: z.string().optional().describe("Taxa de co-financiamento em percentagem (ex: 85%)"),
-    montante_min: z.string().optional(),
-    montante_max: z.string().optional(),
+export const UpdateAvisoSchema = CreateAvisoSchema.partial();
 
-    // Filtros
-    programa: z.string().optional().describe("Nome do programa financiador (ex: Portugal 2030, PRR)"),
-    setor: z.array(z.string()).optional().describe("Setores de atividade abrangidos"),
-    beneficiarios: z.array(z.string()).optional().describe("Tipos de entidades beneficiárias"),
-    regiao: z.array(z.string()).optional().describe("Regiões elegíveis"),
-
-    // Links & Documentos
-    url: z.string().describe("URL original da página do aviso"),
-    pdf_url: z.string().optional().describe("URL direto para o PDF regulamento principal"),
-    anexos: z.array(z.object({
-        nome: z.string(),
-        url: z.string()
-    })).optional().describe("Lista de documentos anexos"),
-
-    // Estado
-    status: z.enum(['Aberto', 'Fechado', 'A abrir', 'Suspenso']).optional().describe("Estado atual do aviso"),
-});
-
-export type AvisoFirecrawl = z.infer<typeof AvisoSchema>;
+export type CreateAvisoInput = z.infer<typeof CreateAvisoSchema>;
+export type UpdateAvisoInput = z.infer<typeof UpdateAvisoSchema>;

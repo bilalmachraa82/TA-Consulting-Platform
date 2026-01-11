@@ -2,8 +2,17 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { dataProvider, isPrismaAvailable } from '@/lib/db';
+import {
+  getCachedMetricas,
+  getCachedAvisosUrgentes,
+  getCachedOrcamentoDisponivel,
+  getCachedAvisosPorPortal,
+  getCachedTopEmpresas,
+  getCacheHeaders
+} from '@/lib/cache';
 
-export const dynamic = 'force-dynamic';
+// Cache: Revalida a cada 1 minuto para métricas
+export const revalidate = 60;
 
 export async function GET(request: NextRequest) {
   try {
@@ -13,29 +22,20 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    // Use data provider for metrics
-    const metrics = await dataProvider.metrics.get();
+    // Buscar dados com cache
+    const [cachedMetricas, avisosUrgentes, orcamentoDisponivel, avisosPorPortal, topEmpresas] = await Promise.all([
+      getCachedMetricas(),
+      getCachedAvisosUrgentes(),
+      getCachedOrcamentoDisponivel(),
+      getCachedAvisosPorPortal(),
+      getCachedTopEmpresas(5)
+    ]);
 
+    // Buscar avisos e empresas adicionais para cálculos específicos
     const avisos = await dataProvider.avisos.findMany({ where: { ativo: true } });
     const empresas = await dataProvider.empresas.findMany({});
 
-    // Calculate derived metrics
-    const now = new Date();
-    const avisosUrgentes = avisos.filter(a => {
-      const diasRestantes = Math.ceil((new Date(a.dataFimSubmissao).getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-      return diasRestantes <= 14 && diasRestantes > 0;
-    }).length;
-
-    const orcamentoDisponivel = avisos.reduce((sum, a) => sum + (a.montanteMaximo || 0), 0);
-
-    // Group by portal
-    const avisosPorPortal = [
-      { portal: 'PORTUGAL2030', total: avisos.filter(a => a.portal === 'PORTUGAL2030').length },
-      { portal: 'PEPAC', total: avisos.filter(a => a.portal === 'PEPAC').length },
-      { portal: 'PRR', total: avisos.filter(a => a.portal === 'PRR').length },
-    ];
-
-    // Simulated candidaturas data for demo
+    // Dados simulados para demo (estas partes não mudam com frequência)
     const candidaturasPorStatus = [
       { status: 'A_PREPARAR', total: 3 },
       { status: 'SUBMETIDA', total: 2 },
@@ -44,7 +44,6 @@ export async function GET(request: NextRequest) {
       { status: 'REJEITADA', total: 1 },
     ];
 
-    // Simulated monthly data
     const candidaturasPorMes = [
       { mes: '2025-11', total: 4 },
       { mes: '2025-10', total: 6 },
@@ -54,24 +53,16 @@ export async function GET(request: NextRequest) {
       { mes: '2025-06', total: 4 },
     ];
 
-    // Top empresas with random values for demo
-    const topEmpresas = empresas.slice(0, 5).map(e => ({
-      id: e.id,
-      nome: e.nome,
-      setor: e.setor,
-      valorTotal: Math.floor(Math.random() * 1000000) + 100000,
-      totalCandidaturas: Math.floor(Math.random() * 5) + 1,
-    })).sort((a, b) => b.valorTotal - a.valorTotal);
-
     return NextResponse.json({
       resumo: {
-        totalAvisos: avisos.length,
-        totalEmpresas: empresas.length,
-        totalCandidaturas: 15, // Demo value
+        totalAvisos: cachedMetricas.totalAvisos,
+        totalEmpresas: cachedMetricas.totalEmpresas,
+        totalCandidaturas: cachedMetricas.totalCandidaturas,
         totalDocumentos: 8, // Demo value
-        avisosUrgentes,
+        avisosUrgentes: avisosUrgentes.length,
         orcamentoDisponivel,
         valorSolicitado: 4750000, // Demo value
+        lastUpdated: cachedMetricas.timestamp
       },
       graficos: {
         candidaturasPorStatus,
@@ -80,6 +71,8 @@ export async function GET(request: NextRequest) {
         topEmpresas,
       },
       source: isPrismaAvailable() ? 'database' : 'json-files'
+    }, {
+      headers: getCacheHeaders(30, 60) // Cache: 30s, SWR: 1min
     });
   } catch (error) {
     console.error('Erro ao buscar métricas:', error);

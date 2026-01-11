@@ -1,5 +1,19 @@
+import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { Providers } from '@/components/providers'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+  adjustFontFallback: true,
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+})
 
 export const dynamic = "force-dynamic"
 
@@ -24,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt">
-      <body className="font-sans antialiased">
+    <html lang="pt" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+      <body className="min-h-screen bg-background font-sans antialiased">
         <Providers>
           {children}
         </Providers>

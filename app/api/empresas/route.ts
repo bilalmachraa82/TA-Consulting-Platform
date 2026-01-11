@@ -3,8 +3,13 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { isPrismaAvailable, prisma } from '@/lib/db'
+import { getCachedEmpresasWithFilters, getCachedEmpresasCount, getCacheHeaders } from '@/lib/cache'
+import { revalidateEmpresas } from '@/lib/revalidate'
 
-export const dynamic = "force-dynamic"
+// Cache: Revalida a cada 5 minutos para GET
+export const revalidate = 300
+
+// POST continua dinâmico
 
 // Helper para verificar permissões de escrita
 async function checkWritePermission() {
@@ -24,42 +29,26 @@ export async function GET(request: NextRequest) {
     const dimensao = searchParams.get('dimensao')
     const regiao = searchParams.get('regiao')
     const page = parseInt(searchParams.get('page') || '1')
-    const limit = parseInt(searchParams.get('limit') || '50') // Increased limit
-
-    // Build where clause - ativa filter is optional
+    const limit = parseInt(searchParams.get('limit') || '50')
     const showAll = searchParams.get('all') === 'true'
-    const where: any = showAll ? {} : { ativa: true }
 
-    if (dimensao && dimensao !== 'TODOS') {
-      where.dimensao = dimensao
-    }
-
-    if (regiao && regiao !== 'TODOS') {
-      where.regiao = regiao
-    }
-
-    // Use prisma directly for real database access
-    const empresas = await prisma.empresa.findMany({
-      where,
-      skip: (page - 1) * limit,
-      take: limit,
+    // Buscar empresas com cache
+    const allEmpresas = await getCachedEmpresasWithFilters({
+      dimensao: dimensao || undefined,
+      regiao: regiao || undefined,
+      showAll
     })
 
-    const total = await prisma.empresa.count({ where })
+    // Paginar em memória
+    const start = (page - 1) * limit
+    const end = start + limit
+    const paginatedEmpresas = allEmpresas.slice(start, end)
 
-    // Enrich with statistics (simulated in demo mode)
-    const empresasEnriquecidas = empresas.map((empresa) => ({
-      ...empresa,
-      estatisticas: {
-        totalCandidaturas: Math.floor(Math.random() * 5),
-        candidaturasAprovadas: Math.floor(Math.random() * 3),
-        totalFinanciamento: Math.floor(Math.random() * 500000),
-        documentosExpirados: Math.floor(Math.random() * 2)
-      }
-    }))
+    // Buscar total com cache
+    const total = await getCachedEmpresasCount()
 
     return NextResponse.json({
-      empresas: empresasEnriquecidas,
+      empresas: paginatedEmpresas,
       pagination: {
         total,
         pages: Math.ceil(total / limit),
@@ -67,6 +56,8 @@ export async function GET(request: NextRequest) {
         limit
       },
       source: isPrismaAvailable() ? 'database' : 'json-files'
+    }, {
+      headers: getCacheHeaders(60, 300) // Cache: 1min, SWR: 5min
     })
 
   } catch (error) {
@@ -124,6 +115,9 @@ export async function POST(request: NextRequest) {
         notas: data.notas || ''
       }
     })
+
+    // Revalidar cache após criação
+    revalidateEmpresas()
 
     return NextResponse.json(novaEmpresa, { status: 201 })
 
