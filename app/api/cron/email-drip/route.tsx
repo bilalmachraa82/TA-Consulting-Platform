@@ -10,7 +10,6 @@ import { LeadReminderTemplate } from '@/components/email-templates/lead-reminder
 import { LeadOfferTemplate } from '@/components/email-templates/lead-offer';
 import { LeadEducationalTemplate } from '@/components/email-templates/lead-educational';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function GET(req: Request) {
     try {
