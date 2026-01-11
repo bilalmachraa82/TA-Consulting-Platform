@@ -10,12 +10,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { runEligibilityCheck, type LeadInput, type AvisoCriteria } from '@/lib/eligibility-engine';
-import { Resend } from 'resend';
+import { resend } from '@/lib/email/client';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60; // 60 seconds max for Vercel
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Verify cron secret for security
 function verifyCronSecret(request: NextRequest): boolean {

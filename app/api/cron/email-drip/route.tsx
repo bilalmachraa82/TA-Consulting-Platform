@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 import { prisma } from '@/lib/db';
-import { Resend } from 'resend';
+import { resend } from '@/lib/email/client';
 import { LEAD_NURTURING_SEQUENCE } from '@/lib/email/drip-sequences';
 import { LeadWelcomeTemplate } from '@/components/email-templates/lead-welcome';
 import { LeadReminderTemplate } from '@/components/email-templates/lead-reminder';
