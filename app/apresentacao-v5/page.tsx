@@ -568,38 +568,38 @@ const PricingSlide = () => (
         </div>
 
         {/* 3 Tiers + Tabela Comparativa em Grid */}
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-4 gap-6">
             {/* STARTER */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-3 flex flex-col">
-                <div className="mb-2">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-4 flex flex-col">
+                <div className="mb-3">
                     <div className="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-1">Starter</div>
-                    <div className="text-2xl md:text-3xl font-bold text-white">€5.000 <span className="text-sm font-normal text-blue-300">+ IVA</span></div>
-                    <div className="text-blue-300 text-sm">+ €600/mês + IVA</div>
+                    <div className="text-2xl md:text-3xl font-bold text-white text-center">€5.000</div>
+                    <div className="text-blue-300 text-sm text-center">+ €600/mês</div>
                 </div>
 
-                <div className="bg-blue-900/50 rounded-lg p-2 mb-2">
+                <div className="bg-blue-900/50 rounded-lg p-2 mb-3">
                     <div className="text-xs text-blue-200">Timeline</div>
                     <div className="text-lg font-bold text-white">8 semanas</div>
                 </div>
 
-                <div className="space-y-1.5 mb-2 flex-1 text-xs md:text-sm">
-                    <div className="flex items-center gap-1">
+                <div className="space-y-2 mb-3 flex-1 text-xs md:text-sm">
+                    <div className="flex items-center gap-2">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
                         <span className="text-blue-100">Scraping PT2030/PRR/PEPAC</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
                         <span className="text-blue-100">Matchmaking CAE completo + Região</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
                         <span className="text-blue-100">Sync Bitrix (read-only)</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
                         <span className="text-blue-100">Dashboard básico</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
                         <span className="text-blue-100">Treino (4h)</span>
                     </div>
@@ -611,40 +611,40 @@ const PricingSlide = () => (
             </div>
 
             {/* PROFESSIONAL */}
-            <div className="bg-gradient-to-b from-blue-700 to-blue-800 border-2 border-emerald-500 rounded-xl p-3 flex flex-col relative shadow-xl">
+            <div className="bg-gradient-to-b from-blue-700 to-blue-800 border-2 border-emerald-500 rounded-xl p-4 flex flex-col relative shadow-xl">
                 <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">
                     RECOMENDADO
                 </div>
 
-                <div className="mb-2">
+                <div className="mb-3">
                     <div className="text-xs font-semibold text-blue-200 uppercase tracking-wider mb-1">Professional</div>
-                    <div className="text-2xl md:text-3xl font-bold text-white">€7.500 <span className="text-sm font-normal text-blue-300">+ IVA</span></div>
-                    <div className="text-blue-200 text-sm">+ €800/mês + IVA</div>
+                    <div className="text-2xl md:text-3xl font-bold text-white text-center">€7.500</div>
+                    <div className="text-blue-200 text-sm text-center">+ €800/mês</div>
                 </div>
 
-                <div className="bg-white/10 rounded-lg p-2 mb-2">
+                <div className="bg-white/10 rounded-lg p-2 mb-3">
                     <div className="text-xs text-blue-200">Timeline</div>
                     <div className="text-lg font-bold text-white">10-12 sem</div>
                 </div>
 
-                <div className="space-y-1.5 mb-2 flex-1 text-xs md:text-sm">
-                    <div className="flex items-center gap-1">
+                <div className="space-y-2 mb-3 flex-1 text-xs md:text-sm">
+                    <div className="flex items-center gap-2">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
                         <span className="text-white font-semibold">TUDO do Starter</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
                         <span className="text-blue-100"><strong className="text-white">RAG Writer</strong> - IA propostas</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
                         <span className="text-blue-100"><strong className="text-white">Bidirecional</strong> Bitrix</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
                         <span className="text-blue-100"><strong className="text-white">291 docs</strong> no RAG</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
                         <span className="text-blue-100">Dashboard avançado</span>
                     </div>
@@ -656,43 +656,47 @@ const PricingSlide = () => (
             </div>
 
             {/* PREMIUM */}
-            <div className="bg-gradient-to-b from-slate-800 to-slate-900 border border-slate-600 rounded-xl p-3 flex flex-col">
-                <div className="mb-2">
-                    <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Premium</div>
-                    <div className="text-2xl md:text-3xl font-bold text-white">€11.000 <span className="text-sm font-normal text-slate-300">+ IVA</span></div>
-                    <div className="text-slate-400 text-sm">+ €1.000/mês + IVA</div>
+            <div className="bg-gradient-to-b from-amber-700 to-amber-900 border-2 border-amber-500 rounded-xl p-4 flex flex-col relative shadow-xl">
+                <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-amber-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">
+                    PREMIUM
                 </div>
 
-                <div className="bg-white/5 rounded-lg p-2 mb-2">
-                    <div className="text-xs text-slate-400">Timeline</div>
+                <div className="mb-3">
+                    <div className="text-xs font-semibold text-amber-200 uppercase tracking-wider mb-1">Premium</div>
+                    <div className="text-2xl md:text-3xl font-bold text-white text-center">€11.000</div>
+                    <div className="text-amber-200 text-sm text-center">+ €800/mês</div>
+                </div>
+
+                <div className="bg-white/10 rounded-lg p-2 mb-3">
+                    <div className="text-xs text-amber-200">Timeline</div>
                     <div className="text-lg font-bold text-white">16-20 sem</div>
-                    <div className="text-xs text-slate-500">roadmap + impl</div>
+                    <div className="text-xs text-amber-300">roadmap + impl</div>
                 </div>
 
-                <div className="space-y-1.5 mb-2 flex-1 text-xs md:text-sm">
-                    <div className="flex items-center gap-1">
+                <div className="space-y-2 mb-3 flex-1 text-xs md:text-sm">
+                    <div className="flex items-center gap-2">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
                         <span className="text-white font-semibold">TUDO do Professional</span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
-                        <span className="text-slate-300"><strong className="text-white">Post-Award</strong></span>
+                        <span className="text-amber-100"><strong className="text-white">Post-Award</strong></span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
-                        <span className="text-slate-300"><strong className="text-white">AI Critic</strong></span>
+                        <span className="text-amber-100"><strong className="text-white">AI Critic</strong></span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
-                        <span className="text-slate-300"><strong className="text-white">Email Drip</strong></span>
+                        <span className="text-amber-100"><strong className="text-white">Email Drip</strong></span>
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-2">
                         <Clock className="w-3 h-3 text-amber-400 flex-shrink-0" />
                         <span className="text-amber-300"><strong className="text-white">SLA &lt;24h</strong></span>
                     </div>
                 </div>
 
-                <div className="text-xs text-slate-400 text-center pt-2 border-t border-slate-700">
+                <div className="text-xs text-amber-200 text-center pt-2 border-t border-amber-600">
                     Dominar mercado
                 </div>
             </div>
