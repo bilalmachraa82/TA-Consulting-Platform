@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, ArrowLeft, BarChart3, AlertTriangle, Lightbulb, Target, Globe, Zap, Database, TrendingUp, Clock, Check, Shield, X, FileText, Sparkles, Star, Award, Wrench, ChevronRight, Download, Crown } from 'lucide-react';
+import { ArrowRight, ArrowLeft, BarChart3, AlertTriangle, Lightbulb, Target, Globe, Zap, Database, TrendingUp, Clock, Check, Shield, X, FileText, Sparkles, Star, Award, Wrench, ChevronRight, Download, Crown, Users } from 'lucide-react';
 import Image from 'next/image';
 
 // ============================================================================
@@ -535,7 +535,7 @@ const PricingSlide = () => (
 
                 <div className="mb-3">
                     <div className="text-xs font-semibold text-amber-200 uppercase tracking-wider mb-1">Premium</div>
-                    <div className="text-2xl md:text-3xl font-bold text-white">€11.000<span className="text-xs font-normal text-amber-400/70 ml-1">+ IVA</span></div>
+                    <div className="text-2xl md:text-3xl font-bold text-white">€11.000<span className="text-[10px] font-normal text-amber-400/60 ml-1">+ IVA</span></div>
                     <div className="text-amber-200 text-xs mt-1">Setup (projeto único)</div>
                 </div>
 
@@ -581,7 +581,7 @@ const PricingSlide = () => (
 
                 <div className="mb-3">
                     <div className="text-xs font-semibold text-emerald-200 uppercase tracking-wider mb-1">Professional</div>
-                    <div className="text-2xl md:text-3xl font-bold text-white">€7.500<span className="text-xs font-normal text-emerald-400/70 ml-1">+ IVA</span></div>
+                    <div className="text-2xl md:text-3xl font-bold text-white">€7.500<span className="text-[10px] font-normal text-emerald-400/60 ml-1">+ IVA</span></div>
                     <div className="text-emerald-200 text-xs mt-1">Setup (projeto único)</div>
                 </div>
 
@@ -622,7 +622,7 @@ const PricingSlide = () => (
             <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-4 flex flex-col text-center">
                 <div className="mb-3">
                     <div className="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-1">Starter</div>
-                    <div className="text-2xl md:text-3xl font-bold text-white">€5.000<span className="text-xs font-normal text-blue-400/70 ml-1">+ IVA</span></div>
+                    <div className="text-2xl md:text-3xl font-bold text-white">€5.000<span className="text-[10px] font-normal text-blue-400/60 ml-1">+ IVA</span></div>
                     <div className="text-blue-300 text-xs mt-1">Setup (projeto único)</div>
                 </div>
 
@@ -667,112 +667,93 @@ const ProfissionalVsPremiumSlide = () => (
 
         <div className="grid md:grid-cols-2 gap-4 mb-4">
             {/* PREMIUM - Primeiro (preço âncora) */}
-            <div className="bg-gradient-to-br from-amber-700 to-amber-900 border-2 border-amber-500 rounded-xl p-4 shadow-xl relative">
-                <div className="absolute -top-2 right-4 bg-amber-500 text-white px-2 py-0.5 rounded-full text-xs font-bold flex items-center gap-1">
-                    <Award className="w-3 h-3" />
-                    MAX
+            <div className="bg-gradient-to-b from-amber-700 to-amber-900 border-2 border-amber-500 rounded-xl p-4 flex flex-col relative shadow-xl text-center">
+                <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-amber-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">
+                    PREMIUM
                 </div>
 
-                <div className="flex items-center gap-2 mb-3">
-                    <div className="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center">
-                        <Crown className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                        <div className="text-xs font-semibold text-amber-300 uppercase tracking-wider">Premium</div>
-                        <div className="text-lg font-bold text-white">Automação Total</div>
-                    </div>
+                <div className="mb-3">
+                    <div className="text-xs font-semibold text-amber-200 uppercase tracking-wider mb-1">Premium</div>
+                    <div className="text-2xl md:text-3xl font-bold text-white">€11.000<span className="text-[10px] font-normal text-amber-400/60 ml-1">+ IVA</span></div>
+                    <div className="text-amber-200 text-xs mt-1">Setup (projeto único)</div>
                 </div>
 
-                <div className="bg-white/5 rounded-lg p-3 mb-3">
-                    <div className="text-2xl md:text-3xl font-bold text-white">€11.000<span className="text-xs font-normal text-amber-400/70 ml-1">+ IVA</span></div>
-                    <div className="text-amber-200 text-sm">Setup (projeto único)</div>
+                <div className="bg-white/10 rounded-lg p-2 mb-3 text-center">
+                    <div className="text-xs text-amber-200">Timeline</div>
+                    <div className="text-lg font-bold text-white">16-20 sem</div>
+                    <div className="text-xs text-amber-300">roadmap + impl</div>
                 </div>
 
-                <div className="space-y-2 mb-3 text-sm">
-                    <div className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-amber-100"><strong className="text-white">TUDO do Professional</strong></span>
+                <div className="space-y-1.5 mb-3 flex-1 text-xs">
+                    <div className="flex items-center justify-center gap-1">
+                        <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                        <span className="text-white font-semibold">TUDO do Professional</span>
                     </div>
-                    <div className="flex items-start gap-2">
-                        <Sparkles className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-amber-100"><strong className="text-white">AI Writer</strong> - Gera rascunhos de memorias</span>
+                    <div className="flex items-center justify-center gap-1">
+                        <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                        <span className="text-amber-100"><strong className="text-white">AI Writer</strong></span>
                     </div>
-                    <div className="flex items-start gap-2">
-                        <Sparkles className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-amber-100"><strong className="text-white">Post-Award</strong> - Gestão de projetos aprovados</span>
+                    <div className="flex items-center justify-center gap-1">
+                        <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                        <span className="text-amber-100"><strong className="text-white">Post-Award</strong></span>
                     </div>
-                    <div className="flex items-start gap-2">
-                        <Sparkles className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-amber-100"><strong className="text-white">AI Critic</strong> - Revisão automática</span>
+                    <div className="flex items-center justify-center gap-1">
+                        <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                        <span className="text-amber-100"><strong className="text-white">AI Critic</strong></span>
                     </div>
-                    <div className="flex items-start gap-2">
-                        <Sparkles className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-amber-100"><strong className="text-white">Website Auto-Update</strong></span>
+                    <div className="flex items-center justify-center gap-1">
+                        <Clock className="w-3 h-3 text-amber-400 flex-shrink-0" />
+                        <span className="text-amber-300"><strong className="text-white">Website Auto</strong></span>
                     </div>
                 </div>
 
-                <div className="bg-amber-500/20 border border-amber-500/50 rounded-lg p-2 text-center">
-                    <div className="text-xs text-amber-300">
-                        <Award className="w-4 h-4 inline mr-1" />
-                        Ideal para: Consultorias que querem dominar o mercado
-                    </div>
+                <div className="text-xs text-amber-200 pt-2 border-t border-amber-600">
+                    Dominar mercado
                 </div>
             </div>
 
-            {/* PROFESSIONAL - Segundo */}
-            <div className="bg-gradient-to-br from-emerald-700 to-emerald-900 border-2 border-emerald-400 rounded-xl p-4 shadow-xl relative">
-                <div className="absolute -top-2 left-4 bg-emerald-500 text-white px-2 py-0.5 rounded-full text-xs font-bold flex items-center gap-1">
-                    <Star className="w-3 h-3" />
+            {/* PROFESSIONAL - Segundo (recomendado) */}
+            <div className="bg-gradient-to-b from-emerald-700 to-emerald-900 border-2 border-emerald-400 rounded-xl p-4 flex flex-col relative shadow-xl text-center">
+                <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-emerald-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">
                     RECOMENDADO
                 </div>
 
-                <div className="flex items-center gap-2 mb-3">
-                    <div className="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center">
-                        <Award className="w-6 h-6 text-white" />
+                <div className="mb-3">
+                    <div className="text-xs font-semibold text-emerald-200 uppercase tracking-wider mb-1">Professional</div>
+                    <div className="text-2xl md:text-3xl font-bold text-white">€7.500<span className="text-[10px] font-normal text-emerald-400/60 ml-1">+ IVA</span></div>
+                    <div className="text-emerald-200 text-xs mt-1">Setup (projeto único)</div>
+                </div>
+
+                <div className="bg-white/10 rounded-lg p-2 mb-3 text-center">
+                    <div className="text-xs text-emerald-200">Timeline</div>
+                    <div className="text-lg font-bold text-white">10-12 sem</div>
+                </div>
+
+                <div className="space-y-1.5 mb-3 flex-1 text-xs">
+                    <div className="flex items-center justify-center gap-1">
+                        <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                        <span className="text-white font-semibold">TUDO do Starter</span>
                     </div>
-                    <div>
-                        <div className="text-xs font-semibold text-emerald-300 uppercase tracking-wider">Professional</div>
-                        <div className="text-lg font-bold text-white">O Essencial Inteligente</div>
+                    <div className="flex items-center justify-center gap-1">
+                        <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                        <span className="text-emerald-100"><strong className="text-white">RAG</strong> - IA propostas</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-1">
+                        <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                        <span className="text-emerald-100"><strong className="text-white">Sync</strong> Bitrix bidirecional</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-1">
+                        <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                        <span className="text-emerald-100">Chatbot IA</span>
+                    </div>
+                    <div className="flex items-center justify-center gap-1">
+                        <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                        <span className="text-emerald-100">Email Drip</span>
                     </div>
                 </div>
 
-                <div className="bg-white/10 rounded-lg p-3 mb-3">
-                    <div className="text-2xl md:text-3xl font-bold text-white">€7.500<span className="text-xs font-normal text-emerald-400/70 ml-1">+ IVA</span></div>
-                    <div className="text-emerald-200 text-sm">Setup (projeto único)</div>
-                </div>
-
-                <div className="space-y-2 mb-3 text-sm">
-                    <div className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-emerald-100"><strong className="text-white">Scraping 6 portais</strong> em tempo real</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-emerald-100"><strong className="text-white">Sync Bitrix</strong> automático (empresas + deals)</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-emerald-100"><strong className="text-white">RAG</strong> com Gemini File Search (291 docs)</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-emerald-100"><strong className="text-white">Chatbot</strong> com IA conversacional</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-emerald-100"><strong className="text-white">Dashboard</strong> com KPIs e alertas</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-emerald-100"><strong className="text-white">Email Drip</strong> (4 sequências)</span>
-                    </div>
-                </div>
-
-                <div className="bg-emerald-500/20 border border-emerald-500/50 rounded-lg p-2 text-center">
-                    <div className="text-xs text-emerald-300">
-                        <Sparkles className="w-4 h-4 inline mr-1" />
-                        Ideal para: Consultorias com volume de candidaturas
-                    </div>
+                <div className="text-xs text-emerald-200 pt-2 border-t border-emerald-600">
+                    Volume propostas
                 </div>
             </div>
         </div>
@@ -998,7 +979,7 @@ const RetainerModulesSlide = () => (
             <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-4 flex flex-col">
                 <div className="mb-3">
                     <div className="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-1">Starter Retainer</div>
-                    <div className="text-2xl md:text-3xl font-bold text-white">€600<span className="text-xs font-normal text-blue-400/70 ml-1">/mês + IVA</span></div>
+                    <div className="text-2xl md:text-3xl font-bold text-white">€600<span className="text-[10px] font-normal text-blue-400/60 ml-1">/mês + IVA</span></div>
                 </div>
 
                 <div className="bg-blue-900/50 rounded-lg p-2 mb-3">
@@ -1042,7 +1023,7 @@ const RetainerModulesSlide = () => (
 
                 <div className="mb-3">
                     <div className="text-xs font-semibold text-emerald-200 uppercase tracking-wider mb-1">Professional Retainer</div>
-                    <div className="text-2xl md:text-3xl font-bold text-white">€800<span className="text-xs font-normal text-emerald-400/70 ml-1">/mês + IVA</span></div>
+                    <div className="text-2xl md:text-3xl font-bold text-white">€800<span className="text-[10px] font-normal text-emerald-400/60 ml-1">/mês + IVA</span></div>
                 </div>
 
                 <div className="bg-white/10 rounded-lg p-2 mb-3">
@@ -1089,7 +1070,7 @@ const RetainerModulesSlide = () => (
 
                 <div className="mb-3">
                     <div className="text-xs font-semibold text-amber-200 uppercase tracking-wider mb-1">Premium Retainer</div>
-                    <div className="text-2xl md:text-3xl font-bold text-white">€1.000<span className="text-xs font-normal text-amber-400/70 ml-1">/mês + IVA</span></div>
+                    <div className="text-2xl md:text-3xl font-bold text-white">€1.000<span className="text-[10px] font-normal text-amber-400/60 ml-1">/mês + IVA</span></div>
                 </div>
 
                 <div className="bg-white/10 rounded-lg p-2 mb-3">
@@ -1312,7 +1293,7 @@ const ROISlide = () => (
         <div className="grid grid-cols-3 gap-3 mb-4">
             <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center">
                 <div className="text-xs font-semibold text-blue-300 mb-2">STARTER</div>
-                <div className="text-2xl md:text-3xl font-bold text-white mb-2">€12.200<span className="text-xs font-normal text-blue-400/70 ml-1">+ IVA</span></div>
+                <div className="text-2xl md:text-3xl font-bold text-white mb-2">€12.200<span className="text-[10px] font-normal text-blue-400/60 ml-1">+ IVA</span></div>
                 <div className="text-xs md:text-sm text-blue-300 mb-3">Investimento 1º ano</div>
 
                 <div className="space-y-1.5 text-xs md:text-sm mb-3">
@@ -1338,7 +1319,7 @@ const ROISlide = () => (
 
             <div className="bg-gradient-to-br from-blue-700 to-blue-800 border border-emerald-500 rounded-xl p-4 text-center">
                 <div className="text-xs font-semibold text-blue-200 mb-2">PROFESSIONAL</div>
-                <div className="text-2xl md:text-3xl font-bold text-white mb-2">€17.100<span className="text-xs font-normal text-blue-400/70 ml-1">+ IVA</span></div>
+                <div className="text-2xl md:text-3xl font-bold text-white mb-2">€17.100<span className="text-[10px] font-normal text-blue-400/60 ml-1">+ IVA</span></div>
                 <div className="text-xs md:text-sm text-blue-200 mb-3">Investimento 1º ano</div>
 
                 <div className="space-y-1.5 text-xs md:text-sm mb-3">
@@ -1364,7 +1345,7 @@ const ROISlide = () => (
 
             <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center">
                 <div className="text-xs font-semibold text-slate-400 mb-2">PREMIUM</div>
-                <div className="text-2xl md:text-3xl font-bold text-white mb-2">€23.000<span className="text-xs font-normal text-slate-400/70 ml-1">+ IVA</span></div>
+                <div className="text-2xl md:text-3xl font-bold text-white mb-2">€23.000<span className="text-[10px] font-normal text-slate-400/60 ml-1">+ IVA</span></div>
                 <div className="text-xs md:text-sm text-slate-400 mb-3">Investimento 1º ano</div>
 
                 <div className="space-y-1.5 text-xs md:text-sm mb-3">
