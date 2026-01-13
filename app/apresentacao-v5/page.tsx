@@ -660,7 +660,7 @@ const PricingSlide = () => (
                 <div className="mb-2">
                     <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Premium</div>
                     <div className="text-2xl md:text-3xl font-bold text-white">€11.000</div>
-                    <div className="text-slate-400 text-sm">+ €1.000/mês</div>
+                    <div className="text-slate-400 text-sm">+ €800/mês</div>
                 </div>
 
                 <div className="bg-white/5 rounded-lg p-2 mb-2">
@@ -779,7 +779,7 @@ const ProfissionalVsPremiumSlide = () => (
 
                 <div className="bg-white/5 rounded-lg p-3 mb-3">
                     <div className="text-2xl md:text-3xl font-bold text-white">€11.000</div>
-                    <div className="text-slate-400 text-sm">+ €1.000/mês</div>
+                    <div className="text-slate-400 text-sm">+ €800/mês</div>
                 </div>
 
                 <div className="space-y-2 mb-3 text-sm">

@@ -1,10 +1,10 @@
-import { PitchFernandoPremium } from '@/components/presentation/pitch-fernando-premium'
+import { UltraPresentationComponent } from '@/components/presentation/ultra-presentation'
 
 export const metadata = {
-  title: 'Proposta Comercial V3 - TA Consulting',
-  description: 'Sistema Operativo de Consultoria (Bitrix + AI) - Enterprise Edition',
+  title: 'Consultancy OS v2.0 - TA Consulting',
+  description: 'Proposta de parceria para o Sistema Operativo de Consultoria (Bitrix + AI)',
 }
 
 export default function PresentationPage() {
-  return <PitchFernandoPremium />
+  return <UltraPresentationComponent />
 }

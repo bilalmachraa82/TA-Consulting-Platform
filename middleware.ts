@@ -8,7 +8,7 @@ export default withAuth({
 
 export const config = {
     matcher: [
-        '/dashboard/:path*',
+        // '/dashboard/:path*', // DEMO MODE: Disabled auth for dashboard
         '/api/candidaturas/:path*',
         '/api/empresas/:path*',
         '/api/documentos/:path*',

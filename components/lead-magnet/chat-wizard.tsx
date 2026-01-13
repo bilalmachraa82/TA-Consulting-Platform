@@ -123,13 +123,24 @@ export default function ChatWizard({ onComplete }: ChatWizardProps) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(finalData),
             });
+
+            if (!response.ok) {
+                throw new Error('Falha na submissão');
+            }
+
             const result = await response.json();
 
             setTimeout(() => {
-                onComplete(result.leadId, result.matches);
+                // Ensure matches is an array to prevent crashes
+                onComplete(result.leadId, Array.isArray(result.matches) ? result.matches : []);
             }, 2000);
         } catch (error) {
-            addBotMessage("Ups, ocorreu um erro. Pode tentar novamente?");
+            console.error(error);
+            // On error, finish with no matches instead of hanging or crashing
+            addBotMessage("Concluí o diagnóstico, mas houve um erro de ligação. Vou mostrar o painel geral.");
+            setTimeout(() => {
+                onComplete('error-lead', []);
+            }, 2000);
         }
     };
 
@@ -165,8 +176,8 @@ export default function ChatWizard({ onComplete }: ChatWizardProps) {
                             className={`flex ${msg.isBot ? 'justify-start' : 'justify-end'}`}
                         >
                             <div className={`max-w-[80%] p-4 rounded-2xl ${msg.isBot
-                                    ? 'bg-slate-800 text-slate-200 rounded-tl-none border border-slate-700'
-                                    : 'bg-blue-600 text-white rounded-tr-none'
+                                ? 'bg-slate-800 text-slate-200 rounded-tl-none border border-slate-700'
+                                : 'bg-blue-600 text-white rounded-tr-none'
                                 }`}>
                                 {msg.text}
                             </div>

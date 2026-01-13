@@ -219,7 +219,7 @@ const SECTIONS = [
     {
         id: 'premium',
         title: 'PREMIUM',
-        subtitle: '€11.000 + €1.000/mês • 16-20 semanas',
+        subtitle: '€11.000 + €800/mês • 16-20 semanas',
         icon: <Crown className="w-6 h-6" />,
         color: 'amber',
         badge: 'PREMIUM',
@@ -383,7 +383,7 @@ const SECTIONS = [
                     </div>
                     <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-4 text-center">
                         <p className="text-3xl font-bold text-white mb-1">€11.000</p>
-                        <p className="text-amber-300 text-sm">+ €1.000/mês</p>
+                        <p className="text-amber-300 text-sm">+ €800/mês</p>
                         <p className="text-amber-200 text-xs mt-2">Total Ano 1: €23.000</p>
                     </div>
                 </div>
@@ -405,7 +405,7 @@ const SECTIONS = [
                                 <th className="text-left py-3 px-4 text-cyan-300 font-semibold">Serviço</th>
                                 <th className="text-center py-3 px-4 text-blue-400 font-semibold">Starter €600</th>
                                 <th className="text-center py-3 px-4 text-emerald-400 font-semibold">Professional €800</th>
-                                <th className="text-center py-3 px-4 text-amber-400 font-semibold">Premium €1000</th>
+                                <th className="text-center py-3 px-4 text-amber-400 font-semibold">Premium €800</th>
                             </tr>
                         </thead>
                         <tbody>

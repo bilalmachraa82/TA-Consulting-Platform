@@ -17,10 +17,18 @@ export default async function DashboardLayout({
 }: {
   children: React.ReactNode
 }) {
-  const session = await getServerSession(authOptions)
+  // const session = await getServerSession(authOptions)
+  // if (!session) {
+  //   redirect('/auth/login')
+  // }
 
-  if (!session) {
-    redirect('/auth/login')
+  // DEMO MODE: Mock Session for Layout
+  const session = {
+    user: {
+      name: 'Demo User',
+      email: 'demo@taconsulting.pt',
+      image: null
+    }
   }
 
   return (
