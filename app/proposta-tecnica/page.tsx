@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowLeft, Download, Printer, FileText, Check, X, Crown, Star, Award, Zap, Clock, Shield, Target, Globe, Database, Lightbulb, AlertTriangle, ChevronRight, Users, MapPin, Building2, Tag } from 'lucide-react';
+import { ArrowLeft, Download, Printer, FileText, Check, X, Crown, Star, Award, Zap, Clock, Shield, Target, Globe, Database, Lightbulb, AlertTriangle, ChevronRight, Users, MapPin, Building2, Tag, Wrench } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
@@ -711,7 +711,7 @@ export default function PropostaTecnicaPage() {
                         className="mb-6"
                     >
                         <Image src="/logo-ta.png" alt="TA Consulting" width={80} height={80} priority />
-                    </motion.h1>
+                    </motion.div>
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
