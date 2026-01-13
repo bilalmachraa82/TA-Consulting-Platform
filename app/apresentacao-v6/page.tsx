@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, BarChart3, AlertTriangle, Lightbulb, Target, Globe, Zap, Database, Clock, Check, Shield, X, FileText, Sparkles, Star, Award, ChevronRight, Crown, Users, TrendingUp, Play, Download, Printer } from 'lucide-react';
+import { ArrowLeft, ArrowRight, BarChart3, AlertTriangle, Lightbulb, Target, Globe, Zap, Database, Clock, Check, Shield, X, FileText, Sparkles, Star, Award, ChevronRight, Crown, Users, TrendingUp, Play, Download, Printer, Mail } from 'lucide-react';
 import Image from 'next/image';
 
 // ============================================================================
