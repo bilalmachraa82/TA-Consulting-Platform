@@ -61,11 +61,11 @@ export default async function EmpresasPage({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }) {
-  const session = await getServerSession(authOptions)
-
-  if (!session) {
-    redirect('/auth/login')
-  }
+  // DEMO MODE: Auth disabled for demo
+  // const session = await getServerSession(authOptions)
+  // if (!session) {
+  //   redirect('/auth/login')
+  // }
 
   const initialData = await getEmpresasIniciais(searchParams)
 

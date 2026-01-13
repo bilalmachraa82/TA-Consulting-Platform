@@ -12,11 +12,11 @@ export const metadata = {
 }
 
 export default async function CandidaturasPage() {
-  const session = await getServerSession(authOptions)
-
-  if (!session) {
-    redirect('/auth/login')
-  }
+  // DEMO MODE: Auth disabled for demo
+  // const session = await getServerSession(authOptions)
+  // if (!session) {
+  //   redirect('/auth/login')
+  // }
 
   return (
     <div className="space-y-6">
