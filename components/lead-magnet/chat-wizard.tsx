@@ -4,13 +4,20 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
-import { Bot, Send, Sparkles, AlertCircle } from 'lucide-react';
+import { Bot, Send, Sparkles, AlertCircle, CheckCircle, XCircle, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface Message {
     id: string;
     content: string;
     role: 'user' | 'assistant';
+    actions?: MessageAction[];
+}
+
+interface MessageAction {
+    label: string;
+    value: string;
+    icon?: 'confirm' | 'reject';
 }
 
 interface ExtractedData {
@@ -21,12 +28,21 @@ interface ExtractedData {
     email?: string;
 }
 
+interface CompanyFound {
+    nif?: string;
+    nome?: string;
+    morada?: string;
+    setor?: string;
+    confianca?: string;
+}
+
 interface ChatResponse {
     message: string;
     extracted?: ExtractedData;
+    company_found?: CompanyFound;
     missing?: string[];
     complete?: boolean;
-    action?: 'continue' | 'submit' | 'validate';
+    action?: 'continue' | 'submit' | 'search_company' | 'confirm_data';
     error?: boolean;
 }
 
@@ -43,6 +59,7 @@ export default function ChatWizard({ onComplete }: ChatWizardProps) {
     const inputRef = useRef<HTMLInputElement>(null);
 
     const [extractedData, setExtractedData] = useState<ExtractedData>({});
+    const [companyFound, setCompanyFound] = useState<CompanyFound | null>(null);
     const [conversationStarted, setConversationStarted] = useState(false);
 
     // Auto-scroll
@@ -56,28 +73,27 @@ export default function ChatWizard({ onComplete }: ChatWizardProps) {
     useEffect(() => {
         if (!conversationStarted) {
             setConversationStarted(true);
-            // Initial bot message
             setTimeout(() => {
                 setMessages([{
                     id: 'init',
-                    content: "Olá! 👋 Sou o assistente da TA Consulting. Vou ajudar a descobrir os melhores fundos europeus para a sua empresa. Como se chama a vossa empresa?",
+                    content: "Olá! 👋 Vou encontrar os melhores fundos europeus para ti.\n\nPodes começar por:\n• Dizer o nome da empresa (eu pesquiso o NIF e setor!)\n• Ou perguntar que fundos estão abertos",
                     role: 'assistant'
                 }]);
             }, 500);
         }
     }, [conversationStarted]);
 
-    const handleSend = async () => {
-        if (!inputValue.trim() || isLoading) return;
+    const handleSend = async (quickReply?: string) => {
+        const textToSend = quickReply || inputValue.trim();
+        if (!textToSend || isLoading) return;
 
-        const userMessage = inputValue.trim();
         setInputValue('');
         setError(null);
 
         // Add user message
         const newUserMessage: Message = {
             id: Date.now().toString(),
-            content: userMessage,
+            content: textToSend,
             role: 'user'
         };
         setMessages(prev => [...prev, newUserMessage]);
@@ -92,7 +108,8 @@ export default function ChatWizard({ onComplete }: ChatWizardProps) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     messages: [...messages, newUserMessage],
-                    extractedData
+                    extractedData,
+                    companyFound
                 })
             });
 
@@ -102,7 +119,7 @@ export default function ChatWizard({ onComplete }: ChatWizardProps) {
 
             const data: ChatResponse = await response.json();
 
-            // Update extracted data with new information
+            // Update extracted data
             if (data.extracted) {
                 setExtractedData(prev => ({
                     ...prev,
@@ -110,17 +127,30 @@ export default function ChatWizard({ onComplete }: ChatWizardProps) {
                 }));
             }
 
-            // Add bot response
+            // Update company found
+            if (data.company_found) {
+                setCompanyFound(data.company_found);
+            }
+
+            // Build message with optional actions
             const botMessage: Message = {
                 id: (Date.now() + 1).toString(),
                 content: data.message,
                 role: 'assistant'
             };
+
+            // Add confirmation actions if company was found
+            if (data.action === 'confirm_data' && data.company_found) {
+                botMessage.actions = [
+                    { label: '✓ Confirmar', value: 'confirm', icon: 'confirm' },
+                    { label: '✗ Não é esta', value: 'reject', icon: 'reject' }
+                ];
+            }
+
             setMessages(prev => [...prev, botMessage]);
 
-            // Check if conversation is complete
+            // Handle submit action
             if (data.complete || data.action === 'submit') {
-                // Collect final data from both sources
                 const finalData = {
                     ...extractedData,
                     ...data.extracted,
@@ -131,19 +161,14 @@ export default function ChatWizard({ onComplete }: ChatWizardProps) {
                     email: data.extracted?.email || extractedData.email || ''
                 };
 
-                // Validate we have the minimum required data
                 if (finalData.nome && finalData.email) {
                     await submitLead(finalData);
-                } else {
-                    // If missing critical data, ask for it
-                    const missingCritical: string[] = [];
-                    if (!finalData.nome) missingCritical.push('nome da empresa');
-                    if (!finalData.email) missingCritical.push('email');
-
+                } else if (!finalData.email) {
+                    // Just need email
                     setTimeout(() => {
                         setMessages(prev => [...prev, {
                             id: (Date.now() + 2).toString(),
-                            content: `Ainda preciso de alguns dados: ${missingCritical.join(' e ')}. Pode fornecer?`,
+                            content: "Só falta o teu email para te enviarmos o relatório completo:",
                             role: 'assistant'
                         }]);
                     }, 500);
@@ -153,7 +178,6 @@ export default function ChatWizard({ onComplete }: ChatWizardProps) {
         } catch (err: any) {
             console.error('Chat error:', err);
             setError(err.message);
-            // Add error message but keep conversation going
             setMessages(prev => [...prev, {
                 id: (Date.now() + 1).toString(),
                 content: "Desculpe, tive um problema de ligação. Vamos continuar...",
@@ -161,6 +185,30 @@ export default function ChatWizard({ onComplete }: ChatWizardProps) {
             }]);
         } finally {
             setIsLoading(false);
+        }
+    };
+
+    const handleAction = (action: MessageAction) => {
+        if (action.icon === 'confirm') {
+            // User confirmed company data - ask for email to complete
+            setMessages(prev => [...prev, {
+                id: Date.now().toString(),
+                content: `✅ Perfeito! Confirmo os dados da **${extractedData.nome_empresa || companyFound?.nome}**.\n\nSó falta o teu email para te enviarmos o relatório completo:`,
+                role: 'user'
+            }, {
+                id: (Date.now() + 1).toString(),
+                content: `Qual é o melhor email para te enviarmos o relatório?`,
+                role: 'assistant'
+            }]);
+        } else if (action.icon === 'reject') {
+            // User rejected - clear company data and ask again
+            setCompanyFound(null);
+            setExtractedData({});
+            setMessages(prev => [...prev, {
+                id: Date.now().toString(),
+                content: "Sem problemas! Podes dizer-me:\n\n1. O nome correto da empresa\n2. Ou o NIF direto\n\nAssim pesquisamos novamente.",
+                role: 'assistant'
+            }]);
         }
     };
 
@@ -208,13 +256,13 @@ export default function ChatWizard({ onComplete }: ChatWizardProps) {
         }
     };
 
-    // Progress indicator based on extracted data
+    // Progress indicator
     const fields = ['nome_empresa', 'nif', 'setor', 'regiao', 'email'];
     const filledFields = fields.filter(f => extractedData[f as keyof ExtractedData]);
     const progress = Math.round((filledFields.length / fields.length) * 100);
 
     return (
-        <Card className="w-full max-w-2xl mx-auto h-[650px] flex flex-col bg-slate-900/50 border-slate-800 backdrop-blur-xl shadow-2xl overflow-hidden">
+        <Card className="w-full max-w-2xl mx-auto h-[680px] flex flex-col bg-slate-900/50 border-slate-800 backdrop-blur-xl shadow-2xl overflow-hidden">
             {/* Header */}
             <div className="p-4 border-b border-slate-800 bg-slate-900/80 flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -260,12 +308,40 @@ export default function ChatWizard({ onComplete }: ChatWizardProps) {
                             transition={{ duration: 0.2 }}
                             className={`flex ${msg.role === 'assistant' ? 'justify-start' : 'justify-end'}`}
                         >
-                            <div className={`max-w-[85%] p-4 rounded-2xl ${
-                                msg.role === 'assistant'
-                                    ? 'bg-slate-800 text-slate-200 rounded-tl-none border border-slate-700'
-                                    : 'bg-blue-600 text-white rounded-tr-none'
-                            }`}>
-                                {msg.content}
+                            <div className="max-w-[85%] space-y-2">
+                                <div className={`p-4 rounded-2xl ${
+                                    msg.role === 'assistant'
+                                        ? 'bg-slate-800 text-slate-200 rounded-tl-none border border-slate-700'
+                                        : 'bg-blue-600 text-white rounded-tr-none'
+                                }`}
+                                // Parse markdown-like formatting
+                                dangerouslySetInnerHTML={{
+                                    __html: msg.content
+                                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                                        .replace(/\n/g, '<br>')
+                                }}
+                                />
+
+                                {/* Action buttons */}
+                                {msg.actions && (
+                                    <div className="flex gap-2 ml-2">
+                                        {msg.actions.map((action, idx) => (
+                                            <button
+                                                key={idx}
+                                                onClick={() => handleAction(action)}
+                                                className={`px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-2 transition-all ${
+                                                    action.icon === 'confirm'
+                                                        ? 'bg-green-600 hover:bg-green-500 text-white'
+                                                        : 'bg-slate-700 hover:bg-slate-600 text-slate-300'
+                                                }`}
+                                            >
+                                                {action.icon === 'confirm' && <CheckCircle className="w-4 h-4" />}
+                                                {action.icon === 'reject' && <XCircle className="w-4 h-4" />}
+                                                {action.label}
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </motion.div>
                     ))}
@@ -277,11 +353,13 @@ export default function ChatWizard({ onComplete }: ChatWizardProps) {
                             animate={{ opacity: 1 }}
                             className="flex justify-start"
                         >
-                            <div className="bg-slate-800 p-4 rounded-2xl rounded-tl-none border border-slate-700">
-                                <div className="flex gap-1">
-                                    <span className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" />
-                                    <span className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce [animation-delay:0.15s]" />
-                                    <span className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce [animation-delay:0.3s]" />
+                            <div className="bg-slate-800 p-4 rounded-2xl rounded-tl-none border border-slate-700 flex items-center gap-2">
+                                <Search className="w-4 h-4 text-cyan-400 animate-pulse" />
+                                <span className="text-slate-400 text-sm">A pesquisar...</span>
+                                <div className="flex gap-1 ml-2">
+                                    <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-bounce" />
+                                    <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-bounce [animation-delay:0.15s]" />
+                                    <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-bounce [animation-delay:0.3s]" />
                                 </div>
                             </div>
                         </motion.div>
@@ -342,16 +420,19 @@ export default function ChatWizard({ onComplete }: ChatWizardProps) {
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
                         onKeyDown={handleKeyDown}
-                        placeholder={progress === 0
-                            ? "Comece por dizer o nome da sua empresa..."
-                            : "Escreva a sua resposta..."
+                        placeholder={
+                            companyFound
+                                ? "Confirma os dados ou diz o email..."
+                                : progress === 0
+                                    ? "Diz o nome da empresa ou pergunta sobre fundos..."
+                                    : "Escreve a sua resposta..."
                         }
                         className="bg-slate-800 border-slate-700 text-white h-12 rounded-xl focus:ring-blue-500 focus:border-blue-500"
                         disabled={isLoading}
                     />
                     <Button
                         size="icon"
-                        onClick={handleSend}
+                        onClick={() => handleSend()}
                         disabled={!inputValue.trim() || isLoading}
                         className="h-12 w-12 rounded-xl bg-blue-600 hover:bg-blue-500 shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
@@ -359,7 +440,7 @@ export default function ChatWizard({ onComplete }: ChatWizardProps) {
                     </Button>
                 </div>
                 <p className="text-[10px] text-slate-500 mt-2 text-center">
-                    Pressione Enter para enviar • IA Gemini 2.5 Flash
+                    Pressione Enter • Pesquisa automática com IA • NIF.PT + Racius
                 </p>
             </div>
         </Card>
