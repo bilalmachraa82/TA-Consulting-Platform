@@ -78,6 +78,10 @@ model Aviso {
   regiao              String?
   setoresElegiveis    String[]
   dimensaoEmpresa     String[]
+  // v6: NUT + TIP matching (95% dos avisos usam isto em vez de CAE)
+  nutsCompativeis     String[]      // Array de NUTs compatíveis (ex: ["Norte", "Centro"])
+  tipCompativeis      String[]      // Array de TIPs compatíveis (95% dos avisos: IPSS, Associação, etc.)
+  caeCompativeis      String?       // CAE (só 5% dos avisos têm - fallback)
   urgente             Boolean       @default(false)
   ativo               Boolean       @default(true)
   createdAt           DateTime      @default(now())
@@ -120,6 +124,10 @@ model Empresa {
   codigoPostal     String?
   distrito         String?
   regiao           String?
+  // v6: NUT + TIP matching (95% dos avisos usam isto em vez de CAE)
+  nut              String?         // NUTS III (Norte, Centro, Lisboa, Alentejo, Algarve)
+  tip              String?         // TIP (IPSS, Associação, Poder Central, Poder Local, Agricultura)
+  tipEmpresa       String?         // Sub-tipo (Politécnico, PME Inovadora, Startup, etc.)
   contactoNome     String?
   contactoEmail    String?
   contactoTelefone String?

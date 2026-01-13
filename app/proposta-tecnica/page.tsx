@@ -1,13 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowLeft, Download, Printer, FileText, Check, X, Crown, Star, Award, Zap, Clock, Shield, TrendingUp, Target, Globe, Database, BarChart3, Wrench, Lightbulb, AlertTriangle, ChevronRight, Users } from 'lucide-react';
+import { ArrowLeft, Download, Printer, FileText, Check, X, Crown, Star, Award, Zap, Clock, Shield, Target, Globe, Database, Lightbulb, AlertTriangle, ChevronRight, Users, MapPin, Building2, Tag } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 // ============================================================================
-// DATA
+// DATA - PROPOSTA TÉCNICA v3
 // ============================================================================
 
 const SECTIONS = [
@@ -20,30 +20,29 @@ const SECTIONS = [
         content: (
             <div className="space-y-6">
                 <p className="text-lg text-blue-100 leading-relaxed">
-                    A TA Consulting enfrenta um desafio crítico: a captação de fundos europeus é um processo manual, fragmentado e intensivo em recursos. Com milhares de avisos publicados anualmente em múltiplos portais, a identificação de oportunidades relevantes para cada cliente torna-se uma tarefa que consome horas preciosas de trabalho qualificado.
+                    A TA Consulting enfrenta um desafio crítico: a captação de fundos europeus é um processo manual, fragmentado e intensivo em recursos. Com <span className="text-white font-bold">24.000 empresas</span> na base de dados do Bitrix, mas apenas uma fração contactada ativamente, existe uma oportunidade subutilizada significativa.
                 </p>
                 <div className="bg-gradient-to-r from-blue-500/20 to-emerald-500/20 border border-blue-400/30 rounded-2xl p-6">
-                    <h4 className="text-xl font-bold text-white mb-3">Objetivo</h4>
+                    <h4 className="text-xl font-bold text-white mb-3">O Insight Crítico</h4>
+                    <p className="text-blue-100 mb-3">
+                        <span className="text-amber-400 font-semibold">95% dos avisos NÃO têm CAE.</span> O matching tradicional baseado em CAE é insuficiente.
+                    </p>
                     <p className="text-blue-100">
-                        A <span className="text-emerald-400 font-semibold">TA Consulting Platform</span> automatiza todo o fluxo de captação e qualificação de candidaturas a fundos europeus, desde a deteção de novos avisos até à notificação proativa de oportunidades relevantes para cada cliente da base de <span className="text-white font-bold">24.000 empresas</span>.
+                        A solução: <span className="text-emerald-400 font-semibold">Matching baseado em NUT + TIP</span> (NUTS III + Tipo de Intervenção Prioritária), que cobre a quase totalidade dos avisos publicados.
                     </p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-3 gap-4">
                     <div className="bg-white/5 border border-white/10 rounded-xl p-4">
                         <h5 className="text-sm font-semibold text-blue-300 uppercase mb-2">Centraliza</h5>
-                        <p className="text-blue-100 text-sm">Informação dispersa por múltiplos portais</p>
+                        <p className="text-blue-100 text-sm">Scraping automático de PT2030, PRR, PEPAC</p>
                     </div>
                     <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-                        <h5 className="text-sm font-semibold text-blue-300 uppercase mb-2">Estrutura</h5>
-                        <p className="text-blue-100 text-sm">Dados de Excel não estruturados</p>
-                    </div>
-                    <div className="bg-white/5 border border-white/10 rounded-xl p-4">
-                        <h5 className="text-sm font-semibold text-blue-300 uppercase mb-2">Automatiza</h5>
-                        <p className="text-blue-100 text-sm">Processos manuais de pesquisa</p>
+                        <h5 className="text-sm font-semibold text-blue-300 uppercase mb-2">Qualifica</h5>
+                        <p className="text-blue-100 text-sm">Matching NUT+TIP com empresas do Bitrix</p>
                     </div>
                     <div className="bg-white/5 border border-white/10 rounded-xl p-4">
                         <h5 className="text-sm font-semibold text-blue-300 uppercase mb-2">Preserva</h5>
-                        <p className="text-blue-100 text-sm">Conhecimento tácito da equipa</p>
+                        <p className="text-blue-100 text-sm">Conhecimento das 291 candidaturas históricas</p>
                     </div>
                 </div>
             </div>
@@ -52,43 +51,43 @@ const SECTIONS = [
     {
         id: 'dores',
         title: 'Análise das Dores',
-        subtitle: 'Oportunidade Subutilizada',
+        subtitle: 'O Problema Atual',
         icon: <AlertTriangle className="w-6 h-6" />,
         color: 'red',
         content: (
             <div className="space-y-6">
                 <div className="space-y-4">
                     <div className="bg-red-500/20 border-l-4 border-red-500 p-5 rounded-r-xl">
-                        <p className="text-xl text-white italic mb-2">"Temos 24.000 empresas na base de dados, mas apenas uma fração é contactada ativamente para oportunidades."</p>
+                        <p className="text-xl text-white italic mb-2">"Temos 24.000 empresas na base de dados, mas saber quem são não é saber quem são leads."</p>
                         <p className="text-red-300 text-sm">— Fernando, TA Consulting</p>
                     </div>
                     <div className="bg-orange-500/20 border-l-4 border-orange-500 p-5 rounded-r-xl">
-                        <p className="text-xl text-white italic mb-2">"Hoje tudo se faz com Excel, pesquisas manuais no website da Paula, e muito copy-paste entre sistemas."</p>
+                        <p className="text-xl text-white italic mb-2">"Hoje tudo se faz com Excel, pesquisas manuais, e muito copy-paste entre sistemas."</p>
                         <p className="text-orange-300 text-sm">— Fernando, TA Consulting</p>
                     </div>
                     <div className="bg-amber-500/20 border-l-4 border-amber-500 p-5 rounded-r-xl">
-                        <p className="text-xl text-white italic mb-2">"Temos 291 candidaturas históricas que poderiam servir de referência, mas estão em ficheiros dispersos."</p>
+                        <p className="text-xl text-white italic mb-2">"95% dos avisos não têm CAE. Precisamos de outra forma de matching."</p>
                         <p className="text-amber-300 text-sm">— Fernando, TA Consulting</p>
                     </div>
                 </div>
                 <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-                    <h4 className="text-xl font-bold text-white mb-4">Consequências</h4>
-                    <div className="space-y-3">
-                        <div className="flex items-center gap-3">
-                            <X className="w-5 h-5 text-red-400 flex-shrink-0" />
-                            <span className="text-blue-100">Tempo gasto em pesquisa manual = menos tempo para candidaturas de valor</span>
+                    <h4 className="text-xl font-bold text-white mb-4">O Gap: Matching Tradicional vs. Realidade</h4>
+                    <div className="grid md:grid-cols-2 gap-4">
+                        <div className="bg-red-500/10 border border-red-400/30 rounded-xl p-4">
+                            <h5 className="text-red-400 font-semibold mb-2">❌ Abordagem Antiga</h5>
+                            <ul className="text-red-200 text-sm space-y-1">
+                                <li>• Matching baseado em CAE</li>
+                                <li>• Só funciona em 5% dos avisos</li>
+                                <li>• Muitos falsos negativos</li>
+                            </ul>
                         </div>
-                        <div className="flex items-center gap-3">
-                            <X className="w-5 h-5 text-red-400 flex-shrink-0" />
-                            <span className="text-blue-100">Oportunidades perdidas = avisos não detetados atempadamente</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <X className="w-5 h-5 text-red-400 flex-shrink-0" />
-                            <span className="text-blue-100">Base subutilizada = receita potencial não realizada</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <X className="w-5 h-5 text-red-400 flex-shrink-0" />
-                            <span className="text-blue-100">Dependência de conhecimento tácito = risco de perda de know-how</span>
+                        <div className="bg-emerald-500/10 border border-emerald-400/30 rounded-xl p-4">
+                            <h5 className="text-emerald-400 font-semibold mb-2">✅ Nova Abordagem</h5>
+                            <ul className="text-emerald-200 text-sm space-y-1">
+                                <li>• Matching NUT + TIP</li>
+                                <li>• Cobertura de 95% dos avisos</li>
+                                <li>• Baseado na realidade dos portais</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -96,308 +95,220 @@ const SECTIONS = [
         )
     },
     {
-        id: 'starter',
-        title: 'STARTER',
-        subtitle: '€5.000 + IVA • 8 semanas',
+        id: 'fase1',
+        title: 'FASE 1',
+        subtitle: '€4.500 + IVA • 8 semanas',
         icon: <Star className="w-6 h-6" />,
         color: 'blue',
-        badge: 'Básico',
+        badge: 'IMEDIATO',
         content: (
             <div className="space-y-6">
+                <div className="bg-gradient-to-r from-blue-500/30 to-blue-600/30 border border-blue-400/50 rounded-xl p-5 mb-4">
+                    <div className="flex items-center gap-3">
+                        <Star className="w-6 h-6 text-blue-300" />
+                        <div>
+                            <p className="text-white font-semibold text-lg">O Motor de Oportunidades</p>
+                            <p className="text-blue-200 text-sm">Do aviso à lead em minutos</p>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="grid md:grid-cols-2 gap-4">
                     <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-3 mb-3">
                             <Globe className="w-5 h-5 text-blue-400" />
                             <h4 className="font-bold text-white">Scraping 3 Portais</h4>
                         </div>
-                        <p className="text-blue-100 text-sm">PT2030, PRR, PEPAC • Verificação a cada 6 horas</p>
+                        <p className="text-blue-100 text-sm">PT2030, PRR, PEPAC • Verificação a cada 6 horas • Parser de PDFs com LLM</p>
+                    </div>
+                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <MapPin className="w-5 h-5 text-blue-400" />
+                            <h4 className="font-bold text-white">Extração NUT + TIP</h4>
+                        </div>
+                        <p className="text-blue-100 text-sm">NUTS III (Norte, Centro, Lisboa...) + TIP (IPSS, Poder Local, Associação...)</p>
                     </div>
                     <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-3 mb-3">
                             <Target className="w-5 h-5 text-blue-400" />
-                            <h4 className="font-bold text-white">Matchmaking</h4>
+                            <h4 className="font-bold text-white">Matching NUT+TIP</h4>
                         </div>
-                        <p className="text-blue-100 text-sm">CAE completo + Região • Exportação CSV</p>
-                    </div>
-                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
-                        <div className="flex items-center gap-3 mb-3">
-                            <BarChart3 className="w-5 h-5 text-blue-400" />
-                            <h4 className="font-bold text-white">Dashboard</h4>
-                        </div>
-                        <p className="text-blue-100 text-sm">Avisos recentes • Filtros • Marcação</p>
+                        <p className="text-blue-100 text-sm">Score 0-100 • Prioridade: NUT (30pts) + TIP (20pts) + TIP Empresa (20pts)</p>
                     </div>
                     <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-3 mb-3">
                             <Database className="w-5 h-5 text-blue-400" />
-                            <h4 className="font-bold text-white">RAG Básico</h4>
+                            <h4 className="font-bold text-white">RAG Interno</h4>
                         </div>
-                        <p className="text-blue-100 text-sm">Keyword search • Títulos e descrições</p>
+                        <p className="text-blue-100 text-sm">291 candidaturas históricas indexadas • Gemini File Search • Chat interno</p>
+                    </div>
+                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Building2 className="w-5 h-5 text-blue-400" />
+                            <h4 className="font-bold text-white">Sync Bitrix (Read)</h4>
+                        </div>
+                        <p className="text-blue-100 text-sm">Leitura de empresas • Campos NUT, TIP, TIP_Empresa enriquecidos</p>
+                    </div>
+                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Tag className="w-5 h-5 text-blue-400" />
+                            <h4 className="font-bold text-white">Interface Limpa</h4>
+                        </div>
+                        <p className="text-blue-100 text-sm">Lista de avisos • Filtros NUT/TIP • Marcação "Interessa/Não Interessa"</p>
                     </div>
                 </div>
+
                 <div className="bg-white/5 border border-white/10 rounded-xl p-5">
                     <h4 className="font-bold text-white mb-3 flex items-center gap-2">
-                        <Clock className="w-5 h-5 text-blue-400" />
-                        Formação Incluída
+                        <Download className="w-5 h-5 text-blue-400" />
+                        Export CSV para Bitrix
                     </h4>
-                    <p className="text-blue-100">2 sessões de 2 horas cada • Utilização do dashboard • Leitura de avisos</p>
+                    <p className="text-blue-100">Para cada aviso, export de empresas matched • Import direto para segmentos/campanhas do Bitrix</p>
                 </div>
+
                 <div className="bg-blue-500/10 border border-blue-400/30 rounded-xl p-4">
-                    <p className="text-blue-200 text-sm">
-                        <strong className="text-white">Nota:</strong> Escolhe o nível de retainer desejado (ver seção "Retainer Modules" abaixo)
+                    <p className="text-blue-200 text-sm flex items-start gap-2">
+                        <Clock className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                        <span><strong className="text-white">Timeline:</strong> 8 semanas • Formação incluída (2 sessões de 2h)</span>
                     </p>
                 </div>
             </div>
         )
     },
     {
-        id: 'professional',
-        title: 'PROFESSIONAL',
-        subtitle: '€7.500 + IVA • 10-12 semanas',
-        icon: <Award className="w-6 h-6" />,
-        color: 'blue',
-        badge: 'RECOMENDADO',
-        content: (
-            <div className="space-y-6">
-                <div className="bg-gradient-to-r from-blue-500/30 to-blue-600/30 border border-blue-400/50 rounded-xl p-5 mb-4">
-                    <div className="flex items-center gap-3">
-                        <Crown className="w-6 h-6 text-blue-300" />
-                        <div>
-                            <p className="text-blue-200 font-semibold">TUDO do Starter +</p>
-                            <p className="text-white text-sm">Funcionalidades avançadas para crescer</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
-                        <div className="flex items-center gap-3 mb-3">
-                            <Globe className="w-5 h-5 text-blue-400" />
-                            <h4 className="font-bold text-white">Scraping 6 Portais</h4>
-                        </div>
-                        <p className="text-blue-100 text-sm">+ Europa Criativa, IPDJ, Horizon Europe</p>
-                    </div>
-                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
-                        <div className="flex items-center gap-3 mb-3">
-                            <Target className="w-5 h-5 text-blue-400" />
-                            <h4 className="font-bold text-white">Matchmaking Avançado</h4>
-                        </div>
-                        <p className="text-blue-100 text-sm">Score 0-100 • CAE completo • Histórico</p>
-                    </div>
-                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
-                        <div className="flex items-center gap-3 mb-3">
-                            <Database className="w-5 h-5 text-blue-400" />
-                            <h4 className="font-bold text-white">RAG Gemini</h4>
-                        </div>
-                        <p className="text-blue-100 text-sm">291 candidaturas • Pesquisa semântica</p>
-                    </div>
-                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
-                        <div className="flex items-center gap-3 mb-3">
-                            <Shield className="w-5 h-5 text-blue-400" />
-                            <h4 className="font-bold text-white">Sync Bitrix Bidirecional</h4>
-                        </div>
-                        <p className="text-blue-100 text-sm">API completa • Leitura e escrita • Sincronização horária</p>
-                    </div>
-                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
-                        <div className="flex items-center gap-3 mb-3">
-                            <Zap className="w-5 h-5 text-blue-400" />
-                            <h4 className="font-bold text-white">Chatbot IA</h4>
-                        </div>
-                        <p className="text-blue-100 text-sm">Conversacional • Baseado em RAG • Personalizável</p>
-                    </div>
-                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
-                        <div className="flex items-center gap-3 mb-3">
-                            <TrendingUp className="w-5 h-5 text-blue-400" />
-                            <h4 className="font-bold text-white">Email Drip</h4>
-                        </div>
-                        <p className="text-blue-100 text-sm">4 sequências automáticas • Personalização</p>
-                    </div>
-                </div>
-                <div className="bg-blue-500/10 border border-blue-400/30 rounded-xl p-4">
-                    <p className="text-blue-200 text-sm">
-                        <strong className="text-white">Nota:</strong> Escolhe o nível de retainer desejado (ver seção "Retainer Modules" abaixo)
-                    </p>
-                </div>
-            </div>
-        )
-    },
-    {
-        id: 'premium',
-        title: 'PREMIUM',
-        subtitle: '€11.000 + IVA • 16-20 semanas',
+        id: 'fase2',
+        title: 'FASE 2',
+        subtitle: '€13.500 + IVA • Trigger: Candidatura Aprovada',
         icon: <Crown className="w-6 h-6" />,
-        color: 'gray',
-        badge: 'PREMIUM',
+        color: 'orange',
+        badge: 'UPSELL',
         content: (
             <div className="space-y-6">
-                <div className="bg-gradient-to-r from-gray-800/50 to-black/50 border-2 border-orange-500/50 rounded-xl p-5 mb-4">
+                <div className="bg-gradient-to-r from-orange-500/30 to-amber-500/30 border border-orange-400/50 rounded-xl p-5 mb-4">
                     <div className="flex items-center gap-3">
-                        <Crown className="w-6 h-6 text-orange-400" />
+                        <Crown className="w-6 h-6 text-orange-300" />
                         <div>
-                            <p className="text-orange-200 font-semibold">TUDO do Professional +</p>
-                            <p className="text-white text-sm">Automatização completa para dominar o mercado</p>
+                            <p className="text-white font-semibold text-lg">O Futuro: Automatização Completa</p>
+                            <p className="text-orange-200 text-sm">Trigger: 1ª candidatura aprovada usando a plataforma</p>
                         </div>
                     </div>
                 </div>
+
+                <div className="bg-orange-500/10 border border-orange-400/30 rounded-xl p-5 mb-4">
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <p className="text-orange-200 text-sm">Investimento adicional</p>
+                            <p className="text-3xl font-bold text-white">€13.500 <span className="text-lg font-normal text-orange-300">+ IVA</span></p>
+                        </div>
+                        <div className="text-right">
+                            <p className="text-orange-200 text-sm">Total do projeto</p>
+                            <p className="text-3xl font-bold text-white">€18.000 <span className="text-lg font-normal text-orange-300">+ IVA</span></p>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-gray-800/30 border border-orange-400/30 rounded-xl p-5">
+                    <div className="bg-orange-500/20 border border-orange-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-3 mb-3">
                             <FileText className="w-5 h-5 text-orange-400" />
                             <h4 className="font-bold text-white">AI Writer</h4>
                         </div>
-                        <p className="text-gray-300 text-sm">Gera rascunhos de memórias • ~50% economia de tempo</p>
+                        <p className="text-orange-100 text-sm">Gera rascunhos de memórias • ~50% economia de tempo • Baseado em 291 históricos</p>
                     </div>
-                    <div className="bg-gray-800/30 border border-orange-400/30 rounded-xl p-5">
-                        <div className="flex items-center gap-3 mb-3">
-                            <BarChart3 className="w-5 h-5 text-orange-400" />
-                            <h4 className="font-bold text-white">Post-Award Management</h4>
-                        </div>
-                        <p className="text-gray-300 text-sm">Dashboard projetos • Milestones • Alertas reporting</p>
-                    </div>
-                    <div className="bg-gray-800/30 border border-orange-400/30 rounded-xl p-5">
-                        <div className="flex items-center gap-3 mb-3">
-                            <TrendingUp className="w-5 h-5 text-orange-400" />
-                            <h4 className="font-bold text-white">Email Drip Avançado</h4>
-                        </div>
-                        <p className="text-gray-300 text-sm">Sequências personalizadas • A/B testing • Segmentação</p>
-                    </div>
-                    <div className="bg-gray-800/30 border border-orange-400/30 rounded-xl p-5">
+                    <div className="bg-orange-500/20 border border-orange-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-3 mb-3">
                             <Shield className="w-5 h-5 text-orange-400" />
                             <h4 className="font-bold text-white">AI Critic</h4>
                         </div>
-                        <p className="text-gray-300 text-sm">Revisão automática • Consistência • Sugestões de melhoria</p>
+                        <p className="text-orange-100 text-sm">Revisão automática de candidaturas • Consistência • Sugestões de melhoria</p>
                     </div>
-                    <div className="bg-gray-800/30 border border-orange-400/30 rounded-xl p-5">
+                    <div className="bg-orange-500/20 border border-orange-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Building2 className="w-5 h-5 text-orange-400" />
+                            <h4 className="font-bold text-white">Post-Award Management</h4>
+                        </div>
+                        <p className="text-orange-100 text-sm">Dashboard de projetos • Milestones • Alertas de reporting</p>
+                    </div>
+                    <div className="bg-orange-500/20 border border-orange-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-3 mb-3">
                             <Globe className="w-5 h-5 text-orange-400" />
                             <h4 className="font-bold text-white">Website Auto-Update</h4>
                         </div>
-                        <p className="text-gray-300 text-sm">Sincronização automática • ~30 min/semana poupados</p>
+                        <p className="text-orange-100 text-sm">Sincronização automática de projetos aprovados • ~30 min/semana poupados</p>
                     </div>
-                    <div className="bg-gray-800/30 border border-orange-400/30 rounded-xl p-5">
+                    <div className="bg-orange-500/20 border border-orange-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-3 mb-3">
-                            <Target className="w-5 h-5 text-orange-400" />
+                            <Zap className="w-5 h-5 text-orange-400" />
                             <h4 className="font-bold text-white">Marketing Mix AI</h4>
                         </div>
-                        <p className="text-gray-300 text-sm">Recomendações de canais • Análise de performance</p>
+                        <p className="text-orange-100 text-sm">Recomendações de canais • Análise de performance de candidaturas</p>
+                    </div>
+                    <div className="bg-orange-500/20 border border-orange-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Target className="w-5 h-5 text-orange-400" />
+                            <h4 className="font-bold text-white">Sync Bitrix Write</h4>
+                        </div>
+                        <p className="text-orange-100 text-sm">Escrita automática no Bitrix • Atualização de empresas • Criação de tarefas</p>
                     </div>
                 </div>
-                <div className="bg-gray-800/20 border border-orange-400/30 rounded-xl p-4">
-                    <p className="text-gray-300 text-sm">
-                        <strong className="text-white">Nota:</strong> Escolhe o nível de retainer desejado (ver seção "Retainer Modules" abaixo)
-                    </p>
-                </div>
+
                 <div className="bg-white/5 border border-amber-400/30 rounded-xl p-4">
                     <p className="text-amber-200 text-sm flex items-start gap-2">
-                        <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span><strong>Nota:</strong> O plano Premium contém funcionalidades "nice to have". A maioria pode ser adicionada posteriormente como módulos separados após implementação do plano Professional.</span>
+                        <Star className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+                        <span><strong>Extra:</strong> Funcionalidades adicionais podem ser discutidas consoante as necessidades específicas.</span>
                     </p>
                 </div>
             </div>
         )
     },
     {
-        id: 'comparacao',
-        title: 'Comparação Lado a Lado',
-        subtitle: 'Escolha o nível certo para o teu negócio',
-        icon: <BarChart3 className="w-6 h-6" />,
-        color: 'violet',
+        id: 'nao-incluido',
+        title: 'Explicitamente NÃO Incluído',
+        subtitle: 'O que foi cortado propositadamente',
+        icon: <X className="w-6 h-6" />,
+        color: 'red',
         content: (
             <div className="space-y-6">
-                <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                        <thead>
-                            <tr className="border-b border-white/20">
-                                <th className="text-left py-3 px-4 text-blue-300 font-semibold">Feature</th>
-                                <th className="text-center py-3 px-4 text-blue-400 font-semibold">Starter</th>
-                                <th className="text-center py-3 px-4 text-emerald-400 font-semibold">Professional</th>
-                                <th className="text-center py-3 px-4 text-amber-400 font-semibold">Premium</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white font-medium">Scraping Portais</td>
-                                <td className="text-center py-3 px-4 text-blue-300">3</td>
-                                <td className="text-center py-3 px-4 text-emerald-300">6</td>
-                                <td className="text-center py-3 px-4 text-amber-300">6</td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white font-medium">Sync Bitrix</td>
-                                <td className="text-center py-3 px-4 text-blue-300">CSV manual</td>
-                                <td className="text-center py-3 px-4 text-emerald-300">Automático</td>
-                                <td className="text-center py-3 px-4 text-amber-300">Automático</td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white font-medium">RAG Docs</td>
-                                <td className="text-center py-3 px-4 text-blue-300">Keyword</td>
-                                <td className="text-center py-3 px-4 text-emerald-300">Gemini</td>
-                                <td className="text-center py-3 px-4 text-amber-300">+ Re-ranking</td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white font-medium">Matchmaking CAE</td>
-                                <td className="text-center py-3 px-4 text-blue-300">Completo</td>
-                                <td className="text-center py-3 px-4 text-emerald-300">+ Score 0-100</td>
-                                <td className="text-center py-3 px-4 text-amber-300">+ Histórico</td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white font-medium">Chatbot AI</td>
-                                <td className="text-center py-3 px-4 text-blue-300"><X className="w-4 h-4 mx-auto" /></td>
-                                <td className="text-center py-3 px-4 text-emerald-300"><Check className="w-4 h-4 mx-auto" /></td>
-                                <td className="text-center py-3 px-4 text-amber-300">+ Avançado</td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white font-medium">Email Drip</td>
-                                <td className="text-center py-3 px-4 text-blue-300"><X className="w-4 h-4 mx-auto" /></td>
-                                <td className="text-center py-3 px-4 text-emerald-300">4 fixas</td>
-                                <td className="text-center py-3 px-4 text-amber-300">Custom</td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white font-medium">AI Writer</td>
-                                <td className="text-center py-3 px-4 text-blue-300"><X className="w-4 h-4 mx-auto" /></td>
-                                <td className="text-center py-3 px-4 text-emerald-300"><X className="w-4 h-4 mx-auto" /></td>
-                                <td className="text-center py-3 px-4 text-amber-300"><Check className="w-4 h-4 mx-auto" /></td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white font-medium">Post-Award</td>
-                                <td className="text-center py-3 px-4 text-blue-300"><X className="w-4 h-4 mx-auto" /></td>
-                                <td className="text-center py-3 px-4 text-emerald-300"><X className="w-4 h-4 mx-auto" /></td>
-                                <td className="text-center py-3 px-4 text-amber-300"><Check className="w-4 h-4 mx-auto" /></td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white font-medium">Website Auto-Update</td>
-                                <td className="text-center py-3 px-4 text-blue-300"><X className="w-4 h-4 mx-auto" /></td>
-                                <td className="text-center py-3 px-4 text-emerald-300"><X className="w-4 h-4 mx-auto" /></td>
-                                <td className="text-center py-3 px-4 text-amber-300"><Check className="w-4 h-4 mx-auto" /></td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white font-medium">AI Critic</td>
-                                <td className="text-center py-3 px-4 text-blue-300"><X className="w-4 h-4 mx-auto" /></td>
-                                <td className="text-center py-3 px-4 text-emerald-300"><X className="w-4 h-4 mx-auto" /></td>
-                                <td className="text-center py-3 px-4 text-amber-300"><Check className="w-4 h-4 mx-auto" /></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div className="bg-red-500/10 border border-red-400/30 rounded-xl p-5 mb-4">
+                    <p className="text-red-200 text-sm">Estas funcionalidades foram removidas do scope baseadas no feedback do cliente:</p>
                 </div>
-                <div className="grid md:grid-cols-3 gap-4">
-                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-4 text-center">
-                        <p className="text-2xl font-bold text-white mb-1">€5.000 <span className="text-sm font-normal text-blue-300">+ IVA</span></p>
-                        <p className="text-blue-300 text-sm">Setup (projeto único)</p>
-                        <p className="text-blue-200 text-xs mt-2">8 semanas</p>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-white/5 border border-red-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <X className="w-5 h-5 text-red-400" />
+                            <h4 className="font-bold text-white">Dashboard com KPIs</h4>
+                        </div>
+                        <p className="text-red-200 text-sm">Razão: O Power BI do Bitrix já faz esta análise de dados</p>
                     </div>
-                    <div className="bg-emerald-500/20 border-2 border-emerald-400/50 rounded-xl p-4 text-center relative">
-                        <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full font-semibold">RECOMENDADO</span>
-                        <p className="text-2xl font-bold text-white mb-1">€7.500 <span className="text-sm font-normal text-emerald-300">+ IVA</span></p>
-                        <p className="text-emerald-300 text-sm">Setup (projeto único)</p>
-                        <p className="text-emerald-200 text-xs mt-2">10-12 semanas</p>
+                    <div className="bg-white/5 border border-red-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <X className="w-5 h-5 text-red-400" />
+                            <h4 className="font-bold text-white">Chatbot Público</h4>
+                        </div>
+                        <p className="text-red-200 text-sm">Razão: "Para já está a pedir muito" — Fernando</p>
                     </div>
-                    <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-4 text-center">
-                        <p className="text-2xl font-bold text-white mb-1">€11.000 <span className="text-sm font-normal text-amber-300">+ IVA</span></p>
-                        <p className="text-amber-300 text-sm">Setup (projeto único)</p>
-                        <p className="text-amber-200 text-xs mt-2">16-20 semanas</p>
+                    <div className="bg-white/5 border border-red-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <X className="w-5 h-5 text-red-400" />
+                            <h4 className="font-bold text-white">Email Drip</h4>
+                        </div>
+                        <p className="text-red-200 text-sm">Razão: Atualmente feito fora do Bitrix, não é prioridade</p>
+                    </div>
+                    <div className="bg-white/5 border border-emerald-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Check className="w-5 h-5 text-emerald-400" />
+                            <h4 className="font-bold text-white">RAG Interno mantido</h4>
+                        </div>
+                        <p className="text-emerald-200 text-sm">Apenas para uso interno da equipa TA Consulting</p>
                     </div>
                 </div>
-                <div className="bg-cyan-500/20 border border-cyan-400/30 rounded-xl p-4 text-center">
-                    <p className="text-cyan-100 text-sm">
-                        <strong className="text-white">Retainer:</strong> Escolhe o nível desejado na próxima seção (após conclusão do projeto)
+
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5">
+                    <h4 className="font-bold text-white mb-3">Nota sobre Matching</h4>
+                    <p className="text-blue-100 text-sm">
+                        O algoritmo de matching prioriza <strong className="text-white">NUT + TIP</strong> (cobrindo 95% dos avisos).
+                        O CAE é mantido como <em>fallback</em> para os 5% restantes que o mencionam explicitamente.
                     </p>
                 </div>
             </div>
@@ -405,8 +316,8 @@ const SECTIONS = [
     },
     {
         id: 'retainer',
-        title: 'Retainer Modules',
-        subtitle: 'Escolhe o nível de suporte pós-projeto',
+        title: 'Retainer',
+        subtitle: 'Suporte pós-projeto',
         icon: <Shield className="w-6 h-6" />,
         color: 'cyan',
         content: (
@@ -415,175 +326,106 @@ const SECTIONS = [
                     <div className="flex items-start gap-3">
                         <Clock className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-1" />
                         <div>
-                            <h4 className="text-lg font-bold text-white mb-2">Retainer inicia APÓS conclusão do projeto</h4>
-                            <p className="text-cyan-100 text-sm">Mínimo de 3 meses de compromisso • 30 dias de aviso prévio para cancelamento</p>
+                            <h4 className="text-lg font-bold text-white mb-2">Retainer mensal: €350 + IVA</h4>
+                            <p className="text-cyan-100 text-sm">Inicia após conclusão da Fase 1 • Mínimo 3 meses • SLA: 3-5 dias úteis</p>
                         </div>
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-4">
-                    {/* STARTER RETAINER */}
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-5 flex flex-col">
-                        <div className="mb-4">
-                            <div className="text-sm font-semibold text-blue-300 uppercase tracking-wider mb-2">Starter Retainer</div>
-                            <div className="text-3xl font-bold text-white mb-1">€600 <span className="text-sm font-normal text-blue-300">/mês + IVA</span></div>
-                        </div>
-
-                        <div className="bg-blue-900/50 rounded-lg p-3 mb-4">
-                            <div className="flex items-center gap-2 text-blue-200 text-sm">
-                                <Users className="w-4 h-4" />
-                                <span><strong className="text-white">5h/mês</strong> de suporte dedicado</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-blue-200 text-sm mt-2">
-                                <Check className="w-4 h-4 text-emerald-400" />
-                                <span><strong className="text-white">1 reunião</strong> mensal de revisão</span>
-                            </div>
-                        </div>
-
-                        <div className="space-y-2 mb-4 flex-1 text-sm">
-                            <div className="flex items-center gap-2 text-blue-100">
-                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                                <span>Manutenção de scrapers</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-blue-100">
-                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                                <span>Suporte por email</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-blue-100">
-                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                                <span>Backup diário</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-blue-100">
-                                <X className="w-4 h-4 text-red-400 flex-shrink-0" />
-                                <span>Monitoramento 24/7</span>
-                            </div>
-                        </div>
-
-                        <div className="text-center py-2 px-3 bg-blue-500/20 rounded-lg">
-                            <span className="text-xs text-blue-300">SLA: 3 dias úteis</span>
-                        </div>
-                    </div>
-
-                    {/* PREMIUM RETAINER - Primeiro (mais caro) */}
-                    <div className="bg-gradient-to-b from-gray-800 to-black border-2 border-orange-500 rounded-xl p-5 flex flex-col relative shadow-xl">
-                        <span className="absolute -top-2 left-4 bg-orange-500 text-white text-xs px-2 py-0.5 rounded-full font-semibold flex items-center gap-1">
-                            <Crown className="w-3 h-3" />
-                            MAX
-                        </span>
-
-                        <div className="mb-4">
-                            <div className="text-sm font-semibold text-orange-200 uppercase tracking-wider mb-2">Premium Retainer</div>
-                            <div className="text-3xl font-bold text-white mb-1">€1.000 <span className="text-sm font-normal text-white/60">/mês + IVA</span></div>
-                        </div>
-
-                        <div className="bg-white/10 rounded-lg p-3 mb-4">
-                            <div className="flex items-center gap-2 text-gray-300 text-sm">
-                                <Users className="w-4 h-4" />
-                                <span><strong className="text-white">12h/mês</strong> de suporte dedicado</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-gray-300 text-sm mt-2">
-                                <Check className="w-4 h-4 text-orange-400" />
-                                <span><strong className="text-white">1 reunião</strong> mensal de revisão</span>
-                            </div>
-                        </div>
-
-                        <div className="space-y-2 mb-4 flex-1 text-sm">
-                            <div className="flex items-center gap-2 text-white">
-                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                                <span><strong>TUDO do Professional</strong></span>
-                            </div>
-                            <div className="flex items-center gap-2 text-gray-200">
-                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                                <span>SLA prioritário 1 dia</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-gray-200">
-                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                                <span>Atualizações quinzenais</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-gray-200">
-                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                                <span>Sessão mensal roadmap</span>
-                            </div>
-                        </div>
-
-                        <div className="text-center py-2 px-3 bg-orange-500/30 rounded-lg">
-                            <span className="text-xs text-orange-200">SLA: 1 dia útil</span>
-                        </div>
-                    </div>
-
-                    {/* PROFESSIONAL RETAINER - Azul brilhante */}
-                    <div className="bg-gradient-to-b from-blue-500 to-blue-700 border-2 border-blue-400 rounded-xl p-5 flex flex-col relative shadow-xl">
-                        <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full font-semibold flex items-center gap-1">
-                            <Star className="w-3 h-3" />
-                            RECOMENDADO
-                        </span>
-
-                        <div className="mb-4">
-                            <div className="text-sm font-semibold text-blue-100 uppercase tracking-wider mb-2">Professional Retainer</div>
-                            <div className="text-3xl font-bold text-white mb-1">€800 <span className="text-sm font-normal text-white/70">/mês + IVA</span></div>
-                        </div>
-
-                        <div className="bg-white/20 rounded-lg p-3 mb-4">
-                            <div className="flex items-center gap-2 text-blue-200 text-sm">
-                                <Users className="w-4 h-4" />
-                                <span><strong className="text-white">8h/mês</strong> de suporte dedicado</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-blue-200 text-sm mt-2">
-                                <Check className="w-4 h-4 text-emerald-400" />
-                                <span><strong className="text-white">1 reunião</strong> mensal de revisão</span>
-                            </div>
-                        </div>
-
-                        <div className="space-y-2 mb-4 flex-1 text-sm">
-                            <div className="flex items-center gap-2 text-white">
-                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                                <span><strong>TUDO do Starter</strong></span>
-                            </div>
-                            <div className="flex items-center gap-2 text-blue-50">
-                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                                <span>Monitoramento 24/7</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-blue-50">
-                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                                <span>Atualizações mensais</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-blue-50">
-                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                                <span>Sessão trimestral roadmap</span>
-                            </div>
-                        </div>
-
-                        <div className="text-center py-2 px-3 bg-blue-500/30 rounded-lg">
-                            <span className="text-xs text-blue-100">SLA: 2 dias úteis</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-xl p-5">
-                    <h4 className="font-bold text-white mb-3 flex items-center gap-2">
-                        <Shield className="w-5 h-5 text-cyan-400" />
-                        O que garante o retainer
-                    </h4>
-                    <div className="grid md:grid-cols-2 gap-4 text-cyan-100 text-sm">
-                        <ul className="space-y-2">
-                            <li className="flex items-start gap-2">
-                                <Check className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                                <span><strong>Platform stability:</strong> Scrapers adaptados quando portais mudam</span>
+                <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-6">
+                    <h4 className="text-lg font-bold text-white mb-4">O que inclui:</h4>
+                    <div className="grid md:grid-cols-2 gap-4">
+                        <ul className="space-y-3">
+                            <li className="flex items-start gap-2 text-cyan-100">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                                <span><strong>Manutenção de scrapers:</strong> Adaptação quando portais mudam</span>
                             </li>
-                            <li className="flex items-start gap-2">
-                                <Check className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                                <span><strong>Suporte contínuo:</strong> Dúvidas e problemas resolvidos recorrentemente</span>
+                            <li className="flex items-start gap-2 text-cyan-100">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                                <span><strong>Suporte:</strong> Dúvidas e problemas recorrentes</span>
+                            </li>
+                            <li className="flex items-start gap-2 text-cyan-100">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                                <span><strong>Backup diário:</strong> Dados seguros</span>
                             </li>
                         </ul>
-                        <ul className="space-y-2">
-                            <li className="flex items-start gap-2">
-                                <Check className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                                <span><strong>Evolução:</strong> Plataforma melhora com novas features</span>
+                        <ul className="space-y-3">
+                            <li className="flex items-start gap-2 text-cyan-100">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                                <span><strong>Atualizações:</strong> Bug fixes e hotfixes</span>
                             </li>
-                            <li className="flex items-start gap-2">
-                                <Check className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                                <span><strong>Segurança:</strong> Atualizações aplicadas de imediato</span>
+                            <li className="flex items-start gap-2 text-cyan-100">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                                <span><strong>Segurança:</strong> Patches aplicados</span>
                             </li>
+                            <li className="flex items-start gap-2 text-cyan-100">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                                <span><strong>1 reunião mensal:</strong> Revisão de operações</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="bg-blue-500/10 border border-blue-400/30 rounded-xl p-4">
+                    <p className="text-blue-200 text-sm">
+                        <strong className="text-white">Nota:</strong> O valor de €350/mês reflete o custo real de APIs e manutenção básica.
+                        Para SLA mais apertado (24-48h), considerar retainer premium.
+                    </p>
+                </div>
+            </div>
+        )
+    },
+    {
+        id: 'timeline',
+        title: 'Timeline Fase 1',
+        subtitle: '8 semanas até deployment',
+        icon: <Clock className="w-6 h-6" />,
+        color: 'blue',
+        content: (
+            <div className="space-y-6">
+                <div className="grid md:grid-cols-4 gap-4">
+                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
+                        <div className="flex items-center justify-between mb-4">
+                            <h4 className="font-bold text-white">Sem 1-2</h4>
+                            <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Foundation</span>
+                        </div>
+                        <ul className="space-y-2 text-blue-100 text-sm">
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-400" /> Setup Prisma (NUT, TIP)</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-400" /> Scrapers PT2030 + PRR</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-400" /> Bitrix read integration</li>
+                        </ul>
+                    </div>
+                    <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-5">
+                        <div className="flex items-center justify-between mb-4">
+                            <h4 className="font-bold text-white">Sem 3-4</h4>
+                            <span className="bg-emerald-500 text-white text-xs px-2 py-1 rounded-full">Core</span>
+                        </div>
+                        <ul className="space-y-2 text-emerald-100 text-sm">
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> NUT/TIP extraction</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Matching engine</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> UI lista + filtros</li>
+                        </ul>
+                    </div>
+                    <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-5">
+                        <div className="flex items-center justify-between mb-4">
+                            <h4 className="font-bold text-white">Sem 5-6</h4>
+                            <span className="bg-amber-500 text-white text-xs px-2 py-1 rounded-full">RAG</span>
+                        </div>
+                        <ul className="space-y-2 text-amber-100 text-sm">
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> Index 291 documentos</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> Chat interface</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> Export CSV</li>
+                        </ul>
+                    </div>
+                    <div className="bg-violet-500/20 border border-violet-400/30 rounded-xl p-5">
+                        <div className="flex items-center justify-between mb-4">
+                            <h4 className="font-bold text-white">Sem 7-8</h4>
+                            <span className="bg-violet-500 text-white text-xs px-2 py-1 rounded-full">Deploy</span>
+                        </div>
+                        <ul className="space-y-2 text-violet-100 text-sm">
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-violet-400" /> E2E testing</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-violet-400" /> Deploy produção</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-violet-400" /> Formação equipa</li>
                         </ul>
                     </div>
                 </div>
@@ -591,60 +433,66 @@ const SECTIONS = [
         )
     },
     {
-        id: 'timeline',
-        title: 'Timeline de Implementação',
-        subtitle: 'Cada plano tem o seu ritmo',
-        icon: <Clock className="w-6 h-6" />,
-        color: 'blue',
+        id: 'tech-specs',
+        title: 'Especificações Técnicas',
+        subtitle: 'Alterações necessárias',
+        icon: <Wrench className="w-6 h-6" />,
+        color: 'violet',
         content: (
             <div className="space-y-6">
-                <div className="grid md:grid-cols-3 gap-4">
-                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
-                        <div className="flex items-center justify-between mb-4">
-                            <h4 className="font-bold text-white">STARTER</h4>
-                            <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">8 semanas</span>
-                        </div>
-                        <ul className="space-y-2 text-blue-100 text-sm">
-                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-400" /> Sem 1-2: Scraping + Dashboard</li>
-                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-400" /> Sem 3-4: Matchmaking + Chatbot</li>
-                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-400" /> Sem 5-6: RAG + Testes</li>
-                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-400" /> Sem 7-8: Deploy + Formação</li>
-                        </ul>
-                    </div>
-                    <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-5">
-                        <div className="flex items-center justify-between mb-4">
-                            <h4 className="font-bold text-white">PROFESSIONAL</h4>
-                            <span className="bg-emerald-500 text-white text-xs px-2 py-1 rounded-full">12 semanas</span>
-                        </div>
-                        <ul className="space-y-2 text-emerald-100 text-sm">
-                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sem 1-4: TUDO do Starter</li>
-                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sem 5-8: Extensões Core</li>
-                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sem 9-10: Automação Avançada</li>
-                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sem 11-12: Deploy + Testes</li>
-                        </ul>
-                    </div>
-                    <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-5">
-                        <div className="flex items-center justify-between mb-4">
-                            <h4 className="font-bold text-white">PREMIUM</h4>
-                            <span className="bg-amber-500 text-white text-xs px-2 py-1 rounded-full">20 semanas</span>
-                        </div>
-                        <ul className="space-y-2 text-amber-100 text-sm">
-                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> Sem 1-12: TUDO do Professional</li>
-                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> Sem 13-16: AI Writer + Post-Award</li>
-                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> Sem 17-18: AI Critic + Web Auto</li>
-                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> Sem 19-20: Deploy + Formação</li>
-                        </ul>
-                    </div>
+                <div className="bg-violet-500/10 border border-violet-400/30 rounded-xl p-5 mb-4">
+                    <p className="text-violet-200 text-sm">Alterações ao schema existentes para suportar NUT+TIP matching:</p>
                 </div>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-5">
-                    <h4 className="font-bold text-white mb-3 flex items-center gap-2">
-                        <Lightbulb className="w-5 h-5 text-amber-400" />
-                        Upgrade Flexível
-                    </h4>
-                    <p className="text-blue-100">Podes começar no Starter e fazer upgrade depois. O investimento inicial é deduzido do novo plano.</p>
-                    <div className="flex gap-4 mt-3 text-sm">
-                        <span className="text-blue-300">→ Starter → Professional: +4-6 semanas</span>
-                        <span className="text-blue-300">→ Professional → Premium: +8-10 semanas</span>
+
+                <div className="space-y-4">
+                    <div className="bg-white/5 border border-white/10 rounded-xl p-5">
+                        <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                            <Database className="w-5 h-5 text-violet-400" />
+                            Prisma Schema - Empresa
+                        </h4>
+                        <pre className="bg-slate-900 rounded-lg p-4 text-xs text-green-300 overflow-x-auto">
+{`model Empresa {
+    // ... campos existentes ...
+    nut        String?   // NUTS III (Norte, Centro, Alentejo, Algarve)
+    tip        String?   // TIP (IPSS, Associação, Poder Central, Poder Local, Agricultura)
+    tipEmpresa String?   // Sub-tipo (Politécnico, PME Inovadora, Startup, etc.)
+    // ...
+}`}
+                        </pre>
+                    </div>
+
+                    <div className="bg-white/5 border border-white/10 rounded-xl p-5">
+                        <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                            <Database className="w-5 h-5 text-violet-400" />
+                            Prisma Schema - Aviso
+                        </h4>
+                        <pre className="bg-slate-900 rounded-lg p-4 text-xs text-green-300 overflow-x-auto">
+{`model Aviso {
+    // ... campos existentes ...
+    nutsCompativeis     String[]   // Array de NUTs compatíveis
+    tipCompativeis      String[]   // Array de TIPs compatíveis (95% dos avisos)
+    caeCompativeis      String?    // CAE (só 5% dos avisos têm - fallback)
+    // ...
+}`}
+                        </pre>
+                    </div>
+
+                    <div className="bg-white/5 border border-white/10 rounded-xl p-5">
+                        <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                            <Target className="w-5 h-5 text-violet-400" />
+                            Algoritmo de Matching - Nova Prioridade
+                        </h4>
+                        <pre className="bg-slate-900 rounded-lg p-4 text-xs text-green-300 overflow-x-auto">
+{`// Score Total: 100 pontos
+1. NUT Match:        30 pontos (ex: Norte == Norte)
+2. TIP Match:        20 pontos (ex: IPSS == IPSS)
+3. TIP Empresa:      20 pontos (ex: Politécnico == Politécnico)
+4. CAE Match:        15 pontos (só se disponível - 5% casos)
+5. Prazo adequado:   10 pontos
+6. Montante ok:      5 pontos
+
+// Threshold mínimo: 50 pontos para considerar match`}
+                        </pre>
                     </div>
                 </div>
             </div>
@@ -660,28 +508,28 @@ const SECTIONS = [
             <div className="space-y-4">
                 {[
                     {
-                        q: "Posso começar no Starter e fazer upgrade depois?",
-                        a: "Sim. O upgrade é possível e o investimento inicial é deduzido. Starter → Professional: +4-6 semanas. Professional → Premium: +8-10 semanas."
+                        q: "Como funciona o modelo de 2 fases?",
+                        a: "Fase 1 (€4.500): Setup do motor de scraping + matching. Pagamento único. Se uma candidatura for aprovada usando a plataforma, desbloqueia a Fase 2 (€13.500 adicional) para as funcionalidades avançadas. Total máximo: €18.000."
+                    },
+                    {
+                        q: "Porquê NUT+TIP em vez de CAE?",
+                        a: "Conforme confirmado pelo cliente, 95% dos avisos publicados NÃO mencionam CAE. A maioria usa NUT (região) e TIP (tipo de entidade) como critérios de elegibilidade. O matching CAE é mantido apenas como fallback para os 5% restantes."
                     },
                     {
                         q: "O que acontece se um scraper quebrar?",
-                        a: "Starter: 24-48h após report. Professional: até 4h com monitoramento 24/7. Premium: até 2h com alertas imediatos."
-                    },
-                    {
-                        q: "Os dados do Bitrix estão seguros?",
-                        a: "Sim. Acesso read-only por defeito. Escrita condicionada. Revogação a qualquer momento. HTTPS + logs para auditoria."
+                        a: "Report por email • Correção em 3-5 dias úteis (incluído no retainer) • Para SLA mais apertado (24-48h), considerar upgrade de retainer."
                     },
                     {
                         q: "Preciso de fornecer as 291 candidaturas?",
-                        a: "Sim, para o RAG funcionar bem. Formatos: Google Drive, upload (PDF, DOCX), ou exportação de outro sistema."
+                        a: "Sim, para o RAG funcionar bem. Formatos aceites: Google Drive, upload direto (PDF, DOCX), ou exportação de outro sistema."
                     },
                     {
-                        q: "Qual é o tempo mínimo de contrato?",
-                        a: "Setup: pagamento único no início. Retainer: inicia APÓS conclusão do projeto, mínimo de 3 meses. Cancelamento: 30 dias de aviso prévio."
+                        q: "A Fase 2 é obrigatória?",
+                        a: "Não. A Fase 2 só é ativada se o cliente quiser expandir após uma candidatura aprovada. Se o projeto não atingir esse milestone, fica apenas pelo valor da Fase 1."
                     },
                     {
                         q: "Os preços incluem IVA?",
-                        a: "Não. Todos os preços apresentados (setup e mensal) são excluídos de IVA. O IVA à taxa em vigor será adicionado separadamente."
+                        a: "Não. Todos os preços apresentados (setup e retainer mensal) são excluídos de IVA. O IVA à taxa em vigor será adicionado separadamente."
                     }
                 ].map((faq, i) => (
                     <motion.div
@@ -708,6 +556,7 @@ const colorMap = {
     red: { bg: 'bg-red-500', text: 'text-red-400', border: 'border-red-400', bgLight: 'bg-red-500/20' },
     violet: { bg: 'bg-violet-500', text: 'text-violet-400', border: 'border-violet-400', bgLight: 'bg-violet-500/20' },
     cyan: { bg: 'bg-cyan-500', text: 'text-cyan-400', border: 'border-cyan-400', bgLight: 'bg-cyan-500/20' },
+    orange: { bg: 'bg-orange-500', text: 'text-orange-400', border: 'border-orange-400', bgLight: 'bg-orange-500/20' },
 };
 
 // ============================================================================
@@ -805,7 +654,7 @@ export default function PropostaTecnicaPage() {
     };
 
     const handleDownload = () => {
-        window.open('/docs/proposta-tecnica-completa.md', '_blank');
+        window.open('/docs/proposta-tecnica-v3.md', '_blank');
     };
 
     return (
@@ -820,13 +669,13 @@ export default function PropostaTecnicaPage() {
             <header className="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-xl border-b border-white/10 no-print">
                 <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                        <Link href="/apresentacao-v5" className="text-slate-400 hover:text-white transition-colors">
+                        <Link href="/apresentacao-v6" className="text-slate-400 hover:text-white transition-colors">
                             <ArrowLeft className="w-5 h-5" />
                         </Link>
                         <Image src="/logo-ta.png" alt="TA Consulting" width={40} height={40} priority />
                         <div>
-                            <h1 className="text-base font-bold text-white">Proposta Técnica</h1>
-                            <p className="text-xs text-slate-400">Janeiro 2026</p>
+                            <h1 className="text-base font-bold text-white">Proposta Técnica v3</h1>
+                            <p className="text-xs text-slate-400">Janeiro 2026 • Modelo 2 Fases</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-2">
@@ -862,14 +711,14 @@ export default function PropostaTecnicaPage() {
                         className="mb-6"
                     >
                         <Image src="/logo-ta.png" alt="TA Consulting" width={80} height={80} priority />
-                    </motion.div>
+                    </motion.h1>
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
                         className="text-3xl md:text-5xl font-bold text-white mb-3"
                     >
-                        Proposta Técnica
+                        Proposta Técnica v3
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -877,7 +726,7 @@ export default function PropostaTecnicaPage() {
                         transition={{ delay: 0.4 }}
                         className="text-lg text-blue-200 mb-6"
                     >
-                        Documento de Acompanhamento Comercial
+                        Documento de Acompanhamento Comercial • Modelo 2 Fases
                     </motion.p>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -887,11 +736,20 @@ export default function PropostaTecnicaPage() {
                     >
                         <div className="flex items-center gap-2 text-white text-sm">
                             <div className="w-10 h-10 bg-blue-500/20 border border-blue-400/30 rounded-lg flex items-center justify-center">
-                                <Globe className="w-4 h-4 text-blue-400" />
+                                <Star className="w-4 h-4 text-blue-400" />
                             </div>
                             <div className="text-left">
-                                <p className="text-xs text-blue-300">3 Planos</p>
-                                <p className="font-semibold">Starter a Premium</p>
+                                <p className="text-xs text-blue-300">Fase 1</p>
+                                <p className="font-semibold">€4.500 + €350/mês</p>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-2 text-white text-sm">
+                            <div className="w-10 h-10 bg-orange-500/20 border border-orange-400/30 rounded-lg flex items-center justify-center">
+                                <Crown className="w-4 h-4 text-orange-400" />
+                            </div>
+                            <div className="text-left">
+                                <p className="text-xs text-orange-300">Fase 2</p>
+                                <p className="font-semibold">€13.500 (opcional)</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-2 text-white text-sm">
@@ -900,16 +758,7 @@ export default function PropostaTecnicaPage() {
                             </div>
                             <div className="text-left">
                                 <p className="text-xs text-emerald-300">Timeline</p>
-                                <p className="font-semibold">8-20 semanas</p>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-2 text-white text-sm">
-                            <div className="w-10 h-10 bg-amber-500/20 border border-amber-400/30 rounded-lg flex items-center justify-center">
-                                <Shield className="w-4 h-4 text-amber-400" />
-                            </div>
-                            <div className="text-left">
-                                <p className="text-xs text-amber-300">Suporte</p>
-                                <p className="font-semibold">SLA garantido</p>
+                                <p className="font-semibold">8 semanas</p>
                             </div>
                         </div>
                     </motion.div>
@@ -932,11 +781,11 @@ export default function PropostaTecnicaPage() {
                     <p className="text-slate-400 text-sm">
                         Este documento é confidencial e destina-se exclusivamente ao uso da TA Consulting.
                     </p>
-                    <p className="text-slate-500 text-xs mt-2">Janeiro 2026</p>
+                    <p className="text-slate-500 text-xs mt-2">Janeiro 2026 • Versão 3.0</p>
                 </div>
             </footer>
 
-            {/* Print styles - better formatting for PDF export */}
+            {/* Print styles */}
             <style jsx global>{`
                 @media print {
                     @page { margin: 1.5cm; size: A4; }
@@ -961,6 +810,7 @@ export default function PropostaTecnicaPage() {
                     .bg-cyan-500\\/20 { background: #e0f7fa !important; }
                     .bg-red-500\\/20 { background: #ffebee !important; }
                     .bg-violet-500\\/20 { background: #f3e5f5 !important; }
+                    .bg-orange-500\\/20 { background: #fff3e0 !important; }
 
                     .gradient-to-r { background: none !important; }
                     .border { border-color: #dee2e6 !important; }
@@ -971,6 +821,8 @@ export default function PropostaTecnicaPage() {
                     .border-emerald-400\\/30 { border-color: #a5d6a7 !important; }
                     .border-amber-400\\/30 { border-color: #ffe082 !important; }
                     .border-cyan-400\\/30 { border-color: #80deea !important; }
+                    .border-violet-400\\/30 { border-color: #b39ddb !important; }
+                    .border-orange-400\\/30 { border-color: #ffcc80 !important; }
 
                     .text-white { color: #1a1a1a !important; }
                     .text-blue-100, .text-blue-200, .text-blue-300 { color: #0d47a1 !important; }
@@ -978,15 +830,15 @@ export default function PropostaTecnicaPage() {
                     .text-amber-100, .text-amber-200, .text-amber-300 { color: #f57f17 !important; }
                     .text-cyan-100, .text-cyan-200, .text-cyan-300 { color: #006064 !important; }
                     .text-violet-100, .text-violet-200, .text-violet-300 { color: #4a148c !important; }
+                    .text-orange-100, .text-orange-200, .text-orange-300 { color: #e65100 !important; }
+                    .text-red-100, .text-red-200, .text-red-300 { color: #b71c1c !important; }
                     .text-slate-400, .text-slate-500 { color: #666 !important; }
 
                     .from-slate-900, .via-blue-950, .to-slate-900 { background: white !important; }
 
-                    /* Preserve section breaks */
                     .mb-16 { page-break-inside: avoid; margin-bottom: 1rem !important; }
                     .space-y-6 > * { page-break-inside: avoid; }
 
-                    /* Table styling for print */
                     table { page-break-inside: auto; }
                     tr { page-break-inside: avoid; page-break-after: auto; }
                 }

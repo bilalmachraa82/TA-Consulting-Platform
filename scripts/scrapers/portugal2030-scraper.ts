@@ -32,6 +32,10 @@ export interface AvisoPortugal2030 {
   elegibilidade: string;
   documentos_necessarios: string[];
   keywords: string[];
+  // v6: NUT + TIP matching (95% dos avisos usam isto em vez de CAE)
+  nuts_compativeis: string[];  // NUTS III regions
+  tip_compativeis: string[];   // Tipo de Intervenção Prioritária
+  cae_compativeis: string;     // CAE (fallback - só 5% dos avisos)
   scraped_at: string;
 }
 
@@ -70,6 +74,7 @@ export async function scrapePortugal2030(): Promise<AvisoPortugal2030[]> {
         const descricao = $el.find('p, .excerpt, .summary').first().text().trim();
 
         if (titulo && titulo.length > 10) {
+          const textoCompleto = $el.text();
           const aviso: AvisoPortugal2030 = {
             id: `PT2030_REAL_${Date.now()}_${index}`,
             titulo: titulo,
@@ -77,13 +82,13 @@ export async function scrapePortugal2030(): Promise<AvisoPortugal2030[]> {
             fonte: 'Portugal 2030',
             programa: extractPrograma(titulo, descricao),
             linha: extractLinha(titulo, descricao),
-            data_abertura: extractData($el.text(), 'abertura') || new Date().toISOString().split('T')[0],
-            data_fecho: extractData($el.text(), 'fecho') || getFutureDate(90),
-            montante_total: extractMontante($el.text(), 'total') || '0',
-            montante_min: extractMontante($el.text(), 'min') || '10000',
-            montante_max: extractMontante($el.text(), 'max') || '500000',
-            taxa_apoio: extractTaxa($el.text()) || '50',
-            regiao: extractRegiao($el.text()) || 'Nacional',
+            data_abertura: extractData(textoCompleto, 'abertura') || new Date().toISOString().split('T')[0],
+            data_fecho: extractData(textoCompleto, 'fecho') || getFutureDate(90),
+            montante_total: extractMontante(textoCompleto, 'total') || '0',
+            montante_min: extractMontante(textoCompleto, 'min') || '10000',
+            montante_max: extractMontante(textoCompleto, 'max') || '500000',
+            taxa_apoio: extractTaxa(textoCompleto) || '50',
+            regiao: extractRegiao(textoCompleto) || 'Nacional',
             setor: extractSetor(titulo, descricao),
             url: link.startsWith('http') ? link : `${BASE_URL}${link}`,
             pdf_url: $el.find('a[href*=".pdf"]').first().attr('href'),
@@ -92,6 +97,10 @@ export async function scrapePortugal2030(): Promise<AvisoPortugal2030[]> {
             elegibilidade: 'Ver regulamento do aviso',
             documentos_necessarios: ['Formulário de candidatura', 'Documentos societários', 'Declaração de compromisso'],
             keywords: extractKeywords(titulo, descricao),
+            // v6: NUT + TIP matching
+            nuts_compativeis: extractNUTs(textoCompleto + ' ' + titulo + ' ' + descricao),
+            tip_compativeis: extractTIPs(textoCompleto + ' ' + titulo + ' ' + descricao),
+            cae_compativeis: extractCAE(textoCompleto + ' ' + titulo + ' ' + descricao),
             scraped_at: new Date().toISOString(),
           };
           avisos.push(aviso);
@@ -133,10 +142,13 @@ async function scrapePortugal2030Alternative(): Promise<AvisoPortugal2030[]> {
       if (Array.isArray(response.data)) {
         for (const post of response.data) {
           if (post.title && post.title.rendered) {
+            const titulo = cheerio.load(post.title.rendered)('body').text() || post.title.rendered;
+            const descricao = cheerio.load(post.excerpt?.rendered || '')('body').text().trim() || '';
+            const textoCompleto = titulo + ' ' + descricao;
             avisos.push({
               id: `PT2030_API_${post.id}`,
-              titulo: cheerio.load(post.title.rendered)('body').text() || post.title.rendered,
-              descricao: cheerio.load(post.excerpt?.rendered || '')('body').text().trim() || '',
+              titulo: titulo,
+              descricao: descricao,
               fonte: 'Portugal 2030',
               programa: 'Portugal 2030',
               linha: extractLinha(post.title.rendered, post.excerpt?.rendered || ''),
@@ -154,6 +166,10 @@ async function scrapePortugal2030Alternative(): Promise<AvisoPortugal2030[]> {
               elegibilidade: 'Ver regulamento',
               documentos_necessarios: ['Formulário de candidatura'],
               keywords: extractKeywords(post.title.rendered, post.excerpt?.rendered || ''),
+              // v6: NUT + TIP matching
+              nuts_compativeis: extractNUTs(textoCompleto),
+              tip_compativeis: extractTIPs(textoCompleto),
+              cae_compativeis: extractCAE(textoCompleto),
               scraped_at: new Date().toISOString(),
             });
           }
@@ -193,6 +209,10 @@ function getFallbackPortugal2030(): AvisoPortugal2030[] {
       elegibilidade: 'Empresas do setor industrial com CAE elegível',
       documentos_necessarios: ['Formulário candidatura', 'Certidão Permanente', 'IES', 'Declaração Compromisso Honra'],
       keywords: ['inovação', 'produção', 'indústria', 'emprego', 'internacionalização'],
+      // v6: NUT + TIP matching
+      nuts_compativeis: ['Norte', 'Centro', 'Alentejo'],
+      tip_compativeis: ['Empresa'],
+      cae_compativeis: '10-33',
       scraped_at: now.toISOString(),
     },
     {
@@ -216,6 +236,10 @@ function getFallbackPortugal2030(): AvisoPortugal2030[] {
       elegibilidade: 'PME com 2 anos de atividade',
       documentos_necessarios: ['Formulário', 'Certidão Permanente', 'Balanço e DR'],
       keywords: ['qualificação', 'internacionalização', 'PME', 'certificação', 'exportação'],
+      // v6: NUT + TIP matching
+      nuts_compativeis: ['Norte', 'Centro', 'Lisboa', 'Alentejo', 'Algarve'],
+      tip_compativeis: ['Empresa'],
+      cae_compativeis: '45-47',
       scraped_at: now.toISOString(),
     },
     {
@@ -239,6 +263,10 @@ function getFallbackPortugal2030(): AvisoPortugal2030[] {
       elegibilidade: 'PME com contabilidade organizada',
       documentos_necessarios: ['Formulário digital', 'Plano de digitalização', 'Orçamentos'],
       keywords: ['digital', 'tecnologia', 'automação', 'e-commerce', 'cibersegurança'],
+      // v6: NUT + TIP matching
+      nuts_compativeis: ['Norte', 'Centro', 'Lisboa', 'Alentejo', 'Algarve'],
+      tip_compativeis: ['Empresa'],
+      cae_compativeis: '62-63',
       scraped_at: now.toISOString(),
     },
     {
@@ -263,6 +291,10 @@ function getFallbackPortugal2030(): AvisoPortugal2030[] {
       elegibilidade: 'Consórcios com pelo menos 1 empresa e 1 entidade SCTN',
       documentos_necessarios: ['Contrato consórcio', 'Plano de trabalhos', 'CVs equipa'],
       keywords: ['investigação', 'desenvolvimento', 'inovação', 'tecnologia', 'universidade'],
+      // v6: NUT + TIP matching
+      nuts_compativeis: ['Norte', 'Centro', 'Lisboa', 'Alentejo', 'Algarve'],
+      tip_compativeis: ['Empresa', 'Educação'],
+      cae_compativeis: '72-73',
       scraped_at: now.toISOString(),
     },
     {
@@ -286,6 +318,10 @@ function getFallbackPortugal2030(): AvisoPortugal2030[] {
       elegibilidade: 'Empresas com consumo energético significativo',
       documentos_necessarios: ['Auditoria energética', 'Projeto técnico', 'Licenciamento'],
       keywords: ['energia', 'eficiência', 'renovável', 'solar', 'descarbonização'],
+      // v6: NUT + TIP matching
+      nuts_compativeis: ['Norte', 'Centro', 'Lisboa', 'Alentejo', 'Algarve'],
+      tip_compativeis: ['Empresa'],
+      cae_compativeis: '10-33',
       scraped_at: now.toISOString(),
     },
   ];
@@ -408,6 +444,121 @@ function getFutureDate(days: number): string {
   const date = new Date();
   date.setDate(date.getDate() + days);
   return date.toISOString().split('T')[0];
+}
+
+// ============================================================================
+// v6: NUT + TIP Extraction Functions
+// ============================================================================
+
+/**
+ * Extrai NUTS III (NUT) do texto do aviso
+ * NUTS III em Portugal: Norte, Centro, Lisboa, Alentejo, Algarve, Açores, Madeira
+ */
+function extractNUTs(text: string): string[] {
+  const lowerText = text.toLowerCase();
+  const nuts: string[] = [];
+
+  // NUTS III regions mapping
+  const nutRegions = [
+    { keywords: ['norte', 'minho', 'trás-os-montes', 'douro', 'tâmega', 'ave'], region: 'Norte' },
+    { keywords: ['centro', 'beira interior', 'beira litoral', 'baixo vouga', 'baixo mondego'], region: 'Centro' },
+    { keywords: ['lisboa', 'grande lisboa', 'península de setúbal', 'setúbal'], region: 'Lisboa' },
+    { keywords: ['alentejo', 'alto alentejo', 'baixo alentejo', 'alentejo central', 'alentejo litoral'], region: 'Alentejo' },
+    { keywords: ['algarve'], region: 'Algarve' },
+    { keywords: ['açores', 'acores'], region: 'Açores' },
+    { keywords: ['madeira'], region: 'Madeira' },
+  ];
+
+  for (const nut of nutRegions) {
+    for (const keyword of nut.keywords) {
+      if (lowerText.includes(keyword)) {
+        if (!nuts.includes(nut.region)) {
+          nuts.push(nut.region);
+        }
+        break;
+      }
+    }
+  }
+
+  // Se não encontrou nenhuma região específica, assume Nacional
+  if (nuts.length === 0 && (lowerText.includes('nacional') || lowerText.includes('continente'))) {
+    return ['Norte', 'Centro', 'Lisboa', 'Alentejo', 'Algarve'];
+  }
+
+  return nuts.length > 0 ? nuts : ['Nacional'];
+}
+
+/**
+ * Extrai TIP (Tipo de Intervenção Prioritária) do texto do aviso
+ * TIPs mais comuns: IPSS, Associação, Poder Central, Poder Local, Agricultura, etc.
+ */
+function extractTIPs(text: string): string[] {
+  const lowerText = text.toLowerCase();
+  const tips: string[] = [];
+
+  // TIP mapping
+  const tipTypes = [
+    { keywords: ['ipss', 'instituição particular', 'solidariedade social', 'sem fins lucrativos', 'economia social'], tip: 'IPSS' },
+    { keywords: ['associação', 'cooperativa', 'mutual', 'ONG', 'organização não governamental'], tip: 'Associação' },
+    { keywords: ['poder central', 'administração central', 'estado', 'governo'], tip: 'Poder Central' },
+    { keywords: ['poder local', 'autarquia', 'município', 'câmara municipal', 'freguesia'], tip: 'Poder Local' },
+    { keywords: ['agricultura', 'agrícola', 'floresta', 'florestal', 'produtor', 'agro'], tip: 'Agricultura' },
+    { keywords: ['escola', 'politécnico', 'universidade', 'instituto', 'ensino', 'centro de formação'], tip: 'Educação' },
+    { keywords: ['empresa', 'pme', 'startup', 'indústria', 'comércio', 'serviços'], tip: 'Empresa' },
+    { keywords: ['entidade reguladora', 'regulador', 'autoridade'], tip: 'Regulador' },
+  ];
+
+  for (const tipType of tipTypes) {
+    for (const keyword of tipType.keywords) {
+      if (lowerText.includes(keyword)) {
+        if (!tips.includes(tipType.tip)) {
+          tips.push(tipType.tip);
+        }
+        break;
+      }
+    }
+  }
+
+  // Por defeito, inclui "Empresa" que é o mais comum
+  if (tips.length === 0) {
+    return ['Empresa'];
+  }
+
+  return tips;
+}
+
+/**
+ * Extrai CAE do texto (apenas 5% dos avisos têm CAE explícito)
+ * Esta é uma função de fallback para quando o CAE é mencionado
+ */
+function extractCAE(text: string): string {
+  const lowerText = text.toLowerCase();
+
+  // Procura por padrões de CAE (ex: "CAE 12345", "CAE: 12345")
+  const caePattern = /cae\s*:?\s*(\d{2,5})/i;
+  const match = text.match(caePattern);
+
+  if (match) {
+    return match[1];
+  }
+
+  // Procura por menções a setores específicos que podem indicar CAE
+  const caeSetores: Record<string, string> = {
+    'indústria transformadora': '10-33',
+    'comércio': '45-47',
+    'serviços': '55-56',
+    'construção': '41-43',
+    'agricultura': '01-03',
+    'tecnologia': '62-63',
+  };
+
+  for (const [setor, cae] of Object.entries(caeSetores)) {
+    if (lowerText.includes(setor.toLowerCase())) {
+      return cae;
+    }
+  }
+
+  return ''; // Vazio se não encontrar CAE
 }
 
 // Exportar para uso em outros módulos
