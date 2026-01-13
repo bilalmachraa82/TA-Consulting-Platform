@@ -176,8 +176,16 @@ Lembra: Tens acesso à internet. Usa-a! 🌐
 `;
 
 export async function POST(req: NextRequest) {
+  // Initialize defaults for error handling
+  let extractedData: any = {};
+  let companyFound: any = null;
+  let messages: any[] = [];
+
   try {
-    const { messages, extractedData, companyFound } = await req.json();
+    const body = await req.json();
+    messages = body.messages || [];
+    extractedData = body.extractedData || {};
+    companyFound = body.companyFound || null;
 
     // Build conversation history
     const conversationHistory = messages.map((m: any) =>
