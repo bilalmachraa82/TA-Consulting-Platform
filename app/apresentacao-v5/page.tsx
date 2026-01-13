@@ -697,43 +697,6 @@ const PricingSlide = () => (
                 </div>
             </div>
 
-            {/* TABELA COMPARATIVA */}
-            <div className="bg-white/5 rounded-xl p-3 border border-white/10 flex flex-col justify-center">
-                <div className="text-xs font-bold text-blue-300 mb-2 text-center">Comparação Rápida</div>
-                <table className="w-full text-xs">
-                    <thead>
-                        <tr className="border-b border-white/20">
-                            <th className="text-left py-1 text-blue-300 font-normal">Funcionalidade</th>
-                            <th className="text-center py-1 text-blue-400 font-semibold">Pro</th>
-                        </tr>
-                    </thead>
-                    <tbody className="text-blue-100">
-                        <tr className="border-b border-white/10">
-                            <td className="py-1">Propostas IA</td>
-                            <td className="text-center text-white font-semibold text-xs">RAG ✓</td>
-                        </tr>
-                        <tr className="border-b border-white/10">
-                            <td className="py-1">Sync Bitrix</td>
-                            <td className="text-center text-white font-semibold text-xs">Bidirecional</td>
-                        </tr>
-                        <tr className="border-b border-white/10">
-                            <td className="py-1">Automação</td>
-                            <td className="text-center text-white font-semibold text-xs">Semi-auto</td>
-                        </tr>
-                        <tr className="border-b border-white/10">
-                            <td className="py-1">Suporte SLA</td>
-                            <td className="text-center text-white font-semibold text-xs">36h</td>
-                        </tr>
-                        <tr>
-                            <td className="py-1 text-emerald-400 font-semibold">Ideal para</td>
-                            <td className="text-center text-white text-xs">Volume propostas</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div className="mt-2 text-center text-xs text-slate-400">
-                    Premium tem: Post-Award, AI Critic, Email Drip, SLA &lt;24h
-                </div>
-            </div>
         </div>
     </div>
 );
@@ -905,37 +868,6 @@ const ProfissionalVsPremiumSlide = () => (
             </div>
         </div>
 
-        {/* NOTA IMPORTANTE + LINK PDF */}
-        <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-4">
-                <div className="flex items-start gap-3">
-                    <Lightbulb className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                    <div>
-                        <div className="text-sm font-bold text-blue-300 mb-1">Nota Importante</div>
-                        <p className="text-xs md:text-sm text-blue-100 leading-relaxed">
-                            Premium contém features <span className="text-white font-semibold">"nice to have"</span>, não críticas. Podem começar no Professional e fazer <span className="text-emerald-400 font-semibold">upgrade quando necessário</span>.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-4">
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                        <FileText className="w-8 h-8 text-emerald-400" />
-                        <div>
-                            <div className="text-sm font-bold text-emerald-300">Proposta Técnica Completa</div>
-                            <div className="text-xs text-emerald-100">Detalhes de todas as features</div>
-                        </div>
-                    </div>
-                    <button className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
-                        <Download className="w-4 h-4" />
-                        Ver PDF
-                        <ChevronRight className="w-4 h-4" />
-                    </button>
-                </div>
-            </div>
-        </div>
     </div>
 );
 
