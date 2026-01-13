@@ -11,11 +11,11 @@ Janeiro 2026
 
 1. [Visão Geral](#1-visão-geral)
 2. [Análise das Dores](#2-análise-das-dores)
-3. [STARTER](#3-starter---eur-5000--eur-600mês)
-4. [PROFESSIONAL](#4-professional---eur-7500--eur-800mês---recomendado)
-5. [PREMIUM](#5-premium---eur-11000--eur-1000mês)
+3. [STARTER](#3-starter---eur-5000--iva)
+4. [PROFESSIONAL](#4-professional---eur-7500--iva---recomendado)
+5. [PREMIUM](#5-premium---eur-11000--iva)
 6. [Comparação Lado a Lado](#6-comparação-lado-a-lado)
-7. [Retainer Mensal](#7-retainer-mensal---o-que-está-incluído)
+7. [Retainer Modules](#7-retainer-modules---escolha-o-nível-de-suporte)
 8. [Timeline de Implementação](#8-timeline-de-implementação)
 9. [Perguntas Frequentes](#9-perguntas-frequentes)
 
@@ -79,7 +79,7 @@ O conhecimento acumulado ao longo de anos de atividade não está estruturado de
 
 ---
 
-## 3. STARTER - EUR 5.000 + EUR 600/mês + IVA
+## 3. STARTER - EUR 5.000 + IVA
 
 ### 3.1 O que está incluído
 
@@ -148,7 +148,7 @@ O plano **STARTER** é ideal para:
 
 ---
 
-## 4. PROFESSIONAL - EUR 7.500 + EUR 800/mês + IVA (RECOMENDADO)
+### 4. PROFESSIONAL - EUR 7.500 + IVA (RECOMENDADO)
 
 ### 4.1 Tudo do Starter +
 
@@ -231,11 +231,7 @@ O plano Professional inclui todas as funcionalidades do plano Starter, acrescida
   - Boas práticas de email marketing
 - **Gravações:** Todas as sessões ficam gravadas para acesso futuro
 
-#### Suporte Prioritário
-- **8 horas por mês** de suporte dedicado
-- **1 reunião mensal** de revisão
-- **SLA:** Resposta em até 2 dias úteis
-- **Prioridade:** Alta (à frente dos clientes Starter)
+> **Nota sobre Suporte:** O nível de retainer (suporte) é escolhido independentemente. Ver secção "Retainer Modules" abaixo.
 
 ### 4.3 Comparativo: Starter vs Professional
 
@@ -249,7 +245,7 @@ O plano Professional inclui todas as funcionalidades do plano Starter, acrescida
 | Dashboard básico | Sim | + KPIs e alertas |
 | Email Drip | Não | 4 sequências |
 | Formação | 2 sessões | 4 sessões + gravações |
-| Suporte | 5h/mês + reunião mensal | 8h/mês + reunião mensal |
+| Suporte | Ver Retainer Modules | Ver Retainer Modules |
 
 ### 4.4 Timeline
 
@@ -266,7 +262,7 @@ O plano **PROFESSIONAL** é ideal para:
 
 ---
 
-## 5. PREMIUM - EUR 11.000 + EUR 1.000/mês + IVA
+## 5. PREMIUM - EUR 11.000 + IVA
 
 ### 5.1 Tudo do Professional +
 
@@ -372,39 +368,76 @@ O plano **PREMIUM** é ideal para:
 | **Marketing Mix AI** | Não | Não | **SIM** |
 | **Dashboard KPIs** | Básico | Avançado | + Personalização |
 | **Formação** | 2 sessões | 4 sessões + gravações | Onsite |
-| **Suporte** | 5h/mês + 1 reunião mensal | 8h/mês + 1 reunião mensal | 12h/mês + SLA prioritário |
+| Suporte | Ver Retainer Modules | Ver Retainer Modules | Ver Retainer Modules |
 
 ### 6.2 Comparação de Investimento
 
-| Plano | Setup Inicial | Mensal | Total Ano 1 |
-|-------|---------------|--------|-------------|
-| Starter | EUR 5.000 + IVA | EUR 600 + IVA | EUR 12.200 + IVA |
-| Professional | EUR 7.500 + IVA | EUR 800 + IVA | EUR 17.100 + IVA |
-| Premium | EUR 11.000 + IVA | EUR 1.000 + IVA | EUR 23.000 + IVA |
+| Plano | Setup Inicial |
+|-------|---------------|
+| Starter | EUR 5.000 + IVA |
+| Professional | EUR 7.500 + IVA |
+| Premium | EUR 11.000 + IVA |
+
+> **Nota:** O retainer mensal é separado e escolhido independentemente. Ver secção "Retainer Modules" abaixo.
 
 ---
 
-## 7. Retainer Mensal - O que está incluído
+## 7. Retainer Modules - Escolha o Nível de Suporte
 
-> **NOTA IMPORTANTE:** O retainer mensal apenas se inicia **APÓS a conclusão do projeto** com sucesso. O compromisso mínimo é de **3 meses** de retainer.
+> **NOTA IMPORTANTE:** O retainer mensal apenas se inicia **APÓS a conclusão do projeto** com sucesso. O compromisso mínimo é de **3 meses** de retainer. Escolhe o nível de retainer independentemente do plano de setup escolhido.
 
-### 7.1 Tabela Detalhada de Serviços
+### 7.1 Starter Retainer - €600/mês + IVA
 
-| Serviço | Starter €600 | Professional €800 | Premium €1000 |
-|---------|---------------|-------------------|---------------|
-| Manutenção de scrapers | ✓ | ✓ | ✓ |
-| Suporte por email | ✓ | ✓ | ✓ |
-| Horas de suporte dedicado | 5h/mês | 8h/mês | 12h/mês |
-| Reunião mensal de revisão | ✓ | ✓ | ✓ |
-| Atualizações da plataforma | Críticas apenas | Mensais | Quinzenais |
-| Monitoramento 24/7 | Não | Sim | Sim |
-| Sessão de roadmap | Não | Trimestral | Mensal |
-| Prioridade de bugs | Normal | Alta | Urgente |
-| Backup de dados | Diário | Diário | Diário + Retenção 1 ano |
-| SLA de resposta | 3 dias úteis | 2 dias úteis | 1 dia útil |
-| Atualizações de segurança | Imediato | Imediato | Imediato |
+**Ideal para:** Organizações que querem manutenção básica da plataforma
 
-### 7.2 O que garante o retainer mensal
+| Serviço | Starter Retainer |
+|---------|------------------|
+| Manutenção de scrapers | ✓ |
+| Suporte por email | ✓ |
+| Horas de suporte dedicado | 5h/mês |
+| Reunião mensal de revisão | ✓ |
+| Atualizações da plataforma | Críticas apenas |
+| Monitoramento 24/7 | ✗ |
+| Sessão de roadmap | ✗ |
+| Prioridade de bugs | Normal |
+| Backup de dados | Diário |
+| SLA de resposta | 3 dias úteis |
+
+### 7.2 Professional Retainer - €800/mês + IVA (RECOMENDADO)
+
+**Ideal para:** Organizações que precisam de suporte contínuo e evolução da plataforma
+
+| Serviço | Professional Retainer |
+|---------|----------------------|
+| Manutenção de scrapers | ✓ |
+| Suporte por email | ✓ |
+| Horas de suporte dedicado | 8h/mês |
+| Reunião mensal de revisão | ✓ |
+| Atualizações da plataforma | Mensais |
+| Monitoramento 24/7 | ✓ |
+| Sessão de roadmap | Trimestral |
+| Prioridade de bugs | Alta |
+| Backup de dados | Diário |
+| SLA de resposta | 2 dias úteis |
+
+### 7.3 Premium Retainer - €1.000/mês + IVA
+
+**Ideal para:** Organizações que precisam de suporte prioritário e evolução rápida
+
+| Serviço | Premium Retainer |
+|---------|-----------------|
+| Manutenção de scrapers | ✓ |
+| Suporte por email | ✓ |
+| Horas de suporte dedicado | 12h/mês |
+| Reunião mensal de revisão | ✓ |
+| Atualizações da plataforma | Quinzenais |
+| Monitoramento 24/7 | ✓ |
+| Sessão de roadmap | Mensal |
+| Prioridade de bugs | Urgente |
+| Backup de dados | Diário + Retenção 1 ano |
+| SLA de resposta | 1 dia útil |
+
+### 7.4 O que garante o retainer mensal
 
 1. **Platform stability:** Os scrapers são adaptados sempre que os portais-alvo mudam de estrutura
 2. **Suporte contínuo:** Dúvidas e problemas são resolvidos de forma recorrente

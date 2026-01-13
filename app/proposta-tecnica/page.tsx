@@ -98,7 +98,7 @@ const SECTIONS = [
     {
         id: 'starter',
         title: 'STARTER',
-        subtitle: '€5.000 + €600/mês + IVA • 8 semanas',
+        subtitle: '€5.000 + IVA • 8 semanas',
         icon: <Star className="w-6 h-6" />,
         color: 'blue',
         badge: 'Básico',
@@ -142,10 +142,9 @@ const SECTIONS = [
                     <p className="text-blue-100">2 sessões de 2 horas cada • Utilização do dashboard • Leitura de avisos</p>
                 </div>
                 <div className="bg-blue-500/10 border border-blue-400/30 rounded-xl p-4">
-                    <div className="flex items-center gap-2 text-blue-200 text-sm">
-                        <Users className="w-4 h-4" />
-                        <span><strong className="text-white">5h/mês</strong> de suporte dedicado • <strong className="text-white">1 reunião mensal</strong> de revisão</span>
-                    </div>
+                    <p className="text-blue-200 text-sm">
+                        <strong className="text-white">Nota:</strong> Escolhe o nível de retainer desejado (ver seção "Retainer Modules" abaixo)
+                    </p>
                 </div>
             </div>
         )
@@ -153,7 +152,7 @@ const SECTIONS = [
     {
         id: 'professional',
         title: 'PROFESSIONAL',
-        subtitle: '€7.500 + €800/mês + IVA • 10-12 semanas',
+        subtitle: '€7.500 + IVA • 10-12 semanas',
         icon: <Award className="w-6 h-6" />,
         color: 'emerald',
         badge: 'RECOMENDADO',
@@ -213,10 +212,9 @@ const SECTIONS = [
                     </div>
                 </div>
                 <div className="bg-emerald-500/10 border border-emerald-400/30 rounded-xl p-4">
-                    <div className="flex items-center gap-2 text-emerald-200 text-sm">
-                        <Users className="w-4 h-4" />
-                        <span><strong className="text-white">8h/mês</strong> de suporte dedicado • <strong className="text-white">1 reunião mensal</strong> de revisão</span>
-                    </div>
+                    <p className="text-emerald-200 text-sm">
+                        <strong className="text-white">Nota:</strong> Escolhe o nível de retainer desejado (ver seção "Retainer Modules" abaixo)
+                    </p>
                 </div>
             </div>
         )
@@ -224,7 +222,7 @@ const SECTIONS = [
     {
         id: 'premium',
         title: 'PREMIUM',
-        subtitle: '€11.000 + €800/mês + IVA • 16-20 semanas',
+        subtitle: '€11.000 + IVA • 16-20 semanas',
         icon: <Crown className="w-6 h-6" />,
         color: 'amber',
         badge: 'PREMIUM',
@@ -284,10 +282,9 @@ const SECTIONS = [
                     </div>
                 </div>
                 <div className="bg-amber-500/10 border border-amber-400/30 rounded-xl p-4">
-                    <div className="flex items-center gap-2 text-amber-200 text-sm">
-                        <Users className="w-4 h-4" />
-                        <span><strong className="text-white">12h/mês</strong> de suporte dedicado • <strong className="text-white">1 reunião mensal</strong> de revisão</span>
-                    </div>
+                    <p className="text-amber-200 text-sm">
+                        <strong className="text-white">Nota:</strong> Escolhe o nível de retainer desejado (ver seção "Retainer Modules" abaixo)
+                    </p>
                 </div>
                 <div className="bg-white/5 border border-amber-400/30 rounded-xl p-4">
                     <p className="text-amber-200 text-sm flex items-start gap-2">
@@ -383,114 +380,209 @@ const SECTIONS = [
                 <div className="grid md:grid-cols-3 gap-4">
                     <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-4 text-center">
                         <p className="text-2xl font-bold text-white mb-1">€5.000 <span className="text-sm font-normal text-blue-300">+ IVA</span></p>
-                        <p className="text-blue-300 text-sm">+ €600/mês + IVA</p>
-                        <p className="text-blue-200 text-xs mt-2">Total Ano 1: €12.200 + IVA</p>
+                        <p className="text-blue-300 text-sm">Setup (projeto único)</p>
+                        <p className="text-blue-200 text-xs mt-2">8 semanas</p>
                     </div>
                     <div className="bg-emerald-500/20 border-2 border-emerald-400/50 rounded-xl p-4 text-center relative">
                         <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full font-semibold">RECOMENDADO</span>
                         <p className="text-2xl font-bold text-white mb-1">€7.500 <span className="text-sm font-normal text-emerald-300">+ IVA</span></p>
-                        <p className="text-emerald-300 text-sm">+ €800/mês + IVA</p>
-                        <p className="text-emerald-200 text-xs mt-2">Total Ano 1: €17.100 + IVA</p>
+                        <p className="text-emerald-300 text-sm">Setup (projeto único)</p>
+                        <p className="text-emerald-200 text-xs mt-2">10-12 semanas</p>
                     </div>
                     <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-4 text-center">
                         <p className="text-2xl font-bold text-white mb-1">€11.000 <span className="text-sm font-normal text-amber-300">+ IVA</span></p>
-                        <p className="text-amber-300 text-sm">+ €800/mês + IVA</p>
-                        <p className="text-amber-200 text-xs mt-2">Total Ano 1: €23.000 + IVA</p>
+                        <p className="text-amber-300 text-sm">Setup (projeto único)</p>
+                        <p className="text-amber-200 text-xs mt-2">16-20 semanas</p>
                     </div>
+                </div>
+                <div className="bg-cyan-500/20 border border-cyan-400/30 rounded-xl p-4 text-center">
+                    <p className="text-cyan-100 text-sm">
+                        <strong className="text-white">Retainer:</strong> Escolhe o nível desejado na próxima seção (após conclusão do projeto)
+                    </p>
                 </div>
             </div>
         )
     },
     {
         id: 'retainer',
-        title: 'Retainer Mensal',
-        subtitle: 'O que está incluído em cada plano',
+        title: 'Retainer Modules',
+        subtitle: 'Escolhe o nível de suporte pós-projeto',
         icon: <Shield className="w-6 h-6" />,
         color: 'cyan',
         content: (
             <div className="space-y-6">
-                <div className="bg-cyan-500/20 border border-cyan-400/30 rounded-xl p-4 mb-4">
-                    <p className="text-cyan-100 text-sm flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-cyan-400" />
-                        <span><strong className="text-white">Retainer inicia APÓS conclusão do projeto</strong> • Mínimo de 3 meses de compromisso</span>
-                    </p>
+                <div className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-xl p-5 mb-6">
+                    <div className="flex items-start gap-3">
+                        <Clock className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-1" />
+                        <div>
+                            <h4 className="text-lg font-bold text-white mb-2">Retainer inicia APÓS conclusão do projeto</h4>
+                            <p className="text-cyan-100 text-sm">Mínimo de 3 meses de compromisso • 30 dias de aviso prévio para cancelamento</p>
+                        </div>
+                    </div>
                 </div>
-                <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                        <thead>
-                            <tr className="border-b border-white/20">
-                                <th className="text-left py-3 px-4 text-cyan-300 font-semibold">Serviço</th>
-                                <th className="text-center py-3 px-4 text-blue-400 font-semibold">Starter €600</th>
-                                <th className="text-center py-3 px-4 text-emerald-400 font-semibold">Professional €800</th>
-                                <th className="text-center py-3 px-4 text-amber-400 font-semibold">Premium €800</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white">Manutenção scrapers</td>
-                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white">Suporte email</td>
-                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white">Horas dedicadas</td>
-                                <td className="text-center py-3 px-4 text-blue-300">5h/mês</td>
-                                <td className="text-center py-3 px-4 text-emerald-300">8h/mês</td>
-                                <td className="text-center py-3 px-4 text-amber-300">12h/mês</td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white">Reunião mensal revisão</td>
-                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white">Monitoramento 24/7</td>
-                                <td className="text-center py-3 px-4"><X className="w-4 h-4 mx-auto text-red-400" /></td>
-                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white">SLA resposta</td>
-                                <td className="text-center py-3 px-4 text-blue-300">3 dias</td>
-                                <td className="text-center py-3 px-4 text-emerald-300">2 dias</td>
-                                <td className="text-center py-3 px-4 text-amber-300">1 dia</td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white">Backup diário</td>
-                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                <div className="grid md:grid-cols-3 gap-4">
+                    {/* STARTER RETAINER */}
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-5 flex flex-col">
+                        <div className="mb-4">
+                            <div className="text-sm font-semibold text-blue-300 uppercase tracking-wider mb-2">Starter Retainer</div>
+                            <div className="text-3xl font-bold text-white mb-1">€600 <span className="text-sm font-normal text-blue-300">/mês + IVA</span></div>
+                        </div>
+
+                        <div className="bg-blue-900/50 rounded-lg p-3 mb-4">
+                            <div className="flex items-center gap-2 text-blue-200 text-sm">
+                                <Users className="w-4 h-4" />
+                                <span><strong className="text-white">5h/mês</strong> de suporte dedicado</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-blue-200 text-sm mt-2">
+                                <Check className="w-4 h-4 text-emerald-400" />
+                                <span><strong className="text-white">1 reunião</strong> mensal de revisão</span>
+                            </div>
+                        </div>
+
+                        <div className="space-y-2 mb-4 flex-1 text-sm">
+                            <div className="flex items-center gap-2 text-blue-100">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                                <span>Manutenção de scrapers</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-blue-100">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                                <span>Suporte por email</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-blue-100">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                                <span>Backup diário</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-blue-100">
+                                <X className="w-4 h-4 text-red-400 flex-shrink-0" />
+                                <span>Monitoramento 24/7</span>
+                            </div>
+                        </div>
+
+                        <div className="text-center py-2 px-3 bg-blue-500/20 rounded-lg">
+                            <span className="text-xs text-blue-300">SLA: 3 dias úteis</span>
+                        </div>
+                    </div>
+
+                    {/* PROFESSIONAL RETAINER */}
+                    <div className="bg-gradient-to-b from-emerald-700 to-emerald-800 border-2 border-emerald-500 rounded-xl p-5 flex flex-col relative shadow-xl">
+                        <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full font-semibold">RECOMENDADO</span>
+
+                        <div className="mb-4">
+                            <div className="text-sm font-semibold text-emerald-200 uppercase tracking-wider mb-2">Professional Retainer</div>
+                            <div className="text-3xl font-bold text-white mb-1">€800 <span className="text-sm font-normal text-emerald-300">/mês + IVA</span></div>
+                        </div>
+
+                        <div className="bg-white/10 rounded-lg p-3 mb-4">
+                            <div className="flex items-center gap-2 text-emerald-200 text-sm">
+                                <Users className="w-4 h-4" />
+                                <span><strong className="text-white">8h/mês</strong> de suporte dedicado</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-emerald-200 text-sm mt-2">
+                                <Check className="w-4 h-4 text-emerald-400" />
+                                <span><strong className="text-white">1 reunião</strong> mensal de revisão</span>
+                            </div>
+                        </div>
+
+                        <div className="space-y-2 mb-4 flex-1 text-sm">
+                            <div className="flex items-center gap-2 text-white">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                                <span><strong>TUDO do Starter</strong></span>
+                            </div>
+                            <div className="flex items-center gap-2 text-emerald-100">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                                <span>Monitoramento 24/7</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-emerald-100">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                                <span>Atualizações mensais</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-emerald-100">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                                <span>Sessão trimestral roadmap</span>
+                            </div>
+                        </div>
+
+                        <div className="text-center py-2 px-3 bg-emerald-500/30 rounded-lg">
+                            <span className="text-xs text-emerald-200">SLA: 2 dias úteis</span>
+                        </div>
+                    </div>
+
+                    {/* PREMIUM RETAINER */}
+                    <div className="bg-gradient-to-b from-amber-700 to-amber-800 border border-amber-500 rounded-xl p-5 flex flex-col relative shadow-xl">
+                        <span className="absolute -top-2 right-4 bg-amber-500 text-white text-xs px-2 py-0.5 rounded-full font-semibold flex items-center gap-1">
+                            <Award className="w-3 h-3" />
+                            MAX
+                        </span>
+
+                        <div className="mb-4">
+                            <div className="text-sm font-semibold text-amber-200 uppercase tracking-wider mb-2">Premium Retainer</div>
+                            <div className="text-3xl font-bold text-white mb-1">€1.000 <span className="text-sm font-normal text-amber-300">/mês + IVA</span></div>
+                        </div>
+
+                        <div className="bg-white/10 rounded-lg p-3 mb-4">
+                            <div className="flex items-center gap-2 text-amber-200 text-sm">
+                                <Users className="w-4 h-4" />
+                                <span><strong className="text-white">12h/mês</strong> de suporte dedicado</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-amber-200 text-sm mt-2">
+                                <Check className="w-4 h-4 text-amber-400" />
+                                <span><strong className="text-white">1 reunião</strong> mensal de revisão</span>
+                            </div>
+                        </div>
+
+                        <div className="space-y-2 mb-4 flex-1 text-sm">
+                            <div className="flex items-center gap-2 text-white">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                                <span><strong>TUDO do Professional</strong></span>
+                            </div>
+                            <div className="flex items-center gap-2 text-amber-100">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                                <span>SLA prioritário 1 dia</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-amber-100">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                                <span>Atualizações quinzenais</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-amber-100">
+                                <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                                <span>Sessão mensal roadmap</span>
+                            </div>
+                        </div>
+
+                        <div className="text-center py-2 px-3 bg-amber-500/30 rounded-lg">
+                            <span className="text-xs text-amber-200">SLA: 1 dia útil</span>
+                        </div>
+                    </div>
                 </div>
+
                 <div className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-xl p-5">
-                    <h4 className="font-bold text-white mb-3">O que garante o retainer</h4>
-                    <ul className="space-y-2 text-cyan-100 text-sm">
-                        <li className="flex items-start gap-2">
-                            <Shield className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                            <span><strong>Platform stability:</strong> Scrapers adaptados quando portais mudam</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                            <Shield className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                            <span><strong>Suporte contínuo:</strong> Dúvidas e problemas resolvidos recorrentemente</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                            <Shield className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                            <span><strong>Evolução:</strong> Plataforma melhora com novas features</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                            <Shield className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                            <span><strong>Segurança:</strong> Atualizações aplicadas de imediato</span>
-                        </li>
-                    </ul>
+                    <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                        <Shield className="w-5 h-5 text-cyan-400" />
+                        O que garante o retainer
+                    </h4>
+                    <div className="grid md:grid-cols-2 gap-4 text-cyan-100 text-sm">
+                        <ul className="space-y-2">
+                            <li className="flex items-start gap-2">
+                                <Check className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                                <span><strong>Platform stability:</strong> Scrapers adaptados quando portais mudam</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <Check className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                                <span><strong>Suporte contínuo:</strong> Dúvidas e problemas resolvidos recorrentemente</span>
+                            </li>
+                        </ul>
+                        <ul className="space-y-2">
+                            <li className="flex items-start gap-2">
+                                <Check className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                                <span><strong>Evolução:</strong> Plataforma melhora com novas features</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <Check className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                                <span><strong>Segurança:</strong> Atualizações aplicadas de imediato</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         )
