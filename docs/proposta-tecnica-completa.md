@@ -79,7 +79,7 @@ O conhecimento acumulado ao longo de anos de atividade não está estruturado de
 
 ---
 
-## 3. STARTER - EUR 5.000 + EUR 600/mês
+## 3. STARTER - EUR 5.000 + EUR 600/mês + IVA
 
 ### 3.1 O que está incluído
 
@@ -95,7 +95,7 @@ O conhecimento acumulado ao longo de anos de atividade não está estruturado de
   - Geografia aplicável
 
 #### Matchmaking Básico
-- **Critérios de matching:** CAE (2 dígitos) + Região (NUTS II)
+- **Critérios de matching:** CAE completo + Região (NUTS II)
 - **Formato:** Lista de empresas potencialmente interessadas
 - **Exportação:** CSV para importação manual no Bitrix
 
@@ -148,7 +148,7 @@ O plano **STARTER** é ideal para:
 
 ---
 
-## 4. PROFESSIONAL - EUR 7.500 + EUR 800/mês (RECOMENDADO)
+## 4. PROFESSIONAL - EUR 7.500 + EUR 800/mês + IVA (RECOMENDADO)
 
 ### 4.1 Tudo do Starter +
 
@@ -232,7 +232,8 @@ O plano Professional inclui todas as funcionalidades do plano Starter, acrescida
 - **Gravações:** Todas as sessões ficam gravadas para acesso futuro
 
 #### Suporte Prioritário
-- **2 horas por mês** de suporte dedicado
+- **8 horas por mês** de suporte dedicado
+- **1 reunião mensal** de revisão
 - **SLA:** Resposta em até 2 dias úteis
 - **Prioridade:** Alta (à frente dos clientes Starter)
 
@@ -248,7 +249,7 @@ O plano Professional inclui todas as funcionalidades do plano Starter, acrescida
 | Dashboard básico | Sim | + KPIs e alertas |
 | Email Drip | Não | 4 sequências |
 | Formação | 2 sessões | 4 sessões + gravações |
-| Suporte | Email | 2h/mês prioritário |
+| Suporte | 5h/mês + reunião mensal | 8h/mês + reunião mensal |
 
 ### 4.4 Timeline
 
@@ -265,7 +266,7 @@ O plano **PROFESSIONAL** é ideal para:
 
 ---
 
-## 5. PREMIUM - EUR 11.000 + EUR 1.000/mês
+## 5. PREMIUM - EUR 11.000 + EUR 1.000/mês + IVA
 
 ### 5.1 Tudo do Professional +
 
@@ -332,7 +333,7 @@ O plano Premium inclui todas as funcionalidades do plano Professional, acrescida
 | Website Auto | Paula faz update manual | Sincronização automática | Site é crítico para negócio |
 | Email Drip | 4 sequências fixas | Sequências personalizadas | Segmentação complexa necessária |
 | AI Critic | Revisão manual completa | Auto-revisão + sugestões | Padrões de qualidade muito altos |
-| Suporte | 2h/mês | 5h/mês + SLA prioritário | Necessita de apoio frequente |
+| Suporte | 8h/mês + reunião mensal | 12h/mês + SLA prioritário | Necessita de apoio frequente |
 
 ### 5.4 Aviso Importante
 
@@ -371,19 +372,21 @@ O plano **PREMIUM** é ideal para:
 | **Marketing Mix AI** | Não | Não | **SIM** |
 | **Dashboard KPIs** | Básico | Avançado | + Personalização |
 | **Formação** | 2 sessões | 4 sessões + gravações | Onsite |
-| **Suporte** | Email | 2h/mês | 5h/mês |
+| **Suporte** | 5h/mês + 1 reunião mensal | 8h/mês + 1 reunião mensal | 12h/mês + SLA prioritário |
 
 ### 6.2 Comparação de Investimento
 
 | Plano | Setup Inicial | Mensal | Total Ano 1 |
 |-------|---------------|--------|-------------|
-| Starter | EUR 5.000 | EUR 600 | EUR 12.200 |
-| Professional | EUR 7.500 | EUR 800 | EUR 17.100 |
-| Premium | EUR 11.000 | EUR 1.000 | EUR 23.000 |
+| Starter | EUR 5.000 + IVA | EUR 600 + IVA | EUR 12.200 + IVA |
+| Professional | EUR 7.500 + IVA | EUR 800 + IVA | EUR 17.100 + IVA |
+| Premium | EUR 11.000 + IVA | EUR 1.000 + IVA | EUR 23.000 + IVA |
 
 ---
 
 ## 7. Retainer Mensal - O que está incluído
+
+> **NOTA IMPORTANTE:** O retainer mensal apenas se inicia **APÓS a conclusão do projeto** com sucesso. O compromisso mínimo é de **3 meses** de retainer.
 
 ### 7.1 Tabela Detalhada de Serviços
 
@@ -391,7 +394,8 @@ O plano **PREMIUM** é ideal para:
 |---------|---------------|-------------------|---------------|
 | Manutenção de scrapers | ✓ | ✓ | ✓ |
 | Suporte por email | ✓ | ✓ | ✓ |
-| Horas de suporte dedicado | - | 2h/mês | 5h/mês |
+| Horas de suporte dedicado | 5h/mês | 8h/mês | 12h/mês |
+| Reunião mensal de revisão | ✓ | ✓ | ✓ |
 | Atualizações da plataforma | Críticas apenas | Mensais | Quinzenais |
 | Monitoramento 24/7 | Não | Sim | Sim |
 | Sessão de roadmap | Não | Trimestral | Mensal |
@@ -558,8 +562,12 @@ Para além dessas horas, features personalizadas podem ser desenvolvidas contra 
 ### Qual é o tempo mínimo de contrato?
 
 - **Setup:** Pagamento único no início
-- **Retainer:** Mínimo de 12 meses para garantir ROI
-- **Cancelamento:** Após 12 meses, 30 dias de aviso prévio
+- **Retainer:** Inicia APÓS conclusão do projeto, mínimo de 3 meses de compromisso
+- **Cancelamento:** Após o período mínimo de 3 meses, 30 dias de aviso prévio
+
+### Os preços incluem IVA?
+
+**Não.** Todos os preços apresentados (setup e mensal) são **excluídos de IVA**. O IVA à taxa em vigor será adicionado separadamente à faturação.
 
 ### A plataforma pode ser instalada on-premise?
 

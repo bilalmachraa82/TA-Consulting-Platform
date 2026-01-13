@@ -510,11 +510,11 @@ const BenchmarkSlide = () => (
                 <div className="space-y-2 mb-4 text-sm md:text-base">
                     <div className="flex justify-between">
                         <span className="text-blue-100">Setup Professional</span>
-                        <span className="font-bold text-white">€7.500</span>
+                        <span className="font-bold text-white">€7.500 + IVA</span>
                     </div>
                     <div className="flex justify-between">
-                        <span className="text-blue-100">Retainer (12 meses)</span>
-                        <span className="font-bold text-white">€9.600</span>
+                        <span className="text-blue-100">Retainer (opcional, 3 meses min)</span>
+                        <span className="font-bold text-white">€2.400/mês + IVA</span>
                     </div>
                     <div className="flex justify-between">
                         <span className="text-blue-100">Infraestrutura</span>
@@ -523,8 +523,8 @@ const BenchmarkSlide = () => (
                 </div>
 
                 <div className="pt-3 border-t border-blue-600">
-                    <div className="text-3xl md:text-4xl font-bold text-white">€17.100</div>
-                    <div className="text-sm text-blue-200 mt-1">Setup + 1º ano</div>
+                    <div className="text-3xl md:text-4xl font-bold text-white">€7.500 + IVA</div>
+                    <div className="text-sm text-blue-200 mt-1">Setup (retainer opcional)</div>
                 </div>
 
                 <div className="mt-3 text-xs md:text-sm text-emerald-300 bg-emerald-500/20 p-2 rounded">
@@ -545,25 +545,25 @@ const PricingSlide = () => (
         <div className="bg-emerald-500/20 border border-emerald-500/50 rounded-xl p-2 mb-3 flex items-center justify-center gap-3 flex-wrap text-xs md:text-sm">
             <div className="flex items-center gap-1">
                 <Shield className="w-4 h-4 text-emerald-400" />
-                <span className="text-white font-semibold">Retainer inclui:</span>
+                <span className="text-white font-semibold">Retainer inicia APÓS projeto:</span>
             </div>
             <div className="flex items-center gap-1 text-blue-100">
-                <span className="font-bold text-white">10h</span>
-                <span>suporte</span>
-            </div>
-            <div className="w-px h-3 bg-blue-400"></div>
-            <div className="flex items-center gap-1 text-blue-100">
-                <span className="font-bold text-white">1 visita</span>
-                <span>/mês</span>
+                <span className="font-bold text-white">5h-12h</span>
+                <span>suporte/mês</span>
             </div>
             <div className="w-px h-3 bg-blue-400"></div>
             <div className="flex items-center gap-1 text-blue-100">
-                <span className="font-bold text-white">€100</span>
-                <span>ferramentas</span>
+                <span className="font-bold text-white">1 reunião</span>
+                <span>mensal</span>
             </div>
             <div className="w-px h-3 bg-blue-400"></div>
             <div className="flex items-center gap-1 text-blue-100">
-                <span className="font-bold text-white">Updates</span>
+                <span className="font-bold text-white">3 meses</span>
+                <span>mínimo</span>
+            </div>
+            <div className="w-px h-3 bg-blue-400"></div>
+            <div className="flex items-center gap-1 text-blue-100">
+                <span className="text-xs">+ IVA</span>
             </div>
         </div>
 
@@ -573,8 +573,8 @@ const PricingSlide = () => (
             <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-3 flex flex-col">
                 <div className="mb-2">
                     <div className="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-1">Starter</div>
-                    <div className="text-2xl md:text-3xl font-bold text-white">€5.000</div>
-                    <div className="text-blue-300 text-sm">+ €600/mês</div>
+                    <div className="text-2xl md:text-3xl font-bold text-white">€5.000 <span className="text-sm font-normal text-blue-300">+ IVA</span></div>
+                    <div className="text-blue-300 text-sm">+ €600/mês + IVA</div>
                 </div>
 
                 <div className="bg-blue-900/50 rounded-lg p-2 mb-2">
@@ -589,7 +589,7 @@ const PricingSlide = () => (
                     </div>
                     <div className="flex items-center gap-1">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
-                        <span className="text-blue-100">Matchmaking CAE + Região</span>
+                        <span className="text-blue-100">Matchmaking CAE completo + Região</span>
                     </div>
                     <div className="flex items-center gap-1">
                         <Check className="w-3 h-3 text-emerald-400 flex-shrink-0" />
@@ -618,8 +618,8 @@ const PricingSlide = () => (
 
                 <div className="mb-2">
                     <div className="text-xs font-semibold text-blue-200 uppercase tracking-wider mb-1">Professional</div>
-                    <div className="text-2xl md:text-3xl font-bold text-white">€7.500</div>
-                    <div className="text-blue-200 text-sm">+ €800/mês</div>
+                    <div className="text-2xl md:text-3xl font-bold text-white">€7.500 <span className="text-sm font-normal text-blue-300">+ IVA</span></div>
+                    <div className="text-blue-200 text-sm">+ €800/mês + IVA</div>
                 </div>
 
                 <div className="bg-white/10 rounded-lg p-2 mb-2">
@@ -659,8 +659,8 @@ const PricingSlide = () => (
             <div className="bg-gradient-to-b from-slate-800 to-slate-900 border border-slate-600 rounded-xl p-3 flex flex-col">
                 <div className="mb-2">
                     <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1">Premium</div>
-                    <div className="text-2xl md:text-3xl font-bold text-white">€11.000</div>
-                    <div className="text-slate-400 text-sm">+ €800/mês</div>
+                    <div className="text-2xl md:text-3xl font-bold text-white">€11.000 <span className="text-sm font-normal text-slate-300">+ IVA</span></div>
+                    <div className="text-slate-400 text-sm">+ €1.000/mês + IVA</div>
                 </div>
 
                 <div className="bg-white/5 rounded-lg p-2 mb-2">
@@ -721,8 +721,8 @@ const ProfissionalVsPremiumSlide = () => (
                 </div>
 
                 <div className="bg-white/10 rounded-lg p-3 mb-3">
-                    <div className="text-2xl md:text-3xl font-bold text-white">€7.500</div>
-                    <div className="text-blue-200 text-sm">+ €800/mês</div>
+                    <div className="text-2xl md:text-3xl font-bold text-white">€7.500 <span className="text-sm font-normal text-blue-300">+ IVA</span></div>
+                    <div className="text-blue-200 text-sm">+ €800/mês + IVA</div>
                 </div>
 
                 <div className="space-y-2 mb-3 text-sm">
@@ -778,8 +778,8 @@ const ProfissionalVsPremiumSlide = () => (
                 </div>
 
                 <div className="bg-white/5 rounded-lg p-3 mb-3">
-                    <div className="text-2xl md:text-3xl font-bold text-white">€11.000</div>
-                    <div className="text-slate-400 text-sm">+ €800/mês</div>
+                    <div className="text-2xl md:text-3xl font-bold text-white">€11.000 <span className="text-sm font-normal text-slate-300">+ IVA</span></div>
+                    <div className="text-slate-400 text-sm">+ €1.000/mês + IVA</div>
                 </div>
 
                 <div className="space-y-2 mb-3 text-sm">
@@ -809,7 +809,7 @@ const ProfissionalVsPremiumSlide = () => (
                     </div>
                     <div className="flex items-start gap-2">
                         <Sparkles className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-300"><strong className="text-white">Suporte Prioritário</strong> - 5h/mês + SLA</span>
+                        <span className="text-slate-300"><strong className="text-white">Suporte Prioritário</strong> - 12h/mês + SLA</span>
                     </div>
                 </div>
 
@@ -1028,7 +1028,7 @@ const ROISlide = () => (
         <div className="grid grid-cols-3 gap-3 mb-4">
             <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center">
                 <div className="text-xs font-semibold text-blue-300 mb-2">STARTER</div>
-                <div className="text-2xl md:text-3xl font-bold text-white mb-2">€12.200</div>
+                <div className="text-2xl md:text-3xl font-bold text-white mb-2">€12.200 <span className="text-sm font-normal text-blue-300">+ IVA</span></div>
                 <div className="text-xs md:text-sm text-blue-300 mb-3">Investimento 1º ano</div>
 
                 <div className="space-y-1.5 text-xs md:text-sm mb-3">
@@ -1054,7 +1054,7 @@ const ROISlide = () => (
 
             <div className="bg-gradient-to-br from-blue-700 to-blue-800 border border-emerald-500 rounded-xl p-4 text-center">
                 <div className="text-xs font-semibold text-blue-200 mb-2">PROFESSIONAL</div>
-                <div className="text-2xl md:text-3xl font-bold text-white mb-2">€17.100</div>
+                <div className="text-2xl md:text-3xl font-bold text-white mb-2">€17.100 <span className="text-sm font-normal text-blue-300">+ IVA</span></div>
                 <div className="text-xs md:text-sm text-blue-200 mb-3">Investimento 1º ano</div>
 
                 <div className="space-y-1.5 text-xs md:text-sm mb-3">
@@ -1080,7 +1080,7 @@ const ROISlide = () => (
 
             <div className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center">
                 <div className="text-xs font-semibold text-slate-400 mb-2">PREMIUM</div>
-                <div className="text-2xl md:text-3xl font-bold text-white mb-2">€23.000</div>
+                <div className="text-2xl md:text-3xl font-bold text-white mb-2">€23.000 <span className="text-sm font-normal text-slate-300">+ IVA</span></div>
                 <div className="text-xs md:text-sm text-slate-400 mb-3">Investimento 1º ano</div>
 
                 <div className="space-y-1.5 text-xs md:text-sm mb-3">
@@ -1120,8 +1120,8 @@ const ROISlide = () => (
                 <div>
                     <div className="text-emerald-400 font-semibold mb-1">Custo e Payback:</div>
                     <div className="space-y-0.5 text-blue-100">
-                        <div>• Investimento: <span className="text-white font-bold">€17.100</span></div>
-                        <div>• Retainer: <span className="text-white font-bold">€800/mês</span></div>
+                        <div>• Investimento: <span className="text-white font-bold">€17.100 + IVA</span></div>
+                        <div>• Retainer: <span className="text-white font-bold">€800/mês + IVA</span></div>
                         <div className="text-base text-white font-bold mt-1">Payback: ~3.3 meses | ROI anual: 280%</div>
                     </div>
                 </div>

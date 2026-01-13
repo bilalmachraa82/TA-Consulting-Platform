@@ -1,10 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowLeft, Download, Printer, FileText, Check, X, Crown, Star, Award, Zap, Clock, Shield, TrendingUp, Target, Globe, Database, BarChart3, Wrench, Lightbulb, AlertTriangle, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Download, Printer, FileText, Check, X, Crown, Star, Award, Zap, Clock, Shield, TrendingUp, Target, Globe, Database, BarChart3, Wrench, Lightbulb, AlertTriangle, ChevronRight, Users } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // ============================================================================
 // DATA
@@ -98,7 +98,7 @@ const SECTIONS = [
     {
         id: 'starter',
         title: 'STARTER',
-        subtitle: '€5.000 + €600/mês • 8 semanas',
+        subtitle: '€5.000 + €600/mês + IVA • 8 semanas',
         icon: <Star className="w-6 h-6" />,
         color: 'blue',
         badge: 'Básico',
@@ -115,16 +115,16 @@ const SECTIONS = [
                     <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-3 mb-3">
                             <Target className="w-5 h-5 text-blue-400" />
-                            <h4 className="font-bold text-white">Matchmaking Básico</h4>
+                            <h4 className="font-bold text-white">Matchmaking</h4>
                         </div>
-                        <p className="text-blue-100 text-sm">CAE (2 dígitos) + Região • Exportação CSV</p>
+                        <p className="text-blue-100 text-sm">CAE completo + Região • Exportação CSV</p>
                     </div>
                     <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-3 mb-3">
                             <BarChart3 className="w-5 h-5 text-blue-400" />
                             <h4 className="font-bold text-white">Dashboard</h4>
                         </div>
-                        <p className="text-blue-100 text-sm">Avisos recentes • Filtros simples • Marcação</p>
+                        <p className="text-blue-100 text-sm">Avisos recentes • Filtros • Marcação</p>
                     </div>
                     <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-3 mb-3">
@@ -141,13 +141,19 @@ const SECTIONS = [
                     </h4>
                     <p className="text-blue-100">2 sessões de 2 horas cada • Utilização do dashboard • Leitura de avisos</p>
                 </div>
+                <div className="bg-blue-500/10 border border-blue-400/30 rounded-xl p-4">
+                    <div className="flex items-center gap-2 text-blue-200 text-sm">
+                        <Users className="w-4 h-4" />
+                        <span><strong className="text-white">5h/mês</strong> de suporte dedicado • <strong className="text-white">1 reunião mensal</strong> de revisão</span>
+                    </div>
+                </div>
             </div>
         )
     },
     {
         id: 'professional',
         title: 'PROFESSIONAL',
-        subtitle: '€7.500 + €800/mês • 10-12 semanas',
+        subtitle: '€7.500 + €800/mês + IVA • 10-12 semanas',
         icon: <Award className="w-6 h-6" />,
         color: 'emerald',
         badge: 'RECOMENDADO',
@@ -175,7 +181,7 @@ const SECTIONS = [
                             <Target className="w-5 h-5 text-emerald-400" />
                             <h4 className="font-bold text-white">Matchmaking Avançado</h4>
                         </div>
-                        <p className="text-emerald-100 text-sm">Score 0-100 • CAE 4 dígitos • Histórico</p>
+                        <p className="text-emerald-100 text-sm">Score 0-100 • CAE completo • Histórico</p>
                     </div>
                     <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-3 mb-3">
@@ -206,12 +212,11 @@ const SECTIONS = [
                         <p className="text-emerald-100 text-sm">4 sequências automáticas • Personalização</p>
                     </div>
                 </div>
-                <div className="bg-white/5 border border-white/10 rounded-xl p-5">
-                    <h4 className="font-bold text-white mb-3 flex items-center gap-2">
-                        <Wrench className="w-5 h-5 text-emerald-400" />
-                        Suporte Prioritário
-                    </h4>
-                    <p className="text-emerald-100">2 horas/mês dedicadas • SLA 2 dias úteis • 4 sessões de formação gravadas</p>
+                <div className="bg-emerald-500/10 border border-emerald-400/30 rounded-xl p-4">
+                    <div className="flex items-center gap-2 text-emerald-200 text-sm">
+                        <Users className="w-4 h-4" />
+                        <span><strong className="text-white">8h/mês</strong> de suporte dedicado • <strong className="text-white">1 reunião mensal</strong> de revisão</span>
+                    </div>
                 </div>
             </div>
         )
@@ -219,7 +224,7 @@ const SECTIONS = [
     {
         id: 'premium',
         title: 'PREMIUM',
-        subtitle: '€11.000 + €800/mês • 16-20 semanas',
+        subtitle: '€11.000 + €800/mês + IVA • 16-20 semanas',
         icon: <Crown className="w-6 h-6" />,
         color: 'amber',
         badge: 'PREMIUM',
@@ -278,7 +283,13 @@ const SECTIONS = [
                         <p className="text-amber-100 text-sm">Recomendações de canais • Análise de performance</p>
                     </div>
                 </div>
-                <div className="bg-white/5 border border-amber-400/30 rounded-xl p-5">
+                <div className="bg-amber-500/10 border border-amber-400/30 rounded-xl p-4">
+                    <div className="flex items-center gap-2 text-amber-200 text-sm">
+                        <Users className="w-4 h-4" />
+                        <span><strong className="text-white">12h/mês</strong> de suporte dedicado • <strong className="text-white">1 reunião mensal</strong> de revisão</span>
+                    </div>
+                </div>
+                <div className="bg-white/5 border border-amber-400/30 rounded-xl p-4">
                     <p className="text-amber-200 text-sm flex items-start gap-2">
                         <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
                         <span><strong>Nota:</strong> O plano Premium contém funcionalidades "nice to have". A maioria pode ser adicionada posteriormente como módulos separados após implementação do plano Professional.</span>
@@ -325,9 +336,9 @@ const SECTIONS = [
                                 <td className="text-center py-3 px-4 text-amber-300">+ Re-ranking</td>
                             </tr>
                             <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white font-medium">Matchmaking Score</td>
-                                <td className="text-center py-3 px-4 text-blue-300"><X className="w-4 h-4 mx-auto" /></td>
-                                <td className="text-center py-3 px-4 text-emerald-300"><Check className="w-4 h-4 mx-auto" /></td>
+                                <td className="py-3 px-4 text-white font-medium">Matchmaking CAE</td>
+                                <td className="text-center py-3 px-4 text-blue-300">Completo</td>
+                                <td className="text-center py-3 px-4 text-emerald-300">+ Score 0-100</td>
                                 <td className="text-center py-3 px-4 text-amber-300">+ Histórico</td>
                             </tr>
                             <tr className="border-b border-white/10">
@@ -371,20 +382,20 @@ const SECTIONS = [
                 </div>
                 <div className="grid md:grid-cols-3 gap-4">
                     <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-4 text-center">
-                        <p className="text-3xl font-bold text-white mb-1">€5.000</p>
-                        <p className="text-blue-300 text-sm">+ €600/mês</p>
-                        <p className="text-blue-200 text-xs mt-2">Total Ano 1: €12.200</p>
+                        <p className="text-2xl font-bold text-white mb-1">€5.000 <span className="text-sm font-normal text-blue-300">+ IVA</span></p>
+                        <p className="text-blue-300 text-sm">+ €600/mês + IVA</p>
+                        <p className="text-blue-200 text-xs mt-2">Total Ano 1: €12.200 + IVA</p>
                     </div>
                     <div className="bg-emerald-500/20 border-2 border-emerald-400/50 rounded-xl p-4 text-center relative">
                         <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full font-semibold">RECOMENDADO</span>
-                        <p className="text-3xl font-bold text-white mb-1">€7.500</p>
-                        <p className="text-emerald-300 text-sm">+ €800/mês</p>
-                        <p className="text-emerald-200 text-xs mt-2">Total Ano 1: €17.100</p>
+                        <p className="text-2xl font-bold text-white mb-1">€7.500 <span className="text-sm font-normal text-emerald-300">+ IVA</span></p>
+                        <p className="text-emerald-300 text-sm">+ €800/mês + IVA</p>
+                        <p className="text-emerald-200 text-xs mt-2">Total Ano 1: €17.100 + IVA</p>
                     </div>
                     <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-4 text-center">
-                        <p className="text-3xl font-bold text-white mb-1">€11.000</p>
-                        <p className="text-amber-300 text-sm">+ €800/mês</p>
-                        <p className="text-amber-200 text-xs mt-2">Total Ano 1: €23.000</p>
+                        <p className="text-2xl font-bold text-white mb-1">€11.000 <span className="text-sm font-normal text-amber-300">+ IVA</span></p>
+                        <p className="text-amber-300 text-sm">+ €800/mês + IVA</p>
+                        <p className="text-amber-200 text-xs mt-2">Total Ano 1: €23.000 + IVA</p>
                     </div>
                 </div>
             </div>
@@ -398,6 +409,12 @@ const SECTIONS = [
         color: 'cyan',
         content: (
             <div className="space-y-6">
+                <div className="bg-cyan-500/20 border border-cyan-400/30 rounded-xl p-4 mb-4">
+                    <p className="text-cyan-100 text-sm flex items-center gap-2">
+                        <Clock className="w-4 h-4 text-cyan-400" />
+                        <span><strong className="text-white">Retainer inicia APÓS conclusão do projeto</strong> • Mínimo de 3 meses de compromisso</span>
+                    </p>
+                </div>
                 <div className="overflow-x-auto">
                     <table className="w-full text-sm">
                         <thead>
@@ -423,9 +440,15 @@ const SECTIONS = [
                             </tr>
                             <tr className="border-b border-white/10">
                                 <td className="py-3 px-4 text-white">Horas dedicadas</td>
-                                <td className="text-center py-3 px-4 text-blue-300">-</td>
-                                <td className="text-center py-3 px-4 text-emerald-300">2h/mês</td>
-                                <td className="text-center py-3 px-4 text-amber-300">5h/mês</td>
+                                <td className="text-center py-3 px-4 text-blue-300">5h/mês</td>
+                                <td className="text-center py-3 px-4 text-emerald-300">8h/mês</td>
+                                <td className="text-center py-3 px-4 text-amber-300">12h/mês</td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white">Reunião mensal revisão</td>
+                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
+                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
+                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
                             </tr>
                             <tr className="border-b border-white/10">
                                 <td className="py-3 px-4 text-white">Monitoramento 24/7</td>
@@ -443,12 +466,6 @@ const SECTIONS = [
                                 <td className="py-3 px-4 text-white">Backup diário</td>
                                 <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
                                 <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
-                            </tr>
-                            <tr className="border-b border-white/10">
-                                <td className="py-3 px-4 text-white">Retenção 1 ano</td>
-                                <td className="text-center py-3 px-4"><X className="w-4 h-4 mx-auto text-red-400" /></td>
-                                <td className="text-center py-3 px-4"><X className="w-4 h-4 mx-auto text-red-400" /></td>
                                 <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
                             </tr>
                         </tbody>
@@ -565,7 +582,11 @@ const SECTIONS = [
                     },
                     {
                         q: "Qual é o tempo mínimo de contrato?",
-                        a: "Setup: pagamento único. Retainer: mínimo 12 meses. Cancelamento: após 12 meses, 30 dias de aviso prévio."
+                        a: "Setup: pagamento único no início. Retainer: inicia APÓS conclusão do projeto, mínimo de 3 meses. Cancelamento: 30 dias de aviso prévio."
+                    },
+                    {
+                        q: "Os preços incluem IVA?",
+                        a: "Não. Todos os preços apresentados (setup e mensal) são excluídos de IVA. O IVA à taxa em vigor será adicionado separadamente."
                     }
                 ].map((faq, i) => (
                     <motion.div
@@ -618,7 +639,7 @@ function SectionCard({ section, index }) {
                     <span className={`text-sm font-semibold tracking-widest ${colors.text} uppercase`}>
                         {section.subtitle}
                     </span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-white">{section.title}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white">{section.title}</h2>
                 </div>
                 {section.badge && (
                     <span className={`ml-auto ${colors.bg} text-white text-xs px-3 py-1 rounded-full font-semibold`}>
@@ -638,7 +659,7 @@ function TableOfContents({ sections, activeSection }) {
         <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="hidden lg:block fixed left-8 top-1/2 -translate-y-1/2 w-48"
+            className="hidden lg:block fixed left-8 top-1/2 -translate-y-1/2 w-48 z-40"
         >
             <nav className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-4">
                 <h3 className="text-xs font-semibold tracking-widest text-blue-300 uppercase mb-3">Índice</h3>
@@ -666,6 +687,24 @@ function TableOfContents({ sections, activeSection }) {
 export default function PropostaTecnicaPage() {
     const [activeSection, setActiveSection] = useState('visao-geral');
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const sections = SECTIONS.map(s => document.getElementById(s.id));
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const section = sections[i];
+                if (section) {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 150) {
+                        setActiveSection(SECTIONS[i].id);
+                        break;
+                    }
+                }
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const handlePrint = () => {
         window.print();
     };
@@ -683,29 +722,29 @@ export default function PropostaTecnicaPage() {
             </div>
 
             {/* Header */}
-            <header className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-xl border-b border-white/10">
-                <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <header className="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-xl border-b border-white/10 no-print">
+                <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
                     <div className="flex items-center gap-4">
                         <Link href="/apresentacao-v5" className="text-slate-400 hover:text-white transition-colors">
                             <ArrowLeft className="w-5 h-5" />
                         </Link>
                         <Image src="/logo-ta.png" alt="TA Consulting" width={40} height={40} priority />
                         <div>
-                            <h1 className="text-lg font-bold text-white">Proposta Técnica</h1>
+                            <h1 className="text-base font-bold text-white">Proposta Técnica</h1>
                             <p className="text-xs text-slate-400">Janeiro 2026</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-2">
                         <button
                             onClick={handleDownload}
-                            className="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-sm font-medium transition-colors border border-white/10"
+                            className="flex items-center gap-2 px-3 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-sm font-medium transition-colors border border-white/10"
                         >
                             <Download className="w-4 h-4" />
                             <span className="hidden sm:inline">MD</span>
                         </button>
                         <button
                             onClick={handlePrint}
-                            className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-colors"
+                            className="flex items-center gap-2 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-colors"
                         >
                             <Printer className="w-4 h-4" />
                             <span className="hidden sm:inline">PDF</span>
@@ -718,22 +757,22 @@ export default function PropostaTecnicaPage() {
             <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="relative py-20 px-4 text-center"
+                className="relative py-16 px-4 text-center no-print"
             >
                 <div className="max-w-4xl mx-auto">
                     <motion.div
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="mb-8"
+                        className="mb-6"
                     >
-                        <Image src="/logo-ta.png" alt="TA Consulting" width={100} height={100} priority />
+                        <Image src="/logo-ta.png" alt="TA Consulting" width={80} height={80} priority />
                     </motion.div>
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
-                        className="text-4xl md:text-6xl font-bold text-white mb-4"
+                        className="text-3xl md:text-5xl font-bold text-white mb-3"
                     >
                         Proposta Técnica
                     </motion.h1>
@@ -741,7 +780,7 @@ export default function PropostaTecnicaPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
-                        className="text-xl text-blue-200 mb-8"
+                        className="text-lg text-blue-200 mb-6"
                     >
                         Documento de Acompanhamento Comercial
                     </motion.p>
@@ -749,29 +788,29 @@ export default function PropostaTecnicaPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
-                        className="flex flex-wrap justify-center gap-6"
+                        className="flex flex-wrap justify-center gap-4"
                     >
-                        <div className="flex items-center gap-2 text-white">
-                            <div className="w-12 h-12 bg-blue-500/20 border border-blue-400/30 rounded-lg flex items-center justify-center">
-                                <Globe className="w-5 h-5 text-blue-400" />
+                        <div className="flex items-center gap-2 text-white text-sm">
+                            <div className="w-10 h-10 bg-blue-500/20 border border-blue-400/30 rounded-lg flex items-center justify-center">
+                                <Globe className="w-4 h-4 text-blue-400" />
                             </div>
                             <div className="text-left">
                                 <p className="text-xs text-blue-300">3 Planos</p>
                                 <p className="font-semibold">Starter a Premium</p>
                             </div>
                         </div>
-                        <div className="flex items-center gap-2 text-white">
-                            <div className="w-12 h-12 bg-emerald-500/20 border border-emerald-400/30 rounded-lg flex items-center justify-center">
-                                <Clock className="w-5 h-5 text-emerald-400" />
+                        <div className="flex items-center gap-2 text-white text-sm">
+                            <div className="w-10 h-10 bg-emerald-500/20 border border-emerald-400/30 rounded-lg flex items-center justify-center">
+                                <Clock className="w-4 h-4 text-emerald-400" />
                             </div>
                             <div className="text-left">
                                 <p className="text-xs text-emerald-300">Timeline</p>
                                 <p className="font-semibold">8-20 semanas</p>
                             </div>
                         </div>
-                        <div className="flex items-center gap-2 text-white">
-                            <div className="w-12 h-12 bg-amber-500/20 border border-amber-400/30 rounded-lg flex items-center justify-center">
-                                <Shield className="w-5 h-5 text-amber-400" />
+                        <div className="flex items-center gap-2 text-white text-sm">
+                            <div className="w-10 h-10 bg-amber-500/20 border border-amber-400/30 rounded-lg flex items-center justify-center">
+                                <Shield className="w-4 h-4 text-amber-400" />
                             </div>
                             <div className="text-left">
                                 <p className="text-xs text-amber-300">Suporte</p>
@@ -802,12 +841,59 @@ export default function PropostaTecnicaPage() {
                 </div>
             </footer>
 
-            {/* Print styles */}
+            {/* Print styles - better formatting for PDF export */}
             <style jsx global>{`
                 @media print {
-                    header button, .fixed { display: none !important; }
-                    body { background: white !important; }
-                    .bg-white\\/5 { background: #f5f5f5 !important; }
+                    @page { margin: 1.5cm; size: A4; }
+                    body {
+                        background: white !important;
+                        color: black !important;
+                        -webkit-print-color-adjust: exact;
+                        print-color-adjust: exact;
+                    }
+                    .no-print { display: none !important; }
+                    .fixed { display: none !important; }
+                    header { display: none !important; }
+                    footer { page-break-before: always; }
+
+                    .bg-white\\/5 {
+                        background: #f8f9fa !important;
+                        border: 1px solid #dee2e6 !important;
+                    }
+                    .bg-blue-500\\/20 { background: #e3f2fd !important; }
+                    .bg-emerald-500\\/20 { background: #e8f5e9 !important; }
+                    .bg-amber-500\\/20 { background: #fff8e1 !important; }
+                    .bg-cyan-500\\/20 { background: #e0f7fa !important; }
+                    .bg-red-500\\/20 { background: #ffebee !important; }
+                    .bg-violet-500\\/20 { background: #f3e5f5 !important; }
+
+                    .gradient-to-r { background: none !important; }
+                    .border { border-color: #dee2e6 !important; }
+                    .border-white\\/10, .border-white\\/20 {
+                        border-color: #dee2e6 !important;
+                    }
+                    .border-blue-400\\/30 { border-color: #90caf9 !important; }
+                    .border-emerald-400\\/30 { border-color: #a5d6a7 !important; }
+                    .border-amber-400\\/30 { border-color: #ffe082 !important; }
+                    .border-cyan-400\\/30 { border-color: #80deea !important; }
+
+                    .text-white { color: #1a1a1a !important; }
+                    .text-blue-100, .text-blue-200, .text-blue-300 { color: #0d47a1 !important; }
+                    .text-emerald-100, .text-emerald-200, .text-emerald-300 { color: #1b5e20 !important; }
+                    .text-amber-100, .text-amber-200, .text-amber-300 { color: #f57f17 !important; }
+                    .text-cyan-100, .text-cyan-200, .text-cyan-300 { color: #006064 !important; }
+                    .text-violet-100, .text-violet-200, .text-violet-300 { color: #4a148c !important; }
+                    .text-slate-400, .text-slate-500 { color: #666 !important; }
+
+                    .from-slate-900, .via-blue-950, .to-slate-900 { background: white !important; }
+
+                    /* Preserve section breaks */
+                    .mb-16 { page-break-inside: avoid; margin-bottom: 1rem !important; }
+                    .space-y-6 > * { page-break-inside: avoid; }
+
+                    /* Table styling for print */
+                    table { page-break-inside: auto; }
+                    tr { page-break-inside: avoid; page-break-after: auto; }
                 }
             `}</style>
         </div>
