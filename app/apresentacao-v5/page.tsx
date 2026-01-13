@@ -532,7 +532,7 @@ const PricingSlide = () => (
                 <div className="mb-3">
                     <div className="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-1">Starter</div>
                     <div className="text-2xl md:text-3xl font-bold text-white">€5.000 <span className="text-sm font-normal text-blue-300">+ IVA</span></div>
-                    <div className="text-blue-300 text-xs mt-1">+ retainer opcional</div>
+                    <div className="text-blue-300 text-xs mt-1">Setup (projeto único)</div>
                 </div>
 
                 <div className="bg-blue-900/50 rounded-lg p-2 mb-3 text-center">
@@ -573,7 +573,7 @@ const PricingSlide = () => (
                 <div className="mb-3">
                     <div className="text-xs font-semibold text-blue-200 uppercase tracking-wider mb-1">Professional</div>
                     <div className="text-2xl md:text-3xl font-bold text-white">€7.500 <span className="text-sm font-normal text-blue-300">+ IVA</span></div>
-                    <div className="text-blue-200 text-xs mt-1">+ retainer opcional</div>
+                    <div className="text-blue-200 text-xs mt-1">Setup (projeto único)</div>
                 </div>
 
                 <div className="bg-white/10 rounded-lg p-2 mb-3 text-center">
@@ -618,7 +618,7 @@ const PricingSlide = () => (
                 <div className="mb-3">
                     <div className="text-xs font-semibold text-amber-200 uppercase tracking-wider mb-1">Premium</div>
                     <div className="text-2xl md:text-3xl font-bold text-white">€11.000 <span className="text-sm font-normal text-amber-300">+ IVA</span></div>
-                    <div className="text-amber-200 text-xs mt-1">+ retainer opcional</div>
+                    <div className="text-amber-200 text-xs mt-1">Setup (projeto único)</div>
                 </div>
 
                 <div className="bg-white/10 rounded-lg p-2 mb-3 text-center">
