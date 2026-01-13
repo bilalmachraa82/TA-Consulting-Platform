@@ -1,685 +1,815 @@
 'use client';
 
-import { ArrowLeft, Download, Printer } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowLeft, Download, Printer, FileText, Check, X, Crown, Star, Award, Zap, Clock, Shield, TrendingUp, Target, Globe, Database, BarChart3, Wrench, Lightbulb, AlertTriangle, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-
-const DOCUMENT_CONTENT = `# TA Consulting Platform
-## Proposta Técnica Detalhada
-
-**Documento de Acompanhamento Comercial**
-
-Janeiro 2026
-
----
-
-## Índice
-
-1. [Visão Geral](#1-visão-geral)
-2. [Análise das Dores](#2-análise-das-dores)
-3. [STARTER](#3-starter---eur-5000--eur-600mês)
-4. [PROFESSIONAL](#4-professional---eur-7500--eur-800mês---recomendado)
-5. [PREMIUM](#5-premium---eur-11000--eur-1000mês)
-6. [Comparação Lado a Lado](#6-comparação-lado-a-lado)
-7. [Retainer Mensal](#7-retainer-mensal---o-que-está-incluído)
-8. [Timeline de Implementação](#8-timeline-de-implementação)
-9. [Perguntas Frequentes](#9-perguntas-frequentes)
-
----
-
-## 1. Visão Geral
-
-### 1.1 Contexto do Projeto
-
-A TA Consulting enfrenta um desafio comum no mercado de consultoria em Portugal: a captação de fundos europeus é um processo manual, fragmentado e intensivo em recursos. Com milhares de avisos publicados anualmente em múltiplos portais, a identificação de oportunidades relevantes para cada cliente torna-se uma tarefa que consome horas preciosas de trabalho qualificado.
-
-### 1.2 Objetivo
-
-O objetivo da **TA Consulting Platform** é automatizar todo o fluxo de captação e qualificação de candidaturas a fundos europeus, desde a deteção de novos avisos até à notificação proativa de oportunidades relevantes para cada cliente da base de 24.000 empresas.
-
-A plataforma centraliza e estrutura informação que hoje se encontra dispersa por:
-- Múltiplos portais de financiamento
-- Ficheiros Excel não estruturados
-- Processos manuais de pesquisa
-- Conhecimento tácito da equipa
-
----
-
-## 2. Análise das Dores
-
-### 2.1 Oportunidade Subutilizada
-
-> *"Temos 24.000 empresas na base de dados, mas apenas uma fração é contactada ativamente para oportunidades."* — Fernando
-
-A dimensão da base de dados da TA Consulting representa um ativo valioso subutilizado. Sem automação, é impossível monitorizar de forma proativa as necessidades de financiamento de cada empresa face aos avisos disponíveis.
-
-### 2.2 Processo Manual e Fragmentado
-
-> *"Hoje tudo se faz com Excel, pesquisas manuais no website da Paula, e muito copy-paste entre sistemas."* — Fernando
-
-O processo atual caracteriza-se por:
-- **Pesquisas manuais** em múltiplos portais (PT2030, PRR, PEPAC, entre outros)
-- **Excel como ferramenta central** de registo e acompanhamento
-- **Update manual** do website pela Paula (~30 minutos por semana)
-- **Sem alertas automáticos** quando surge um aviso relevante
-- **Duplicação de esforços** entre membros da equipa
-
-### 2.3 Conhecimento Histórico Não Estruturado
-
-> *"Temos 291 candidaturas históricas que poderiam servir de referência, mas estão em ficheiros dispersos."* — Fernando
-
-O conhecimento acumulado ao longo de anos de atividade não está estruturado de forma a ser:
-- Pesquisável de forma eficiente
-- Reutilizável em novas candidaturas
-- Analisável para padrões de sucesso
-- Acessível a toda a equipa
-
-### 2.4 Consequências
-
-| Problema | Impacto |
-|----------|---------|
-| Tempo gasto em pesquisa manual | Menos tempo para candidaturas de valor |
-| Oportunidades perdidas | Avisos não detetados atempadamente |
-| Base de clientes subutilizada | Receita potencial não realizada |
-| Dependência de conhecimento tácito | Risco de perda de know-how |
-
----
-
-## 3. STARTER - EUR 5.000 + EUR 600/mês
-
-### 3.1 O que está incluído
-
-#### Scraping de Portais
-- **3 portais incluídos:** PT2030, PRR, PEPAC
-- **Frequência:** Verificação automática a cada 6 horas
-- **Tipos de dados capturados:**
-  - Título e descrição do aviso
-  - Data de abertura e encerramento
-  - Valor disponível
-  - Entidade responsável
-  - CAE elegíveis
-  - Geografia aplicável
-
-#### Matchmaking Básico
-- **Critérios de matching:** CAE (2 dígitos) + Região (NUTS II)
-- **Formato:** Lista de empresas potencialmente interessadas
-- **Exportação:** CSV para importação manual no Bitrix
-
-#### Dashboard
-- **Avisos recentes:** Últimos 30 avisos capturados
-- **Filtros simples:** Por portal, CAE, região, data de encerramento
-- **Vista detalhada:** Informação completa de cada aviso
-- **Marcação:** Avisos podem ser marcados como "interessantes"
-
-#### Chatbot de Lead Capture
-- **Função:** Captura progressiva de informações de visitantes
-- **Tipo:** Baseado em regras (sem IA)
-- **Fluxo:** 3-4 perguntas sequenciais (nome, empresa, setor, tipo de projeto)
-- **Integração:** Dados enviados por email para a equipa
-
-#### RAG (Retrieval-Augmented Generation) Básico
-- **Tipo:** Keyword search (busca por palavras-chave)
-- **Âmbito:** Títulos e descrições de avisos
-- **Resultado:** Avisos ordenados por relevância para uma query específica
-
-#### Formação
-- **2 sessões** de formação (2 horas cada)
-- **Conteúdos:**
-  - Utilização do dashboard
-  - Leitura e interpretação de avisos
-  - Exportação e importação de dados
-
-### 3.2 O que NÃO está incluído
-
-| Funcionalidade | Disponível em |
-|----------------|---------------|
-| Sincronização automática com Bitrix | Professional / Premium |
-| RAG com Gemini File Search | Professional / Premium |
-| Email marketing automation | Professional / Premium |
-| AI writer de memorias | Premium |
-| Chatbot com IA conversacional | Professional / Premium |
-| Dashboard com KPIs avançados | Professional / Premium |
-
-### 3.3 Timeline
-
-**8 semanas** desde o início do projeto
-
-### 3.4 Para quem é
-
-O plano **STARTER** é ideal para:
-- Consultorias que começam a automatizar processos
-- Equipas com orçamento limitado
-- Organizações que querem validar o conceito antes de investir mais
-- Quem precisa de automatizar apenas o essencial
-
----
-
-## 4. PROFESSIONAL - EUR 7.500 + EUR 800/mês (RECOMENDADO)
-
-### 4.1 Tudo do Starter +
-
-O plano Professional inclui todas as funcionalidades do plano Starter, acrescidas das seguintes melhorias e novas funcionalidades.
-
-### 4.2 Funcionalidades Adicionais
-
-#### Scraping Alargado
-- **6 portais incluídos:**
-  1. PT2030
-  2. PRR - Plano de Recuperação e Resiliência
-  3. PEPAC - Programa Estratégico para o Política Agrícola Comum
-  4. Europa Criativa
-  5. IPDJ - Instituto Português do Desporto e Juventude
-  6. Horizon Europe
-
-#### Matchmaking Avançado
-- **Score de relevância 0-100:** Algoritmo que combina múltiplos fatores
-- **Fatores considerados:**
-  - CAE (4 dígitos)
-  - Histórico de candidaturas da empresa (se disponível no Bitrix)
-  - Região (NUTS III)
-  - Valor do financiamento
-  - Tipo de projeto (investimento, qualificação, internacionalização)
-- **Ordenação automática:** Empresas com maior score aparecem primeiro
-- **Dados do Bitrix:** Integração com CRM para enriquecer o perfil de cada empresa
-
-#### RAG com Gemini File Search
-- **Tecnologia:** Google Gemini File Search API
-- **Âmbito:** 291 candidaturas históricas indexadas
-- **Pesquisa:** Semântica, não apenas por palavras-chave
-- **Capacidades:**
-  - Encontrar candidaturas similares por conceito
-  - Identificar padrões de sucesso
-  - Sugerir abordagens com base em casos anteriores
-- **Requisito:** Acesso aos documentos (Google Drive ou upload)
-
-#### Sincronização Bidirecional com Bitrix
-- **Integração completa** via API Bitrix24
-- **Fluxos de dados:**
-  - **Bitrix → Platform:** Importação de empresas, contactos, deals
-  - **Platform → Bitrix:** Criação automática de leads/tasks baseados em matching
-- **Segurança:** Read-only por defeito; escrita apenas após autorização explícita
-- **Frequência:** Sincronização a cada hora
-
-#### Chatbot com IA Conversacional
-- **Baseado em RAG:** O chatbot acede aos avisos indexados
-- **Conversação natural:** Os utilizadores descrevem o projeto em linguagem corrente
-- **Capacidades:**
-  - Perguntas sobre avisos específicos
-  - Recomendações baseadas no perfil
-  - Esclarecimento de dúvidas sobre processos
-- **Personalização:** Tom de voz e identidade visual da TA Consulting
-
-#### Dashboard Enriquecido
-- **KPIs principais:**
-  - Avisos novos por semana
-  - Taxa de conversão (avisos → candidaturas)
-  - Empresas ativas no período
-  - Valor total de financiamento disponível
-- **Alertas:** Notificações para avisos de alto valor ou deadlines próximas
-- **Calendário interativo:** Vista temporal de prazos importantes
-- **Filtros avançados:** Combinação múltipla de critérios
-
-#### Email Drip Marketing
-- **4 sequências automáticas:**
-  1. **Novo aviso relevante:** Notificação imediata
-  2. **Follow-up 3 dias:** Lembrete e detalhes adicionais
-  3. **Deadline aproximando:** Alerta 2 semanas antes do fecho
-  4. **Oportunidade similar:** Quando surge aviso na mesma área
-- **Personalização:** Nome da empresa, setor, tipo de projeto
-- **Métricas:** Taxa de abertura, cliques, respostas
-
-#### Formação Alargada
-- **4 sessões** (2 horas cada)
-- **Conteúdos adicionais:**
-  - Interpretação de scores de matching
-  - Integração Bitrix
-  - Análise de KPIs
-  - Boas práticas de email marketing
-- **Gravações:** Todas as sessões ficam gravadas para acesso futuro
-
-#### Suporte Prioritário
-- **2 horas por mês** de suporte dedicado
-- **SLA:** Resposta em até 2 dias úteis
-- **Prioridade:** Alta (à frente dos clientes Starter)
-
-### 4.3 Comparativo: Starter vs Professional
-
-| Funcionalidade | Starter | Professional |
-|----------------|---------|-------------|
-| Portais scraping | 3 | 6 |
-| Sync Bitrix | Import CSV manual | Automático (API) |
-| RAG docs | Keyword search | Gemini File Search |
-| Matchmaking Score | Não | Sim (0-100) |
-| Chatbot AI | Não | Sim |
-| Dashboard básico | Sim | + KPIs e alertas |
-| Email Drip | Não | 4 sequências |
-| Formação | 2 sessões | 4 sessões + gravações |
-| Suporte | Email | 2h/mês prioritário |
-
-### 4.4 Timeline
-
-**10-12 semanas** desde o início do projeto
-
-### 4.5 Para quem é
-
-O plano **PROFESSIONAL** é ideal para:
-- Consultorias com volume significativo de candidaturas
-- Equipas que precisam de escalar operações
-- Organizações que usam Bitrix como CRM central
-- Quem quer reduzir drasticamente o tempo de pesquisa manual
-- Empresas focadas em crescimento
-
----
-
-## 5. PREMIUM - EUR 11.000 + EUR 1.000/mês
-
-### 5.1 Tudo do Professional +
-
-O plano Premium inclui todas as funcionalidades do plano Professional, acrescidas de funcionalidades avançadas para automatização completa.
-
-### 5.2 Funcionalidades Adicionais
-
-#### AI Writer de Memórias Descritivas
-- **O que faz:** Gera rascunhos de memorias descritivas automaticamente
-- **Base:** 291 candidaturas históricas indexadas
-- **Fluxo de trabalho:**
-  1. Utilizador indica o aviso e a empresa
-  2. IA analisa candidaturas similares anteriores
-  3. Rascunho é gerado com estrutura padrão
-  4. Consultor revê e ajusta o conteúdo
-- **Economia de tempo:** ~50% no tempo de escrita inicial
-
-#### Post-Award Management
-- **O que é:** Gestão de projetos aprovados após a candidatura
-- **Funcionalidades:**
-  - Dashboard de projetos em execução
-  - Calendário de milestones e reportings
-  - Alertas de prazos de submissão de relatórios
-  - Upload de documentos de acompanhamento
-- **Benefício:** Visibilidade total do pipeline pós-aprovação
-
-#### Email Drip Avançado
-- **Sequências personalizadas:** Criação de fluxos customizados
-- **Segmentação inteligente:** Baseada em comportamento e perfil
-- **A/B testing:** Teste de assuntos e conteúdos
-- **Dinamização de conteúdo:** Blocos reutilizáveis
-
-#### AI Critic
-- **O que faz:** Revisão automática de candidaturas antes de submissão
-- **Verificações:**
-  - Consistência interna do documento
-  - Cumprimento de requisitos obrigatórios
-  - Qualidade e clareza da escrita
-  - Comparação com candidaturas bem-sucedidas similares
-- **Output:** Relatório de sugestões de melhoria
-
-#### Website Auto-Update
-- **O que faz:** Sincronização automática com o site da TA Consulting
-- **Conteúdo sincronizado:**
-  - Avisos recentes
-  - Notícias sobre financiamentos
-  - Estatísticas e números
-- **Benefício:** Elimina a necessidade de update manual (~30 min/semana poupados)
-
-#### Marketing Mix AI
-- **O que faz:** Recomendações de canais de marketing
-- **Análise:**
-  - Performance histórica de campanhas
-  - Perfil de empresas mais responsivas
-  - Custo-benefício por canal
-- **Output:** Sugestões de alocação de orçamento
-
-### 5.3 Comparativo Específico: Professional vs Premium
-
-| Feature | Professional | Premium | Quando vale a pena? |
-|---------|-------------|---------|---------------------|
-| AI Writer | Fernando escreve do zero | IA gera rascunho | Múltiplas candidaturas/mês |
-| Post-Award | Gestão em Excel/manual | Dashboard dedicado | Mais de 5 projetos simultâneos |
-| Website Auto | Paula faz update manual | Sincronização automática | Site é crítico para negócio |
-| Email Drip | 4 sequências fixas | Sequências personalizadas | Segmentação complexa necessária |
-| AI Critic | Revisão manual completa | Auto-revisão + sugestões | Padrões de qualidade muito altos |
-| Suporte | 2h/mês | 5h/mês + SLA prioritário | Necessita de apoio frequente |
-
-### 5.4 Aviso Importante
-
-> **Nota:** O plano Premium contém funcionalidades "nice to have", não críticas para o funcionamento core da plataforma. A maioria das features Premium pode ser adicionada posteriormente como módulos separados após implementação do plano Professional.
-
-### 5.5 Timeline
-
-**16-20 semanas** desde o início do projeto
-
-### 5.6 Para quem é
-
-O plano **PREMIUM** é ideal para:
-- Consultorias que querem dominar o mercado
-- Organizações com alto volume de candidaturas mensais
-- Equipas que procuram maximizar a automação
-- Empresas com orçamento disponível para diferenciação competitiva
-
----
-
-## 6. Comparação Lado a Lado
-
-### 6.1 Tabela Comparativa Completa
-
-| Feature | Starter | Professional | Premium |
-|---------|---------|-------------|---------|
-| **Scraping Portais** | 3 | 6 | 6 |
-| **Sync Bitrix** | Import CSV manual | Automático (bidirecional) | Automático (bidirecional) |
-| **RAG Docs** | Keyword search | Gemini File Search | + Re-ranking avançado |
-| **Matchmaking Score** | Não | Sim (0-100) | + Histórico de candidaturas |
-| **Chatbot AI** | Não (baseado em regras) | Sim (conversacional) | + Personalização avançada |
-| **Email Drip** | Não | 4 sequências fixas | Sequências personalizadas |
-| **AI Writer** | Não | Não | **SIM** |
-| **Post-Award** | Não | Não | **SIM** |
-| **Website Auto-Update** | Não | Não | **SIM** |
-| **AI Critic** | Não | Não | **SIM** |
-| **Marketing Mix AI** | Não | Não | **SIM** |
-| **Dashboard KPIs** | Básico | Avançado | + Personalização |
-| **Formação** | 2 sessões | 4 sessões + gravações | Onsite |
-| **Suporte** | Email | 2h/mês | 5h/mês |
-
-### 6.2 Comparação de Investimento
-
-| Plano | Setup Inicial | Mensal | Total Ano 1 |
-|-------|---------------|--------|-------------|
-| Starter | EUR 5.000 | EUR 600 | EUR 12.200 |
-| Professional | EUR 7.500 | EUR 800 | EUR 17.100 |
-| Premium | EUR 11.000 | EUR 1.000 | EUR 23.000 |
-
----
-
-## 7. Retainer Mensal - O que está incluído
-
-### 7.1 Tabela Detalhada de Serviços
-
-| Serviço | Starter €600 | Professional €800 | Premium €1000 |
-|---------|---------------|-------------------|---------------|
-| Manutenção de scrapers | ✓ | ✓ | ✓ |
-| Suporte por email | ✓ | ✓ | ✓ |
-| Horas de suporte dedicado | - | 2h/mês | 5h/mês |
-| Atualizações da plataforma | Críticas apenas | Mensais | Quinzenais |
-| Monitoramento 24/7 | Não | Sim | Sim |
-| Sessão de roadmap | Não | Trimestral | Mensal |
-| Prioridade de bugs | Normal | Alta | Urgente |
-| Backup de dados | Diário | Diário | Diário + Retenção 1 ano |
-| SLA de resposta | 3 dias úteis | 2 dias úteis | 1 dia útil |
-| Atualizações de segurança | Imediato | Imediato | Imediato |
-
-### 7.2 O que garante o retainer mensal
-
-1. **Platform stability:** Os scrapers são adaptados sempre que os portais-alvo mudam de estrutura
-2. **Suporte contínuo:** Dúvidas e problemas são resolvidos de forma recorrente
-3. **Evolução:** A plataforma melhora ao longo do tempo com novas features
-4. **Segurança:** Atualizações de segurança são aplicadas de imediato
-
----
-
-## 8. Timeline de Implementação
-
-### 8.1 STARTER (8 semanas)
-
-\`\`\`
-Semana 1-2: Scraping + Dashboard básico
-├── Configuração de scrapers (3 portais)
-├── Estrutura de base de dados
-└── Dashboard com lista de avisos
-
-Semana 3-4: Matchmaking + Chatbot
-├── Algoritmo de matching básico
-├── Exportação CSV
-└── Chatbot de capture (baseado em regras)
-
-Semana 5-6: RAG básico + Testes
-├── Implementação de keyword search
-├── Testes end-to-end
-└── Ajustes de performance
-
-Semana 7-8: Deploy + Formação
-├── Deploy em produção
-├── 2 sessões de formação
-└── Handoff final
-\`\`\`
-
-### 8.2 PROFESSIONAL (12 semanas)
-
-\`\`\`
-Semana 1-4: TUDO do Starter
-├── Todas as funcionalidades Starter
-└── Base sólida para extensões
-
-Semana 5-8: Extensões Core
-├── Scraping adicionais (3 portais extra)
-├── Sync Bitrix bidirecional
-├── Matchmaking avançado com scoring
-├── RAG com Gemini File Search
-└── Dashboard enriquecido com KPIs
-
-Semana 9-10: Automação Avançada
-├── Email Drip (4 sequências)
-├── Chatbot AI conversacional
-└── Integração completa
-
-Semana 11-12: Deploy + Testes Extensivos
-├── Testes de carga
-├── Testes de integração
-├── 4 sessões de formação
-└── Go-live oficial
-\`\`\`
-
-### 8.3 PREMIUM (20 semanas)
-
-\`\`\`
-Semana 1-12: TUDO do Professional
-├── Todas as funcionalidades Professional
-└── Base completa para premium features
-
-Semana 13-16: AI Writer + Post-Award
-├── Treinamento de modelo AI Writer
-├── Interface de geração de memorias
-├── Dashboard Post-Award
-└── Sistema de milestones
-
-Semana 17-18: AI Critic + Website Auto
-├── Sistema de revisão automática
-├── Integração com CMS do site
-└── Marketing Mix AI
-
-Semana 19-20: Deploy + Testes Completos
-├── Testes de aceitação
-├── Formação onsite
-├── Documentação completa
-└── Go-live oficial
-\`\`\`
-
----
-
-## 9. Perguntas Frequentes
-
-### Posso começar no Starter e fazer upgrade depois?
-
-**Sim.** O upgrade entre planos é possível e o investimento inicial é deduzido do novo plano. Por exemplo, se começar no Starter (€5.000) e quiser upgrade para Professional (€7.500), pagará apenas a diferença de €2.500.
-
-**Timeline típica de upgrade:**
-- Starter → Professional: +4-6 semanas
-- Professional → Premium: +8-10 semanas
-
-### O que acontece se um scraper quebrar?
-
-A resposta depende do plano:
-
-| Plano | Monitoramento | Tempo de reparação |
-|-------|---------------|-------------------|
-| Starter | Manual | 24-48 horas após report |
-| Professional | 24/7 automático | Até 4 horas |
-| Premium | 24/7 + alertas imediatos | Até 2 horas |
-
-Os portais públicos podem mudar de estrutura sem aviso prévio. O retainer mensal garante que os scrapers são mantidos funcionais mesmo quando essas alterações ocorrem.
-
-### Os dados do Bitrix estão seguros?
-
-**Sim, absolutamente.**
-
-- **Acesso read-only:** Por defeito, a plataforma apenas lê dados do Bitrix
-- **Escrita condicionada:** Qualquer operação de escrita requer autorização explícita
-- **Revogação:** O acesso pode ser revogado a qualquer momento através do Bitrix
-- **Cifra:** Todas as comunicações são feitas via HTTPS
-- **Logs:** Todas as operações ficam registadas para auditoria
-
-### Preciso de fornecer as 291 candidaturas?
-
-**Sim, para o RAG funcionar bem.**
-
-O sistema de RAG (Retrieval-Augmented Generation) precisa de aceder aos documentos históricos para:
-- Encontrar candidaturas similares
-- Identificar padrões de sucesso
-- Sugerir abordagens com base em casos anteriores
-
-**Formatos aceites:**
-- Acesso ao Google Drive
-- Upload direto de ficheiros (PDF, DOCX)
-- Exportação de outro sistema
-
-### E se quisermos uma feature personalizada?
-
-**Depende do plano:**
-
-| Plano | Customizações |
-|-------|---------------|
-| Starter | Não disponível (plano padrão) |
-| Professional | Incluídas (até 40h de desenvolvimento) |
-| Premium | Incluídas (até 80h de desenvolvimento) |
-
-Para além dessas horas, features personalizadas podem ser desenvolvidas contra fatura.
-
-### Os dados das empresas estão seguros?
-
-**Sim.**
-
-- **Armazenamento seguro:** Infrastructure hospedada em região da UE (cumprimento GDPR)
-- **Backups diários:** Dados backed up diariamente
-- **Acesso controlado:** Autenticação segura e controlo de acessos
-- **Retenção:** Configurável conforme necessidades
-
-### Qual é o tempo mínimo de contrato?
-
-- **Setup:** Pagamento único no início
-- **Retainer:** Mínimo de 12 meses para garantir ROI
-- **Cancelamento:** Após 12 meses, 30 dias de aviso prévio
-
-### A plataforma pode ser instalada on-premise?
-
-**Sim, opcional.**
-
-- **Standard:** Cloud (recomendado para menor TCO)
-- **On-premise:** Disponível para planos Professional e Premium (custo adicional)
-
----
-
-## 10. Próximos Passos
-
-### 10.1 Processo de Implementação
-
-1. **Kickoff meeting** (1 hora)
-   - Alinhamento de expectativas
-   - Definição de acessos necessários
-   - Calendarização de sprints
-
-2. **Configuração técnica** (1 semana)
-   - Setup de ambiente de desenvolvimento
-   - Acesso a fontes de dados
-   - Configuração de Bitrix (se aplicável)
-
-3. **Desenvolvimento iterativo**
-   - Sprints de 2 semanas
-   - Demos a cada sprint
-   - Feedback contínuo
-
-4. **Formação e handoff**
-   - Sessões presenciais ou remotas
-   - Documentação completa
-   - Período de suporte intensivo
-
----
-
-*Este documento é confidencial e destina-se exclusivamente ao uso da TA Consulting.*
-*Janeiro 2026*`;
+import { useState } from 'react';
+
+// ============================================================================
+// DATA
+// ============================================================================
+
+const SECTIONS = [
+    {
+        id: 'visao-geral',
+        title: 'Visão Geral',
+        subtitle: 'Contexto do Projeto',
+        icon: <Lightbulb className="w-6 h-6" />,
+        color: 'blue',
+        content: (
+            <div className="space-y-6">
+                <p className="text-lg text-blue-100 leading-relaxed">
+                    A TA Consulting enfrenta um desafio crítico: a captação de fundos europeus é um processo manual, fragmentado e intensivo em recursos. Com milhares de avisos publicados anualmente em múltiplos portais, a identificação de oportunidades relevantes para cada cliente torna-se uma tarefa que consome horas preciosas de trabalho qualificado.
+                </p>
+                <div className="bg-gradient-to-r from-blue-500/20 to-emerald-500/20 border border-blue-400/30 rounded-2xl p-6">
+                    <h4 className="text-xl font-bold text-white mb-3">Objetivo</h4>
+                    <p className="text-blue-100">
+                        A <span className="text-emerald-400 font-semibold">TA Consulting Platform</span> automatiza todo o fluxo de captação e qualificação de candidaturas a fundos europeus, desde a deteção de novos avisos até à notificação proativa de oportunidades relevantes para cada cliente da base de <span className="text-white font-bold">24.000 empresas</span>.
+                    </p>
+                </div>
+                <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                        <h5 className="text-sm font-semibold text-blue-300 uppercase mb-2">Centraliza</h5>
+                        <p className="text-blue-100 text-sm">Informação dispersa por múltiplos portais</p>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                        <h5 className="text-sm font-semibold text-blue-300 uppercase mb-2">Estrutura</h5>
+                        <p className="text-blue-100 text-sm">Dados de Excel não estruturados</p>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                        <h5 className="text-sm font-semibold text-blue-300 uppercase mb-2">Automatiza</h5>
+                        <p className="text-blue-100 text-sm">Processos manuais de pesquisa</p>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                        <h5 className="text-sm font-semibold text-blue-300 uppercase mb-2">Preserva</h5>
+                        <p className="text-blue-100 text-sm">Conhecimento tácito da equipa</p>
+                    </div>
+                </div>
+            </div>
+        )
+    },
+    {
+        id: 'dores',
+        title: 'Análise das Dores',
+        subtitle: 'Oportunidade Subutilizada',
+        icon: <AlertTriangle className="w-6 h-6" />,
+        color: 'red',
+        content: (
+            <div className="space-y-6">
+                <div className="space-y-4">
+                    <div className="bg-red-500/20 border-l-4 border-red-500 p-5 rounded-r-xl">
+                        <p className="text-xl text-white italic mb-2">"Temos 24.000 empresas na base de dados, mas apenas uma fração é contactada ativamente para oportunidades."</p>
+                        <p className="text-red-300 text-sm">— Fernando, TA Consulting</p>
+                    </div>
+                    <div className="bg-orange-500/20 border-l-4 border-orange-500 p-5 rounded-r-xl">
+                        <p className="text-xl text-white italic mb-2">"Hoje tudo se faz com Excel, pesquisas manuais no website da Paula, e muito copy-paste entre sistemas."</p>
+                        <p className="text-orange-300 text-sm">— Fernando, TA Consulting</p>
+                    </div>
+                    <div className="bg-amber-500/20 border-l-4 border-amber-500 p-5 rounded-r-xl">
+                        <p className="text-xl text-white italic mb-2">"Temos 291 candidaturas históricas que poderiam servir de referência, mas estão em ficheiros dispersos."</p>
+                        <p className="text-amber-300 text-sm">— Fernando, TA Consulting</p>
+                    </div>
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                    <h4 className="text-xl font-bold text-white mb-4">Consequências</h4>
+                    <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                            <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                            <span className="text-blue-100">Tempo gasto em pesquisa manual = menos tempo para candidaturas de valor</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                            <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                            <span className="text-blue-100">Oportunidades perdidas = avisos não detetados atempadamente</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                            <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                            <span className="text-blue-100">Base subutilizada = receita potencial não realizada</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                            <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                            <span className="text-blue-100">Dependência de conhecimento tácito = risco de perda de know-how</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    },
+    {
+        id: 'starter',
+        title: 'STARTER',
+        subtitle: '€5.000 + €600/mês • 8 semanas',
+        icon: <Star className="w-6 h-6" />,
+        color: 'blue',
+        badge: 'Básico',
+        content: (
+            <div className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Globe className="w-5 h-5 text-blue-400" />
+                            <h4 className="font-bold text-white">Scraping 3 Portais</h4>
+                        </div>
+                        <p className="text-blue-100 text-sm">PT2030, PRR, PEPAC • Verificação a cada 6 horas</p>
+                    </div>
+                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Target className="w-5 h-5 text-blue-400" />
+                            <h4 className="font-bold text-white">Matchmaking Básico</h4>
+                        </div>
+                        <p className="text-blue-100 text-sm">CAE (2 dígitos) + Região • Exportação CSV</p>
+                    </div>
+                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <BarChart3 className="w-5 h-5 text-blue-400" />
+                            <h4 className="font-bold text-white">Dashboard</h4>
+                        </div>
+                        <p className="text-blue-100 text-sm">Avisos recentes • Filtros simples • Marcação</p>
+                    </div>
+                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Database className="w-5 h-5 text-blue-400" />
+                            <h4 className="font-bold text-white">RAG Básico</h4>
+                        </div>
+                        <p className="text-blue-100 text-sm">Keyword search • Títulos e descrições</p>
+                    </div>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5">
+                    <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                        <Clock className="w-5 h-5 text-blue-400" />
+                        Formação Incluída
+                    </h4>
+                    <p className="text-blue-100">2 sessões de 2 horas cada • Utilização do dashboard • Leitura de avisos</p>
+                </div>
+            </div>
+        )
+    },
+    {
+        id: 'professional',
+        title: 'PROFESSIONAL',
+        subtitle: '€7.500 + €800/mês • 10-12 semanas',
+        icon: <Award className="w-6 h-6" />,
+        color: 'emerald',
+        badge: 'RECOMENDADO',
+        content: (
+            <div className="space-y-6">
+                <div className="bg-gradient-to-r from-emerald-500/30 to-blue-500/30 border border-emerald-400/50 rounded-xl p-5 mb-4">
+                    <div className="flex items-center gap-3">
+                        <Crown className="w-6 h-6 text-amber-400" />
+                        <div>
+                            <p className="text-emerald-300 font-semibold">TUDO do Starter +</p>
+                            <p className="text-white text-sm">Funcionalidades avançadas para crescer</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Globe className="w-5 h-5 text-emerald-400" />
+                            <h4 className="font-bold text-white">Scraping 6 Portais</h4>
+                        </div>
+                        <p className="text-emerald-100 text-sm">+ Europa Criativa, IPDJ, Horizon Europe</p>
+                    </div>
+                    <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Target className="w-5 h-5 text-emerald-400" />
+                            <h4 className="font-bold text-white">Matchmaking Avançado</h4>
+                        </div>
+                        <p className="text-emerald-100 text-sm">Score 0-100 • CAE 4 dígitos • Histórico</p>
+                    </div>
+                    <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Database className="w-5 h-5 text-emerald-400" />
+                            <h4 className="font-bold text-white">RAG Gemini</h4>
+                        </div>
+                        <p className="text-emerald-100 text-sm">291 candidaturas • Pesquisa semântica</p>
+                    </div>
+                    <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Shield className="w-5 h-5 text-emerald-400" />
+                            <h4 className="font-bold text-white">Sync Bitrix Bidirecional</h4>
+                        </div>
+                        <p className="text-emerald-100 text-sm">API completa • Leitura e escrita • Sincronização horária</p>
+                    </div>
+                    <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Zap className="w-5 h-5 text-emerald-400" />
+                            <h4 className="font-bold text-white">Chatbot IA</h4>
+                        </div>
+                        <p className="text-emerald-100 text-sm">Conversacional • Baseado em RAG • Personalizável</p>
+                    </div>
+                    <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <TrendingUp className="w-5 h-5 text-emerald-400" />
+                            <h4 className="font-bold text-white">Email Drip</h4>
+                        </div>
+                        <p className="text-emerald-100 text-sm">4 sequências automáticas • Personalização</p>
+                    </div>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5">
+                    <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                        <Wrench className="w-5 h-5 text-emerald-400" />
+                        Suporte Prioritário
+                    </h4>
+                    <p className="text-emerald-100">2 horas/mês dedicadas • SLA 2 dias úteis • 4 sessões de formação gravadas</p>
+                </div>
+            </div>
+        )
+    },
+    {
+        id: 'premium',
+        title: 'PREMIUM',
+        subtitle: '€11.000 + €1.000/mês • 16-20 semanas',
+        icon: <Crown className="w-6 h-6" />,
+        color: 'amber',
+        badge: 'PREMIUM',
+        content: (
+            <div className="space-y-6">
+                <div className="bg-gradient-to-r from-amber-500/30 to-orange-500/30 border border-amber-400/50 rounded-xl p-5 mb-4">
+                    <div className="flex items-center gap-3">
+                        <Crown className="w-6 h-6 text-amber-400" />
+                        <div>
+                            <p className="text-amber-300 font-semibold">TUDO do Professional +</p>
+                            <p className="text-white text-sm">Automatização completa para dominar o mercado</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <FileText className="w-5 h-5 text-amber-400" />
+                            <h4 className="font-bold text-white">AI Writer</h4>
+                        </div>
+                        <p className="text-amber-100 text-sm">Gera rascunhos de memórias • ~50% economia de tempo</p>
+                    </div>
+                    <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <BarChart3 className="w-5 h-5 text-amber-400" />
+                            <h4 className="font-bold text-white">Post-Award Management</h4>
+                        </div>
+                        <p className="text-amber-100 text-sm">Dashboard projetos • Milestones • Alertas reporting</p>
+                    </div>
+                    <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <TrendingUp className="w-5 h-5 text-amber-400" />
+                            <h4 className="font-bold text-white">Email Drip Avançado</h4>
+                        </div>
+                        <p className="text-amber-100 text-sm">Sequências personalizadas • A/B testing • Segmentação</p>
+                    </div>
+                    <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Shield className="w-5 h-5 text-amber-400" />
+                            <h4 className="font-bold text-white">AI Critic</h4>
+                        </div>
+                        <p className="text-amber-100 text-sm">Revisão automática • Consistência • Sugestões de melhoria</p>
+                    </div>
+                    <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Globe className="w-5 h-5 text-amber-400" />
+                            <h4 className="font-bold text-white">Website Auto-Update</h4>
+                        </div>
+                        <p className="text-amber-100 text-sm">Sincronização automática • ~30 min/semana poupados</p>
+                    </div>
+                    <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Target className="w-5 h-5 text-amber-400" />
+                            <h4 className="font-bold text-white">Marketing Mix AI</h4>
+                        </div>
+                        <p className="text-amber-100 text-sm">Recomendações de canais • Análise de performance</p>
+                    </div>
+                </div>
+                <div className="bg-white/5 border border-amber-400/30 rounded-xl p-5">
+                    <p className="text-amber-200 text-sm flex items-start gap-2">
+                        <AlertTriangle className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+                        <span><strong>Nota:</strong> O plano Premium contém funcionalidades "nice to have". A maioria pode ser adicionada posteriormente como módulos separados após implementação do plano Professional.</span>
+                    </p>
+                </div>
+            </div>
+        )
+    },
+    {
+        id: 'comparacao',
+        title: 'Comparação Lado a Lado',
+        subtitle: 'Escolha o nível certo para o teu negócio',
+        icon: <BarChart3 className="w-6 h-6" />,
+        color: 'violet',
+        content: (
+            <div className="space-y-6">
+                <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                        <thead>
+                            <tr className="border-b border-white/20">
+                                <th className="text-left py-3 px-4 text-blue-300 font-semibold">Feature</th>
+                                <th className="text-center py-3 px-4 text-blue-400 font-semibold">Starter</th>
+                                <th className="text-center py-3 px-4 text-emerald-400 font-semibold">Professional</th>
+                                <th className="text-center py-3 px-4 text-amber-400 font-semibold">Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white font-medium">Scraping Portais</td>
+                                <td className="text-center py-3 px-4 text-blue-300">3</td>
+                                <td className="text-center py-3 px-4 text-emerald-300">6</td>
+                                <td className="text-center py-3 px-4 text-amber-300">6</td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white font-medium">Sync Bitrix</td>
+                                <td className="text-center py-3 px-4 text-blue-300">CSV manual</td>
+                                <td className="text-center py-3 px-4 text-emerald-300">Automático</td>
+                                <td className="text-center py-3 px-4 text-amber-300">Automático</td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white font-medium">RAG Docs</td>
+                                <td className="text-center py-3 px-4 text-blue-300">Keyword</td>
+                                <td className="text-center py-3 px-4 text-emerald-300">Gemini</td>
+                                <td className="text-center py-3 px-4 text-amber-300">+ Re-ranking</td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white font-medium">Matchmaking Score</td>
+                                <td className="text-center py-3 px-4 text-blue-300"><X className="w-4 h-4 mx-auto" /></td>
+                                <td className="text-center py-3 px-4 text-emerald-300"><Check className="w-4 h-4 mx-auto" /></td>
+                                <td className="text-center py-3 px-4 text-amber-300">+ Histórico</td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white font-medium">Chatbot AI</td>
+                                <td className="text-center py-3 px-4 text-blue-300"><X className="w-4 h-4 mx-auto" /></td>
+                                <td className="text-center py-3 px-4 text-emerald-300"><Check className="w-4 h-4 mx-auto" /></td>
+                                <td className="text-center py-3 px-4 text-amber-300">+ Avançado</td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white font-medium">Email Drip</td>
+                                <td className="text-center py-3 px-4 text-blue-300"><X className="w-4 h-4 mx-auto" /></td>
+                                <td className="text-center py-3 px-4 text-emerald-300">4 fixas</td>
+                                <td className="text-center py-3 px-4 text-amber-300">Custom</td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white font-medium">AI Writer</td>
+                                <td className="text-center py-3 px-4 text-blue-300"><X className="w-4 h-4 mx-auto" /></td>
+                                <td className="text-center py-3 px-4 text-emerald-300"><X className="w-4 h-4 mx-auto" /></td>
+                                <td className="text-center py-3 px-4 text-amber-300"><Check className="w-4 h-4 mx-auto" /></td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white font-medium">Post-Award</td>
+                                <td className="text-center py-3 px-4 text-blue-300"><X className="w-4 h-4 mx-auto" /></td>
+                                <td className="text-center py-3 px-4 text-emerald-300"><X className="w-4 h-4 mx-auto" /></td>
+                                <td className="text-center py-3 px-4 text-amber-300"><Check className="w-4 h-4 mx-auto" /></td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white font-medium">Website Auto-Update</td>
+                                <td className="text-center py-3 px-4 text-blue-300"><X className="w-4 h-4 mx-auto" /></td>
+                                <td className="text-center py-3 px-4 text-emerald-300"><X className="w-4 h-4 mx-auto" /></td>
+                                <td className="text-center py-3 px-4 text-amber-300"><Check className="w-4 h-4 mx-auto" /></td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white font-medium">AI Critic</td>
+                                <td className="text-center py-3 px-4 text-blue-300"><X className="w-4 h-4 mx-auto" /></td>
+                                <td className="text-center py-3 px-4 text-emerald-300"><X className="w-4 h-4 mx-auto" /></td>
+                                <td className="text-center py-3 px-4 text-amber-300"><Check className="w-4 h-4 mx-auto" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div className="grid md:grid-cols-3 gap-4">
+                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-4 text-center">
+                        <p className="text-3xl font-bold text-white mb-1">€5.000</p>
+                        <p className="text-blue-300 text-sm">+ €600/mês</p>
+                        <p className="text-blue-200 text-xs mt-2">Total Ano 1: €12.200</p>
+                    </div>
+                    <div className="bg-emerald-500/20 border-2 border-emerald-400/50 rounded-xl p-4 text-center relative">
+                        <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs px-2 py-0.5 rounded-full font-semibold">RECOMENDADO</span>
+                        <p className="text-3xl font-bold text-white mb-1">€7.500</p>
+                        <p className="text-emerald-300 text-sm">+ €800/mês</p>
+                        <p className="text-emerald-200 text-xs mt-2">Total Ano 1: €17.100</p>
+                    </div>
+                    <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-4 text-center">
+                        <p className="text-3xl font-bold text-white mb-1">€11.000</p>
+                        <p className="text-amber-300 text-sm">+ €1.000/mês</p>
+                        <p className="text-amber-200 text-xs mt-2">Total Ano 1: €23.000</p>
+                    </div>
+                </div>
+            </div>
+        )
+    },
+    {
+        id: 'retainer',
+        title: 'Retainer Mensal',
+        subtitle: 'O que está incluído em cada plano',
+        icon: <Shield className="w-6 h-6" />,
+        color: 'cyan',
+        content: (
+            <div className="space-y-6">
+                <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                        <thead>
+                            <tr className="border-b border-white/20">
+                                <th className="text-left py-3 px-4 text-cyan-300 font-semibold">Serviço</th>
+                                <th className="text-center py-3 px-4 text-blue-400 font-semibold">Starter €600</th>
+                                <th className="text-center py-3 px-4 text-emerald-400 font-semibold">Professional €800</th>
+                                <th className="text-center py-3 px-4 text-amber-400 font-semibold">Premium €1000</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white">Manutenção scrapers</td>
+                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
+                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
+                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white">Suporte email</td>
+                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
+                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
+                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white">Horas dedicadas</td>
+                                <td className="text-center py-3 px-4 text-blue-300">-</td>
+                                <td className="text-center py-3 px-4 text-emerald-300">2h/mês</td>
+                                <td className="text-center py-3 px-4 text-amber-300">5h/mês</td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white">Monitoramento 24/7</td>
+                                <td className="text-center py-3 px-4"><X className="w-4 h-4 mx-auto text-red-400" /></td>
+                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
+                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white">SLA resposta</td>
+                                <td className="text-center py-3 px-4 text-blue-300">3 dias</td>
+                                <td className="text-center py-3 px-4 text-emerald-300">2 dias</td>
+                                <td className="text-center py-3 px-4 text-amber-300">1 dia</td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white">Backup diário</td>
+                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
+                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
+                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
+                            </tr>
+                            <tr className="border-b border-white/10">
+                                <td className="py-3 px-4 text-white">Retenção 1 ano</td>
+                                <td className="text-center py-3 px-4"><X className="w-4 h-4 mx-auto text-red-400" /></td>
+                                <td className="text-center py-3 px-4"><X className="w-4 h-4 mx-auto text-red-400" /></td>
+                                <td className="text-center py-3 px-4"><Check className="w-4 h-4 mx-auto text-emerald-400" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-xl p-5">
+                    <h4 className="font-bold text-white mb-3">O que garante o retainer</h4>
+                    <ul className="space-y-2 text-cyan-100 text-sm">
+                        <li className="flex items-start gap-2">
+                            <Shield className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                            <span><strong>Platform stability:</strong> Scrapers adaptados quando portais mudam</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                            <Shield className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                            <span><strong>Suporte contínuo:</strong> Dúvidas e problemas resolvidos recorrentemente</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                            <Shield className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                            <span><strong>Evolução:</strong> Plataforma melhora com novas features</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                            <Shield className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
+                            <span><strong>Segurança:</strong> Atualizações aplicadas de imediato</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        )
+    },
+    {
+        id: 'timeline',
+        title: 'Timeline de Implementação',
+        subtitle: 'Cada plano tem o seu ritmo',
+        icon: <Clock className="w-6 h-6" />,
+        color: 'blue',
+        content: (
+            <div className="space-y-6">
+                <div className="grid md:grid-cols-3 gap-4">
+                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
+                        <div className="flex items-center justify-between mb-4">
+                            <h4 className="font-bold text-white">STARTER</h4>
+                            <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">8 semanas</span>
+                        </div>
+                        <ul className="space-y-2 text-blue-100 text-sm">
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-400" /> Sem 1-2: Scraping + Dashboard</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-400" /> Sem 3-4: Matchmaking + Chatbot</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-400" /> Sem 5-6: RAG + Testes</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-blue-400" /> Sem 7-8: Deploy + Formação</li>
+                        </ul>
+                    </div>
+                    <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-5">
+                        <div className="flex items-center justify-between mb-4">
+                            <h4 className="font-bold text-white">PROFESSIONAL</h4>
+                            <span className="bg-emerald-500 text-white text-xs px-2 py-1 rounded-full">12 semanas</span>
+                        </div>
+                        <ul className="space-y-2 text-emerald-100 text-sm">
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sem 1-4: TUDO do Starter</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sem 5-8: Extensões Core</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sem 9-10: Automação Avançada</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sem 11-12: Deploy + Testes</li>
+                        </ul>
+                    </div>
+                    <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-5">
+                        <div className="flex items-center justify-between mb-4">
+                            <h4 className="font-bold text-white">PREMIUM</h4>
+                            <span className="bg-amber-500 text-white text-xs px-2 py-1 rounded-full">20 semanas</span>
+                        </div>
+                        <ul className="space-y-2 text-amber-100 text-sm">
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> Sem 1-12: TUDO do Professional</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> Sem 13-16: AI Writer + Post-Award</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> Sem 17-18: AI Critic + Web Auto</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-400" /> Sem 19-20: Deploy + Formação</li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-xl p-5">
+                    <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                        <Lightbulb className="w-5 h-5 text-amber-400" />
+                        Upgrade Flexível
+                    </h4>
+                    <p className="text-blue-100">Podes começar no Starter e fazer upgrade depois. O investimento inicial é deduzido do novo plano.</p>
+                    <div className="flex gap-4 mt-3 text-sm">
+                        <span className="text-blue-300">→ Starter → Professional: +4-6 semanas</span>
+                        <span className="text-blue-300">→ Professional → Premium: +8-10 semanas</span>
+                    </div>
+                </div>
+            </div>
+        )
+    },
+    {
+        id: 'faq',
+        title: 'Perguntas Frequentes',
+        subtitle: 'Dúvidas comuns respondidas',
+        icon: <FileText className="w-6 h-6" />,
+        color: 'violet',
+        content: (
+            <div className="space-y-4">
+                {[
+                    {
+                        q: "Posso começar no Starter e fazer upgrade depois?",
+                        a: "Sim. O upgrade é possível e o investimento inicial é deduzido. Starter → Professional: +4-6 semanas. Professional → Premium: +8-10 semanas."
+                    },
+                    {
+                        q: "O que acontece se um scraper quebrar?",
+                        a: "Starter: 24-48h após report. Professional: até 4h com monitoramento 24/7. Premium: até 2h com alertas imediatos."
+                    },
+                    {
+                        q: "Os dados do Bitrix estão seguros?",
+                        a: "Sim. Acesso read-only por defeito. Escrita condicionada. Revogação a qualquer momento. HTTPS + logs para auditoria."
+                    },
+                    {
+                        q: "Preciso de fornecer as 291 candidaturas?",
+                        a: "Sim, para o RAG funcionar bem. Formatos: Google Drive, upload (PDF, DOCX), ou exportação de outro sistema."
+                    },
+                    {
+                        q: "Qual é o tempo mínimo de contrato?",
+                        a: "Setup: pagamento único. Retainer: mínimo 12 meses. Cancelamento: após 12 meses, 30 dias de aviso prévio."
+                    }
+                ].map((faq, i) => (
+                    <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.1 }}
+                        className="bg-white/5 border border-white/10 rounded-xl p-5"
+                    >
+                        <h4 className="font-bold text-white mb-2">{faq.q}</h4>
+                        <p className="text-violet-200 text-sm">{faq.a}</p>
+                    </motion.div>
+                ))}
+            </div>
+        )
+    }
+];
+
+const colorMap = {
+    blue: { bg: 'bg-blue-500', text: 'text-blue-400', border: 'border-blue-400', bgLight: 'bg-blue-500/20' },
+    emerald: { bg: 'bg-emerald-500', text: 'text-emerald-400', border: 'border-emerald-400', bgLight: 'bg-emerald-500/20' },
+    amber: { bg: 'bg-amber-500', text: 'text-amber-400', border: 'border-amber-400', bgLight: 'bg-amber-500/20' },
+    red: { bg: 'bg-red-500', text: 'text-red-400', border: 'border-red-400', bgLight: 'bg-red-500/20' },
+    violet: { bg: 'bg-violet-500', text: 'text-violet-400', border: 'border-violet-400', bgLight: 'bg-violet-500/20' },
+    cyan: { bg: 'bg-cyan-500', text: 'text-cyan-400', border: 'border-cyan-400', bgLight: 'bg-cyan-500/20' },
+};
+
+// ============================================================================
+// COMPONENTS
+// ============================================================================
+
+function SectionCard({ section, index }) {
+    const colors = colorMap[section.color] || colorMap.blue;
+
+    return (
+        <motion.div
+            id={section.id}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            className="mb-16 scroll-mt-24"
+        >
+            <div className="flex items-center gap-4 mb-6">
+                <div className={`w-14 h-14 ${colors.bgLight} border ${colors.border} rounded-xl flex items-center justify-center ${colors.text}`}>
+                    {section.icon}
+                </div>
+                <div>
+                    <span className={`text-sm font-semibold tracking-widest ${colors.text} uppercase`}>
+                        {section.subtitle}
+                    </span>
+                    <h2 className="text-3xl md:text-4xl font-bold text-white">{section.title}</h2>
+                </div>
+                {section.badge && (
+                    <span className={`ml-auto ${colors.bg} text-white text-xs px-3 py-1 rounded-full font-semibold`}>
+                        {section.badge}
+                    </span>
+                )}
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 md:p-8">
+                {section.content}
+            </div>
+        </motion.div>
+    );
+}
+
+function TableOfContents({ sections, activeSection }) {
+    return (
+        <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="hidden lg:block fixed left-8 top-1/2 -translate-y-1/2 w-48"
+        >
+            <nav className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-4">
+                <h3 className="text-xs font-semibold tracking-widest text-blue-300 uppercase mb-3">Índice</h3>
+                <ul className="space-y-2">
+                    {sections.map((section) => (
+                        <li key={section.id}>
+                            <a
+                                href={`#${section.id}`}
+                                className={`text-sm py-1 px-2 rounded-lg block transition-colors ${
+                                    activeSection === section.id
+                                        ? 'bg-blue-500/30 text-white'
+                                        : 'text-blue-200 hover:bg-white/5'
+                                }`}
+                            >
+                                {section.title}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+        </motion.div>
+    );
+}
 
 export default function PropostaTecnicaPage() {
+    const [activeSection, setActiveSection] = useState('visao-geral');
+
     const handlePrint = () => {
         window.print();
     };
 
     const handleDownload = () => {
-        const blob = new Blob([DOCUMENT_CONTENT], { type: 'text/markdown' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'proposta-tecnica-ta-consulting.md';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
+        window.open('/docs/proposta-tecnica-completa.md', '_blank');
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900">
+            {/* Animated Background */}
+            <div className="fixed inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+                <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+            </div>
+
             {/* Header */}
-            <header className="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
-                <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+            <header className="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-xl border-b border-white/10">
+                <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                        <Link href="/apresentacao-v5" className="text-slate-600 hover:text-blue-600 transition-colors">
+                        <Link href="/apresentacao-v5" className="text-slate-400 hover:text-white transition-colors">
                             <ArrowLeft className="w-5 h-5" />
                         </Link>
                         <Image src="/logo-ta.png" alt="TA Consulting" width={40} height={40} priority />
                         <div>
-                            <h1 className="text-lg font-bold text-slate-900">Proposta Técnica</h1>
-                            <p className="text-xs text-slate-500">TA Consulting Platform - Janeiro 2026</p>
+                            <h1 className="text-lg font-bold text-white">Proposta Técnica</h1>
+                            <p className="text-xs text-slate-400">Janeiro 2026</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-2">
                         <button
                             onClick={handleDownload}
-                            className="flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition-colors"
+                            className="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-sm font-medium transition-colors border border-white/10"
                         >
                             <Download className="w-4 h-4" />
-                            <span className="hidden sm:inline">Download MD</span>
+                            <span className="hidden sm:inline">MD</span>
                         </button>
                         <button
                             onClick={handlePrint}
                             className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition-colors"
                         >
                             <Printer className="w-4 h-4" />
-                            <span className="hidden sm:inline">Imprimir / PDF</span>
+                            <span className="hidden sm:inline">PDF</span>
                         </button>
                     </div>
                 </div>
             </header>
 
+            {/* Hero */}
+            <motion.section
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="relative py-20 px-4 text-center"
+            >
+                <div className="max-w-4xl mx-auto">
+                    <motion.div
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                        className="mb-8"
+                    >
+                        <Image src="/logo-ta.png" alt="TA Consulting" width={100} height={100} priority />
+                    </motion.div>
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                        className="text-4xl md:text-6xl font-bold text-white mb-4"
+                    >
+                        Proposta Técnica
+                    </motion.h1>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className="text-xl text-blue-200 mb-8"
+                    >
+                        Documento de Acompanhamento Comercial
+                    </motion.p>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.5 }}
+                        className="flex flex-wrap justify-center gap-6"
+                    >
+                        <div className="flex items-center gap-2 text-white">
+                            <div className="w-12 h-12 bg-blue-500/20 border border-blue-400/30 rounded-lg flex items-center justify-center">
+                                <Globe className="w-5 h-5 text-blue-400" />
+                            </div>
+                            <div className="text-left">
+                                <p className="text-xs text-blue-300">3 Planos</p>
+                                <p className="font-semibold">Starter a Premium</p>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-2 text-white">
+                            <div className="w-12 h-12 bg-emerald-500/20 border border-emerald-400/30 rounded-lg flex items-center justify-center">
+                                <Clock className="w-5 h-5 text-emerald-400" />
+                            </div>
+                            <div className="text-left">
+                                <p className="text-xs text-emerald-300">Timeline</p>
+                                <p className="font-semibold">8-20 semanas</p>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-2 text-white">
+                            <div className="w-12 h-12 bg-amber-500/20 border border-amber-400/30 rounded-lg flex items-center justify-center">
+                                <Shield className="w-5 h-5 text-amber-400" />
+                            </div>
+                            <div className="text-left">
+                                <p className="text-xs text-amber-300">Suporte</p>
+                                <p className="font-semibold">SLA garantido</p>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+            </motion.section>
+
+            {/* Table of Contents */}
+            <TableOfContents sections={SECTIONS} activeSection={activeSection} />
+
             {/* Content */}
-            <main className="max-w-5xl mx-auto px-4 py-8 print:p-8">
-                <article className="bg-white rounded-xl shadow-lg p-6 md:p-12 print:shadow-none print:rounded-none prose prose-slate max-w-none">
-                    <div className="mb-8 pb-8 border-b border-slate-200">
-                        <Image src="/logo-ta.png" alt="TA Consulting" width={80} height={80} priority />
-                    </div>
-
-                    <div className="whitespace-pre-wrap text-slate-800 leading-relaxed">
-                        {DOCUMENT_CONTENT}
-                    </div>
-
-                    <div className="mt-12 pt-8 border-t border-slate-200 text-center text-sm text-slate-500 print:mt-4">
-                        <p>Este documento é confidencial e destina-se exclusivamente ao uso da TA Consulting.</p>
-                        <p className="mt-1">Janeiro 2026</p>
-                    </div>
-                </article>
+            <main className="relative max-w-4xl mx-auto px-4 pb-20">
+                {SECTIONS.map((section, index) => (
+                    <SectionCard key={section.id} section={section} index={index} />
+                ))}
             </main>
 
             {/* Footer */}
-            <footer className="bg-white border-t border-slate-200 mt-12 py-6 print:hidden">
-                <div className="max-w-5xl mx-auto px-4 text-center text-sm text-slate-500">
-                    <p>TA Consulting Platform &copy; 2026 | Documento Confidencial</p>
+            <footer className="relative border-t border-white/10 py-8">
+                <div className="max-w-4xl mx-auto px-4 text-center">
+                    <p className="text-slate-400 text-sm">
+                        Este documento é confidencial e destina-se exclusivamente ao uso da TA Consulting.
+                    </p>
+                    <p className="text-slate-500 text-xs mt-2">Janeiro 2026</p>
                 </div>
             </footer>
+
+            {/* Print styles */}
+            <style jsx global>{`
+                @media print {
+                    header button, .fixed { display: none !important; }
+                    body { background: white !important; }
+                    .bg-white\\/5 { background: #f5f5f5 !important; }
+                }
+            `}</style>
         </div>
     );
 }
