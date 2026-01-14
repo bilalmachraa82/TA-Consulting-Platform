@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Download, Printer, FileText, Check, X, Crown, Star, Award, Clock, Shield, Target, Globe, Database, Lightbulb, AlertTriangle, ChevronRight, Users, TrendingUp, Play, Mail, Building2, Zap } from 'lucide-react';
 import Link from 'next/link';
@@ -9,7 +10,14 @@ import Image from 'next/image';
 // PROPOSTA COMERCIAL v3 - Focada em VALOR para o CLIENTE
 // ============================================================================
 
-const SECTIONS = [
+const SECTIONS: Array<{
+    id: string;
+    title: string;
+    subtitle: string;
+    content: React.ReactNode;
+    badge?: string;
+    color?: string;
+}> = [
     {
         id: 'hero',
         title: 'Proposta Comercial v6',
@@ -384,7 +392,7 @@ const SECTIONS = [
     }
 ];
 
-const colorMap = {
+const colorMap: Record<string, { bg: string; text: string; border: string; bgLight: string }> = {
     blue: { bg: 'bg-blue-500', text: 'text-blue-400', border: 'border-blue-400', bgLight: 'bg-blue-500/20' },
     emerald: { bg: 'bg-emerald-500', text: 'text-emerald-400', border: 'border-emerald-400', bgLight: 'bg-emerald-500/20' },
     orange: { bg: 'bg-orange-500', text: 'text-orange-400', border: 'border-orange-400', bgLight: 'bg-orange-500/20' },
@@ -392,7 +400,7 @@ const colorMap = {
     cyan: { bg: 'bg-cyan-500', text: 'text-cyan-400', border: 'border-cyan-400', bgLight: 'bg-cyan-500/20' },
 };
 
-function SectionCard({ section, index }) {
+function SectionCard({ section, index }: { section: typeof SECTIONS[0]; index: number }) {
     const colors = colorMap[section.color] || colorMap.blue;
 
     return (
