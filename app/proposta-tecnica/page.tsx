@@ -24,8 +24,8 @@ const SECTIONS: Array<{
         subtitle: 'Plataforma de Inteligência Europeia',
         content: (
             <div className="flex flex-col justify-center items-center h-full text-center px-8">
-                <div className="mb-6">
-                    <Image src="/logo-ta.png" alt="TA Consulting" width={80} height={80} priority />
+                <div className="mb-8">
+                    <Image src="/logo-ta.png" alt="TA Consulting" width={120} height={120} priority />
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
                     Transforme Avisos em <span className="text-amber-400">Candidaturas</span>
@@ -134,7 +134,6 @@ const SECTIONS: Array<{
                         <div className="flex items-center gap-2 mb-3">
                             <Sparkles className="w-6 h-6 text-violet-400" />
                             <h4 className="font-bold text-white text-lg">AI Writer Incluído</h4>
-                            <span className="ml-auto text-xs bg-violet-500 px-2 py-1 rounded text-white text-xs font-bold">NOVO</span>
                         </div>
                         <p className="text-violet-100 mb-2">Primeiro rascunho gerado automaticamente</p>
                         <ul className="space-y-1 text-violet-200 text-sm">
@@ -247,92 +246,143 @@ const SECTIONS: Array<{
         title: 'Modelo de Duas Fases',
         subtitle: 'Baixo risco, alinhado com sucesso',
         content: (
-            <div className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                    {/* Fase 1 */}
-                    <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-600/50 rounded-xl p-6 shadow-xl">
-                        <div className="flex items-center justify-between mb-4">
-                            <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
-                                    <span className="text-white font-bold text-xl">1</span>
-                                </div>
-                                <div>
-                                    <h3 className="text-xl font-bold text-white">FASE 1</h3>
-                                    <p className="text-blue-200 text-sm">Imediato</p>
-                                </div>
+            <div className="space-y-8">
+                {/* Fase 1 - Full Width Card */}
+                <div className="bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-8 shadow-xl">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
+                        <div className="flex items-center gap-4">
+                            <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg">
+                                <span className="text-white font-bold text-2xl">1</span>
                             </div>
-                            <div className="text-right">
-                                <div className="text-3xl font-bold text-white">€4.500</div>
-                                <div className="text-blue-300 text-sm">+ IVA</div>
+                            <div>
+                                <h3 className="text-2xl font-bold text-white">FASE 1</h3>
+                                <p className="text-blue-300">Plataforma Core • Início Imediato</p>
                             </div>
                         </div>
-
-                        <div className="space-y-3 mb-4">
-                            <p className="text-blue-100 font-semibold">Entregamos:</p>
-                            <ul className="space-y-2 text-sm text-blue-100">
-                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />Avisos em tempo real (6 fontes)</li>
-                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />Matching inteligente por região e tipo</li>
-                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />Chat com 291 candidaturas históricas</li>
-                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />AI Writer para rascunhos automáticos</li>
-                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />Export CSV para Bitrix</li>
-                            </ul>
-                        </div>
-
-                        <div className="text-sm text-blue-200">
-                            <strong className="text-white">Timeline:</strong> 10 semanas
+                        <div className="text-right">
+                            <div className="text-4xl font-bold text-white">€4.500</div>
+                            <div className="text-blue-300">+ IVA • Pagamento único</div>
                         </div>
                     </div>
 
-                    {/* Arrow */}
-                    <div className="flex items-center justify-center">
-                        <Crown className="w-8 h-8 text-amber-400" />
-                    </div>
-
-                    {/* Fase 2 */}
-                    <div className="bg-gradient-to-br from-amber-900/40 via-amber-800/30 to-amber-900/40 backdrop-blur-sm border border-amber-500/30 rounded-xl p-6 relative shadow-xl">
-                        <div className="absolute -top-2 -right-2 bg-amber-500/40 text-amber-100 text-xs px-3 py-1 rounded-full font-bold flex items-center gap-1 backdrop-blur-sm">
-                            <Crown className="w-3 h-3" />
-                            PREMIUM
-                        </div>
-
-                        <div className="flex items-center justify-between mb-4">
-                            <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center shadow-lg">
-                                    <span className="text-white font-bold text-xl">2</span>
+                    <div className="grid md:grid-cols-5 gap-4">
+                        <div className="md:col-span-3">
+                            <p className="text-blue-200 font-semibold mb-3">O que entregamos:</p>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div className="flex items-start gap-2">
+                                    <Check className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-blue-100 text-sm">Avisos em tempo real (6 fontes)</span>
                                 </div>
-                                <div>
-                                    <h3 className="text-xl font-bold text-white">FASE 2</h3>
-                                    <p className="text-amber-200 text-sm">Se aprovado</p>
+                                <div className="flex items-start gap-2">
+                                    <Check className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-blue-100 text-sm">Matching inteligente (NUT + TIP)</span>
+                                </div>
+                                <div className="flex items-start gap-2">
+                                    <Check className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-blue-100 text-sm">Chat com 291 candidaturas</span>
+                                </div>
+                                <div className="flex items-start gap-2">
+                                    <Check className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-blue-100 text-sm">AI Writer para rascunhos</span>
+                                </div>
+                                <div className="flex items-start gap-2">
+                                    <Check className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-blue-100 text-sm">Export CSV para Bitrix</span>
                                 </div>
                             </div>
-                            <div className="text-right">
-                                <div className="text-3xl font-bold text-white">€13.500</div>
-                                <div className="text-amber-300 text-sm">+ IVA</div>
+                        </div>
+                        <div className="md:col-span-2 bg-blue-500/20 border border-blue-400/30 rounded-xl p-4 flex flex-col justify-center">
+                            <div className="text-center">
+                                <Clock className="w-8 h-8 text-blue-400 mx-auto mb-2" />
+                                <div className="text-2xl font-bold text-white mb-1">10 semanas</div>
+                                <div className="text-blue-200 text-sm">até Go-Live</div>
+                                <div className="mt-3 pt-3 border-t border-blue-400/30 text-blue-200 text-xs">
+                                    Retainer: €350/mês + IVA
+                                </div>
                             </div>
-                        </div>
-
-                        <div className="space-y-3 mb-4">
-                            <p className="text-amber-200 font-semibold">Entregamos:</p>
-                            <ul className="space-y-2 text-sm text-amber-100">
-                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />AI Writer Premium (templates + validação)</li>
-                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />Marketing Mix AI</li>
-                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />Website auto-update</li>
-                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />Integração Bitrix completa</li>
-                            </ul>
-                        </div>
-
-                        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center">
-                            <p className="text-amber-200 text-sm"><strong>Trigger:</strong> 1ª candidatura aprovada</p>
                         </div>
                     </div>
                 </div>
 
-                <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-5">
-                    <h3 className="font-bold text-white mb-3 flex items-center gap-2">
-                        <Shield className="w-5 h-5 text-emerald-400" />
-                        Vantagem do Modelo
-                    </h3>
-                    <p className="text-emerald-100">Partilhamos o risco do sucesso. Se a candidatura não for aprovada, fica apenas pelo valor da Fase 1. A Fase 2 só é ativada se o projeto tiver sucesso.</p>
+                {/* Connector Arrow */}
+                <div className="flex items-center justify-center">
+                    <div className="flex flex-col items-center gap-2">
+                        <div className="w-0.5 h-8 bg-gradient-to-b from-slate-600 to-amber-600"></div>
+                        <Crown className="w-10 h-10 text-amber-400" />
+                        <div className="w-0.5 h-8 bg-gradient-to-b from-amber-600 to-slate-600"></div>
+                    </div>
+                </div>
+
+                {/* Fase 2 - Full Width Card */}
+                <div className="bg-gradient-to-br from-amber-900/50 via-amber-800/40 to-amber-900/50 backdrop-blur-sm border border-amber-500/40 rounded-2xl p-8 shadow-xl relative">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-500/50 text-amber-100 text-sm px-4 py-1.5 rounded-full font-bold flex items-center gap-2 backdrop-blur-sm border border-amber-400/50">
+                        <Crown className="w-4 h-4" />
+                        PREMIUM
+                    </div>
+
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6 mt-2">
+                        <div className="flex items-center gap-4">
+                            <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-500 rounded-2xl flex items-center justify-center shadow-lg">
+                                <span className="text-white font-bold text-2xl">2</span>
+                            </div>
+                            <div>
+                                <h3 className="text-2xl font-bold text-white">FASE 2</h3>
+                                <p className="text-amber-300">Premium Expansion • Opcional</p>
+                            </div>
+                        </div>
+                        <div className="text-right">
+                            <div className="text-4xl font-bold text-white">€13.500</div>
+                            <div className="text-amber-300">+ IVA • Apenas se aprovado</div>
+                        </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-5 gap-4">
+                        <div className="md:col-span-3">
+                            <p className="text-amber-200 font-semibold mb-3">Evolução do sistema:</p>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div className="flex items-start gap-2">
+                                    <Check className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-amber-100 text-sm">AI Writer Premium (templates + validação)</span>
+                                </div>
+                                <div className="flex items-start gap-2">
+                                    <Check className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-amber-100 text-sm">Marketing Mix AI</span>
+                                </div>
+                                <div className="flex items-start gap-2">
+                                    <Check className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-amber-100 text-sm">Website auto-update</span>
+                                </div>
+                                <div className="flex items-start gap-2">
+                                    <Check className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
+                                    <span className="text-amber-100 text-sm">Integração Bitrix completa</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="md:col-span-2 bg-amber-500/20 border border-amber-400/30 rounded-xl p-4 flex flex-col justify-center">
+                            <div className="text-center">
+                                <Shield className="w-8 h-8 text-amber-400 mx-auto mb-2" />
+                                <div className="text-lg font-bold text-white mb-1">Trigger</div>
+                                <div className="text-amber-200 text-sm mb-3">1ª candidatura aprovada</div>
+                                <div className="pt-3 border-t border-amber-400/30">
+                                    <div className="text-xs text-amber-300 mb-1">TOTAL DO PROJETO</div>
+                                    <div className="text-xl font-bold text-white">€18.000 + IVA</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Vantagem */}
+                <div className="bg-emerald-500/20 border border-emerald-400/40 rounded-2xl p-6">
+                    <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-emerald-500/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <Shield className="w-6 h-6 text-emerald-400" />
+                        </div>
+                        <div>
+                            <h3 className="font-bold text-white text-lg mb-2">Risco Partilhado</h3>
+                            <p className="text-emerald-100">Se a candidatura não for aprovada, fica apenas pelo valor da Fase 1. A Fase 2 só é ativada se o projeto tiver sucesso — partilhamos o risco do convosco.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
