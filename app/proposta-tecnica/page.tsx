@@ -43,8 +43,8 @@ const SECTIONS: Array<{
                         <div className="text-xs">Candidaturas de Sucesso</div>
                     </div>
                     <div className="text-center">
-                        <div className="text-3xl font-bold text-white">10</div>
-                        <div className="text-xs">Semanas</div>
+                        <div className="text-3xl font-bold text-white">6</div>
+                        <div className="text-xs">Fontes de Fundos</div>
                     </div>
                 </div>
             </div>
@@ -97,9 +97,8 @@ const SECTIONS: Array<{
                         </div>
                         <p className="text-blue-100 mb-2">Todos os avisos de fundos europeus num só lugar</p>
                         <ul className="space-y-1 text-blue-200 text-sm">
-                            <li>• Portugal 2030</li>
-                            <li>• PRR - Plano de Recuperação</li>
-                            <li>• PEPAC</li>
+                            <li>• Portugal 2030, PRR, PEPAC, PÖPAC</li>
+                            <li>• MAR 2020, Competitividade</li>
                             <li>• Atualizado a cada 6h</li>
                         </ul>
                     </div>
@@ -251,11 +250,11 @@ const SECTIONS: Array<{
             <div className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                     {/* Fase 1 */}
-                    <div className="bg-gradient-to-br from-blue-600 to-blue-800 border-2 border-blue-400 rounded-xl p-6">
+                    <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-slate-600/50 rounded-xl p-6 shadow-xl">
                         <div className="flex items-center justify-between mb-4">
                             <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                                    <span className="text-blue-600 font-bold text-xl">1</span>
+                                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                                    <span className="text-white font-bold text-xl">1</span>
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold text-white">FASE 1</h3>
@@ -271,7 +270,7 @@ const SECTIONS: Array<{
                         <div className="space-y-3 mb-4">
                             <p className="text-blue-100 font-semibold">Entregamos:</p>
                             <ul className="space-y-2 text-sm text-blue-100">
-                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />Avisos em tempo real (PT2030, PRR, PEPAC)</li>
+                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />Avisos em tempo real (6 fontes)</li>
                                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />Matching inteligente por região e tipo</li>
                                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />Chat com 291 candidaturas históricas</li>
                                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />AI Writer para rascunhos automáticos</li>
@@ -290,30 +289,30 @@ const SECTIONS: Array<{
                     </div>
 
                     {/* Fase 2 */}
-                    <div className="bg-gradient-to-br from-amber-500 via-yellow-600 to-amber-700 border-2 border-amber-400 rounded-xl p-6 relative">
-                        <div className="absolute -top-2 -right-2 bg-amber-400 text-amber-900 text-xs px-3 py-1 rounded-full font-bold flex items-center gap-1">
+                    <div className="bg-gradient-to-br from-amber-900/40 via-amber-800/30 to-amber-900/40 backdrop-blur-sm border border-amber-500/30 rounded-xl p-6 relative shadow-xl">
+                        <div className="absolute -top-2 -right-2 bg-amber-500/40 text-amber-100 text-xs px-3 py-1 rounded-full font-bold flex items-center gap-1 backdrop-blur-sm">
                             <Crown className="w-3 h-3" />
                             PREMIUM
                         </div>
 
                         <div className="flex items-center justify-between mb-4">
                             <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                                    <span className="text-amber-600 font-bold text-xl">2</span>
+                                <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center shadow-lg">
+                                    <span className="text-white font-bold text-xl">2</span>
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold text-white">FASE 2</h3>
-                                    <p className="text-amber-100 text-sm">Se aprovado</p>
+                                    <p className="text-amber-200 text-sm">Se aprovado</p>
                                 </div>
                             </div>
                             <div className="text-right">
                                 <div className="text-3xl font-bold text-white">€13.500</div>
-                                <div className="text-amber-200 text-sm">+ IVA</div>
+                                <div className="text-amber-300 text-sm">+ IVA</div>
                             </div>
                         </div>
 
                         <div className="space-y-3 mb-4">
-                            <p className="text-amber-100 font-semibold">Entregamos:</p>
+                            <p className="text-amber-200 font-semibold">Entregamos:</p>
                             <ul className="space-y-2 text-sm text-amber-100">
                                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />AI Writer Premium (templates + validação)</li>
                                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />Marketing Mix AI</li>
@@ -322,7 +321,7 @@ const SECTIONS: Array<{
                             </ul>
                         </div>
 
-                        <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 text-center">
+                        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 text-center">
                             <p className="text-amber-200 text-sm"><strong>Trigger:</strong> 1ª candidatura aprovada</p>
                         </div>
                     </div>
@@ -394,7 +393,7 @@ const SECTIONS: Array<{
                             </div>
                             <div>
                                 <h4 className="font-bold text-white mb-1">Aviso Publicado</h4>
-                                <p className="text-blue-100 text-sm">Portugal 2030, PRR ou PEPAC publica um novo aviso. Sistema detecta em até 6h.</p>
+                                <p className="text-blue-100 text-sm">Portugal 2030, PRR, PEPAC, PÖPAC, MAR 2020 ou Competitividade publica um novo aviso. Sistema detecta em até 6h.</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-4">
@@ -440,7 +439,7 @@ const SECTIONS: Array<{
                     <div className="bg-red-500/20 border border-red-400/30 rounded-xl p-5">
                         <h3 className="font-bold text-white mb-3">Antes</h3>
                         <ul className="space-y-2 text-sm text-red-200">
-                            <li>• Pesquisa manual em 3+ portais</li>
+                            <li>• Pesquisa manual em 6+ portais</li>
                             <li>• Cruzamento manual de elegibilidades</li>
                             <li>• Candidaturas escritas do zero</li>
                             <li>• Horas de trabalho repetitivo</li>
