@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowLeft, Download, Printer, FileText, Check, X, Crown, Star, Award, Clock, Shield, Target, Globe, Database, Lightbulb, AlertTriangle, ChevronRight, Users, TrendingUp, Play, Mail } from 'lucide-react';
+import { ArrowLeft, Download, Printer, FileText, Check, X, Crown, Star, Award, Clock, Shield, Target, Globe, Database, Lightbulb, AlertTriangle, ChevronRight, Users, TrendingUp, Play, Mail, Building2, Zap } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
