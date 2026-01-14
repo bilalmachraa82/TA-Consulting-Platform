@@ -182,20 +182,20 @@ const SLIDES = [
     {
         id: 'fase1-scope',
         title: 'Fase 1 - O Que Entregamos',
-        subtitle: '€4.500 + IVA • 8 Semanas',
+        subtitle: '€4.500 + IVA • 10 Semanas',
         color: 'blue',
         badge: 'FASE 1',
         content: (
             <div className="px-12 md:px-24 h-full flex flex-col justify-center">
                 <h2 className="text-5xl font-bold text-white mb-10">Scope Fase 1 - Motor de Oportunidades</h2>
 
-                <div className="grid md:grid-cols-3 gap-6 mb-10">
+                <div className="grid md:grid-cols-2 gap-6 mb-8">
                     <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-6">
                         <div className="flex items-center gap-3 mb-4">
                             <Globe className="w-8 h-8 text-blue-400" />
                             <h4 className="font-bold text-white text-xl">Scraping 3 Portais</h4>
                         </div>
-                        <ul className="space-y-3 text-blue-100">
+                        <ul className="space-y-2 text-blue-100">
                             <li className="flex items-center gap-2"><Check className="w-5 h-5 text-emerald-400" /> PT2030 (abertos + planeados)</li>
                             <li className="flex items-center gap-2"><Check className="w-5 h-5 text-emerald-400" /> PRR</li>
                             <li className="flex items-center gap-2"><Check className="w-5 h-5 text-emerald-400" /> PEPAC</li>
@@ -208,23 +208,40 @@ const SLIDES = [
                             <Target className="w-8 h-8 text-emerald-400" />
                             <h4 className="font-bold text-white text-xl">Matching NUT+TIP</h4>
                         </div>
-                        <ul className="space-y-3 text-blue-100">
+                        <ul className="space-y-2 text-blue-100">
                             <li className="flex items-center gap-2"><Check className="w-5 h-5 text-emerald-400" /> NUT (Norte, Centro, Lisboa...)</li>
                             <li className="flex items-center gap-2"><Check className="w-5 h-5 text-emerald-400" /> TIP (IPSS, Associação, Poder Local)</li>
                             <li className="flex items-center gap-2"><Check className="w-5 h-5 text-emerald-400" /> Contador de empresas compatíveis</li>
                             <li className="flex items-center gap-2"><Check className="w-5 h-5 text-blue-400" /> CAE como fallback (5% dos avisos)</li>
                         </ul>
                     </div>
+                </div>
 
+                <div className="grid md:grid-cols-2 gap-6 mb-8">
                     <div className="bg-violet-500/20 border border-violet-400/30 rounded-xl p-6">
                         <div className="flex items-center gap-3 mb-4">
                             <Database className="w-8 h-8 text-violet-400" />
                             <h4 className="font-bold text-white text-xl">RAG Interno</h4>
                         </div>
-                        <ul className="space-y-3 text-blue-100">
+                        <ul className="space-y-2 text-blue-100">
                             <li className="flex items-center gap-2"><Check className="w-5 h-5 text-emerald-400" /> Index 291 candidaturas</li>
                             <li className="flex items-center gap-2"><Check className="w-5 h-5 text-emerald-400" /> Chatbot para perguntas</li>
                             <li className="flex items-center gap-2"><Check className="w-5 h-5 text-emerald-400" /> Pesquisa semântica</li>
+                        </ul>
+                    </div>
+
+                    <div className="bg-gradient-to-br from-violet-500/30 to-purple-500/20 border-2 border-violet-400/50 rounded-xl p-6">
+                        <div className="flex items-center gap-3 mb-4">
+                            <Sparkles className="w-8 h-8 text-violet-400" />
+                            <h4 className="font-bold text-white text-xl">AI Writer V1 (Básico)</h4>
+                            <span className="ml-auto text-xs bg-violet-500 px-3 py-1 rounded-full text-white">NOVO</span>
+                        </div>
+                        <p className="text-violet-200 mb-3">Rascunhos automáticos baseados nas 291 candidaturas históricas</p>
+                        <ul className="space-y-2 text-blue-100 text-sm">
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Upload de aviso (URL ou PDF)</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Seleção de empresa do Bitrix</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Geração de rascunho simples</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Respeito de limites de caracteres</li>
                         </ul>
                     </div>
                 </div>
@@ -235,11 +252,10 @@ const SLIDES = [
                             <Zap className="w-6 h-6 text-blue-400" />
                             Interface Limpa
                         </h4>
-                        <ul className="space-y-3 text-blue-100">
+                        <ul className="space-y-2 text-blue-100 text-sm">
                             <li className="flex items-center gap-2"><Check className="w-5 h-5 text-emerald-400" /> Lista de avisos com filtros</li>
                             <li className="flex items-center gap-2"><Check className="w-5 h-5 text-emerald-400" /> Colunas: NUT, TIP, Contador</li>
                             <li className="flex items-center gap-2"><Check className="w-5 h-5 text-emerald-400" /> Filtro "Interessa/Não Interessa"</li>
-                            <li className="flex items-center gap-2"><Check className="w-5 h-5 text-emerald-400" /> Resumo do aviso ao clicar</li>
                             <li className="flex items-center gap-2"><Check className="w-5 h-5 text-emerald-400" /> Export CSV para Bitrix</li>
                         </ul>
                     </div>
@@ -249,10 +265,9 @@ const SLIDES = [
                             <X className="w-6 h-6 text-red-400" />
                             O Que NÃO Inclui
                         </h4>
-                        <ul className="space-y-3 text-blue-200">
+                        <ul className="space-y-2 text-blue-200 text-sm">
                             <li className="flex items-center gap-2"><X className="w-4 h-4 text-red-400" /> Dashboard KPIs (Power BI já faz)</li>
                             <li className="flex items-center gap-2"><X className="w-4 h-4 text-red-400" /> Chatbot público para clientes</li>
-                            <li className="flex items-center gap-2"><X className="w-4 h-4 text-red-400" /> AI Writer (Fase 2)</li>
                             <li className="flex items-center gap-2"><X className="w-4 h-4 text-red-400" /> Email Drip</li>
                         </ul>
                     </div>
@@ -268,61 +283,85 @@ const SLIDES = [
         badge: 'UPSELL',
         content: (
             <div className="px-12 md:px-24 h-full flex flex-col justify-center">
-                <h2 className="text-5xl font-bold text-white mb-6">Fase 2: Plataforma Completa</h2>
-                <p className="text-xl text-blue-200 mb-10">Se a vossa candidatura interna for aprovada, expandimos para a plataforma completa.</p>
+                <h2 className="text-5xl font-bold text-white mb-4">Fase 2: Evolução Natural</h2>
+                <p className="text-xl text-blue-200 mb-8">Se a vossa candidatura interna for aprovada, expandimos para a plataforma completa.</p>
 
-                <div className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 border-2 border-orange-500/50 rounded-xl p-8 mb-10">
-                    <div className="flex items-center gap-6 mb-6">
+                <div className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 border-2 border-orange-500/50 rounded-xl p-6 mb-8">
+                    <div className="flex items-center gap-6">
                         <Crown className="w-12 h-12 text-orange-400" />
                         <div>
-                            <p className="text-3xl font-bold text-white">Investimento Adicional: €13.500 + IVA</p>
-                            <p className="text-orange-200 text-xl mt-2">TOTAL DO PROJETO: €18.000 + IVA</p>
+                            <p className="text-3xl font-bold text-white">€13.500 + IVA adicionais</p>
+                            <p className="text-orange-200 text-xl mt-1">TOTAL DO PROJETO: €18.000 + IVA</p>
                         </div>
                     </div>
                 </div>
 
-                <h3 className="text-3xl font-bold text-white mb-8">Deliverables Fase 2:</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">Deliverables Fase 2 - Evolução do V1:</h3>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-                        <h4 className="font-bold text-white mb-4 flex items-center gap-3 text-xl">
-                            <FileText className="w-6 h-6 text-orange-400" />
-                            AI Writer
+                <div className="grid md:grid-cols-2 gap-5 mb-6">
+                    <div className="bg-gradient-to-br from-violet-500/30 to-purple-500/20 border-2 border-violet-400/50 rounded-xl p-5">
+                        <h4 className="font-bold text-white mb-3 flex items-center gap-3 text-lg">
+                            <Sparkles className="w-6 h-6 text-violet-400" />
+                            AI Writer V2 (Premium)
                         </h4>
-                        <p className="text-blue-100">Gera rascunhos de memórias descritivas baseado nas 291 candidaturas históricas.</p>
+                        <p className="text-violet-200 text-sm mb-3">Evolução natural do V1 com templates avançados</p>
+                        <ul className="space-y-1 text-blue-100 text-sm">
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Templates por tipo de aviso</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Validação de regras (caracteres)</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> AI Critic (revisão automática)</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Export Word/PDF</li>
+                        </ul>
                     </div>
 
-                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-                        <h4 className="font-bold text-white mb-4 flex items-center gap-3 text-xl">
-                            <BarChart3 className="w-6 h-6 text-orange-400" />
-                            Post-Award Management
-                        </h4>
-                        <p className="text-blue-100">Dashboard de projetos aprovados, milestones, alertas de reporting.</p>
-                    </div>
-
-                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-                        <h4 className="font-bold text-white mb-4 flex items-center gap-3 text-xl">
-                            <TrendingUp className="w-6 h-6 text-orange-400" />
+                    <div className="bg-gradient-to-br from-emerald-500/30 to-green-500/20 border-2 border-emerald-400/50 rounded-xl p-5">
+                        <h4 className="font-bold text-white mb-3 flex items-center gap-3 text-lg">
+                            <TrendingUp className="w-6 h-6 text-emerald-400" />
                             Marketing Mix AI
                         </h4>
-                        <p className="text-blue-100">Recomendações de canais e análise de performance de campanhas.</p>
+                        <p className="text-emerald-200 text-sm mb-3">Substitui o Excel manual do Fernando</p>
+                        <ul className="space-y-1 text-blue-100 text-sm">
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sugestão automática de canais</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Análise de performance</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Segmentos propensos</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Flag "em campanha" auto</li>
+                        </ul>
                     </div>
 
-                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-                        <h4 className="font-bold text-white mb-4 flex items-center gap-3 text-xl">
-                            <Globe className="w-6 h-6 text-orange-400" />
+                    <div className="bg-gradient-to-br from-blue-500/30 to-cyan-500/20 border-2 border-blue-400/50 rounded-xl p-5">
+                        <h4 className="font-bold text-white mb-3 flex items-center gap-3 text-lg">
+                            <Globe className="w-6 h-6 text-blue-400" />
                             Website Auto-Update
                         </h4>
-                        <p className="text-blue-100">Sincronização automática de avisos no website da TA Consulting.</p>
+                        <p className="text-blue-200 text-sm mb-3">Elimina trabalho manual da Paula</p>
+                        <ul className="space-y-1 text-blue-100 text-sm">
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sync automático de avisos</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Atualização de datas em tempo real</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Remoção de avisos fechados</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> A Paula apenas valida</li>
+                        </ul>
+                    </div>
+
+                    <div className="bg-gradient-to-br from-amber-500/30 to-orange-500/20 border-2 border-amber-400/50 rounded-xl p-5">
+                        <h4 className="font-bold text-white mb-3 flex items-center gap-3 text-lg">
+                            <Users className="w-6 h-6 text-amber-400" />
+                            Bitrix Write Integration
+                        </h4>
+                        <p className="text-amber-200 text-sm mb-3">De read-only para escrita direta</p>
+                        <ul className="space-y-1 text-blue-100 text-sm">
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Criação de segmentos</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Atualização de empresas</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sync bidirecional</li>
+                            <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Fim do CSV import</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-6 mt-8">
-                    <h4 className="font-bold text-white mb-4 flex items-center gap-3 text-xl">
+                <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-5">
+                    <h4 className="font-bold text-white mb-3 flex items-center gap-3 text-lg">
                         <Shield className="w-6 h-6 text-emerald-400" />
                         RISCO ZERO
                     </h4>
-                    <p className="text-emerald-100 text-lg">Se a candidatura não for aprovada, ficam apenas com o valor da Fase 1. Partilham o risco do sucesso.</p>
+                    <p className="text-emerald-100">Se a candidatura não for aprovada, ficam apenas com o valor da Fase 1. Partilhamos o risco do sucesso.</p>
                 </div>
             </div>
         )
@@ -379,11 +418,15 @@ const SLIDES = [
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-                                    <span>Sem 5-6: RAG + Testes</span>
+                                    <span>Sem 5-7: RAG + AI Writer V1</span>
+                                </div>
+                                <div className="flex items-start gap-3">
+                                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                                    <span>Sem 8-9: Testes end-to-end</span>
                                 </div>
                                 <div className="flex items-start gap-3">
                                     <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2"></div>
-                                    <span>Sem 7-8: Deploy + Formação</span>
+                                    <span>Sem 10: Deploy + Formação</span>
                                 </div>
                             </div>
                         </div>
@@ -417,11 +460,11 @@ const SLIDES = [
                         <div className="space-y-3">
                             <h4 className="font-bold text-white text-lg mb-3">Novos Deliverables:</h4>
                             <ul className="space-y-2 text-blue-100">
-                                <li className="flex items-center gap-2"><Check className="w-5 h-5 text-orange-400" /> AI Writer (memórias)</li>
-                                <li className="flex items-center gap-2"><Check className="w-5 h-5 text-orange-400" /> Post-Award Management</li>
+                                <li className="flex items-center gap-2"><Check className="w-5 h-5 text-orange-400" /> AI Writer V2 (templates + validação)</li>
                                 <li className="flex items-center gap-2"><Check className="w-5 h-5 text-orange-400" /> Marketing Mix AI</li>
                                 <li className="flex items-center gap-2"><Check className="w-5 h-5 text-orange-400" /> Website Auto-Update</li>
-                                <li className="flex items-center gap-2"><Check className="w-5 h-5 text-orange-400" /> AI Critic</li>
+                                <li className="flex items-center gap-2"><Check className="w-5 h-5 text-orange-400" /> Bitrix Write Integration</li>
+                                <li className="flex items-center gap-2"><Check className="w-5 h-5 text-orange-400" /> AI Critic automático</li>
                             </ul>
                         </div>
                     </div>
@@ -452,7 +495,7 @@ const SLIDES = [
                         </div>
                         <div className="flex items-center gap-4 text-blue-100 text-xl">
                             <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center font-bold text-white">3</div>
-                            <span>Entrega Fase 1 em 8 semanas</span>
+                            <span>Entrega Fase 1 em 10 semanas</span>
                         </div>
                         <div className="flex items-center gap-4 text-blue-100 text-xl">
                             <div className="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center font-bold text-white">4</div>

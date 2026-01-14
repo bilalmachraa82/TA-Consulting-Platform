@@ -2,12 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Download, Printer, FileText, Check, X, Crown, Star, Award, Clock, Shield, Target, Globe, Database, Lightbulb, AlertTriangle, ChevronRight, Users, TrendingUp, Play, Mail, Building2, Zap } from 'lucide-react';
+import { ArrowLeft, Download, Printer, FileText, Check, X, Crown, Star, Award, Clock, Shield, Target, Globe, Database, Lightbulb, AlertTriangle, ChevronRight, Users, TrendingUp, Play, Mail, Building2, Zap, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 // ============================================================================
-// PROPOSTA COMERCIAL v3 - Focada em VALOR para o CLIENTE
+// PROPOSTA COMERCIAL v6 - Focada em VALOR para o CLIENTE
 // ============================================================================
 
 const SECTIONS: Array<{
@@ -39,11 +39,11 @@ const SECTIONS: Array<{
                         <div className="text-xs">Empresas</div>
                     </div>
                     <div className="text-center">
-                        <div className="text-3xl font-bold text-white">95%</div>
-                        <div className="text-xs">Avisos Cobertos</div>
+                        <div className="text-3xl font-bold text-white">291</div>
+                        <div className="text-xs">Candidaturas Históricas</div>
                     </div>
                     <div className="text-center">
-                        <div className="text-3xl font-bold text-white">8</div>
+                        <div className="text-3xl font-bold text-white">10</div>
                         <div className="text-xs">Semanas</div>
                     </div>
                 </div>
@@ -102,13 +102,13 @@ const SECTIONS: Array<{
     {
         id: 'fase1',
         title: 'FASE 1 - O Motor',
-        subtitle: '€4.500 + IVA • Entrega em 8 semanas',
+        subtitle: '€4.500 + IVA • Entrega em 10 semanas',
         badge: 'BASE',
         content: (
             <div className="space-y-6">
                 <div className="bg-gradient-to-r from-blue-500/30 to-blue-600/30 border border-blue-400/50 rounded-xl p-6 mb-6">
                     <div className="text-4xl font-bold text-white mb-2">€4.500<span className="text-lg font-normal text-blue-300"> + IVA</span></div>
-                    <p className="text-blue-100 text-lg">Pagamento único • Setup completo em 8 semanas</p>
+                    <p className="text-blue-100 text-lg">Pagamento único • Setup completo em 10 semanas</p>
                 </div>
 
                 <h3 className="text-xl font-bold text-white mb-4">O que recebe:</h3>
@@ -118,29 +118,43 @@ const SECTIONS: Array<{
                             <Database className="w-5 h-5 text-blue-400" />
                             <h4 className="font-bold text-white">Avisos em Tempo Real</h4>
                         </div>
-                        <p className="text-blue-100 text-sm">Todos os avisos de PT2030, PRR e PEPAC centralizados num só lugar. Atualizados automaticamente.</p>
+                        <p className="text-blue-100 text-sm">Todos os avisos de PT2030, PRR e PEPAC centralizados. Atualizados a cada 6h.</p>
                     </div>
                     <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-2 mb-3">
                             <Target className="w-5 h-5 text-blue-400" />
-                            <h4 className="font-bold text-white">Matching Inteligente</h4>
+                            <h4 className="font-bold text-white">Matching NUT+TIP</h4>
                         </div>
-                        <p className="text-blue-100 text-sm">Sistema que cruza avisos com as 24.000 empresas e diz quais são leads qualificados.</p>
+                        <p className="text-blue-100 text-sm">Cruza avisos com 24.000 empresas usando NUT (região) e TIP (tipo de entidade). Cobertura de 95%.</p>
                     </div>
                     <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-2 mb-3">
                             <FileText className="w-5 h-5 text-blue-400" />
-                            <h4 className="font-bold text-white">Conhecimento das 291 Candidaturas</h4>
+                            <h4 className="font-bold text-white">RAG - Chat com 291 Candidaturas</h4>
                         </div>
-                        <p className="text-blue-100 text-sm">Chat interno que responde a perguntas com base em candidaturas históricas reais.</p>
+                        <p className="text-blue-100 text-sm">Pergunte anything sobre candidaturas anteriores. O sistema encontra respostas nas 291 históricas.</p>
                     </div>
                     <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-2 mb-3">
                             <Download className="w-5 h-5 text-blue-400" />
-                            <h4 className="font-bold text-white">Export para Bitrix</h4>
+                            <h4 className="font-bold text-white">Export CSV para Bitrix</h4>
                         </div>
-                        <p className="text-blue-100 text-sm">Com um clique, export a lista de empresas para importar nos segmentos do Bitrix.</p>
+                        <p className="text-blue-100 text-sm">Um clique exporta a lista de empresas qualificadas para importar em segmentos Bitrix.</p>
                     </div>
+                </div>
+
+                <div className="bg-gradient-to-br from-violet-500/20 to-purple-500/20 border-2 border-violet-400/50 rounded-xl p-5">
+                    <div className="flex items-center gap-2 mb-3">
+                        <Sparkles className="w-5 h-5 text-violet-400" />
+                        <h4 className="font-bold text-white">AI Writer V1 (Básico) - INCLUÍDO</h4>
+                    </div>
+                    <p className="text-violet-200 text-sm mb-3">Rascunhos automáticos baseados nas 291 candidaturas históricas</p>
+                    <ul className="space-y-1 text-blue-100 text-sm">
+                        <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Upload de aviso (URL ou PDF)</li>
+                        <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Seleção de empresa do Bitrix</li>
+                        <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Geração de rascunho simples</li>
+                        <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Respeito de limites de caracteres</li>
+                    </ul>
                 </div>
 
                 <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-5">
@@ -148,14 +162,14 @@ const SECTIONS: Array<{
                         <TrendingUp className="w-5 h-5 text-emerald-400" />
                         Resultado Esperado
                     </h3>
-                    <p className="text-emerald-100">De horas de pesquisa manual a minutos. Mais leads, menos trabalho manual, oportunidades perdidas = 0.</p>
+                    <p className="text-emerald-100">De horas de pesquisa manual a minutos. Mais leads, menos trabalho manual, oportunidades perdidas = 0. Primeiros rascunhos com IA em vez de começar do zero.</p>
                 </div>
             </div>
         )
     },
     {
         id: 'fase2',
-        title: 'FASE 2 - Automação Completa',
+        title: 'FASE 2 - Evolução Natural',
         subtitle: '€13.500 + IVA • Só se candidatura aprovada',
         badge: 'UPSELL',
         content: (
@@ -168,49 +182,58 @@ const SECTIONS: Array<{
                     </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-white mb-4">O que ganha com a Fase 2:</h3>
+                <h3 className="text-xl font-bold text-white mb-4">Evolução do AI Writer e novas automações:</h3>
                 <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-orange-500/20 border border-orange-400/30 rounded-xl p-5">
+                    <div className="bg-gradient-to-br from-violet-500/20 to-purple-500/20 border-2 border-violet-400/50 rounded-xl p-5">
                         <div className="flex items-center gap-2 mb-3">
-                            <FileText className="w-5 h-5 text-orange-400" />
-                            <h4 className="font-bold text-white">Escrita Automática (AI Writer)</h4>
+                            <Sparkles className="w-5 h-5 text-violet-400" />
+                            <h4 className="font-bold text-white">AI Writer V2 (Premium)</h4>
                         </div>
-                        <p className="text-orange-100 text-sm">O sistema escreve rascunhos de candidaturas baseado nas 291 históricas. Poupa ~50% do tempo.</p>
+                        <p className="text-violet-200 text-sm mb-2">Evolução do V1 com templates avançados</p>
+                        <ul className="space-y-1 text-orange-100 text-sm">
+                            <li className="flex items-center gap-2"><Check className="w-3 h-3 text-orange-400" /> Templates por tipo de aviso</li>
+                            <li className="flex items-center gap-2"><Check className="w-3 h-3 text-orange-400" /> Validação de regras (caracteres)</li>
+                            <li className="flex items-center gap-2"><Check className="w-3 h-3 text-orange-400" /> AI Critic (revisão automática)</li>
+                            <li className="flex items-center gap-2"><Check className="w-3 h-3 text-orange-400" /> Export Word/PDF</li>
+                        </ul>
                     </div>
                     <div className="bg-orange-500/20 border border-orange-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-2 mb-3">
                             <Shield className="w-5 h-5 text-orange-400" />
-                            <h4 className="font-bold text-white">Revisão Automática (AI Critic)</h4>
+                            <h4 className="font-bold text-white">AI Critic</h4>
                         </div>
-                        <p className="text-orange-100 text-sm">Verifica consistência e sugere melhorias antes de submeter.</p>
-                    </div>
-                    <div className="bg-orange-500/20 border border-orange-400/30 rounded-xl p-5">
-                        <div className="flex items-center gap-2 mb-3">
-                            <Building2 className="w-5 h-5 text-orange-400" />
-                            <h4 className="font-bold text-white">Pós-Aprovação Automática</h4>
-                        </div>
-                        <p className="text-orange-100 text-sm">Acompanha prazos, relatórios e milestones de projetos aprovados.</p>
-                    </div>
-                    <div className="bg-orange-500/20 border border-orange-400/30 rounded-xl p-5">
-                        <div className="flex items-center gap-2 mb-3">
-                            <Globe className="w-5 h-5 text-orange-400" />
-                            <h4 className="font-bold text-white">Website Auto-Update</h4>
-                        </div>
-                        <p className="text-orange-100 text-sm">Site atualizado automaticamente com novos projetos aprovados.</p>
+                        <p className="text-orange-100 text-sm">Revisão automática que verifica consistência, sugere melhorias e compara com candidaturas aprovadas anteriormente.</p>
                     </div>
                     <div className="bg-orange-500/20 border border-orange-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-2 mb-3">
                             <Zap className="w-5 h-5 text-orange-400" />
                             <h4 className="font-bold text-white">Marketing Mix AI</h4>
                         </div>
-                        <p className="text-orange-100 text-sm">Sugestões de canais e estratégias baseadas em performance de candidaturas anteriores.</p>
+                        <p className="text-orange-100 text-sm mb-2">Substitui o Excel manual do Fernando</p>
+                        <ul className="space-y-1 text-orange-100 text-sm">
+                            <li className="flex items-center gap-2"><Check className="w-3 h-3 text-orange-400" /> Sugestão automática de canais</li>
+                            <li className="flex items-center gap-2"><Check className="w-3 h-3 text-orange-400" /> Análise de performance</li>
+                            <li className="flex items-center gap-2"><Check className="w-3 h-3 text-orange-400" /> Flag "em campanha" automático</li>
+                        </ul>
+                    </div>
+                    <div className="bg-orange-500/20 border border-orange-400/30 rounded-xl p-5">
+                        <div className="flex items-center gap-2 mb-3">
+                            <Globe className="w-5 h-5 text-orange-400" />
+                            <h4 className="font-bold text-white">Website Auto-Update</h4>
+                        </div>
+                        <p className="text-orange-100 text-sm mb-2">Elimina trabalho manual da Paula</p>
+                        <ul className="space-y-1 text-orange-100 text-sm">
+                            <li className="flex items-center gap-2"><Check className="w-3 h-3 text-orange-400" /> Sync automático de avisos</li>
+                            <li className="flex items-center gap-2"><Check className="w-3 h-3 text-orange-400" /> Atualização de datas em tempo real</li>
+                            <li className="flex items-center gap-2"><Check className="w-3 h-3 text-orange-400" /> A Paula apenas valida</li>
+                        </ul>
                     </div>
                     <div className="bg-orange-500/20 border border-orange-400/30 rounded-xl p-5">
                         <div className="flex items-center gap-2 mb-3">
                             <Database className="w-5 h-5 text-orange-400" />
-                            <h4 className="font-bold text-white">Integração Bitrix Completa</h4>
+                            <h4 className="font-bold text-white">Bitrix Write Integration</h4>
                         </div>
-                        <p className="text-orange-100 text-sm">Escrita automática no Bitrix: empresas, tarefas, atualizações.</p>
+                        <p className="text-orange-100 text-sm">De read-only para escrita direta: cria segmentos, atualiza empresas, sync bidirecional. Fim do CSV import.</p>
                     </div>
                 </div>
             </div>
@@ -247,13 +270,13 @@ const SECTIONS: Array<{
                                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />Motor de scraping + matching</li>
                                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />Interface para filtrar e avaliar avisos</li>
                                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />Chat interno com 291 candidaturas</li>
+                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />AI Writer V1 (rascunhos básicos)</li>
                                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />Export CSV para Bitrix</li>
-                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-blue-400 flex-shrink-0 mt-0.5" />Formação da equipa</li>
                             </ul>
                         </div>
 
                         <div className="text-sm text-blue-200">
-                            <strong className="text-white">Timeline:</strong> 8 semanas
+                            <strong className="text-white">Timeline:</strong> 10 semanas
                         </div>
                     </div>
 
@@ -283,12 +306,11 @@ const SECTIONS: Array<{
                         <div className="space-y-3 mb-4">
                             <p className="text-orange-100"><strong className="text-white">Entregamos:</strong></p>
                             <ul className="space-y-2 text-sm text-orange-100">
-                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />AI Writer (rascunhos automáticos)</li>
+                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />AI Writer V2 (templates + validação)</li>
                                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />AI Critic (revisão automática)</li>
-                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />Pós-aprovação automática</li>
-                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />Website auto-update</li>
                                 <li className="flex items-start gap-2"><Check className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />Marketing Mix AI</li>
-                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />Integração Bitrix completa</li>
+                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />Website auto-update</li>
+                                <li className="flex items-start gap-2"><Check className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />Bitrix Write Integration</li>
                             </ul>
                         </div>
 
@@ -311,25 +333,29 @@ const SECTIONS: Array<{
     {
         id: 'timeline',
         title: 'Timeline',
-        subtitle: '8 semanas até Go-Live',
+        subtitle: '10 semanas até Go-Live',
         content: (
             <div className="space-y-6">
-                <div className="grid md:grid-cols-4 gap-4">
-                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
+                <div className="grid md:grid-cols-5 gap-3">
+                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-4">
                         <div className="text-sm font-semibold text-blue-300 mb-2">Semana 1-2</div>
-                        <p className="text-blue-100 text-sm">Configuração e scraping</p>
+                        <p className="text-blue-100 text-sm">Scraping + Bitrix integration</p>
                     </div>
-                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
+                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-4">
                         <div className="text-sm font-semibold text-blue-300 mb-2">Semana 3-4</div>
-                        <p className="text-blue-100 text-sm">Matching e interface</p>
+                        <p className="text-blue-100 text-sm">Matching NUT/TIP + UI</p>
                     </div>
-                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-5">
-                        <div className="text-sm font-semibold text-blue-300 mb-2">Semana 5-6</div>
-                        <p className="text-blue-100 text-sm">Sistema de conhecimento e testes</p>
+                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-4">
+                        <div className="text-sm font-semibold text-blue-300 mb-2">Semana 5-7</div>
+                        <p className="text-blue-100 text-sm">RAG + AI Writer V1</p>
                     </div>
-                    <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-5">
-                        <div className="text-sm font-semibold text-emerald-300 mb-2">Semana 7-8</div>
-                        <p className="text-emerald-100 text-sm">Deploy e formação</p>
+                    <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-4">
+                        <div className="text-sm font-semibold text-blue-300 mb-2">Semana 8-9</div>
+                        <p className="text-blue-100 text-sm">Testes end-to-end</p>
+                    </div>
+                    <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-4">
+                        <div className="text-sm font-semibold text-emerald-300 mb-2">Semana 10</div>
+                        <p className="text-emerald-100 text-sm">Deploy + Formação</p>
                     </div>
                 </div>
 
@@ -338,8 +364,8 @@ const SECTIONS: Array<{
                     <ul className="space-y-2 text-sm text-blue-100">
                         <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sem 2: Primeira demo funcional</li>
                         <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sem 4: Matching operacional</li>
-                        <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sem 6: Testes finalizados</li>
-                        <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sem 8: Go-live + formação</li>
+                        <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sem 7: AI Writer V1 funcional</li>
+                        <li className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Sem 10: Go-live + formação</li>
                     </ul>
                 </div>
             </div>
@@ -348,7 +374,7 @@ const SECTIONS: Array<{
     {
         id: 'suporte',
         title: 'Suporte Contínuo',
-        subtitle: 'Após as 8 semanas',
+        subtitle: 'Após as 10 semanas',
         content: (
             <div className="space-y-6">
                 <div className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-xl p-5 mb-4">
@@ -364,6 +390,94 @@ const SECTIONS: Array<{
                         <div className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Backup diário</div>
                         <div className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Atualizações e correções</div>
                         <div className="flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Reunião mensal de revisão</div>
+                    </div>
+                </div>
+            </div>
+        )
+    },
+    {
+        id: 'user-journey',
+        title: 'User Journey',
+        subtitle: 'Como funciona na prática',
+        content: (
+            <div className="space-y-6">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                    <h3 className="text-xl font-bold text-white mb-6">Fluxo Típico - Do Aviso ao Lead</h3>
+                    <div className="space-y-4">
+                        <div className="flex items-start gap-4">
+                            <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span className="text-white font-bold text-sm">1</span>
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-white mb-1">Aviso Publicado</h4>
+                                <p className="text-blue-100 text-sm">Portugal 2030, PRR ou PEPAC publica um novo aviso. Sistema detecta em até 6h.</p>
+                            </div>
+                        </div>
+                        <div className="flex items-start gap-4">
+                            <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span className="text-white font-bold text-sm">2</span>
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-white mb-1">Matching Automático</h4>
+                                <p className="text-blue-100 text-sm">Sistema cruza NUT e TIP do aviso com 24.000 empresas. Mostra: "50 empresas compatíveis".</p>
+                            </div>
+                        </div>
+                        <div className="flex items-start gap-4">
+                            <div className="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span className="text-white font-bold text-sm">3</span>
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-white mb-1">Fernando Avalia</h4>
+                                <p className="text-blue-100 text-sm">Vê lista, filtra por "Interessa", marca para campanha. Clica "Export CSV".</p>
+                            </div>
+                        </div>
+                        <div className="flex items-start gap-4">
+                            <div className="w-8 h-8 bg-violet-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span className="text-white font-bold text-sm">4</span>
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-white mb-1">AI Writer V1 (Fase 1)</h4>
+                                <p className="text-blue-100 text-sm">Fernando seleciona aviso + empresa. Sistema gera rascunho baseado em 291 candidaturas históricas. Copia e cola.</p>
+                            </div>
+                        </div>
+                        <div className="flex items-start gap-4">
+                            <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span className="text-white font-bold text-sm">5</span>
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-white mb-1">Import para Bitrix</h4>
+                                <p className="text-blue-100 text-sm">CSV importado para segmento. Campanha criada. Leads contactados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-red-500/20 border border-red-400/30 rounded-xl p-5">
+                        <h3 className="font-bold text-white mb-3 flex items-center gap-2">
+                            <X className="w-5 h-5 text-red-400" />
+                            Antes (Manual)
+                        </h3>
+                        <ul className="space-y-2 text-sm text-red-200">
+                            <li>• Pesquisar em 3 portais manualmente</li>
+                            <li>• Verificar cada aviso individualmente</li>
+                            <li>• Cruzar com Excel mentalmente</li>
+                            <li>• Escrever candidatura do zero</li>
+                            <li>• Copy-paste para Bitrix</li>
+                        </ul>
+                    </div>
+                    <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-5">
+                        <h3 className="font-bold text-white mb-3 flex items-center gap-2">
+                            <Check className="w-5 h-5 text-emerald-400" />
+                            Depois (Automatizado)
+                        </h3>
+                        <ul className="space-y-2 text-sm text-emerald-200">
+                            <li>• Avisos aparecem automaticamente</li>
+                            <li>• Matching mostra empresas qualificadas</li>
+                            <li>• 1 clique para CSV</li>
+                            <li>• AI Writer gera rascunho</li>
+                            <li>• Foco em fechar negócio</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -522,7 +636,7 @@ export default function PropostaTecnicaPage() {
                     <p className="text-slate-400 text-sm">
                         Este documento é confidencial e destina-se exclusivamente ao uso da TA Consulting.
                     </p>
-                    <p className="text-slate-500 text-xs mt-2">Janeiro 2026 • Versão 3.0</p>
+                    <p className="text-slate-500 text-xs mt-2">Janeiro 2026 • Versão 6.0</p>
                 </div>
             </footer>
 
