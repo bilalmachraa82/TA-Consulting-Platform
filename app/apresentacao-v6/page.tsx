@@ -37,17 +37,17 @@ const SLIDES = [
                 <div className="flex items-center gap-10 text-blue-100 text-xl">
                     <div className="text-center">
                         <div className="text-6xl font-bold text-white">24k+</div>
-                        <div className="text-sm mt-2">Empresas</div>
+                        <div className="text-base mt-2">Empresas</div>
                     </div>
                     <div className="w-px h-16 bg-blue-400"></div>
                     <div className="text-center">
                         <div className="text-6xl font-bold text-white">291</div>
-                        <div className="text-sm mt-2">Candidaturas de Sucesso</div>
+                        <div className="text-base mt-2">Candidaturas de Sucesso</div>
                     </div>
                     <div className="w-px h-16 bg-blue-400"></div>
                     <div className="text-center">
                         <div className="text-6xl font-bold text-white">6</div>
-                        <div className="text-sm mt-2">Fontes de Fundos</div>
+                        <div className="text-base mt-2">Fontes de Fundos</div>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@ const SLIDES = [
                     <div className="space-y-4">
                         <div className="bg-gradient-to-r from-red-500/30 to-orange-500/30 border-l-4 border-red-500 p-4 rounded-r-xl">
                             <p className="text-lg text-white italic mb-1">"Saber quem são as empresas não é saber quem são leads."</p>
-                            <p className="text-red-300 text-xs">— Desafio atual da TA Consulting</p>
+                            <p className="text-red-300 text-sm">— Desafio atual da TA Consulting</p>
                         </div>
 
                         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4">
@@ -134,7 +134,7 @@ const SLIDES = [
                             <h4 className="font-bold text-white text-xl">1. Identificar</h4>
                         </div>
                         <p className="text-blue-100 text-base mb-2">Avisos de 6 fontes de fundos</p>
-                        <ul className="space-y-1 text-blue-200 text-sm">
+                        <ul className="space-y-1 text-blue-200 text-base">
                             <li>• PT2030, PRR, PEPAC, PÖPAC</li>
                             <li>• MAR 2020, Competitividade</li>
                             <li>• Atualizado a cada 6h</li>
@@ -147,7 +147,7 @@ const SLIDES = [
                             <h4 className="font-bold text-white text-xl">2. Qualificar</h4>
                         </div>
                         <p className="text-emerald-100 text-base mb-2">Cruza aviso com empresas compatíveis</p>
-                        <ul className="space-y-1 text-emerald-200 text-sm">
+                        <ul className="space-y-1 text-emerald-200 text-base">
                             <li>• Por região (NUT)</li>
                             <li>• Por tipo (IPSS, Associação...)</li>
                             <li>• Mostra: "50 empresas"</li>
@@ -160,7 +160,7 @@ const SLIDES = [
                             <h4 className="font-bold text-white text-xl">3. Criar</h4>
                         </div>
                         <p className="text-violet-100 text-base mb-2">Rascunhos com base em sucesso</p>
-                        <ul className="space-y-1 text-violet-200 text-sm">
+                        <ul className="space-y-1 text-violet-200 text-base">
                             <li>• 291 candidaturas como ref.</li>
                             <li>• AI Writer gera rascunho</li>
                             <li>• Economia de 50% tempo</li>
@@ -199,10 +199,10 @@ const SLIDES = [
                     <div className="bg-blue-500/20 border-2 border-blue-400/50 rounded-xl p-4">
                         <div className="flex items-center gap-2 mb-2">
                             <Globe className="w-6 h-6 text-blue-400" />
-                            <h4 className="font-bold text-white text-lg">Avisos em Tempo Real</h4>
+                            <h4 className="font-bold text-white text-xl">Avisos em Tempo Real</h4>
                         </div>
-                        <p className="text-blue-100 mb-2 text-sm">Todos os avisos de fundos europeus num só lugar</p>
-                        <ul className="space-y-1 text-blue-200 text-xs">
+                        <p className="text-blue-100 mb-2 text-base">Todos os avisos de fundos europeus num só lugar</p>
+                        <ul className="space-y-1 text-blue-200 text-sm">
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-emerald-400" /> Portugal 2030, PRR, PEPAC, PÖPAC</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-emerald-400" /> MAR 2020, Competitividade</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-emerald-400" /> Atualizado a cada 6h</li>
@@ -212,10 +212,10 @@ const SLIDES = [
                     <div className="bg-emerald-500/20 border-2 border-emerald-400/50 rounded-xl p-4">
                         <div className="flex items-center gap-2 mb-2">
                             <Target className="w-6 h-6 text-emerald-400" />
-                            <h4 className="font-bold text-white text-lg">Matching Inteligente</h4>
+                            <h4 className="font-bold text-white text-xl">Matching Inteligente</h4>
                         </div>
-                        <p className="text-emerald-100 mb-2 text-sm">Cruza cada aviso com empresas qualificadas</p>
-                        <ul className="space-y-1 text-emerald-200 text-xs">
+                        <p className="text-emerald-100 mb-2 text-base">Cruza cada aviso com empresas qualificadas</p>
+                        <ul className="space-y-1 text-emerald-200 text-sm">
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-emerald-400" /> Por região (Norte, Centro, Lisboa...)</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-emerald-400" /> Por tipo (IPSS, Associação, Poder Local...)</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-emerald-400" /> Mostra número de empresas compatíveis</li>
@@ -226,10 +226,10 @@ const SLIDES = [
                     <div className="bg-violet-500/20 border-2 border-violet-400/50 rounded-xl p-4">
                         <div className="flex items-center gap-2 mb-2">
                             <Database className="w-6 h-6 text-violet-400" />
-                            <h4 className="font-bold text-white text-lg">Conhecimento da TA</h4>
+                            <h4 className="font-bold text-white text-xl">Conhecimento da TA</h4>
                         </div>
-                        <p className="text-violet-100 mb-2 text-sm">291 candidaturas históricas sempre disponíveis</p>
-                        <ul className="space-y-1 text-violet-200 text-xs">
+                        <p className="text-violet-100 mb-2 text-base">291 candidaturas históricas sempre disponíveis</p>
+                        <ul className="space-y-1 text-violet-200 text-sm">
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-emerald-400" /> Pergunte em linguagem natural</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-emerald-400" /> Encontra respostas nas candidaturas</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-emerald-400" /> Exemplos de linguagem aprovada</li>
@@ -239,11 +239,11 @@ const SLIDES = [
                     <div className="bg-gradient-to-br from-violet-500/30 to-purple-500/20 border-2 border-violet-400/50 rounded-xl p-4">
                         <div className="flex items-center gap-2 mb-2">
                             <Sparkles className="w-6 h-6 text-violet-400" />
-                            <h4 className="font-bold text-white text-lg">AI Writer Incluído</h4>
+                            <h4 className="font-bold text-white text-xl">AI Writer Incluído</h4>
                             <span className="ml-auto text-xs bg-violet-500 px-2 py-0.5 rounded-full text-white font-bold">NOVO</span>
                         </div>
-                        <p className="text-violet-100 mb-2 text-sm">Primeiro rascunho gerado automaticamente</p>
-                        <ul className="space-y-1 text-violet-200 text-xs">
+                        <p className="text-violet-100 mb-2 text-base">Primeiro rascunho gerado automaticamente</p>
+                        <ul className="space-y-1 text-violet-200 text-sm">
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-emerald-400" /> Upload do aviso (URL ou PDF)</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-emerald-400" /> Seleciona empresa do Bitrix</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-emerald-400" /> Rascunho baseado em 291 candidaturas</li>
@@ -291,8 +291,8 @@ const SLIDES = [
                             <Sparkles className="w-5 h-5 text-violet-400" />
                             AI Writer Premium
                         </h4>
-                        <p className="text-violet-200 text-xs mb-2">Evolução do V1 com templates avançados</p>
-                        <ul className="space-y-1 text-blue-100 text-xs">
+                        <p className="text-violet-200 text-sm mb-2">Evolução do V1 com templates avançados</p>
+                        <ul className="space-y-1 text-blue-100 text-sm">
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-amber-400" /> Templates por tipo de aviso</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-amber-400" /> Validação automática de regras</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-amber-400" /> Revisão automática (AI Critic)</li>
@@ -305,8 +305,8 @@ const SLIDES = [
                             <TrendingUp className="w-5 h-5 text-emerald-400" />
                             Marketing Mix AI
                         </h4>
-                        <p className="text-emerald-200 text-xs mb-2">Automatiza decisões de campanha</p>
-                        <ul className="space-y-1 text-blue-100 text-xs">
+                        <p className="text-emerald-200 text-sm mb-2">Automatiza decisões de campanha</p>
+                        <ul className="space-y-1 text-blue-100 text-sm">
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-amber-400" /> Sugere canais (email, Facebook...)</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-amber-400" /> Análise de performance</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-amber-400" /> Identifica segmentos propensos</li>
@@ -318,8 +318,8 @@ const SLIDES = [
                             <Globe className="w-5 h-5 text-blue-400" />
                             Website Auto-Update
                         </h4>
-                        <p className="text-blue-200 text-xs mb-2">Sincroniza automaticamente</p>
-                        <ul className="space-y-1 text-blue-100 text-xs">
+                        <p className="text-blue-200 text-sm mb-2">Sincroniza automaticamente</p>
+                        <ul className="space-y-1 text-blue-100 text-sm">
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-amber-400" /> Novos avisos no site automaticamente</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-amber-400" /> Atualização de datas em tempo real</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-amber-400" /> Apenas validação necessária</li>
@@ -331,8 +331,8 @@ const SLIDES = [
                             <Database className="w-5 h-5 text-amber-400" />
                             Integração Bitrix
                         </h4>
-                        <p className="text-amber-200 text-xs mb-2">Escrita direta no Bitrix</p>
-                        <ul className="space-y-1 text-blue-100 text-xs">
+                        <p className="text-amber-200 text-sm mb-2">Escrita direta no Bitrix</p>
+                        <ul className="space-y-1 text-blue-100 text-sm">
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-amber-400" /> Cria segmentos automaticamente</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-amber-400" /> Atualiza empresas</li>
                             <li className="flex items-center gap-2"><Check className="w-3 h-3 text-amber-400" /> Fim do import/export manual</li>
@@ -345,7 +345,7 @@ const SLIDES = [
                         <Shield className="w-4 h-4 text-emerald-400" />
                         Risco Zero Partilhado
                     </h4>
-                    <p className="text-emerald-100 text-xs">Se a candidatura não for aprovada, ficam apenas pelo valor da Fase 1. Partilhamos o risco.</p>
+                    <p className="text-emerald-100 text-sm">Se a candidatura não for aprovada, ficam apenas pelo valor da Fase 1. Partilhamos o risco.</p>
                 </div>
             </div>
         )
@@ -368,7 +368,7 @@ const SLIDES = [
                             </div>
                             <div>
                                 <h3 className="text-2xl font-bold text-white">FASE 1</h3>
-                                <p className="text-blue-300 text-sm">Plataforma Core</p>
+                                <p className="text-blue-300 text-base">Plataforma Core</p>
                             </div>
                         </div>
 
@@ -389,9 +389,9 @@ const SLIDES = [
                         <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-700/50">
                             <div className="flex items-center gap-2 mb-3">
                                 <Clock className="w-5 h-5 text-blue-400" />
-                                <span className="font-semibold text-blue-200 text-base">Timeline</span>
+                                <span className="font-semibold text-blue-200 text-lg">Timeline</span>
                             </div>
-                            <div className="space-y-2 text-blue-200/80 text-sm">
+                            <div className="space-y-2 text-blue-200/80 text-base">
                                 <div className="flex items-start gap-2">
                                     <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0"></div>
                                     <span>Sem 1-2: Scraping + Bitrix</span>
@@ -439,7 +439,7 @@ const SLIDES = [
 
                         <div className="space-y-2">
                             <h4 className="font-semibold text-amber-100 text-sm mb-2">Novos Deliverables:</h4>
-                            <ul className="space-y-1.5 text-amber-100/90 text-sm">
+                            <ul className="space-y-1.5 text-amber-100/90 text-base">
                                 <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-300" /> AI Writer Premium</li>
                                 <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-300" /> Marketing Mix AI</li>
                                 <li className="flex items-center gap-2"><Check className="w-4 h-4 text-amber-300" /> Website Auto-Update</li>
