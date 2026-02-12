@@ -1,14 +1,25 @@
 # Auditoria Critica: IVAzen + Sync AT
 
-**Data:** 2026-02-11
+**Data:** 2026-02-12 (v2 -- corrigida)
 **Auditor:** Claude Opus 4.6 (via TA-Consulting-Platform)
 **Objecto:** Avaliacao critica do relatorio do Lovable AI sobre o estado do IVAzen
 
 ---
 
+## CORRECCAO IMPORTANTE (v2)
+
+A v1 desta auditoria cometeu um erro fundamental: **confundiu SUBMETER faturas (requer software certificado + mTLS) com LER faturas (nao requer certificacao)**. A AT tem dois sistemas separados:
+
+1. **SOAP Webservice (portas 400/700)**: So para SUBMETER/REGISTAR faturas. Requer software certificado, PFX, mTLS. NAO tem operacao de consulta/leitura.
+2. **Portal Web + endpoints JSON (porta 443)**: Para LER faturas como adquirente. Login NIF+password, session cookie, HTTPS standard. Sem mTLS, sem PFX, sem certificacao.
+
+O IVAzen quer LER faturas. Logo, o caminho correcto e o portal (Sistema 2), nao o SOAP (Sistema 1). O Lovable tambem confundiu isto ao tentar usar SOAP/mTLS para leitura.
+
+---
+
 ## TL;DR
 
-O Lovable AI mistura factos reais com afirmacoes nao verificaveis e em alguns casos enganosas. A limitacao de mTLS no Supabase Edge Runtime e real, mas a solucao proposta (proxy VPS) e desnecessariamente complexa. **A alternativa mais pragmatica e integrar com um software de faturacao ja certificado pela AT (InvoiceXpress, Moloni ou Bill.pt) via as suas REST APIs**, em vez de construir a ligacao SOAP/mTLS do zero.
+O Lovable AI mistura factos reais com afirmacoes nao verificaveis e em alguns casos enganosas. O erro FUNDAMENTAL -- tanto do Lovable como da v1 desta auditoria -- foi confundir os dois sistemas da AT. Para LER faturas: portal web + JSON endpoints, sem mTLS, sem certificacao. O unico bloqueio real e a 2FA no portal (se estiver activa para a conta).
 
 ---
 
@@ -264,6 +275,39 @@ Se NAO (que e quase certo), entao:
 
 ---
 
+---
+
+## 7. NOVO: Distincao Critica -- LER vs SUBMETER Faturas
+
+### Sistema 1: SOAP Webservice (SUBMETER faturas)
+- Operacao: `RegisterInvoice` (so escrita)
+- Portas: 400 (prod), 700 (teste)
+- Requer: PFX + mTLS + software certificado + sub-utilizador WFA
+- **NAO tem operacao de consulta/leitura de faturas**
+- Usado por: Primavera, PHC, InvoiceXpress, Moloni, etc.
+
+### Sistema 2: Portal Web + JSON Endpoints (LER faturas)
+- Endpoints: `faturas.portaldasfinancas.gov.pt/json/obterDocumentosAdquirente.action`
+- Porta: 443 (HTTPS standard)
+- Autenticacao: NIF + password (session cookie)
+- **NAO requer PFX, mTLS, ou certificacao de software**
+- Usado por: CentralGest Importador E-Fatura, fcustodio90/efatura gem, fabiohbarbosa/e-fatura
+
+### Conclusao para o IVAzen:
+O IVAzen quer LER faturas (como contabilista). O caminho correcto e o Sistema 2 (portal + JSON). Todo o trabalho SOAP/mTLS e irrelevante para este caso de uso. O unico bloqueio e a 2FA no portal.
+
+### Os acessos AT ja pedidos NAO foram desperdicados:
+- O sub-utilizador pode fazer login no portal (Sistema 2)
+- O PFX sera util no futuro se o IVAzen quiser SUBMETER faturas
+- As credenciais sao validas para ambos os sistemas
+
+### Projectos de referencia que fazem exactamente o que o IVAzen precisa:
+- [fcustodio90/efatura](https://github.com/fcustodio90/efatura) -- Ruby gem, login via Mechanize + JSON endpoints
+- [fabiohbarbosa/e-fatura](https://github.com/fabiohbarbosa/e-fatura) -- Node.js, session cookie + JSON endpoints
+- CentralGest Importador E-Fatura -- software comercial que importa do e-Fatura
+
+---
+
 ## Fontes
 
 - [AT Manual Integracao Software](https://www.occ.pt/fotos/editor2/comunicacao_dados_faturas_2013_02_28.pdf)
@@ -273,9 +317,11 @@ Se NAO (que e quase certo), entao:
 - [Supabase Edge - node:tls not supported](https://github.com/orgs/supabase/discussions/21200)
 - [Deno mTLS Issue #6170](https://github.com/denoland/deno/issues/6170)
 - [Portal Financas 2FA](https://www.gov.pt/noticias/acesso-ao-portal-das-financas-com-autenticacao-em-dois-passos)
-- [Seguranca Social 2FA](https://eco.sapo.pt/2026/01/19/acesso-ao-portal-da-seguranca-social-vai-ficar-mais-complexo-vem-ai-dupla-autenticacao/)
 - [Bill.pt API](https://api.bill.pt/)
 - [InvoiceXpress API](https://invoicexpress.helpscoutdocs.com/article/89-como-funciona-a-comunicacao-automatica-das-guias-para-a-autoridade-tributaria)
 - [Moloni](https://www.moloni.pt/)
-- [iAP Plataforma Integracao](https://www.iap.gov.pt/web/iap/plataforma-de-integracao)
 - [Portugal-a-Programar: Webservices AT](https://www.portugal-a-programar.pt/forums/topic/57734-utilizar-webservices-da-at/)
+- [fcustodio90/efatura (Ruby gem)](https://github.com/fcustodio90/efatura) -- NOVO
+- [fabiohbarbosa/e-fatura (Node.js)](https://github.com/fabiohbarbosa/e-fatura) -- NOVO
+- [CentralGest Importador E-Fatura](https://www.centralgest.com/software/contabilidade/importador-efatura) -- NOVO
+- [Login e-fatura via cURL (Portugal-a-Programar)](https://www.portugal-a-programar.pt/forums/topic/75856-login-e-fatura-via-curl/) -- NOVO
