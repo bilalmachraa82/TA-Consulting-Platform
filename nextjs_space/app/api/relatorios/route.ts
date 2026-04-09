@@ -124,7 +124,7 @@ export async function GET(request: NextRequest) {
     // Dados para gráficos
 
     // 1. Evolução mensal de avisos
-    const evolucaoAvisos = []
+    const evolucaoAvisos: Array<{ mes: string; avisos: number }> = []
     for (let i = 0; i < 12; i++) {
       const mesData = new Date(ano, i, 1)
       const proximoMes = new Date(ano, i + 1, 0, 23, 59, 59)

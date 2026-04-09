@@ -5,7 +5,6 @@
 generator client {
     provider = "prisma-client-js"
     binaryTargets = ["native", "linux-musl-arm64-openssl-3.0.x"]
-    output = "/home/ubuntu/ta_consulting_platform/nextjs_space/node_modules/.prisma/client"
 }
 
 datasource db {
@@ -69,7 +68,7 @@ model Aviso {
   portal            Portal         @default(PORTUGAL2030)
   programa          String
   linha             String?
-  codigo            String
+  codigo            String         @unique
   dataInicioSubmissao DateTime
   dataFimSubmissao  DateTime
   montanteMinimo    Float?

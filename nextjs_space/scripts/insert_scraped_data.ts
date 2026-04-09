@@ -1,7 +1,7 @@
 import { PrismaClient, Portal } from '@prisma/client';
-import * as fs from 'fs';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
+import { loadScrapedAvisos } from '@/lib/scraped-avisos';
 
 // Carregar variáveis de ambiente
 dotenv.config({ path: path.join(__dirname, '..', '.env') });
@@ -12,74 +12,12 @@ async function insertAvisos() {
   console.log('📦 Inserindo avisos na base de dados PostgreSQL...\n');
 
   try {
-    // Ler arquivos JSON
     const dataDir = path.join(__dirname, '..', 'data', 'scraped');
-    const papacData = JSON.parse(
-      fs.readFileSync(path.join(dataDir, 'papac_avisos.json'), 'utf-8')
-    );
-    const prrData = JSON.parse(
-      fs.readFileSync(path.join(dataDir, 'prr_avisos.json'), 'utf-8')
-    );
-
-    // Avisos adicionais do Portugal 2030 (dados realistas)
-    const portugal2030Data = [
-      {
-        nome: 'Inovação Produtiva - Qualificação PME',
-        portal: 'PORTUGAL2030',
-        programa: 'Competitividade e Internacionalização',
-        codigo: 'PT2030-CI-QP-2024-03',
-        dataInicioSubmissao: new Date('2024-10-28').toISOString(),
-        dataFimSubmissao: new Date('2024-11-10').toISOString(),
-        montanteMinimo: 100000,
-        montanteMaximo: 2000000,
-        descricao: 'Apoio à qualificação e inovação de PME através de projetos estruturados',
-        link: 'https://portugal2030.pt/avisos/ci-qp-2024-03',
-        taxa: '50%',
-        regiao: 'Nacional',
-        setoresElegiveis: ['Indústria', 'Serviços', 'Tecnologia'],
-        dimensaoEmpresa: ['MICRO', 'PEQUENA', 'MEDIA'],
-        urgente: true,
-        ativo: true,
-      },
-      {
-        nome: 'Transição Digital e Tecnológica',
-        portal: 'PORTUGAL2030',
-        programa: 'Ação Climática e Sustentabilidade',
-        codigo: 'PT2030-ACS-TD-2024-05',
-        dataInicioSubmissao: new Date('2024-10-20').toISOString(),
-        dataFimSubmissao: new Date('2024-11-08').toISOString(),
-        montanteMinimo: 50000,
-        montanteMaximo: 500000,
-        descricao: 'Incentivo à adoção de tecnologias digitais e soluções Industry 4.0',
-        link: 'https://portugal2030.pt/avisos/acs-td-2024-05',
-        taxa: '45%',
-        regiao: 'Norte',
-        setoresElegiveis: ['Indústria', 'Logística', 'Comércio'],
-        dimensaoEmpresa: ['PEQUENA', 'MEDIA'],
-        urgente: false,
-        ativo: true,
-      },
-      {
-        nome: 'Eficiência Energética na Indústria',
-        portal: 'PORTUGAL2030',
-        programa: 'Sustentabilidade e Eficiência no Uso de Recursos',
-        codigo: 'PT2030-SEUR-EE-2024-07',
-        dataInicioSubmissao: new Date('2024-10-25').toISOString(),
-        dataFimSubmissao: new Date('2024-11-12').toISOString(),
-        montanteMinimo: 75000,
-        montanteMaximo: 1500000,
-        descricao: 'Apoio a investimentos em eficiência energética e energias renováveis',
-        link: 'https://portugal2030.pt/avisos/seur-ee-2024-07',
-        taxa: '60%',
-        regiao: 'Centro',
-        setoresElegiveis: ['Indústria', 'Energia'],
-        dimensaoEmpresa: ['PEQUENA', 'MEDIA', 'GRANDE'],
-        urgente: true,
-        ativo: true,
-      },
-    ];
-
-    const allAvisos = [...portugal2030Data, ...papacData, ...prrData];
+    const allAvisos = loadScrapedAvisos({
+      dataDir,
+      refreshExpiredOpenDates: true,
+      now: new Date(),
+    });
 
     let inserted = 0;
     let updated = 0;
@@ -87,62 +25,39 @@ async function insertAvisos() {
 
     for (const aviso of allAvisos) {
       try {
-        // Verificar se já existe (por código)
-        const existing = await prisma.aviso.findFirst({
+        const data = {
+          nome: aviso.nome,
+          portal: aviso.portal as Portal,
+          programa: aviso.programa,
+          linha: aviso.linha || null,
+          dataInicioSubmissao: new Date(aviso.dataInicioSubmissao),
+          dataFimSubmissao: new Date(aviso.dataFimSubmissao),
+          montanteMinimo: aviso.montanteMinimo || null,
+          montanteMaximo: aviso.montanteMaximo || null,
+          descrição: aviso.descrição || null,
+          link: aviso.link || null,
+          taxa: aviso.taxa || null,
+          regiao: aviso.regiao || null,
+          setoresElegiveis: aviso.setoresElegiveis || [],
+          dimensaoEmpresa: aviso.dimensaoEmpresa || [],
+          urgente: aviso.urgente || false,
+          ativo: aviso.ativo !== false,
+        };
+
+        const result = await prisma.aviso.upsert({
           where: { codigo: aviso.codigo },
+          update: data,
+          create: { ...data, codigo: aviso.codigo },
         });
 
-        if (existing) {
-          // Atualizar
-          await prisma.aviso.update({
-            where: { id: existing.id },
-            data: {
-              nome: aviso.nome,
-              portal: aviso.portal as Portal,
-              programa: aviso.programa,
-              linha: aviso.linha || null,
-              codigo: aviso.codigo,
-              dataInicioSubmissao: new Date(aviso.dataInicioSubmissao),
-              dataFimSubmissao: new Date(aviso.dataFimSubmissao),
-              montanteMinimo: aviso.montanteMinimo || null,
-              montanteMaximo: aviso.montanteMaximo || null,
-              descrição: aviso.descricao || aviso.descrição || null,
-              link: aviso.link || null,
-              taxa: aviso.taxa || null,
-              regiao: aviso.regiao || null,
-              setoresElegiveis: aviso.setoresElegiveis || [],
-              dimensaoEmpresa: aviso.dimensaoEmpresa || [],
-              urgente: aviso.urgente || false,
-              ativo: aviso.ativo !== false,
-            },
-          });
-          updated++;
-          console.log(`  ✅ Atualizado: ${aviso.nome} (${aviso.codigo})`);
-        } else {
-          // Inserir novo
-          await prisma.aviso.create({
-            data: {
-              nome: aviso.nome,
-              portal: aviso.portal as Portal,
-              programa: aviso.programa,
-              linha: aviso.linha || null,
-              codigo: aviso.codigo,
-              dataInicioSubmissao: new Date(aviso.dataInicioSubmissao),
-              dataFimSubmissao: new Date(aviso.dataFimSubmissao),
-              montanteMinimo: aviso.montanteMinimo || null,
-              montanteMaximo: aviso.montanteMaximo || null,
-              descrição: aviso.descricao || aviso.descrição || null,
-              link: aviso.link || null,
-              taxa: aviso.taxa || null,
-              regiao: aviso.regiao || null,
-              setoresElegiveis: aviso.setoresElegiveis || [],
-              dimensaoEmpresa: aviso.dimensaoEmpresa || [],
-              urgente: aviso.urgente || false,
-              ativo: aviso.ativo !== false,
-            },
-          });
+        // Detect insert vs update by comparing createdAt and updatedAt
+        const wasInserted = result.createdAt.getTime() === result.updatedAt.getTime();
+        if (wasInserted) {
           inserted++;
           console.log(`  ✅ Inserido: ${aviso.nome} (${aviso.codigo})`);
+        } else {
+          updated++;
+          console.log(`  ✅ Atualizado: ${aviso.nome} (${aviso.codigo})`);
         }
       } catch (error: any) {
         errors++;

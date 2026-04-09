@@ -26,8 +26,10 @@ export default function RecomendacoesPage() {
   const [empresaSelecionada, setEmpresaSelecionada] = useState<string>('');
   const [recomendacoes, setRecomendacoes] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
-  const [analiseDetalhada, setAnaliseDetalhada] = useState<any>(null);
-  const [loadingAnalise, setLoadingAnalise] = useState(false);
+  const [analisesPorAviso, setAnalisesPorAviso] = useState<Record<string, any>>({});
+  const [loadingAnalise, setLoadingAnalise] = useState<string | null>(null);
+  const [briefsPorAviso, setBriefsPorAviso] = useState<Record<string, any>>({});
+  const [loadingBrief, setLoadingBrief] = useState<string | null>(null);
 
   useEffect(() => {
     if (status === 'authenticated') {
@@ -40,11 +42,12 @@ export default function RecomendacoesPage() {
       const response = await fetch('/api/empresas');
       if (!response.ok) throw new Error('Erro ao carregar empresas');
       const data = await response.json();
-      setEmpresas(data);
+      const empresasData = data.empresas || [];
+      setEmpresas(empresasData);
       
-      if (data.length > 0) {
-        setEmpresaSelecionada(data[0].id);
-        carregarRecomendacoes(data[0].id);
+      if (empresasData.length > 0) {
+        setEmpresaSelecionada(empresasData[0].id);
+        carregarRecomendacoes(empresasData[0].id);
       }
     } catch (error) {
       console.error('Erro:', error);
@@ -69,11 +72,13 @@ export default function RecomendacoesPage() {
 
   const handleEmpresaChange = (empresaId: string) => {
     setEmpresaSelecionada(empresaId);
+    setAnalisesPorAviso({});
+    setBriefsPorAviso({});
     carregarRecomendacoes(empresaId);
   };
 
   const gerarAnaliseDetalhada = async (avisoId: string) => {
-    setLoadingAnalise(true);
+    setLoadingAnalise(avisoId);
     try {
       const response = await fetch('/api/recomendacoes', {
         method: 'POST',
@@ -83,15 +88,38 @@ export default function RecomendacoesPage() {
           avisoId
         })
       });
-      
+
       if (!response.ok) throw new Error('Erro ao gerar análise');
       const data = await response.json();
-      setAnaliseDetalhada(data);
+      setAnalisesPorAviso((prev) => ({ ...prev, [avisoId]: data }));
     } catch (error) {
       console.error('Erro:', error);
       toast.error('Erro ao gerar análise detalhada');
     } finally {
-      setLoadingAnalise(false);
+      setLoadingAnalise(null);
+    }
+  };
+
+  const gerarBriefIA = async (avisoId: string) => {
+    setLoadingBrief(avisoId);
+    try {
+      const response = await fetch('/api/briefs', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          empresaId: empresaSelecionada,
+          avisoId,
+        }),
+      });
+
+      if (!response.ok) throw new Error('Erro ao gerar brief');
+      const data = await response.json();
+      setBriefsPorAviso((prev) => ({ ...prev, [avisoId]: data }));
+    } catch (error) {
+      console.error('Erro:', error);
+      toast.error('Erro ao gerar brief IA');
+    } finally {
+      setLoadingBrief(null);
     }
   };
 
@@ -333,31 +361,31 @@ export default function RecomendacoesPage() {
                           </DialogDescription>
                         </DialogHeader>
                         
-                        {loadingAnalise ? (
+                        {loadingAnalise === aviso.id ? (
                           <div className="flex items-center justify-center py-12">
                             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
                           </div>
-                        ) : analiseDetalhada && (
+                        ) : analisesPorAviso[aviso.id] ? (
                           <div className="space-y-4">
                             <div className="bg-muted p-4 rounded-lg">
                               <div className="flex items-center justify-between mb-2">
                                 <h3 className="font-semibold">Score de Compatibilidade</h3>
                                 <span className="text-2xl font-bold text-primary">
-                                  {analiseDetalhada.analise.score}%
+                                  {analisesPorAviso[aviso.id].analise.score}%
                                 </span>
                               </div>
-                              <Progress value={analiseDetalhada.analise.score} className="h-2" />
+                              <Progress value={analisesPorAviso[aviso.id].analise.score} className="h-2" />
                             </div>
-                            
-                            {analiseDetalhada.recomendacoesIA && (
+
+                            {analisesPorAviso[aviso.id].recomendacoesIA && (
                               <div className="prose prose-sm max-w-none">
                                 <div className="whitespace-pre-wrap text-sm">
-                                  {analiseDetalhada.recomendacoesIA}
+                                  {analisesPorAviso[aviso.id].recomendacoesIA}
                                 </div>
                               </div>
                             )}
                           </div>
-                        )}
+                        ) : null}
                       </DialogContent>
                     </Dialog>
                     
@@ -367,9 +395,97 @@ export default function RecomendacoesPage() {
                       </a>
                     </Button>
                     
-                    <Button variant="outline">
-                      Criar Candidatura
-                    </Button>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button
+                          variant="outline"
+                          onClick={() => gerarBriefIA(aviso.id)}
+                        >
+                          Gerar Brief IA
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle>Brief Interno IA</DialogTitle>
+                          <DialogDescription>
+                            Resumo acionável para decisão sobre {aviso.nome}
+                          </DialogDescription>
+                        </DialogHeader>
+
+                        {loadingBrief === aviso.id ? (
+                          <div className="flex items-center justify-center py-12">
+                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                          </div>
+                        ) : briefsPorAviso[aviso.id]?.brief ? (
+                          <div className="space-y-5 text-sm">
+                            <div className="bg-muted p-4 rounded-lg space-y-2">
+                              <div className="flex items-center justify-between gap-4">
+                                <h3 className="font-semibold">{briefsPorAviso[aviso.id].brief.titulo}</h3>
+                                <Badge variant="outline">
+                                  {briefsPorAviso[aviso.id].fonte === 'anthropic' ? 'Claude' : 'Fallback'}
+                                </Badge>
+                              </div>
+                              <p className="text-muted-foreground whitespace-pre-wrap">
+                                {briefsPorAviso[aviso.id].brief.sumarioExecutivo}
+                              </p>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              <div className="space-y-2">
+                                <h4 className="font-semibold">Elegibilidade</h4>
+                                <p>
+                                  Score: <span className="font-medium">{briefsPorAviso[aviso.id].brief.elegibilidade.score}%</span>
+                                </p>
+                                <p>
+                                  Prioridade:{' '}
+                                  <span className="font-medium">
+                                    {briefsPorAviso[aviso.id].brief.elegibilidade.prioridade}
+                                  </span>
+                                </p>
+                              </div>
+
+                              <div className="space-y-2">
+                                <h4 className="font-semibold">Recomendacao</h4>
+                                <p className="text-muted-foreground whitespace-pre-wrap">
+                                  {briefsPorAviso[aviso.id].brief.recomendacao}
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="space-y-2">
+                              <h4 className="font-semibold">Documentos necessarios</h4>
+                              <ul className="space-y-1">
+                                {briefsPorAviso[aviso.id].brief.documentosNecessarios.map((item: string, index: number) => (
+                                  <li key={index}>• {item}</li>
+                                ))}
+                              </ul>
+                            </div>
+
+                            <div className="space-y-2">
+                              <h4 className="font-semibold">Timeline</h4>
+                              <ul className="space-y-1">
+                                {briefsPorAviso[aviso.id].brief.timeline.map((item: string, index: number) => (
+                                  <li key={index}>• {item}</li>
+                                ))}
+                              </ul>
+                            </div>
+
+                            <div className="space-y-2">
+                              <h4 className="font-semibold">Riscos</h4>
+                              <ul className="space-y-1">
+                                {briefsPorAviso[aviso.id].brief.riscos.map((item: string, index: number) => (
+                                  <li key={index}>• {item}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        ) : (
+                          <p className="text-sm text-muted-foreground">
+                            Ainda sem brief disponivel para este aviso.
+                          </p>
+                        )}
+                      </DialogContent>
+                    </Dialog>
                   </div>
                 </CardContent>
               </Card>
