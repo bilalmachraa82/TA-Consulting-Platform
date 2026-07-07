@@ -182,7 +182,11 @@ async function testGeminiAPI() {
 async function testBitrixWebhook() {
   section('TEST 4: BITRIX24 WEBHOOK');
 
-  const webhookUrl = process.env.BITRIX_WEBHOOK_URL || 'https://taconsulting.bitrix24.com/rest/744/dm213axt003upvfk/';
+  const webhookUrl = process.env.BITRIX_WEBHOOK_URL;
+  if (!webhookUrl) {
+    fail('BITRIX_WEBHOOK_URL não configurado — teste ignorado');
+    return;
+  }
 
   try {
     const response = await fetch(`${webhookUrl}profile.json`);

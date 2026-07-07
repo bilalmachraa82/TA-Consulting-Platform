@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limiter';
 import { lookupNif } from '@/lib/nif-provider';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
@@ -30,6 +31,16 @@ interface CompanySearchResult {
 }
 
 export async function POST(req: NextRequest) {
+    // Public endpoint — no session required, but rate limit to prevent abuse
+    const ip = getClientIP(req);
+    const rateLimit = checkRateLimit(`lead-chat-search:${ip}`, RATE_LIMITS.CHATBOT);
+    if (!rateLimit.success) {
+        return NextResponse.json(
+            { found: false, error: 'Demasiadas requisições.', fontes: [], confianca: 'BAIXA' as const },
+            { status: 429 }
+        );
+    }
+
     try {
         const { nomeEmpresa, nif: userProvidedNif } = await req.json();
 
@@ -183,6 +194,7 @@ Se NÃO encontrares a empresa, retorna:
         console.error('Company search error:', error);
         return NextResponse.json({
             found: false,
+            nome: '',
             error: error.message,
             fontes: [],
             confianca: 'BAIXA'

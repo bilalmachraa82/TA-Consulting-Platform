@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
+import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limiter';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 export const dynamic = 'force-dynamic';
@@ -105,6 +106,15 @@ export async function GET(request: Request) {
       return NextResponse.json({ error: 'Não autenticado' }, { status: 401 });
     }
 
+    const ip = getClientIP(request);
+    const rateLimit = checkRateLimit(`recomendacoes:${ip}`, RATE_LIMITS.API_GENERAL);
+    if (!rateLimit.success) {
+      return NextResponse.json(
+        { error: 'Demasiadas requisições. Tente novamente mais tarde.' },
+        { status: 429 }
+      );
+    }
+
     const { searchParams } = new URL(request.url);
     const empresaId = searchParams.get('empresaId');
     const limite = parseInt(searchParams.get('limite') || '10');
@@ -186,6 +196,15 @@ export async function POST(request: Request) {
     const session = await getServerSession(authOptions);
     if (!session) {
       return NextResponse.json({ error: 'Não autenticado' }, { status: 401 });
+    }
+
+    const ip = getClientIP(request);
+    const rateLimit = checkRateLimit(`recomendacoes-post:${ip}`, RATE_LIMITS.API_GENERAL);
+    if (!rateLimit.success) {
+      return NextResponse.json(
+        { error: 'Demasiadas requisições. Tente novamente mais tarde.' },
+        { status: 429 }
+      );
     }
 
     const { empresaId, avisoId } = await request.json();

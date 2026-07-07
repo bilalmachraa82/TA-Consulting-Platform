@@ -8,6 +8,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
+import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limiter';
 import { getTemplateById, type ApplicationTemplate, type TemplateSection } from '@/lib/templates';
 import { prisma } from '@/lib/db';
 import { openrouter, AI_MODELS, PT_PT_SYSTEM_PROMPT, type AIModelId } from '@/lib/openrouter';
@@ -34,6 +35,15 @@ export async function POST(request: NextRequest) {
             return NextResponse.json(
                 { error: 'Autenticação necessária' },
                 { status: 401 }
+            );
+        }
+
+        const ip = getClientIP(request);
+        const rateLimit = checkRateLimit(`writer-generate-full:${ip}`, RATE_LIMITS.API_GENERAL);
+        if (!rateLimit.success) {
+            return NextResponse.json(
+                { error: 'Demasiadas requisições. Tente novamente mais tarde.' },
+                { status: 429 }
             );
         }
 

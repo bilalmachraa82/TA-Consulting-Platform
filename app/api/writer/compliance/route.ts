@@ -7,6 +7,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
+import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limiter';
 import { quickComplianceCheck, type ComplianceResult } from '@/lib/keywords/compliance';
 import { z } from 'zod';
 
@@ -21,6 +22,15 @@ export async function POST(request: NextRequest) {
         const session = await getServerSession(authOptions);
         if (!session?.user?.email) {
             return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
+        }
+
+        const ip = getClientIP(request);
+        const rateLimit = checkRateLimit(`writer-compliance:${ip}`, RATE_LIMITS.API_GENERAL);
+        if (!rateLimit.success) {
+            return NextResponse.json(
+                { error: 'Demasiadas requisições. Tente novamente mais tarde.' },
+                { status: 429 }
+            );
         }
 
         const body = await request.json();

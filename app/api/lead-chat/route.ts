@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limiter';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
@@ -180,6 +181,16 @@ export async function POST(req: NextRequest) {
   let extractedData: any = {};
   let companyFound: any = null;
   let messages: any[] = [];
+
+  // Public endpoint — no session required, but rate limit to prevent abuse
+  const ip = getClientIP(req);
+  const rateLimit = checkRateLimit(`lead-chat:${ip}`, RATE_LIMITS.CHATBOT);
+  if (!rateLimit.success) {
+    return NextResponse.json(
+      { message: 'Demasiadas mensagens. Por favor aguarde antes de continuar.', error: true },
+      { status: 429 }
+    );
+  }
 
   try {
     const body = await req.json();

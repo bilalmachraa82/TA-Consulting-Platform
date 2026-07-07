@@ -1,5 +1,8 @@
 
 import { NextRequest, NextResponse } from 'next/server';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth';
+import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limiter';
 import { prisma } from '@/lib/db';
 
 export const dynamic = 'force-dynamic';
@@ -19,6 +22,20 @@ interface MatchResult {
 
 export async function GET(request: NextRequest) {
     try {
+        const session = await getServerSession(authOptions);
+        if (!session) {
+            return NextResponse.json({ error: 'Não autenticado' }, { status: 401 });
+        }
+
+        const ip = getClientIP(request);
+        const rateLimit = checkRateLimit(`matching:${ip}`, RATE_LIMITS.API_GENERAL);
+        if (!rateLimit.success) {
+            return NextResponse.json(
+                { error: 'Demasiadas requisições. Tente novamente mais tarde.' },
+                { status: 429 }
+            );
+        }
+
         const { searchParams } = new URL(request.url);
         const empresaId = searchParams.get('empresaId');
 

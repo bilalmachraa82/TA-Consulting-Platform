@@ -11,8 +11,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 
-const BITRIX_WEBHOOK = process.env.BITRIX_WEBHOOK_URL ||
-    "https://taconsulting.bitrix24.com/rest/744/dm213axt003upvfk/";
+const BITRIX_WEBHOOK = process.env.BITRIX_WEBHOOK_URL;
 
 interface DealCreateRequest {
     avisoId: string;
@@ -69,6 +68,13 @@ export async function POST(request: NextRequest) {
         const session = await getServerSession(authOptions);
         if (!session) {
             return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
+        }
+
+        if (!BITRIX_WEBHOOK) {
+            return NextResponse.json(
+                { error: 'Integração Bitrix não configurada (BITRIX_WEBHOOK_URL em falta)' },
+                { status: 503 }
+            );
         }
 
         const body: DealCreateRequest = await request.json();
@@ -156,6 +162,18 @@ Criado automaticamente pelo sistema TA Consulting AI.
 // GET - Get pipeline stages for reference
 export async function GET() {
     try {
+        const session = await getServerSession(authOptions);
+        if (!session) {
+            return NextResponse.json({ error: 'Não autorizado' }, { status: 401 });
+        }
+
+        if (!BITRIX_WEBHOOK) {
+            return NextResponse.json(
+                { error: 'Integração Bitrix não configurada (BITRIX_WEBHOOK_URL em falta)' },
+                { status: 503 }
+            );
+        }
+
         // Fetch deal stages from Bitrix
         const response = await fetch(`${BITRIX_WEBHOOK}crm.status.list.json?filter[ENTITY_ID]=DEAL_STAGE`);
         const data = await response.json();

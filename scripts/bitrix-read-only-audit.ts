@@ -7,7 +7,11 @@
  * Run: npx tsx scripts/bitrix-read-only-audit.ts
  */
 
-const BITRIX_WEBHOOK = process.env.BITRIX_WEBHOOK_URL || "https://taconsulting.bitrix24.com/rest/744/dm213axt003upvfk/";
+const BITRIX_WEBHOOK = process.env.BITRIX_WEBHOOK_URL;
+if (!BITRIX_WEBHOOK) {
+    console.error('BITRIX_WEBHOOK_URL environment variable is required.');
+    process.exit(1);
+}
 
 // ============================================================
 // SAFE METHODS ONLY - NO .add, .update, .delete

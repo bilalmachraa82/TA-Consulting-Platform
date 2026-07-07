@@ -12,8 +12,11 @@
  * Run: npx tsx scripts/test-bitrix-integration.ts
  */
 
-const BITRIX_WEBHOOK = process.env.BITRIX_WEBHOOK_URL ||
-    "https://taconsulting.bitrix24.com/rest/744/dm213axt003upvfk/";
+const BITRIX_WEBHOOK = process.env.BITRIX_WEBHOOK_URL;
+if (!BITRIX_WEBHOOK) {
+    console.error('BITRIX_WEBHOOK_URL environment variable is required.');
+    process.exit(1);
+}
 
 // Sample avisos from scraped data
 const SAMPLE_AVISOS = [

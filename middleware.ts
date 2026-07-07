@@ -8,10 +8,11 @@ export default withAuth({
 
 export const config = {
     matcher: [
-        // '/dashboard/:path*', // DEMO MODE: Disabled auth for dashboard
+        '/dashboard/:path*',
         '/api/candidaturas/:path*',
         '/api/empresas/:path*',
         '/api/documentos/:path*',
-        // Exclude public routes like /apresentacao
+        // Public routes excluded: /apresentacao*, /proposta*, /auth/*, /api/auth/*,
+        // /api/monitoring/health, /api/lead-chat/*, and the landing page.
     ]
 }

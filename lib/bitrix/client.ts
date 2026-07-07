@@ -10,9 +10,17 @@
  * - Rate limiting respeitoso (2 req/seg)
  */
 
-// Webhook URL - Environment variable for security
-const BITRIX_WEBHOOK = process.env.BITRIX_WEBHOOK_URL ||
-    "https://taconsulting.bitrix24.com/rest/744/dm213axt003upvfk/";
+// Webhook URL - must be set via BITRIX_WEBHOOK_URL environment variable
+function getBitrixWebhook(): string {
+    const url = process.env.BITRIX_WEBHOOK_URL;
+    if (!url) {
+        throw new Error(
+            'BITRIX_WEBHOOK_URL environment variable is not set. ' +
+            'Add it to your .env file to enable Bitrix24 integration.'
+        );
+    }
+    return url;
+}
 
 // Types
 export interface BitrixCompany {
@@ -95,7 +103,7 @@ async function bitrixGet<T>(
     method: string,
     params: Record<string, any> = {}
 ): Promise<T> {
-    const url = new URL(`${BITRIX_WEBHOOK}${method}.json`);
+    const url = new URL(`${getBitrixWebhook()}${method}.json`);
 
     Object.entries(params).forEach(([key, value]) => {
         if (value !== undefined && value !== null) {
