@@ -6,11 +6,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Use default distDir (.next) and output (undefined/server) for Vercel
-  // distDir and output lines removed to use standard Next.js defaults
-  // Output standalone for Docker optimization
-  output: 'standalone',
-
   // PERFORMANCE: Otimizações de bundle
   swcMinify: true,
 

@@ -9,7 +9,7 @@ export default defineConfig({
         globals: true,
         setupFiles: ['./vitest.setup.ts'],
         include: ['**/*.{test,spec}.{ts,tsx}'],
-        exclude: ['node_modules', '.next', 'apify-actors/**/node_modules', 'e2e/**'],
+        exclude: ['**/node_modules/**', '.next/**', '.netlify/**', 'e2e/**'],
         coverage: {
             provider: 'v8',
             reporter: ['text', 'json', 'html'],

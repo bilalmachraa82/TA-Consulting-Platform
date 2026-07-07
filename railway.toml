@@ -1,3 +1,0 @@
-[build]
-builder = "DOCKERFILE"
-watchPatterns = ["app/**", "components/**", "lib/**", "public/**", "next.config.js", "package.json", "Dockerfile"]
