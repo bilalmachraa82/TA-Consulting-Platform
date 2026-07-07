@@ -102,9 +102,9 @@ export default async function DashboardPage() {
         { status: 'REJEITADA', total: 1 },
       ],
       avisosPorPortal: [
-        { _count: 45, portal: 'Portugal 2030' },
-        { _count: 32, portal: 'PRR' },
-        { _count: 15, portal: 'PDR 2020' },
+        { portal: 'Portugal 2030', total: 45 },
+        { portal: 'PRR', total: 32 },
+        { portal: 'PDR 2020', total: 15 },
       ],
       candidaturasPorMes: [
         { mes: '2025-11', total: 4 },

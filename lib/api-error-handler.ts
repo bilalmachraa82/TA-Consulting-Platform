@@ -81,7 +81,7 @@ export function handleApiError(error: unknown): NextResponse {
       {
         success: false,
         error: error.message,
-        ...(error.details && { details: error.details })
+        ...(error.details !== undefined ? { details: error.details } : {})
       },
       { status: error.statusCode }
     );

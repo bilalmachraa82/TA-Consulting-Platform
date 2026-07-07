@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import { ChevronLeft, ChevronRight, Home, Play, Pause, RotateCcw, Check, Star, Database, Bot, messagesSquare, Zap } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Home, Play, Pause, RotateCcw, Check, Star, Database, Bot, MessagesSquare, Zap } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'

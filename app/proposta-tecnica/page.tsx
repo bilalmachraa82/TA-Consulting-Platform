@@ -565,7 +565,7 @@ const colorMap: Record<string, { bg: string; text: string; border: string; bgLig
 };
 
 function SectionCard({ section, index }: { section: typeof SECTIONS[0]; index: number }) {
-    const colors = colorMap[section.color] || colorMap.blue;
+    const colors = colorMap[section.color ?? 'blue'] || colorMap.blue;
 
     return (
         <motion.div

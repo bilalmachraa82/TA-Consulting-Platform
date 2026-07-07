@@ -1,6 +1,6 @@
 import { unstable_cache } from 'next/cache';
 import { prisma, isPrismaAvailable } from '@/lib/db';
-import { Prisma } from '@prisma/client';
+import { Prisma, DimensaoEmpresa } from '@prisma/client';
 
 export function getCacheHeaders(sMaxAge: number, staleWhileRevalidate: number): Record<string, string> {
     return {
@@ -15,7 +15,7 @@ export const getCachedEmpresasWithFilters = unstable_cache(
         if (!isPrismaAvailable()) return [];
 
         const where: Prisma.EmpresaWhereInput = {};
-        if (filters.dimensao) where.dimensao = filters.dimensao;
+        if (filters.dimensao) where.dimensao = filters.dimensao as DimensaoEmpresa;
         if (filters.regiao) where.regiao = filters.regiao;
 
         try {
@@ -50,7 +50,7 @@ export const getCachedEmpresasCount = unstable_cache(
 // === AVISOS ===
 
 export const getCachedAvisosWithFilters = unstable_cache(
-    async (filters: { estado?: string; portal?: string }) => {
+    async (filters: { estado?: string; portal?: string; showAll?: boolean }) => {
         // Implementação simplificada para avisos, similar a empresas
         // Ajustar conforme o schema real se necessário
         return [];
@@ -102,7 +102,7 @@ export const getCachedOrcamentoDisponivel = unstable_cache(
     async () => {
         if (!isPrismaAvailable()) return 0;
         try {
-            const result = await prisma.aviso.aggregate({
+            const result = await (prisma.aviso as any).aggregate({
                 _sum: {
                     montanteMaximo: true // Assuming montanteMaximo holds the budget info roughly
                 },

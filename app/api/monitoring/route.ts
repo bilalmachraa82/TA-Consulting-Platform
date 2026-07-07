@@ -37,7 +37,7 @@ export async function GET(request: Request) {
       candidaturasTotais: 0,
 
       // Última sincronização
-      ultimaSincronizacao: null,
+      ultimaSincronizacao: null as string | null,
     },
   };
 

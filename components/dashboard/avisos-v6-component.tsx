@@ -529,7 +529,7 @@ export function AvisosV6Component() {
                                                 </div>
                                                 <div className="flex items-center gap-2 mt-1">
                                                     {getPortalBadge(aviso.portal)}
-                                                    {getInteresseBadge(aviso.interesse)}
+                                                    {getInteresseBadge(aviso.interesse ?? 'por_decidir')}
                                                 </div>
                                             </div>
                                         </TableCell>

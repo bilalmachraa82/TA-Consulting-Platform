@@ -34,15 +34,15 @@ export interface MatchResult {
     };
 }
 
-export interface AvisoComNUT_TIP extends Aviso {
-    // v6: Novos campos para matching
+export interface AvisoComNUT_TIP extends Omit<Aviso, 'nutsCompativeis' | 'tipCompativeis' | 'caeCompativeis'> {
+    // v6: Novos campos para matching (opcionais para compatibilidade com dados pré-v6)
     nutsCompativeis?: string[];
     tipCompativeis?: string[];
     caeCompativeis?: string | null;
 }
 
-export interface EmpresaComNUT_TIP extends Empresa {
-    // v6: Novos campos para matching
+export interface EmpresaComNUT_TIP extends Omit<Empresa, 'nut' | 'tip' | 'tipEmpresa'> {
+    // v6: Novos campos para matching (opcionais para compatibilidade com dados pré-v6)
     nut?: string | null;
     tip?: string | null;
     tipEmpresa?: string | null;
