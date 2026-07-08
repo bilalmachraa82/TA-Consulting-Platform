@@ -47,7 +47,8 @@ jobs:
           ./gitleaks version
 
       - name: Scan working tree for secrets
-        run: ./gitleaks dir . --no-banner --redact
+        # -v mostra ficheiro/linha/regra de cada finding; --redact esconde o valor
+        run: ./gitleaks dir . --no-banner --redact -v
 
   # Job 2: Tests
   test:

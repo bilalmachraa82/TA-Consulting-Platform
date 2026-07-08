@@ -56,3 +56,6 @@ test-results.json
 test-results/
 playwright-report/
 rag-store.json
+
+# Estado local de execução dos Apify actors (cookies de sessão, datasets, queues)
+apify-actors/*/storage/
