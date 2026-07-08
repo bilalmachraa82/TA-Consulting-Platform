@@ -114,7 +114,8 @@ jobs:
       NEXTAUTH_URL: 'http://localhost:3000'
     services:
       postgres:
-        image: postgres:16
+        # pgvector incluído — o schema Prisma exige a extensão "vector" (AvisoChunk.embedding)
+        image: pgvector/pgvector:pg16
         env:
           POSTGRES_USER: e2e
           POSTGRES_PASSWORD: e2e
