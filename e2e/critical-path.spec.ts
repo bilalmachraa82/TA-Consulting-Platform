@@ -63,10 +63,9 @@ test.describe('Critical Path', () => {
     });
 
     test('Public lead-magnet API stays accessible without session', async ({ request }) => {
-        // /api/leads/* serve o funil público — não pode ficar atrás do middleware
-        const response = await request.post('/api/leads/validate-nif', {
-            data: { nif: '000000000' },
-        });
+        // /api/leads/* serve o funil público — não pode ficar atrás do middleware.
+        // A rota é GET com query param (ver components/lead-magnet/nif-input.tsx).
+        const response = await request.get('/api/leads/validate-nif?nif=000000000');
         // Qualquer resposta que não seja um redirect/401 do NextAuth serve:
         // a rota deve processar o pedido (mesmo que devolva 400 para NIF inválido)
         expect([200, 400, 404, 422]).toContain(response.status());

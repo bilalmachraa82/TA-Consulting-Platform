@@ -25,6 +25,9 @@ Variables) → revogar a antiga → confirmar que a app continua funcional.
 - [ ] `FIRECRAWL_API_KEY` (firecrawl.dev)
 - [ ] `NEON_API_KEY` (console.neon.tech) e considerar reset da password da BD
 - [ ] `ANTHROPIC_API_KEY` (console.anthropic.com)
+- [ ] Conta `admin@taconsulting.pt`: a password de teste esteve documentada
+      em `docs_archive/FASE_1_IMPLEMENTADA.md` (histórico git) — se a conta
+      existir em produção, trocar a password imediatamente
 
 ## Decisão pendente: reescrever o histórico?
 
