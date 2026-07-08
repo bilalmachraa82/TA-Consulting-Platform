@@ -1,7 +1,7 @@
 # DEMO MODE - Autenticação Desativada
 
 ## Data: 2026-01-13
-## Status: ATIVO PARA DEMO
+## Status: REVERTIDO (2026-07-08) — auth reativada com requireSession() em lib/auth-guard.ts; documento arquivado para referência histórica
 
 ---
 
