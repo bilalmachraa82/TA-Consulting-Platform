@@ -29,7 +29,6 @@ declare module 'next-auth/jwt' {
 // Create adapter lazily to avoid build-time errors
 const getAdapter = () => {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return PrismaAdapter(prisma as any)
   } catch {
     return undefined

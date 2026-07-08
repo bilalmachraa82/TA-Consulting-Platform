@@ -90,7 +90,6 @@ export async function POST(req: Request) {
                 { status: 400 }
             );
         }
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const config = ENHANCED_PORTAL_CONFIGS[portal as keyof typeof ENHANCED_PORTAL_CONFIGS] as any;
 
         console.log(`🚀 Scraping avançado para: ${config.name}`);
@@ -191,7 +190,6 @@ export async function POST(req: Request) {
             const avisos = await scrapeAvisos(url, {
                 prompt: config.prompt,
                 waitFor: config.requiresJs ? 20000 : 10000,
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 actions: config.requiresJs ? [
                     { type: 'scroll', direction: 'down' },
                     { type: 'wait', ms: 2000 },

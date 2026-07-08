@@ -86,6 +86,105 @@ const SECOES_CONFIGURACAO: ConfiguracaoSecao[] = [
   }
 ]
 
+function SecaoWatchtower() {
+  const [status, setStatus] = useState<any>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchStatus = async () => {
+      try {
+        const res = await fetch('/api/monitoring')
+        const data = await res.json()
+        setStatus(data)
+      } catch (e) {
+        console.error(e)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchStatus()
+    // Poll every 10s
+    const interval = setInterval(fetchStatus, 10000)
+    return () => clearInterval(interval)
+  }, [])
+
+  if (loading) return <div className="p-8 text-center text-slate-500">A carregar Watchtower...</div>
+
+  return (
+    <div className="space-y-6">
+      <Card className="border-l-4 border-l-blue-500">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Activity className="h-5 w-5 text-blue-500" />
+            Digital Watchtower (Live)
+          </CardTitle>
+          <CardDescription>Monitorização em tempo real da infraestrutura da TA Platform</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* Database */}
+            <div className="p-4 rounded-lg bg-slate-50 border flex flex-col items-center text-center">
+              <Database className={`h-8 w-8 mb-2 ${status?.services?.database?.status === 'ok' ? 'text-green-500' : 'text-red-500'}`} />
+              <div className="font-bold text-sm">Base de Dados</div>
+              <div className="text-xs text-slate-500 mt-1">{status?.services?.database?.latency} latency</div>
+              <div className={`mt-2 px-2 py-0.5 rounded-full text-xs font-bold ${status?.services?.database?.status === 'ok' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                {status?.services?.database?.status?.toUpperCase()}
+              </div>
+            </div>
+
+            {/* Scrapers */}
+            <div className="p-4 rounded-lg bg-slate-50 border flex flex-col items-center text-center">
+              <Globe className={`h-8 w-8 mb-2 ${status?.services?.scrapers?.status === 'operational' ? 'text-green-500' : 'text-yellow-500'}`} />
+              <div className="font-bold text-sm">Super Scrapers</div>
+              <div className="text-xs text-slate-500 mt-1">{status?.services?.scrapers?.itemsFetched24h} avisos (24h)</div>
+              <div className={`mt-2 px-2 py-0.5 rounded-full text-xs font-bold ${status?.services?.scrapers?.status === 'operational' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
+                {status?.services?.scrapers?.status?.toUpperCase()}
+              </div>
+            </div>
+
+            {/* API Health */}
+            <div className="p-4 rounded-lg bg-slate-50 border flex flex-col items-center text-center">
+              <Zap className="h-8 w-8 mb-2 text-purple-500" />
+              <div className="font-bold text-sm">API Gateway</div>
+              <div className="text-xs text-slate-500 mt-1">Uptime: {Math.floor(status?.services?.api?.uptime / 60)}m</div>
+              <div className="mt-2 px-2 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700">
+                OPERATIONAL
+              </div>
+            </div>
+
+            {/* Leads Engine */}
+            <div className="p-4 rounded-lg bg-slate-50 border flex flex-col items-center text-center">
+              <Users className="h-8 w-8 mb-2 text-indigo-500" />
+              <div className="font-bold text-sm">Leads Engine</div>
+              <div className="text-xs text-slate-500 mt-1">{status?.services?.leads?.count} leads ativas</div>
+              <div className="mt-2 px-2 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700">
+                RUNNING
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Logs do Sistema</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="h-48 bg-slate-900 rounded-md p-4 font-mono text-xs text-green-400 overflow-y-auto">
+            <p>[{new Date().toISOString()}] SYSTEM: Watchtower initialized.</p>
+            <p>[{new Date().toISOString()}] DB: Connection verified (Latency: {status?.services?.database?.latency}).</p>
+            <p>[{new Date().toISOString()}] SCRAPER: Check complete. {status?.services?.scrapers?.itemsFetched24h} new items detected.</p>
+            <p>[{new Date().toISOString()}] API: Health check passed.</p>
+            {status?.services?.scrapers?.itemsFetched24h === 0 && (
+              <p className="text-yellow-400">[{new Date().toISOString()}] WARNING: No new avisos in last 24h. Check targets.</p>
+            )}
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}
+
 export function ConfiguracoesComponent() {
   const [secaoAtiva, setSecaoAtiva] = useState('notificacoes')
   const [configuracoes, setConfiguracoes] = useState<any>({
@@ -615,104 +714,6 @@ export function ConfiguracoesComponent() {
     }
   }
 
-  const renderSecaoWatchtower = () => {
-    const [status, setStatus] = useState<any>(null)
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-      const fetchStatus = async () => {
-        try {
-          const res = await fetch('/api/monitoring')
-          const data = await res.json()
-          setStatus(data)
-        } catch (e) {
-          console.error(e)
-        } finally {
-          setLoading(false)
-        }
-      }
-      fetchStatus()
-      // Poll every 10s
-      const interval = setInterval(fetchStatus, 10000)
-      return () => clearInterval(interval)
-    }, [])
-
-    if (loading) return <div className="p-8 text-center text-slate-500">A carregar Watchtower...</div>
-
-    return (
-      <div className="space-y-6">
-        <Card className="border-l-4 border-l-blue-500">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Activity className="h-5 w-5 text-blue-500" />
-              Digital Watchtower (Live)
-            </CardTitle>
-            <CardDescription>Monitorização em tempo real da infraestrutura da TA Platform</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {/* Database */}
-              <div className="p-4 rounded-lg bg-slate-50 border flex flex-col items-center text-center">
-                <Database className={`h-8 w-8 mb-2 ${status?.services?.database?.status === 'ok' ? 'text-green-500' : 'text-red-500'}`} />
-                <div className="font-bold text-sm">Base de Dados</div>
-                <div className="text-xs text-slate-500 mt-1">{status?.services?.database?.latency} latency</div>
-                <div className={`mt-2 px-2 py-0.5 rounded-full text-xs font-bold ${status?.services?.database?.status === 'ok' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
-                  {status?.services?.database?.status?.toUpperCase()}
-                </div>
-              </div>
-
-              {/* Scrapers */}
-              <div className="p-4 rounded-lg bg-slate-50 border flex flex-col items-center text-center">
-                <Globe className={`h-8 w-8 mb-2 ${status?.services?.scrapers?.status === 'operational' ? 'text-green-500' : 'text-yellow-500'}`} />
-                <div className="font-bold text-sm">Super Scrapers</div>
-                <div className="text-xs text-slate-500 mt-1">{status?.services?.scrapers?.itemsFetched24h} avisos (24h)</div>
-                <div className={`mt-2 px-2 py-0.5 rounded-full text-xs font-bold ${status?.services?.scrapers?.status === 'operational' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
-                  {status?.services?.scrapers?.status?.toUpperCase()}
-                </div>
-              </div>
-
-              {/* API Health */}
-              <div className="p-4 rounded-lg bg-slate-50 border flex flex-col items-center text-center">
-                <Zap className="h-8 w-8 mb-2 text-purple-500" />
-                <div className="font-bold text-sm">API Gateway</div>
-                <div className="text-xs text-slate-500 mt-1">Uptime: {Math.floor(status?.services?.api?.uptime / 60)}m</div>
-                <div className="mt-2 px-2 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700">
-                  OPERATIONAL
-                </div>
-              </div>
-
-              {/* Leads Engine */}
-              <div className="p-4 rounded-lg bg-slate-50 border flex flex-col items-center text-center">
-                <Users className="h-8 w-8 mb-2 text-indigo-500" />
-                <div className="font-bold text-sm">Leads Engine</div>
-                <div className="text-xs text-slate-500 mt-1">{status?.services?.leads?.count} leads ativas</div>
-                <div className="mt-2 px-2 py-0.5 rounded-full text-xs font-bold bg-green-100 text-green-700">
-                  RUNNING
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Logs do Sistema</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="h-48 bg-slate-900 rounded-md p-4 font-mono text-xs text-green-400 overflow-y-auto">
-              <p>[{new Date().toISOString()}] SYSTEM: Watchtower initialized.</p>
-              <p>[{new Date().toISOString()}] DB: Connection verified (Latency: {status?.services?.database?.latency}).</p>
-              <p>[{new Date().toISOString()}] SCRAPER: Check complete. {status?.services?.scrapers?.itemsFetched24h} new items detected.</p>
-              <p>[{new Date().toISOString()}] API: Health check passed.</p>
-              {status?.services?.scrapers?.itemsFetched24h === 0 && (
-                <p className="text-yellow-400">[{new Date().toISOString()}] WARNING: No new avisos in last 24h. Check targets.</p>
-              )}
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    )
-  }
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
@@ -757,7 +758,7 @@ export function ConfiguracoesComponent() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
         >
-          {secaoAtiva === 'watchtower' ? renderSecaoWatchtower() : renderConteudo()}
+          {secaoAtiva === 'watchtower' ? <SecaoWatchtower /> : renderConteudo()}
         </motion.div>
 
         {/* Botão Salvar (Only show for non-read-only sections) */}

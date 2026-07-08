@@ -173,7 +173,6 @@ export async function uploadLocalFileToGeminiFilesApi(
     // Removes images (saving tokens) and improves retrieval (cleaner text).
     if (resolvedMimeType === 'application/pdf') {
         try {
-            // eslint-disable-next-line @typescript-eslint/no-var-requires
             const pdf = require('pdf-parse');
             const data = await pdf(buffer);
             const textContent = data.text;

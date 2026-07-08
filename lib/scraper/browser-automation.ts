@@ -62,7 +62,6 @@ export class BrowserAutomation {
     private async setupNetworkInterception() {
         const apiResponses: any[] = [];
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         this.page.on('response', async (response: any) => {
             const url = response.url();
 
