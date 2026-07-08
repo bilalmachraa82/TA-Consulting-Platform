@@ -1,20 +1,26 @@
 /**
  * Compliance Check API
- * 
+ *
  * POST /api/writer/compliance - Check keyword compliance for a section
+ * GET  /api/writer/compliance?templateId=x - Keywords esperadas para um template
  */
 
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limiter';
-import { quickComplianceCheck, type ComplianceResult } from '@/lib/keywords/compliance';
+import { quickComplianceCheck, getKeywordsForTemplate, type ComplianceResult } from '@/lib/keywords/compliance';
+import { prisma } from '@/lib/db';
 import { z } from 'zod';
+
+export const dynamic = 'force-dynamic';
 
 const ComplianceRequestSchema = z.object({
     text: z.string().min(10, 'Texto muito curto para análise'),
     templateId: z.string().min(1),
     avisoDescription: z.string().optional(),
+    // Alternativa a avisoDescription: buscar nome+descrição do aviso à BD
+    avisoId: z.string().optional(),
 });
 
 export async function POST(request: NextRequest) {
@@ -43,7 +49,18 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        const { text, templateId, avisoDescription } = parseResult.data;
+        const { text, templateId, avisoId } = parseResult.data;
+        let { avisoDescription } = parseResult.data;
+
+        if (!avisoDescription && avisoId) {
+            const aviso = await prisma.aviso.findUnique({
+                where: { id: avisoId },
+                select: { nome: true, descricao: true },
+            });
+            if (aviso) {
+                avisoDescription = `${aviso.nome} ${aviso.descricao || ''}`;
+            }
+        }
 
         // Run compliance check
         const result = quickComplianceCheck(text, templateId, avisoDescription);
@@ -72,6 +89,32 @@ export async function POST(request: NextRequest) {
             { status: 500 }
         );
     }
+}
+
+// GET - keywords esperadas para um template (absorvido de check-compliance)
+export async function GET(request: NextRequest) {
+    const session = await getServerSession(authOptions);
+    if (!session) {
+        return NextResponse.json({ error: 'Não autenticado' }, { status: 401 });
+    }
+
+    const { searchParams } = new URL(request.url);
+    const templateId = searchParams.get('templateId');
+
+    if (!templateId) {
+        return NextResponse.json(
+            { error: 'templateId é obrigatório' },
+            { status: 400 }
+        );
+    }
+
+    const keywords = getKeywordsForTemplate(templateId);
+
+    return NextResponse.json({
+        templateId,
+        keywords,
+        count: keywords.length,
+    });
 }
 
 function getComplianceMessage(grade: string, result: ComplianceResult): string {
