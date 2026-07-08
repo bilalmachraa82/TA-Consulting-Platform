@@ -148,7 +148,12 @@ export function CalendarioComponent() {
     const diasNoMes = ultimoDia.getDate()
     const diaSemanaPrimeiro = primeiroDia.getDay()
 
-    const dias = []
+    const dias: Array<{
+      dia: number
+      dataKey: string
+      eventos: EventoCalendario[]
+      temEventos: boolean
+    } | null> = []
     
     // Dias do mês anterior (espaços vazios)
     for (let i = 0; i < diaSemanaPrimeiro; i++) {

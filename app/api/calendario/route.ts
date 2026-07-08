@@ -6,6 +6,25 @@ import { prisma } from '@/lib/db'
 
 export const dynamic = "force-dynamic"
 
+interface EventoCalendario {
+  id: string
+  avisoId: string
+  tipo: 'inicio' | 'deadline'
+  titulo: string
+  data: Date
+  aviso: {
+    nome: string
+    codigo: string
+    portal: string
+    programa: string
+    montanteMaximo: number | null
+    link: string | null
+  }
+  diasRestantes: number
+  urgencia: 'alta' | 'media' | 'baixa'
+  candidaturas: number
+}
+
 export async function GET(request: NextRequest) {
   try {
     const session = await getServerSession(authOptions)
@@ -66,10 +85,10 @@ export async function GET(request: NextRequest) {
     // Processar avisos para incluir dias restantes
     const now = new Date()
     type AvisoWithCandidaturas = typeof avisos[number];
-    const eventosCalendario = avisos.flatMap((aviso: AvisoWithCandidaturas) => {
+    const eventosCalendario: EventoCalendario[] = avisos.flatMap((aviso: AvisoWithCandidaturas) => {
       const diasRestantes = Math.ceil((aviso.dataFimSubmissao.getTime() - now.getTime()) / (1000 * 3600 * 24))
-      
-      const eventos = []
+
+      const eventos: EventoCalendario[] = []
       
       // Evento de início
       eventos.push({
@@ -116,9 +135,9 @@ export async function GET(request: NextRequest) {
 
     // Se for vista de calendário, agrupar por data
     if (view === 'calendario') {
-      const eventosPorData: { [key: string]: any[] } = {}
-      
-      eventosCalendario.forEach((evento: { data: Date; tipo: string }) => {
+      const eventosPorData: { [key: string]: EventoCalendario[] } = {}
+
+      eventosCalendario.forEach((evento: EventoCalendario) => {
         const dataKey = evento.data.toISOString().split('T')[0]
         if (!eventosPorData[dataKey]) {
           eventosPorData[dataKey] = []
