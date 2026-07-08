@@ -179,9 +179,7 @@ Se desejar continuar com melhorias futuras:
 
 - **Plataforma:** https://ta-consulting-platfo-tfdltj.abacusai.app
 - **GitHub:** https://github.com/bilalmachraa82/TA-Consulting-Platform
-- **Login de Teste:**
-  - Email: `admin@taconsulting.pt`
-  - Password: `taconsulting123`
+- **Login de Teste:** credenciais removidas deste documento (ver gestor de segredos; se esta conta ainda existir em produção, trocar a password — cf. docs/SEGURANCA_ROTACAO_CHAVES.md)
 
 ---
 

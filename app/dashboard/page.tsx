@@ -1,32 +1,17 @@
-import { getServerSession } from 'next-auth'
-import { redirect } from 'next/navigation'
-import { authOptions } from '@/lib/auth'
+import { requireSession } from '@/lib/auth-guard'
 import { prisma } from '@/lib/db'
 import { DashboardHome } from '@/components/dashboard/dashboard-home'
 
 export const dynamic = "force-dynamic"
 
 export default async function DashboardPage() {
-  // const session = await getServerSession(authOptions)
-  // if (!session) {
-  //   redirect('/api/auth/signin?callbackUrl=/dashboard')
-  // }
-
-  // DEMO MODE: Mock Session to ensure presentation stability
-  const session = {
-    user: {
-      name: 'Fernando',
-      email: 'demo@taconsulting.pt',
-      image: null
-    }
-  }
+  await requireSession('/dashboard')
 
   // Fetch dashboard data
   const [avisos, empresas, candidaturas, documentos, workflows, notificacoes] = await Promise.all([
     prisma.aviso.findMany({
       where: { ativo: true },
       orderBy: { dataFimSubmissao: 'asc' },
-      take: 10,
     }),
     prisma.empresa.findMany({
       where: { ativa: true },
@@ -74,14 +59,28 @@ export default async function DashboardPage() {
     doc.statusValidade === 'EXPIRADO' || doc.statusValidade === 'A_EXPIRAR'
   ).length
 
-  // Fetch metricas no servidor
-  // FIX: Using port 3005 to match the current dev server instance
-  // const metricasResponse = await fetch(`${process.env.NEXTAUTH_URL || 'http://localhost:3005'}/api/dashboard/metricas`, {
-  //   cache: 'no-store'
-  // })
-  // const metricas = metricasResponse.ok ? await metricasResponse.json() : null
+  // Métricas calculadas a partir dos dados reais já buscados acima
+  const contagemPorEstado = candidaturas.reduce<Record<string, number>>((acc, c: CandidaturaType) => {
+    acc[c.estado] = (acc[c.estado] || 0) + 1
+    return acc
+  }, {})
 
-  // DEMO MODE: Mock Metricas to bypass internal API auth issues
+  const contagemPorPortal = avisos.reduce<Record<string, number>>((acc, a: AvisoType) => {
+    acc[a.portal] = (acc[a.portal] || 0) + 1
+    return acc
+  }, {})
+
+  const contagemPorMes = candidaturas.reduce<Record<string, number>>((acc, c: CandidaturaType) => {
+    const mes = c.createdAt.toISOString().slice(0, 7)
+    acc[mes] = (acc[mes] || 0) + 1
+    return acc
+  }, {})
+
+  const candidaturasPorEmpresa = candidaturas.reduce<Record<string, number>>((acc, c: CandidaturaType) => {
+    acc[c.empresaId] = (acc[c.empresaId] || 0) + 1
+    return acc
+  }, {})
+
   const metricas = {
     resumo: {
       totalAvisos: avisos.length,
@@ -89,39 +88,20 @@ export default async function DashboardPage() {
       totalCandidaturas: candidaturas.length,
       totalDocumentos: documentos.length,
       avisosUrgentes: avisos7Dias,
-      orcamentoDisponivel: 25000000, // Consolidated Value
-      valorSolicitado: 4750000, // Demo Value
+      orcamentoDisponivel: avisos.reduce((sum: number, a: AvisoType) => sum + (a.montanteMaximo || 0), 0),
+      valorSolicitado: candidaturas.reduce((sum: number, c: CandidaturaType) => sum + (c.montanteSolicitado || 0), 0),
       lastUpdated: new Date().toISOString()
     },
     graficos: {
-      candidaturasPorStatus: [
-        { status: 'A_PREPARAR', total: 3 },
-        { status: 'SUBMETIDA', total: 2 },
-        { status: 'EM_ANALISE', total: 4 },
-        { status: 'APROVADA', total: 5 },
-        { status: 'REJEITADA', total: 1 },
-      ],
-      avisosPorPortal: [
-        { portal: 'Portugal 2030', total: 45 },
-        { portal: 'PRR', total: 32 },
-        { portal: 'PDR 2020', total: 15 },
-      ],
-      candidaturasPorMes: [
-        { mes: '2025-11', total: 4 },
-        { mes: '2025-10', total: 6 },
-        { mes: '2025-09', total: 3 },
-        { mes: '2025-08', total: 5 },
-        { mes: '2025-07', total: 2 },
-        { mes: '2025-06', total: 4 },
-      ],
-      topEmpresas: empresas.slice(0, 5).map(e => ({
-        id: e.id,
-        nome: e.nome,
-        setor: e.setor,
-        totalCandidaturas: 2
-      }))
+      candidaturasPorStatus: Object.entries(contagemPorEstado).map(([status, total]) => ({ status, total })),
+      avisosPorPortal: Object.entries(contagemPorPortal).map(([portal, total]) => ({ portal, total })),
+      candidaturasPorMes: Object.entries(contagemPorMes).sort().slice(-6).map(([mes, total]) => ({ mes, total })),
+      topEmpresas: empresas
+        .map(e => ({ id: e.id, nome: e.nome, setor: e.setor, totalCandidaturas: candidaturasPorEmpresa[e.id] || 0 }))
+        .sort((a, b) => b.totalCandidaturas - a.totalCandidaturas)
+        .slice(0, 5)
     },
-    source: 'demo-bypassed'
+    source: 'database'
   }
 
   return (
@@ -133,7 +113,7 @@ export default async function DashboardPage() {
         taxaSucesso,
         documentosExpirados,
       }}
-      avisos={avisos}
+      avisos={avisos.slice(0, 10)}
       candidaturas={candidaturas}
       notificacoes={notificacoes}
       workflows={workflows}

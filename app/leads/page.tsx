@@ -1,6 +1,4 @@
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/auth';
-import { redirect } from 'next/navigation';
+import { requireSession } from '@/lib/auth-guard';
 import { prisma } from '@/lib/db';
 import { LeadTable } from '@/components/leads/lead-table';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -9,12 +7,7 @@ import { Users, CheckCircle, Clock, TrendingUp } from 'lucide-react';
 export const dynamic = 'force-dynamic';
 
 export default async function LeadsPage() {
-    const session = await getServerSession(authOptions);
-
-    // TODO: Uncomment for production protection
-    // if (!session) {
-    //     redirect('/api/auth/signin');
-    // }
+    const session = await requireSession('/leads');
 
     // Fetch all leads
     const leads = await prisma.lead.findMany({

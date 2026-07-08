@@ -1,7 +1,5 @@
 
-import { getServerSession } from 'next-auth'
-import { redirect } from 'next/navigation'
-import { authOptions } from '@/lib/auth'
+import { requireSession } from '@/lib/auth-guard'
 import { DashboardSidebar } from '@/components/dashboard/dashboard-sidebar'
 import { DashboardHeader } from '@/components/dashboard/dashboard-header'
 import { AIAssistant } from '@/components/modern/ai-assistant'
@@ -17,10 +15,8 @@ export default async function DashboardLayout({
 }: {
   children: React.ReactNode
 }) {
-  const session = await getServerSession(authOptions)
-  if (!session) {
-    redirect('/auth/signin')
-  }
+  // /auth/signin não existe — o guard redireciona para /auth/login (authOptions.pages.signIn)
+  const session = await requireSession('/dashboard')
 
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden font-sans selection:bg-primary/30 selection:text-primary">

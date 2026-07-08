@@ -1,6 +1,4 @@
-import { getServerSession } from 'next-auth'
-import { redirect } from 'next/navigation'
-import { authOptions } from '@/lib/auth'
+import { requireSession } from '@/lib/auth-guard'
 import { prisma } from '@/lib/db'
 import { EmpresasClientWrapper } from '@/components/dashboard/empresas-client-wrapper'
 
@@ -61,11 +59,7 @@ export default async function EmpresasPage({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }) {
-  // DEMO MODE: Auth disabled for demo
-  // const session = await getServerSession(authOptions)
-  // if (!session) {
-  //   redirect('/auth/login')
-  // }
+  await requireSession()
 
   const initialData = await getEmpresasIniciais(searchParams)
 

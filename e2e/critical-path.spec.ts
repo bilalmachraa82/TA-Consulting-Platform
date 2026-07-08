@@ -49,6 +49,28 @@ test.describe('Critical Path', () => {
         await page.waitForURL(/login|signin|auth/, { timeout: 10000 });
     });
 
+    test('Protected dashboard sub-pages redirect unauthenticated users', async ({ page }) => {
+        // Guards page-level (requireSession) + middleware — ambos devem redirecionar
+        for (const path of ['/dashboard/avisos', '/dashboard/empresas', '/dashboard/relatorios']) {
+            await page.goto(path);
+            await page.waitForURL(/\/auth\/login/, { timeout: 10000 });
+        }
+    });
+
+    test('Leads page redirects unauthenticated users', async ({ page }) => {
+        await page.goto('/leads');
+        await page.waitForURL(/\/auth\/login/, { timeout: 10000 });
+    });
+
+    test('Public lead-magnet API stays accessible without session', async ({ request }) => {
+        // /api/leads/* serve o funil público — não pode ficar atrás do middleware.
+        // A rota é GET com query param (ver components/lead-magnet/nif-input.tsx).
+        const response = await request.get('/api/leads/validate-nif?nif=000000000');
+        // Qualquer resposta que não seja um redirect/401 do NextAuth serve:
+        // a rota deve processar o pedido (mesmo que devolva 400 para NIF inválido)
+        expect([200, 400, 404, 422]).toContain(response.status());
+    });
+
     test('API Health Check returns healthy status', async ({ request }) => {
         const response = await request.get('/api/monitoring/health');
 

@@ -22,7 +22,9 @@ import { AUDITOR_SYSTEM_PROMPT } from '@/lib/rag/prompts';
 
 const PRODUCTION_SYSTEM_PROMPT = AUDITOR_SYSTEM_PROMPT;
 
-const STORE_NAME = 'fileSearchStores/avisosfundoseuropeus-e463dep1so0g';
+// Store do File Search configurável por ambiente; o valor antigo hardcoded
+// fica como fallback para não partir deploys sem a env var definida.
+const STORE_NAME = process.env.GEMINI_RAG_STORE_ID || 'fileSearchStores/avisosfundoseuropeus-e463dep1so0g';
 const BASE_URL = 'https://generativelanguage.googleapis.com';
 
 // ============= TYPES =============

@@ -47,3 +47,15 @@ next-env.d.ts
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+# Logs e artefactos gerados (nunca commitar)
+*.log
+scraping_log*.txt
+ingest-log.txt
+test-results.json
+test-results/
+playwright-report/
+rag-store.json
+
+# Estado local de execução dos Apify actors (cookies de sessão, datasets, queues)
+apify-actors/*/storage/

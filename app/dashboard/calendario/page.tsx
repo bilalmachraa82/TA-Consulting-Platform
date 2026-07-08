@@ -1,7 +1,5 @@
 
-import { getServerSession } from 'next-auth'
-import { redirect } from 'next/navigation'
-import { authOptions } from '@/lib/auth'
+import { requireSession } from '@/lib/auth-guard'
 import { CalendarioComponent } from '@/components/dashboard/calendario-component'
 
 export const dynamic = "force-dynamic"
@@ -12,11 +10,7 @@ export const metadata = {
 }
 
 export default async function CalendarioPage() {
-  // DEMO MODE: Auth disabled for demo
-  // const session = await getServerSession(authOptions)
-  // if (!session) {
-  //   redirect('/auth/login')
-  // }
+  await requireSession()
 
   return (
     <div className="space-y-6">

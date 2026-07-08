@@ -1,18 +1,12 @@
 
-import { getServerSession } from 'next-auth'
-import { redirect } from 'next/navigation'
-import { authOptions } from '@/lib/auth'
+import { requireSession } from '@/lib/auth-guard'
 import { prisma } from '@/lib/db'
 import { PrintReportClient } from '@/components/dashboard/print-report-client'
 
 export const dynamic = "force-dynamic"
 
 export default async function PrintReportPage() {
-    // DEMO MODE: Auth disabled for demo
-    // const session = await getServerSession(authOptions)
-    // if (!session) {
-    //     redirect('/auth/login')
-    // }
+    await requireSession()
 
     // Fetch data (mirrors the logic in api/relatorios/route.ts or dashboard/page.tsx)
     // For verified speed, we fetch directly from DB here as it is a server component

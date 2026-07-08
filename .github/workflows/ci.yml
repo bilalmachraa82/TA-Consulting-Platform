@@ -30,6 +30,26 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
+  # Job 1b: Secret scanning — bloqueia PRs que introduzam segredos nos ficheiros
+  # Scan ao working tree (não ao histórico git): o histórico contém fugas antigas
+  # já conhecidas (chaves em rotação) que tornariam um scan histórico sempre vermelho.
+  gitleaks:
+    name: 🔒 Gitleaks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Gitleaks
+        run: |
+          curl -sSL https://github.com/gitleaks/gitleaks/releases/download/v8.21.2/gitleaks_8.21.2_linux_x64.tar.gz \
+            | tar xz gitleaks
+          ./gitleaks version
+
+      - name: Scan working tree for secrets
+        # -v mostra ficheiro/linha/regra de cada finding; --redact esconde o valor
+        run: ./gitleaks dir . --no-banner --redact -v
+
   # Job 2: Tests
   test:
     name: 🧪 Tests
