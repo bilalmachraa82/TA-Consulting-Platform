@@ -2,7 +2,8 @@ import { withAuth } from "next-auth/middleware"
 
 export default withAuth({
     pages: {
-        signIn: '/auth/signin',
+        // Tem de coincidir com authOptions.pages.signIn (lib/auth.ts) — /auth/signin não existe.
+        signIn: '/auth/login',
     },
 })
 
