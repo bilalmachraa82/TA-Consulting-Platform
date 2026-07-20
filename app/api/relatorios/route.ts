@@ -106,6 +106,7 @@ export async function GET(request: NextRequest) {
     const kpis = {
       totalAvisos: avisos.length,
       avisosUrgentes: avisos.filter((aviso: AvisoType) => {
+        if (!aviso.dataFimSubmissao) return false // prazo por confirmar, não é urgente
         const diasRestantes = Math.ceil((aviso.dataFimSubmissao.getTime() - new Date().getTime()) / (1000 * 3600 * 24))
         return diasRestantes <= 7 && diasRestantes > 0
       }).length,

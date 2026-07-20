@@ -2,30 +2,25 @@
 'use client'
 
 
+import { SessionProvider } from 'next-auth/react'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
-import { useEffect, useState } from 'react'
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return null
-  }
-
+  // Nota: não bloquear o render até "mounted". A versão anterior devolvia null
+  // no primeiro render, provocando um flash de página vazia e prejudicando o
+  // conteúdo inicial. O ThemeProvider já trata a hidratação de tema sozinho.
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
-      {children}
-      <Toaster />
-    </ThemeProvider>
+    <SessionProvider>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="dark"
+        enableSystem
+        disableTransitionOnChange
+      >
+        {children}
+        <Toaster />
+      </ThemeProvider>
+    </SessionProvider>
   )
 }

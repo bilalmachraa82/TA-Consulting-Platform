@@ -3,8 +3,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma, isPrismaAvailable } from '@/lib/db'
-import { getCachedAvisosWithFilters, getCachedAvisosCount, getCacheHeaders } from '@/lib/cache'
+import { getCacheHeaders } from '@/lib/cache'
 import { revalidateAvisos } from '@/lib/revalidate'
+import { Prisma, Portal } from '@prisma/client'
 
 // Cache: Revalida a cada 5 minutos para GET
 export const revalidate = 300
@@ -26,39 +27,76 @@ async function checkWritePermission() {
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url)
+    const now = new Date()
 
     // Filtros
     const portal = searchParams.get('portal')
-    const page = parseInt(searchParams.get('page') || '1')
-    const limit = parseInt(searchParams.get('limit') || '100')
+    const search = (searchParams.get('search') || '').trim()
+    const diasMin = parseInt(searchParams.get('diasMin') || '0')
+    const diasMax = parseInt(searchParams.get('diasMax') || '365')
+    const page = Math.max(1, parseInt(searchParams.get('page') || '1'))
+    const limit = Math.min(100, Math.max(1, parseInt(searchParams.get('limit') || '20')))
     const showAll = searchParams.get('all') === 'true'
 
-    // Buscar avisos com cache
-    const allAvisos = await getCachedAvisosWithFilters({
-      portal: portal || undefined,
-      showAll
+    // Query paginada direta ao Prisma (o unstable_cache não aguentava 2168
+    // avisos × 100 colunas: passava o limite de 2MB, daí a lista vinha vazia).
+    // Condições combinadas com AND — cada bloco é independente para o OR de
+    // texto (search) não colidir com o OR de datas.
+    const and: Prisma.AvisoWhereInput[] = []
+    if (portal && portal !== 'TODOS') and.push({ portal: portal as Portal })
+    if (search) {
+      and.push({
+        OR: [
+          { nome: { contains: search, mode: 'insensitive' } },
+          { codigo: { contains: search, mode: 'insensitive' } },
+          { descricao: { contains: search, mode: 'insensitive' } },
+        ],
+      })
+    }
+    if (!showAll) {
+      // Abertos: ativo E (prazo por confirmar OU dentro da janela de dias)
+      const limiteFim = new Date(now.getTime() + diasMax * 24 * 60 * 60 * 1000)
+      const limiteInicio = new Date(now.getTime() + diasMin * 24 * 60 * 60 * 1000)
+      and.push({ ativo: true })
+      and.push({
+        OR: [
+          { dataFimSubmissao: null },
+          { dataFimSubmissao: { gte: limiteInicio, lte: limiteFim } },
+        ],
+      })
+    }
+    const where: Prisma.AvisoWhereInput = and.length > 0 ? { AND: and } : {}
+
+    const [avisosRaw, total] = await Promise.all([
+      prisma.aviso.findMany({
+        where,
+        orderBy: [{ dataFimSubmissao: { sort: 'asc', nulls: 'last' } }],
+        skip: (page - 1) * limit,
+        take: limit,
+        select: {
+          id: true, nome: true, portal: true, programa: true, codigo: true,
+          dataInicioSubmissao: true, dataFimSubmissao: true, montanteMinimo: true,
+          montanteMaximo: true, link: true, regiao: true, setoresElegiveis: true,
+          descricao: true, urgente: true, anexos: true,
+        },
+      }),
+      prisma.aviso.count({ where }),
+    ])
+
+    // Enriquecer com diasRestantes e urgência (o componente lê estes campos)
+    const avisos = avisosRaw.map((a) => {
+      const diasRestantes = a.dataFimSubmissao
+        ? Math.ceil((a.dataFimSubmissao.getTime() - now.getTime()) / (1000 * 3600 * 24))
+        : null
+      const urgencia = diasRestantes === null ? 'normal' : diasRestantes <= 7 ? 'alta' : diasRestantes <= 15 ? 'media' : 'normal'
+      return { ...a, diasRestantes, urgencia }
     })
-
-    // Paginar em memória (já temos os dados em cache)
-    const start = (page - 1) * limit
-    const end = start + limit
-    const paginatedAvisos = allAvisos.slice(start, end)
-
-    // Buscar total com cache
-    const total = await getCachedAvisosCount()
 
     return NextResponse.json({
-      avisos: paginatedAvisos,
-      pagination: {
-        total,
-        pages: Math.ceil(total / limit),
-        page,
-        limit
-      },
-      source: isPrismaAvailable() ? 'database' : 'json-files'
-    }, {
-      headers: getCacheHeaders(60, 300) // Cache: 1min, SWR: 5min
-    })
+      avisos,
+      pagination: { total, pages: Math.ceil(total / limit), page, limit },
+      source: 'database',
+    }, { headers: getCacheHeaders(60, 300) })
 
   } catch (error) {
     console.error('Erro ao buscar avisos:', error)

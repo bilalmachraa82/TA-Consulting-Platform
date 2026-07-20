@@ -3,8 +3,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { isPrismaAvailable, prisma } from '@/lib/db'
-import { getCachedEmpresasWithFilters, getCachedEmpresasCount, getCacheHeaders } from '@/lib/cache'
+import { getCacheHeaders } from '@/lib/cache'
 import { revalidateEmpresas } from '@/lib/revalidate'
+import { Prisma, DimensaoEmpresa } from '@prisma/client'
 
 // Cache: Revalida a cada 5 minutos para GET
 export const revalidate = 300
@@ -28,37 +29,43 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url)
     const dimensao = searchParams.get('dimensao')
     const regiao = searchParams.get('regiao')
-    const page = parseInt(searchParams.get('page') || '1')
-    const limit = parseInt(searchParams.get('limit') || '50')
-    const showAll = searchParams.get('all') === 'true'
+    const setor = searchParams.get('setor')
+    const search = (searchParams.get('search') || '').trim()
+    const page = Math.max(1, parseInt(searchParams.get('page') || '1'))
+    const limit = Math.min(100, Math.max(1, parseInt(searchParams.get('limit') || '50')))
 
-    // Buscar empresas com cache
-    const allEmpresas = await getCachedEmpresasWithFilters({
-      dimensao: dimensao || undefined,
-      regiao: regiao || undefined,
-      showAll
-    })
+    // Query paginada direta (o cache com take:100 quebrava a paginação além da
+    // página 2 e ignorava os filtros setor/search que o componente envia).
+    const and: Prisma.EmpresaWhereInput[] = [{ ativa: true }]
+    if (dimensao && dimensao !== 'TODOS') and.push({ dimensao: dimensao as DimensaoEmpresa })
+    if (regiao && regiao !== 'TODOS') and.push({ regiao })
+    if (setor && setor !== 'TODOS') and.push({ setor: { contains: setor, mode: 'insensitive' } })
+    if (search) {
+      and.push({
+        OR: [
+          { nome: { contains: search, mode: 'insensitive' } },
+          { nipc: { contains: search, mode: 'insensitive' } },
+          { email: { contains: search, mode: 'insensitive' } },
+        ],
+      })
+    }
+    const where: Prisma.EmpresaWhereInput = { AND: and }
 
-    // Paginar em memória
-    const start = (page - 1) * limit
-    const end = start + limit
-    const paginatedEmpresas = allEmpresas.slice(start, end)
-
-    // Buscar total com cache
-    const total = await getCachedEmpresasCount()
+    const [empresas, total] = await Promise.all([
+      prisma.empresa.findMany({
+        where,
+        orderBy: { nome: 'asc' },
+        skip: (page - 1) * limit,
+        take: limit,
+      }),
+      prisma.empresa.count({ where }),
+    ])
 
     return NextResponse.json({
-      empresas: paginatedEmpresas,
-      pagination: {
-        total,
-        pages: Math.ceil(total / limit),
-        page,
-        limit
-      },
-      source: isPrismaAvailable() ? 'database' : 'json-files'
-    }, {
-      headers: getCacheHeaders(60, 300) // Cache: 1min, SWR: 5min
-    })
+      empresas,
+      pagination: { total, pages: Math.ceil(total / limit), page, limit },
+      source: 'database',
+    }, { headers: getCacheHeaders(60, 300) })
 
   } catch (error) {
     console.error('Erro ao buscar empresas:', error)
