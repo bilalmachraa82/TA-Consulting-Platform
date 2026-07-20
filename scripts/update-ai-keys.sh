@@ -16,7 +16,7 @@ KEY_VALUE="${2:-}"
 
 if [ -z "$KEY_NAME" ] || [ -z "$KEY_VALUE" ]; then
     echo "Uso: bash scripts/update-ai-keys.sh <NOME_DA_CHAVE> <valor>"
-    echo "Nomes suportados: GEMINI_API_KEY, OPENROUTER_API_KEY, ANTHROPIC_API_KEY"
+    echo "Nomes suportados: GEMINI_API_KEY, OPENROUTER_API_KEY, ANTHROPIC_API_KEY, CORTECS_API_KEY"
     exit 1
 fi
 
@@ -36,6 +36,11 @@ case "$KEY_NAME" in
         HTTP=$(curl -s -o /dev/null -w '%{http_code}' -m 20 https://api.anthropic.com/v1/messages \
             -H "x-api-key: $KEY_VALUE" -H "anthropic-version: 2023-06-01" -H "content-type: application/json" \
             -d '{"model":"claude-haiku-4-5-20251001","max_tokens":5,"messages":[{"role":"user","content":"OK?"}]}')
+        ;;
+    CORTECS_API_KEY)
+        # gateway EU (cortecs.ai) — valida via listagem de modelos OpenAI-compatível
+        HTTP=$(curl -s -o /dev/null -w '%{http_code}' -m 20 "https://api.cortecs.ai/v1/models" \
+            -H "Authorization: Bearer $KEY_VALUE")
         ;;
     *)
         echo "Nome de chave não suportado: $KEY_NAME"

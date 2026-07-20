@@ -28,6 +28,25 @@ import { PrismaClient, Portal, Prisma } from '@prisma/client';
 import { GoogleGenerativeAI, SchemaType } from '@google/generative-ai';
 import { coerceExtraction, htmlToText, buildUpdateData, TIPOS_BENEFICIARIO, ABRANGENCIAS, TIPOS_APOIO } from '../lib/enrichment';
 
+/**
+ * Fornecedores LLM suportados, por ordem de preferência (decisão 2026-07-20:
+ * OpenRouter primeiro — créditos pré-pagos = tecto financeiro duro; Cortecs
+ * como alternativa EU-soberana; Gemini direto como fallback).
+ * OpenRouter e Cortecs partilham o mesmo caminho OpenAI-compatível — mudar
+ * de gateway é mudar a env var, zero alterações de código.
+ */
+interface LLMResult {
+    raw: string;
+    tokensIn: number;
+    tokensOut: number;
+}
+
+interface LLMProvider {
+    name: string;
+    model: string;
+    call: (prompt: string) => Promise<LLMResult>;
+}
+
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const pdfParse = require('pdf-parse');
 
@@ -91,11 +110,48 @@ async function fetchAvisoText(url: string): Promise<{ text: string; contentType:
     }
 }
 
-async function main(): Promise<void> {
-    const opts = parseArgs(process.argv.slice(2));
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) throw new Error('GEMINI_API_KEY não configurada no .env');
+/** Especificação JSON em texto — usada no caminho OpenAI-compatível (sem responseSchema nativo). */
+const JSON_SPEC = `Responde APENAS com um objeto JSON válido (sem markdown) com exatamente estas chaves:
+{
+  "descricao": string|null (resumo em português, 2-3 parágrafos, mín. 50 chars),
+  "dataInicioSubmissao": "YYYY-MM-DD"|null,
+  "dataFimSubmissao": "YYYY-MM-DD"|null,
+  "tiposBeneficiarios": array com valores de [${TIPOS_BENEFICIARIO.join(', ')}],
+  "caeElegiveis": array de números CAE SE explicitamente listados,
+  "regiaoNUTS2": string|null (Norte, Centro, Lisboa, Alentejo, Algarve, Açores, Madeira),
+  "abrangenciaGeografica": um de [${ABRANGENCIAS.join(', ')}]|null,
+  "montanteMinimo": número em euros|null,
+  "montanteMaximo": número em euros|null,
+  "taxaCofinanciamentoMax": percentagem 0-100|null,
+  "tipoApoio": um de [${TIPOS_APOIO.join(', ')}]|null
+}`;
 
+function makeOpenAICompatibleProvider(name: string, baseUrl: string, apiKey: string, model: string): LLMProvider {
+    return {
+        name,
+        model,
+        call: async (prompt: string): Promise<LLMResult> => {
+            const response = await axios.post(
+                `${baseUrl}/chat/completions`,
+                {
+                    model,
+                    messages: [{ role: 'user', content: `${prompt}\n\n${JSON_SPEC}` }],
+                    response_format: { type: 'json_object' },
+                    temperature: 0.1,
+                },
+                { headers: { Authorization: `Bearer ${apiKey}` }, timeout: 90000 },
+            );
+            const raw = String(response.data?.choices?.[0]?.message?.content ?? '');
+            return {
+                raw,
+                tokensIn: Number(response.data?.usage?.prompt_tokens ?? 0),
+                tokensOut: Number(response.data?.usage?.completion_tokens ?? 0),
+            };
+        },
+    };
+}
+
+function makeGeminiProvider(apiKey: string): LLMProvider {
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({
         model: MODEL,
@@ -105,6 +161,43 @@ async function main(): Promise<void> {
             temperature: 0.1,
         },
     });
+    return {
+        name: 'gemini-direct',
+        model: MODEL,
+        call: async (prompt: string): Promise<LLMResult> => {
+            const result = await model.generateContent(prompt);
+            const usage = result.response.usageMetadata;
+            return {
+                raw: result.response.text(),
+                tokensIn: usage?.promptTokenCount ?? 0,
+                tokensOut: usage?.candidatesTokenCount ?? 0,
+            };
+        },
+    };
+}
+
+function resolveProvider(): LLMProvider {
+    if (process.env.OPENROUTER_API_KEY) {
+        return makeOpenAICompatibleProvider(
+            'openrouter', 'https://openrouter.ai/api/v1',
+            process.env.OPENROUTER_API_KEY,
+            process.env.LLM_MODEL || 'google/gemini-2.5-flash',
+        );
+    }
+    if (process.env.CORTECS_API_KEY) {
+        const model = process.env.LLM_MODEL;
+        if (!model) throw new Error('CORTECS_API_KEY definida mas falta LLM_MODEL (o catálogo Cortecs tem IDs próprios — ver cortecs.ai/serverlessModels)');
+        return makeOpenAICompatibleProvider('cortecs', 'https://api.cortecs.ai/v1', process.env.CORTECS_API_KEY, model);
+    }
+    if (process.env.GEMINI_API_KEY) {
+        return makeGeminiProvider(process.env.GEMINI_API_KEY);
+    }
+    throw new Error('Nenhuma chave LLM configurada (OPENROUTER_API_KEY, CORTECS_API_KEY ou GEMINI_API_KEY)');
+}
+
+async function main(): Promise<void> {
+    const opts = parseArgs(process.argv.slice(2));
+    const provider = resolveProvider();
 
     const now = new Date();
     // FA entra sempre (as datas fallback estão no passado e é isso que queremos corrigir)
@@ -134,7 +227,7 @@ async function main(): Promise<void> {
         .slice(0, opts.limit);
 
     console.log('═'.repeat(60));
-    console.log(`🧠 ENRIQUECIMENTO DE AVISOS — ${MODEL} ${opts.commit ? '(COMMIT)' : '(dry-run)'}`);
+    console.log(`🧠 ENRIQUECIMENTO DE AVISOS — ${provider.name}/${provider.model} ${opts.commit ? '(COMMIT)' : '(dry-run)'}`);
     console.log(`   candidatos: ${candidatos.length} (limit ${opts.limit}${opts.portal ? `, portal ${opts.portal}` : ''})`);
     console.log('═'.repeat(60));
 
@@ -157,12 +250,11 @@ async function main(): Promise<void> {
                 `És um extrator de dados de avisos de financiamento (fundos portugueses e europeus). ` +
                 `Extrai APENAS informação presente no texto — usa null/lista vazia quando a informação não consta. Não inventes.\n\n` +
                 `TÍTULO DO AVISO: ${aviso.nome}\n\nTEXTO DA PÁGINA OFICIAL (${fetched.contentType}):\n${fetched.text}`;
-            const result = await model.generateContent(prompt);
-            const usage = result.response.usageMetadata;
-            tokensIn += usage?.promptTokenCount ?? 0;
-            tokensOut += usage?.candidatesTokenCount ?? 0;
+            const result = await provider.call(prompt);
+            tokensIn += result.tokensIn;
+            tokensOut += result.tokensOut;
 
-            const coerced = coerceExtraction(JSON.parse(result.response.text()));
+            const coerced = coerceExtraction(JSON.parse(result.raw));
             if (!coerced || coerced.fieldCount === 0) {
                 console.log('      ⚠️ extração vazia/inválida');
                 if (opts.commit && coerced === null) {
@@ -183,7 +275,7 @@ async function main(): Promise<void> {
                     data: {
                         ...update,
                         enrichmentStatus: 'AI_ENRICHED',
-                        enrichedBy: MODEL,
+                        enrichedBy: `${provider.name}/${provider.model}`,
                         lastEnrichedAt: new Date(),
                         enrichmentScore: coerced.fieldCount / coerced.totalFields,
                         dataSourceLog: {
@@ -191,7 +283,7 @@ async function main(): Promise<void> {
                             fetchedAt: new Date().toISOString(),
                             contentType: fetched.contentType,
                             chars: fetched.text.length,
-                            model: MODEL,
+                            model: `${provider.name}/${provider.model}`,
                         },
                     },
                 });

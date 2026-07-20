@@ -50,17 +50,22 @@ jobs:
           # sem isto o scraper do PRR falha com "unable to verify the first certificate"
           NODE_EXTRA_CA_CERTS: apify-actors/super-scraper/certs/sectigo-ov-r36-intermediate.pem
 
-      - name: Enrich avisos (Gemini Flash)
+      - name: Enrich avisos (LLM)
         # Enriquecimento pós-sync: descrições, datas (FA), beneficiários, CAE.
-        # Salta graciosamente enquanto o secret GEMINI_API_KEY não estiver definido
-        # (todas as chaves LLM estavam inválidas a 2026-07-20 — ver scripts/update-ai-keys.sh).
+        # Fornecedor por ordem de preferência: OpenRouter (créditos pré-pagos =
+        # tecto financeiro) > Cortecs (EU-soberano; requer LLM_MODEL) > Gemini direto.
+        # Salta graciosamente enquanto nenhum secret de LLM estiver definido
+        # (todas as chaves estavam inválidas a 2026-07-20 — ver scripts/update-ai-keys.sh).
         run: |
-          if [ -z "$GEMINI_API_KEY" ]; then
-            echo "GEMINI_API_KEY não definido — enriquecimento saltado."
+          if [ -z "$OPENROUTER_API_KEY" ] && [ -z "$CORTECS_API_KEY" ] && [ -z "$GEMINI_API_KEY" ]; then
+            echo "Nenhuma chave LLM definida — enriquecimento saltado."
             exit 0
           fi
           npx tsx scripts/enrich-avisos.ts --commit --limit 150
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          CORTECS_API_KEY: ${{ secrets.CORTECS_API_KEY }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NODE_EXTRA_CA_CERTS: apify-actors/super-scraper/certs/sectigo-ov-r36-intermediate.pem
