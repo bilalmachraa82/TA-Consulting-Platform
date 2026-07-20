@@ -36,7 +36,16 @@ jobs:
       - name: Generate Prisma client
         run: npx prisma generate
 
+      - name: Build super-scraper
+        # sync-avisos-to-db.ts importa apify-actors/super-scraper/dist/lib/*.js,
+        # e dist/ está no .gitignore — sem este build o job falha com MODULE_NOT_FOUND
+        run: npm ci && npm run build
+        working-directory: apify-actors/super-scraper
+
       - name: Run sync
         run: npx tsx scripts/sync-avisos-to-db.ts
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          # recuperarportugal.gov.pt não envia o certificado intermédio (Sectigo OV R36);
+          # sem isto o scraper do PRR falha com "unable to verify the first certificate"
+          NODE_EXTRA_CA_CERTS: apify-actors/super-scraper/certs/sectigo-ov-r36-intermediate.pem

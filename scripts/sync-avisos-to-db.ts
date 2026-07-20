@@ -57,19 +57,21 @@ interface ScrapedAviso {
     documentos?: { url: string; nome: string }[];
 }
 
-function parseDate(dateStr?: string): Date {
-    if (!dateStr) return new Date();
-    try {
-        const d = new Date(dateStr);
-        return isNaN(d.getTime()) ? new Date() : d;
-    } catch {
-        return new Date();
-    }
+// Devolve null quando a fonte não fornece data válida — o caller decide:
+// no update preserva-se o valor existente; no create usa-se fallback explícito.
+// (Fix completo — datas nullable no schema — fica para follow-up: toca ~60 ficheiros.)
+function parseDate(dateStr?: string): Date | null {
+    if (!dateStr) return null;
+    const d = new Date(dateStr);
+    return isNaN(d.getTime()) ? null : d;
 }
 
 async function upsertAviso(aviso: ScrapedAviso, portalName: string) {
     const portal = portalMap[portalName] || portalMap[aviso.fonte || ''] || Portal.PORTUGAL2030;
     const codigo = aviso.codigo || aviso.id || `${portalName}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+
+    const dataInicio = parseDate(aviso.dataAbertura);
+    const dataFim = parseDate(aviso.dataFecho);
 
     try {
         // Check if exists
@@ -82,8 +84,10 @@ async function upsertAviso(aviso: ScrapedAviso, portalName: string) {
                     nome: aviso.titulo?.slice(0, 500) || 'Sem título',
                     portal, // corrige rows antigas classificadas no portal errado
                     programa: aviso.programa?.slice(0, 200) || portalName,
-                    dataInicioSubmissao: parseDate(aviso.dataAbertura),
-                    dataFimSubmissao: parseDate(aviso.dataFecho),
+                    // sem data válida na fonte, preserva-se a existente em vez de
+                    // sobrescrever com "agora" (prazo falso renovado a cada sync)
+                    ...(dataInicio ? { dataInicioSubmissao: dataInicio } : {}),
+                    ...(dataFim ? { dataFimSubmissao: dataFim } : {}),
                     montanteMinimo: aviso.dotacao || null,
                     ativo: aviso.status === 'Aberto',
                     link: aviso.url,
@@ -98,8 +102,10 @@ async function upsertAviso(aviso: ScrapedAviso, portalName: string) {
                     nome: aviso.titulo?.slice(0, 500) || 'Sem título',
                     portal,
                     programa: aviso.programa?.slice(0, 200) || portalName,
-                    dataInicioSubmissao: parseDate(aviso.dataAbertura),
-                    dataFimSubmissao: parseDate(aviso.dataFecho),
+                    // fallback "agora": o aviso fica imediatamente fora dos filtros
+                    // de abertos em vez de ganhar um prazo futuro inventado
+                    dataInicioSubmissao: dataInicio ?? new Date(),
+                    dataFimSubmissao: dataFim ?? new Date(),
                     montanteMinimo: aviso.dotacao || null,
                     ativo: aviso.status === 'Aberto',
                     link: aviso.url,
@@ -117,11 +123,20 @@ async function upsertAviso(aviso: ScrapedAviso, portalName: string) {
     }
 }
 
-async function syncPortal(name: string, scraper: () => Promise<ScrapedAviso[]>) {
+// Portais que falham sem lançar erro (ex.: PRR engole o erro TLS e devolve [])
+// são apanhados pelo mínimo esperado — 0 resultados num portal grande é falha,
+// não sucesso. Sem isto o workflow fica verde e o cron seguinte consome dados velhos.
+const failedPortals: string[] = [];
+
+async function syncPortal(name: string, scraper: () => Promise<ScrapedAviso[]>, minExpected = 0) {
     console.log(`\n📡 ${name}: Scraping...`);
     try {
         const avisos = await scraper();
         console.log(`   ✅ ${avisos.length} avisos obtidos`);
+
+        if (avisos.length < minExpected) {
+            failedPortals.push(`${name} (${avisos.length} < mínimo ${minExpected})`);
+        }
 
         let success = 0;
         for (const aviso of avisos) {
@@ -131,6 +146,7 @@ async function syncPortal(name: string, scraper: () => Promise<ScrapedAviso[]>) 
         return success;
     } catch (e: any) {
         console.log(`   ❌ Erro: ${e.message}`);
+        failedPortals.push(`${name} (exceção: ${e.message?.slice(0, 60)})`);
         return 0;
     }
 }
@@ -143,16 +159,16 @@ async function main() {
     let total = 0;
 
     // PT2030
-    total += await syncPortal('PT2030', () => scrapePortugal2030({ maxItems: 500, onlyOpen: false }));
+    total += await syncPortal('PT2030', () => scrapePortugal2030({ maxItems: 500, onlyOpen: false }), 50);
 
-    // PRR
-    total += await syncPortal('PRR', () => scrapePRR({ maxItems: 500, onlyOpen: false }));
+    // PRR — maxItems 1000: o admin-ajax devolve 566+ candidaturas; 500 capava a recolha
+    total += await syncPortal('PRR', () => scrapePRR({ maxItems: 1000, onlyOpen: false }), 50);
 
     // IPDJ
     total += await syncPortal('IPDJ', () => scrapeIPDJ({ maxItems: 50, onlyOpen: true }));
 
-    // Horizon
-    total += await syncPortal('Horizon', () => scrapeCORDIS({ maxItems: 100, onlyOpen: true, includeDocuments: true }));
+    // Horizon — maxItems 500: a SEDIA tem >100 calls abertas; 100 capava a recolha
+    total += await syncPortal('Horizon', () => scrapeCORDIS({ maxItems: 500, onlyOpen: true, includeDocuments: true }), 10);
 
     // Europa Criativa
     total += await syncPortal('Europa Criativa', () => scrapeEuropaCriativa({ maxItems: 50, onlyOpen: true, includeDocuments: true }));
@@ -176,6 +192,11 @@ async function main() {
     byPortal.forEach(p => console.log(`   - ${p.portal}: ${p._count}`));
 
     await prisma.$disconnect();
+
+    if (failedPortals.length > 0) {
+        console.error(`\n❌ Portais falhados: ${failedPortals.join('; ')}`);
+        process.exit(1);
+    }
 }
 
 main().catch(e => {

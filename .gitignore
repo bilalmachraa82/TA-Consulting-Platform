@@ -18,6 +18,9 @@ dist/
 # Misc
 .DS_Store
 *.pem
+# exceção: certificado CA intermédio PÚBLICO (Sectigo) — não é chave privada;
+# necessário porque recuperarportugal.gov.pt não envia a cadeia completa
+!apify-actors/super-scraper/certs/sectigo-ov-r36-intermediate.pem
 .tmp/
 
 # Debug
