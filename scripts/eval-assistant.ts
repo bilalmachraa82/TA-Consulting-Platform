@@ -101,7 +101,7 @@ const CASOS: Caso[] = [
     },
 ];
 
-async function avaliarModelo(modelo: string | undefined): Promise<void> {
+async function avaliarModelo(modelo: string | undefined): Promise<{ acertos: number; fabricacoes: number }> {
     if (modelo) process.env.LLM_MODEL = modelo;
     const { runAssistant } = await import('../lib/chatbot/assistant');
 
@@ -147,16 +147,35 @@ async function avaliarModelo(modelo: string | undefined): Promise<void> {
     if (fabricacoes > 0) {
         console.log('⚠️  Fabricações > 0: este modelo não serve para uso com clientes.');
     }
+    return { acertos, fabricacoes };
 }
 
 async function main(): Promise<void> {
     const argModels = process.argv.indexOf('--models');
     const modelos = argModels >= 0 ? (process.argv[argModels + 1] || '').split(',').filter(Boolean) : [undefined];
+    // --repeticoes N: há variância entre corridas; para um veredicto fiável
+    // corre-se o conjunto várias vezes e conta-se qualquer fabricação.
+    const argRep = process.argv.indexOf('--repeticoes');
+    const repeticoes = argRep >= 0 ? Math.max(1, parseInt(process.argv[argRep + 1] || '1', 10)) : 1;
 
+    let fabricacoesTotais = 0;
     for (const m of modelos) {
-        await avaliarModelo(m);
+        for (let i = 0; i < repeticoes; i++) {
+            if (repeticoes > 1) console.log(`\n--- corrida ${i + 1}/${repeticoes} ---`);
+            const r = await avaliarModelo(m);
+            fabricacoesTotais += r.fabricacoes;
+        }
     }
     await prisma.$disconnect();
+
+    // Sai com erro se houve QUALQUER fabricação: o workflow diário falha e o
+    // alerta chega ao ADMIN_EMAIL. Uma resposta inventada a um cliente é
+    // motivo para parar, não para registar e seguir.
+    if (fabricacoesTotais > 0) {
+        console.error(`\n❌ ${fabricacoesTotais} fabricação(ões) detetada(s) — a falhar deliberadamente.`);
+        process.exit(1);
+    }
+    console.log('\n✅ Sem fabricações.');
 }
 
 main().catch((e) => {

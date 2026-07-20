@@ -69,3 +69,15 @@ jobs:
           LLM_MODEL: ${{ vars.LLM_MODEL }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NODE_EXTRA_CA_CERTS: apify-actors/super-scraper/certs/sectigo-ov-r36-intermediate.pem
+
+      - name: Eval de fidelidade do assistente
+        # Guardrail diário: pergunta factos verificáveis contra a BD e faz
+        # perguntas-armadilha sobre avisos inexistentes. Falha (e alerta) se o
+        # assistente fabricar. Custa ~$0.02/dia — barato para o risco que cobre.
+        if: ${{ env.OPENROUTER_API_KEY != '' }}
+        run: npx tsx scripts/eval-assistant.ts --repeticoes 2
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          CHATBOT_DATABASE_URL: ${{ secrets.CHATBOT_DATABASE_URL }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
