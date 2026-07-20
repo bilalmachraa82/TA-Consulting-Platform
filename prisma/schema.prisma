@@ -79,8 +79,8 @@ model Aviso {
   setoresElegiveis    String[]
   dimensaoEmpresa     String[]
   // v6: NUT + TIP matching (95% dos avisos usam isto em vez de CAE)
-  nutsCompativeis     String[]      // Array de NUTs compatíveis (ex: ["Norte", "Centro"])
-  tipCompativeis      String[]      // Array de TIPs compatíveis (95% dos avisos: IPSS, Associação, etc.)
+  nutsCompativeis     String[]      @default([]) // Array de NUTs compatíveis (ex: ["Norte", "Centro"])
+  tipCompativeis      String[]      @default([]) // Array de TIPs compatíveis (95% dos avisos: IPSS, Associação, etc.)
   caeCompativeis      String?       // CAE (só 5% dos avisos têm - fallback)
   urgente             Boolean       @default(false)
   ativo               Boolean       @default(true)
@@ -92,6 +92,81 @@ model Aviso {
   notasAdicionais     String?
   preRequisitos       String[]
   anexos              Json?
+  // Enriquecimento (colunas já existentes na BD viva — reconciliadas 2026-07-20)
+  enrichmentStatus                EnrichmentStatus        @default(BASIC)
+  abrangenciaGeografica           AbrangenciaGeografica?
+  anexosRegulamento               String[]                @default([])
+  antiguidadeMinima               Int?
+  apresentacaoPlanoNegocios       Boolean                 @default(false)
+  artigoGBER                      String?
+  baseLegalPrincipal              String?
+  caeElegiveis                    Int[]                   @default([])
+  caeExcluidos                    Int[]                   @default([])
+  categoriasInvestimentoElegiveis CategoriaInvestimento[] @default([])
+  comparticipacaoPublicaMax       Float?
+  contribuicaoPropriaMin          Float?
+  criacaoEmpregoObrigatoria       Boolean                 @default(false)
+  custosElegiveis                 Json?
+  custosNaoElegiveis              Json?
+  dataDecisaoEstimada             DateTime?
+  dataSourceLog                   Json?
+  declaracoesNecessarias          String[]                @default([])
+  documentosObrigatorios          String[]                @default([])
+  duracaoMaximaProjeto            Int?
+  duracaoMinimaProjeto            Int?
+  eixoPrioritario                 String?
+  enrichedBy                      String?
+  enrichmentScore                 Float?
+  estudoViabilidadeObrigatorio    Boolean                 @default(false)
+  fasesSubmissao                  Int                     @default(1)
+  formaJuridicaRequerida          String[]                @default([])
+  fundoEstruturalPrincipal        FundoEstrutural?
+  fundosCofinanciamento           Json?
+  lastEnrichedAt                  DateTime?
+  limitacaoTerritorial            String?
+  limiteMaximoCandidatura         Decimal?                @db.Decimal(15, 2)
+  limiteMaximoEmpresa             Decimal?                @db.Decimal(15, 2)
+  limiteMinimoCandidatura         Decimal?                @db.Decimal(15, 2)
+  migratedFromLegacy              Boolean                 @default(false)
+  migrationErrors                 String[]                @default([])
+  migrationVersion                String?
+  municipiosElegiveis             String[]                @default([])
+  normativoComunitario            String?
+  objetivoEspecificoCodigo        String?
+  parecerTecnicoObrigatorio       Boolean                 @default(false)
+  pdfDownloadStatus               PDFStatus?              @default(NOT_STARTED)
+  pdfDownloadedAt                 DateTime?
+  pdfExtractedText                String?
+  pdfExtractionQuality            Float?
+  pdfExtractionStatus             PDFStatus?              @default(NOT_STARTED)
+  pdfHash                         String?
+  pdfMetadata                     Json?
+  pdfStoragePath                  String?
+  percentagemFNR                  Float?
+  periodoManutencaoAnos           Int?
+  prazoContratacaoDias            Int?
+  prazoExecucaoMeses              Int?
+  prazoReclamacao                 Int?
+  prioridadeInvestimento          String?
+  programaOperacionalCodigo       String?
+  reembolsavel                    Boolean                 @default(false)
+  regiaoNUTS2                     String?
+  regiaoNUTS3                     String[]                @default([])
+  regimeAuxilio                   RegimeAuxilio?
+  regulamentoURL                  String?
+  situacaoRegularizada            Boolean                 @default(true)
+  taxaCofinanciamentoMax          Float?
+  taxaCofinanciamentoMin          Float?
+  taxaGrandeEmpresa               Float?
+  taxaMediaEmpresa                Float?
+  taxaMicroEmpresa                Float?
+  taxaPequenaEmpresa              Float?
+  tipoApoio                       TipoApoio?
+  tipoOperacao                    TipoOperacao?
+  tipoSubmissao                   TipoSubmissao?
+  tiposBeneficiarios              TipoBeneficiario[]      @default([])
+  trabalhadoresMinimo             Int?
+  volumeNegociosMinimo            Decimal?                @db.Decimal(15, 2)
   chunks              AvisoChunk[]
   candidaturas        Candidatura[]
 
@@ -553,6 +628,91 @@ model Integration {
   enabled      Boolean  @default(true)
   createdAt    DateTime @default(now())
   team         Team     @relation(fields: [teamId], references: [id])
-  
+
   @@map("integrations")
+}
+
+// Enums de enriquecimento — já existentes na BD viva (reconciliados 2026-07-20)
+
+enum EnrichmentStatus {
+  BASIC
+  ENHANCED
+  AI_ENRICHED
+  MANUAL_VERIFIED
+  VALIDATION_FAILED
+}
+
+enum AbrangenciaGeografica {
+  REGIONAL
+  NACIONAL
+  CONTINENTAL
+  EUROPEU
+}
+
+enum CategoriaInvestimento {
+  EQUIPAMENTO
+  CONSTRUCAO
+  SOFTWARE
+  FORMACAO
+  CONSULTORIA
+  ESTUDOS
+  MARKETING
+  CERTIFICACAO
+  INOVACAO
+  INVESTIGACAO
+}
+
+enum FundoEstrutural {
+  FEDER
+  FSE_PLUS
+  FC
+  FTJ
+  FEAMPA
+}
+
+enum PDFStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+  FAILED
+  SKIPPED
+}
+
+enum RegimeAuxilio {
+  GBER
+  DE_MINIMIS
+  NAO_APLICAVEL
+  AUXILIO_ESTATAL_NOTIFICADO
+}
+
+enum TipoApoio {
+  SUBSIDIO
+  CREDITO
+  GARANTIA
+  MISTO
+}
+
+enum TipoBeneficiario {
+  EMPRESAS
+  ASSOCIACOES
+  AUTARQUIAS
+  ONG
+  COOPERATIVAS
+  IPSS
+  ENSINO_INVESTIGACAO
+  PARTICULARES
+}
+
+enum TipoOperacao {
+  INVESTIMENTO
+  FORMACAO
+  ESTUDOS
+  CONSULTORIA
+  MISTO
+}
+
+enum TipoSubmissao {
+  BALCAO
+  CONCURSO
+  CONTINUA
 }

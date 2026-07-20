@@ -1,0 +1,42 @@
+name: Sync Avisos
+
+# Sync diário dos avisos (PT2030, PRR, IPDJ, Horizon/CORDIS, Europa Criativa)
+# para a BD de produção. Corre antes do cron Vercel das 06:30 UTC
+# (check-new-avisos), para o cruzamento avisos×leads apanhar dados frescos.
+# PEPAC fica de fora deste job: o scraper precisa de Firecrawl/Playwright
+# (ver apify-actors/super-scraper/dist/lib/pepac-playwright.js).
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: sync-avisos
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: 📡 Sync avisos → BD
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Prisma client
+        run: npx prisma generate
+
+      - name: Run sync
+        run: npx tsx scripts/sync-avisos-to-db.ts
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}

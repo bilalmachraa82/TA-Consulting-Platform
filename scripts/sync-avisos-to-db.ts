@@ -34,7 +34,10 @@ const portalMap: Record<string, Portal> = {
     'PEPAC': Portal.PEPAC,
     'PEPAC Continente': Portal.PEPAC,
     'Horizon Europe': Portal.HORIZON_EUROPE,
+    'Horizon': Portal.HORIZON_EUROPE,
     'HORIZON': Portal.HORIZON_EUROPE,
+    'HORIZON_EUROPE': Portal.HORIZON_EUROPE,
+    'EUROPA_CRIATIVA': Portal.EUROPA_CRIATIVA,
     'Europa Criativa': Portal.EUROPA_CRIATIVA,
     'IPDJ': Portal.IPDJ,
 };
@@ -77,6 +80,7 @@ async function upsertAviso(aviso: ScrapedAviso, portalName: string) {
                 where: { id: existing.id },
                 data: {
                     nome: aviso.titulo?.slice(0, 500) || 'Sem título',
+                    portal, // corrige rows antigas classificadas no portal errado
                     programa: aviso.programa?.slice(0, 200) || portalName,
                     dataInicioSubmissao: parseDate(aviso.dataAbertura),
                     dataFimSubmissao: parseDate(aviso.dataFecho),
