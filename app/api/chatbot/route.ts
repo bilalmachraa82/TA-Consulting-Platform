@@ -23,14 +23,19 @@ import { llmConfigured } from '@/lib/llm-client';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
 
-const RequestSchema = z.object({
-    message: z.string().min(1, 'Mensagem é obrigatória').max(5000, 'Mensagem demasiado longa'),
-    conversationHistory: z
-        .array(z.object({ role: z.enum(['user', 'assistant']), content: z.string().max(5000) }))
-        .max(20)
-        .optional()
-        .default([]),
-});
+const RequestSchema = z
+    .object({
+        // `question` é o nome usado pelas UIs existentes (chat-interface, ai-assistant)
+        message: z.string().min(1).max(5000).optional(),
+        question: z.string().min(1).max(5000).optional(),
+        conversationHistory: z
+            .array(z.object({ role: z.enum(['user', 'assistant']), content: z.string().max(5000) }))
+            .max(20)
+            .optional()
+            .default([]),
+        portal: z.string().max(40).optional(),
+    })
+    .refine((d) => Boolean(d.message || d.question), { message: 'message (ou question) é obrigatório' });
 
 export async function POST(request: NextRequest) {
     try {
@@ -63,8 +68,14 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        const { message, conversationHistory } = parseResult.data;
-        const result = await runAssistant(message, conversationHistory);
+        const { message, question, conversationHistory, portal } = parseResult.data;
+        const pergunta = (message || question) as string;
+        // filtro de portal escolhido na UI entra como instrução, não como SQL
+        const comFiltro = portal && portal !== 'ALL'
+            ? `${pergunta}\n\n(O utilizador está a filtrar pelo portal ${portal} — usa portal="${portal}" nas pesquisas.)`
+            : pergunta;
+
+        const result = await runAssistant(comFiltro, conversationHistory);
 
         return NextResponse.json({
             success: true,

@@ -166,10 +166,17 @@ export function AIAssistant() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/rag/chat', {
+      // /api/chatbot: tool-calling sobre a BD viva (substitui o snapshot
+      // estático do File Search em /api/rag/chat)
+      const response = await fetch('/api/chatbot', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question: currentInput }),
+        body: JSON.stringify({
+          question: currentInput,
+          conversationHistory: messages
+            .slice(-6)
+            .map((m) => ({ role: m.isBot ? 'assistant' : 'user', content: m.text })),
+        }),
       });
 
       const data = await response.json();

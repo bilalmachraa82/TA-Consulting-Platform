@@ -175,10 +175,12 @@ export class MatchmakingEngine {
         // ============================================================
         // PRIORIDADE 5: Prazo adequado (10 pontos)
         // Verifica se o prazo é razoável para preparação
+        // Prazo nulo = "por confirmar" (a fonte diz aberto mas não publica a
+        // data); tratado como prazo folgado, não como expirado.
         // ============================================================
-        const diasRestantes = Math.ceil(
-            (new Date(aviso.dataFimSubmissao).getTime() - Date.now()) / (1000 * 60 * 60 * 24)
-        );
+        const diasRestantes = aviso.dataFimSubmissao
+            ? Math.ceil((new Date(aviso.dataFimSubmissao).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
+            : 999;
 
         if (diasRestantes >= 30) {
             breakdown.prazo = 10;
@@ -344,10 +346,10 @@ export function findMatchesForAviso(
             }
         }
 
-        // Prazo adequado (10 pts)
-        const diasRestantes = Math.ceil(
-            (new Date(aviso.dataFimSubmissao).getTime() - Date.now()) / (1000 * 60 * 60 * 24)
-        );
+        // Prazo adequado (10 pts) — nulo = "por confirmar", ver nota acima
+        const diasRestantes = aviso.dataFimSubmissao
+            ? Math.ceil((new Date(aviso.dataFimSubmissao).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
+            : 999;
 
         if (diasRestantes >= 30) {
             breakdown.prazo = 10;

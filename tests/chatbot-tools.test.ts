@@ -29,9 +29,18 @@ describe('searchAvisosParams — validação da fronteira', () => {
 });
 
 describe('buildAvisosWhere — tradução para Prisma', () => {
-    it('apenasAbertos filtra por prazo futuro', () => {
+    it('apenasAbertos = ativo E (prazo futuro OU por confirmar)', () => {
         const where = buildAvisosWhere(searchAvisosParams.parse({}), NOW);
-        expect(where.dataFimSubmissao).toEqual({ gte: NOW });
+        expect(where.ativo).toBe(true);
+        // avisos sem prazo publicado pela fonte (NULL) contam como abertos —
+        // escondê-los perdia 85 avisos abertos do PRR
+        expect(where.OR).toEqual([{ dataFimSubmissao: null }, { dataFimSubmissao: { gte: NOW } }]);
+    });
+
+    it('prazoAteDias explícito exclui os "por confirmar"', () => {
+        const where = buildAvisosWhere(searchAvisosParams.parse({ prazoAteDias: 30 }), NOW);
+        expect(where.OR).toBeUndefined();
+        expect((where.dataFimSubmissao as { gte: Date }).gte).toEqual(NOW);
     });
 
     it('prazoAteDias cria janela [agora, agora+N dias]', () => {

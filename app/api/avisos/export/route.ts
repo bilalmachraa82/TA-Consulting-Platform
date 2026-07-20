@@ -28,16 +28,20 @@ export async function POST(request: NextRequest) {
 
     const now = new Date()
     const dadosExport = avisos.map((aviso: Aviso) => {
-      const diasRestantes = Math.ceil((aviso.dataFimSubmissao.getTime() - now.getTime()) / (1000 * 3600 * 24))
+      // datas podem ser nulas: a fonte diz que o aviso está aberto mas não
+      // publica o prazo (ex.: 85 avisos do PRR) — "por confirmar" ≠ "expirado"
+      const diasRestantes = aviso.dataFimSubmissao
+        ? Math.ceil((aviso.dataFimSubmissao.getTime() - now.getTime()) / (1000 * 3600 * 24))
+        : null
 
       return {
         Nome: aviso.nome,
         Portal: aviso.portal,
         Programa: aviso.programa,
         Código: aviso.codigo,
-        'Data Início': aviso.dataInicioSubmissao.toLocaleDateString('pt-PT'),
-        'Data Fim': aviso.dataFimSubmissao.toLocaleDateString('pt-PT'),
-        'Dias Restantes': diasRestantes > 0 ? diasRestantes : 'Expirado',
+        'Data Início': aviso.dataInicioSubmissao?.toLocaleDateString('pt-PT') ?? 'Por confirmar',
+        'Data Fim': aviso.dataFimSubmissao?.toLocaleDateString('pt-PT') ?? 'Por confirmar',
+        'Dias Restantes': diasRestantes === null ? 'Por confirmar' : diasRestantes > 0 ? diasRestantes : 'Expirado',
         'Montante Mín.': aviso.montanteMinimo ? `€${aviso.montanteMinimo.toLocaleString('pt-PT')}` : 'N/A',
         'Montante Máx.': aviso.montanteMaximo ? `€${aviso.montanteMaximo.toLocaleString('pt-PT')}` : 'N/A',
         Taxa: aviso.taxa || 'N/A',

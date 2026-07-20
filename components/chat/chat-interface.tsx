@@ -60,12 +60,18 @@ export function ChatInterface() {
         setIsLoading(true);
 
         try {
-            const response = await fetch('/api/rag/chat', {
+            // /api/chatbot: tool-calling sobre a BD viva (substitui o snapshot
+            // estático do File Search em /api/rag/chat)
+            const response = await fetch('/api/chatbot', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     question: userMsg.content,
                     portal: portal === 'ALL' ? undefined : portal,
+                    conversationHistory: messages
+                        .filter((m) => !m.isError)
+                        .slice(-6)
+                        .map((m) => ({ role: m.role, content: m.content })),
                 }),
             });
 

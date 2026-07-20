@@ -44,7 +44,7 @@ async function executeTool(name: string, argsJson: string): Promise<{ payload: u
 
     try {
         if (name === 'search_avisos') {
-            const { resultados, citations } = await executeSearchAvisos(args);
+            const { resultados, citations, totalDisponivel } = await executeSearchAvisos(args);
             if (resultados.length === 0) {
                 return {
                     payload: {
@@ -54,7 +54,17 @@ async function executeTool(name: string, argsJson: string): Promise<{ payload: u
                     citations: [],
                 };
             }
-            return { payload: { total: resultados.length, resultados }, citations };
+            return {
+                payload: {
+                    totalDisponivel,
+                    devolvidosNestaPagina: resultados.length,
+                    nota: totalDisponivel > resultados.length
+                        ? `Existem ${totalDisponivel} avisos que satisfazem os critérios; estes são os ${resultados.length} com prazo mais próximo. Ao indicar quantidades usa SEMPRE ${totalDisponivel}, nunca ${resultados.length}.`
+                        : undefined,
+                    resultados,
+                },
+                citations,
+            };
         }
         if (name === 'get_aviso_detail') {
             const { aviso, citations } = await executeGetAvisoDetail(args);

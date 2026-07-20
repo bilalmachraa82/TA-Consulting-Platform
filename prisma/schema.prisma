@@ -68,8 +68,8 @@ model Aviso {
   programa            String
   linha               String?
   codigo              String    @unique
-  dataInicioSubmissao DateTime
-  dataFimSubmissao    DateTime
+  dataInicioSubmissao DateTime?
+  dataFimSubmissao    DateTime?
   montanteMinimo      Float?
   montanteMaximo      Float?
   descricao           String?       @map("descrição")

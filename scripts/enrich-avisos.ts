@@ -57,12 +57,19 @@ interface CliOptions {
     commit: boolean;
     limit: number;
     portal?: Portal;
+    /**
+     * Modo de recuperação de prazos: alvo são os avisos que a fonte diz estarem
+     * ATIVOS mas cujo prazo é um carimbo de fallback (a listagem não expunha a
+     * data, ver parseDate). A data real está na página individual do aviso.
+     */
+    recoverDates: boolean;
 }
 
 function parseArgs(argv: string[]): CliOptions {
-    const opts: CliOptions = { commit: false, limit: 50 };
+    const opts: CliOptions = { commit: false, limit: 50, recoverDates: false };
     for (let i = 0; i < argv.length; i++) {
         if (argv[i] === '--commit') opts.commit = true;
+        if (argv[i] === '--recover-dates') opts.recoverDates = true;
         if (argv[i] === '--limit') opts.limit = parseInt(argv[i + 1] || '50', 10);
         if (argv[i] === '--portal') opts.portal = argv[i + 1] as Portal;
     }
@@ -200,31 +207,54 @@ async function main(): Promise<void> {
     const provider = resolveProvider();
 
     const now = new Date();
-    // FA entra sempre (as datas fallback estão no passado e é isso que queremos corrigir)
-    const where: Prisma.AvisoWhereInput = {
-        link: { not: null },
-        enrichmentStatus: 'BASIC',
-        ...(opts.portal
-            ? { portal: opts.portal }
-            : {
-                OR: [
-                    { dataFimSubmissao: { gte: now }, descricao: null },
-                    { dataFimSubmissao: { gte: now }, descricao: { equals: '' } },
-                    { portal: 'FUNDO_AMBIENTAL' },
-                ],
-            }),
-    };
+    // Três famílias de candidatos:
+    //  1. abertos sem descrição útil (enriquecimento normal)
+    //  2. FA (o site não publica datas na listagem — vêm sempre do fallback)
+    //  3. "abertos com prazo no passado": o scraper diz ativo=true mas a data
+    //     veio do fallback porque a fonte não a expôs na listagem (575 casos no
+    //     PRR a 2026-07-20). A data real está na página individual — o link.
+    // No modo --recover-dates o alvo é preciso: avisos ativos cujo prazo é um
+    // carimbo de fallback (data == dia de criação). Ordenados por criação
+    // recente para apanhar primeiro os carimbos do último sync.
+    const idsParaRecuperar = opts.recoverDates
+        ? await prisma.$queryRaw<Array<{ id: string }>>`
+            SELECT id FROM avisos
+            WHERE ativo
+              AND "dataFimSubmissao"::date <= "createdAt"::date
+              AND link IS NOT NULL
+            ORDER BY "createdAt" DESC
+            LIMIT ${opts.limit}`
+        : null;
+
+    const where: Prisma.AvisoWhereInput = idsParaRecuperar
+        ? { id: { in: idsParaRecuperar.map((r) => r.id) } }
+        : {
+            link: { not: null },
+            enrichmentStatus: 'BASIC',
+            ...(opts.portal
+                ? { portal: opts.portal }
+                : {
+                    OR: [
+                        { dataFimSubmissao: { gte: now }, descricao: null },
+                        { dataFimSubmissao: { gte: now }, descricao: { equals: '' } },
+                        { portal: 'FUNDO_AMBIENTAL' },
+                    ],
+                }),
+        };
 
     // avisos com descrição curta (<200) também contam — filtro fino em memória
     const candidatosRaw = await prisma.aviso.findMany({
         where,
         orderBy: { dataFimSubmissao: 'asc' },
         take: opts.limit * 2,
-        select: { id: true, codigo: true, nome: true, portal: true, link: true, descricao: true, dataFimSubmissao: true },
+        select: { id: true, codigo: true, nome: true, portal: true, link: true, descricao: true, dataFimSubmissao: true, ativo: true },
     });
-    const candidatos = candidatosRaw
-        .filter((a) => a.portal === 'FUNDO_AMBIENTAL' || !a.descricao || a.descricao.length < 200)
-        .slice(0, opts.limit);
+    // No modo recover-dates o alvo já vem escolhido pelo SQL (o que interessa é
+    // a data, não a descrição); nos outros modos filtra-se por descrição curta.
+    const candidatos = (opts.recoverDates
+        ? candidatosRaw
+        : candidatosRaw.filter((a) => a.portal === 'FUNDO_AMBIENTAL' || !a.descricao || a.descricao.length < 200)
+    ).slice(0, opts.limit);
 
     console.log('═'.repeat(60));
     console.log(`🧠 ENRIQUECIMENTO DE AVISOS — ${provider.name}/${provider.model} ${opts.commit ? '(COMMIT)' : '(dry-run)'}`);
@@ -264,7 +294,12 @@ async function main(): Promise<void> {
                 continue;
             }
 
-            const allowDates = aviso.portal === 'FUNDO_AMBIENTAL';
+            // Datas do LLM são permitidas quando a data atual é claramente um
+            // carimbo de fallback: FA (site nunca publica datas na listagem) ou
+            // aviso que a fonte diz estar ATIVO mas com prazo no passado.
+            // buildUpdateData continua a exigir prazo-atual-passado + novo-futuro,
+            // portanto nunca sobrescreve um prazo futuro vindo do scraper.
+            const allowDates = aviso.portal === 'FUNDO_AMBIENTAL' || (aviso.ativo && aviso.dataFimSubmissao < new Date());
             const update = buildUpdateData(coerced, { descricao: aviso.descricao, dataFimSubmissao: aviso.dataFimSubmissao }, { allowDates });
             const campos = Object.keys(update);
             console.log(`      ✅ ${coerced.fieldCount}/11 campos extraídos → escreve: ${campos.length ? campos.join(', ') : '(nada novo)'}`);
