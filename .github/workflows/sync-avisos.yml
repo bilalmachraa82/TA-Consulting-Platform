@@ -49,3 +49,18 @@ jobs:
           # recuperarportugal.gov.pt não envia o certificado intermédio (Sectigo OV R36);
           # sem isto o scraper do PRR falha com "unable to verify the first certificate"
           NODE_EXTRA_CA_CERTS: apify-actors/super-scraper/certs/sectigo-ov-r36-intermediate.pem
+
+      - name: Enrich avisos (Gemini Flash)
+        # Enriquecimento pós-sync: descrições, datas (FA), beneficiários, CAE.
+        # Salta graciosamente enquanto o secret GEMINI_API_KEY não estiver definido
+        # (todas as chaves LLM estavam inválidas a 2026-07-20 — ver scripts/update-ai-keys.sh).
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "GEMINI_API_KEY não definido — enriquecimento saltado."
+            exit 0
+          fi
+          npx tsx scripts/enrich-avisos.ts --commit --limit 150
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NODE_EXTRA_CA_CERTS: apify-actors/super-scraper/certs/sectigo-ov-r36-intermediate.pem
