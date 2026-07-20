@@ -391,6 +391,9 @@ enum Portal {
   EUROPA_CRIATIVA
   IPDJ
   BASE_GOV
+  DIGITAL_EUROPE
+  LIFE
+  FUNDO_AMBIENTAL
 }
 
 enum DimensaoEmpresa {

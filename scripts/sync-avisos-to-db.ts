@@ -23,6 +23,10 @@ const { scrapePRR } = require(`${scraperPath}/prr.js`);
 const { scrapeIPDJ } = require(`${scraperPath}/ipdj.js`);
 const { scrapeCORDIS } = require(`${scraperPath}/cordis.js`);
 const { scrapeEuropaCriativa } = require(`${scraperPath}/europa-criativa.js`);
+const { scrapePEPAC } = require(`${scraperPath}/pepac.js`);
+
+import { scrapeSEDIAProgramme } from './scrapers/sedia-programme';
+import { scrapeFundoAmbiental } from './scrapers/fundo-ambiental';
 
 const prisma = new PrismaClient();
 
@@ -40,6 +44,11 @@ const portalMap: Record<string, Portal> = {
     'EUROPA_CRIATIVA': Portal.EUROPA_CRIATIVA,
     'Europa Criativa': Portal.EUROPA_CRIATIVA,
     'IPDJ': Portal.IPDJ,
+    'Digital Europe': Portal.DIGITAL_EUROPE,
+    'DIGITAL_EUROPE': Portal.DIGITAL_EUROPE,
+    'LIFE': Portal.LIFE,
+    'Fundo Ambiental': Portal.FUNDO_AMBIENTAL,
+    'FUNDO_AMBIENTAL': Portal.FUNDO_AMBIENTAL,
 };
 
 interface ScrapedAviso {
@@ -173,8 +182,18 @@ async function main() {
     // Europa Criativa
     total += await syncPortal('Europa Criativa', () => scrapeEuropaCriativa({ maxItems: 50, onlyOpen: true, includeDocuments: true }));
 
-    // PEPAC - Skip for now as it needs Firecrawl and is not compiled
-    console.log('\n⏭️  PEPAC: Skipped (requires Firecrawl, run ingest-rag.ts separately)');
+    // PEPAC — API do pepacc.pt (HTTP puro, sem Firecrawl; validado 2026-07-20 com 44 concursos)
+    total += await syncPortal('PEPAC', () => scrapePEPAC({ maxItems: 500, onlyOpen: false }), 10);
+
+    // Digital Europe — SEDIA genérico por prefixo de identifier
+    total += await syncPortal('Digital Europe', () => scrapeSEDIAProgramme({ prefix: 'DIGITAL', programa: 'Digital Europe', maxItems: 500, onlyOpen: true }));
+
+    // LIFE — programa de ambiente/clima da UE, relevante para PMEs de energia/ambiente
+    total += await syncPortal('LIFE', () => scrapeSEDIAProgramme({ prefix: 'LIFE', programa: 'LIFE', maxItems: 500, onlyOpen: true }));
+
+    // Fundo Ambiental — catálogo sem datas (o site não as expõe na listagem);
+    // datas chegam via agente de enriquecimento. Ver scripts/scrapers/fundo-ambiental.ts
+    total += await syncPortal('Fundo Ambiental', () => scrapeFundoAmbiental({ maxItems: 500 }));
 
     console.log('\n' + '═'.repeat(50));
     console.log(`✅ TOTAL: ${total} avisos sincronizados`);
