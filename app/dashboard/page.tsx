@@ -22,7 +22,7 @@ export default async function DashboardPage() {
   const daqui7Dias = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000)
 
   // Fetch dashboard data
-  const [avisos, totalAvisosAbertos, avisos7Dias, empresas, candidaturas, documentos, workflows, notificacoes] = await Promise.all([
+  const [avisos, totalAvisosAbertos, avisos7Dias, avisosPorPortalRaw, candidaturasPorEstadoRaw, empresas, candidaturas, documentos, workflows, notificacoes] = await Promise.all([
     // lista curta para o painel
     prisma.aviso.findMany({
       where: abertoWhere,
@@ -34,6 +34,16 @@ export default async function DashboardPage() {
     prisma.aviso.count({ where: abertoWhere }),
     prisma.aviso.count({
       where: { ativo: true, dataFimSubmissao: { gte: now, lte: daqui7Dias } },
+    }),
+    // distribuição real por portal (substitui números de demo hardcoded)
+    prisma.aviso.groupBy({
+      by: ['portal'],
+      where: abertoWhere,
+      _count: { _all: true },
+    }),
+    prisma.candidatura.groupBy({
+      by: ['estado'],
+      _count: { _all: true },
     }),
     prisma.empresa.findMany({
       where: { ativa: true },
@@ -81,44 +91,49 @@ export default async function DashboardPage() {
   // })
   // const metricas = metricasResponse.ok ? await metricasResponse.json() : null
 
-  // DEMO MODE: Mock Metricas to bypass internal API auth issues
+  // Métricas dos gráficos: tudo o que é contagem vem da BD. As séries que ainda
+  // não têm origem real (evolução mensal, orçamento) ficam vazias em vez de
+  // inventadas — um gráfico vazio é honesto, um gráfico com números fabricados
+  // destrói a confiança de quem está a ver.
+  const PORTAL_LABEL: Record<string, string> = {
+    PORTUGAL2030: 'Portugal 2030',
+    PRR: 'PRR',
+    PEPAC: 'PEPAC',
+    HORIZON_EUROPE: 'Horizon Europe',
+    EUROPA_CRIATIVA: 'Europa Criativa',
+    IPDJ: 'IPDJ',
+    BASE_GOV: 'BASE.gov',
+    DIGITAL_EUROPE: 'Digital Europe',
+    LIFE: 'LIFE',
+    FUNDO_AMBIENTAL: 'Fundo Ambiental',
+  }
+
   const metricas = {
     resumo: {
-      totalAvisos: avisos.length,
+      totalAvisos: totalAvisosAbertos,
       totalEmpresas: empresas.length,
       totalCandidaturas: candidaturas.length,
       totalDocumentos: documentos.length,
       avisosUrgentes: avisos7Dias,
-      orcamentoDisponivel: 25000000, // Consolidated Value
-      valorSolicitado: 4750000, // Demo Value
+      orcamentoDisponivel: 0,
+      valorSolicitado: 0,
       lastUpdated: new Date().toISOString()
     },
     graficos: {
-      candidaturasPorStatus: [
-        { status: 'A_PREPARAR', total: 3 },
-        { status: 'SUBMETIDA', total: 2 },
-        { status: 'EM_ANALISE', total: 4 },
-        { status: 'APROVADA', total: 5 },
-        { status: 'REJEITADA', total: 1 },
-      ],
-      avisosPorPortal: [
-        { portal: 'Portugal 2030', total: 45 },
-        { portal: 'PRR', total: 32 },
-        { portal: 'PDR 2020', total: 15 },
-      ],
-      candidaturasPorMes: [
-        { mes: '2025-11', total: 4 },
-        { mes: '2025-10', total: 6 },
-        { mes: '2025-09', total: 3 },
-        { mes: '2025-08', total: 5 },
-        { mes: '2025-07', total: 2 },
-        { mes: '2025-06', total: 4 },
-      ],
+      candidaturasPorStatus: candidaturasPorEstadoRaw
+        .map((c) => ({ status: String(c.estado), total: c._count._all }))
+        .sort((a, b) => b.total - a.total),
+      avisosPorPortal: avisosPorPortalRaw
+        .map((a) => ({ portal: PORTAL_LABEL[String(a.portal)] ?? String(a.portal), total: a._count._all }))
+        .sort((a, b) => b.total - a.total),
+      // sem série histórica real ainda — melhor vazio do que inventado
+      candidaturasPorMes: [] as { mes: string; total: number }[],
+      // contagem real de candidaturas por empresa (era "2" fixo para todas)
       topEmpresas: empresas.slice(0, 5).map(e => ({
         id: e.id,
         nome: e.nome,
         setor: e.setor,
-        totalCandidaturas: 2
+        totalCandidaturas: candidaturas.filter((c: { empresaId: string }) => c.empresaId === e.id).length,
       }))
     },
     source: 'demo-bypassed'
