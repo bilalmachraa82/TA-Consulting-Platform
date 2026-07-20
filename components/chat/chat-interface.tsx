@@ -120,7 +120,7 @@ export function ChatInterface() {
                         <h2 className="text-xl font-bold text-gray-900">Auditor IA</h2>
                         <div className="flex items-center text-xs text-green-600 font-medium">
                             <span className="w-2 h-2 bg-green-500 rounded-full mr-1 animate-pulse"></span>
-                            Conectado ao File Search Store (529 Docs)
+                            Ligado à base de dados de avisos (atualizada diariamente)
                         </div>
                     </div>
                 </div>

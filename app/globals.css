@@ -10,9 +10,10 @@
      * Avoids "pure white" blindness by using very subtle cool grays.
      */
 
-    /* Font Variables */
-    --font-sans: var(--font-inter);
-    --font-mono: var(--font-jetbrains-mono);
+    /* Fontes: --font-sans e --font-mono são injetadas por next/font em
+     * app/layout.tsx (<html className={inter.variable}>). NÃO as redefinir
+     * aqui — apontar para var(--font-inter), que não existe, invalidava a
+     * declaração font-family inteira e punha o site todo em serif (Times). */
 
     /* Background: Slate-50 variant (Cool off-white) */
     --background: 210 20% 98%;

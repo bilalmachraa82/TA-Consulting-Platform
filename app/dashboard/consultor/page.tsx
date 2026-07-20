@@ -15,7 +15,7 @@ export default function ConsultorPage() {
                     Consultor IA
                 </h1>
                 <p className="text-gray-600 mt-1">
-                    Assistente de auditoria conectado a 644 documentos oficiais de fundos europeus.
+                    Respostas com fontes oficiais, a partir dos avisos sincronizados diariamente de 9 portais nacionais e europeus.
                 </p>
             </div>
 

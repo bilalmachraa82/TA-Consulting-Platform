@@ -7,26 +7,33 @@ import { DashboardHome } from '@/components/dashboard/dashboard-home'
 export const dynamic = "force-dynamic"
 
 export default async function DashboardPage() {
-  // const session = await getServerSession(authOptions)
-  // if (!session) {
-  //   redirect('/api/auth/signin?callbackUrl=/dashboard')
-  // }
-
-  // DEMO MODE: Mock Session to ensure presentation stability
-  const session = {
-    user: {
-      name: 'Fernando',
-      email: 'demo@taconsulting.pt',
-      image: null
-    }
+  const session = await getServerSession(authOptions)
+  if (!session) {
+    redirect('/auth/login?callbackUrl=/dashboard')
   }
 
+  const now = new Date()
+  // "Aberto" = a fonte diz ativo E (prazo futuro OU por confirmar). O NULL
+  // existe porque há portais que não publicam o prazo na listagem.
+  const abertoWhere = {
+    ativo: true,
+    OR: [{ dataFimSubmissao: null }, { dataFimSubmissao: { gte: now } }],
+  }
+  const daqui7Dias = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000)
+
   // Fetch dashboard data
-  const [avisos, empresas, candidaturas, documentos, workflows, notificacoes] = await Promise.all([
+  const [avisos, totalAvisosAbertos, avisos7Dias, empresas, candidaturas, documentos, workflows, notificacoes] = await Promise.all([
+    // lista curta para o painel
     prisma.aviso.findMany({
-      where: { ativo: true },
+      where: abertoWhere,
       orderBy: { dataFimSubmissao: 'asc' },
       take: 10,
+    }),
+    // COUNT real: a contagem tem de vir da BD, não do tamanho da página
+    // (o dashboard mostrava "10 avisos ativos" existindo centenas)
+    prisma.aviso.count({ where: abertoWhere }),
+    prisma.aviso.count({
+      where: { ativo: true, dataFimSubmissao: { gte: now, lte: daqui7Dias } },
     }),
     prisma.empresa.findMany({
       where: { ativa: true },
@@ -52,15 +59,8 @@ export default async function DashboardPage() {
   ])
 
   // Calculate KPIs
-  const now = new Date()
-  type AvisoType = typeof avisos[number];
   type CandidaturaType = typeof candidaturas[number];
   type DocumentoType = typeof documentos[number];
-
-  const avisos7Dias = avisos.filter((aviso: AvisoType) => {
-    const diasRestantes = Math.ceil((aviso.dataFimSubmissao.getTime() - now.getTime()) / (1000 * 3600 * 24))
-    return diasRestantes <= 7 && diasRestantes > 0
-  }).length
 
   const candidaturasEmCurso = candidaturas.filter((c: CandidaturaType) =>
     ['A_PREPARAR', 'SUBMETIDA', 'EM_ANALISE'].includes(c.estado)
@@ -127,7 +127,7 @@ export default async function DashboardPage() {
   return (
     <DashboardHome
       kpis={{
-        totalAvisos: avisos.length,
+        totalAvisos: totalAvisosAbertos,
         avisosUrgentes: avisos7Dias,
         candidaturasEmCurso,
         taxaSucesso,
