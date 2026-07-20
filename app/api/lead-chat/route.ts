@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GoogleGenerativeAI } from '@google/generative-ai';
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limiter';
-
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
+import { chatCompletion } from '@/lib/llm-client';
+import { getAvisosStatsTexto } from '@/lib/chatbot/tools';
 
 /**
  * Helper: Search company by name using internal API
@@ -166,15 +165,11 @@ No campo "action" usa:
 4. **CONFIRMA** dados encontrados com o user antes de avançar
 5. **NÃO** sejas robótico com "preciso do NIF" - pesquisa tu mesmo!
 
-## FUNDS DATA (Contexto)
-Usa estes dados para responder perguntas gerais:
-- PT2030: ~100 avisos ativos, até €2M por projeto
-- PRR: ~499 avisos, focused em transição verde e digital
-- PEPAC: ~9 avisos, agricultura e desenvolvimento rural
-- Portugal 2020: ainda alguns avisos com deadline curto
-
 Lembra: Tens acesso à internet. Usa-a! 🌐
 `;
+// Nota: os dados de fundos (contagens reais por portal + próximos prazos) são
+// injetados no prompt em runtime a partir da BD — ver getAvisosStatsTexto().
+// A versão anterior tinha números hardcoded de fevereiro de 2026.
 
 export async function POST(req: NextRequest) {
   // Initialize defaults for error handling
@@ -216,7 +211,17 @@ export async function POST(req: NextRequest) {
 
     const lastUserMessage = messages.filter((m: any) => m.role === 'user').pop()?.content || '';
 
+    // Dados reais da BD (cache 10 min) — substitui os números hardcoded antigos
+    let fundsData = '';
+    try {
+      fundsData = `## FUNDS DATA (dados reais, BD atualizada diariamente)\n${await getAvisosStatsTexto()}`;
+    } catch {
+      fundsData = '## FUNDS DATA\n(indisponível de momento — responde sem números concretos)';
+    }
+
     const prompt = `${SYSTEM_PROMPT}
+
+${fundsData}
 
 ## CONTEXTO ATUAL
 Dados já extraídos: {${extractedContext || 'nenhum'}}${companyContext}
@@ -236,16 +241,13 @@ Responde em JSON seguindo o formato acima.
 - Se o user pergunta sobre fundos, RESPONDE DIRETAMENTE sem pedir dados primeiro
 - SÊ CONVERSACIONAL, não robótico!`;
 
-    const model = genAI.getGenerativeModel({
-      model: 'gemini-2.0-flash-exp',
-      generationConfig: {
-        temperature: 0.8, // Higher for more natural conversation
-        maxOutputTokens: 800,
-      }
+    const result = await chatCompletion({
+      messages: [{ role: 'user', content: prompt }],
+      jsonMode: true,
+      temperature: 0.8, // conversa natural
+      maxTokens: 800,
     });
-
-    const result = await model.generateContent(prompt);
-    const response = await result.response.text();
+    const response = result.message.content || '';
 
     // Extract JSON from response
     let jsonMatch = response.match(/```json\s*([\s\S]*?)\s*```/) ||
