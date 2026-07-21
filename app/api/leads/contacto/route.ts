@@ -87,6 +87,34 @@ export async function POST(request: NextRequest) {
                 status: 'NOVO',
             },
         });
+        // Notifica o consultor por email — é o que garante que nenhuma lead se
+        // perde. No-op gracioso se o domínio/chave ainda não estiverem prontos
+        // (não bloqueia nem falha a resposta ao utilizador).
+        const notifyTo = process.env.ADMIN_EMAIL || process.env.NOTIFY_EMAIL;
+        const keyOk = !!process.env.RESEND_API_KEY && !process.env.RESEND_API_KEY.startsWith('re_mock');
+        if (notifyTo && keyOk) {
+            try {
+                const esc = (s: unknown) => String(s ?? '—').replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c] as string));
+                const { resend, EMAIL_FROM } = await import('@/lib/email/client');
+                await resend.emails.send({
+                    from: EMAIL_FROM,
+                    to: notifyTo,
+                    subject: `Nova lead Eligivo: ${esc(d.nome)} — NIF ${esc(d.nif)}`,
+                    html: `<h2>Nova lead em /encontrar-fundos</h2>
+<p><b>Nome:</b> ${esc(d.nome)}</p>
+<p><b>Email:</b> ${esc(d.email)}</p>
+<p><b>Telefone:</b> ${esc(d.telefone)}</p>
+<p><b>NIF:</b> ${esc(d.nif)}</p>
+<p><b>Perfil:</b> setor ${esc(d.setor)}, dimensão ${esc(d.dimensao)}, região ${esc(d.regiao)}</p>
+${d.aviso ? `<p><b>Aviso de interesse:</b> ${esc(d.aviso.nome)} (${esc(d.aviso.portal)})</p>` : ''}
+${d.mensagem ? `<p><b>Mensagem:</b> ${esc(d.mensagem)}</p>` : ''}
+<p>Ver todas em /leads.</p>`,
+                });
+            } catch (e) {
+                console.error('[leads/contacto] notificação de email falhou (não crítico):', e);
+            }
+        }
+
         return NextResponse.json({ success: true, leadId: lead.id });
     } catch (error) {
         console.error('[leads/contacto] erro:', error);
