@@ -5,6 +5,7 @@ import { authOptions } from '@/lib/auth';
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limiter';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { calculateCompatibility, getCompatibilityPriority } from '@/lib/compatibility';
+import { analisarElegibilidade } from '@/lib/eligibility-analysis';
 
 export const dynamic = 'force-dynamic';
 
@@ -57,18 +58,34 @@ export async function GET(request: Request) {
       }
     });
 
-    // Calcular compatibilidade para cada aviso
+    // Calcular compatibilidade para cada aviso.
+    // Análise explicável (gap analysis) usando os campos estruturados do aviso;
+    // quando o aviso tem critérios estruturados, o veredicto/score vêm dela —
+    // caso contrário, cai no scoring de texto legado (calculateCompatibility).
     type AvisoType = typeof avisos[number];
-    type RecomendacaoType = { aviso: AvisoType; score: number; razoes: string[]; alertas: string[]; prioridade: string };
+    type RecomendacaoType = { aviso: AvisoType; score: number; razoes: string[]; alertas: string[]; prioridade: string; elegibilidade: ReturnType<typeof analisarElegibilidade> };
 
     const recomendacoes = avisos.map((aviso: AvisoType) => {
-      const analise = calculateCompatibility(empresa, aviso);
+      const elegibilidade = analisarElegibilidade(
+        { cae: empresa.cae, setor: empresa.setor, dimensao: empresa.dimensao, regiao: empresa.regiao, nut: empresa.nut },
+        {
+          nome: aviso.nome, descricao: aviso.descricao, dataFimSubmissao: aviso.dataFimSubmissao,
+          montanteMinimo: aviso.montanteMinimo, montanteMaximo: aviso.montanteMaximo,
+          caeElegiveis: aviso.caeElegiveis, tiposBeneficiarios: aviso.tiposBeneficiarios as string[],
+          regiaoNUTS2: aviso.regiaoNUTS2, regiaoNUTS3: aviso.regiaoNUTS3, dimensaoEmpresa: aviso.dimensaoEmpresa,
+        },
+        hoje,
+      );
+      const legado = calculateCompatibility(empresa, aviso, hoje);
+      const usarExplicavel = elegibilidade.veredicto !== 'dados_insuficientes';
+      const score = usarExplicavel ? elegibilidade.score : legado.score;
       return {
         aviso,
-        score: analise.score,
-        razoes: analise.razoes,
-        alertas: analise.alertas,
-        prioridade: getCompatibilityPriority(analise.score)
+        score,
+        razoes: usarExplicavel ? elegibilidade.criterios.filter((c) => c.estado === 'ok').map((c) => c.explicacao) : legado.razoes,
+        alertas: usarExplicavel ? elegibilidade.criterios.filter((c) => c.estado === 'falha' || c.estado === 'atencao').map((c) => c.explicacao) : legado.alertas,
+        prioridade: getCompatibilityPriority(score),
+        elegibilidade,
       };
     });
 
