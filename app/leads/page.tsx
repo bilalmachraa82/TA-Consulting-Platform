@@ -11,10 +11,11 @@ export const dynamic = 'force-dynamic';
 export default async function LeadsPage() {
     const session = await getServerSession(authOptions);
 
-    // TODO: Uncomment for production protection
-    // if (!session) {
-    //     redirect('/api/auth/signin');
-    // }
+    // Proteção obrigatória: esta página lista TODOS os leads (nomes de empresas,
+    // emails do lead-magnet). Sem auth era exposição de dados RGPD.
+    if (!session) {
+        redirect('/auth/login?callbackUrl=/leads');
+    }
 
     // Fetch all leads
     const leads = await prisma.lead.findMany({
