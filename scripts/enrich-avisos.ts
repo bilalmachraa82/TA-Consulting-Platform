@@ -231,15 +231,12 @@ async function main(): Promise<void> {
         : {
             link: { not: null },
             enrichmentStatus: 'BASIC',
+            // Todos os avisos BASIC carecem dos campos estruturados (caeElegiveis,
+            // tiposBeneficiarios…) independentemente de terem descrição — logo são
+            // todos candidatos. Alvo: abertos (prazo futuro ou por confirmar).
             ...(opts.portal
                 ? { portal: opts.portal }
-                : {
-                    OR: [
-                        { dataFimSubmissao: { gte: now }, descricao: null },
-                        { dataFimSubmissao: { gte: now }, descricao: { equals: '' } },
-                        { portal: 'FUNDO_AMBIENTAL' },
-                    ],
-                }),
+                : { ativo: true, OR: [{ dataFimSubmissao: null }, { dataFimSubmissao: { gte: now } }] }),
         };
 
     // avisos com descrição curta (<200) também contam — filtro fino em memória
@@ -249,12 +246,9 @@ async function main(): Promise<void> {
         take: opts.limit * 2,
         select: { id: true, codigo: true, nome: true, portal: true, link: true, descricao: true, dataFimSubmissao: true, ativo: true },
     });
-    // No modo recover-dates o alvo já vem escolhido pelo SQL (o que interessa é
-    // a data, não a descrição); nos outros modos filtra-se por descrição curta.
-    const candidatos = (opts.recoverDates
-        ? candidatosRaw
-        : candidatosRaw.filter((a) => a.portal === 'FUNDO_AMBIENTAL' || !a.descricao || a.descricao.length < 200)
-    ).slice(0, opts.limit);
+    // Todos os candidatos BASIC precisam de enriquecimento (falta-lhes os campos
+    // estruturados). O SQL já os selecionou; só limitamos a quantidade.
+    const candidatos = candidatosRaw.slice(0, opts.limit);
 
     console.log('═'.repeat(60));
     console.log(`🧠 ENRIQUECIMENTO DE AVISOS — ${provider.name}/${provider.model} ${opts.commit ? '(COMMIT)' : '(dry-run)'}`);

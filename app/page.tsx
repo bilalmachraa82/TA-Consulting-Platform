@@ -69,22 +69,25 @@ export default function HomePage() {
           </div>
 
           {/* Hero Actions */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Link href="/apresentacao">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg">
-                <Presentation className="w-5 h-5 mr-2" />
-                Ver Apresentação
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+            {/* CTA primário: ferramenta de lead-gen sem login (valor primeiro) */}
+            <Link href="/encontrar-fundos">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg shadow-lg shadow-blue-600/20">
+                <CheckCircle className="w-5 h-5 mr-2" />
+                Encontrar os meus fundos
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </Link>
-            <Link href="/dashboard">
-              <Button size="lg" variant="outline" className="border-green-600 text-green-700 hover:bg-green-50 px-8 py-4 text-lg">
-                <BarChart3 className="w-5 h-5 mr-2" />
-                Aceder ao Dashboard
-                <ArrowRight className="w-5 h-5 ml-2" />
+            <Link href="/apresentacao">
+              <Button size="lg" variant="outline" className="border-blue-600 text-blue-700 hover:bg-blue-50 px-8 py-4 text-lg">
+                <Presentation className="w-5 h-5 mr-2" />
+                Ver Apresentação
               </Button>
             </Link>
           </div>
+          <p className="text-sm text-gray-500 mb-12">
+            Grátis e sem registo — indica o perfil da empresa e vê os avisos abertos a que és elegível, com a análise critério a critério.
+          </p>
 
           {/* Hero Image */}
           <div className="relative max-w-4xl mx-auto">
