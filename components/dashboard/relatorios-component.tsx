@@ -133,7 +133,7 @@ export function RelatoriosComponent() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-96">
-        <div className="animate-pulse text-gray-500">Gerando relatórios...</div>
+        <div className="animate-pulse text-muted-foreground">Gerando relatórios...</div>
       </div>
     )
   }
@@ -141,9 +141,9 @@ export function RelatoriosComponent() {
   if (!data) {
     return (
       <div className="text-center py-12">
-        <BarChart3 className="mx-auto h-12 w-12 text-gray-400 mb-4" />
-        <h3 className="text-lg font-medium text-gray-900 mb-2">Erro ao carregar relatórios</h3>
-        <p className="text-gray-500">Tente novamente mais tarde.</p>
+        <BarChart3 className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
+        <h3 className="text-lg font-medium text-foreground mb-2">Erro ao carregar relatórios</h3>
+        <p className="text-muted-foreground">Tente novamente mais tarde.</p>
       </div>
     )
   }
@@ -221,7 +221,7 @@ export function RelatoriosComponent() {
             )}
           </div>
 
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-muted-foreground">
             Análise do período: {new Date(data.periodo.dataInicio).toLocaleDateString('pt-PT')} a {new Date(data.periodo.dataFim).toLocaleDateString('pt-PT')}
           </div>
         </CardContent>
@@ -503,7 +503,7 @@ export function RelatoriosComponent() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h4 className="font-semibold mb-2">Performance do Período</h4>
-                <ul className="space-y-1 text-sm text-gray-600">
+                <ul className="space-y-1 text-sm text-muted-foreground">
                   <li>• {data.kpis.totalAvisos} avisos monitorizados</li>
                   <li>• {data.kpis.totalCandidaturas} candidaturas processadas</li>
                   <li>• Taxa de aprovação de {data.kpis.taxaAprovacao}%</li>
@@ -513,7 +513,7 @@ export function RelatoriosComponent() {
 
               <div>
                 <h4 className="font-semibold mb-2">Atividade da Plataforma</h4>
-                <ul className="space-y-1 text-sm text-gray-600">
+                <ul className="space-y-1 text-sm text-muted-foreground">
                   <li>• {data.kpis.novasEmpresas} novas empresas adicionadas</li>
                   <li>• {data.kpis.documentosAdicionados} documentos carregados</li>
                   <li>• {data.kpis.execucoesWorkflow} execuções de workflows</li>
@@ -524,7 +524,7 @@ export function RelatoriosComponent() {
 
             <div className="border-t pt-4">
               <h4 className="font-semibold mb-2">Recomendações</h4>
-              <div className="text-sm text-gray-600 space-y-1">
+              <div className="text-sm text-muted-foreground space-y-1">
                 {data.kpis.avisosUrgentes > 0 && (
                   <p>⚠️ Atenção: {data.kpis.avisosUrgentes} avisos com deadline próximo necessitam de ação imediata.</p>
                 )}

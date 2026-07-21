@@ -38,6 +38,8 @@ const navigationGroups = [
     items: [
       { name: 'Dashboard', href: '/dashboard', icon: Home },
       { name: 'Minhas Empresas', href: '/dashboard/minhas-empresas', icon: Building2 },
+      // Catálogo completo de empresas (importadas). Estava sem link no menu.
+      { name: 'Base de Empresas', href: '/dashboard/empresas', icon: Building2 },
       { name: 'Candidaturas', href: '/dashboard/candidaturas', icon: FileText },
     ]
   },

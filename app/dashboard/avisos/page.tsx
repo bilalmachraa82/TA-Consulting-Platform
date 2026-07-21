@@ -72,8 +72,8 @@ export default async function AvisosPage({
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">Avisos & Oportunidades</h1>
-        <p className="text-gray-600 mt-2">
+        <h1 className="text-3xl font-bold text-foreground">Avisos & Oportunidades</h1>
+        <p className="text-muted-foreground mt-2">
           Monitorize e gerencie avisos de fundos europeus em tempo real
         </p>
       </div>

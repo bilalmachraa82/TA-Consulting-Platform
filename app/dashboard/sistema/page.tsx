@@ -115,7 +115,7 @@ export default function SistemaPage() {
     if (loading && !health) {
         return (
             <div className="flex items-center justify-center h-96">
-                <div className="animate-pulse text-gray-500 flex items-center gap-2">
+                <div className="animate-pulse text-muted-foreground flex items-center gap-2">
                     <RefreshCw className="h-5 w-5 animate-spin" />
                     A verificar estado do sistema...
                 </div>
@@ -132,7 +132,7 @@ export default function SistemaPage() {
                         <Activity className="h-6 w-6" />
                         Estado do Sistema
                     </h1>
-                    <p className="text-gray-500 text-sm mt-1">
+                    <p className="text-muted-foreground text-sm mt-1">
                         Monitorização em tempo real da plataforma
                     </p>
                 </div>
@@ -199,21 +199,21 @@ export default function SistemaPage() {
                                 <CardContent>
                                     <div className="space-y-3">
                                         <div className="flex items-center justify-between">
-                                            <span className="text-sm text-gray-500">Conexão</span>
+                                            <span className="text-sm text-muted-foreground">Conexão</span>
                                             <Badge variant={health.database.connected ? 'default' : 'destructive'}>
                                                 {health.database.connected ? 'Activa' : 'Inactiva'}
                                             </Badge>
                                         </div>
                                         <div className="flex items-center justify-between">
-                                            <span className="text-sm text-gray-500">Total Avisos</span>
+                                            <span className="text-sm text-muted-foreground">Total Avisos</span>
                                             <span className="font-mono font-bold text-lg">
                                                 {health.database.avisoCount.toLocaleString('pt-PT')}
                                             </span>
                                         </div>
                                         {health.database.lastAvisoDate && (
                                             <div className="flex items-center justify-between">
-                                                <span className="text-sm text-gray-500">Última Atualização</span>
-                                                <span className="text-xs text-gray-600">
+                                                <span className="text-sm text-muted-foreground">Última Atualização</span>
+                                                <span className="text-xs text-muted-foreground">
                                                     {formatDate(health.database.lastAvisoDate)}
                                                 </span>
                                             </div>
@@ -240,12 +240,12 @@ export default function SistemaPage() {
                                     <div className="space-y-2">
                                         {Object.entries(health.database.avisosByPortal).map(([portal, count]) => (
                                             <div key={portal} className="flex items-center justify-between">
-                                                <span className="text-sm text-gray-600">{portal}</span>
+                                                <span className="text-sm text-muted-foreground">{portal}</span>
                                                 <span className="font-mono text-sm">{count}</span>
                                             </div>
                                         ))}
                                         {Object.keys(health.database.avisosByPortal).length === 0 && (
-                                            <p className="text-sm text-gray-400 italic">Sem dados</p>
+                                            <p className="text-sm text-muted-foreground italic">Sem dados</p>
                                         )}
                                     </div>
                                 </CardContent>
@@ -268,7 +268,7 @@ export default function SistemaPage() {
                                 <CardContent>
                                     <div className="space-y-3">
                                         <div className="flex items-center justify-between">
-                                            <span className="text-sm text-gray-500 flex items-center gap-1">
+                                            <span className="text-sm text-muted-foreground flex items-center gap-1">
                                                 <Clock className="h-3 w-3" /> Uptime
                                             </span>
                                             <span className="font-mono text-sm">
@@ -276,14 +276,14 @@ export default function SistemaPage() {
                                             </span>
                                         </div>
                                         <div className="flex items-center justify-between">
-                                            <span className="text-sm text-gray-500">Memória</span>
+                                            <span className="text-sm text-muted-foreground">Memória</span>
                                             <span className="font-mono text-sm">
                                                 {health.system.memoryUsage} MB
                                             </span>
                                         </div>
                                         <div className="flex items-center justify-between">
-                                            <span className="text-sm text-gray-500">Node.js</span>
-                                            <span className="font-mono text-xs text-gray-600">
+                                            <span className="text-sm text-muted-foreground">Node.js</span>
+                                            <span className="font-mono text-xs text-muted-foreground">
                                                 {health.system.nodeVersion}
                                             </span>
                                         </div>
@@ -309,13 +309,13 @@ export default function SistemaPage() {
                                     <CardContent>
                                         <div className="space-y-3">
                                             <div className="flex items-center justify-between">
-                                                <span className="text-sm text-gray-500">Estado</span>
+                                                <span className="text-sm text-muted-foreground">Estado</span>
                                                 <Badge variant={health.rag.status === 'configured' ? 'default' : 'secondary'}>
                                                     {health.rag.status === 'configured' ? 'Configurado' : health.rag.status}
                                                 </Badge>
                                             </div>
                                             <div className="flex items-center justify-between">
-                                                <span className="text-sm text-gray-500">Documentos Indexados</span>
+                                                <span className="text-sm text-muted-foreground">Documentos Indexados</span>
                                                 <span className="font-mono font-bold">
                                                     {health.rag.documentCount}
                                                 </span>

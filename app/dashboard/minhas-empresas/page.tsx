@@ -100,8 +100,8 @@ export default function MinhasEmpresasPage() {
             {/* Header */}
             <div className="flex items-center justify-between">
                 <div>
-                    <h1 className="text-2xl font-bold text-gray-900">Minhas Empresas</h1>
-                    <p className="text-gray-500">
+                    <h1 className="text-2xl font-bold text-foreground">Minhas Empresas</h1>
+                    <p className="text-muted-foreground">
                         Gestão centralizada de todas as empresas que acompanha
                     </p>
                 </div>
@@ -120,7 +120,7 @@ export default function MinhasEmpresasPage() {
                         <CardContent className="pt-6">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-sm text-gray-500">Total Empresas</p>
+                                    <p className="text-sm text-muted-foreground">Total Empresas</p>
                                     <p className="text-2xl font-bold">{stats.totalEmpresas}</p>
                                 </div>
                                 <Building2 className="h-8 w-8 text-blue-600" />
@@ -132,7 +132,7 @@ export default function MinhasEmpresasPage() {
                         <CardContent className="pt-6">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-sm text-gray-500">Candidaturas Ativas</p>
+                                    <p className="text-sm text-muted-foreground">Candidaturas Ativas</p>
                                     <p className="text-2xl font-bold">{stats.candidaturasAtivas}</p>
                                 </div>
                                 <FileText className="h-8 w-8 text-green-600" />
@@ -144,7 +144,7 @@ export default function MinhasEmpresasPage() {
                         <CardContent className="pt-6">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-sm text-gray-500">Docs. a Resolver</p>
+                                    <p className="text-sm text-muted-foreground">Docs. a Resolver</p>
                                     <p className="text-2xl font-bold text-red-600">
                                         {stats.documentosProblematicos}
                                     </p>
@@ -158,7 +158,7 @@ export default function MinhasEmpresasPage() {
                         <CardContent className="pt-6">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-sm text-gray-500">Avisos Urgentes</p>
+                                    <p className="text-sm text-muted-foreground">Avisos Urgentes</p>
                                     <p className="text-2xl font-bold text-yellow-600">
                                         {stats.avisosUrgentes}
                                     </p>
@@ -175,11 +175,11 @@ export default function MinhasEmpresasPage() {
                 {empresas.length === 0 ? (
                     <Card className="col-span-full">
                         <CardContent className="py-12 text-center">
-                            <Building2 className="h-12 w-12 mx-auto text-gray-400 mb-4" />
-                            <h3 className="text-lg font-medium text-gray-900">
+                            <Building2 className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
+                            <h3 className="text-lg font-medium text-foreground">
                                 Ainda não tem empresas
                             </h3>
-                            <p className="text-gray-500 mt-1">
+                            <p className="text-muted-foreground mt-1">
                                 Comece por adicionar a primeira empresa que irá gerir.
                             </p>
                             <Button asChild className="mt-4">
@@ -208,12 +208,12 @@ export default function MinhasEmpresasPage() {
                             <CardContent>
                                 <div className="space-y-3">
                                     <div className="flex items-center justify-between text-sm">
-                                        <span className="text-gray-500">Setor:</span>
+                                        <span className="text-muted-foreground">Setor:</span>
                                         <span>{empresa.setor}</span>
                                     </div>
 
                                     <div className="flex items-center justify-between text-sm">
-                                        <span className="text-gray-500">Candidaturas ativas:</span>
+                                        <span className="text-muted-foreground">Candidaturas ativas:</span>
                                         <Badge variant={empresa.candidaturas.length > 0 ? 'default' : 'secondary'}>
                                             {empresa.candidaturas.length}
                                         </Badge>

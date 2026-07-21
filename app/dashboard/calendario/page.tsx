@@ -21,8 +21,8 @@ export default async function CalendarioPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">Calendário & Deadlines</h1>
-        <p className="text-gray-600 mt-2">
+        <h1 className="text-3xl font-bold text-foreground">Calendário & Deadlines</h1>
+        <p className="text-muted-foreground mt-2">
           Cronograma de avisos e deadlines para não perder oportunidades
         </p>
       </div>

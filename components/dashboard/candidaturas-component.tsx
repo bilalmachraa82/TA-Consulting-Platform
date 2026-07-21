@@ -158,13 +158,13 @@ export function CandidaturasComponent() {
 
   const getEstadoColor = (estado: string) => {
     const colors = {
-      A_PREPARAR: 'bg-gray-100 border-gray-300',
-      SUBMETIDA: 'bg-blue-100 border-blue-300',
-      EM_ANALISE: 'bg-yellow-100 border-yellow-300',
-      APROVADA: 'bg-green-100 border-green-300',
-      REJEITADA: 'bg-red-100 border-red-300'
+      A_PREPARAR: 'bg-muted/50 border-border',
+      SUBMETIDA: 'bg-blue-500/10 border-blue-500/30',
+      EM_ANALISE: 'bg-yellow-500/10 border-yellow-500/30',
+      APROVADA: 'bg-green-500/10 border-green-500/30',
+      REJEITADA: 'bg-red-500/10 border-red-500/30'
     }
-    return colors[estado as keyof typeof colors] || 'bg-gray-100 border-gray-300'
+    return colors[estado as keyof typeof colors] || 'bg-muted/50 border-border'
   }
 
   const getEstadoBadge = (estado: string) => {
@@ -197,7 +197,7 @@ export function CandidaturasComponent() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-96">
-        <div className="animate-pulse text-gray-500">Carregando candidaturas...</div>
+        <div className="animate-pulse text-muted-foreground">Carregando candidaturas...</div>
       </div>
     )
   }
@@ -205,9 +205,9 @@ export function CandidaturasComponent() {
   if (!kanbanData) {
     return (
       <div className="text-center py-12">
-        <FileText className="mx-auto h-12 w-12 text-gray-400 mb-4" />
-        <h3 className="text-lg font-medium text-gray-900 mb-2">Nenhuma candidatura encontrada</h3>
-        <p className="text-gray-500">Comece criando uma nova candidatura.</p>
+        <FileText className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
+        <h3 className="text-lg font-medium text-foreground mb-2">Nenhuma candidatura encontrada</h3>
+        <p className="text-muted-foreground">Comece criando uma nova candidatura.</p>
       </div>
     )
   }
@@ -246,7 +246,7 @@ export function CandidaturasComponent() {
             onDragOver={handleDragOver}
             onDrop={(e) => handleDrop(e, estado)}
           >
-            <h3 className="font-semibold text-lg mb-4 text-center sticky top-0 bg-white rounded px-2 py-1">
+            <h3 className="font-semibold text-lg mb-4 text-center sticky top-0 bg-card rounded px-2 py-1">
               {getEstadoNome(estado)} ({candidaturas.length})
             </h3>
 
@@ -263,7 +263,7 @@ export function CandidaturasComponent() {
                     onDragStart={() => handleDragStart(candidatura)}
                     className="cursor-move"
                   >
-                    <Card className="card-premium hover:shadow-xl transition-all duration-300 bg-white">
+                    <Card className="card-premium hover:shadow-xl transition-all duration-300 bg-card">
                       <CardHeader className="pb-3">
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
@@ -271,7 +271,7 @@ export function CandidaturasComponent() {
                               {candidatura.empresa.nome}
                             </CardTitle>
                             <div className="space-y-1">
-                              <div className="text-xs text-gray-600 flex items-center gap-1">
+                              <div className="text-xs text-muted-foreground flex items-center gap-1">
                                 <Building2 className="h-3 w-3" />
                                 {candidatura.empresa.setor}
                               </div>
@@ -286,14 +286,14 @@ export function CandidaturasComponent() {
                       <CardContent className="space-y-3">
                         {/* Aviso */}
                         <div className="text-sm">
-                          <div className="font-medium text-gray-900 mb-1 line-clamp-2">
+                          <div className="font-medium text-foreground mb-1 line-clamp-2">
                             {candidatura.aviso.nome}
                           </div>
-                          <div className="text-xs text-gray-500 flex items-center gap-2">
+                          <div className="text-xs text-muted-foreground flex items-center gap-2">
                             <Badge variant="outline" className="text-xs">
                               {candidatura.aviso.portal}
                             </Badge>
-                            <code className="text-xs bg-gray-100 px-1 rounded">
+                            <code className="text-xs bg-muted px-1 rounded">
                               {candidatura.aviso.codigo}
                             </code>
                           </div>
@@ -307,7 +307,7 @@ export function CandidaturasComponent() {
                               <span className="font-medium">
                                 €{candidatura.montanteSolicitado.toLocaleString('pt-PT')}
                               </span>
-                              <span className="text-gray-500">solicitado</span>
+                              <span className="text-muted-foreground">solicitado</span>
                             </div>
                             {candidatura.montanteAprovado && (
                               <div className="flex items-center gap-1">
@@ -315,7 +315,7 @@ export function CandidaturasComponent() {
                                 <span className="font-medium text-green-700">
                                   €{candidatura.montanteAprovado.toLocaleString('pt-PT')}
                                 </span>
-                                <span className="text-gray-500">aprovado</span>
+                                <span className="text-muted-foreground">aprovado</span>
                               </div>
                             )}
                           </div>
@@ -548,10 +548,10 @@ export function CandidaturasComponent() {
                             <div className="h-2 w-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
                             <div className="flex-1">
                               <div className="font-medium text-sm">{evento.evento}</div>
-                              <div className="text-xs text-gray-500 mb-1">
+                              <div className="text-xs text-muted-foreground mb-1">
                                 {new Date(evento.data).toLocaleString('pt-PT')}
                               </div>
-                              <div className="text-sm text-gray-700">{evento.detalhes}</div>
+                              <div className="text-sm text-muted-foreground">{evento.detalhes}</div>
                             </div>
                           </div>
                         ))}
@@ -566,7 +566,7 @@ export function CandidaturasComponent() {
                         <CardTitle>Observações</CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-sm text-gray-700 whitespace-pre-wrap">
+                        <p className="text-sm text-muted-foreground whitespace-pre-wrap">
                           {candidaturaSelecionada.observacoes}
                         </p>
                       </CardContent>

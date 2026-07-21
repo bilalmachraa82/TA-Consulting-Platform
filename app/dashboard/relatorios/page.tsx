@@ -21,8 +21,8 @@ export default async function RelatoriosPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">Relatórios & Analytics</h1>
-        <p className="text-gray-600 mt-2">
+        <h1 className="text-3xl font-bold text-foreground">Relatórios & Analytics</h1>
+        <p className="text-muted-foreground mt-2">
           Análise de performance e métricas dos fundos europeus
         </p>
       </div>

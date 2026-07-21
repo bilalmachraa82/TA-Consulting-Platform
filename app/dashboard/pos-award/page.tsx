@@ -45,14 +45,14 @@ interface Candidatura {
 }
 
 const ESTADO_MILESTONE: Record<string, { label: string; color: string; icon: any }> = {
-    PENDENTE: { label: 'Pendente', color: 'bg-gray-500/20 text-gray-400', icon: Clock },
+    PENDENTE: { label: 'Pendente', color: 'bg-muted0/20 text-muted-foreground', icon: Clock },
     EM_PROGRESSO: { label: 'Em Progresso', color: 'bg-blue-500/20 text-blue-400', icon: TrendingUp },
     CONCLUIDO: { label: 'Concluído', color: 'bg-green-500/20 text-green-400', icon: CheckCircle2 },
     ATRASADO: { label: 'Atrasado', color: 'bg-red-500/20 text-red-400', icon: AlertTriangle },
 };
 
 const ESTADO_PAGAMENTO: Record<string, { label: string; color: string }> = {
-    RASCUNHO: { label: 'Rascunho', color: 'bg-gray-500/20 text-gray-400' },
+    RASCUNHO: { label: 'Rascunho', color: 'bg-muted0/20 text-muted-foreground' },
     SUBMETIDO: { label: 'Submetido', color: 'bg-blue-500/20 text-blue-400' },
     EM_ANALISE: { label: 'Em Análise', color: 'bg-yellow-500/20 text-yellow-400' },
     APROVADO: { label: 'Aprovado', color: 'bg-green-500/20 text-green-400' },
@@ -121,7 +121,7 @@ export default function PostAwardPage() {
                     <Target className="w-8 h-8 text-emerald-400" />
                     Gestão Pós-Aprovação
                 </h1>
-                <p className="text-gray-400 mt-1">
+                <p className="text-muted-foreground mt-1">
                     Acompanhe milestones, despesas e pedidos de pagamento
                 </p>
             </div>
@@ -133,7 +133,7 @@ export default function PostAwardPage() {
                         <div className="p-2 bg-blue-500/20 rounded-lg">
                             <FileText className="w-5 h-5 text-blue-400" />
                         </div>
-                        <span className="text-gray-400">Projectos Activos</span>
+                        <span className="text-muted-foreground">Projectos Activos</span>
                     </div>
                     <p className="text-3xl font-bold">{candidaturas.length}</p>
                 </div>
@@ -143,7 +143,7 @@ export default function PostAwardPage() {
                         <div className="p-2 bg-emerald-500/20 rounded-lg">
                             <DollarSign className="w-5 h-5 text-emerald-400" />
                         </div>
-                        <span className="text-gray-400">Total Aprovado</span>
+                        <span className="text-muted-foreground">Total Aprovado</span>
                     </div>
                     <p className="text-3xl font-bold">{formatCurrency(totalAprovado)}</p>
                 </div>
@@ -153,7 +153,7 @@ export default function PostAwardPage() {
                         <div className="p-2 bg-green-500/20 rounded-lg">
                             <Banknote className="w-5 h-5 text-green-400" />
                         </div>
-                        <span className="text-gray-400">Total Recebido</span>
+                        <span className="text-muted-foreground">Total Recebido</span>
                     </div>
                     <p className="text-3xl font-bold">{formatCurrency(totalRecebido)}</p>
                 </div>
@@ -163,7 +163,7 @@ export default function PostAwardPage() {
                         <div className="p-2 bg-purple-500/20 rounded-lg">
                             <TrendingUp className="w-5 h-5 text-purple-400" />
                         </div>
-                        <span className="text-gray-400">Taxa Execução</span>
+                        <span className="text-muted-foreground">Taxa Execução</span>
                     </div>
                     <p className="text-3xl font-bold">{percentRecebido.toFixed(1)}%</p>
                     {/* Progress bar */}
@@ -183,7 +183,7 @@ export default function PostAwardPage() {
                     <h2 className="text-lg font-semibold mb-4">Projectos Aprovados</h2>
 
                     {candidaturas.length === 0 ? (
-                        <div className="text-center py-8 text-gray-500">
+                        <div className="text-center py-8 text-muted-foreground">
                             <Target className="w-12 h-12 mx-auto mb-3 opacity-50" />
                             <p>Sem projectos aprovados</p>
                         </div>
@@ -199,7 +199,7 @@ export default function PostAwardPage() {
                                         }`}
                                 >
                                     <p className="font-medium truncate">{c.empresa.nome}</p>
-                                    <p className="text-sm text-gray-400 truncate">{c.aviso.nome}</p>
+                                    <p className="text-sm text-muted-foreground truncate">{c.aviso.nome}</p>
                                     <div className="flex items-center justify-between mt-2">
                                         <span className="text-xs bg-white/10 px-2 py-1 rounded">
                                             {c.aviso.programa}
@@ -224,7 +224,7 @@ export default function PostAwardPage() {
                                     onClick={() => setActiveTab('milestones')}
                                     className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${activeTab === 'milestones'
                                             ? 'bg-blue-500/20 text-blue-400'
-                                            : 'text-gray-400 hover:text-white'
+                                            : 'text-muted-foreground hover:text-white'
                                         }`}
                                 >
                                     <Calendar className="w-4 h-4" />
@@ -234,7 +234,7 @@ export default function PostAwardPage() {
                                     onClick={() => setActiveTab('pagamentos')}
                                     className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${activeTab === 'pagamentos'
                                             ? 'bg-blue-500/20 text-blue-400'
-                                            : 'text-gray-400 hover:text-white'
+                                            : 'text-muted-foreground hover:text-white'
                                         }`}
                                 >
                                     <DollarSign className="w-4 h-4" />
@@ -254,7 +254,7 @@ export default function PostAwardPage() {
                                     </div>
 
                                     {(selectedCandidatura.milestones || []).length === 0 ? (
-                                        <div className="text-center py-12 text-gray-500 border border-dashed border-white/10 rounded-lg">
+                                        <div className="text-center py-12 text-muted-foreground border border-dashed border-white/10 rounded-lg">
                                             <Calendar className="w-12 h-12 mx-auto mb-3 opacity-50" />
                                             <p>Sem milestones definidos</p>
                                             <p className="text-sm mt-1">Adicione marcos para acompanhar o progresso</p>
@@ -275,10 +275,10 @@ export default function PostAwardPage() {
                                                         <div className="flex-1">
                                                             <p className="font-medium">{m.titulo}</p>
                                                             {m.descricao && (
-                                                                <p className="text-sm text-gray-400 mt-1">{m.descricao}</p>
+                                                                <p className="text-sm text-muted-foreground mt-1">{m.descricao}</p>
                                                             )}
                                                             <div className="flex items-center gap-4 mt-2">
-                                                                <span className="text-xs text-gray-500 flex items-center gap-1">
+                                                                <span className="text-xs text-muted-foreground flex items-center gap-1">
                                                                     <Calendar className="w-3 h-3" />
                                                                     {formatDate(m.dataLimite)}
                                                                 </span>
@@ -287,7 +287,7 @@ export default function PostAwardPage() {
                                                                 </span>
                                                             </div>
                                                         </div>
-                                                        <ChevronRight className="w-5 h-5 text-gray-500" />
+                                                        <ChevronRight className="w-5 h-5 text-muted-foreground" />
                                                     </div>
                                                 );
                                             })}
@@ -308,7 +308,7 @@ export default function PostAwardPage() {
                                     </div>
 
                                     {(selectedCandidatura.pedidosPagamento || []).length === 0 ? (
-                                        <div className="text-center py-12 text-gray-500 border border-dashed border-white/10 rounded-lg">
+                                        <div className="text-center py-12 text-muted-foreground border border-dashed border-white/10 rounded-lg">
                                             <DollarSign className="w-12 h-12 mx-auto mb-3 opacity-50" />
                                             <p>Sem pedidos de pagamento</p>
                                             <p className="text-sm mt-1">Crie pedidos para receber financiamento</p>
@@ -328,7 +328,7 @@ export default function PostAwardPage() {
                                                         <div className="flex-1">
                                                             <p className="font-medium">{formatCurrency(p.montante)}</p>
                                                             {p.dataSubmissao && (
-                                                                <p className="text-xs text-gray-500">
+                                                                <p className="text-xs text-muted-foreground">
                                                                     Submetido em {formatDate(p.dataSubmissao)}
                                                                 </p>
                                                             )}
@@ -346,7 +346,7 @@ export default function PostAwardPage() {
                                     {(selectedCandidatura.pedidosPagamento || []).length > 0 && (
                                         <div className="mt-6 p-4 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 rounded-lg border border-emerald-500/20">
                                             <div className="flex items-center justify-between mb-2">
-                                                <span className="text-gray-400">Progresso de Pagamentos</span>
+                                                <span className="text-muted-foreground">Progresso de Pagamentos</span>
                                                 <span className="font-bold text-emerald-400">
                                                     {formatCurrency(
                                                         selectedCandidatura.pedidosPagamento
@@ -378,7 +378,7 @@ export default function PostAwardPage() {
                             )}
                         </>
                     ) : (
-                        <div className="flex items-center justify-center h-full text-gray-500">
+                        <div className="flex items-center justify-center h-full text-muted-foreground">
                             <div className="text-center">
                                 <Target className="w-16 h-16 mx-auto mb-4 opacity-50" />
                                 <p>Selecione um projecto para ver detalhes</p>

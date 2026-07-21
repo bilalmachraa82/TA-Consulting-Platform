@@ -145,7 +145,7 @@ export function TeamPanel() {
         switch (role) {
             case 'OWNER': return <Crown className="h-3 w-3 text-yellow-500" />
             case 'ADMIN': return <Shield className="h-3 w-3 text-blue-500" />
-            case 'VIEWER': return <Eye className="h-3 w-3 text-gray-500" />
+            case 'VIEWER': return <Eye className="h-3 w-3 text-muted-foreground" />
             default: return <User className="h-3 w-3 text-green-500" />
         }
     }
@@ -155,7 +155,7 @@ export function TeamPanel() {
             OWNER: 'bg-yellow-100 text-yellow-800 border-yellow-300',
             ADMIN: 'bg-blue-100 text-blue-800 border-blue-300',
             MEMBER: 'bg-green-100 text-green-800 border-green-300',
-            VIEWER: 'bg-gray-100 text-gray-800 border-gray-300'
+            VIEWER: 'bg-muted text-foreground border-border'
         }
         return (
             <Badge variant="outline" className={`text-xs ${configs[role] || configs.MEMBER}`}>
@@ -169,7 +169,7 @@ export function TeamPanel() {
         return (
             <Card>
                 <CardContent className="py-8 text-center">
-                    <div className="animate-pulse text-gray-500">Carregando equipas...</div>
+                    <div className="animate-pulse text-muted-foreground">Carregando equipas...</div>
                 </CardContent>
             </Card>
         )
@@ -227,9 +227,9 @@ export function TeamPanel() {
             {teams.length === 0 ? (
                 <Card className="border-dashed">
                     <CardContent className="py-8 text-center">
-                        <Users className="h-12 w-12 text-gray-300 mx-auto mb-4" />
-                        <h3 className="font-medium text-gray-700 mb-2">Sem equipas</h3>
-                        <p className="text-sm text-gray-500 mb-4">
+                        <Users className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                        <h3 className="font-medium text-muted-foreground mb-2">Sem equipas</h3>
+                        <p className="text-sm text-muted-foreground mb-4">
                             Crie uma equipa para colaborar com outros utilizadores.
                         </p>
                         <Button
@@ -277,7 +277,7 @@ export function TeamPanel() {
                                         {team.membros?.slice(0, 5).map((member) => (
                                             <div
                                                 key={member.id}
-                                                className="flex items-center gap-2 bg-gray-50 rounded-lg px-2 py-1"
+                                                className="flex items-center gap-2 bg-muted rounded-lg px-2 py-1"
                                             >
                                                 <Avatar className="h-6 w-6">
                                                     <AvatarImage src={member.user.image || undefined} />
@@ -285,7 +285,7 @@ export function TeamPanel() {
                                                         {(member.user.name?.[0] || member.user.email[0]).toUpperCase()}
                                                     </AvatarFallback>
                                                 </Avatar>
-                                                <span className="text-sm text-gray-700">
+                                                <span className="text-sm text-muted-foreground">
                                                     {member.user.name || member.user.email.split('@')[0]}
                                                 </span>
                                                 {getRoleBadge(member.role)}
@@ -295,7 +295,7 @@ export function TeamPanel() {
                                             <Badge variant="outline">+{team.membros.length - 5}</Badge>
                                         )}
                                     </div>
-                                    <div className="mt-3 flex gap-4 text-xs text-gray-500">
+                                    <div className="mt-3 flex gap-4 text-xs text-muted-foreground">
                                         <span>{team.memberCount || team.membros?.length || 0} membros</span>
                                         <span>{team.empresaCount || 0} empresas</span>
                                     </div>
@@ -324,7 +324,7 @@ export function TeamPanel() {
                                 placeholder="utilizador@exemplo.com"
                                 required
                             />
-                            <p className="text-xs text-gray-500 mt-1">
+                            <p className="text-xs text-muted-foreground mt-1">
                                 O utilizador precisa de estar registado na plataforma.
                             </p>
                         </div>

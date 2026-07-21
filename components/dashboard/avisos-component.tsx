@@ -260,7 +260,7 @@ export function AvisosComponent() {
     }
 
     return (
-      <Badge className={colors[portal as keyof typeof colors] || 'bg-gray-100 text-gray-800'}>
+      <Badge className={colors[portal as keyof typeof colors] || 'bg-muted text-foreground'}>
         {portal}
       </Badge>
     )
@@ -269,7 +269,7 @@ export function AvisosComponent() {
   if (loading && !data) {
     return (
       <div className="flex items-center justify-center h-96">
-        <div className="animate-pulse text-gray-500">Carregando avisos...</div>
+        <div className="animate-pulse text-muted-foreground">Carregando avisos...</div>
       </div>
     )
   }
@@ -322,7 +322,7 @@ export function AvisosComponent() {
             <div>
               <Label>Pesquisa</Label>
               <div className="relative">
-                <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   placeholder="Nome, código ou descrição..."
                   value={filtros.pesquisa}
@@ -387,7 +387,7 @@ export function AvisosComponent() {
               </CardDescription>
             </div>
             {/* View Mode Toggle for Pedro */}
-            <div className="flex items-center gap-2 bg-slate-100 p-1 rounded-lg">
+            <div className="flex items-center gap-2 bg-muted p-1 rounded-lg">
               <Button
                 variant={density === 'normal' ? 'default' : 'ghost'}
                 size="sm"
@@ -400,7 +400,7 @@ export function AvisosComponent() {
                 variant={density === 'compact' ? 'default' : 'ghost'}
                 size="sm"
                 onClick={() => setDensity('compact')}
-                className={density === 'compact' ? 'shadow-sm text-emerald-700 bg-white' : 'text-slate-500'}
+                className={density === 'compact' ? 'shadow-sm text-emerald-700 bg-card' : 'text-muted-foreground'}
               >
                 <FileSpreadsheet className="h-4 w-4 mr-2" /> Excel Mode
               </Button>
@@ -411,7 +411,7 @@ export function AvisosComponent() {
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
-                <TableRow className={density === 'compact' ? 'bg-slate-100 hover:bg-slate-100' : ''}>
+                <TableRow className={density === 'compact' ? 'bg-muted hover:bg-muted' : ''}>
                   <TableHead className="w-12">
                     <input
                       type="checkbox"
@@ -425,14 +425,14 @@ export function AvisosComponent() {
                       }}
                     />
                   </TableHead>
-                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-slate-700 border-r' : ''}>Nome & Portal</TableHead>
-                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-slate-700 border-r' : ''}>Programa</TableHead>
-                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-slate-700 border-r' : ''}>Código</TableHead>
-                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-slate-700 border-r' : ''}>Datas</TableHead>
-                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-slate-700 border-r' : ''}>Montante</TableHead>
-                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-slate-700 border-r' : ''}>Urgência</TableHead>
-                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-slate-700 border-r' : ''}>Status</TableHead>
-                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-slate-700' : ''}>Ações</TableHead>
+                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-muted-foreground border-r' : ''}>Nome & Portal</TableHead>
+                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-muted-foreground border-r' : ''}>Programa</TableHead>
+                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-muted-foreground border-r' : ''}>Código</TableHead>
+                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-muted-foreground border-r' : ''}>Datas</TableHead>
+                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-muted-foreground border-r' : ''}>Montante</TableHead>
+                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-muted-foreground border-r' : ''}>Urgência</TableHead>
+                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-muted-foreground border-r' : ''}>Status</TableHead>
+                  <TableHead className={density === 'compact' ? 'h-8 py-1 text-xs font-bold text-muted-foreground' : ''}>Ações</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -442,7 +442,7 @@ export function AvisosComponent() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.05 }}
-                    className={`hover:bg-blue-50/50 ${density === 'compact' ? 'even:bg-slate-50 border-b border-slate-200' : ''}`}
+                    className={`hover:bg-blue-50/50 ${density === 'compact' ? 'even:bg-muted border-b border-border' : ''}`}
                   >
                     <TableCell className={density === 'compact' ? 'py-1' : ''}>
                       <input
@@ -457,35 +457,35 @@ export function AvisosComponent() {
                         }}
                       />
                     </TableCell>
-                    <TableCell className={density === 'compact' ? 'py-1 border-r border-slate-100' : ''}>
+                    <TableCell className={density === 'compact' ? 'py-1 border-r border-border' : ''}>
                       <div className={density === 'compact' ? 'flex items-center gap-2' : ''}>
-                        <div className={`font-medium text-gray-900 ${density === 'compact' ? 'text-xs truncate max-w-[200px]' : 'mb-1'}`}>
+                        <div className={`font-medium text-foreground ${density === 'compact' ? 'text-xs truncate max-w-[200px]' : 'mb-1'}`}>
                           {aviso.nome}
                         </div>
                         {density === 'compact' ? (
-                          <span className="text-[10px] px-1 bg-slate-200 rounded text-slate-700">{aviso.portal}</span>
+                          <span className="text-[10px] px-1 bg-muted rounded text-muted-foreground">{aviso.portal}</span>
                         ) : (
                           getPortalBadge(aviso.portal)
                         )}
                       </div>
                     </TableCell>
-                    <TableCell className={density === 'compact' ? 'py-1 border-r border-slate-100' : ''}>
+                    <TableCell className={density === 'compact' ? 'py-1 border-r border-border' : ''}>
                       <div className="text-sm">
                         <div className={density === 'compact' ? 'text-xs font-medium' : 'font-medium'}>{aviso.programa}</div>
                         {aviso.regiao && (
-                          <div className={`text-gray-500 ${density === 'compact' ? 'text-[10px]' : ''}`}>{aviso.regiao}</div>
+                          <div className={`text-muted-foreground ${density === 'compact' ? 'text-[10px]' : ''}`}>{aviso.regiao}</div>
                         )}
                       </div>
                     </TableCell>
-                    <TableCell className={density === 'compact' ? 'py-1 border-r border-slate-100' : ''}>
-                      <code className={`bg-gray-100 px-2 py-1 rounded ${density === 'compact' ? 'text-[10px]' : 'text-sm'}`}>
+                    <TableCell className={density === 'compact' ? 'py-1 border-r border-border' : ''}>
+                      <code className={`bg-muted text-foreground px-2 py-1 rounded ${density === 'compact' ? 'text-[10px]' : 'text-sm'}`}>
                         {aviso.codigo}
                       </code>
                     </TableCell>
-                    <TableCell className={density === 'compact' ? 'py-1 border-r border-slate-100' : ''}>
+                    <TableCell className={density === 'compact' ? 'py-1 border-r border-border' : ''}>
                       <div className={`space-y-1 ${density === 'compact' ? 'text-xs' : 'text-sm'}`}>
                         <div className="flex items-center gap-1">
-                          <Calendar className={`text-gray-400 ${density === 'compact' ? 'h-3 w-3' : 'h-3 w-3'}`} />
+                          <Calendar className={`text-muted-foreground ${density === 'compact' ? 'h-3 w-3' : 'h-3 w-3'}`} />
                           {new Date(aviso.dataInicioSubmissao).toLocaleDateString('pt-PT')}
                         </div>
                         {density !== 'compact' && (
@@ -496,17 +496,17 @@ export function AvisosComponent() {
                         )}
                       </div>
                     </TableCell>
-                    <TableCell className={density === 'compact' ? 'py-1 border-r border-slate-100' : ''}>
+                    <TableCell className={density === 'compact' ? 'py-1 border-r border-border' : ''}>
                       <div className={`space-y-1 ${density === 'compact' ? 'text-xs' : 'text-sm'}`}>
                         {aviso.montanteMinimo && (
                           <div className="flex items-center gap-1">
-                            <Euro className="h-3 w-3 text-gray-400" />
+                            <Euro className="h-3 w-3 text-muted-foreground" />
                             {aviso.montanteMinimo.toLocaleString('pt-PT')}
                           </div>
                         )}
                       </div>
                     </TableCell>
-                    <TableCell className={density === 'compact' ? 'py-1 border-r border-slate-100' : ''}>
+                    <TableCell className={density === 'compact' ? 'py-1 border-r border-border' : ''}>
                       {density === 'compact' ? (
                         <span className={`text-[10px] font-bold ${aviso.urgencia === 'alta' ? 'text-red-600' : 'text-green-600'
                           }`}>
@@ -515,16 +515,16 @@ export function AvisosComponent() {
                       ) : getUrgencyBadge(aviso.urgencia, aviso.diasRestantes)}
                     </TableCell>
                     {/* M7: Curation Status */}
-                    <TableCell className={density === 'compact' ? 'py-1 border-r border-slate-100' : ''}>
+                    <TableCell className={density === 'compact' ? 'py-1 border-r border-border' : ''}>
                       {density === 'compact' ? (
                         curationStatus[aviso.id] === 'promoted' ? <span className="text-green-600 text-xs">● Promovido</span> :
-                          curationStatus[aviso.id] === 'ignored' ? <span className="text-gray-400 text-xs">● Ignorado</span> :
+                          curationStatus[aviso.id] === 'ignored' ? <span className="text-muted-foreground text-xs">● Ignorado</span> :
                             <span className="text-yellow-600 text-xs">● Pendente</span>
                       ) : (
                         curationStatus[aviso.id] === 'promoted' ? (
                           <Badge className="bg-green-100 text-green-800"><Globe className="h-3 w-3 mr-1" />Promovido</Badge>
                         ) : curationStatus[aviso.id] === 'ignored' ? (
-                          <Badge className="bg-gray-100 text-gray-600"><Ban className="h-3 w-3 mr-1" />Ignorado</Badge>
+                          <Badge className="bg-muted text-muted-foreground"><Ban className="h-3 w-3 mr-1" />Ignorado</Badge>
                         ) : (
                           <Badge className="bg-yellow-100 text-yellow-800">Pendente</Badge>
                         )
@@ -580,7 +580,7 @@ export function AvisosComponent() {
                                             href={anexo.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center justify-between p-2 rounded-lg bg-gray-50 hover:bg-blue-50 border border-gray-100 transition-colors group"
+                                            className="flex items-center justify-between p-2 rounded-lg bg-muted hover:bg-blue-50 border border-border transition-colors group"
                                           >
                                             <div className="flex items-center gap-2 overflow-hidden">
                                               {anexo.url?.toLowerCase().includes('xls') ? (
@@ -592,7 +592,7 @@ export function AvisosComponent() {
                                                 {anexo.nome}
                                               </span>
                                             </div>
-                                            <Download className="h-3 w-3 text-gray-400 group-hover:text-blue-600" />
+                                            <Download className="h-3 w-3 text-muted-foreground group-hover:text-blue-600" />
                                           </a>
                                         ))}
                                       </div>
@@ -689,7 +689,7 @@ export function AvisosComponent() {
           {/* Paginação */}
           {data?.pagination && data.pagination.pages > 1 && (
             <div className="flex items-center justify-between mt-4">
-              <div className="text-sm text-gray-500">
+              <div className="text-sm text-muted-foreground">
                 Página {data.pagination.page} de {data.pagination.pages}
                 ({data.pagination.total} avisos no total)
               </div>

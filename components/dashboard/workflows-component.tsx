@@ -204,7 +204,7 @@ export function WorkflowsComponent() {
   const getStatusBadge = (workflow: WorkflowData) => {
     if (!workflow.ativo) {
       return (
-        <Badge className="bg-gray-100 text-gray-600 border-gray-300">
+        <Badge className="bg-muted text-muted-foreground border-border">
           <Pause className="h-3 w-3 mr-1" />
           Inativo
         </Badge>
@@ -274,7 +274,7 @@ export function WorkflowsComponent() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-96">
-        <div className="animate-pulse text-gray-500">Carregando workflows...</div>
+        <div className="animate-pulse text-muted-foreground">Carregando workflows...</div>
       </div>
     )
   }
@@ -379,36 +379,36 @@ export function WorkflowsComponent() {
                   <div className="grid grid-cols-3 gap-4 text-sm">
                     <div className="text-center">
                       <div className="font-bold text-lg">{workflow.estatisticas.totalExecucoes}</div>
-                      <div className="text-gray-500">Execuções</div>
+                      <div className="text-muted-foreground">Execuções</div>
                     </div>
                     <div className="text-center">
                       <div className="font-bold text-lg text-green-600">{workflow.estatisticas.taxaSucesso}%</div>
-                      <div className="text-gray-500">Sucesso</div>
+                      <div className="text-muted-foreground">Sucesso</div>
                     </div>
                     <div className="text-center">
                       <div className="font-bold text-lg">{workflow.estatisticas.execucoesSucesso}</div>
-                      <div className="text-gray-500">OK</div>
+                      <div className="text-muted-foreground">OK</div>
                     </div>
                   </div>
 
                   {/* Informações de Execução */}
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center justify-between">
-                      <span className="text-gray-500">Frequência:</span>
+                      <span className="text-muted-foreground">Frequência:</span>
                       <span className="font-medium">
                         {FREQUENCIAS[workflow.frequencia as keyof typeof FREQUENCIAS] || workflow.frequencia}
                       </span>
                     </div>
                     
                     <div className="flex items-center justify-between">
-                      <span className="text-gray-500">Última Execução:</span>
+                      <span className="text-muted-foreground">Última Execução:</span>
                       <span className="font-medium">
                         {formatarDataHora(workflow.ultimaExecucao)}
                       </span>
                     </div>
                     
                     <div className="flex items-center justify-between">
-                      <span className="text-gray-500">Próxima Execução:</span>
+                      <span className="text-muted-foreground">Próxima Execução:</span>
                       <span className="font-medium">
                         {calcularProximaExecucao(workflow.ultimaExecucao, workflow.frequencia)}
                       </span>
@@ -417,7 +417,7 @@ export function WorkflowsComponent() {
 
                   {/* Último Log */}
                   {workflow.logsRecentes.length > 0 && (
-                    <div className="p-3 bg-gray-50 rounded-lg">
+                    <div className="p-3 bg-muted rounded-lg">
                       <div className="flex items-center gap-2 mb-1">
                         {workflow.logsRecentes[0].sucesso ? (
                           <CheckCircle className="h-4 w-4 text-green-500" />
@@ -429,7 +429,7 @@ export function WorkflowsComponent() {
                         </span>
                       </div>
                       {workflow.logsRecentes[0].mensagem && (
-                        <div className="text-sm text-gray-600 truncate">
+                        <div className="text-sm text-muted-foreground truncate">
                           {workflow.logsRecentes[0].mensagem}
                         </div>
                       )}
@@ -514,8 +514,8 @@ export function WorkflowsComponent() {
               {workflowSelecionado.parametros && (
                 <div>
                   <Label>Parâmetros Atuais</Label>
-                  <div className="mt-2 p-3 bg-gray-50 rounded-lg">
-                    <pre className="text-sm text-gray-700 whitespace-pre-wrap">
+                  <div className="mt-2 p-3 bg-muted rounded-lg">
+                    <pre className="text-sm text-muted-foreground whitespace-pre-wrap">
                       {JSON.stringify(workflowSelecionado.parametros, null, 2)}
                     </pre>
                   </div>
@@ -570,17 +570,17 @@ export function WorkflowsComponent() {
                     </div>
                     
                     {log.mensagem && (
-                      <div className="text-sm text-gray-700 mb-2">
+                      <div className="text-sm text-muted-foreground mb-2">
                         {log.mensagem}
                       </div>
                     )}
                     
                     {log.dados && (
                       <details className="text-sm">
-                        <summary className="cursor-pointer text-gray-500 hover:text-gray-700">
+                        <summary className="cursor-pointer text-muted-foreground hover:text-muted-foreground">
                           Ver dados detalhados
                         </summary>
-                        <pre className="mt-2 p-2 bg-gray-100 rounded text-xs overflow-x-auto">
+                        <pre className="mt-2 p-2 bg-muted rounded text-xs overflow-x-auto">
                           {JSON.stringify(log.dados, null, 2)}
                         </pre>
                       </details>
@@ -589,9 +589,9 @@ export function WorkflowsComponent() {
                 ))
               ) : (
                 <div className="text-center py-8">
-                  <Activity className="mx-auto h-12 w-12 text-gray-400 mb-4" />
-                  <h3 className="text-lg font-medium text-gray-900 mb-2">Nenhuma execução registrada</h3>
-                  <p className="text-gray-500">Este workflow ainda não foi executado.</p>
+                  <Activity className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
+                  <h3 className="text-lg font-medium text-foreground mb-2">Nenhuma execução registrada</h3>
+                  <p className="text-muted-foreground">Este workflow ainda não foi executado.</p>
                 </div>
               )}
 

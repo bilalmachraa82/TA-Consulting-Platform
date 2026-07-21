@@ -84,7 +84,7 @@ export default function AlertasConsolidadosPage() {
             case 'BAIXA':
                 return 'bg-green-100 text-green-800 border-green-200'
             default:
-                return 'bg-gray-100 text-gray-800 border-gray-200'
+                return 'bg-muted text-foreground border-border'
         }
     }
 
@@ -142,8 +142,8 @@ export default function AlertasConsolidadosPage() {
             {/* Header */}
             <div className="flex items-center justify-between">
                 <div>
-                    <h1 className="text-2xl font-bold text-gray-900">Alertas Consolidados</h1>
-                    <p className="text-gray-500">
+                    <h1 className="text-2xl font-bold text-foreground">Alertas Consolidados</h1>
+                    <p className="text-muted-foreground">
                         Todos os alertas das suas empresas num só lugar
                     </p>
                 </div>
@@ -163,7 +163,7 @@ export default function AlertasConsolidadosPage() {
                         <CardContent className="pt-6">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-sm text-gray-500">Total</p>
+                                    <p className="text-sm text-muted-foreground">Total</p>
                                     <p className="text-2xl font-bold">{resumo.total}</p>
                                 </div>
                                 <Bell className="h-8 w-8 text-blue-600" />
@@ -178,7 +178,7 @@ export default function AlertasConsolidadosPage() {
                         <CardContent className="pt-6">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-sm text-gray-500">Prioridade Alta</p>
+                                    <p className="text-sm text-muted-foreground">Prioridade Alta</p>
                                     <p className="text-2xl font-bold text-red-600">{resumo.alta}</p>
                                 </div>
                                 <AlertTriangle className="h-8 w-8 text-red-600" />
@@ -193,7 +193,7 @@ export default function AlertasConsolidadosPage() {
                         <CardContent className="pt-6">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-sm text-gray-500">Prioridade Média</p>
+                                    <p className="text-sm text-muted-foreground">Prioridade Média</p>
                                     <p className="text-2xl font-bold text-yellow-600">{resumo.media}</p>
                                 </div>
                                 <Calendar className="h-8 w-8 text-yellow-600" />
@@ -208,7 +208,7 @@ export default function AlertasConsolidadosPage() {
                         <CardContent className="pt-6">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-sm text-gray-500">Prioridade Baixa</p>
+                                    <p className="text-sm text-muted-foreground">Prioridade Baixa</p>
                                     <p className="text-2xl font-bold text-green-600">{resumo.baixa}</p>
                                 </div>
                                 <FileText className="h-8 w-8 text-green-600" />
@@ -223,11 +223,11 @@ export default function AlertasConsolidadosPage() {
                 {alertasFiltrados.length === 0 ? (
                     <Card>
                         <CardContent className="py-12 text-center">
-                            <Bell className="h-12 w-12 mx-auto text-gray-400 mb-4" />
-                            <h3 className="text-lg font-medium text-gray-900">
+                            <Bell className="h-12 w-12 mx-auto text-muted-foreground mb-4" />
+                            <h3 className="text-lg font-medium text-foreground">
                                 {filtro === 'TODOS' ? 'Sem alertas' : `Sem alertas de prioridade ${filtro.toLowerCase()}`}
                             </h3>
-                            <p className="text-gray-500 mt-1">
+                            <p className="text-muted-foreground mt-1">
                                 Excelente! Não há nada que necessite da sua atenção imediata.
                             </p>
                         </CardContent>
@@ -248,15 +248,15 @@ export default function AlertasConsolidadosPage() {
                                     {/* Content */}
                                     <div className="flex-1 min-w-0">
                                         <div className="flex items-center gap-2">
-                                            <h3 className="font-medium text-gray-900 truncate">
+                                            <h3 className="font-medium text-foreground truncate">
                                                 {alerta.titulo}
                                             </h3>
                                             <Badge className={getPrioridadeColor(alerta.prioridade)}>
                                                 {alerta.prioridade}
                                             </Badge>
                                         </div>
-                                        <p className="text-sm text-gray-500 truncate">{alerta.descricao}</p>
-                                        <div className="flex items-center gap-4 mt-1 text-xs text-gray-400">
+                                        <p className="text-sm text-muted-foreground truncate">{alerta.descricao}</p>
+                                        <div className="flex items-center gap-4 mt-1 text-xs text-muted-foreground">
                                             <span>Empresa: {alerta.empresa.nome}</span>
                                             {alerta.dataLimite && (
                                                 <span className="font-medium">

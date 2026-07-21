@@ -288,7 +288,7 @@ export function ConfiguracoesComponent() {
           <div className="flex items-center justify-between">
             <div>
               <Label>Ativar Notificações Email</Label>
-              <p className="text-sm text-gray-500">Enviar alertas por email</p>
+              <p className="text-sm text-muted-foreground">Enviar alertas por email</p>
             </div>
             <Switch
               checked={configuracoes.notificacoes.emailAtivar}
@@ -369,7 +369,7 @@ export function ConfiguracoesComponent() {
           <div className="flex items-center justify-between">
             <div>
               <Label>Avisos Urgentes</Label>
-              <p className="text-sm text-gray-500">Deadlines em 7 dias ou menos</p>
+              <p className="text-sm text-muted-foreground">Deadlines em 7 dias ou menos</p>
             </div>
             <Switch
               checked={configuracoes.notificacoes.alertasUrgentes}
@@ -380,7 +380,7 @@ export function ConfiguracoesComponent() {
           <div className="flex items-center justify-between">
             <div>
               <Label>Documentos a Expirar</Label>
-              <p className="text-sm text-gray-500">Certificados com validade próxima</p>
+              <p className="text-sm text-muted-foreground">Certificados com validade próxima</p>
             </div>
             <Switch
               checked={configuracoes.notificacoes.alertasDocumentos}
@@ -391,7 +391,7 @@ export function ConfiguracoesComponent() {
           <div className="flex items-center justify-between">
             <div>
               <Label>Relatório Semanal</Label>
-              <p className="text-sm text-gray-500">Resumo da atividade semanal</p>
+              <p className="text-sm text-muted-foreground">Resumo da atividade semanal</p>
             </div>
             <Switch
               checked={configuracoes.notificacoes.relatorioSemanal}
@@ -413,7 +413,7 @@ export function ConfiguracoesComponent() {
         <div className="flex items-center justify-between">
           <div>
             <Label>Ativar Integração</Label>
-            <p className="text-sm text-gray-500">Sincronização automática com Google Sheets</p>
+            <p className="text-sm text-muted-foreground">Sincronização automática com Google Sheets</p>
           </div>
           <Switch
             checked={configuracoes.integracao.googleSheetsAtivar}
@@ -484,7 +484,7 @@ export function ConfiguracoesComponent() {
           <div className="flex items-center justify-between">
             <div>
               <Label>Portugal 2030</Label>
-              <p className="text-sm text-gray-500">Monitor portal Portugal 2030</p>
+              <p className="text-sm text-muted-foreground">Monitor portal Portugal 2030</p>
             </div>
             <Switch
               checked={configuracoes.scraping.portugal2030}
@@ -495,7 +495,7 @@ export function ConfiguracoesComponent() {
           <div className="flex items-center justify-between">
             <div>
               <Label>PEPAC</Label>
-              <p className="text-sm text-gray-500">Monitor portal PEPAC</p>
+              <p className="text-sm text-muted-foreground">Monitor portal PEPAC</p>
             </div>
             <Switch
               checked={configuracoes.scraping.pepac}
@@ -506,7 +506,7 @@ export function ConfiguracoesComponent() {
           <div className="flex items-center justify-between">
             <div>
               <Label>PRR (Plano de Recuperação e Resiliência)</Label>
-              <p className="text-sm text-gray-500">Monitor portal PRR</p>
+              <p className="text-sm text-muted-foreground">Monitor portal PRR</p>
             </div>
             <Switch
               checked={configuracoes.scraping.prr}
@@ -569,7 +569,7 @@ export function ConfiguracoesComponent() {
               min="1"
               max="30"
             />
-            <p className="text-sm text-gray-500 mt-1">Alertar quando restam X dias</p>
+            <p className="text-sm text-muted-foreground mt-1">Alertar quando restam X dias</p>
           </div>
 
           <div>
@@ -582,7 +582,7 @@ export function ConfiguracoesComponent() {
               min="7"
               max="90"
             />
-            <p className="text-sm text-gray-500 mt-1">Alertar quando restam X dias</p>
+            <p className="text-sm text-muted-foreground mt-1">Alertar quando restam X dias</p>
           </div>
         </div>
 
@@ -610,7 +610,7 @@ export function ConfiguracoesComponent() {
         <div className="flex items-center justify-between">
           <div>
             <Label>Registo Aberto</Label>
-            <p className="text-sm text-gray-500">Permitir que novos utilizadores se registem</p>
+            <p className="text-sm text-muted-foreground">Permitir que novos utilizadores se registem</p>
           </div>
           <Switch
             checked={configuracoes.utilizadores.registoAberto}
@@ -621,7 +621,7 @@ export function ConfiguracoesComponent() {
         <div className="flex items-center justify-between">
           <div>
             <Label>Aprovação Manual</Label>
-            <p className="text-sm text-gray-500">Novos utilizadores necessitam aprovação</p>
+            <p className="text-sm text-muted-foreground">Novos utilizadores necessitam aprovação</p>
           </div>
           <Switch
             checked={configuracoes.utilizadores.aprovarManualmente}
@@ -654,7 +654,7 @@ export function ConfiguracoesComponent() {
         <div className="flex items-center justify-between">
           <div>
             <Label>Backup Automático</Label>
-            <p className="text-sm text-gray-500">Backup diário da base de dados</p>
+            <p className="text-sm text-muted-foreground">Backup diário da base de dados</p>
           </div>
           <Switch
             checked={configuracoes.sistema.backupAutomatico}
@@ -735,13 +735,13 @@ export function ConfiguracoesComponent() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => setSecaoAtiva(secao.id)}
-                  className={`w-full text-left p-3 flex items-center gap-3 hover:bg-gray-50 transition-colors ${secaoAtiva === secao.id ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-700' : ''
+                  className={`w-full text-left p-3 flex items-center gap-3 hover:bg-muted transition-colors ${secaoAtiva === secao.id ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-700' : ''
                     }`}
                 >
                   {secao.icone}
                   <div>
                     <div className="font-medium text-sm">{secao.titulo}</div>
-                    <div className="text-xs text-gray-500">{secao.descricao}</div>
+                    <div className="text-xs text-muted-foreground">{secao.descricao}</div>
                   </div>
                 </motion.button>
               ))}

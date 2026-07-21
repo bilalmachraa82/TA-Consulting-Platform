@@ -133,7 +133,7 @@ export function CalendarioComponent() {
     }
     
     return (
-      <Badge className={colors[portal as keyof typeof colors] || 'bg-gray-100 text-gray-800'}>
+      <Badge className={colors[portal as keyof typeof colors] || 'bg-muted text-foreground'}>
         {portal}
       </Badge>
     )
@@ -177,7 +177,7 @@ export function CalendarioComponent() {
       <div className="grid grid-cols-7 gap-1">
         {/* Cabeçalho dos dias da semana */}
         {DIAS_SEMANA.map(dia => (
-          <div key={dia} className="p-3 text-center font-medium text-gray-500 bg-gray-50">
+          <div key={dia} className="p-3 text-center font-medium text-muted-foreground bg-muted">
             {dia}
           </div>
         ))}
@@ -187,8 +187,8 @@ export function CalendarioComponent() {
           <div
             key={index}
             className={`min-h-[100px] border p-2 ${
-              item ? 'bg-white hover:bg-gray-50' : 'bg-gray-100'
-            } ${item?.temEventos ? 'border-blue-200 bg-blue-50' : 'border-gray-200'}`}
+              item ? 'bg-card hover:bg-muted' : 'bg-muted'
+            } ${item?.temEventos ? 'border-blue-200 bg-blue-50' : 'border-border'}`}
           >
             {item && (
               <>
@@ -208,7 +208,7 @@ export function CalendarioComponent() {
                     </div>
                   ))}
                   {item.eventos.length > 2 && (
-                    <div className="text-xs text-gray-500 text-center">
+                    <div className="text-xs text-muted-foreground text-center">
                       +{item.eventos.length - 2} mais
                     </div>
                   )}
@@ -250,10 +250,10 @@ export function CalendarioComponent() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-gray-900">
+                    <div className="text-2xl font-bold text-foreground">
                       {new Date(evento.data).getDate()}
                     </div>
-                    <div className="text-sm text-gray-500">
+                    <div className="text-sm text-muted-foreground">
                       {MESES[new Date(evento.data).getMonth()].substring(0, 3)}
                     </div>
                   </div>
@@ -279,7 +279,7 @@ export function CalendarioComponent() {
                 )}
 
                 <div className="flex items-center justify-between pt-2 border-t">
-                  <div className="flex items-center gap-4 text-sm text-gray-500">
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">
                       <FileText className="h-4 w-4" />
                       <span>{evento.candidaturas} candidaturas</span>
@@ -315,7 +315,7 @@ export function CalendarioComponent() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-96">
-        <div className="animate-pulse text-gray-500">Carregando calendário...</div>
+        <div className="animate-pulse text-muted-foreground">Carregando calendário...</div>
       </div>
     )
   }
@@ -484,9 +484,9 @@ export function CalendarioComponent() {
           {(!data || (view === 'lista' && data.eventos?.length === 0) || 
             (view === 'calendario' && Object.keys(data.eventosPorData || {}).length === 0)) && (
             <div className="text-center py-12">
-              <Calendar className="mx-auto h-12 w-12 text-gray-400 mb-4" />
-              <h3 className="text-lg font-medium text-gray-900 mb-2">Nenhum evento encontrado</h3>
-              <p className="text-gray-500">
+              <Calendar className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
+              <h3 className="text-lg font-medium text-foreground mb-2">Nenhum evento encontrado</h3>
+              <p className="text-muted-foreground">
                 {view === 'calendario' 
                   ? 'Não há eventos neste mês com os filtros selecionados.' 
                   : 'Não há deadlines próximos com os filtros selecionados.'}

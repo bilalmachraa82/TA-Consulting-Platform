@@ -84,7 +84,7 @@ const STATUS_COLORS = {
   VALIDO: 'bg-green-100 text-green-800 border-green-200',
   A_EXPIRAR: 'bg-yellow-100 text-yellow-800 border-yellow-200',
   EXPIRADO: 'bg-red-100 text-red-800 border-red-200',
-  EM_FALTA: 'bg-gray-100 text-gray-800 border-gray-200'
+  EM_FALTA: 'bg-muted text-foreground border-border'
 }
 
 const STATUS_ICONS = {
@@ -260,7 +260,7 @@ export function DocumentacaoComponent() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-96">
-        <div className="animate-pulse text-gray-500">Carregando documentos...</div>
+        <div className="animate-pulse text-muted-foreground">Carregando documentos...</div>
       </div>
     )
   }
@@ -314,15 +314,15 @@ export function DocumentacaoComponent() {
           </CardContent>
         </Card>
 
-        <Card className="border-gray-200 bg-gray-50">
+        <Card className="border-border bg-muted">
           <CardHeader className="pb-3">
             <CardTitle className="text-sm flex items-center gap-1">
-              <AlertTriangle className="h-4 w-4 text-gray-600" />
+              <AlertTriangle className="h-4 w-4 text-muted-foreground" />
               Em Falta
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-gray-600">{data?.stats.emFalta || 0}</div>
+            <div className="text-3xl font-bold text-muted-foreground">{data?.stats.emFalta || 0}</div>
           </CardContent>
         </Card>
       </div>
@@ -398,7 +398,7 @@ export function DocumentacaoComponent() {
             <div>
               <Label>Pesquisa</Label>
               <div className="relative">
-                <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   placeholder="Nome do documento..."
                   value={filtros.pesquisa}
@@ -426,7 +426,7 @@ export function DocumentacaoComponent() {
               <Card className={`hover:shadow-lg transition-shadow ${
                 documento.statusValidade === 'EXPIRADO' ? 'border-red-200' :
                 documento.statusValidade === 'A_EXPIRAR' ? 'border-yellow-200' :
-                'border-gray-200'
+                'border-border'
               }`}>
                 <CardHeader className="pb-3">
                   <div className="flex items-start justify-between">
@@ -464,10 +464,10 @@ export function DocumentacaoComponent() {
                   {/* Empresa */}
                   <div className="text-sm">
                     <div className="flex items-center gap-2 mb-1">
-                      <Building2 className="h-4 w-4 text-gray-400" />
+                      <Building2 className="h-4 w-4 text-muted-foreground" />
                       <span className="font-medium">{documento.empresa.nome}</span>
                     </div>
-                    <div className="text-gray-500 ml-6">
+                    <div className="text-muted-foreground ml-6">
                       NIPC: {documento.empresa.nipc} • {documento.empresa.dimensao}
                     </div>
                   </div>
@@ -476,7 +476,7 @@ export function DocumentacaoComponent() {
                   <div className="grid grid-cols-2 gap-4 text-sm">
                     {documento.dataEmissao && (
                       <div>
-                        <div className="text-gray-500">Emissão</div>
+                        <div className="text-muted-foreground">Emissão</div>
                         <div className="font-medium flex items-center gap-1">
                           <Calendar className="h-3 w-3" />
                           {new Date(documento.dataEmissao).toLocaleDateString('pt-PT')}
@@ -486,10 +486,10 @@ export function DocumentacaoComponent() {
                     
                     {documento.dataValidade && (
                       <div>
-                        <div className="text-gray-500">Validade</div>
+                        <div className="text-muted-foreground">Validade</div>
                         <div className={`font-medium flex items-center gap-1 ${
                           documento.statusValidade === 'EXPIRADO' ? 'text-red-600' :
-                          documento.statusValidade === 'A_EXPIRAR' ? 'text-yellow-600' : 'text-gray-900'
+                          documento.statusValidade === 'A_EXPIRAR' ? 'text-yellow-600' : 'text-foreground'
                         }`}>
                           <Calendar className="h-3 w-3" />
                           {new Date(documento.dataValidade).toLocaleDateString('pt-PT')}
@@ -525,8 +525,8 @@ export function DocumentacaoComponent() {
                   {/* Observações */}
                   {documento.observacoes && (
                     <div className="text-sm">
-                      <div className="text-gray-500">Observações</div>
-                      <div className="text-gray-700 italic">&quot;{documento.observacoes}&quot;</div>
+                      <div className="text-muted-foreground">Observações</div>
+                      <div className="text-muted-foreground italic">&quot;{documento.observacoes}&quot;</div>
                     </div>
                   )}
 
@@ -550,9 +550,9 @@ export function DocumentacaoComponent() {
 
       {(!data?.documentos || data.documentos.length === 0) && (
         <div className="text-center py-12">
-          <FileText className="mx-auto h-12 w-12 text-gray-400 mb-4" />
-          <h3 className="text-lg font-medium text-gray-900 mb-2">Nenhum documento encontrado</h3>
-          <p className="text-gray-500">Comece adicionando documentos das empresas.</p>
+          <FileText className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
+          <h3 className="text-lg font-medium text-foreground mb-2">Nenhum documento encontrado</h3>
+          <p className="text-muted-foreground">Comece adicionando documentos das empresas.</p>
         </div>
       )}
 

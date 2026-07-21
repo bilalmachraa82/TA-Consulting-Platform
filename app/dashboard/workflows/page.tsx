@@ -21,8 +21,8 @@ export default async function WorkflowsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">Workflows & Automações</h1>
-        <p className="text-gray-600 mt-2">
+        <h1 className="text-3xl font-bold text-foreground">Workflows & Automações</h1>
+        <p className="text-muted-foreground mt-2">
           Controlo e configuração de processos automatizados de scraping e notificações
         </p>
       </div>

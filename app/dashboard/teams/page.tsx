@@ -40,7 +40,7 @@ const ROLE_LABELS: Record<string, { label: string; color: string }> = {
     OWNER: { label: 'Proprietário', color: 'bg-yellow-500/20 text-yellow-400' },
     ADMIN: { label: 'Admin', color: 'bg-purple-500/20 text-purple-400' },
     MEMBER: { label: 'Membro', color: 'bg-blue-500/20 text-blue-400' },
-    VIEWER: { label: 'Visualizador', color: 'bg-gray-500/20 text-gray-400' },
+    VIEWER: { label: 'Visualizador', color: 'bg-muted0/20 text-muted-foreground' },
 };
 
 export default function TeamsPage() {
@@ -146,7 +146,7 @@ export default function TeamsPage() {
                         <Users className="w-8 h-8 text-blue-400" />
                         Equipas
                     </h1>
-                    <p className="text-gray-400 mt-1">
+                    <p className="text-muted-foreground mt-1">
                         Colabore com a sua equipa em candidaturas
                     </p>
                 </div>
@@ -162,9 +162,9 @@ export default function TeamsPage() {
             {/* Teams Grid */}
             {teams.length === 0 ? (
                 <div className="bg-[#12121a] rounded-xl border border-white/10 p-12 text-center">
-                    <Users className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+                    <Users className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
                     <h2 className="text-xl font-semibold mb-2">Sem equipas</h2>
-                    <p className="text-gray-400 mb-6">
+                    <p className="text-muted-foreground mb-6">
                         Crie uma equipa para começar a colaborar
                     </p>
                     <button
@@ -184,17 +184,17 @@ export default function TeamsPage() {
                             <div className="flex items-start justify-between mb-4">
                                 <h3 className="text-xl font-semibold">{team.nome}</h3>
                                 <button className="opacity-0 group-hover:opacity-100 transition-opacity p-2 hover:bg-white/5 rounded-lg">
-                                    <Settings className="w-5 h-5 text-gray-400" />
+                                    <Settings className="w-5 h-5 text-muted-foreground" />
                                 </button>
                             </div>
 
                             {/* Stats */}
                             <div className="flex gap-4 mb-6">
-                                <div className="flex items-center gap-2 text-gray-400">
+                                <div className="flex items-center gap-2 text-muted-foreground">
                                     <Users className="w-4 h-4" />
                                     <span>{team.memberCount} membros</span>
                                 </div>
-                                <div className="flex items-center gap-2 text-gray-400">
+                                <div className="flex items-center gap-2 text-muted-foreground">
                                     <Building2 className="w-4 h-4" />
                                     <span>{team.empresaCount} empresas</span>
                                 </div>
@@ -202,7 +202,7 @@ export default function TeamsPage() {
 
                             {/* Members Preview */}
                             <div className="mb-4">
-                                <p className="text-sm text-gray-500 mb-2">Membros</p>
+                                <p className="text-sm text-muted-foreground mb-2">Membros</p>
                                 <div className="flex -space-x-2">
                                     {team.membros.slice(0, 5).map((member) => (
                                         <div
@@ -298,7 +298,7 @@ export default function TeamsPage() {
                 <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
                     <div className="bg-[#12121a] rounded-xl border border-white/10 p-6 w-full max-w-md">
                         <h2 className="text-xl font-semibold mb-2">Convidar para {selectedTeam.nome}</h2>
-                        <p className="text-gray-400 text-sm mb-4">
+                        <p className="text-muted-foreground text-sm mb-4">
                             Convide membros por email
                         </p>
 
@@ -309,9 +309,9 @@ export default function TeamsPage() {
                         )}
 
                         <div className="mb-4">
-                            <label className="block text-sm text-gray-400 mb-1">Email</label>
+                            <label className="block text-sm text-muted-foreground mb-1">Email</label>
                             <div className="relative">
-                                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
+                                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                                 <input
                                     type="email"
                                     value={inviteEmail}
@@ -323,7 +323,7 @@ export default function TeamsPage() {
                         </div>
 
                         <div className="mb-6">
-                            <label className="block text-sm text-gray-400 mb-1">Função</label>
+                            <label className="block text-sm text-muted-foreground mb-1">Função</label>
                             <select
                                 value={inviteRole}
                                 onChange={(e) => setInviteRole(e.target.value as any)}

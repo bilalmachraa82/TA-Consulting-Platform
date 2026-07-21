@@ -21,8 +21,8 @@ export default async function CandidaturasPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900">Gestão de Candidaturas</h1>
-        <p className="text-gray-600 mt-2">
+        <h1 className="text-3xl font-bold text-foreground">Gestão de Candidaturas</h1>
+        <p className="text-muted-foreground mt-2">
           Pipeline de candidaturas com controlo de estados e timeline
         </p>
       </div>

@@ -215,7 +215,7 @@ export function EmpresasComponent() {
     }
 
     return (
-      <Badge className={colors[dimensao as keyof typeof colors] || 'bg-gray-100 text-gray-800'}>
+      <Badge className={colors[dimensao as keyof typeof colors] || 'bg-muted text-foreground'}>
         {dimensao}
       </Badge>
     )
@@ -245,7 +245,7 @@ export function EmpresasComponent() {
   if (loading && !data) {
     return (
       <div className="flex items-center justify-center h-96">
-        <div className="animate-pulse text-gray-500">Carregando empresas...</div>
+        <div className="animate-pulse text-muted-foreground">Carregando empresas...</div>
       </div>
     )
   }
@@ -287,7 +287,7 @@ export function EmpresasComponent() {
             <div>
               <Label>Pesquisa</Label>
               <div className="relative">
-                <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
                 <Input
                   placeholder="Nome, NIPC ou email..."
                   value={filtros.pesquisa}
@@ -368,7 +368,7 @@ export function EmpresasComponent() {
                   <div className="flex-1">
                     <CardTitle className="text-lg mb-1">{empresa.nome}</CardTitle>
                     <div className="flex items-center gap-2 mb-2">
-                      <code className="text-sm bg-gray-100 px-2 py-1 rounded">{empresa.nipc}</code>
+                      <code className="text-sm bg-muted px-2 py-1 rounded">{empresa.nipc}</code>
                       {getDimensaoBadge(empresa.dimensao)}
                     </div>
                   </div>
@@ -386,22 +386,22 @@ export function EmpresasComponent() {
               <CardContent className="space-y-3">
                 <div className="text-sm space-y-1">
                   <div className="flex items-center gap-2">
-                    <Building2 className="h-4 w-4 text-gray-400" />
+                    <Building2 className="h-4 w-4 text-muted-foreground" />
                     <span>{empresa.setor}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Mail className="h-4 w-4 text-gray-400" />
+                    <Mail className="h-4 w-4 text-muted-foreground" />
                     <span className="truncate">{empresa.email}</span>
                   </div>
                   {empresa.telefone && (
                     <div className="flex items-center gap-2">
-                      <Phone className="h-4 w-4 text-gray-400" />
+                      <Phone className="h-4 w-4 text-muted-foreground" />
                       <span>{empresa.telefone}</span>
                     </div>
                   )}
                   {empresa.localidade && (
                     <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-gray-400" />
+                      <MapPin className="h-4 w-4 text-muted-foreground" />
                       <span>{empresa.localidade}, {empresa.regiao}</span>
                     </div>
                   )}
@@ -434,7 +434,7 @@ export function EmpresasComponent() {
                   <div className="border-t pt-2 text-sm">
                     <div className="font-medium">{empresa.contactoNome}</div>
                     {empresa.contactoEmail && (
-                      <div className="text-gray-500">{empresa.contactoEmail}</div>
+                      <div className="text-muted-foreground">{empresa.contactoEmail}</div>
                     )}
                   </div>
                 )}
@@ -447,7 +447,7 @@ export function EmpresasComponent() {
       {/* Paginação */}
       {data?.pagination && data.pagination.pages > 1 && (
         <div className="flex items-center justify-between">
-          <div className="text-sm text-gray-500">
+          <div className="text-sm text-muted-foreground">
             Página {data.pagination.page} de {data.pagination.pages}
             ({data.pagination.total} empresas no total)
           </div>

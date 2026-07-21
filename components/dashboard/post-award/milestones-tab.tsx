@@ -109,7 +109,7 @@ export function MilestonesTab({ candidaturaId }: MilestonesTabProps) {
 
     const getEstadoBadge = (estado: string) => {
         const configs: Record<string, { color: string; icon: any }> = {
-            PENDENTE: { color: 'bg-gray-500', icon: Clock },
+            PENDENTE: { color: 'bg-muted0', icon: Clock },
             EM_PROGRESSO: { color: 'bg-blue-500', icon: Target },
             CONCLUIDO: { color: 'bg-green-500', icon: CheckCircle },
             ATRASADO: { color: 'bg-red-500', icon: AlertTriangle }
@@ -131,7 +131,7 @@ export function MilestonesTab({ candidaturaId }: MilestonesTabProps) {
     }
 
     if (loading) {
-        return <div className="animate-pulse p-4 text-center text-gray-500">Carregando milestones...</div>
+        return <div className="animate-pulse p-4 text-center text-muted-foreground">Carregando milestones...</div>
     }
 
     return (
@@ -149,7 +149,7 @@ export function MilestonesTab({ candidaturaId }: MilestonesTabProps) {
                         <Progress value={stats.progress} className="h-3" />
                         <div className="flex justify-between text-sm">
                             <span className="text-green-600 font-medium">{stats.completed} concluídos</span>
-                            <span className="text-gray-600">{stats.total} total</span>
+                            <span className="text-muted-foreground">{stats.total} total</span>
                             {stats.overdue > 0 && (
                                 <span className="text-red-600 font-medium">{stats.overdue} atrasados</span>
                             )}
@@ -222,9 +222,9 @@ export function MilestonesTab({ candidaturaId }: MilestonesTabProps) {
             {milestones.length === 0 ? (
                 <Card className="border-dashed">
                     <CardContent className="py-12 text-center">
-                        <Target className="h-12 w-12 text-gray-300 mx-auto mb-4" />
-                        <h3 className="font-medium text-gray-700 mb-2">Sem milestones definidos</h3>
-                        <p className="text-sm text-gray-500">
+                        <Target className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                        <h3 className="font-medium text-muted-foreground mb-2">Sem milestones definidos</h3>
+                        <p className="text-sm text-muted-foreground">
                             Adicione milestones para acompanhar o progresso do projeto.
                         </p>
                     </CardContent>
@@ -258,9 +258,9 @@ export function MilestonesTab({ candidaturaId }: MilestonesTabProps) {
                                                         {getEstadoBadge(isOverdue ? 'ATRASADO' : milestone.estado)}
                                                     </div>
                                                     {milestone.descricao && (
-                                                        <p className="text-sm text-gray-600 mb-2">{milestone.descricao}</p>
+                                                        <p className="text-sm text-muted-foreground mb-2">{milestone.descricao}</p>
                                                     )}
-                                                    <div className="flex items-center gap-4 text-sm text-gray-500">
+                                                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
                                                         <span className="flex items-center gap-1">
                                                             <Calendar className="h-4 w-4" />
                                                             {new Date(milestone.dataLimite).toLocaleDateString('pt-PT')}

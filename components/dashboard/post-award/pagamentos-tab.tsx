@@ -130,7 +130,7 @@ export function PagamentosTab({ candidaturaId }: PagamentosTabProps) {
 
     const getEstadoBadge = (estado: string) => {
         const configs: Record<string, { color: string; icon: any; label: string }> = {
-            RASCUNHO: { color: 'bg-gray-500', icon: FileText, label: 'Rascunho' },
+            RASCUNHO: { color: 'bg-muted0', icon: FileText, label: 'Rascunho' },
             SUBMETIDO: { color: 'bg-blue-500', icon: Send, label: 'Submetido' },
             EM_ANALISE: { color: 'bg-yellow-500', icon: Clock, label: 'Em Análise' },
             APROVADO: { color: 'bg-green-500', icon: CheckCircle, label: 'Aprovado' },
@@ -148,7 +148,7 @@ export function PagamentosTab({ candidaturaId }: PagamentosTabProps) {
     }
 
     if (loading) {
-        return <div className="animate-pulse p-4 text-center text-gray-500">Carregando pagamentos...</div>
+        return <div className="animate-pulse p-4 text-center text-muted-foreground">Carregando pagamentos...</div>
     }
 
     return (
@@ -197,10 +197,10 @@ export function PagamentosTab({ candidaturaId }: PagamentosTabProps) {
 
             {/* Budget Utilization Bar */}
             {stats.montanteAprovado > 0 && (
-                <Card className="border-gray-200">
+                <Card className="border-border">
                     <CardContent className="py-4">
                         <div className="flex justify-between items-center mb-2">
-                            <span className="text-sm font-medium text-gray-700">Utilização do Orçamento</span>
+                            <span className="text-sm font-medium text-muted-foreground">Utilização do Orçamento</span>
                             <span className={`text-sm font-bold ${(stats.totalSolicitado / stats.montanteAprovado) > 0.9
                                     ? 'text-red-600'
                                     : (stats.totalSolicitado / stats.montanteAprovado) > 0.7
@@ -219,7 +219,7 @@ export function PagamentosTab({ candidaturaId }: PagamentosTabProps) {
                                         : '[&>div]:bg-green-500'
                                 }`}
                         />
-                        <div className="flex justify-between text-xs text-gray-500 mt-1">
+                        <div className="flex justify-between text-xs text-muted-foreground mt-1">
                             <span>Solicitado: €{stats.totalSolicitado.toLocaleString('pt-PT')}</span>
                             <span>Disponível: €{disponivel.toLocaleString('pt-PT')}</span>
                         </div>
@@ -276,9 +276,9 @@ export function PagamentosTab({ candidaturaId }: PagamentosTabProps) {
             {pagamentos.length === 0 ? (
                 <Card className="border-dashed">
                     <CardContent className="py-12 text-center">
-                        <Banknote className="h-12 w-12 text-gray-300 mx-auto mb-4" />
-                        <h3 className="font-medium text-gray-700 mb-2">Sem pedidos de pagamento</h3>
-                        <p className="text-sm text-gray-500">
+                        <Banknote className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                        <h3 className="font-medium text-muted-foreground mb-2">Sem pedidos de pagamento</h3>
+                        <p className="text-sm text-muted-foreground">
                             Crie pedidos de pagamento para receber o financiamento aprovado.
                         </p>
                     </CardContent>

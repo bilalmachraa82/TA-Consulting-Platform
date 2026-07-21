@@ -276,7 +276,7 @@ export function AvisosV6Component() {
 
     const getUrgencyBadge = (diasRestantes: number) => {
         if (diasRestantes < 0) {
-            return <Badge className="bg-gray-100 text-gray-600 border-gray-300">Expirado</Badge>
+            return <Badge className="bg-muted text-muted-foreground border-border">Expirado</Badge>
         }
         if (diasRestantes <= 14) {
             return <Badge className="bg-red-100 text-red-800 border-red-200">{diasRestantes}d</Badge>
@@ -294,7 +294,7 @@ export function AvisosV6Component() {
             PEPAC: 'bg-purple-100 text-purple-800',
         }
         return (
-            <Badge className={colors[portal] || 'bg-gray-100 text-gray-800'}>
+            <Badge className={colors[portal] || 'bg-muted text-foreground'}>
                 {portal}
             </Badge>
         )
@@ -310,7 +310,7 @@ export function AvisosV6Component() {
                 )
             case 'nao_interessa':
                 return (
-                    <Badge className="bg-slate-100 text-slate-600 border-slate-200">
+                    <Badge className="bg-muted text-muted-foreground border-border">
                         <X className="h-3 w-3 mr-1" /> Não
                     </Badge>
                 )
@@ -346,7 +346,7 @@ export function AvisosV6Component() {
     if (loading && !data) {
         return (
             <div className="flex items-center justify-center h-96">
-                <div className="animate-pulse text-gray-500">Carregando avisos...</div>
+                <div className="animate-pulse text-muted-foreground">Carregando avisos...</div>
             </div>
         )
     }
@@ -356,8 +356,8 @@ export function AvisosV6Component() {
             {/* Header v6 */}
             <div className="flex items-center justify-between">
                 <div>
-                    <h2 className="text-2xl font-bold text-gray-900">Avisos v6</h2>
-                    <p className="text-sm text-gray-500">
+                    <h2 className="text-2xl font-bold text-foreground">Avisos v6</h2>
+                    <p className="text-sm text-muted-foreground">
                         Matching NUT + TIP • {filteredAvisos.length} avisos •{' '}
                         {filteredAvisos.filter(a => a.interesse === 'interessa').length} interessam
                     </p>
@@ -386,7 +386,7 @@ export function AvisosV6Component() {
                     <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
                         {/* NUT Filter */}
                         <div>
-                            <Label className="text-xs text-gray-500">NUT (Região)</Label>
+                            <Label className="text-xs text-muted-foreground">NUT (Região)</Label>
                             <Select value={filtros.nut} onValueChange={(v) => handleFiltroChange('nut', v)}>
                                 <SelectTrigger className="h-9">
                                     <SelectValue />
@@ -401,7 +401,7 @@ export function AvisosV6Component() {
 
                         {/* TIP Filter */}
                         <div>
-                            <Label className="text-xs text-gray-500">TIP (Tipo)</Label>
+                            <Label className="text-xs text-muted-foreground">TIP (Tipo)</Label>
                             <Select value={filtros.tip} onValueChange={(v) => handleFiltroChange('tip', v)}>
                                 <SelectTrigger className="h-9">
                                     <SelectValue />
@@ -416,7 +416,7 @@ export function AvisosV6Component() {
 
                         {/* Interesse Filter */}
                         <div>
-                            <Label className="text-xs text-gray-500">Interesse</Label>
+                            <Label className="text-xs text-muted-foreground">Interesse</Label>
                             <Select value={filtros.interesse} onValueChange={(v) => handleFiltroChange('interesse', v)}>
                                 <SelectTrigger className="h-9">
                                     <SelectValue />
@@ -432,7 +432,7 @@ export function AvisosV6Component() {
 
                         {/* Portal Filter */}
                         <div>
-                            <Label className="text-xs text-gray-500">Portal</Label>
+                            <Label className="text-xs text-muted-foreground">Portal</Label>
                             <Select value={filtros.portal} onValueChange={(v) => handleFiltroChange('portal', v)}>
                                 <SelectTrigger className="h-9">
                                     <SelectValue />
@@ -448,9 +448,9 @@ export function AvisosV6Component() {
 
                         {/* Search */}
                         <div className="col-span-2">
-                            <Label className="text-xs text-gray-500">Pesquisa</Label>
+                            <Label className="text-xs text-muted-foreground">Pesquisa</Label>
                             <div className="relative">
-                                <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+                                <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
                                 <Input
                                     placeholder="Nome ou código..."
                                     value={filtros.pesquisa}
@@ -469,7 +469,7 @@ export function AvisosV6Component() {
                     <div className="overflow-x-auto">
                         <Table>
                             <TableHeader>
-                                <TableRow className="bg-slate-50">
+                                <TableRow className="bg-muted">
                                     <TableHead className="w-10">Interesse</TableHead>
                                     <TableHead>Nome & Portal</TableHead>
                                     <TableHead className="w-24">Código</TableHead>
@@ -490,7 +490,7 @@ export function AvisosV6Component() {
                                         transition={{ delay: index * 0.03 }}
                                         className={`hover:bg-blue-50/30 border-b ${
                                             aviso.interesse === 'interessa' ? 'bg-emerald-50/30' :
-                                            aviso.interesse === 'nao_interessa' ? 'bg-slate-50/50' : ''
+                                            aviso.interesse === 'nao_interessa' ? 'bg-muted/50' : ''
                                         }`}
                                     >
                                         {/* Interesse Toggle */}
@@ -501,7 +501,7 @@ export function AvisosV6Component() {
                                                     className={`p-1 rounded transition-colors ${
                                                         aviso.interesse === 'interessa'
                                                             ? 'bg-emerald-500 text-white'
-                                                            : 'bg-gray-100 text-gray-400 hover:bg-emerald-100'
+                                                            : 'bg-muted text-muted-foreground hover:bg-emerald-100'
                                                     }`}
                                                     title="Interessa"
                                                 >
@@ -512,7 +512,7 @@ export function AvisosV6Component() {
                                                     className={`p-1 rounded transition-colors ${
                                                         aviso.interesse === 'nao_interessa'
                                                             ? 'bg-slate-600 text-white'
-                                                            : 'bg-gray-100 text-gray-400 hover:bg-slate-200'
+                                                            : 'bg-muted text-muted-foreground hover:bg-muted'
                                                     }`}
                                                     title="Não interessa"
                                                 >
@@ -524,7 +524,7 @@ export function AvisosV6Component() {
                                         {/* Nome & Portal */}
                                         <TableCell>
                                             <div className="max-w-xs">
-                                                <div className="font-medium text-gray-900 truncate text-sm">
+                                                <div className="font-medium text-foreground truncate text-sm">
                                                     {aviso.nome}
                                                 </div>
                                                 <div className="flex items-center gap-2 mt-1">
@@ -536,7 +536,7 @@ export function AvisosV6Component() {
 
                                         {/* Código */}
                                         <TableCell>
-                                            <code className="text-xs bg-gray-100 px-2 py-1 rounded">
+                                            <code className="text-xs bg-muted px-2 py-1 rounded">
                                                 {aviso.codigo}
                                             </code>
                                         </TableCell>
@@ -598,7 +598,7 @@ export function AvisosV6Component() {
                                                         €{(aviso.montanteMaximo / 1000).toFixed(0)}k
                                                     </span>
                                                 ) : (
-                                                    <span className="text-gray-400">—</span>
+                                                    <span className="text-muted-foreground">—</span>
                                                 )}
                                             </div>
                                         </TableCell>
@@ -637,7 +637,7 @@ export function AvisosV6Component() {
 
                                 {filteredAvisos.length === 0 && (
                                     <TableRow>
-                                        <TableCell colSpan={9} className="text-center py-8 text-gray-500">
+                                        <TableCell colSpan={9} className="text-center py-8 text-muted-foreground">
                                             Nenhum aviso encontrado com os filtros selecionados
                                         </TableCell>
                                     </TableRow>
@@ -649,7 +649,7 @@ export function AvisosV6Component() {
                     {/* Paginação Simplificada */}
                     {data?.pagination && data.pagination.pages > 1 && (
                         <div className="flex items-center justify-between px-4 py-3 border-t">
-                            <div className="text-sm text-gray-500">
+                            <div className="text-sm text-muted-foreground">
                                 {filteredAvisos.length} de {data.pagination.total} avisos
                             </div>
                             <div className="flex gap-2">
@@ -687,7 +687,7 @@ export function AvisosV6Component() {
                                 <Check className="h-5 w-5 text-emerald-600" />
                             </div>
                             <div>
-                                <p className="text-sm text-gray-500">Interessam</p>
+                                <p className="text-sm text-muted-foreground">Interessam</p>
                                 <p className="text-2xl font-bold text-emerald-700">
                                     {filteredAvisos.filter(a => a.interesse === 'interessa').length}
                                 </p>
@@ -703,7 +703,7 @@ export function AvisosV6Component() {
                                 <AlertTriangle className="h-5 w-5 text-amber-600" />
                             </div>
                             <div>
-                                <p className="text-sm text-gray-500">Por Decidir</p>
+                                <p className="text-sm text-muted-foreground">Por Decidir</p>
                                 <p className="text-2xl font-bold text-amber-700">
                                     {filteredAvisos.filter(a => a.interesse === 'por_decidir').length}
                                 </p>
@@ -719,7 +719,7 @@ export function AvisosV6Component() {
                                 <Users className="h-5 w-5 text-blue-600" />
                             </div>
                             <div>
-                                <p className="text-sm text-gray-500">Empresas Matched</p>
+                                <p className="text-sm text-muted-foreground">Empresas Matched</p>
                                 <p className="text-2xl font-bold text-blue-700">
                                     {filteredAvisos.reduce((sum, a) => sum + (a.matchedCompanies || 0), 0).toLocaleString()}
                                 </p>
