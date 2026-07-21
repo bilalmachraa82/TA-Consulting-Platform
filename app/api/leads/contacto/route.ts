@@ -115,6 +115,20 @@ ${d.mensagem ? `<p><b>Mensagem:</b> ${esc(d.mensagem)}</p>` : ''}
             }
         }
 
+        // Push para o HubSpot (CRM da plataforma Eligivo). No-op se HUBSPOT_API_KEY
+        // não estiver definido; nunca deita a lead abaixo.
+        try {
+            const { pushLeadToHubspot } = await import('@/lib/hubspot/client');
+            const r = await pushLeadToHubspot({
+                nome: d.nome, email: d.email, nif: d.nif, telefone: d.telefone,
+                setor: d.setor, dimensao: d.dimensao, regiao: d.regiao, cae: d.cae,
+                aviso: d.aviso ?? null, mensagem: d.mensagem,
+            });
+            if (!r.ok && !r.skipped) console.error('[leads/contacto] HubSpot falhou (não crítico):', r.error);
+        } catch (e) {
+            console.error('[leads/contacto] HubSpot exceção (não crítico):', e);
+        }
+
         return NextResponse.json({ success: true, leadId: lead.id });
     } catch (error) {
         console.error('[leads/contacto] erro:', error);
