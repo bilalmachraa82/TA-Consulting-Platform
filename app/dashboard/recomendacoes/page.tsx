@@ -279,6 +279,10 @@ export default function RecomendacoesPage() {
                         </span>
                       </div>
                       <Progress value={score} className="w-20" />
+                      {elegibilidade?.criterios?.length > 0 && (() => {
+                        const aval = elegibilidade.criterios.filter((c: { estado: string }) => c.estado !== 'desconhecido').length;
+                        return <span className="text-[10px] text-muted-foreground">{aval} de {elegibilidade.criterios.length} critérios</span>;
+                      })()}
                     </div>
                   </div>
                 </CardHeader>
