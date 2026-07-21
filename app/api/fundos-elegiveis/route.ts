@@ -86,8 +86,17 @@ export async function POST(request: NextRequest) {
 
         // Fundos relevantes ao setor da empresa sobem ao topo: é o que torna a
         // lista "os TEUS fundos" em vez de uma lista genérica igual para todos.
-        const relevanteSetor = (r: (typeof analisados)[number]) =>
-            r.elegibilidade.criterios.some((c) => c.dimensao.startsWith('Setor') && c.estado === 'ok') ? 0 : 1;
+        // Relevante se: (a) o critério de setor deu match textual, OU (b) o aviso
+        // vem de um portal SETORIAL dedicado que casa com o setor indicado — ex.:
+        // Turismo de Portugal ↔ empresa de turismo (todos os seus avisos são do
+        // setor, mesmo que o título não contenha a palavra "turismo").
+        const setorNorm = (setor || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+        const relevanteSetor = (r: (typeof analisados)[number]) => {
+            const porTexto = r.elegibilidade.criterios.some((c) => c.dimensao.startsWith('Setor') && c.estado === 'ok');
+            if (porTexto) return 0;
+            if (String(r.portal) === 'TURISMO_PORTUGAL' && setorNorm.includes('turism')) return 0;
+            return 1;
+        };
 
         // Portais nacionais primeiro: uma PME portuguesa candidata-se sobretudo a
         // PT2030/PRR/PEPAC/Fundo Ambiental. As calls Horizon/LIFE (investigação UE,
