@@ -1,7 +1,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Presentation, BarChart3, Users, FileText, Clock, CheckCircle, Sparkles } from 'lucide-react'
+import { ArrowRight, Presentation, BarChart3, FileText, Clock, CheckCircle, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { MobileMenu } from '@/components/layout/mobile-menu'
@@ -192,8 +192,8 @@ export default function HomePage() {
                     Monitorização automática de avisos
                   </li>
                   <li className="flex items-center">
-                    <Sparkles className="w-4 h-4 text-purple-600 mr-2 flex-shrink-0" />
-                    <span className="font-medium text-purple-700">Consultor IA com 46K+ docs oficiais</span>
+                    <Sparkles className="w-4 h-4 text-blue-600 mr-2 flex-shrink-0" />
+                    <span className="font-medium text-blue-700">Consultor IA com 46K+ docs oficiais</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-4 h-4 text-green-600 mr-2 flex-shrink-0" />
@@ -223,31 +223,31 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="text-white">
               <div className="flex items-center justify-center mb-2">
-                <FileText className="w-8 h-8" />
+                <BarChart3 className="w-8 h-8" />
               </div>
-              <div className="text-3xl font-bold mb-1">3</div>
-              <div className="text-blue-100 text-sm">Portais Monitorizados</div>
+              <div className="text-3xl font-bold mb-1 tabular-nums">9</div>
+              <div className="text-blue-100 text-sm">Portais monitorizados</div>
             </div>
             <div className="text-white">
               <div className="flex items-center justify-center mb-2">
-                <Users className="w-8 h-8" />
+                <FileText className="w-8 h-8" />
               </div>
-              <div className="text-3xl font-bold mb-1">5+</div>
-              <div className="text-blue-100 text-sm">Empresas Clientes</div>
+              <div className="text-3xl font-bold mb-1 tabular-nums">600+</div>
+              <div className="text-blue-100 text-sm">Avisos abertos agora</div>
             </div>
             <div className="text-white">
               <div className="flex items-center justify-center mb-2">
                 <Clock className="w-8 h-8" />
               </div>
               <div className="text-3xl font-bold mb-1">24/7</div>
-              <div className="text-blue-100 text-sm">Monitorização</div>
+              <div className="text-blue-100 text-sm">Monitorização automática</div>
             </div>
             <div className="text-white">
               <div className="flex items-center justify-center mb-2">
                 <CheckCircle className="w-8 h-8" />
               </div>
-              <div className="text-3xl font-bold mb-1">5</div>
-              <div className="text-blue-100 text-sm">Workflows Ativos</div>
+              <div className="text-3xl font-bold mb-1">Diária</div>
+              <div className="text-blue-100 text-sm">Atualização da base</div>
             </div>
           </div>
         </div>
@@ -294,7 +294,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="text-sm text-gray-600">
-              © 2025 TA Consulting. Especialistas em incentivos financeiros.
+              © 2026 TA Consulting. Especialistas em incentivos financeiros.
             </div>
           </div>
         </div>
