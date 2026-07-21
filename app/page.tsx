@@ -15,10 +15,10 @@ export default function HomePage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">TA</span>
+                <span className="text-white font-bold text-lg">e</span>
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900">TA Consulting</h1>
+                <h1 className="text-xl font-bold text-gray-900">Eligivo</h1>
                 <p className="text-sm text-gray-600">Automação de Fundos Europeus</p>
               </div>
             </div>
@@ -94,7 +94,7 @@ export default function HomePage() {
             <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl bg-white">
               <Image
                 src="https://cdn.abacus.ai/images/a3b465f6-4b27-41b7-b85d-1b4ed4dfec26.jpg"
-                alt="Dashboard de Automação TA Consulting"
+                alt="Dashboard de Automação Eligivo"
                 fill
                 className="object-cover"
                 priority
@@ -133,7 +133,7 @@ export default function HomePage() {
                 <div className="relative aspect-video rounded-lg overflow-hidden mb-4">
                   <Image
                     src="https://cdn.abacus.ai/images/35a46d1c-e485-406c-918d-d6f6965aef35.png"
-                    alt="Apresentação TA Consulting"
+                    alt="Apresentação Eligivo"
                     fill
                     className="object-cover"
                   />
@@ -181,7 +181,7 @@ export default function HomePage() {
                 <div className="relative aspect-video rounded-lg overflow-hidden mb-4">
                   <Image
                     src="https://cdn.abacus.ai/images/22d7511e-45ba-49f3-be23-810d44aefd1a.jpg"
-                    alt="Dashboard TA Consulting"
+                    alt="Dashboard Eligivo"
                     fill
                     className="object-cover"
                   />
@@ -286,15 +286,15 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-3 mb-4 md:mb-0">
               <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-                <span className="text-white font-bold">TA</span>
+                <span className="text-white font-bold">e</span>
               </div>
               <div>
-                <div className="font-semibold text-gray-900">TA Consulting</div>
+                <div className="font-semibold text-gray-900">Eligivo</div>
                 <div className="text-sm text-gray-600">Automação de Fundos Europeus</div>
               </div>
             </div>
             <div className="text-sm text-gray-600">
-              © 2026 TA Consulting. Especialistas em incentivos financeiros.
+              © 2026 Eligivo. Especialistas em incentivos financeiros.
             </div>
           </div>
         </div>

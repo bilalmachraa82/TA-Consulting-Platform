@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
             await resend.emails.send({
                 from: process.env.EMAIL_FROM || EMAIL_FROM,
                 to: email,
-                subject: 'Recuperar a tua palavra-passe — TA Consulting',
+                subject: 'Recuperar a tua palavra-passe — Eligivo',
                 html: resetEmailHtml(resetUrl, user.name),
             });
         } catch (mailError) {

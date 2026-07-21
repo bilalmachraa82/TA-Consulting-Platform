@@ -99,10 +99,10 @@ export default function EncontrarFundosPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center shadow-sm shadow-blue-600/30">
-              <span className="text-white font-bold">TA</span>
+              <span className="text-white font-bold">e</span>
             </div>
             <div className="leading-tight">
-              <div className="font-semibold text-slate-900">TA Consulting</div>
+              <div className="font-semibold text-slate-900">Eligivo</div>
               <div className="text-xs text-slate-500">Fundos Europeus</div>
             </div>
           </Link>
@@ -214,7 +214,7 @@ export default function EncontrarFundosPage() {
           )}
 
           <div className="text-center pt-8">
-            <p className="text-slate-600 mb-3">Queres que a TA Consulting trate da candidatura por ti?</p>
+            <p className="text-slate-600 mb-3">Queres ajuda de um especialista a preparar a candidatura?</p>
             <Button onClick={() => abrirContacto()} className="bg-blue-600 hover:bg-blue-700 text-white px-6">Falar com um consultor</Button>
           </div>
         </div>
@@ -228,7 +228,7 @@ export default function EncontrarFundosPage() {
               <div className="text-center py-6">
                 <CheckCircle2 className="w-12 h-12 text-green-500 mx-auto mb-3" />
                 <h3 className="text-lg font-semibold text-slate-900">Pedido recebido!</h3>
-                <p className="text-slate-600 mt-1 text-sm">Um consultor da TA Consulting entra em contacto em breve.</p>
+                <p className="text-slate-600 mt-1 text-sm">Um consultor especialista entra em contacto em breve.</p>
                 <Button onClick={fecharContacto} className="mt-4 bg-blue-600 hover:bg-blue-700 text-white">Fechar</Button>
               </div>
             ) : (

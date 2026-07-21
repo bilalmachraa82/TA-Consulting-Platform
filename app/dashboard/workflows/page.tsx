@@ -7,7 +7,7 @@ import { WorkflowsComponent } from '@/components/dashboard/workflows-component'
 export const dynamic = "force-dynamic"
 
 export const metadata = {
-  title: 'Workflows & Automações - TA Consulting',
+  title: 'Workflows & Automações - Eligivo',
   description: 'Gestão de automações e fluxos de trabalho automatizados',
 }
 

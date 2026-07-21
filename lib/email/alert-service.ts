@@ -108,7 +108,7 @@ async function sendAlertEmail(to: string, nome: string, matches: any[]) {
             
             <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 30px 0;" />
             <p style="font-size: 12px; color: #94a3b8;">
-                Recebeu este email porque ativou os alertas de fundos na TA Consulting.
+                Recebeu este email porque ativou os alertas de fundos na Eligivo.
             </p>
         </div>
     `;

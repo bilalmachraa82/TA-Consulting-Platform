@@ -7,7 +7,7 @@ import { EmpresasClientWrapper } from '@/components/dashboard/empresas-client-wr
 export const dynamic = "force-dynamic"
 
 export const metadata = {
-  title: 'Empresas Clientes - TA Consulting',
+  title: 'Empresas Clientes - Eligivo',
   description: 'Gestão de empresas clientes e perfis de elegibilidade',
 }
 

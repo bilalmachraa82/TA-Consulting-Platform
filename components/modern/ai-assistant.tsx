@@ -135,7 +135,7 @@ export function AIAssistant() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Olá! Sou o assistente inteligente da TA Consulting. Posso ajudar-te com avisos, candidaturas, empresas e muito mais. Como posso ajudar-te hoje?',
+      text: 'Olá! Sou o assistente inteligente da Eligivo. Posso ajudar-te com avisos, candidaturas, empresas e muito mais. Como posso ajudar-te hoje?',
       isBot: true,
       timestamp: new Date(),
     },

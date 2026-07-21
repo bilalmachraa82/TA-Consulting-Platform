@@ -118,10 +118,10 @@ export default function PricingPage() {
                     <div className="flex items-center justify-between">
                         <Link href="/" className="flex items-center space-x-3">
                             <div className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center">
-                                <span className="text-white font-bold text-lg">TA</span>
+                                <span className="text-white font-bold text-lg">e</span>
                             </div>
                             <div>
-                                <h1 className="text-xl font-bold text-gray-900">TA Consulting</h1>
+                                <h1 className="text-xl font-bold text-gray-900">Eligivo</h1>
                                 <p className="text-sm text-gray-600">Especialista em Fundos PT</p>
                             </div>
                         </Link>
@@ -246,7 +246,7 @@ export default function PricingPage() {
             <section className="py-16 px-6 bg-white border-t">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                        Por que escolher TA Consulting?
+                        Por que escolher Eligivo?
                     </h2>
                     <div className="grid md:grid-cols-3 gap-8 mt-8">
                         <div className="p-6">
@@ -283,7 +283,7 @@ export default function PricingPage() {
             {/* Footer */}
             <footer className="bg-gray-50 border-t py-12 px-6">
                 <div className="max-w-6xl mx-auto text-center text-sm text-gray-600">
-                    <p>© 2025 TA Consulting. Especialistas em fundos portugueses.</p>
+                    <p>© 2025 Eligivo. Especialistas em fundos portugueses.</p>
                 </div>
             </footer>
         </div>

@@ -21,8 +21,8 @@ export interface PDFGenerationOptions {
 const DEFAULT_BRANDING: PDFBrandingConfig = {
     primaryColor: '#2563EB', // Blue-600
     secondaryColor: '#1E40AF', // Blue-800
-    companyName: 'TA Consulting',
-    footerText: 'Documento gerado automaticamente por TA Consulting Platform',
+    companyName: 'Eligivo',
+    footerText: 'Documento gerado automaticamente por Eligivo Platform',
 };
 
 export class PDFTemplateBase {

@@ -1,5 +1,5 @@
 /**
- * OpenAPI 3.1 Specification - TA Consulting Platform
+ * OpenAPI 3.1 Specification - Eligivo Platform
  * 
  * Auto-documentação base das APIs da plataforma.
  * Para gerar UI, usar: npx @redocly/cli preview-docs openapi.json
@@ -8,11 +8,11 @@
 export const openApiSpec = {
     openapi: '3.1.0',
     info: {
-        title: 'TA Consulting Platform API',
+        title: 'Eligivo Platform API',
         version: '1.0.0',
         description: 'API para gestão de avisos, candidaturas e sistema RAG de fundos europeus.',
         contact: {
-            name: 'TA Consulting',
+            name: 'Eligivo',
             email: 'support@ta-consulting.pt',
         },
     },

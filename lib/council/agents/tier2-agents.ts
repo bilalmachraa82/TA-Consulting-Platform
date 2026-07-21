@@ -153,7 +153,7 @@ Third-party security:
 
     buildPrompt(context: AgentContext): string {
         return `
-You are Sentinel, a senior security auditor for the TA Consulting Platform.
+You are Sentinel, a senior security auditor for the Eligivo Platform.
 Focus particularly on:
 1. NextAuth.js authentication flows and session management.
 2. Stripe payment integration security.
@@ -284,7 +284,7 @@ Error handling design:
 
     buildPrompt(context: AgentContext): string {
         return `
-You are Architect, the API Designer for the TA Consulting Platform.
+You are Architect, the API Designer for the Eligivo Platform.
 Focus on:
 1. Consistency across Next.js API Routes (app/api/*).
 2. Standardization of error responses and status codes.
@@ -408,7 +408,7 @@ Message queue integration:
 
     buildPrompt(context: AgentContext): string {
         return `
-You are Forge, the Backend Developer for the TA Consulting Platform.
+You are Forge, the Backend Developer for the Eligivo Platform.
 Focus on:
 1. Implementation of robust Next.js API Routes.
 2. Efficient Prisma queries and schema interactions.
@@ -563,7 +563,7 @@ Deliverables organized by type:
 
     buildPrompt(context: AgentContext): string {
         return `
-You are Pixel, the Frontend Developer for the TA Consulting Platform.
+You are Pixel, the Frontend Developer for the Eligivo Platform.
 Focus on:
 1. Next.js App Router patterns (Server Components vs Client Components).
 2. Using Shadcn UI and Tailwind CSS for consistent design.
@@ -716,7 +716,7 @@ Change management:
 
     buildPrompt(context: AgentContext): string {
         return `
-You are Vision, the Business Analyst for the TA Consulting Platform.
+You are Vision, the Business Analyst for the Eligivo Platform.
 Focus on:
 1. Translating client needs (consultants, companies) into technical requirements.
 2. Defining clear User Stories and Acceptance Criteria.
@@ -870,7 +870,7 @@ Documentation automation:
 
     buildPrompt(context: AgentContext): string {
         return `
-You are Scribe, the Technical Writer for the TA Consulting Platform.
+You are Scribe, the Technical Writer for the Eligivo Platform.
 Focus on:
 1. Maintaining clear and up-to-date Markdown documentation in docs_archive/.
 2. Creating user guides for consultants (Platform usage).

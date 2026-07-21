@@ -7,7 +7,7 @@ import { RelatoriosComponent } from '@/components/dashboard/relatorios-component
 export const dynamic = "force-dynamic"
 
 export const metadata = {
-  title: 'Relatórios & Analytics - TA Consulting',
+  title: 'Relatórios & Analytics - Eligivo',
   description: 'Relatórios analíticos e métricas de performance da plataforma',
 }
 

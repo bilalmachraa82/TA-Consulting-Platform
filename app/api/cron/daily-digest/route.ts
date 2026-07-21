@@ -180,7 +180,7 @@ async function sendDigestEmail(email: string, empresaNome: string, matches: any[
     `).join('');
 
     await resend.emails.send({
-        from: 'TA Consulting <alertas@taconsulting.pt>',
+        from: 'Eligivo <alertas@taconsulting.pt>',
         to: email,
         subject: `🎯 ${matches.length} Novo${matches.length > 1 ? 's' : ''} Fundo${matches.length > 1 ? 's' : ''} para ${empresaNome}`,
         html: `
@@ -206,7 +206,7 @@ async function sendDigestEmail(email: string, empresaNome: string, matches: any[
                 </div>
                 
                 <div style="padding: 16px; text-align: center; color: #94a3b8; font-size: 12px;">
-                    <p style="margin: 0;">TA Consulting - Alertas Automáticos</p>
+                    <p style="margin: 0;">Eligivo - Alertas Automáticos</p>
                     <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://ta-consulting.pt'}/unsubscribe?email=${encodeURIComponent(email)}" style="color: #94a3b8;">Cancelar subscrição</a>
                 </div>
             </div>

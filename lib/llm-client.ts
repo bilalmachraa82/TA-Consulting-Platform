@@ -72,7 +72,7 @@ export async function chatCompletion(opts: ChatCompletionOptions): Promise<ChatC
             headers: {
                 Authorization: `Bearer ${apiKey}`,
                 'HTTP-Referer': 'https://ta-consulting-platform.vercel.app',
-                'X-Title': 'TA Consulting Platform',
+                'X-Title': 'Eligivo Platform',
             },
             timeout: 60000,
         },

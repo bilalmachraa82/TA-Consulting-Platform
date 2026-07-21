@@ -75,7 +75,7 @@ export default function ConsentCheckboxes({ onConsentChange, consents }: Consent
                         Autorizo contacto por consultoras parceiras
                     </Label>
                     <p className="text-xs text-slate-400">
-                        Aceito ser contactado por consultoras certificadas da rede TA Consulting para apoio na
+                        Aceito ser contactado por consultoras certificadas da rede Eligivo para apoio na
                         candidatura. Pode retirar o consentimento a qualquer momento.
                     </p>
                 </div>
@@ -84,7 +84,7 @@ export default function ConsentCheckboxes({ onConsentChange, consents }: Consent
             {/* Legal Notice */}
             <p className="text-xs text-slate-500 text-center">
                 <span className="text-red-400">*</span> Campos de preenchimento obrigatório.
-                Responsável pelo tratamento: TA Consulting Lda. Pode exercer os seus direitos ARCO
+                Responsável pelo tratamento: Eligivo Lda. Pode exercer os seus direitos ARCO
                 através de <a href="mailto:rgpd@taconsulting.pt" className="text-blue-400 hover:underline">rgpd@taconsulting.pt</a>.
             </p>
         </div>

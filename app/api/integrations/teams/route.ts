@@ -118,14 +118,14 @@ async function handleMessage(activity: any, serviceUrl: string) {
     } else if (text.includes('help') || text.includes('ajuda')) {
         await teamsClient.sendMessage(serviceUrl, {
             conversationId,
-            text: `🤖 **TA Consulting Bot - Comandos**\n\n• \`avisos\` - Lista os últimos avisos\n• \`elegibilidade <NIF>\` - Verifica elegibilidade\n• \`help\` - Mostra esta ajuda`,
+            text: `🤖 **Eligivo Bot - Comandos**\n\n• \`avisos\` - Lista os últimos avisos\n• \`elegibilidade <NIF>\` - Verifica elegibilidade\n• \`help\` - Mostra esta ajuda`,
         });
 
     } else {
         // Resposta genérica
         await teamsClient.sendMessage(serviceUrl, {
             conversationId,
-            text: `👋 Olá! Sou o TA Consulting Bot. Escreve "help" para ver os comandos disponíveis.`,
+            text: `👋 Olá! Sou o Eligivo Bot. Escreve "help" para ver os comandos disponíveis.`,
         });
     }
 
@@ -144,7 +144,7 @@ async function handleConversationUpdate(activity: any, serviceUrl: string) {
         // Mensagem de boas-vindas
         await teamsClient.sendMessage(serviceUrl, {
             conversationId,
-            text: `👋 Olá! Sou o **TA Consulting Bot**.\n\nPosso ajudar-te a:\n• Ver os últimos avisos de fundos\n• Verificar elegibilidade de empresas\n\nEscreve "help" para começar.`,
+            text: `👋 Olá! Sou o **Eligivo Bot**.\n\nPosso ajudar-te a:\n• Ver os últimos avisos de fundos\n• Verificar elegibilidade de empresas\n\nEscreve "help" para começar.`,
         });
     }
 

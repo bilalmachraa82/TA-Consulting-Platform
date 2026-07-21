@@ -41,7 +41,7 @@ const INTEGRATION_CONFIG = {
         name: 'Microsoft Teams',
         icon: Users,
         color: 'bg-[#6264A7]',
-        description: 'Conecta o bot TA Consulting aos teus canais Teams.',
+        description: 'Conecta o bot Eligivo aos teus canais Teams.',
         features: ['Adaptive Cards', 'Bot interativo', 'Notificações em canal'],
     },
 };
@@ -141,7 +141,7 @@ export default function IntegracoesPage() {
                     Integrações
                 </h1>
                 <p className="text-muted-foreground mt-2">
-                    Conecta a TA Consulting Platform às tuas ferramentas de trabalho.
+                    Conecta a Eligivo Platform às tuas ferramentas de trabalho.
                 </p>
             </div>
 

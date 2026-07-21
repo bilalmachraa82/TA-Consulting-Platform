@@ -116,7 +116,7 @@ Razões do Match:
 ${company.reasons.map(r => `- ${r}`).join('\n')}
 
 Aviso: ${avisoNome} (ID: ${avisoId})
-Criado automaticamente pelo sistema TA Consulting AI.
+Criado automaticamente pelo sistema Eligivo AI.
         `.trim(),
             };
 

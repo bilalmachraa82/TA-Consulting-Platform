@@ -197,7 +197,7 @@ function calculateRelevance(content: string, queryTerms: string[]): number {
 export function getPRDSummary(): Record<string, any> {
     return {
         clientName: 'Fernando Basto',
-        company: 'TA Consulting',
+        company: 'Eligivo',
         originalScope: {
             module1: {
                 name: 'RAG sobre Google Drive',

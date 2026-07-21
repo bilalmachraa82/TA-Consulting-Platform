@@ -101,16 +101,16 @@ export async function POST(request: NextRequest) {
 <body>
   <div class="container">
     <div class="header">
-      <h1>🎯 TA Consulting Platform</h1>
+      <h1>🎯 Eligivo Platform</h1>
       <p style="margin: 5px 0 0 0; opacity: 0.9;">Consultoria em Fundos Europeus</p>
     </div>
     <div class="content">
       ${conteudo}
     </div>
     <div class="footer">
-      <p><strong>TA Consulting</strong></p>
-      <p>Esta é uma notificação automática da plataforma TA Consulting.</p>
-      <p>© ${new Date().getFullYear()} TA Consulting. Todos os direitos reservados.</p>
+      <p><strong>Eligivo</strong></p>
+      <p>Esta é uma notificação automática da plataforma Eligivo.</p>
+      <p>© ${new Date().getFullYear()} Eligivo. Todos os direitos reservados.</p>
     </div>
   </div>
 </body>
@@ -119,7 +119,7 @@ export async function POST(request: NextRequest) {
 
     // Enviar email usando Resend
     const data = await resend.emails.send({
-      from: 'TA Consulting Platform <noreply@ta-consulting-platfo-tfdltj.abacusai.app>',
+      from: 'Eligivo Platform <noreply@ta-consulting-platfo-tfdltj.abacusai.app>',
       to: [destinatario],
       subject: assunto,
       html: htmlContent,

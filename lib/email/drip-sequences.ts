@@ -13,7 +13,7 @@ export const LEAD_NURTURING_SEQUENCE: DripEmail[] = [
     {
         id: 'welcome',
         delay: 0, // Imediato
-        subject: '🎯 Os seus matches de fundos europeus - TA Consulting',
+        subject: '🎯 Os seus matches de fundos europeus - Eligivo',
         template: 'lead-welcome',
         condition: () => true,
     },

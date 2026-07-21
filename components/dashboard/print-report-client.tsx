@@ -46,7 +46,7 @@ export function PrintReportClient({ data }: { data: PrintData }) {
             {/* Header */}
             <div className="flex justify-between items-center mb-8 border-b pb-4">
                 <div>
-                    <h1 className="text-2xl font-bold text-slate-900">TA Consulting Platform</h1>
+                    <h1 className="text-2xl font-bold text-slate-900">Eligivo Platform</h1>
                     <p className="text-sm text-slate-500">Relatório Executivo Mensal</p>
                 </div>
                 <div className="text-right">
@@ -136,7 +136,7 @@ export function PrintReportClient({ data }: { data: PrintData }) {
 
             {/* Footer */}
             <div className="mt-12 text-center text-xs text-slate-400 border-t pt-4">
-                <p>Gerado automaticamente por TA Consulting Platform (AI Powered)</p>
+                <p>Gerado automaticamente por Eligivo Platform (AI Powered)</p>
                 <p>Documento Confidencial</p>
             </div>
         </div>

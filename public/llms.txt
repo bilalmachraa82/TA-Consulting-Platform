@@ -1,0 +1,20 @@
+# Eligivo
+
+> Eligivo é uma plataforma portuguesa de inteligência de fundos europeus. Descobre a que avisos de financiamento (Portugal 2030, PRR, PEPAC, Horizon Europe, Turismo de Portugal e outros) uma empresa é elegível, com análise de elegibilidade explicável, critério a critério.
+
+Eligivo agrega diariamente os avisos de financiamento abertos de 10 portais nacionais e europeus e avalia a elegibilidade de uma empresa (por setor, dimensão, região e CAE) contra cada aviso, mostrando POR QUE é ou não é elegível — não apenas um score.
+
+## Ferramentas públicas
+- [Encontrar fundos elegíveis](/encontrar-fundos): ferramenta grátis, sem registo. A empresa indica o perfil (setor, dimensão, região, CAE) e vê os fundos abertos a que é elegível, com a análise critério a critério.
+
+## Para quem
+- PME portuguesas que procuram financiamento europeu e não sabem a que fundos se podem candidatar.
+- Consultoras de fundos que gerem candidaturas para os seus clientes.
+
+## Factos
+- Base atualizada diariamente de 10 portais: Portugal 2030, PRR, PEPAC, Horizon Europe, IPDJ, Fundo Ambiental, Digital Europe, LIFE, Europa Criativa e Turismo de Portugal.
+- Diferenciador: análise de elegibilidade explicável (gap analysis) que mostra, critério a critério (setor, CAE, tipo de beneficiário, região NUTS, dimensão, prazo), porque uma empresa é ou não elegível.
+- Assistente de IA que responde sobre os avisos com citações das fontes oficiais (sem alucinações).
+
+## Contexto
+Eligivo é operado pela aitipro. Consultoras podem usar a plataforma de forma white-label (marca própria) — contactar para detalhes.

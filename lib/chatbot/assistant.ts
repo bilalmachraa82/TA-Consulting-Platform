@@ -92,7 +92,7 @@ async function executeTool(name: string, argsJson: string): Promise<{ payload: u
 export async function runAssistant(userMessage: string, history: HistoryItem[] = []): Promise<AssistantAnswer> {
     const stats = await getAvisosStatsTexto();
 
-    const systemPrompt = `És o assistente de fundos da TA Consulting, uma consultora portuguesa de fundos europeus.
+    const systemPrompt = `És o assistente de fundos da Eligivo, uma consultora portuguesa de fundos europeus.
 
 REGRAS:
 - Responde SEMPRE em português de Portugal, claro e direto.

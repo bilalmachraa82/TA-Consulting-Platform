@@ -51,7 +51,7 @@ ${JSON.stringify(dados, null, 2)}
 INSTRUÇÕES:
 1. Crie um HTML completo e válido com <!DOCTYPE html>
 2. Use CSS inline para formatação profissional
-3. Inclua cabeçalho com logo TA Consulting e data
+3. Inclua cabeçalho com logo Eligivo e data
 4. Organize os dados em tabelas ou cards bem formatados
 5. Use cores profissionais (azul, roxo, cinza)
 6. Adicione rodapé com informações da empresa

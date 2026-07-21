@@ -7,7 +7,7 @@ import { DocumentacaoComponent } from '@/components/dashboard/documentacao-compo
 export const dynamic = "force-dynamic"
 
 export const metadata = {
-  title: 'Documentação & Compliance - TA Consulting',
+  title: 'Documentação & Compliance - Eligivo',
   description: 'Gestão de documentos empresariais e controlo de validade',
 }
 

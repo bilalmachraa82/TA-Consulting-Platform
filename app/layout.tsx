@@ -1,6 +1,7 @@
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { Providers } from '@/components/providers'
+import { JsonLd } from '@/components/seo/json-ld'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -17,17 +18,36 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const dynamic = "force-dynamic"
 
+// URL canónico do site para SEO/OG/sitemap. Aponta para eligivo.com quando o
+// domínio estiver ligado — basta definir NEXT_PUBLIC_SITE_URL no Vercel.
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ta-consulting-platform.vercel.app'
+
 export const metadata = {
-  title: 'TA Consulting - Automação de Fundos Europeus',
-  description: 'Plataforma completa de automação para gestão de avisos, candidaturas e clientes de fundos europeus (Portugal 2030, PEPAC, PRR)',
-  metadataBase: new URL(process.env.NEXTAUTH_URL || 'http://localhost:3000'),
-  icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'Eligivo — Sabe a que fundos europeus a tua empresa é elegível',
+    template: '%s | Eligivo',
   },
+  description: 'Descobre grátis a que fundos europeus (Portugal 2030, PRR, PEPAC, Horizon…) a tua empresa é elegível, com análise de elegibilidade critério a critério. Base atualizada diariamente de 10 portais nacionais e europeus.',
+  applicationName: 'Eligivo',
+  keywords: ['fundos europeus', 'Portugal 2030', 'PRR', 'PEPAC', 'Horizon Europe', 'incentivos', 'subsídios', 'candidaturas a fundos', 'elegibilidade', 'apoios PME', 'consultoria de fundos'],
+  authors: [{ name: 'Eligivo' }],
+  alternates: { canonical: '/' },
+  icons: { icon: '/favicon.svg', shortcut: '/favicon.svg' },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   openGraph: {
-    title: 'TA Consulting - Automação de Fundos Europeus',
-    description: 'Plataforma completa de automação para gestão de avisos, candidaturas e clientes de fundos europeus',
+    type: 'website',
+    locale: 'pt_PT',
+    url: SITE_URL,
+    siteName: 'Eligivo',
+    title: 'Eligivo — Sabe a que fundos europeus a tua empresa é elegível',
+    description: 'Descobre grátis a que fundos europeus a tua empresa é elegível, com análise critério a critério. 10 portais, atualização diária.',
+    images: ['/og-image.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Eligivo — Sabe a que fundos europeus a tua empresa é elegível',
+    description: 'Descobre grátis a que fundos europeus a tua empresa é elegível, com análise critério a critério.',
     images: ['/og-image.png'],
   },
 }
@@ -40,6 +60,7 @@ export default function RootLayout({
   return (
     <html lang="pt" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="min-h-screen bg-background font-sans antialiased">
+        <JsonLd siteUrl={SITE_URL} />
         <Providers>
           {children}
         </Providers>

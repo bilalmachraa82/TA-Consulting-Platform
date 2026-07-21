@@ -7,7 +7,7 @@ import { AvisosClientWrapper } from '@/components/dashboard/avisos-client-wrappe
 export const dynamic = "force-dynamic"
 
 export const metadata = {
-  title: 'Avisos & Oportunidades - TA Consulting',
+  title: 'Avisos & Oportunidades - Eligivo',
   description: 'Gestão de avisos de fundos europeus e oportunidades de financiamento',
 }
 

@@ -116,7 +116,7 @@ export class NotificationEngine {
             if (!user?.email) return;
 
             await resend.emails.send({
-                from: 'TA Consulting <notificacoes@taconsulting.pt>',
+                from: 'Eligivo <notificacoes@taconsulting.pt>',
                 to: user.email,
                 subject: `🔔 ${payload.title}`,
                 html: `
@@ -125,7 +125,7 @@ export class NotificationEngine {
             <p>${payload.message}</p>
             ${payload.link ? `<a href="${payload.link}" style="display:inline-block; background:#2563eb; color:white; padding:12px 24px; border-radius:6px; text-decoration:none; margin-top:16px;">Ver Detalhes</a>` : ''}
             <hr style="margin-top:32px; border:none; border-top:1px solid #eee;">
-            <p style="font-size:12px; color:#999;">TA Consulting - Notificações Automáticas</p>
+            <p style="font-size:12px; color:#999;">Eligivo - Notificações Automáticas</p>
           </div>
         `
             });
@@ -162,7 +162,7 @@ export class NotificationEngine {
             // Create Slack message with blocks
             const blocks = slackClient.createAvisoBlock({
                 nome: payload.title,
-                programa: payload.metadata?.programa || 'TA Consulting',
+                programa: payload.metadata?.programa || 'Eligivo',
                 diasRestantes: payload.metadata?.diasRestantes || 0,
                 link: payload.link,
             });

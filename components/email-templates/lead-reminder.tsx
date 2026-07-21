@@ -43,7 +43,7 @@ export const LeadReminderTemplate: React.FC<LeadReminderTemplateProps> = ({
         </a>
 
         <p style={{ fontSize: '12px', color: '#999', marginTop: '30px' }}>
-            TA Consulting - Especialistas em Incentivos Financeiros
+            Eligivo - Especialistas em Incentivos Financeiros
         </p>
     </div>
 );

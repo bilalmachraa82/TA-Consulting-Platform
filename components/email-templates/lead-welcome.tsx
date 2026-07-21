@@ -52,8 +52,8 @@ export const LeadWelcomeTemplate: React.FC<LeadWelcomeTemplateProps> = ({
         <hr style={{ border: 'none', borderTop: '1px solid #eee', margin: '30px 0' }} />
 
         <p style={{ fontSize: '12px', color: '#999' }}>
-            TA Consulting - Especialistas em Incentivos Financeiros<br />
-            © 2025 TA Consulting
+            Eligivo - Especialistas em Incentivos Financeiros<br />
+            © 2025 Eligivo
         </p>
     </div>
 );

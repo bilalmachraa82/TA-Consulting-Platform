@@ -7,7 +7,7 @@ import { CandidaturasComponent } from '@/components/dashboard/candidaturas-compo
 export const dynamic = "force-dynamic"
 
 export const metadata = {
-  title: 'Gestão de Candidaturas - TA Consulting',
+  title: 'Gestão de Candidaturas - Eligivo',
   description: 'Kanban board para gestão do pipeline de candidaturas',
 }
 

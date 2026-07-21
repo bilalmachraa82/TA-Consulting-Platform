@@ -7,7 +7,7 @@ import { CalendarioComponent } from '@/components/dashboard/calendario-component
 export const dynamic = "force-dynamic"
 
 export const metadata = {
-  title: 'Calendário & Deadlines - TA Consulting',
+  title: 'Calendário & Deadlines - Eligivo',
   description: 'Calendário de deadlines e cronograma de avisos de fundos europeus',
 }
 

@@ -95,7 +95,7 @@ export async function GET(req: Request) {
 
                 if (emailComponent) {
                     await resend.emails.send({
-                        from: 'TA Consulting <hello@taconsulting.pt>',
+                        from: 'Eligivo <hello@taconsulting.pt>',
                         to: lead.email,
                         subject: step.subject,
                         react: emailComponent,

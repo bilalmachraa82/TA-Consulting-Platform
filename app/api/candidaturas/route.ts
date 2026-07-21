@@ -117,7 +117,7 @@ export async function POST(request: NextRequest) {
           {
             data: new Date().toISOString(),
             evento: 'Candidatura criada',
-            detalhes: 'Candidatura iniciada no sistema TA Consulting'
+            detalhes: 'Candidatura iniciada no sistema Eligivo'
           }
         ]
       },

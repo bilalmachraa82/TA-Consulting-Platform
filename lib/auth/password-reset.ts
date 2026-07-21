@@ -98,7 +98,7 @@ export function resetEmailHtml(resetUrl: string, nome?: string | null): string {
 <div style="font-family: -apple-system, Segoe UI, Roboto, sans-serif; max-width: 480px; margin: 0 auto; color: #0f172a;">
   <h2 style="color:#1e3a8a; margin-bottom: 8px;">Recuperar palavra-passe</h2>
   <p>${saudacao}</p>
-  <p>Recebemos um pedido para repor a palavra-passe da tua conta na plataforma TA Consulting.</p>
+  <p>Recebemos um pedido para repor a palavra-passe da tua conta na plataforma Eligivo.</p>
   <p style="margin: 24px 0;">
     <a href="${resetUrl}" style="background:#2563eb; color:#fff; padding:12px 20px; border-radius:8px; text-decoration:none; display:inline-block; font-weight:600;">
       Definir nova palavra-passe

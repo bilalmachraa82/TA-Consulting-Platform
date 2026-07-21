@@ -160,7 +160,7 @@ export function PDFExportDialog({ entityId, entityType, entityName, trigger }: P
                                 <div>
                                     <p className="font-medium text-blue-900">Pré-visualização</p>
                                     <p className="text-blue-700 text-xs">
-                                        O PDF incluirá branding TA Consulting, cabeçalho profissional e numeração de páginas.
+                                        O PDF incluirá branding Eligivo, cabeçalho profissional e numeração de páginas.
                                     </p>
                                 </div>
                             </div>

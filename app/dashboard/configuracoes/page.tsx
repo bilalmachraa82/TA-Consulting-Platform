@@ -7,7 +7,7 @@ import { ConfiguracoesComponent } from '@/components/dashboard/configuracoes-com
 export const dynamic = "force-dynamic"
 
 export const metadata = {
-  title: 'Configurações - TA Consulting',
+  title: 'Configurações - Eligivo',
   description: 'Configurações da plataforma e preferências do sistema',
 }
 

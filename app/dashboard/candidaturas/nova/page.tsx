@@ -203,7 +203,7 @@ export default function NovaCandidaturaPage() {
 
             doc.setFontSize(10);
             doc.setTextColor(100, 100, 100);
-            doc.text(`Gerado por TA Consulting Platform - ${new Date().toLocaleDateString()}`, 20, 30);
+            doc.text(`Gerado por Eligivo Platform - ${new Date().toLocaleDateString()}`, 20, 30);
 
             // Context Info
             if (selectedEmpresa) {

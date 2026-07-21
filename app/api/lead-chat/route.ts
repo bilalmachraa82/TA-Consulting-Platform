@@ -24,7 +24,7 @@ async function searchCompanyByName(nomeEmpresa: string, nif?: string) {
 }
 
 // System prompt para o assistente INTELIGENTE
-const SYSTEM_PROMPT = `# TA Consulting - Assistente Inteligente de Fundos Europeus
+const SYSTEM_PROMPT = `# Eligivo - Assistente Inteligente de Fundos Europeus
 
 ## OBJETIVO PRINCIPAL
 Ajudar empresas a descobrir fundos europeus (PT2030, PRR, PEPAC) de forma INTELIGENTE e CONVERSACIONAL.

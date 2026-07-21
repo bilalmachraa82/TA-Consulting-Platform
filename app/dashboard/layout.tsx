@@ -8,7 +8,7 @@ import { AIAssistant } from '@/components/modern/ai-assistant'
 import { Toaster } from 'sonner'
 
 export const metadata = {
-  title: 'Dashboard - TA Consulting',
+  title: 'Dashboard - Eligivo',
   description: 'Dashboard de gestão de fundos europeus',
 }
 

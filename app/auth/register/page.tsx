@@ -69,7 +69,7 @@ export default function RegisterPage() {
       <Card className="w-full max-w-md shadow-lg">
         <CardHeader className="text-center">
           <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-green-600 flex items-center justify-center">
-            <span className="text-white font-bold text-2xl">TA</span>
+            <span className="text-white font-bold text-2xl">e</span>
           </div>
           <CardTitle className="text-2xl">Criar Conta</CardTitle>
           <CardDescription>

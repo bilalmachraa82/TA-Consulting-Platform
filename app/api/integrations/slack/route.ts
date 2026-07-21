@@ -203,7 +203,7 @@ async function handleTACommand(text: string, userId: string, channelId: string) 
         default:
             return NextResponse.json({
                 response_type: 'ephemeral',
-                text: `*TA Consulting Bot - Comandos Disponíveis*\n\n• \`/ta avisos\` - Lista os últimos avisos\n• \`/ta elegibilidade <NIF>\` - Verifica elegibilidade de empresa\n• \`/ta help\` - Mostra esta ajuda`,
+                text: `*Eligivo Bot - Comandos Disponíveis*\n\n• \`/ta avisos\` - Lista os últimos avisos\n• \`/ta elegibilidade <NIF>\` - Verifica elegibilidade de empresa\n• \`/ta help\` - Mostra esta ajuda`,
             });
     }
 }

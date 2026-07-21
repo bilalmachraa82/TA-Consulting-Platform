@@ -40,7 +40,7 @@ export const LeadEducationalTemplate: React.FC<LeadEducationalTemplateProps> = (
         </a>
 
         <p style={{ fontSize: '12px', color: '#999', marginTop: '30px' }}>
-            TA Consulting - Especialistas em Incentivos Financeiros
+            Eligivo - Especialistas em Incentivos Financeiros
         </p>
     </div>
 );
