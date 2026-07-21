@@ -66,6 +66,21 @@ interface ScrapedAviso {
     documentos?: { url: string; nome: string }[];
 }
 
+// Descodifica entidades HTML dos títulos (WordPress REST devolve &#038; etc.).
+// Sem isto os nomes aparecem como "STEP – I&#038;D" na UI e nas citações.
+function decodeEntities(s: string): string {
+    return s
+        .replace(/&#0?38;|&amp;/g, '&')
+        .replace(/&#8211;|&#8212;/g, '–')
+        .replace(/&#8217;|&#8216;|&#0?39;|&apos;/g, "'")
+        .replace(/&#8220;|&#8221;|&quot;/g, '"')
+        .replace(/&#8230;/g, '…')
+        .replace(/&#0?60;|&lt;/g, '<')
+        .replace(/&#0?62;|&gt;/g, '>')
+        .replace(/&nbsp;/g, ' ')
+        .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(parseInt(n, 10)));
+}
+
 // Devolve null quando a fonte não fornece data válida. As colunas de data são
 // nulificáveis desde 2026-07-20: null = "prazo por confirmar" (≠ fechado).
 function parseDate(dateStr?: string): Date | null {
@@ -89,7 +104,7 @@ async function upsertAviso(aviso: ScrapedAviso, portalName: string) {
             await prisma.aviso.update({
                 where: { id: existing.id },
                 data: {
-                    nome: aviso.titulo?.slice(0, 500) || 'Sem título',
+                    nome: decodeEntities(aviso.titulo?.slice(0, 500) || 'Sem título'),
                     portal, // corrige rows antigas classificadas no portal errado
                     programa: aviso.programa?.slice(0, 200) || portalName,
                     // sem data válida na fonte, preserva-se a existente em vez de
@@ -111,7 +126,7 @@ async function upsertAviso(aviso: ScrapedAviso, portalName: string) {
             await prisma.aviso.create({
                 data: {
                     codigo,
-                    nome: aviso.titulo?.slice(0, 500) || 'Sem título',
+                    nome: decodeEntities(aviso.titulo?.slice(0, 500) || 'Sem título'),
                     portal,
                     programa: aviso.programa?.slice(0, 200) || portalName,
                     // null = "prazo por confirmar": a fonte diz que o aviso está
