@@ -85,12 +85,20 @@ export async function POST(request: NextRequest) {
         const relevanteSetor = (r: (typeof analisados)[number]) =>
             r.elegibilidade.criterios.some((c) => c.dimensao.startsWith('Setor') && c.estado === 'ok') ? 0 : 1;
 
+        // Portais nacionais primeiro: uma PME portuguesa candidata-se sobretudo a
+        // PT2030/PRR/PEPAC/Fundo Ambiental. As calls Horizon/LIFE (investigação UE,
+        // consórcios, noutras línguas) raramente são o que uma PME quer — vão para o fim.
+        const NACIONAIS = new Set(['PORTUGAL2030', 'PRR', 'PEPAC', 'FUNDO_AMBIENTAL', 'IPDJ', 'BASE_GOV']);
+        const rankPortal = (r: (typeof analisados)[number]) => (NACIONAIS.has(String(r.portal)) ? 0 : 1);
+
         // Mostra os que NÃO são "provavelmente não" — o utilizador quer oportunidades.
         const resultados = analisados
             .filter((r) => r.elegibilidade.veredicto !== 'provavelmente_nao')
             .sort((x, y) => {
                 const dv = (ORDEM_VEREDICTO[x.elegibilidade.veredicto] ?? 9) - (ORDEM_VEREDICTO[y.elegibilidade.veredicto] ?? 9);
                 if (dv !== 0) return dv;
+                const dp = rankPortal(x) - rankPortal(y);
+                if (dp !== 0) return dp;
                 const rs = relevanteSetor(x) - relevanteSetor(y);
                 if (rs !== 0) return rs;
                 return y.elegibilidade.score - x.elegibilidade.score;
