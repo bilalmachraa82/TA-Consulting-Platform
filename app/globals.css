@@ -15,6 +15,8 @@
      * aqui — apontar para var(--font-inter), que não existe, invalidava a
      * declaração font-family inteira e punha o site todo em serif (Times). */
 
+    color-scheme: light;
+
     /* Background: Slate-50 variant (Cool off-white) */
     --background: 210 20% 98%;
 
@@ -72,49 +74,58 @@
      * Starts at Slate-950 and goes deeper. 
      */
 
-    /* Background: Slate-950 (Deepest Navy) */
-    --background: 222.2 84% 4.9%;
+    /*
+     * "Abyssal Midnight" v2 — premium HIGH-CONTRAST dark.
+     * Fixes the three contrast failures: (1) cards now clearly float above the
+     * background (12% vs 7% L — was 6.5% vs 4.9%, invisible); (2) borders are
+     * VISIBLE (27% L — were self-described "extremely subtle" 17.5%);
+     * (3) neutral-navy base (less saturation) reads less "generic dark theme".
+     * Text off-white (not pure white); accent = solid blue-600.
+     */
+    color-scheme: dark;
 
-    /* Foreground: Slate-50 (Starlight White) */
-    --foreground: 210 40% 98%;
+    /* Background: rich near-black navy */
+    --background: 222 30% 7%;
 
-    /* Card: Slate-900 (Slightly lighter than bg, glass base) */
-    /* Handled by components with opacity, but base is Slate-900 */
-    --card: 222.2 84% 6.5%;
-    --card-foreground: 210 40% 98%;
+    /* Foreground: off-white (not pure white) */
+    --foreground: 210 33% 96%;
 
-    /* Popover: Slate-900 */
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Card: clearly elevated surface (~5% L above background) */
+    --card: 222 24% 12%;
+    --card-foreground: 210 33% 96%;
 
-    /* Primary: Neon Blue (Pure Blue, no purple tint) */
-    --primary: 210 100% 50%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Popover: elevated (matches card, not the background) */
+    --popover: 222 24% 12%;
+    --popover-foreground: 210 33% 96%;
 
-    /* Secondary: Deep slate for secondary actions */
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Primary: solid blue-600 (vivid, actionable, white text passes AA) */
+    --primary: 217 91% 53%;
+    --primary-foreground: 210 40% 98%;
 
-    /* Muted: Slate-800 */
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Secondary: lifted slate for secondary actions */
+    --secondary: 217 24% 19%;
+    --secondary-foreground: 210 33% 96%;
 
-    /* Accent: Slate-800 hover */
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Muted: lifted slate; muted text readable (AA on card) */
+    --muted: 217 24% 19%;
+    --muted-foreground: 216 24% 74%;
 
-    /* Destructive: Deep Red */
-    --destructive: 0 62.8% 30.6%;
+    /* Accent: hover surface */
+    --accent: 217 24% 23%;
+    --accent-foreground: 210 33% 96%;
+
+    /* Destructive: clear red (visible error states) */
+    --destructive: 0 72% 51%;
     --destructive-foreground: 210 40% 98%;
 
-    /* Borders: Extremely subtle Slate-800 */
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
+    /* Borders: VISIBLE definition (was "extremely subtle") */
+    --border: 216 20% 27%;
+    --input: 216 20% 30%;
+    --ring: 217 91% 60%;
 
     /* Custom Gradients - Dark */
-    --gradient-from: 222.2 84% 4.9%;
-    --gradient-via: 217.2 91.2% 59.8%;
+    --gradient-from: 222 30% 7%;
+    --gradient-via: 217 91% 60%;
     --gradient-to: 158 64% 52%;
     /* Emerald accent */
   }
