@@ -54,9 +54,51 @@ export interface AvisoElegivel {
     dimensaoEmpresa?: string[];
 }
 
+/** Remove acentos e baixa a caixa, para comparar setor↔texto do aviso. */
+function normalizar(s: string): string {
+    return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+}
+
+/**
+ * Grupos de setor → termos que aparecem no texto de um aviso relevante.
+ * Sem acentos (comparação feita sobre texto normalizado). Cobre os setores
+ * dos clientes reais (turismo, indústria, tecnologia/IA, formação…).
+ */
+const GRUPOS_SETOR: { chave: string; termos: string[] }[] = [
+    { chave: 'turismo', termos: ['turism', 'hotel', 'alojament', 'restaura', 'viagens', 'lazer', 'hotelaria', 'termas'] },
+    { chave: 'industria', termos: ['industri', 'fabril', 'transformador', 'manufatur', 'fabrico', 'producao industrial'] },
+    { chave: 'tecnologia', termos: ['digital', 'tecnolog', 'software', 'informatic', 'inteligencia artificial', 'dados', 'tic ', 'ciber', 'startup'] },
+    { chave: 'agricultura', termos: ['agricultur', 'agricol', 'agroaliment', 'rural', 'florest', 'pecuar', 'vinha', 'agro'] },
+    { chave: 'comercio', termos: ['comercio', 'retalho', 'distribuicao', 'loja'] },
+    { chave: 'energia', termos: ['energi', 'renovav', 'descarboniz', 'eficiencia energet', 'fotovoltaic', 'solar', 'eolic'] },
+    { chave: 'ambiente', termos: ['ambient', 'sustentab', 'residuos', 'agua', 'natureza', 'economia circular', 'biodiversidade'] },
+    { chave: 'saude', termos: ['saude', 'clinic', 'hospital', 'farmac', 'cuidados'] },
+    { chave: 'formacao', termos: ['formacao', 'educacao', 'ensino', 'qualificacao', 'competencias', 'capacitacao'] },
+    { chave: 'construcao', termos: ['construcao', 'obras', 'imobiliar', 'reabilitacao', 'edificios'] },
+    { chave: 'social', termos: ['social', 'ipss', 'solidaried', 'inclusao', 'associac'] },
+    { chave: 'cultura', termos: ['cultura', 'criativ', 'artistic', 'patrimonio', 'audiovisual', 'cinema'] },
+];
+
 /** CAE de empresa (string, possivelmente com pontos) → dígitos. */
 function caeDigitos(cae?: string | null): string {
     return (cae || '').replace(/\D/g, '');
+}
+
+function avaliarSetor(empresa: EmpresaElegivel, aviso: AvisoElegivel): CriterioElegibilidade {
+    const setor = normalizar(empresa.setor || '');
+    if (!setor) {
+        return { dimensao: 'Setor / atividade', estado: 'desconhecido', peso: 0, explicacao: 'Sem setor indicado.' };
+    }
+    const texto = normalizar(`${aviso.nome ?? ''} ${aviso.descricao ?? ''}`);
+    // Grupos relevantes ao setor da empresa (pelo termo ou pela chave).
+    const grupos = GRUPOS_SETOR.filter((g) => g.chave.includes(setor) || setor.includes(g.chave) || g.termos.some((t) => setor.includes(t)));
+    const termos = grupos.length > 0 ? grupos.flatMap((g) => g.termos) : [setor];
+    const match = termos.some((t) => t.length >= 3 && texto.includes(t));
+    if (match) {
+        return { dimensao: 'Setor / atividade', estado: 'ok', peso: 20, explicacao: `Aviso relevante para o setor ${empresa.setor}.` };
+    }
+    // Não menciona o setor: apoio horizontal possível — neutro, não penaliza.
+    return { dimensao: 'Setor / atividade', estado: 'desconhecido', peso: 0, explicacao: 'Não é específico do teu setor (pode ainda aplicar-se como apoio horizontal).' };
 }
 
 /** Empresa cumpre a lista de CAE elegíveis se o seu CAE começar por algum deles. */
@@ -152,6 +194,7 @@ export function analisarElegibilidade(
     now: Date = new Date(),
 ): AnaliseElegibilidade {
     const criterios = [
+        avaliarSetor(empresa, aviso),
         avaliarCAE(empresa, aviso),
         avaliarBeneficiario(aviso),
         avaliarRegiao(empresa, aviso),

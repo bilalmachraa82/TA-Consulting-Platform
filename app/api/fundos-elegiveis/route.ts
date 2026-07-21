@@ -80,12 +80,20 @@ export async function POST(request: NextRequest) {
             };
         });
 
+        // Fundos relevantes ao setor da empresa sobem ao topo: é o que torna a
+        // lista "os TEUS fundos" em vez de uma lista genérica igual para todos.
+        const relevanteSetor = (r: (typeof analisados)[number]) =>
+            r.elegibilidade.criterios.some((c) => c.dimensao.startsWith('Setor') && c.estado === 'ok') ? 0 : 1;
+
         // Mostra os que NÃO são "provavelmente não" — o utilizador quer oportunidades.
         const resultados = analisados
             .filter((r) => r.elegibilidade.veredicto !== 'provavelmente_nao')
             .sort((x, y) => {
                 const dv = (ORDEM_VEREDICTO[x.elegibilidade.veredicto] ?? 9) - (ORDEM_VEREDICTO[y.elegibilidade.veredicto] ?? 9);
-                return dv !== 0 ? dv : y.elegibilidade.score - x.elegibilidade.score;
+                if (dv !== 0) return dv;
+                const rs = relevanteSetor(x) - relevanteSetor(y);
+                if (rs !== 0) return rs;
+                return y.elegibilidade.score - x.elegibilidade.score;
             })
             .slice(0, 30);
 

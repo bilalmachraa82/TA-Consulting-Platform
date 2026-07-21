@@ -76,6 +76,29 @@ describe('analisarElegibilidade — gap analysis explicável', () => {
         expect(cae.estado).toBe('ok');
     });
 
+    it('setor relevante: turismo → aviso de turismo é "ok" no critério de setor', () => {
+        const turismo: EmpresaElegivel = { setor: 'Turismo', dimensao: 'PEQUENA', regiao: 'Norte' };
+        const avisoTurismo: AvisoElegivel = { nome: 'Apoio ao alojamento e hotelaria', descricao: 'valorização turística', dataFimSubmissao: futuro, tiposBeneficiarios: ['EMPRESAS'] };
+        const r = analisarElegibilidade(turismo, avisoTurismo, NOW);
+        const setor = r.criterios.find((c) => c.dimensao.startsWith('Setor'))!;
+        expect(setor.estado).toBe('ok');
+        expect(setor.explicacao).toContain('Turismo');
+    });
+
+    it('setor não mencionado → desconhecido (não penaliza, apoio horizontal)', () => {
+        const turismo: EmpresaElegivel = { setor: 'Turismo', dimensao: 'PEQUENA', regiao: 'Norte' };
+        const avisoGenerico: AvisoElegivel = { nome: 'Formação de executivos', descricao: 'competências de gestão', dataFimSubmissao: futuro, tiposBeneficiarios: ['EMPRESAS'] };
+        const setor = analisarElegibilidade(turismo, avisoGenerico, NOW).criterios.find((c) => c.dimensao.startsWith('Setor'))!;
+        expect(setor.estado).toBe('desconhecido');
+    });
+
+    it('setor errado NÃO exclui: aviso de turismo para empresa industrial fica desconhecido, não falha', () => {
+        const industria: EmpresaElegivel = { setor: 'Indústria', dimensao: 'MEDIA' };
+        const avisoTurismo: AvisoElegivel = { nome: 'Apoio ao turismo', dataFimSubmissao: futuro, tiposBeneficiarios: ['EMPRESAS'] };
+        const setor = analisarElegibilidade(industria, avisoTurismo, NOW).criterios.find((c) => c.dimensao.startsWith('Setor'))!;
+        expect(setor.estado).toBe('desconhecido');
+    });
+
     it('empresa Grande em aviso PME-orientado (texto) → atenção, não falha', () => {
         const grande: EmpresaElegivel = { ...empresaPME, dimensao: 'GRANDE' };
         const aviso: AvisoElegivel = { nome: 'Apoio PME inovação', descricao: 'para PME', dataFimSubmissao: futuro, caeElegiveis: [62] };
