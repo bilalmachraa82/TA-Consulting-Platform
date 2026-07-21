@@ -99,12 +99,22 @@ export async function POST(request: NextRequest) {
         const resultados = analisados
             .filter((r) => r.elegibilidade.veredicto !== 'provavelmente_nao')
             .sort((x, y) => {
+                // Se a PME indicou setor, os fundos DESSE setor sobem ao topo — é
+                // o que ela procura. Ex.: o NML Turismo quer ver fundos de turismo
+                // (ainda que "com reservas" por não estarem enriquecidos) ANTES de
+                // apoios nacionais genéricos "elegíveis" mas de outro setor.
+                if (setor) {
+                    const rs = relevanteSetor(x) - relevanteSetor(y);
+                    if (rs !== 0) return rs;
+                }
                 const dv = (ORDEM_VEREDICTO[x.elegibilidade.veredicto] ?? 9) - (ORDEM_VEREDICTO[y.elegibilidade.veredicto] ?? 9);
                 if (dv !== 0) return dv;
                 const dp = rankPortal(x) - rankPortal(y);
                 if (dp !== 0) return dp;
-                const rs = relevanteSetor(x) - relevanteSetor(y);
-                if (rs !== 0) return rs;
+                if (!setor) {
+                    const rs = relevanteSetor(x) - relevanteSetor(y);
+                    if (rs !== 0) return rs;
+                }
                 return y.elegibilidade.score - x.elegibilidade.score;
             })
             .slice(0, 30);
