@@ -92,7 +92,7 @@ export async function POST(request: NextRequest) {
         // Portais nacionais primeiro: uma PME portuguesa candidata-se sobretudo a
         // PT2030/PRR/PEPAC/Fundo Ambiental. As calls Horizon/LIFE (investigação UE,
         // consórcios, noutras línguas) raramente são o que uma PME quer — vão para o fim.
-        const NACIONAIS = new Set(['PORTUGAL2030', 'PRR', 'PEPAC', 'FUNDO_AMBIENTAL', 'IPDJ', 'BASE_GOV']);
+        const NACIONAIS = new Set(['PORTUGAL2030', 'PRR', 'PEPAC', 'FUNDO_AMBIENTAL', 'IPDJ', 'BASE_GOV', 'TURISMO_PORTUGAL']);
         const rankPortal = (r: (typeof analisados)[number]) => (NACIONAIS.has(String(r.portal)) ? 0 : 1);
 
         // Mostra os que NÃO são "provavelmente não" — o utilizador quer oportunidades.
