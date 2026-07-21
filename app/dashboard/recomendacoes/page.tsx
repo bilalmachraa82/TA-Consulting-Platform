@@ -251,7 +251,7 @@ export default function RecomendacoesPage() {
       ) : (
         <div className="space-y-4">
           {recomendacoes.map((recomendacao) => {
-            const { aviso, score, razoes, alertas, prioridade } = recomendacao;
+            const { aviso, score, razoes, alertas, prioridade, elegibilidade } = recomendacao;
             const diasRestantes = Math.ceil((new Date(aviso.dataFimSubmissao).getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24));
 
             return (
@@ -319,37 +319,71 @@ export default function RecomendacoesPage() {
                     </div>
                   </div>
 
-                  {/* Razões de Compatibilidade */}
-                  {razoes.length > 0 && (
-                    <div className="space-y-2">
-                      <p className="text-sm font-medium flex items-center gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-green-500" />
-                        Pontos Fortes:
-                      </p>
-                      <ul className="space-y-1 ml-6">
-                        {razoes.map((razao: string, index: number) => (
-                          <li key={index} className="text-sm text-muted-foreground">
-                            • {razao}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  {/* Alertas */}
-                  {alertas.length > 0 && (
-                    <Alert>
-                      <AlertCircle className="h-4 w-4" />
-                      <AlertDescription>
-                        <ul className="space-y-1">
-                          {alertas.map((alerta: string, index: number) => (
-                            <li key={index} className="text-sm">
-                              {alerta}
+                  {/* Análise de Elegibilidade EXPLICÁVEL (semáforo por critério) */}
+                  {elegibilidade?.criterios?.length > 0 ? (
+                    <div className="space-y-2 rounded-lg border border-border bg-muted/30 p-3">
+                      <div className="flex items-center justify-between">
+                        <p className="text-sm font-semibold">Análise de elegibilidade</p>
+                        {(() => {
+                          const v = elegibilidade.veredicto;
+                          const cfg: Record<string, { label: string; cls: string }> = {
+                            elegivel: { label: 'Elegível', cls: 'bg-green-500/15 text-green-400 border-green-500/30' },
+                            elegivel_com_reservas: { label: 'Elegível com reservas', cls: 'bg-yellow-500/15 text-yellow-400 border-yellow-500/30' },
+                            provavelmente_nao: { label: 'Provavelmente não elegível', cls: 'bg-red-500/15 text-red-400 border-red-500/30' },
+                            dados_insuficientes: { label: 'Dados insuficientes', cls: 'bg-muted text-muted-foreground border-border' },
+                          };
+                          const c = cfg[v] ?? cfg.dados_insuficientes;
+                          return <span className={`text-[11px] font-medium px-2 py-0.5 rounded border ${c.cls}`}>{c.label}</span>;
+                        })()}
+                      </div>
+                      <ul className="space-y-1.5">
+                        {elegibilidade.criterios.map((c: { dimensao: string; estado: string; explicacao: string }, i: number) => {
+                          const dot: Record<string, string> = {
+                            ok: 'bg-green-500', atencao: 'bg-yellow-500', falha: 'bg-red-500', desconhecido: 'bg-slate-500',
+                          };
+                          return (
+                            <li key={i} className="flex items-start gap-2 text-sm">
+                              <span className={`mt-1.5 h-2 w-2 rounded-full shrink-0 ${dot[c.estado] ?? 'bg-slate-500'}`} />
+                              <span>
+                                <span className="font-medium">{c.dimensao}:</span>{' '}
+                                <span className="text-muted-foreground">{c.explicacao}</span>
+                              </span>
                             </li>
-                          ))}
-                        </ul>
-                      </AlertDescription>
-                    </Alert>
+                          );
+                        })}
+                      </ul>
+                      {elegibilidade.resumo && (
+                        <p className="text-xs text-muted-foreground pt-1 border-t border-border">{elegibilidade.resumo}</p>
+                      )}
+                    </div>
+                  ) : (
+                    <>
+                      {razoes.length > 0 && (
+                        <div className="space-y-2">
+                          <p className="text-sm font-medium flex items-center gap-2">
+                            <CheckCircle2 className="h-4 w-4 text-green-500" />
+                            Pontos Fortes:
+                          </p>
+                          <ul className="space-y-1 ml-6">
+                            {razoes.map((razao: string, index: number) => (
+                              <li key={index} className="text-sm text-muted-foreground">• {razao}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      {alertas.length > 0 && (
+                        <Alert>
+                          <AlertCircle className="h-4 w-4" />
+                          <AlertDescription>
+                            <ul className="space-y-1">
+                              {alertas.map((alerta: string, index: number) => (
+                                <li key={index} className="text-sm">{alerta}</li>
+                              ))}
+                            </ul>
+                          </AlertDescription>
+                        </Alert>
+                      )}
+                    </>
                   )}
 
                   {/* Ações */}
