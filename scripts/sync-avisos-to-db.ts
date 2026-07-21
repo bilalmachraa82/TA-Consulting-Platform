@@ -27,6 +27,7 @@ const { scrapePEPAC } = require(`${scraperPath}/pepac.js`);
 
 import { scrapeSEDIAProgramme } from './scrapers/sedia-programme';
 import { scrapeFundoAmbiental } from './scrapers/fundo-ambiental';
+import { scrapeTurismoPortugal } from './scrapers/turismo-portugal';
 
 const prisma = new PrismaClient();
 
@@ -49,6 +50,8 @@ const portalMap: Record<string, Portal> = {
     'LIFE': Portal.LIFE,
     'Fundo Ambiental': Portal.FUNDO_AMBIENTAL,
     'FUNDO_AMBIENTAL': Portal.FUNDO_AMBIENTAL,
+    'Turismo de Portugal': Portal.TURISMO_PORTUGAL,
+    'TURISMO_PORTUGAL': Portal.TURISMO_PORTUGAL,
 };
 
 interface ScrapedAviso {
@@ -259,6 +262,11 @@ async function main() {
     // Fundo Ambiental — catálogo sem datas (o site não as expõe na listagem);
     // datas chegam via agente de enriquecimento. Ver scripts/scrapers/fundo-ambiental.ts
     total += await syncPortal('Fundo Ambiental', () => scrapeFundoAmbiental({ maxItems: 500 }), 0, 500);
+
+    // Turismo de Portugal — 3 listagens de Financiamento (ASPX server-rendered,
+    // sem datas na listagem; prazos via enriquecimento). Fecha a lacuna do
+    // cliente NML Turismo. Ver scripts/scrapers/turismo-portugal.ts
+    total += await syncPortal('Turismo de Portugal', () => scrapeTurismoPortugal({ maxItems: 200 }), 5, 200);
 
     console.log('\n' + '═'.repeat(50));
     console.log(`✅ TOTAL: ${total} avisos sincronizados`);

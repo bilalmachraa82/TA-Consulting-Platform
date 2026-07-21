@@ -394,6 +394,7 @@ enum Portal {
   DIGITAL_EUROPE
   LIFE
   FUNDO_AMBIENTAL
+  TURISMO_PORTUGAL
 }
 
 enum DimensaoEmpresa {
