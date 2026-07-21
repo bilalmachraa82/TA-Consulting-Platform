@@ -478,7 +478,10 @@ export function AvisosComponent() {
                       </div>
                     </TableCell>
                     <TableCell className={density === 'compact' ? 'py-1 border-r border-border' : ''}>
-                      <code className={`bg-muted text-foreground px-2 py-1 rounded ${density === 'compact' ? 'text-[10px]' : 'text-sm'}`}>
+                      <code
+                        title={aviso.codigo}
+                        className={`inline-block max-w-[160px] truncate align-middle bg-muted text-foreground px-2 py-1 rounded ${density === 'compact' ? 'text-[10px]' : 'text-sm'}`}
+                      >
                         {aviso.codigo}
                       </code>
                     </TableCell>
