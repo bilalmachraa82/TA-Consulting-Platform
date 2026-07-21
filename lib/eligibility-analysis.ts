@@ -52,6 +52,7 @@ export interface AvisoElegivel {
     regiaoNUTS2?: string | null;
     regiaoNUTS3?: string[];
     dimensaoEmpresa?: string[];
+    abrangenciaGeografica?: string | null; // REGIONAL | NACIONAL | CONTINENTAL | EUROPEU
 }
 
 /** Remove acentos e baixa a caixa, para comparar setor↔texto do aviso. */
@@ -139,7 +140,15 @@ function avaliarBeneficiario(aviso: AvisoElegivel): CriterioElegibilidade {
 
 function avaliarRegiao(empresa: EmpresaElegivel, aviso: AvisoElegivel): CriterioElegibilidade {
     const nuts2 = aviso.regiaoNUTS2;
+    const abr = (aviso.abrangenciaGeografica || '').toUpperCase();
     const empresaReg = (empresa.nut || empresa.regiao || '').toLowerCase().trim();
+    // Âmbito nacional/continental/europeu SEM região específica: qualquer empresa
+    // portuguesa é elegível no eixo geográfico. "Sem restrição" é um PASSE, não
+    // um desconhecido — o aviso não exclui a empresa por causa de onde está.
+    if (!nuts2 && (abr === 'NACIONAL' || abr === 'CONTINENTAL' || abr === 'EUROPEU')) {
+        const rotulo = abr === 'EUROPEU' ? 'europeu' : abr === 'CONTINENTAL' ? 'de Portugal Continental' : 'nacional';
+        return { dimensao: 'Região (NUTS)', estado: 'ok', peso: 15, explicacao: `Aviso de âmbito ${rotulo}: elegível em qualquer região.` };
+    }
     if (!nuts2) {
         return { dimensao: 'Região (NUTS)', estado: 'desconhecido', peso: 0, explicacao: 'O aviso não delimita região (ou é nacional).' };
     }

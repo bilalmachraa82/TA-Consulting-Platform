@@ -73,6 +73,7 @@ export async function GET(request: Request) {
           montanteMinimo: aviso.montanteMinimo, montanteMaximo: aviso.montanteMaximo,
           caeElegiveis: aviso.caeElegiveis, tiposBeneficiarios: aviso.tiposBeneficiarios as string[],
           regiaoNUTS2: aviso.regiaoNUTS2, regiaoNUTS3: aviso.regiaoNUTS3, dimensaoEmpresa: aviso.dimensaoEmpresa,
+          abrangenciaGeografica: aviso.abrangenciaGeografica,
         },
         hoje,
       );

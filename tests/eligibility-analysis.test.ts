@@ -99,6 +99,33 @@ describe('analisarElegibilidade — gap analysis explicável', () => {
         expect(setor.estado).toBe('desconhecido');
     });
 
+    it('aviso de âmbito NACIONAL → região "ok" (elegível em qualquer região)', () => {
+        const aviso: AvisoElegivel = { nome: 'Apoio nacional PME', dataFimSubmissao: futuro, abrangenciaGeografica: 'NACIONAL', tiposBeneficiarios: ['EMPRESAS'], caeElegiveis: [62] };
+        const r = analisarElegibilidade(empresaPME, aviso, NOW);
+        const regiao = r.criterios.find((c) => c.dimensao.startsWith('Região'))!;
+        expect(regiao.estado).toBe('ok');
+        expect(regiao.explicacao).toContain('nacional');
+    });
+
+    it('aviso EUROPEU sem NUTS → região "ok" (PT é elegível no eixo geográfico)', () => {
+        const aviso: AvisoElegivel = { nome: 'Horizon call', dataFimSubmissao: futuro, abrangenciaGeografica: 'EUROPEU', tiposBeneficiarios: ['EMPRESAS'] };
+        const regiao = analisarElegibilidade(empresaPME, aviso, NOW).criterios.find((c) => c.dimensao.startsWith('Região'))!;
+        expect(regiao.estado).toBe('ok');
+    });
+
+    it('aviso REGIONAL de outra região → região "falha" (âmbito não sobrepõe NUTS)', () => {
+        const norte: EmpresaElegivel = { ...empresaPME, regiao: 'Norte', nut: 'Norte' };
+        const aviso: AvisoElegivel = { nome: 'Apoio Algarve', dataFimSubmissao: futuro, abrangenciaGeografica: 'REGIONAL', regiaoNUTS2: 'Algarve', tiposBeneficiarios: ['EMPRESAS'] };
+        const regiao = analisarElegibilidade(norte, aviso, NOW).criterios.find((c) => c.dimensao.startsWith('Região'))!;
+        expect(regiao.estado).toBe('falha');
+    });
+
+    it('sem NUTS e sem abrangência → região continua "desconhecido" (não inventa)', () => {
+        const aviso: AvisoElegivel = { nome: 'X', dataFimSubmissao: futuro, caeElegiveis: [62] };
+        const regiao = analisarElegibilidade(empresaPME, aviso, NOW).criterios.find((c) => c.dimensao.startsWith('Região'))!;
+        expect(regiao.estado).toBe('desconhecido');
+    });
+
     it('empresa Grande em aviso PME-orientado (texto) → atenção, não falha', () => {
         const grande: EmpresaElegivel = { ...empresaPME, dimensao: 'GRANDE' };
         const aviso: AvisoElegivel = { nome: 'Apoio PME inovação', descricao: 'para PME', dataFimSubmissao: futuro, caeElegiveis: [62] };

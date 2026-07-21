@@ -58,7 +58,7 @@ export async function POST(request: NextRequest) {
                 id: true, nome: true, portal: true, programa: true, descricao: true, link: true,
                 dataFimSubmissao: true, montanteMinimo: true, montanteMaximo: true, regiao: true,
                 caeElegiveis: true, tiposBeneficiarios: true, regiaoNUTS2: true, regiaoNUTS3: true,
-                dimensaoEmpresa: true,
+                dimensaoEmpresa: true, abrangenciaGeografica: true,
             },
         });
 
@@ -70,6 +70,7 @@ export async function POST(request: NextRequest) {
                 montanteMinimo: a.montanteMinimo, montanteMaximo: a.montanteMaximo,
                 caeElegiveis: a.caeElegiveis, tiposBeneficiarios: a.tiposBeneficiarios as string[],
                 regiaoNUTS2: a.regiaoNUTS2, regiaoNUTS3: a.regiaoNUTS3, dimensaoEmpresa: a.dimensaoEmpresa,
+                abrangenciaGeografica: a.abrangenciaGeografica,
             }, now);
             const avaliados = elegibilidade.criterios.filter((c) => c.estado !== 'desconhecido').length;
             return {
