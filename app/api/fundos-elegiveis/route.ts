@@ -50,8 +50,11 @@ export async function POST(request: NextRequest) {
     try {
         // Avisos abertos (prazo futuro ou por confirmar). Prioriza os enriquecidos
         // — só esses dão análise rica — mas inclui todos os abertos.
+        // Funil PÚBLICO para PME: exclui Horizon Europe (calls de investigação UE,
+        // consórcios, noutras línguas — 52% dos abertos mas raramente o que uma PME
+        // portuguesa quer). Mantém o foco no que é acionável para uma PME nacional.
         const avisos = await prisma.aviso.findMany({
-            where: { ativo: true, OR: [{ dataFimSubmissao: null }, { dataFimSubmissao: { gte: now } }] },
+            where: { ativo: true, portal: { notIn: ['HORIZON_EUROPE'] }, OR: [{ dataFimSubmissao: null }, { dataFimSubmissao: { gte: now } }] },
             orderBy: [{ enrichmentStatus: 'desc' }, { dataFimSubmissao: { sort: 'asc', nulls: 'last' } }],
             take: 400,
             select: {
