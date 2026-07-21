@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Loader2, Search, ExternalLink, Sparkles, ArrowLeft } from 'lucide-react'
+import { Loader2, Search, ExternalLink, Sparkles, ArrowLeft, X, Send, CheckCircle2 } from 'lucide-react'
 import { toast } from 'sonner'
 
 type Estado = 'ok' | 'atencao' | 'falha' | 'desconhecido'
@@ -39,6 +39,8 @@ const DIMENSOES = [
 const INPUT_CLS = 'bg-white border-slate-300 text-slate-900 placeholder:text-slate-400 focus-visible:ring-blue-500'
 const SELECT_CLS = 'w-full h-10 rounded-md bg-white border border-slate-300 px-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
 
+type AvisoRef = { id: string; nome: string; portal: string }
+
 export default function EncontrarFundosPage() {
   const [cae, setCae] = useState('')
   const [setor, setSetor] = useState('')
@@ -46,6 +48,14 @@ export default function EncontrarFundosPage() {
   const [regiao, setRegiao] = useState('')
   const [loading, setLoading] = useState(false)
   const [dados, setDados] = useState<{ resumo: { totalAvisosAbertos: number; elegiveis: number; comReservas: number }; resultados: Resultado[] } | null>(null)
+
+  // Captura de lead: o funil só vale se converter. Modal aberto pelo CTA geral
+  // ou por "Quero ajuda" num aviso concreto.
+  const [contacto, setContacto] = useState<{ aberto: boolean; aviso: AvisoRef | null; enviando: boolean; enviado: boolean }>({ aberto: false, aviso: null, enviando: false, enviado: false })
+  const [form, setForm] = useState({ nome: '', email: '', nif: '', telefone: '', mensagem: '', consent: false })
+  const setF = (k: keyof typeof form, v: string | boolean) => setForm((p) => ({ ...p, [k]: v }))
+  const abrirContacto = (aviso?: AvisoRef) => setContacto({ aberto: true, aviso: aviso ?? null, enviando: false, enviado: false })
+  const fecharContacto = () => setContacto((c) => ({ ...c, aberto: false }))
 
   const submeter = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -60,6 +70,26 @@ export default function EncontrarFundosPage() {
       if (!res.ok) { toast.error(j.error || 'Erro'); return }
       setDados(j)
     } catch { toast.error('Erro de ligação.') } finally { setLoading(false) }
+  }
+
+  const submeterContacto = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!/^\d{9}$/.test(form.nif)) { toast.error('NIF deve ter 9 dígitos.'); return }
+    setContacto((c) => ({ ...c, enviando: true }))
+    try {
+      const res = await fetch('/api/leads/contacto', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nome: form.nome, email: form.email, nif: form.nif, telefone: form.telefone || undefined,
+          mensagem: form.mensagem || undefined, consentMarketing: form.consent,
+          setor: setor || undefined, dimensao: dimensao || undefined, regiao: regiao || undefined, cae: cae || undefined,
+          aviso: contacto.aviso ?? undefined,
+        }),
+      })
+      const j = await res.json()
+      if (!res.ok) { toast.error(j.error || 'Erro'); setContacto((c) => ({ ...c, enviando: false })); return }
+      setContacto((c) => ({ ...c, enviando: false, enviado: true }))
+    } catch { toast.error('Erro de ligação.'); setContacto((c) => ({ ...c, enviando: false })) }
   }
 
   return (
@@ -172,7 +202,10 @@ export default function EncontrarFundosPage() {
                     <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500 border-t border-slate-100 pt-3">
                       {r.prazo && <span>Prazo: {r.prazo.split('-').reverse().join('/')}</span>}
                       {r.montanteMaximo && <span className="font-semibold text-slate-700">Até €{r.montanteMaximo.toLocaleString('pt-PT')}</span>}
-                      {r.link && <a href={r.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center gap-1 ml-auto">Aviso oficial <ExternalLink className="w-3 h-3" /></a>}
+                      <div className="flex items-center gap-3 ml-auto">
+                        <button type="button" onClick={() => abrirContacto({ id: r.id, nome: r.nome, portal: r.portal })} className="text-blue-600 hover:text-blue-700 font-semibold">Quero ajuda</button>
+                        {r.link && <a href={r.link} target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-800 inline-flex items-center gap-1">Aviso oficial <ExternalLink className="w-3 h-3" /></a>}
+                      </div>
                     </div>
                   </div>
                 )
@@ -182,7 +215,41 @@ export default function EncontrarFundosPage() {
 
           <div className="text-center pt-8">
             <p className="text-slate-600 mb-3">Queres que a TA Consulting trate da candidatura por ti?</p>
-            <Link href="/auth/login"><Button className="bg-blue-600 hover:bg-blue-700 text-white px-6">Falar com um consultor</Button></Link>
+            <Button onClick={() => abrirContacto()} className="bg-blue-600 hover:bg-blue-700 text-white px-6">Falar com um consultor</Button>
+          </div>
+        </div>
+      )}
+
+      {contacto.aberto && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm" onClick={fecharContacto}>
+          <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6 relative" onClick={(e) => e.stopPropagation()}>
+            <button type="button" onClick={fecharContacto} aria-label="Fechar" className="absolute top-4 right-4 text-slate-400 hover:text-slate-700"><X className="w-5 h-5" /></button>
+            {contacto.enviado ? (
+              <div className="text-center py-6">
+                <CheckCircle2 className="w-12 h-12 text-green-500 mx-auto mb-3" />
+                <h3 className="text-lg font-semibold text-slate-900">Pedido recebido!</h3>
+                <p className="text-slate-600 mt-1 text-sm">Um consultor da TA Consulting entra em contacto em breve.</p>
+                <Button onClick={fecharContacto} className="mt-4 bg-blue-600 hover:bg-blue-700 text-white">Fechar</Button>
+              </div>
+            ) : (
+              <form onSubmit={submeterContacto} className="space-y-3">
+                <div>
+                  <h3 className="text-lg font-semibold text-slate-900">Falar com um consultor</h3>
+                  {contacto.aviso
+                    ? <p className="text-sm text-slate-500 mt-0.5">Sobre: <span className="font-medium text-slate-700">{contacto.aviso.nome}</span></p>
+                    : <p className="text-sm text-slate-500 mt-0.5">Ajudamos-te a preparar a candidatura, do início ao fim.</p>}
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="space-y-1"><Label className="text-slate-700 text-sm">Nome*</Label><Input value={form.nome} onChange={(e) => setF('nome', e.target.value)} required className={INPUT_CLS} /></div>
+                  <div className="space-y-1"><Label className="text-slate-700 text-sm">NIF*</Label><Input value={form.nif} onChange={(e) => setF('nif', e.target.value)} required inputMode="numeric" placeholder="9 dígitos" className={INPUT_CLS} /></div>
+                </div>
+                <div className="space-y-1"><Label className="text-slate-700 text-sm">Email*</Label><Input type="email" value={form.email} onChange={(e) => setF('email', e.target.value)} required className={INPUT_CLS} /></div>
+                <div className="space-y-1"><Label className="text-slate-700 text-sm">Telefone</Label><Input value={form.telefone} onChange={(e) => setF('telefone', e.target.value)} className={INPUT_CLS} /></div>
+                <div className="space-y-1"><Label className="text-slate-700 text-sm">Mensagem (opcional)</Label><textarea value={form.mensagem} onChange={(e) => setF('mensagem', e.target.value)} rows={2} className="w-full rounded-md bg-white border border-slate-300 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none" /></div>
+                <label className="flex items-start gap-2 text-xs text-slate-500"><input type="checkbox" checked={form.consent} onChange={(e) => setF('consent', e.target.checked)} className="mt-0.5" /> Aceito ser contactado e receber alertas de novos fundos relevantes.</label>
+                <Button type="submit" disabled={contacto.enviando} className="w-full bg-blue-600 hover:bg-blue-700 text-white">{contacto.enviando ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> A enviar…</> : <><Send className="w-4 h-4 mr-2" /> Enviar pedido</>}</Button>
+              </form>
+            )}
           </div>
         </div>
       )}

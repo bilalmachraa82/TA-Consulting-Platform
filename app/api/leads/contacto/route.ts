@@ -1,0 +1,95 @@
+/**
+ * Captura de lead a partir do funil público /encontrar-fundos.
+ *
+ * A PME já viu os fundos a que é elegível (via /api/fundos-elegiveis) — este
+ * endpoint captura o contacto quando ela pede ajuda: cria/atualiza um Lead com
+ * o perfil da pesquisa + o(s) aviso(s) de interesse. É o mecanismo que torna a
+ * ferramenta um motor de leads (antes só mostrava resultados e mandava fazer login).
+ *
+ * Upsert por NIF: o NIF é a chave única do Lead (uma empresa = um lead), o que
+ * deduplica naturalmente e respeita o @unique do modelo (o /leads/submit antigo
+ * gravava nif:'' e rebentava no 2º lead sem NIF).
+ *
+ * POST /api/leads/contacto
+ */
+
+import { NextRequest, NextResponse } from 'next/server';
+import { z } from 'zod';
+import { PrismaClient } from '@prisma/client';
+import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limiter';
+
+// Cliente Prisma direto (o wrapper @/lib/db não expõe upsert). Igual ao
+// /api/fundos-elegiveis.
+const prisma = new PrismaClient();
+
+export const dynamic = 'force-dynamic';
+
+const Schema = z.object({
+    nome: z.string().min(2).max(120),
+    email: z.string().email().max(160),
+    nif: z.string().regex(/^\d{9}$/, 'NIF deve ter 9 dígitos'),
+    telefone: z.string().max(30).optional(),
+    mensagem: z.string().max(1000).optional(),
+    // contexto da pesquisa (para o consultor saber o perfil)
+    setor: z.string().max(120).optional(),
+    dimensao: z.string().max(20).optional(),
+    regiao: z.string().max(60).optional(),
+    cae: z.string().max(20).optional(),
+    consentMarketing: z.boolean().optional(),
+    // aviso concreto que despoletou o contacto (opcional)
+    aviso: z.object({ id: z.string().max(60), nome: z.string().max(400), portal: z.string().max(40) }).optional(),
+});
+
+export async function POST(request: NextRequest) {
+    const ip = getClientIP(request);
+    const rl = checkRateLimit(`leads-contacto:${ip}`, RATE_LIMITS.LEADS_SUBMIT);
+    if (!rl.success) {
+        return NextResponse.json({ error: 'Demasiados pedidos. Tenta mais tarde.' }, { status: 429, headers: { 'Retry-After': rl.resetIn.toString() } });
+    }
+
+    const parsed = Schema.safeParse(await request.json().catch(() => ({})));
+    if (!parsed.success) {
+        return NextResponse.json({ error: parsed.error.issues[0]?.message ?? 'Pedido inválido' }, { status: 400 });
+    }
+
+    const d = parsed.data;
+    const matchesInfo = {
+        origem: 'encontrar-fundos',
+        perfil: { setor: d.setor ?? null, dimensao: d.dimensao ?? null, regiao: d.regiao ?? null, cae: d.cae ?? null },
+        avisoInteresse: d.aviso ?? null,
+        mensagem: d.mensagem ?? null,
+        capturadoEm: new Date().toISOString(),
+    };
+
+    try {
+        const lead = await prisma.lead.upsert({
+            where: { nif: d.nif },
+            create: {
+                nif: d.nif,
+                nome: d.nome,
+                email: d.email,
+                telefone: d.telefone,
+                cae: d.cae,
+                atividade: d.setor,
+                dimensaoDeclarada: d.dimensao,
+                distrito: d.regiao,
+                consentMarketing: d.consentMarketing ?? false,
+                alertasAtivos: d.consentMarketing ?? false,
+                matchesInfo,
+                status: 'NOVO',
+            },
+            update: {
+                nome: d.nome,
+                email: d.email,
+                telefone: d.telefone ?? undefined,
+                matchesInfo,
+                // não rebaixa um lead já trabalhado: só reabre se estava fechado/novo
+                status: 'NOVO',
+            },
+        });
+        return NextResponse.json({ success: true, leadId: lead.id });
+    } catch (error) {
+        console.error('[leads/contacto] erro:', error);
+        return NextResponse.json({ error: 'Erro ao registar o contacto.' }, { status: 500 });
+    }
+}
