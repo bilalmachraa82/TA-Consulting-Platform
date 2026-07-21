@@ -25,6 +25,17 @@ describe('coerceExtraction', () => {
         expect(result!.fieldCount).toBe(11);
     });
 
+    it('extrai dimensaoEmpresa válida e conta-a; descarta valores inventados', () => {
+        const comDim = coerceExtraction({ ...validRaw, dimensaoEmpresa: ['MICRO', 'PEQUENA', 'MEDIA'] });
+        expect(comDim!.data.dimensaoEmpresa).toEqual(['MICRO', 'PEQUENA', 'MEDIA']);
+        expect(comDim!.fieldCount).toBe(12); // 11 + dimensaoEmpresa preenchida
+        const update = buildUpdateData(comDim!, { descricao: null, dataFimSubmissao: new Date('2026-10-31') }, { allowDates: false });
+        expect(update.dimensaoEmpresa).toEqual(['MICRO', 'PEQUENA', 'MEDIA']);
+        // valores fora do enum são descartados sem rebentar
+        const invent = coerceExtraction({ ...validRaw, dimensaoEmpresa: ['GIGANTE'] });
+        expect(invent!.data.dimensaoEmpresa).toEqual([]);
+    });
+
     it('descarta enums inventados pelo modelo sem rebentar', () => {
         const result = coerceExtraction({
             ...validRaw,

@@ -20,6 +20,8 @@ export const ABRANGENCIAS = ['REGIONAL', 'NACIONAL', 'CONTINENTAL', 'EUROPEU'] a
 
 export const TIPOS_APOIO = ['SUBSIDIO', 'CREDITO', 'GARANTIA', 'MISTO'] as const;
 
+export const DIMENSOES = ['MICRO', 'PEQUENA', 'MEDIA', 'GRANDE'] as const;
+
 const isoDate = z
     .string()
     .regex(/^\d{4}-\d{2}-\d{2}/)
@@ -34,6 +36,7 @@ export const extractionSchema = z.object({
     dataFimSubmissao: isoDate.nullable().catch(null),
     tiposBeneficiarios: z.array(z.enum(TIPOS_BENEFICIARIO)).catch([]),
     caeElegiveis: z.array(z.number().int().min(1).max(99999)).max(50).catch([]),
+    dimensaoEmpresa: z.array(z.enum(DIMENSOES)).catch([]),
     regiaoNUTS2: z.string().max(100).nullable().catch(null),
     abrangenciaGeografica: z.enum(ABRANGENCIAS).nullable().catch(null),
     montanteMinimo: z.number().nonnegative().max(1e10).nullable().catch(null),
@@ -82,9 +85,10 @@ export function coerceExtraction(raw: unknown): CoercedExtraction | null {
     const fieldCount =
         values.filter((v) => v !== null).length +
         (data.tiposBeneficiarios.length > 0 ? 1 : 0) +
-        (data.caeElegiveis.length > 0 ? 1 : 0);
+        (data.caeElegiveis.length > 0 ? 1 : 0) +
+        (data.dimensaoEmpresa.length > 0 ? 1 : 0);
 
-    return { data, fieldCount, totalFields: 11 };
+    return { data, fieldCount, totalFields: 12 };
 }
 
 /** Reduz HTML a texto simples limitado, para caber no contexto do modelo. */
@@ -145,6 +149,7 @@ export function buildUpdateData(
 
     if (e.tiposBeneficiarios.length > 0) update.tiposBeneficiarios = e.tiposBeneficiarios;
     if (e.caeElegiveis.length > 0) update.caeElegiveis = e.caeElegiveis;
+    if (e.dimensaoEmpresa.length > 0) update.dimensaoEmpresa = e.dimensaoEmpresa;
     if (e.regiaoNUTS2) update.regiaoNUTS2 = e.regiaoNUTS2;
     if (e.abrangenciaGeografica) update.abrangenciaGeografica = e.abrangenciaGeografica;
     if (e.montanteMinimo !== null) update.montanteMinimo = e.montanteMinimo;

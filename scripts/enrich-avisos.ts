@@ -26,7 +26,7 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
 import axios from 'axios';
 import { PrismaClient, Portal, Prisma } from '@prisma/client';
 import { GoogleGenerativeAI, SchemaType } from '@google/generative-ai';
-import { coerceExtraction, htmlToText, buildUpdateData, TIPOS_BENEFICIARIO, ABRANGENCIAS, TIPOS_APOIO } from '../lib/enrichment';
+import { coerceExtraction, htmlToText, buildUpdateData, TIPOS_BENEFICIARIO, ABRANGENCIAS, TIPOS_APOIO, DIMENSOES } from '../lib/enrichment';
 
 /**
  * Fornecedores LLM suportados, por ordem de preferência (decisão 2026-07-20:
@@ -84,6 +84,7 @@ const responseSchema = {
         dataFimSubmissao: { type: SchemaType.STRING, nullable: true, description: 'Prazo final de candidaturas, formato YYYY-MM-DD. null se não constar do texto.' },
         tiposBeneficiarios: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING, enum: [...TIPOS_BENEFICIARIO], format: 'enum' }, description: 'Tipos de beneficiários elegíveis explicitamente referidos.' },
         caeElegiveis: { type: SchemaType.ARRAY, items: { type: SchemaType.NUMBER }, description: 'Códigos CAE elegíveis SE explicitamente listados no texto (números).' },
+        dimensaoEmpresa: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING, enum: [...DIMENSOES], format: 'enum' }, description: 'Dimensões de empresa elegíveis (MICRO/PEQUENA/MEDIA/GRANDE) SE o texto restringir. Ex.: "PME" → [MICRO,PEQUENA,MEDIA]. Lista vazia se não restringir.' },
         regiaoNUTS2: { type: SchemaType.STRING, nullable: true, description: 'Região NUTS II abrangida (Norte, Centro, Lisboa, Alentejo, Algarve, Açores, Madeira). null se nacional ou não referido.' },
         abrangenciaGeografica: { type: SchemaType.STRING, nullable: true, enum: [...ABRANGENCIAS], format: 'enum' },
         montanteMinimo: { type: SchemaType.NUMBER, nullable: true, description: 'Investimento/apoio mínimo em euros, se referido.' },
@@ -91,7 +92,7 @@ const responseSchema = {
         taxaCofinanciamentoMax: { type: SchemaType.NUMBER, nullable: true, description: 'Taxa máxima de cofinanciamento em percentagem (0-100), se referida.' },
         tipoApoio: { type: SchemaType.STRING, nullable: true, enum: [...TIPOS_APOIO], format: 'enum' },
     },
-    required: ['descricao', 'dataInicioSubmissao', 'dataFimSubmissao', 'tiposBeneficiarios', 'caeElegiveis', 'regiaoNUTS2', 'abrangenciaGeografica', 'montanteMinimo', 'montanteMaximo', 'taxaCofinanciamentoMax', 'tipoApoio'],
+    required: ['descricao', 'dataInicioSubmissao', 'dataFimSubmissao', 'tiposBeneficiarios', 'caeElegiveis', 'dimensaoEmpresa', 'regiaoNUTS2', 'abrangenciaGeografica', 'montanteMinimo', 'montanteMaximo', 'taxaCofinanciamentoMax', 'tipoApoio'],
 } as const;
 
 async function fetchAvisoText(url: string): Promise<{ text: string; contentType: string } | null> {
@@ -125,6 +126,7 @@ const JSON_SPEC = `Responde APENAS com um objeto JSON válido (sem markdown) com
   "dataFimSubmissao": "YYYY-MM-DD"|null,
   "tiposBeneficiarios": array com valores de [${TIPOS_BENEFICIARIO.join(', ')}],
   "caeElegiveis": array de números CAE SE explicitamente listados,
+  "dimensaoEmpresa": array com valores de [${DIMENSOES.join(', ')}] SE o texto restringir a dimensão (ex.: "PME"→[MICRO,PEQUENA,MEDIA]); lista vazia se não restringir,
   "regiaoNUTS2": string|null (Norte, Centro, Lisboa, Alentejo, Algarve, Açores, Madeira),
   "abrangenciaGeografica": um de [${ABRANGENCIAS.join(', ')}]|null,
   "montanteMinimo": número em euros|null,
