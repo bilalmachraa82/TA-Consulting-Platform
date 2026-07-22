@@ -86,6 +86,9 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
 
         // Cannot change OWNER role unless you are OWNER
         const targetMember = await prisma.teamMember.findUnique({ where: { id: memberId } });
+        if (!targetMember || targetMember.teamId !== params.id) {
+            return NextResponse.json({ error: 'Membro não encontrado nesta equipa' }, { status: 404 });
+        }
         if (targetMember?.role === 'OWNER' && membership.role !== 'OWNER') {
             return NextResponse.json({ error: 'Não pode alterar o proprietário' }, { status: 403 });
         }
@@ -136,6 +139,9 @@ export async function DELETE(request: NextRequest, { params }: RouteParams) {
 
         // Check if removing self (anyone can leave)
         const targetMember = await prisma.teamMember.findUnique({ where: { id: memberId } });
+        if (!targetMember || targetMember.teamId !== params.id) {
+            return NextResponse.json({ error: 'Membro não encontrado nesta equipa' }, { status: 404 });
+        }
         const isRemovingSelf = targetMember?.userId === user.id;
 
         if (!membership && !isRemovingSelf) {

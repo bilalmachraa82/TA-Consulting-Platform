@@ -1,18 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
-import { dataProvider, isPrismaAvailable } from '@/lib/db';
+import { dataProvider, isPrismaAvailable, prisma } from '@/lib/db';
 import {
   getCachedMetricas,
   getCachedAvisosUrgentes,
   getCachedOrcamentoDisponivel,
   getCachedAvisosPorPortal,
-  getCachedTopEmpresas,
-  getCacheHeaders
 } from '@/lib/cache';
+import { candidaturaScope, empresaScope } from '@/lib/auth/tenant';
 
-// Cache: Revalida a cada 1 minuto para métricas
-export const revalidate = 60;
+// Top empresas é por-tenant → dinâmico, sem cache partilhada de CDN.
+export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
   try {
@@ -23,13 +22,29 @@ export async function GET(request: NextRequest) {
     }
 
     // Buscar dados com cache
-    const [cachedMetricas, avisosUrgentes, orcamentoDisponivel, avisosPorPortal, topEmpresas] = await Promise.all([
+    const [cachedMetricas, avisosUrgentes, orcamentoDisponivel, avisosPorPortal] = await Promise.all([
       getCachedMetricas(),
       getCachedAvisosUrgentes(),
       getCachedOrcamentoDisponivel(),
       getCachedAvisosPorPortal(),
-      getCachedTopEmpresas(5)
     ]);
+
+    // Top empresas — scoped por tenant (o cache global expunha nomes de clientes de outros tenants).
+    const topGroups = await prisma.candidatura.groupBy({
+      by: ['empresaId'],
+      _count: { empresaId: true },
+      where: candidaturaScope(session),
+      orderBy: { _count: { empresaId: 'desc' } },
+      take: 5,
+    });
+    const topInfo = await prisma.empresa.findMany({
+      where: { AND: [empresaScope(session), { id: { in: topGroups.map((g: { empresaId: string }) => g.empresaId) } }] },
+      select: { id: true, nome: true },
+    });
+    const topEmpresas = topGroups.map((g: { empresaId: string; _count: { empresaId: number } }) => ({
+      nome: topInfo.find((e: { id: string; nome: string }) => e.id === g.empresaId)?.nome || 'Empresa',
+      candidaturas: g._count.empresaId,
+    }));
 
     // Buscar avisos e empresas adicionais para cálculos específicos
     const avisos = await dataProvider.avisos.findMany({ where: { ativo: true } });
@@ -72,7 +87,7 @@ export async function GET(request: NextRequest) {
       },
       source: isPrismaAvailable() ? 'database' : 'json-files'
     }, {
-      headers: getCacheHeaders(30, 60) // Cache: 30s, SWR: 1min
+      headers: { 'Cache-Control': 'private, no-store' }
     });
   } catch (error) {
     console.error('Erro ao buscar métricas:', error);

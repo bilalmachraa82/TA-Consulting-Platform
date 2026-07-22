@@ -125,6 +125,16 @@ export async function GET(
 
         const teamId = params.id;
 
+        // Só membros da equipa podem ver a lista de membros.
+        const currentUser = await prisma.user.findUnique({ where: { email: session.user.email } });
+        if (!currentUser) {
+            return NextResponse.json({ error: 'Utilizador não encontrado' }, { status: 404 });
+        }
+        const membership = await prisma.teamMember.findFirst({ where: { teamId, userId: currentUser.id } });
+        if (!membership) {
+            return NextResponse.json({ error: 'Sem acesso a esta equipa' }, { status: 403 });
+        }
+
         const team = await prisma.team.findUnique({
             where: { id: teamId },
             include: {
