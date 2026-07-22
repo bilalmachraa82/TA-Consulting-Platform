@@ -2,11 +2,16 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Check, Sparkles, Zap, Building2, ArrowRight, Star } from 'lucide-react';
+import { Check, ArrowRight, ArrowLeft, Star, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
+
+/**
+ * Página de preços — mesmo design system do resto do site (dark #0a0b0f,
+ * emerald, Fraunces via .font-display). Números alinhados com a homepage
+ * (683+ avisos, 10 portais); sem claims de concorrentes nem ícones em
+ * círculos coloridos.
+ */
 
 const plans = [
     {
@@ -21,7 +26,7 @@ const plans = [
             'Alertas limitados',
             '1 empresa',
         ],
-        cta: 'Começar Grátis',
+        cta: 'Começar grátis',
     },
     {
         id: 'STARTER',
@@ -69,7 +74,22 @@ const plans = [
             'SLA garantido',
             'Gestor de conta',
         ],
-        cta: 'Contactar Vendas',
+        cta: 'Contactar vendas',
+    },
+];
+
+const porques = [
+    {
+        titulo: 'Especialistas em fundos PT',
+        texto: '10 portais oficiais — Portugal 2030, PRR, PEPAC, Turismo de Portugal e mais — varridos todos os dias.',
+    },
+    {
+        titulo: 'Elegibilidade explicável',
+        texto: 'Vês porque és (ou não) elegível, critério a critério. Nada de scores cegos.',
+    },
+    {
+        titulo: 'Chat fundamentado',
+        texto: 'Respostas baseadas nos regulamentos oficiais dos avisos, com citações.',
     },
 ];
 
@@ -78,12 +98,12 @@ export default function PricingPage() {
 
     const handleCheckout = async (planId: string) => {
         if (planId === 'FREE') {
-            window.location.href = '/auth/signup';
+            window.location.href = '/auth/register';
             return;
         }
 
         if (planId === 'ENTERPRISE') {
-            window.location.href = 'mailto:vendas@taconsulting.pt?subject=Enterprise%20Plan';
+            window.location.href = 'mailto:vendas@aitipro.com?subject=Plano%20Enterprise%20Eligivo';
             return;
         }
 
@@ -103,187 +123,146 @@ export default function PricingPage() {
             } else {
                 throw new Error(data.error || 'Erro ao criar checkout');
             }
-        } catch (error: any) {
-            toast.error(error.message);
+        } catch (error: unknown) {
+            toast.error(error instanceof Error ? error.message : 'Erro ao criar checkout');
         } finally {
             setLoading(null);
         }
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
-            {/* Header */}
-            <header className="sticky top-0 bg-white/80 backdrop-blur-sm border-b z-50">
-                <div className="max-w-6xl mx-auto px-6 py-4">
-                    <div className="flex items-center justify-between">
-                        <Link href="/" className="flex items-center space-x-3">
-                            <div className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center">
-                                <span className="text-white font-bold text-lg">e</span>
-                            </div>
-                            <div>
-                                <h1 className="text-xl font-bold text-gray-900">Eligivo</h1>
-                                <p className="text-sm text-gray-600">Especialista em Fundos PT</p>
-                            </div>
+        <div className="min-h-screen bg-[#0a0b0f] text-slate-100 antialiased overflow-x-hidden">
+            {/* Header — consistente com a homepage / encontrar-fundos */}
+            <header className="sticky top-0 z-50 backdrop-blur-md bg-[#0a0b0f]/70 border-b border-white/5">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+                    <Link href="/" className="flex items-center gap-2.5">
+                        <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center">
+                            <span className="text-[#0a0b0f] font-bold">e</span>
+                        </div>
+                        <span className="font-display text-xl text-white">Eligivo</span>
+                    </Link>
+                    <nav className="flex items-center gap-5">
+                        <Link href="/" className="text-sm text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1.5">
+                            <ArrowLeft className="w-4 h-4" /> Início
                         </Link>
-                        <nav className="flex items-center space-x-4">
-                            <Link href="/dashboard" className="text-gray-700 hover:text-blue-600">
-                                Dashboard
-                            </Link>
-                            <Link href="/auth/signin">
-                                <Button variant="outline">Entrar</Button>
-                            </Link>
-                        </nav>
-                    </div>
+                        <Link href="/auth/login" className="text-sm text-slate-300 hover:text-white transition-colors">
+                            Entrar
+                        </Link>
+                    </nav>
                 </div>
             </header>
 
             {/* Hero */}
-            <section className="py-16 px-6 text-center">
-                <div className="max-w-4xl mx-auto">
-                    <Badge className="mb-4 bg-blue-100 text-blue-700 hover:bg-blue-100">
-                        <Sparkles className="w-3 h-3 mr-1" />
-                        50% mais barato que Granter.AI
-                    </Badge>
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                        Preços Simples,{' '}
-                        <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-                            Resultados Reais
-                        </span>
+            <section className="relative overflow-hidden border-b border-white/5">
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] max-w-[120vw] h-[520px] bg-emerald-500/10 blur-[150px] rounded-full" />
+                </div>
+                <div className="relative max-w-3xl mx-auto px-4 sm:px-6 py-16 md:py-20 text-center">
+                    <h1 className="font-display text-4xl md:text-5xl text-white leading-tight mb-4">
+                        Preços diretos, sem letras pequenas.
                     </h1>
-                    <p className="text-xl text-gray-600 mb-8">
-                        O único especialista IA em fundos portugueses. PT2030, PRR, PEPAC — tudo numa plataforma.
+                    <p className="text-lg text-slate-400 mb-8">
+                        A análise de elegibilidade é grátis e sem registo. Pagas quando quiseres a plataforma completa.
                     </p>
-
-                    {/* Stats */}
-                    <div className="flex justify-center gap-8 text-sm text-gray-600 mb-12">
-                        <div className="flex items-center gap-2">
-                            <Check className="w-4 h-4 text-green-500" />
-                            1817 avisos
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Check className="w-4 h-4 text-green-500" />
-                            529 docs RAG
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Check className="w-4 h-4 text-green-500" />
-                            6 portais PT
-                        </div>
+                    <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-slate-400">
+                        <span className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> 683+ avisos abertos</span>
+                        <span className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> 10 portais monitorizados</span>
+                        <span className="inline-flex items-center gap-2"><Check className="w-4 h-4 text-emerald-400" /> Análise explicável em 30s</span>
                     </div>
                 </div>
             </section>
 
-            {/* Pricing Grid */}
-            <section className="pb-20 px-6">
+            {/* Grid de planos */}
+            <section className="py-16 px-4 sm:px-6">
                 <div className="max-w-6xl mx-auto">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
                         {plans.map((plan) => (
-                            <Card
+                            <div
                                 key={plan.id}
-                                className={`relative flex flex-col ${plan.featured
-                                        ? 'border-2 border-blue-600 shadow-xl scale-105'
-                                        : 'border shadow-md'
+                                className={`relative flex flex-col rounded-2xl p-6 bg-white/[0.03] border transition-colors ${plan.featured
+                                    ? 'border-emerald-500/60 shadow-[0_0_40px_-12px] shadow-emerald-500/25'
+                                    : 'border-white/10 hover:border-white/20'
                                     }`}
                             >
                                 {plan.featured && (
                                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                                        <Badge className="bg-blue-600 text-white">
-                                            <Star className="w-3 h-3 mr-1 fill-current" />
-                                            Mais Popular
-                                        </Badge>
+                                        <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-emerald-500 text-[#0a0b0f]">
+                                            <Star className="w-3 h-3 fill-current" />
+                                            Mais popular
+                                        </span>
                                     </div>
                                 )}
 
-                                <CardHeader className="pb-4">
-                                    <CardTitle className="text-xl">{plan.name}</CardTitle>
-                                    <CardDescription>{plan.description}</CardDescription>
-                                </CardHeader>
+                                <h2 className="text-lg font-semibold text-white">{plan.name}</h2>
+                                <p className="text-sm text-slate-400 mb-5">{plan.description}</p>
 
-                                <CardContent className="flex-1">
-                                    <div className="mb-6">
-                                        <span className="text-4xl font-bold text-gray-900">
-                                            €{plan.price}
-                                        </span>
-                                        <span className="text-gray-600">/mês</span>
-                                    </div>
+                                <div className="mb-6">
+                                    <span className="font-display text-4xl text-white tabular-nums">€{plan.price}</span>
+                                    <span className="text-slate-500">/mês</span>
+                                </div>
 
-                                    <ul className="space-y-3">
-                                        {plan.features.map((feature, i) => (
-                                            <li key={i} className="flex items-start gap-2 text-sm">
-                                                <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                                                <span className="text-gray-700">{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </CardContent>
+                                <ul className="space-y-2.5 flex-1 mb-6">
+                                    {plan.features.map((feature, i) => (
+                                        <li key={i} className="flex items-start gap-2 text-sm">
+                                            <Check className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
+                                            <span className="text-slate-300">{feature}</span>
+                                        </li>
+                                    ))}
+                                </ul>
 
-                                <CardFooter>
-                                    <Button
-                                        className={`w-full ${plan.featured
-                                                ? 'bg-blue-600 hover:bg-blue-700'
-                                                : ''
-                                            }`}
-                                        variant={plan.featured ? 'default' : 'outline'}
-                                        onClick={() => handleCheckout(plan.id)}
-                                        disabled={loading === plan.id}
-                                    >
-                                        {loading === plan.id ? (
-                                            'A processar...'
-                                        ) : (
-                                            <>
-                                                {plan.cta}
-                                                <ArrowRight className="w-4 h-4 ml-2" />
-                                            </>
-                                        )}
-                                    </Button>
-                                </CardFooter>
-                            </Card>
+                                <Button
+                                    className={`w-full font-semibold ${plan.featured
+                                        ? 'bg-emerald-500 hover:bg-emerald-400 text-[#0a0b0f]'
+                                        : 'bg-white/[0.06] hover:bg-white/[0.12] text-slate-100 border border-white/10'
+                                        }`}
+                                    onClick={() => handleCheckout(plan.id)}
+                                    disabled={loading === plan.id}
+                                >
+                                    {loading === plan.id ? (
+                                        <>
+                                            <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                                            A processar…
+                                        </>
+                                    ) : (
+                                        <>
+                                            {plan.cta}
+                                            <ArrowRight className="w-4 h-4 ml-2" />
+                                        </>
+                                    )}
+                                </Button>
+                            </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Comparison */}
-            <section className="py-16 px-6 bg-white border-t">
-                <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                        Por que escolher Eligivo?
+            {/* Porquê o Eligivo — editorial, sem ícones decorativos */}
+            <section className="py-16 px-4 sm:px-6 border-t border-white/5">
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="font-display text-3xl text-white text-center mb-10">
+                        Porquê o Eligivo?
                     </h2>
-                    <div className="grid md:grid-cols-3 gap-8 mt-8">
-                        <div className="p-6">
-                            <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
-                                <Zap className="w-6 h-6 text-blue-600" />
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {porques.map((p) => (
+                            <div key={p.titulo}>
+                                <h3 className="font-semibold text-slate-100 mb-2">{p.titulo}</h3>
+                                <p className="text-sm text-slate-400 leading-relaxed">{p.texto}</p>
                             </div>
-                            <h3 className="font-semibold mb-2">Especialista Portugal</h3>
-                            <p className="text-sm text-gray-600">
-                                Foco exclusivo em PT2030, PRR, PEPAC e IPDJ. Conhecimento profundo.
-                            </p>
-                        </div>
-                        <div className="p-6">
-                            <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
-                                <Sparkles className="w-6 h-6 text-green-600" />
-                            </div>
-                            <h3 className="font-semibold mb-2">RAG com Docs Oficiais</h3>
-                            <p className="text-sm text-gray-600">
-                                529 PDFs oficiais indexados. Respostas baseadas em regulamentos reais.
-                            </p>
-                        </div>
-                        <div className="p-6">
-                            <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
-                                <Building2 className="w-6 h-6 text-purple-600" />
-                            </div>
-                            <h3 className="font-semibold mb-2">50% Mais Barato</h3>
-                            <p className="text-sm text-gray-600">
-                                Metade do preço de soluções globais, com foco local superior.
-                            </p>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* Footer */}
-            <footer className="bg-gray-50 border-t py-12 px-6">
-                <div className="max-w-6xl mx-auto text-center text-sm text-gray-600">
-                    <p>© 2025 Eligivo. Especialistas em fundos portugueses.</p>
+            {/* Footer — consistente com a homepage */}
+            <footer className="border-t border-white/5 py-10 px-4 sm:px-6">
+                <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500">
+                    <Link href="/" className="flex items-center gap-2">
+                        <div className="w-6 h-6 rounded-md bg-emerald-500 flex items-center justify-center">
+                            <span className="text-[#0a0b0f] font-bold text-xs">e</span>
+                        </div>
+                        <span className="text-slate-400">Eligivo</span>
+                    </Link>
+                    <p>© 2026 Eligivo · Inteligência de fundos europeus</p>
                 </div>
             </footer>
         </div>
