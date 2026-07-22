@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/db'
 import { findMatchesForAviso } from '@/lib/matchmaking-engine'
+import { empresaScope } from '@/lib/auth/tenant'
 
 export const dynamic = 'force-dynamic'
 
@@ -31,9 +32,9 @@ export async function GET(
             return NextResponse.json({ error: 'Aviso não encontrado' }, { status: 404 })
         }
 
-        // Get all active companies
+        // Get active companies within the caller's tenant (evita exportar PII de todos)
         const empresas = await prisma.empresa.findMany({
-            where: { ativa: true }
+            where: { AND: [{ ativa: true }, empresaScope(session)] }
         })
 
         // Use matchmaking engine to find matches
@@ -88,9 +89,9 @@ export async function POST(
             return NextResponse.json({ error: 'Aviso não encontrado' }, { status: 404 })
         }
 
-        // Get all active companies
+        // Get active companies within the caller's tenant (evita exportar PII de todos)
         const empresas = await prisma.empresa.findMany({
-            where: { ativa: true }
+            where: { AND: [{ ativa: true }, empresaScope(session)] }
         })
 
         // Run matchmaking

@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/db'
+import { ownsConsultorId } from '@/lib/auth/tenant'
 
 export const dynamic = "force-dynamic"
 
@@ -34,7 +35,7 @@ export async function GET(
       }
     })
 
-    if (!empresa) {
+    if (!empresa || !ownsConsultorId(session, empresa.consultorId)) {
       return NextResponse.json({ error: 'Empresa não encontrada' }, { status: 404 })
     }
 
@@ -57,14 +58,18 @@ export async function PUT(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
+    if (session.user.role !== 'admin' && session.user.role !== 'consultor') {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+    }
+
     const data = await request.json()
 
-    // Verificar se empresa existe
+    // Verificar se empresa existe E pertence ao tenant
     const empresaExistente = await prisma.empresa.findUnique({
       where: { id: params.id }
     })
 
-    if (!empresaExistente) {
+    if (!empresaExistente || !ownsConsultorId(session, empresaExistente.consultorId)) {
       return NextResponse.json({ error: 'Empresa não encontrada' }, { status: 404 })
     }
 
@@ -119,6 +124,16 @@ export async function DELETE(
     
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    if (session.user.role !== 'admin' && session.user.role !== 'consultor') {
+      return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+    }
+
+    // Verifica existência + posse antes do soft-delete.
+    const existente = await prisma.empresa.findUnique({ where: { id: params.id } })
+    if (!existente || !ownsConsultorId(session, existente.consultorId)) {
+      return NextResponse.json({ error: 'Empresa não encontrada' }, { status: 404 })
     }
 
     // Soft delete - marcar como inativa
