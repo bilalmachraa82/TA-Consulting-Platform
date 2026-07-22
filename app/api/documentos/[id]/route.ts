@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/db'
+import { ownsConsultorId } from '@/lib/auth/tenant'
 
 export const dynamic = "force-dynamic"
 
@@ -20,10 +21,11 @@ export async function PUT(
     const data = await request.json()
 
     const documento = await prisma.documento.findUnique({
-      where: { id: params.id }
+      where: { id: params.id },
+      include: { empresa: { select: { consultorId: true } } }
     })
 
-    if (!documento) {
+    if (!documento || !ownsConsultorId(session, documento.empresa?.consultorId)) {
       return NextResponse.json({ error: 'Documento não encontrado' }, { status: 404 })
     }
 
@@ -64,6 +66,15 @@ export async function DELETE(
     
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    // Verifica posse antes de apagar (IDOR-safe).
+    const doc = await prisma.documento.findUnique({
+      where: { id: params.id },
+      include: { empresa: { select: { consultorId: true } } }
+    })
+    if (!doc || !ownsConsultorId(session, doc.empresa?.consultorId)) {
+      return NextResponse.json({ error: 'Documento não encontrado' }, { status: 404 })
     }
 
     await prisma.documento.delete({

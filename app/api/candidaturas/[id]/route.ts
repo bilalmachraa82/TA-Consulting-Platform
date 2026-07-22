@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/db'
+import { candidaturaScope } from '@/lib/auth/tenant'
 
 export const dynamic = "force-dynamic"
 
@@ -17,8 +18,8 @@ export async function GET(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const candidatura = await prisma.candidatura.findUnique({
-      where: { id: params.id },
+    const candidatura = await prisma.candidatura.findFirst({
+      where: { AND: [{ id: params.id }, candidaturaScope(session)] },
       include: {
         empresa: true,
         aviso: true
@@ -49,6 +50,15 @@ export async function PUT(
     }
 
     const data = await request.json()
+
+    // Confirma que a candidatura é do tenant antes de atualizar.
+    const existente = await prisma.candidatura.findFirst({
+      where: { AND: [{ id: params.id }, candidaturaScope(session)] },
+      select: { id: true },
+    })
+    if (!existente) {
+      return NextResponse.json({ error: 'Candidatura não encontrada' }, { status: 404 })
+    }
 
     const candidaturaAtualizada = await prisma.candidatura.update({
       where: { id: params.id },

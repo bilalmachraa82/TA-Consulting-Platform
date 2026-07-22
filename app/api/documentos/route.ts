@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/db'
+import { documentoScope, empresaScope } from '@/lib/auth/tenant'
 
 export const dynamic = "force-dynamic"
 
@@ -19,19 +20,13 @@ export async function GET(request: NextRequest) {
     const tipoDocumento = searchParams.get('tipo')
     const statusValidade = searchParams.get('status')
 
-    const where: any = {}
+    const filters: any = {}
+    if (empresaId && empresaId !== 'TODAS') filters.empresaId = empresaId
+    if (tipoDocumento && tipoDocumento !== 'TODOS') filters.tipoDocumento = tipoDocumento
+    if (statusValidade && statusValidade !== 'TODOS') filters.statusValidade = statusValidade
 
-    if (empresaId && empresaId !== 'TODAS') {
-      where.empresaId = empresaId
-    }
-
-    if (tipoDocumento && tipoDocumento !== 'TODOS') {
-      where.tipoDocumento = tipoDocumento
-    }
-
-    if (statusValidade && statusValidade !== 'TODOS') {
-      where.statusValidade = statusValidade
-    }
+    // Scoping por tenant (via empresa.consultorId); admin vê tudo.
+    const where = { AND: [documentoScope(session), filters] }
 
     const documentos = await prisma.documento.findMany({
       where,
@@ -110,6 +105,15 @@ export async function POST(request: NextRequest) {
 
     if (!data.empresaId || !data.tipoDocumento || !data.nome) {
       return NextResponse.json({ error: 'Campos obrigatórios: empresaId, tipoDocumento, nome' }, { status: 400 })
+    }
+
+    // A empresa tem de pertencer ao tenant do consultor.
+    const empresaDona = await prisma.empresa.findFirst({
+      where: { AND: [{ id: data.empresaId }, empresaScope(session)] },
+      select: { id: true },
+    })
+    if (!empresaDona) {
+      return NextResponse.json({ error: 'Empresa não encontrada' }, { status: 404 })
     }
 
     // Simular upload - na realidade seria integrado com cloud storage

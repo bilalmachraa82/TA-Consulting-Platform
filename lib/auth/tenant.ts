@@ -47,6 +47,18 @@ export function documentoScope(session: Session | null): Prisma.DocumentoWhereIn
   return { empresa: { OR: [{ consultorId: uid }, { consultorId: null }] } }
 }
 
+/**
+ * Predicate form for by-id ownership checks: after loading a row (with its
+ * `empresa.consultorId`), does this session own / may it access it? Same
+ * transitional rules as the where-fragments (admin all; own + legacy-null).
+ */
+export function ownsConsultorId(session: Session | null, consultorId: string | null | undefined): boolean {
+  if (isAdmin(session)) return true
+  const uid = session?.user?.id
+  if (!uid) return false
+  return consultorId === uid || consultorId == null
+}
+
 /** Convenience: the current session (or null) in a route handler. */
 export async function getSession(): Promise<Session | null> {
   return getServerSession(authOptions)

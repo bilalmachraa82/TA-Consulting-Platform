@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/db'
+import { candidaturaScope, empresaScope } from '@/lib/auth/tenant'
 
 export const dynamic = "force-dynamic"
 
@@ -19,19 +20,13 @@ export async function GET(request: NextRequest) {
     const empresa = searchParams.get('empresa')
     const estado = searchParams.get('estado')
 
-    const where: any = {}
+    const filters: any = {}
+    if (aviso) filters.avisoId = aviso
+    if (empresa) filters.empresaId = empresa
+    if (estado) filters.estado = estado
 
-    if (aviso) {
-      where.avisoId = aviso
-    }
-
-    if (empresa) {
-      where.empresaId = empresa
-    }
-
-    if (estado) {
-      where.estado = estado
-    }
+    // Scoping por tenant (via empresa.consultorId); admin vê tudo.
+    const where = { AND: [candidaturaScope(session), filters] }
 
     const candidaturas = await prisma.candidatura.findMany({
       where,
@@ -91,6 +86,16 @@ export async function POST(request: NextRequest) {
 
     if (!data.empresaId || !data.avisoId) {
       return NextResponse.json({ error: 'Empresa e Aviso são obrigatórios' }, { status: 400 })
+    }
+
+    // A empresa tem de pertencer ao tenant do consultor (evita criar candidatura
+    // sobre a empresa de outro cliente conhecendo só o id).
+    const empresaDona = await prisma.empresa.findFirst({
+      where: { AND: [{ id: data.empresaId }, empresaScope(session)] },
+      select: { id: true },
+    })
+    if (!empresaDona) {
+      return NextResponse.json({ error: 'Empresa não encontrada' }, { status: 404 })
     }
 
     // Verificar se já existe candidatura para esta empresa neste aviso
