@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import { ArrowRight, Sparkles, Check } from 'lucide-react'
+import { ArrowRight, Sparkles, Check, Menu, X } from 'lucide-react'
 
 // Contador que sobe suave quando entra em vista.
 function Stat({ value, label, prefix = '', suffix = '' }: { value: number; label: string; prefix?: string; suffix?: string }) {
@@ -59,6 +59,8 @@ const FAQ = [
 ]
 
 export default function HomePage() {
+  // Menu mobile: sem ele, "Entrar"/"Preços" ficavam inacessíveis em ecrãs pequenos.
+  const [menuAberto, setMenuAberto] = useState(false)
   return (
     <div className="min-h-screen bg-[#0a0b0f] text-slate-100 antialiased overflow-x-hidden">
       {/* NAV */}
@@ -70,16 +72,36 @@ export default function HomePage() {
             </div>
             <span className="font-display text-xl text-white">Eligivo</span>
           </Link>
-          <nav className="flex items-center gap-6 md:gap-8 text-sm text-slate-400">
+          <nav className="flex items-center gap-4 md:gap-8 text-sm text-slate-400">
             <Link href="#como" className="hidden md:inline hover:text-white transition-colors">Como funciona</Link>
             <Link href="#quem" className="hidden md:inline hover:text-white transition-colors">Para quem</Link>
             <Link href="/pricing" className="hidden md:inline hover:text-white transition-colors">Preços</Link>
-            <Link href="/auth/login" className="hidden sm:inline hover:text-white transition-colors">Entrar</Link>
+            <Link href="/auth/login" className="hidden md:inline hover:text-white transition-colors">Entrar</Link>
             <Link href="/encontrar-fundos">
               <span className="bg-white text-[#0a0b0f] font-medium px-4 py-2 rounded-lg hover:bg-emerald-400 transition-colors inline-block">Ver os meus fundos</span>
             </Link>
+            <button
+              type="button"
+              onClick={() => setMenuAberto((v) => !v)}
+              aria-label={menuAberto ? 'Fechar menu' : 'Abrir menu'}
+              aria-expanded={menuAberto}
+              className="md:hidden -mr-2 p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-300 hover:text-white transition-colors"
+            >
+              {menuAberto ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </nav>
         </div>
+        {/* Painel mobile — links com alvo de toque ≥44px */}
+        {menuAberto && (
+          <nav className="md:hidden border-t border-white/5 bg-[#0a0b0f]/95 backdrop-blur-md">
+            <div className="max-w-6xl mx-auto px-5 py-2 flex flex-col text-[15px] text-slate-300">
+              <Link href="#como" onClick={() => setMenuAberto(false)} className="py-3 hover:text-white transition-colors">Como funciona</Link>
+              <Link href="#quem" onClick={() => setMenuAberto(false)} className="py-3 hover:text-white transition-colors">Para quem</Link>
+              <Link href="/pricing" onClick={() => setMenuAberto(false)} className="py-3 hover:text-white transition-colors">Preços</Link>
+              <Link href="/auth/login" onClick={() => setMenuAberto(false)} className="py-3 hover:text-white transition-colors">Entrar</Link>
+            </div>
+          </nav>
+        )}
       </header>
 
       {/* HERO — imagem humana cinematográfica, texto no espaço negativo à esquerda */}
