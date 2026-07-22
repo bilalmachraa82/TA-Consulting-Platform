@@ -187,9 +187,11 @@ export default function EncontrarFundosPage() {
                         </div>
                         <h3 className="font-semibold text-slate-100 leading-snug">{r.nome}</h3>
                       </div>
-                      <div className="text-right shrink-0">
-                        <div className={`text-2xl font-bold tabular-nums ${v.score}`}>{r.elegibilidade.score}%</div>
-                        <div className="text-[10px] text-slate-500">{r.elegibilidade.criteriosAvaliados} de {r.elegibilidade.criteriosTotal} critérios</div>
+                      <div className="text-right shrink-0" title="Score calculado sobre os critérios que o aviso especifica — os restantes ficam por confirmar.">
+                        {/* Honestidade do score: com <3 critérios avaliáveis, um "100%" verde
+                            lê-se como certeza que não temos — cor neutra + rótulo explícito. */}
+                        <div className={`text-2xl font-bold tabular-nums ${r.elegibilidade.criteriosAvaliados >= 3 ? v.score : 'text-slate-400'}`}>{r.elegibilidade.score}%</div>
+                        <div className="text-[10px] text-slate-500">com base em {r.elegibilidade.criteriosAvaliados} de {r.elegibilidade.criteriosTotal} critérios</div>
                       </div>
                     </div>
                     <ul className="space-y-1.5 mb-3">
