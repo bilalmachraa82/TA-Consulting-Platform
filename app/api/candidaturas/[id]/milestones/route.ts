@@ -9,6 +9,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
+import { candidaturaScope } from '@/lib/auth/tenant';
 
 export async function GET(
     request: NextRequest,
@@ -23,8 +24,8 @@ export async function GET(
         const candidaturaId = params.id;
 
         // Verify candidatura exists and user has access
-        const candidatura = await prisma.candidatura.findUnique({
-            where: { id: candidaturaId },
+        const candidatura = await prisma.candidatura.findFirst({
+            where: { AND: [{ id: candidaturaId }, candidaturaScope(session)] },
             include: { empresa: true }
         });
 
@@ -82,9 +83,9 @@ export async function POST(
             );
         }
 
-        // Verify candidatura exists
-        const candidatura = await prisma.candidatura.findUnique({
-            where: { id: candidaturaId }
+        // Verify candidatura exists E pertence ao tenant
+        const candidatura = await prisma.candidatura.findFirst({
+            where: { AND: [{ id: candidaturaId }, candidaturaScope(session)] }
         });
 
         if (!candidatura) {

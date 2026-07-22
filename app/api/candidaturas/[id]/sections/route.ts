@@ -9,6 +9,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
+import { candidaturaScope } from '@/lib/auth/tenant';
 import { z } from 'zod';
 
 export const dynamic = 'force-dynamic';
@@ -36,8 +37,8 @@ export async function GET(
         const candidaturaId = params.id;
 
         // Get candidatura with section states
-        const candidatura = await prisma.candidatura.findUnique({
-            where: { id: candidaturaId },
+        const candidatura = await prisma.candidatura.findFirst({
+            where: { AND: [{ id: candidaturaId }, candidaturaScope(session)] },
             include: {
                 sectionStates: {
                     orderBy: { createdAt: 'asc' },
@@ -109,9 +110,9 @@ export async function PUT(
 
         const { sectionId, status, content, aiSuggestion, approvedBy } = parseResult.data;
 
-        // Check if candidatura exists
-        const candidatura = await prisma.candidatura.findUnique({
-            where: { id: candidaturaId },
+        // Check if candidatura exists E pertence ao tenant
+        const candidatura = await prisma.candidatura.findFirst({
+            where: { AND: [{ id: candidaturaId }, candidaturaScope(session)] },
         });
 
         if (!candidatura) {

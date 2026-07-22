@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/db'
+import { candidaturaScope } from '@/lib/auth/tenant'
 
 export const dynamic = "force-dynamic"
 
@@ -30,8 +31,8 @@ export async function PUT(
     }
 
     // Buscar candidatura atual
-    const candidaturaAtual = await prisma.candidatura.findUnique({
-      where: { id: params.id }
+    const candidaturaAtual = await prisma.candidatura.findFirst({
+      where: { AND: [{ id: params.id }, candidaturaScope(session)] }
     })
 
     if (!candidaturaAtual) {
