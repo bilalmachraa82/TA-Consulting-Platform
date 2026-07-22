@@ -130,24 +130,25 @@ export default function EncontrarFundosPage() {
 
           <form onSubmit={submeter} className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 shadow-2xl shadow-black/30 space-y-5">
             <div className="grid md:grid-cols-2 gap-5">
+              {/* htmlFor/id: liga rótulo↔campo (leitores de ecrã + clique no rótulo foca o campo) */}
               <div className="space-y-1.5">
-                <Label className="text-slate-300 font-medium">CAE (opcional)</Label>
-                <Input value={cae} onChange={(e) => setCae(e.target.value)} placeholder="ex.: 62010" className={INPUT_CLS} />
+                <Label htmlFor="ef-cae" className="text-slate-300 font-medium">CAE (opcional)</Label>
+                <Input id="ef-cae" value={cae} onChange={(e) => setCae(e.target.value)} placeholder="ex.: 62010" className={INPUT_CLS} />
               </div>
               <div className="space-y-1.5">
-                <Label className="text-slate-300 font-medium">Setor (opcional)</Label>
-                <Input value={setor} onChange={(e) => setSetor(e.target.value)} placeholder="ex.: Software, Turismo, Indústria" className={INPUT_CLS} />
+                <Label htmlFor="ef-setor" className="text-slate-300 font-medium">Setor (opcional)</Label>
+                <Input id="ef-setor" value={setor} onChange={(e) => setSetor(e.target.value)} placeholder="ex.: Software, Turismo, Indústria" className={INPUT_CLS} />
               </div>
               <div className="space-y-1.5">
-                <Label className="text-slate-300 font-medium">Dimensão</Label>
-                <select value={dimensao} onChange={(e) => setDimensao(e.target.value)} className={SELECT_CLS}>
+                <Label htmlFor="ef-dimensao" className="text-slate-300 font-medium">Dimensão</Label>
+                <select id="ef-dimensao" value={dimensao} onChange={(e) => setDimensao(e.target.value)} className={SELECT_CLS}>
                   <option value="">Qualquer</option>
                   {DIMENSOES.map((d) => <option key={d.v} value={d.v}>{d.l}</option>)}
                 </select>
               </div>
               <div className="space-y-1.5">
-                <Label className="text-slate-300 font-medium">Região (NUTS II)</Label>
-                <select value={regiao} onChange={(e) => setRegiao(e.target.value)} className={SELECT_CLS}>
+                <Label htmlFor="ef-regiao" className="text-slate-300 font-medium">Região (NUTS II)</Label>
+                <select id="ef-regiao" value={regiao} onChange={(e) => setRegiao(e.target.value)} className={SELECT_CLS}>
                   <option value="">Qualquer</option>
                   {REGIOES.map((r) => <option key={r} value={r}>{r}</option>)}
                 </select>
@@ -243,12 +244,12 @@ export default function EncontrarFundosPage() {
                     : <p className="text-sm text-slate-400 mt-0.5">Ajudamos-te a preparar a candidatura, do início ao fim.</p>}
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="space-y-1"><Label className="text-slate-300 text-sm">Nome*</Label><Input value={form.nome} onChange={(e) => setF('nome', e.target.value)} required className={INPUT_CLS} /></div>
-                  <div className="space-y-1"><Label className="text-slate-300 text-sm">NIF*</Label><Input value={form.nif} onChange={(e) => setF('nif', e.target.value)} required inputMode="numeric" placeholder="9 dígitos" className={INPUT_CLS} /></div>
+                  <div className="space-y-1"><Label htmlFor="lead-nome" className="text-slate-300 text-sm">Nome*</Label><Input id="lead-nome" value={form.nome} onChange={(e) => setF('nome', e.target.value)} required className={INPUT_CLS} /></div>
+                  <div className="space-y-1"><Label htmlFor="lead-nif" className="text-slate-300 text-sm">NIF*</Label><Input id="lead-nif" value={form.nif} onChange={(e) => setF('nif', e.target.value)} required inputMode="numeric" placeholder="9 dígitos" className={INPUT_CLS} /></div>
                 </div>
-                <div className="space-y-1"><Label className="text-slate-300 text-sm">Email*</Label><Input type="email" value={form.email} onChange={(e) => setF('email', e.target.value)} required className={INPUT_CLS} /></div>
-                <div className="space-y-1"><Label className="text-slate-300 text-sm">Telefone</Label><Input value={form.telefone} onChange={(e) => setF('telefone', e.target.value)} className={INPUT_CLS} /></div>
-                <div className="space-y-1"><Label className="text-slate-300 text-sm">Mensagem (opcional)</Label><textarea value={form.mensagem} onChange={(e) => setF('mensagem', e.target.value)} rows={2} className="w-full rounded-md bg-white/[0.04] border border-white/15 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 resize-none" /></div>
+                <div className="space-y-1"><Label htmlFor="lead-email" className="text-slate-300 text-sm">Email*</Label><Input id="lead-email" type="email" value={form.email} onChange={(e) => setF('email', e.target.value)} required className={INPUT_CLS} /></div>
+                <div className="space-y-1"><Label htmlFor="lead-telefone" className="text-slate-300 text-sm">Telefone</Label><Input id="lead-telefone" value={form.telefone} onChange={(e) => setF('telefone', e.target.value)} className={INPUT_CLS} /></div>
+                <div className="space-y-1"><Label htmlFor="lead-mensagem" className="text-slate-300 text-sm">Mensagem (opcional)</Label><textarea id="lead-mensagem" value={form.mensagem} onChange={(e) => setF('mensagem', e.target.value)} rows={2} className="w-full rounded-md bg-white/[0.04] border border-white/15 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 resize-none" /></div>
                 <label className="flex items-start gap-2 text-xs text-slate-500"><input type="checkbox" checked={form.consent} onChange={(e) => setF('consent', e.target.checked)} className="mt-0.5 accent-emerald-500" /> Aceito ser contactado e receber alertas de novos fundos relevantes.</label>
                 <Button type="submit" disabled={contacto.enviando} className="w-full bg-emerald-500 hover:bg-emerald-400 text-[#0a0b0f] font-semibold">{contacto.enviando ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> A enviar…</> : <><Send className="w-4 h-4 mr-2" /> Enviar pedido</>}</Button>
               </form>
