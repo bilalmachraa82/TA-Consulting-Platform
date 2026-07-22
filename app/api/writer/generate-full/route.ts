@@ -11,6 +11,7 @@ import { authOptions } from '@/lib/auth';
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limiter';
 import { getTemplateById, type ApplicationTemplate, type TemplateSection } from '@/lib/templates';
 import { prisma } from '@/lib/db';
+import { empresaScope } from '@/lib/auth/tenant';
 import { openrouter, AI_MODELS, PT_PT_SYSTEM_PROMPT, type AIModelId } from '@/lib/openrouter';
 import { canAccessFeature } from '@/lib/plans';
 
@@ -98,8 +99,8 @@ export async function POST(request: NextRequest) {
         // Get empresa data
         let empresa: any = null;
         if (empresaId) {
-            empresa = await prisma.empresa.findUnique({
-                where: { id: empresaId }
+            empresa = await prisma.empresa.findFirst({
+                where: { AND: [{ id: empresaId }, empresaScope(session)] }
             });
         }
 

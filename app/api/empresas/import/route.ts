@@ -55,9 +55,10 @@ export async function POST(request: NextRequest) {
           continue
         }
 
-        // Criar nova empresa
+        // Criar nova empresa (com dono = consultor que importa)
         await prisma.empresa.create({
           data: {
+            consultorId: session.user.id,
             nome: empresaData.nome,
             nipc: empresaData.nipc,
             cae: empresaData.cae || '',

@@ -4,6 +4,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limiter';
 import { prisma } from '@/lib/db';
+import { empresaScope } from '@/lib/auth/tenant';
 import { CandidaturaGenerator } from '@/lib/ai-writer/candidatura-generator';
 
 const generator = new CandidaturaGenerator();
@@ -29,8 +30,8 @@ export async function POST(req: Request) {
         }
 
         // 3. Fetch Context Data
-        const empresa = await prisma.empresa.findUnique({
-            where: { id: empresaId },
+        const empresa = await prisma.empresa.findFirst({
+            where: { AND: [{ id: empresaId }, empresaScope(session)] },
             include: { documentos: true }
         });
 
