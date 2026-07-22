@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight, Sparkles, Check } from 'lucide-react'
 
 // Contador que sobe suave quando entra em vista.
 function Stat({ value, label, prefix = '', suffix = '' }: { value: number; label: string; prefix?: string; suffix?: string }) {
@@ -37,25 +37,25 @@ function Stat({ value, label, prefix = '', suffix = '' }: { value: number; label
 
 const PORTAIS = ['Portugal 2030', 'PRR', 'PEPAC', 'Horizon Europe', 'Turismo de Portugal', 'IPDJ', 'Fundo Ambiental']
 
-const FEATURES = [
-  {
-    n: '01',
-    titulo: 'Elegibilidade explicável',
-    texto: 'Não um score cego. Vês porque és (ou não) elegível, critério a critério — setor, CAE, região, dimensão, prazo.',
-    dots: ['bg-emerald-400', 'bg-emerald-400', 'bg-emerald-400', 'bg-amber-400', 'bg-slate-600', 'bg-slate-600'],
-  },
-  {
-    n: '02',
-    titulo: 'Base viva, não uma lista velha',
-    texto: '10 portais nacionais e europeus, varridos por robots todos os dias. Nunca vês um aviso já fechado nem perdes um que abriu ontem.',
-    badge: 'Atualizado hoje',
-  },
-  {
-    n: '03',
-    titulo: 'Assistente que cita as fontes',
-    texto: 'Pergunta em linguagem natural. Responde com os avisos reais e o link oficial — zero invenções. É venda, não decoração.',
-    quote: '“Existem 94 avisos do PRR abertos.” — com fontes',
-  },
+// Setores reais — empresas como a tua. Fotografia ilustrativa.
+const SETORES = [
+  { img: '/generated/web-founder-food.jpg', setor: 'Mercearia & retalho artesanal', linha: 'PT2030 · Comércio e digitalização', alt: 'Dona de uma mercearia artesanal portuguesa na sua loja' },
+  { img: '/generated/web-ceramica.jpg', setor: 'Cerâmica & ofício', linha: 'PRR · Indústria e economia criativa', alt: 'Ceramista portuguesa no seu atelier' },
+  { img: '/generated/web-turismo.jpg', setor: 'Alojamento & turismo', linha: 'Turismo de Portugal · Valorizar', alt: 'Proprietário de alojamento local português' },
+  { img: '/generated/web-industria.jpg', setor: 'Indústria & oficinas', linha: 'PT2030 · Inovação produtiva', alt: 'Artesão numa pequena oficina industrial portuguesa' },
+]
+
+const PASSOS = [
+  { n: '01', t: 'Diz-nos o perfil', d: 'Setor, CAE, região e dimensão da empresa. Meio minuto, sem registo.' },
+  { n: '02', t: 'Cruzamos 10 portais', d: 'Nacionais e europeus, varridos por robots todos os dias. Só avisos abertos.' },
+  { n: '03', t: 'Vês o que é teu', d: 'A análise critério a critério — e o próximo passo concreto para te candidatares.' },
+]
+
+const FAQ = [
+  { q: 'É mesmo grátis?', a: 'Sim. A análise de elegibilidade pública é grátis e sem registo. Só pagas se quiseres o acompanhamento da candidatura.' },
+  { q: 'De onde vêm os dados?', a: '10 portais oficiais — Portugal 2030, PRR, PEPAC, Turismo de Portugal, Horizon Europe e mais — varridos automaticamente todos os dias. Nunca vês um aviso já fechado.' },
+  { q: 'Como sabem que sou elegível?', a: 'Cruzamos o perfil da tua empresa com os critérios de cada aviso e mostramos-te o porquê, critério a critério: setor, CAE, região, dimensão e prazo. Nada de scores cegos.' },
+  { q: 'O que fazem com os meus dados?', a: 'O perfil serve só para a análise. Cumprimos o RGPD e não partilhamos os teus dados com terceiros.' },
 ]
 
 export default function HomePage() {
@@ -72,6 +72,7 @@ export default function HomePage() {
           </Link>
           <nav className="flex items-center gap-6 md:gap-8 text-sm text-slate-400">
             <Link href="#como" className="hidden md:inline hover:text-white transition-colors">Como funciona</Link>
+            <Link href="#quem" className="hidden md:inline hover:text-white transition-colors">Para quem</Link>
             <Link href="/pricing" className="hidden md:inline hover:text-white transition-colors">Preços</Link>
             <Link href="/auth/login" className="hidden sm:inline hover:text-white transition-colors">Entrar</Link>
             <Link href="/encontrar-fundos">
@@ -81,23 +82,27 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] max-w-[120vw] h-[560px] bg-emerald-500/15 blur-[150px] rounded-full" />
-          <div className="grain-overlay" />
-        </div>
+      {/* HERO — imagem humana cinematográfica, texto no espaço negativo à esquerda */}
+      <section className="relative min-h-[86vh] flex items-center overflow-hidden">
+        <img
+          src="/generated/web-hero.jpg"
+          alt="Empresária portuguesa na sua oficina, iluminada por luz quente"
+          className="absolute inset-0 w-full h-full object-cover object-right"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0b0f] via-[#0a0b0f]/90 to-[#0a0b0f]/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0b0f] via-transparent to-[#0a0b0f]/40" />
+        <div className="grain-overlay" />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 pt-16 pb-14 md:pt-24 md:pb-20 grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-10 items-center">
-          <div className="animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 text-xs font-medium tracking-wide text-emerald-300 border border-emerald-500/20 bg-emerald-500/[0.06] rounded-full px-3 py-1 mb-6">
+        <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 w-full">
+          <div className="max-w-xl animate-fade-in-up">
+            <div className="inline-flex items-center gap-2 text-xs font-medium tracking-wide text-emerald-300 border border-emerald-500/25 bg-emerald-500/[0.08] rounded-full px-3 py-1 mb-6 backdrop-blur-sm">
               <Sparkles className="w-3.5 h-3.5" /> Análise grátis · sem registo
             </div>
-            <h1 className="font-display text-[2.7rem] leading-[1.03] sm:text-6xl lg:text-[4.5rem] text-white tracking-tight">
-              Sabe a que fundos<br className="hidden sm:block" /> a tua empresa <span className="text-emerald-400 italic">tem direito</span>.
+            <h1 className="font-display text-[2.7rem] leading-[1.03] sm:text-6xl lg:text-[4.6rem] text-white tracking-tight [text-wrap:balance]">
+              Sabe a que fundos a tua empresa <span className="text-emerald-400 italic">tem direito</span>.
             </h1>
-            <p className="mt-6 text-lg text-slate-400 max-w-xl leading-relaxed">
-              Diz-nos o perfil da empresa e vê, em 30 segundos, os fundos europeus abertos a que és elegível — com a análise critério a critério. Grátis, sem registo.
+            <p className="mt-6 text-lg text-slate-300 max-w-lg leading-relaxed">
+              Diz-nos o perfil da empresa e vê, em 30 segundos, os fundos europeus abertos a que és elegível — com a análise critério a critério.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
               <Link href="/encontrar-fundos">
@@ -105,52 +110,7 @@ export default function HomePage() {
                   Ver os meus fundos <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                 </span>
               </Link>
-              <Link href="#como" className="text-slate-300 hover:text-white transition-colors text-sm font-medium">Como funciona →</Link>
-            </div>
-          </div>
-
-          {/* HERO PRODUTO — a ferramenta real (credibilidade > stock) */}
-          <div className="relative animate-fade-in-up animate-stagger-2">
-            <div className="absolute -inset-8 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none" />
-            <div className="relative animate-float">
-              <div className="bg-white/[0.05] border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl shadow-2xl shadow-black/40">
-                <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
-                  <span className="ml-3 text-[11px] text-slate-500">eligivo.com/encontrar-fundos</span>
-                </div>
-                <div className="p-4 sm:p-5 space-y-3">
-                  <div className="bg-white/[0.03] border border-white/10 border-l-2 border-l-emerald-400 rounded-xl p-4">
-                    <div className="flex items-start justify-between gap-3 mb-2.5">
-                      <div>
-                        <div className="flex items-center gap-2 mb-1.5">
-                          <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">Elegível</span>
-                          <span className="text-[10px] text-slate-500">PORTUGAL2030</span>
-                        </div>
-                        <div className="text-sm font-semibold text-slate-100 leading-snug">STEP – Inovação Produtiva</div>
-                      </div>
-                      <div className="text-right shrink-0">
-                        <div className="text-2xl font-bold text-emerald-400 tabular-nums">100%</div>
-                        <div className="text-[9px] text-slate-500">6 de 6 critérios</div>
-                      </div>
-                    </div>
-                    <ul className="space-y-1.5 text-[11px]">
-                      <li className="flex items-center gap-2 text-slate-400"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> Setor: relevante para o teu</li>
-                      <li className="flex items-center gap-2 text-slate-400"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> Beneficiário: admite empresas</li>
-                      <li className="flex items-center gap-2 text-slate-400"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> Região: elegível (nacional)</li>
-                      <li className="flex items-center gap-2 text-slate-400"><span className="w-1.5 h-1.5 rounded-full bg-amber-400" /> Prazo: 27 dias</li>
-                    </ul>
-                  </div>
-                  <div className="bg-white/[0.02] border border-white/5 rounded-xl p-3.5 flex items-center justify-between opacity-80">
-                    <div>
-                      <span className="text-[10px] text-slate-500">TURISMO DE PORTUGAL</span>
-                      <div className="text-xs font-medium text-slate-300 mt-0.5">Fundo de Investimento para o Turismo</div>
-                    </div>
-                    <div className="text-lg font-bold text-emerald-400/80 tabular-nums">92%</div>
-                  </div>
-                </div>
-              </div>
+              <Link href="#como" className="text-slate-200 hover:text-white transition-colors text-sm font-medium">Como funciona →</Link>
             </div>
           </div>
         </div>
@@ -166,46 +126,157 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* STATS */}
-      <section className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 text-center">
-        <Stat value={683} suffix="+" label="Avisos abertos" />
-        <Stat value={10} label="Portais monitorizados" />
-        <Stat value={30} suffix="s" label="Análise de elegibilidade" />
-        <Stat prefix="€" value={0} label="Para começar" />
+      {/* PRODUTO — a ferramenta real (credibilidade > stock) */}
+      <section className="max-w-6xl mx-auto px-5 sm:px-6 py-20 md:py-28 grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-center">
+        <div>
+          <div className="text-emerald-400 text-sm font-medium mb-3">O que vais ver</div>
+          <h2 className="font-display text-4xl md:text-5xl text-white leading-[1.08]">
+            Elegibilidade explicável. Não um score cego.
+          </h2>
+          <p className="mt-5 text-lg text-slate-400 leading-relaxed max-w-md">
+            Para cada aviso vês exatamente porque és — ou não — elegível, critério a critério. É o que transforma uma lista de avisos numa decisão.
+          </p>
+          <ul className="mt-7 space-y-3 text-sm">
+            {['Setor e CAE cruzados com o teu perfil', 'Região e dimensão da empresa', 'Prazo real, a contar a partir de hoje', 'O próximo passo concreto para avançar'].map((item) => (
+              <li key={item} className="flex items-center gap-3 text-slate-300">
+                <span className="w-5 h-5 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center shrink-0">
+                  <Check className="w-3 h-3 text-emerald-400" />
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="relative">
+          <div className="absolute -inset-8 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none" />
+          <div className="relative bg-white/[0.05] border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl shadow-2xl shadow-black/40">
+            <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/5">
+              <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
+              <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
+              <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
+              <span className="ml-3 text-[11px] text-slate-500">eligivo.com/encontrar-fundos</span>
+            </div>
+            <div className="p-4 sm:p-5 space-y-3">
+              <div className="bg-white/[0.03] border border-white/10 border-l-2 border-l-emerald-400 rounded-xl p-4">
+                <div className="flex items-start justify-between gap-3 mb-2.5">
+                  <div>
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">Elegível</span>
+                      <span className="text-[10px] text-slate-500">PORTUGAL2030</span>
+                    </div>
+                    <div className="text-sm font-semibold text-slate-100 leading-snug">STEP – Inovação Produtiva</div>
+                  </div>
+                  <div className="text-right shrink-0">
+                    <div className="text-2xl font-bold text-emerald-400 tabular-nums">100%</div>
+                    <div className="text-[9px] text-slate-500">6 de 6 critérios</div>
+                  </div>
+                </div>
+                <ul className="space-y-1.5 text-[11px]">
+                  <li className="flex items-center gap-2 text-slate-400"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> Setor: relevante para o teu</li>
+                  <li className="flex items-center gap-2 text-slate-400"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> Beneficiário: admite empresas</li>
+                  <li className="flex items-center gap-2 text-slate-400"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> Região: elegível (nacional)</li>
+                  <li className="flex items-center gap-2 text-slate-400"><span className="w-1.5 h-1.5 rounded-full bg-amber-400" /> Prazo: 27 dias</li>
+                </ul>
+              </div>
+              <div className="bg-white/[0.02] border border-white/5 rounded-xl p-3.5 flex items-center justify-between opacity-80">
+                <div>
+                  <span className="text-[10px] text-slate-500">TURISMO DE PORTUGAL</span>
+                  <div className="text-xs font-medium text-slate-300 mt-0.5">Fundo de Investimento para o Turismo</div>
+                </div>
+                <div className="text-lg font-bold text-emerald-400/80 tabular-nums">92%</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* FEATURES */}
-      <section id="como" className="max-w-6xl mx-auto px-5 sm:px-6 py-16 md:py-20 border-t border-white/5">
-        <div className="max-w-2xl mb-12 md:mb-14">
-          <div className="text-emerald-400 text-sm font-medium mb-3">Porque é diferente</div>
-          <h2 className="font-display text-4xl md:text-5xl text-white leading-[1.08]">
-            Não é mais uma lista de avisos. É saber o que é teu.
-          </h2>
+      {/* COMO FUNCIONA — com a imagem do dossier */}
+      <section id="como" className="border-t border-white/5 bg-white/[0.015]">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6 py-20 md:py-28 grid lg:grid-cols-2 gap-14 lg:gap-16 items-center">
+          <div className="relative order-2 lg:order-1">
+            <div className="overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-2xl shadow-black/50">
+              <img src="/generated/web-hero-dossier.jpg" alt="Um dossier iluminado por uma luz quente — os fundos a que tens direito" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
+          <div className="order-1 lg:order-2">
+            <div className="text-emerald-400 text-sm font-medium mb-3">Como funciona</div>
+            <h2 className="font-display text-4xl md:text-5xl text-white leading-[1.08] mb-10">
+              Do perfil da empresa ao fundo certo, em três passos.
+            </h2>
+            <div className="space-y-8">
+              {PASSOS.map((p) => (
+                <div key={p.n} className="flex gap-5">
+                  <div className="font-display text-2xl text-emerald-400/90 shrink-0 w-10">{p.n}</div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-1">{p.t}</h3>
+                    <p className="text-sm text-slate-400 leading-relaxed max-w-sm">{p.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="grid md:grid-cols-3 gap-5">
-          {FEATURES.map((f) => (
-            <div key={f.n} className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors">
-              <div className="text-emerald-400/90 font-display text-2xl mb-4">{f.n}</div>
-              <h3 className="text-lg font-semibold text-white mb-2.5">{f.titulo}</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">{f.texto}</p>
-              <div className="mt-5 pt-4 border-t border-white/5">
-                {f.dots && <div className="flex gap-2 items-center">{f.dots.map((d, i) => <span key={i} className={`w-2 h-2 rounded-full ${d}`} />)}<span className="ml-2 text-[11px] text-slate-500">6 critérios</span></div>}
-                {f.badge && <span className="inline-flex items-center gap-1.5 text-[11px] text-emerald-300"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> {f.badge}</span>}
-                {f.quote && <p className="text-[12px] text-slate-500 italic leading-relaxed">{f.quote}</p>}
+      </section>
+
+      {/* PARA QUEM — empresas reais, humanos que se reveem */}
+      <section id="quem" className="max-w-6xl mx-auto px-5 sm:px-6 py-20 md:py-28 border-t border-white/5">
+        <div className="max-w-2xl mb-12 md:mb-14">
+          <div className="text-emerald-400 text-sm font-medium mb-3">Para quem</div>
+          <h2 className="font-display text-4xl md:text-5xl text-white leading-[1.08]">
+            Feito para quem faz o país acontecer.
+          </h2>
+          <p className="mt-5 text-lg text-slate-400 leading-relaxed">
+            Da mercearia de bairro à oficina, do atelier ao alojamento local. Há milhões de euros a abrir todas as semanas — a questão é saber quais são teus.
+          </p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {SETORES.map((s) => (
+            <div key={s.setor} className="group relative overflow-hidden rounded-2xl ring-1 ring-white/10 aspect-[4/5]">
+              <img src={s.img} alt={s.alt} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0b0f] via-[#0a0b0f]/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <div className="text-white font-semibold leading-snug">{s.setor}</div>
+                <div className="mt-1 text-[12px] text-emerald-300/90 font-medium">{s.linha}</div>
               </div>
+            </div>
+          ))}
+        </div>
+        <p className="mt-6 text-[11px] text-slate-600">Fotografia ilustrativa. Programas indicados a título de exemplo.</p>
+      </section>
+
+      {/* STATS */}
+      <section className="border-t border-white/5 bg-white/[0.015]">
+        <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 text-center">
+          <Stat value={683} suffix="+" label="Avisos abertos" />
+          <Stat value={10} label="Portais monitorizados" />
+          <Stat value={30} suffix="s" label="Análise de elegibilidade" />
+          <Stat prefix="€" value={0} label="Para começar" />
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="max-w-3xl mx-auto px-5 sm:px-6 py-20 md:py-28 border-t border-white/5">
+        <h2 className="font-display text-3xl md:text-4xl text-white mb-10 text-center">Perguntas diretas, respostas diretas.</h2>
+        <div className="divide-y divide-white/5 border-y border-white/5">
+          {FAQ.map((f) => (
+            <div key={f.q} className="py-6">
+              <h3 className="text-white font-semibold mb-2">{f.q}</h3>
+              <p className="text-sm text-slate-400 leading-relaxed">{f.a}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* CTA */}
+      {/* CTA — com o momento de ajuda */}
       <section className="relative overflow-hidden border-t border-white/5">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute bottom-[-30%] left-1/2 -translate-x-1/2 w-[720px] max-w-[120vw] h-[420px] bg-emerald-500/15 blur-[140px] rounded-full" />
-        </div>
-        <div className="relative max-w-3xl mx-auto px-6 py-24 md:py-28 text-center">
+        <img src="/generated/web-ajuda.jpg" alt="Consultor e empresária a analisar os fundos disponíveis" className="absolute inset-0 w-full h-full object-cover object-center" loading="lazy" />
+        <div className="absolute inset-0 bg-[#0a0b0f]/85" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0b0f] via-[#0a0b0f]/70 to-[#0a0b0f]/90" />
+        <div className="grain-overlay" />
+        <div className="relative max-w-3xl mx-auto px-6 py-24 md:py-32 text-center">
           <h2 className="font-display text-4xl md:text-6xl text-white leading-[1.05]">Os teus fundos estão à espera.</h2>
-          <p className="mt-5 text-lg text-slate-400">30 segundos. Sem registo. Sem compromisso.</p>
+          <p className="mt-5 text-lg text-slate-300">30 segundos. Sem registo. Sem compromisso.</p>
           <Link href="/encontrar-fundos">
             <span className="mt-9 inline-flex items-center gap-2 bg-emerald-500 text-[#0a0b0f] font-semibold px-7 py-4 rounded-xl hover:bg-emerald-400 transition-colors shadow-lg shadow-emerald-500/20">
               Ver os meus fundos <ArrowRight className="w-4 h-4" />
