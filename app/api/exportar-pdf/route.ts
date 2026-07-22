@@ -1,10 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
+import { empresaScope, candidaturaScope } from '@/lib/auth/tenant';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: NextRequest) {
   try {
+    // Auth + tenant guard: sem isto, este endpoint despejava TODAS as empresas
+    // e candidaturas de todos os clientes, sem sequer exigir login.
+    const session = await getServerSession(authOptions);
+    if (!session) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const { tipo, ids = [] } = await request.json();
 
     let dados: any[] = [];
@@ -20,13 +30,13 @@ export async function POST(request: NextRequest) {
     } else if (tipo === 'empresas') {
       titulo = 'Relatório de Empresas';
       dados = await prisma.empresa.findMany({
-        where: ids.length > 0 ? { id: { in: ids } } : {},
+        where: { AND: [empresaScope(session), ids.length > 0 ? { id: { in: ids } } : {}] },
         include: { candidaturas: true },
       });
     } else if (tipo === 'candidaturas') {
       titulo = 'Relatório de Candidaturas';
       dados = await prisma.candidatura.findMany({
-        where: ids.length > 0 ? { id: { in: ids } } : {},
+        where: { AND: [candidaturaScope(session), ids.length > 0 ? { id: { in: ids } } : {}] },
         include: {
           aviso: true,
           empresa: true,

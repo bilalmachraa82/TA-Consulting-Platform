@@ -3,14 +3,13 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { isPrismaAvailable, prisma } from '@/lib/db'
-import { getCacheHeaders } from '@/lib/cache'
 import { revalidateEmpresas } from '@/lib/revalidate'
 import { Prisma, DimensaoEmpresa } from '@prisma/client'
+import { empresaScope } from '@/lib/auth/tenant'
 
-// Cache: Revalida a cada 5 minutos para GET
-export const revalidate = 300
-
-// POST continua dinâmico
+// Dados por-tenant → dinâmico, sem cache partilhada (o CDN não pode servir
+// as empresas de um consultor a outro).
+export const dynamic = 'force-dynamic'
 
 // Helper para verificar permissões de escrita
 async function checkWritePermission() {
@@ -34,9 +33,13 @@ export async function GET(request: NextRequest) {
     const page = Math.max(1, parseInt(searchParams.get('page') || '1'))
     const limit = Math.min(100, Math.max(1, parseInt(searchParams.get('limit') || '50')))
 
+    // Scoping por tenant: cada consultor vê as suas empresas (+ legacy sem dono);
+    // admin vê tudo. Sem isto, a lista devolvia as empresas de todos os clientes.
+    const session = await getServerSession(authOptions)
+
     // Query paginada direta (o cache com take:100 quebrava a paginação além da
     // página 2 e ignorava os filtros setor/search que o componente envia).
-    const and: Prisma.EmpresaWhereInput[] = [{ ativa: true }]
+    const and: Prisma.EmpresaWhereInput[] = [{ ativa: true }, empresaScope(session)]
     if (dimensao && dimensao !== 'TODOS') and.push({ dimensao: dimensao as DimensaoEmpresa })
     if (regiao && regiao !== 'TODOS') and.push({ regiao })
     if (setor && setor !== 'TODOS') and.push({ setor: { contains: setor, mode: 'insensitive' } })
@@ -65,7 +68,7 @@ export async function GET(request: NextRequest) {
       empresas,
       pagination: { total, pages: Math.ceil(total / limit), page, limit },
       source: 'database',
-    }, { headers: getCacheHeaders(60, 300) })
+    }, { headers: { 'Cache-Control': 'private, no-store' } })
 
   } catch (error) {
     console.error('Erro ao buscar empresas:', error)
@@ -104,6 +107,8 @@ export async function POST(request: NextRequest) {
 
     const novaEmpresa = await prisma.empresa.create!({
       data: {
+        // Dono = consultor que cria. Fecha a fuga "linhas nascem sem dono".
+        consultorId: authResult.session!.user.id,
         nome: data.nome,
         nipc: data.nipc,
         cae: data.cae || '',
