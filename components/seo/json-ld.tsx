@@ -5,10 +5,17 @@
  * (ChatGPT, Claude, Perplexity) leem para perceber e CITAR o site: quem somos
  * (Organization), o site (WebSite) e a ferramenta pública (WebApplication).
  *
- * Injetado via children do <script> (texto puro): os dados são 100% estáticos e
- * sem caracteres HTML especiais (& < >), pelo que o React escreve JSON-LD válido
- * e seguro, sem qualquer injeção de HTML cru.
+ * Injetado via innerHTML do <script> (padrão Next.js para JSON-LD): children de
+ * texto seriam HTML-escapados no SSR (" → &quot;) e divergiam do cliente,
+ * causando erro de hidratação. Segurança: os dados são estáticos (sem input de
+ * utilizador) e o JSON é serializado com "<" escapado (unicode escape), o que
+ * impossibilita qualquer breakout "</script>" — XSS-safe por construção.
  */
+
+/** Serializa JSON com "<" escapado — impede fecho prematuro da tag <script>. */
+function safeJsonLd(data: object): string {
+  return JSON.stringify(data).replace(/</g, '\\u003c')
+}
 
 export function JsonLd({ siteUrl }: { siteUrl: string }) {
   const graph = {
@@ -46,5 +53,12 @@ export function JsonLd({ siteUrl }: { siteUrl: string }) {
     ],
   }
 
-  return <script type="application/ld+json">{JSON.stringify(graph)}</script>
+  return (
+    <script
+      type="application/ld+json"
+      // JSON estático serializado com "<" escapado (safeJsonLd) — sem XSS possível;
+      // innerHTML evita o escape de texto do SSR que causava erro de hidratação.
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(graph) }}
+    />
+  )
 }
