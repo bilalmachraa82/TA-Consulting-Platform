@@ -67,7 +67,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt" className={`${inter.variable} ${jetbrainsMono.variable} ${fraunces.variable}`}>
+    // suppressHydrationWarning: o next-themes injeta a classe do tema no <html>
+    // antes da hidratação (padrão oficial da lib) — sem isto o React avisa de
+    // mismatch de className em todas as páginas.
+    <html lang="pt" className={`${inter.variable} ${jetbrainsMono.variable} ${fraunces.variable}`} suppressHydrationWarning>
       <body className="min-h-screen bg-background font-sans antialiased">
         <JsonLd siteUrl={SITE_URL} />
         <Providers>
