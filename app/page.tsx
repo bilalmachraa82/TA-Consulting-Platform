@@ -196,7 +196,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-5 sm:px-6 py-20 md:py-28 grid lg:grid-cols-2 gap-14 lg:gap-16 items-center">
           <div className="relative order-2 lg:order-1">
             <div className="overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-2xl shadow-black/50">
-              <img src="/generated/web-hero-dossier.jpg" alt="Um dossier iluminado por uma luz quente — os fundos a que tens direito" className="w-full h-full object-cover" loading="lazy" />
+              <img src="/generated/web-hero-dossier.jpg" alt="Empresária a rever no portátil a análise de elegibilidade aos fundos" className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
           <div className="order-1 lg:order-2">
