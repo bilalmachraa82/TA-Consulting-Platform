@@ -40,18 +40,17 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-[#0a0b0f] flex items-center justify-center p-4 relative overflow-hidden">
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-950/0 to-slate-950" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-blue-500/10 blur-[100px] rounded-full" />
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] max-w-[120vw] h-[520px] bg-emerald-500/10 blur-[150px] rounded-full" />
       </div>
 
       <PremiumCard glow className="w-full max-w-md relative z-10" variant="glass">
         <CardHeader className="text-center pb-2">
-          <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-slate-900/50 border border-slate-700 flex items-center justify-center shadow-lg shadow-blue-900/20">
+          <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-slate-900/50 border border-slate-700 flex items-center justify-center shadow-lg shadow-emerald-900/20">
             {enviado
-              ? <MailCheck className="w-7 h-7 text-blue-400" />
-              : <KeyRound className="w-7 h-7 text-blue-400" />}
+              ? <MailCheck className="w-7 h-7 text-emerald-400" />
+              : <KeyRound className="w-7 h-7 text-emerald-400" />}
           </div>
           <CardTitle className="text-2xl font-bold text-white tracking-tight">
             {enviado ? 'Verifica o teu email' : 'Recuperar acesso'}
@@ -90,13 +89,13 @@ export default function ForgotPasswordPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   disabled={isLoading}
-                  className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-blue-500 focus:ring-blue-500/20"
+                  className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-emerald-500 focus:ring-emerald-500/20"
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/20 font-medium"
+                className="w-full bg-emerald-500 hover:bg-emerald-400 text-[#0a0b0f] shadow-lg shadow-emerald-600/20 font-medium"
                 disabled={isLoading}
               >
                 {isLoading ? (
@@ -113,7 +112,7 @@ export default function ForgotPasswordPage() {
 
           <div className="mt-8 pt-6 border-t border-slate-800 text-center text-sm text-slate-500">
             Lembraste-te?{' '}
-            <Link href="/auth/login" className="text-blue-400 hover:text-blue-300 transition-colors font-medium">
+            <Link href="/auth/login" className="text-emerald-400 hover:text-emerald-300 transition-colors font-medium">
               Iniciar sessão
             </Link>
           </div>

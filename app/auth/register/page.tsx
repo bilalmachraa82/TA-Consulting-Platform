@@ -65,21 +65,25 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md shadow-lg">
+    <div className="min-h-screen bg-[#0a0b0f] flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Fundo consistente com a marca Eligivo */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] max-w-[120vw] h-[520px] bg-emerald-500/10 blur-[150px] rounded-full" />
+      </div>
+      <Card className="w-full max-w-md relative z-10 bg-[#12141a] border-white/10 text-slate-100 shadow-2xl shadow-black/50">
         <CardHeader className="text-center">
-          <div className="w-16 h-16 mx-auto mb-4 rounded-lg bg-green-600 flex items-center justify-center">
-            <span className="text-white font-bold text-2xl">e</span>
+          <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-900/30">
+            <span className="text-[#0a0b0f] font-bold text-2xl">e</span>
           </div>
-          <CardTitle className="text-2xl">Criar Conta</CardTitle>
-          <CardDescription>
-            Registe-se para aceder ao dashboard
+          <CardTitle className="font-display text-3xl font-normal text-white tracking-tight">Criar conta</CardTitle>
+          <CardDescription className="text-slate-400">
+            Cria a tua conta Eligivo
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="nome">Nome Completo</Label>
+              <Label htmlFor="nome" className="text-slate-300">Nome Completo</Label>
               <Input
                 id="nome"
                 type="text"
@@ -87,12 +91,13 @@ export default function RegisterPage() {
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
                 required
+                className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-emerald-500 focus:ring-emerald-500/20"
                 disabled={isLoading}
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email" className="text-slate-300">Email</Label>
               <Input
                 id="email"
                 type="email"
@@ -100,12 +105,13 @@ export default function RegisterPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-emerald-500 focus:ring-emerald-500/20"
                 disabled={isLoading}
               />
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="password">Palavra-passe</Label>
+              <Label htmlFor="password" className="text-slate-300">Palavra-passe</Label>
               <div className="relative">
                 <Input
                   id="password"
@@ -115,7 +121,7 @@ export default function RegisterPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   disabled={isLoading}
-                  className="pr-10"
+                  className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-emerald-500 focus:ring-emerald-500/20 pr-10"
                 />
                 <Button
                   type="button"
@@ -131,7 +137,7 @@ export default function RegisterPage() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="confirmPassword">Confirmar Palavra-passe</Label>
+              <Label htmlFor="confirmPassword" className="text-slate-300">Confirmar Palavra-passe</Label>
               <Input
                 id="confirmPassword"
                 type="password"
@@ -139,15 +145,16 @@ export default function RegisterPage() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
+                className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-emerald-500 focus:ring-emerald-500/20"
                 disabled={isLoading}
               />
             </div>
 
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button type="submit" className="w-full bg-emerald-500 hover:bg-emerald-400 text-[#0a0b0f] shadow-lg shadow-emerald-600/20 font-medium" disabled={isLoading}>
               {isLoading ? (
                 <>
                   <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                  Criando conta...
+                  A criar conta…
                 </>
               ) : (
                 'Criar Conta'
@@ -155,15 +162,15 @@ export default function RegisterPage() {
             </Button>
           </form>
 
-          <div className="mt-6 text-center text-sm text-gray-600">
+          <div className="mt-6 text-center text-sm text-slate-500">
             Já tem conta?{' '}
-            <Link href="/auth/login" className="text-blue-600 hover:underline">
+            <Link href="/auth/login" className="text-emerald-400 hover:text-emerald-300 transition-colors font-medium">
               Iniciar sessão
             </Link>
           </div>
           
           <div className="mt-4 text-center">
-            <Link href="/" className="text-sm text-gray-600 hover:underline">
+            <Link href="/" className="text-xs text-slate-600 hover:text-slate-400 transition-colors">
               ← Voltar ao início
             </Link>
           </div>

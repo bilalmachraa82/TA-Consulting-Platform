@@ -46,21 +46,20 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Background Gradients */}
+    <div className="min-h-screen bg-[#0a0b0f] flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Fundo consistente com a marca Eligivo (homepage / encontrar-fundos) */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-950/0 to-slate-950" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-blue-500/10 blur-[100px] rounded-full" />
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[900px] max-w-[120vw] h-[520px] bg-emerald-500/10 blur-[150px] rounded-full" />
       </div>
 
       <PremiumCard glow className="w-full max-w-md relative z-10" variant="glass">
         <CardHeader className="text-center pb-2">
-          <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-slate-900/50 border border-slate-700 flex items-center justify-center shadow-lg shadow-blue-900/20 group">
-            <span className="text-white font-bold text-2xl group-hover:scale-110 transition-transform duration-300">TA<span className="text-blue-500">.</span></span>
+          <div className="w-14 h-14 mx-auto mb-6 rounded-xl bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-900/30">
+            <span className="text-[#0a0b0f] font-bold text-2xl">e</span>
           </div>
-          <CardTitle className="text-2xl font-bold text-white tracking-tight">Bem-vindo de volta</CardTitle>
+          <CardTitle className="font-display text-3xl font-normal text-white tracking-tight">Bem-vindo de volta</CardTitle>
           <CardDescription className="text-slate-400">
-            Aceda ao seu ecossistema de consultoria
+            Entra na tua conta Eligivo
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -75,7 +74,7 @@ export default function LoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 disabled={isLoading}
-                className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-blue-500 focus:ring-blue-500/20"
+                className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-emerald-500 focus:ring-emerald-500/20"
               />
             </div>
 
@@ -84,7 +83,7 @@ export default function LoginPage() {
                 <Label htmlFor="password" className="text-slate-300">Palavra-passe</Label>
                 <Link
                   href="/auth/forgot-password"
-                  className="text-xs text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-xs text-emerald-400 hover:text-emerald-300 transition-colors"
                 >
                   Esqueceste-te?
                 </Link>
@@ -98,7 +97,7 @@ export default function LoginPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   disabled={isLoading}
-                  className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-blue-500 focus:ring-blue-500/20 pr-10"
+                  className="bg-slate-900/50 border-slate-700 text-white placeholder:text-slate-500 focus:border-emerald-500 focus:ring-emerald-500/20 pr-10"
                 />
                 <Button
                   type="button"
@@ -113,7 +112,7 @@ export default function LoginPage() {
               </div>
             </div>
 
-            <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/20 font-medium" disabled={isLoading}>
+            <Button type="submit" className="w-full bg-emerald-500 hover:bg-emerald-400 text-[#0a0b0f] shadow-lg shadow-emerald-600/20 font-medium" disabled={isLoading}>
               {isLoading ? (
                 <>
                   <Loader2 className="w-4 h-4 mr-2 animate-spin" />
@@ -127,7 +126,7 @@ export default function LoginPage() {
 
           <div className="mt-8 pt-6 border-t border-slate-800 text-center text-sm text-slate-500">
             Não tem acesso?{' '}
-            <Link href="/auth/register" className="text-blue-400 hover:text-blue-300 transition-colors font-medium">
+            <Link href="/auth/register" className="text-emerald-400 hover:text-emerald-300 transition-colors font-medium">
               Solicitar conta
             </Link>
           </div>
