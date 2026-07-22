@@ -5,12 +5,15 @@ import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Sparkles, Check, Menu, X } from 'lucide-react'
 
 // Contador que sobe suave quando entra em vista.
+// Começa no valor FINAL (SSR): crawlers/GEO e scroll rápido veem "683+", não "0+".
+// A animação 0→valor só corre no cliente, quando a secção entra em vista.
 function Stat({ value, label, prefix = '', suffix = '' }: { value: number; label: string; prefix?: string; suffix?: string }) {
-  const [n, setN] = useState(0)
+  const [n, setN] = useState(value)
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const el = ref.current
     if (!el) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     const io = new IntersectionObserver(([e]) => {
       if (!e.isIntersecting) return
       io.disconnect()
