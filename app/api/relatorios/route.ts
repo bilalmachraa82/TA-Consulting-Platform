@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/db'
+import { candidaturaScope, empresaScope, documentoScope } from '@/lib/auth/tenant'
 
 export const dynamic = "force-dynamic"
 
@@ -53,10 +54,7 @@ export async function GET(request: NextRequest) {
       }),
       prisma.candidatura.findMany({
         where: {
-          createdAt: {
-            gte: dataInicio,
-            lte: dataFim
-          }
+          AND: [candidaturaScope(session), { createdAt: { gte: dataInicio, lte: dataFim } }]
         },
         include: {
           empresa: {
@@ -69,18 +67,12 @@ export async function GET(request: NextRequest) {
       }),
       prisma.empresa.findMany({
         where: {
-          createdAt: {
-            gte: dataInicio,
-            lte: dataFim
-          }
+          AND: [empresaScope(session), { createdAt: { gte: dataInicio, lte: dataFim } }]
         }
       }),
       prisma.documento.findMany({
         where: {
-          createdAt: {
-            gte: dataInicio,
-            lte: dataFim
-          }
+          AND: [documentoScope(session), { createdAt: { gte: dataInicio, lte: dataFim } }]
         }
       }),
       prisma.workflowLog.findMany({
@@ -164,10 +156,7 @@ export async function GET(request: NextRequest) {
       by: ['estado'],
       _count: { estado: true },
       where: {
-        createdAt: {
-          gte: dataInicio,
-          lte: dataFim
-        }
+        AND: [candidaturaScope(session), { createdAt: { gte: dataInicio, lte: dataFim } }]
       }
     })
 
@@ -176,10 +165,7 @@ export async function GET(request: NextRequest) {
       by: ['empresaId'],
       _count: { empresaId: true },
       where: {
-        createdAt: {
-          gte: dataInicio,
-          lte: dataFim
-        }
+        AND: [candidaturaScope(session), { createdAt: { gte: dataInicio, lte: dataFim } }]
       },
       orderBy: {
         _count: {
@@ -193,7 +179,7 @@ export async function GET(request: NextRequest) {
     type TopEmpresaItem = { empresaId: string; _count: { empresaId: number } };
     const empresasInfo = await prisma.empresa.findMany({
       where: {
-        id: { in: topEmpresas.map((e: TopEmpresaItem) => e.empresaId) }
+        AND: [empresaScope(session), { id: { in: topEmpresas.map((e: TopEmpresaItem) => e.empresaId) } }]
       },
       select: { id: true, nome: true }
     })
@@ -210,11 +196,7 @@ export async function GET(request: NextRequest) {
     // 5. ROI e montantes por programa
     const montantesPorPrograma = await prisma.candidatura.findMany({
       where: {
-        estado: 'APROVADA',
-        createdAt: {
-          gte: dataInicio,
-          lte: dataFim
-        }
+        AND: [candidaturaScope(session), { estado: 'APROVADA', createdAt: { gte: dataInicio, lte: dataFim } }]
       },
       include: {
         aviso: {

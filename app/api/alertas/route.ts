@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
+import { candidaturaScope, empresaScope } from '@/lib/auth/tenant';
 
 export const dynamic = 'force-dynamic';
 
@@ -160,6 +161,7 @@ export async function GET(request: Request) {
 
     const [empresas, avisos, candidaturas] = await Promise.all([
       prisma.empresa.findMany({
+        where: empresaScope(session),
         include: {
           documentos: true
         }
@@ -173,6 +175,7 @@ export async function GET(request: Request) {
         }
       }),
       prisma.candidatura.findMany({
+        where: candidaturaScope(session),
         include: {
           empresa: true,
           aviso: true
