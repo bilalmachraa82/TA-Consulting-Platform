@@ -16,7 +16,7 @@ const BASE = 'https://api.hubapi.com'
 export interface HubspotLead {
     nome: string
     email: string
-    nif: string
+    nif?: string | null
     telefone?: string
     setor?: string
     dimensao?: string
@@ -68,7 +68,7 @@ export async function pushLeadToHubspot(lead: HubspotLead): Promise<HubspotResul
         // 2) Note com o contexto, associada ao Contact (typeId 202 = note→contact).
         const linhas = [
             'Lead Eligivo — /encontrar-fundos',
-            `NIF: ${lead.nif}`,
+            lead.nif ? `NIF: ${lead.nif}` : '',
             lead.setor ? `Setor: ${lead.setor}` : '',
             lead.dimensao ? `Dimensão: ${lead.dimensao}` : '',
             lead.regiao ? `Região: ${lead.regiao}` : '',

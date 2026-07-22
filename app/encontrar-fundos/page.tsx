@@ -74,13 +74,14 @@ export default function EncontrarFundosPage() {
 
   const submeterContacto = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!/^\d{9}$/.test(form.nif)) { toast.error('NIF deve ter 9 dígitos.'); return }
+    // NIF é opcional (conversão primeiro); valida formato só se preenchido.
+    if (form.nif && !/^\d{9}$/.test(form.nif)) { toast.error('NIF deve ter 9 dígitos.'); return }
     setContacto((c) => ({ ...c, enviando: true }))
     try {
       const res = await fetch('/api/leads/contacto', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          nome: form.nome, email: form.email, nif: form.nif, telefone: form.telefone || undefined,
+          nome: form.nome, email: form.email, nif: form.nif || undefined, telefone: form.telefone || undefined,
           mensagem: form.mensagem || undefined, consentMarketing: form.consent,
           setor: setor || undefined, dimensao: dimensao || undefined, regiao: regiao || undefined, cae: cae || undefined,
           aviso: contacto.aviso ?? undefined,
@@ -245,7 +246,7 @@ export default function EncontrarFundosPage() {
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1"><Label htmlFor="lead-nome" className="text-slate-300 text-sm">Nome*</Label><Input id="lead-nome" value={form.nome} onChange={(e) => setF('nome', e.target.value)} required className={INPUT_CLS} /></div>
-                  <div className="space-y-1"><Label htmlFor="lead-nif" className="text-slate-300 text-sm">NIF*</Label><Input id="lead-nif" value={form.nif} onChange={(e) => setF('nif', e.target.value)} required inputMode="numeric" placeholder="9 dígitos" className={INPUT_CLS} /></div>
+                  <div className="space-y-1"><Label htmlFor="lead-nif" className="text-slate-300 text-sm">NIF (opcional)</Label><Input id="lead-nif" value={form.nif} onChange={(e) => setF('nif', e.target.value)} inputMode="numeric" placeholder="9 dígitos" className={INPUT_CLS} /></div>
                 </div>
                 <div className="space-y-1"><Label htmlFor="lead-email" className="text-slate-300 text-sm">Email*</Label><Input id="lead-email" type="email" value={form.email} onChange={(e) => setF('email', e.target.value)} required className={INPUT_CLS} /></div>
                 <div className="space-y-1"><Label htmlFor="lead-telefone" className="text-slate-300 text-sm">Telefone</Label><Input id="lead-telefone" value={form.telefone} onChange={(e) => setF('telefone', e.target.value)} className={INPUT_CLS} /></div>

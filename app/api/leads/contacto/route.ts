@@ -6,9 +6,10 @@
  * o perfil da pesquisa + o(s) aviso(s) de interesse. É o mecanismo que torna a
  * ferramenta um motor de leads (antes só mostrava resultados e mandava fazer login).
  *
- * Upsert por NIF: o NIF é a chave única do Lead (uma empresa = um lead), o que
- * deduplica naturalmente e respeita o @unique do modelo (o /leads/submit antigo
- * gravava nif:'' e rebentava no 2º lead sem NIF).
+ * Dedup: com NIF (chave única do Lead) faz upsert direto — uma empresa, um lead.
+ * Sem NIF (campo opcional desde 2026-07-22, para não custar conversão), deduplica
+ * por email via findFirst+update/create; nif fica NULL (o @unique aceita vários
+ * NULL em Postgres — nunca gravar '' como o /leads/submit antigo fazia).
  *
  * POST /api/leads/contacto
  */
@@ -27,7 +28,7 @@ export const dynamic = 'force-dynamic';
 const Schema = z.object({
     nome: z.string().min(2).max(120),
     email: z.string().email().max(160),
-    nif: z.string().regex(/^\d{9}$/, 'NIF deve ter 9 dígitos'),
+    nif: z.string().regex(/^\d{9}$/, 'NIF deve ter 9 dígitos').optional(),
     telefone: z.string().max(30).optional(),
     mensagem: z.string().max(1000).optional(),
     // contexto da pesquisa (para o consultor saber o perfil)
@@ -62,31 +63,40 @@ export async function POST(request: NextRequest) {
     };
 
     try {
-        const lead = await prisma.lead.upsert({
-            where: { nif: d.nif },
-            create: {
-                nif: d.nif,
-                nome: d.nome,
-                email: d.email,
-                telefone: d.telefone,
-                cae: d.cae,
-                atividade: d.setor,
-                dimensaoDeclarada: d.dimensao,
-                distrito: d.regiao,
-                consentMarketing: d.consentMarketing ?? false,
-                alertasAtivos: d.consentMarketing ?? false,
-                matchesInfo,
-                status: 'NOVO',
-            },
-            update: {
-                nome: d.nome,
-                email: d.email,
-                telefone: d.telefone ?? undefined,
-                matchesInfo,
-                // não rebaixa um lead já trabalhado: só reabre se estava fechado/novo
-                status: 'NOVO',
-            },
-        });
+        const createData = {
+            nif: d.nif ?? null,
+            nome: d.nome,
+            email: d.email,
+            telefone: d.telefone,
+            cae: d.cae,
+            atividade: d.setor,
+            dimensaoDeclarada: d.dimensao,
+            distrito: d.regiao,
+            consentMarketing: d.consentMarketing ?? false,
+            alertasAtivos: d.consentMarketing ?? false,
+            matchesInfo,
+            status: 'NOVO',
+        };
+        const updateData = {
+            nome: d.nome,
+            email: d.email,
+            telefone: d.telefone ?? undefined,
+            matchesInfo,
+            // não rebaixa um lead já trabalhado: só reabre se estava fechado/novo
+            status: 'NOVO',
+        };
+
+        let lead;
+        if (d.nif) {
+            // Com NIF: upsert pela chave única — uma empresa, um lead.
+            lead = await prisma.lead.upsert({ where: { nif: d.nif }, create: createData, update: updateData });
+        } else {
+            // Sem NIF: dedup best-effort por email (email não é @unique).
+            const existente = await prisma.lead.findFirst({ where: { email: d.email }, select: { id: true } });
+            lead = existente
+                ? await prisma.lead.update({ where: { id: existente.id }, data: updateData })
+                : await prisma.lead.create({ data: createData });
+        }
         // Notifica o consultor por email — é o que garante que nenhuma lead se
         // perde. No-op gracioso se o domínio/chave ainda não estiverem prontos
         // (não bloqueia nem falha a resposta ao utilizador).
@@ -99,7 +109,7 @@ export async function POST(request: NextRequest) {
                 await resend.emails.send({
                     from: EMAIL_FROM,
                     to: notifyTo,
-                    subject: `Nova lead Eligivo: ${esc(d.nome)} — NIF ${esc(d.nif)}`,
+                    subject: `Nova lead Eligivo: ${esc(d.nome)}${d.nif ? ` — NIF ${esc(d.nif)}` : ''}`,
                     html: `<h2>Nova lead em /encontrar-fundos</h2>
 <p><b>Nome:</b> ${esc(d.nome)}</p>
 <p><b>Email:</b> ${esc(d.email)}</p>

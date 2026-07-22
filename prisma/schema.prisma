@@ -353,7 +353,10 @@ model ContratoPublico {
 
 model Lead {
   id                 String    @id @default(cuid())
-  nif                String    @unique
+  // NIF opcional (decisão 2026-07-22): campo obrigatório custava conversão no
+  // funil público. Nullable + @unique: Postgres permite vários NULL; quando
+  // ausente, o endpoint deduplica por email.
+  nif                String?   @unique
   nome               String
   nomeEmpresa        String?
   email              String
