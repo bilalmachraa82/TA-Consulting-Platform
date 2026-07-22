@@ -4,6 +4,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limiter';
 import { prisma } from '@/lib/db';
+import { empresaScope } from '@/lib/auth/tenant';
 
 export const dynamic = 'force-dynamic';
 
@@ -44,8 +45,8 @@ export async function GET(request: NextRequest) {
         }
 
         // 1. Fetch Empresa
-        const empresa = await prisma.empresa.findUnique({
-            where: { id: empresaId },
+        const empresa = await prisma.empresa.findFirst({
+            where: { AND: [{ id: empresaId }, empresaScope(session)] },
         });
 
         if (!empresa) {

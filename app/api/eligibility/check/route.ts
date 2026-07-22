@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
+import { empresaScope } from '@/lib/auth/tenant';
 import { runEligibilityCheck, type AvisoCriteria, type LeadInput } from '@/lib/eligibility-engine';
 
 export const dynamic = 'force-dynamic';
@@ -20,8 +21,8 @@ export async function POST(request: NextRequest) {
         }
 
         // Fetch empresa data
-        const empresa = await prisma.empresa.findUnique({
-            where: { id: empresaId },
+        const empresa = await prisma.empresa.findFirst({
+            where: { AND: [{ id: empresaId }, empresaScope(session)] },
             select: {
                 id: true,
                 nome: true,

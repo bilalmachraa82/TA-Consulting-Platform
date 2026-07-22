@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth';
 
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
+import { empresaScope } from '@/lib/auth/tenant';
 import { buildFallbackCaseBrief, normalizeCaseBriefPayload, type CaseBrief } from '@/lib/briefs';
 import { calculateCompatibility } from '@/lib/compatibility';
 import { generateClaudeJson, isClaudeConfigured } from '@/lib/claude-direct';
@@ -30,7 +31,7 @@ export async function POST(request: Request) {
     }
 
     const [empresa, aviso] = await Promise.all([
-      prisma.empresa.findUnique({ where: { id: empresaId } }),
+      prisma.empresa.findFirst({ where: { AND: [{ id: empresaId }, empresaScope(session)] } }),
       prisma.aviso.findUnique({ where: { id: avisoId } }),
     ]);
 

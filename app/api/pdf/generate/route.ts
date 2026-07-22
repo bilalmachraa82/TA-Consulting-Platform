@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/db';
+import { empresaScope, candidaturaScope } from '@/lib/auth/tenant';
 import { ElegibilidadePDF, type ElegibilidadeData } from '@/lib/pdf/templates/elegibilidade';
 import { ResumoExecutivoPDF, type ResumoExecutivoData } from '@/lib/pdf/templates/resumo-executivo';
 
@@ -34,8 +35,8 @@ export async function POST(req: Request) {
 
         switch (templateType) {
             case 'elegibilidade': {
-                const empresa = await prisma.empresa.findUnique({
-                    where: { id: entityId },
+                const empresa = await prisma.empresa.findFirst({
+                    where: { AND: [{ id: entityId }, empresaScope(session)] },
                     include: {
                         avisoAnalisados: {
                             include: { aviso: true },
@@ -82,8 +83,8 @@ export async function POST(req: Request) {
             }
 
             case 'resumo-executivo': {
-                const candidatura = await prisma.candidatura.findUnique({
-                    where: { id: entityId },
+                const candidatura = await prisma.candidatura.findFirst({
+                    where: { AND: [{ id: entityId }, candidaturaScope(session)] },
                     include: {
                         empresa: true,
                         aviso: true,

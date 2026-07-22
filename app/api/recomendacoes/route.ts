@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/db';
+import { empresaScope } from '@/lib/auth/tenant';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limiter';
@@ -36,8 +37,8 @@ export async function GET(request: Request) {
     }
 
     // Buscar dados da empresa
-    const empresa = await prisma.empresa.findUnique({
-      where: { id: empresaId }
+    const empresa = await prisma.empresa.findFirst({
+      where: { AND: [{ id: empresaId }, empresaScope(session)] }
     });
 
     if (!empresa) {
@@ -141,8 +142,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'IDs são obrigatórios' }, { status: 400 });
     }
 
-    const empresa = await prisma.empresa.findUnique({
-      where: { id: empresaId }
+    const empresa = await prisma.empresa.findFirst({
+      where: { AND: [{ id: empresaId }, empresaScope(session)] }
     });
 
     const aviso = await prisma.aviso.findUnique({
