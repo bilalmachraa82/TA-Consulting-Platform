@@ -1,4 +1,4 @@
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Inter, JetBrains_Mono, Fraunces } from 'next/font/google'
 import './globals.css'
 import { Providers } from '@/components/providers'
 import { JsonLd } from '@/components/seo/json-ld'
@@ -14,6 +14,15 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
   display: 'swap',
+})
+
+// Serif display de alto contraste (estilo editorial premium do pack) — só nos
+// títulos grandes. O corpo continua em Inter.
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
 })
 
 export const dynamic = "force-dynamic"
@@ -58,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="pt" className={`${inter.variable} ${jetbrainsMono.variable} ${fraunces.variable}`}>
       <body className="min-h-screen bg-background font-sans antialiased">
         <JsonLd siteUrl={SITE_URL} />
         <Providers>
