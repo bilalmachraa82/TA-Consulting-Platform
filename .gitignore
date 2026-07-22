@@ -51,3 +51,4 @@ next-env.d.ts
 !.yarn/versions
 .pnp.*
 *.bak
+.gstack/
