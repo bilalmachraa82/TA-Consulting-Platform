@@ -194,6 +194,11 @@ function avaliarPrazo(aviso: AvisoElegivel, now: Date): CriterioElegibilidade {
     if (dias < 0) return { dimensao: 'Prazo de submissão', estado: 'falha', peso: 10, explicacao: 'O prazo de submissão já expirou.' };
     if (dias <= 7) return { dimensao: 'Prazo de submissão', estado: 'atencao', peso: 10, explicacao: `Urgente: faltam ${dias} dias.` };
     if (dias <= 21) return { dimensao: 'Prazo de submissão', estado: 'atencao', peso: 10, explicacao: `Faltam ${dias} dias — convém iniciar já.` };
+    // Guarda contra datas corrompidas na fonte (ex.: ano 2121 → "34844 dias"):
+    // um prazo aberto a mais de 2 anos é quase de certeza erro de scraping.
+    if (dias > 730) {
+        return { dimensao: 'Prazo de submissão', estado: 'atencao', peso: 10, explicacao: 'Prazo indicado invulgarmente longo — confirmar na fonte oficial.' };
+    }
     return { dimensao: 'Prazo de submissão', estado: 'ok', peso: 10, explicacao: `Prazo confortável: ${dias} dias.` };
 }
 
