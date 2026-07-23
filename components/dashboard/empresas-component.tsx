@@ -64,7 +64,9 @@ interface Empresa {
   notas?: string
   ativa: boolean
   createdAt: string
-  estatisticas: {
+  // Opcional: a API /api/empresas não calcula estatísticas — o acesso é
+  // null-safe no render (a versão obrigatória crashava a página inteira).
+  estatisticas?: {
     totalCandidaturas: number
     candidaturasAprovadas: number
     totalFinanciamento: number
@@ -411,20 +413,20 @@ export function EmpresasComponent() {
                 <div className="border-t pt-3 grid grid-cols-2 gap-2 text-sm">
                   <div className="flex items-center gap-1">
                     <FileText className="h-4 w-4 text-blue-500" />
-                    <span>{empresa.estatisticas.totalCandidaturas} candidaturas</span>
+                    <span>{empresa.estatisticas?.totalCandidaturas ?? 0} candidaturas</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <TrendingUp className="h-4 w-4 text-green-500" />
-                    <span>{empresa.estatisticas.candidaturasAprovadas} aprovadas</span>
+                    <span>{empresa.estatisticas?.candidaturasAprovadas ?? 0} aprovadas</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <Euro className="h-4 w-4 text-yellow-600" />
-                    <span>€{empresa.estatisticas.totalFinanciamento.toLocaleString('pt-PT')}</span>
+                    <span>€{(empresa.estatisticas?.totalFinanciamento ?? 0).toLocaleString('pt-PT')}</span>
                   </div>
-                  {empresa.estatisticas.documentosExpirados > 0 && (
+                  {(empresa.estatisticas?.documentosExpirados ?? 0) > 0 && (
                     <div className="flex items-center gap-1">
                       <AlertTriangle className="h-4 w-4 text-red-500" />
-                      <span>{empresa.estatisticas.documentosExpirados} docs expirados</span>
+                      <span>{empresa.estatisticas?.documentosExpirados} docs expirados</span>
                     </div>
                   )}
                 </div>
