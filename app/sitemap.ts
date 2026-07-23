@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { PrismaClient } from '@prisma/client'
 import { SITE_URL } from '@/lib/site-url'
+import { combosComAvisos } from '@/lib/hub-data'
 
 /**
  * Sitemap das páginas PÚBLICAS (fase B): estáticas + 2.190 páginas de aviso.
@@ -45,5 +46,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         }
     })
 
-    return [...estaticas, ...paginasAvisos]
+    // Hubs setor(/região) — só combos com ≥1 aviso aberto (vazios ficam noindex)
+    const combos = await combosComAvisos()
+    const hubs: MetadataRoute.Sitemap = combos.map((c) => ({
+        url: c.regiao ? `${SITE_URL}/fundos/${c.setor}/${c.regiao}` : `${SITE_URL}/fundos/${c.setor}`,
+        lastModified: now,
+        changeFrequency: 'daily' as const,
+        priority: c.regiao ? 0.7 : 0.8,
+    }))
+
+    return [...estaticas, ...hubs, ...paginasAvisos]
 }

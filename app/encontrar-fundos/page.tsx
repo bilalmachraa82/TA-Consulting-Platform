@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -52,6 +52,15 @@ export default function EncontrarFundosPage() {
   // Captura de lead: o funil só vale se converter. Modal aberto pelo CTA geral
   // ou por "Quero ajuda" num aviso concreto.
   const [contacto, setContacto] = useState<{ aberto: boolean; aviso: AvisoRef | null; enviando: boolean; enviado: boolean }>({ aberto: false, aviso: null, enviando: false, enviado: false })
+  // Atribuição (fase B): ?setor= pré-preenche vindo das páginas públicas;
+  // ?origem= identifica a página de aviso que originou o lead.
+  const [origem, setOrigem] = useState<string | null>(null)
+  useEffect(() => {
+    const sp = new URLSearchParams(window.location.search)
+    const s = sp.get('setor'); const o = sp.get('origem')
+    if (s) setSetor(s)
+    if (o) setOrigem(o)
+  }, [])
   const [form, setForm] = useState({ nome: '', email: '', nif: '', telefone: '', mensagem: '', consent: false })
   const setF = (k: keyof typeof form, v: string | boolean) => setForm((p) => ({ ...p, [k]: v }))
   const abrirContacto = (aviso?: AvisoRef) => setContacto({ aberto: true, aviso: aviso ?? null, enviando: false, enviado: false })
@@ -85,6 +94,7 @@ export default function EncontrarFundosPage() {
           mensagem: form.mensagem || undefined, consentMarketing: form.consent,
           setor: setor || undefined, dimensao: dimensao || undefined, regiao: regiao || undefined, cae: cae || undefined,
           aviso: contacto.aviso ?? undefined,
+          origem: origem ?? undefined,
         }),
       })
       const j = await res.json()

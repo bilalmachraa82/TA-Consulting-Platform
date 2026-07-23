@@ -65,8 +65,8 @@ function normalizar(s: string): string {
  * Sem acentos (comparação feita sobre texto normalizado). Cobre os setores
  * dos clientes reais (turismo, indústria, tecnologia/IA, formação…).
  */
-const GRUPOS_SETOR: { chave: string; termos: string[] }[] = [
-    { chave: 'turismo', termos: ['turism', 'hotel', 'hotelaria', 'restaura', 'enoturism', 'termas', 'alojamento local', 'alojamento turistic'] },
+export const GRUPOS_SETOR: { chave: string; termos: string[] }[] = [
+    { chave: 'turismo', termos: ['turism', 'hotel', 'hotelaria', 'restauracao', 'restaurante', 'enoturism', 'termas', 'alojamento local', 'alojamento turistic'] },
     { chave: 'industria', termos: ['industri', 'fabril', 'transformador', 'manufatur', 'fabrico', 'producao industrial'] },
     { chave: 'tecnologia', termos: ['digital', 'tecnolog', 'software', 'informatic', 'inteligencia artificial', 'dados', 'tic ', 'ciber', 'startup'] },
     { chave: 'agricultura', termos: ['agricultur', 'agricol', 'agroaliment', 'rural', 'florest', 'pecuar', 'vinha', 'agro'] },

@@ -4,3 +4,4 @@ ALTER TABLE "avisos" ADD COLUMN "slug" TEXT;
 CREATE UNIQUE INDEX "avisos_slug_key" ON "avisos"("slug");
 ALTER TABLE "leads" ADD COLUMN "setorPreferido" TEXT;
 ALTER TABLE "leads" ADD COLUMN "alertasEstado" TEXT NOT NULL DEFAULT 'NENHUM';
+ALTER TABLE "leads" ADD COLUMN "origem" TEXT;

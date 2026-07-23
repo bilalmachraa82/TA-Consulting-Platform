@@ -52,11 +52,17 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const aviso = await getAviso(params.slug)
     if (!aviso) return {}
     const desc = (aviso.descricao ?? `Aviso ${aviso.codigo} do ${portalLabel(aviso.portal)}: elegibilidade, montantes e prazos.`).slice(0, 155)
+    // Anti thin-content (T9): fechados há >6 meses ou sem descrição nem campos
+    // enriquecidos ficam noindex — a página existe (sem link rot) mas não dilui
+    // o domínio com conteúdo magro em massa.
+    const fechadoAntigo = !!aviso.dataFimSubmissao && aviso.dataFimSubmissao.getTime() < Date.now() - 183 * 86_400_000
+    const thin = !aviso.descricao && !aviso.montanteMaximo && !aviso.taxaCofinanciamentoMax && aviso.tiposBeneficiarios.length === 0
     return {
         title: `${aviso.nome.slice(0, 60)} — elegibilidade e prazos`,
         description: desc,
         alternates: { canonical: `${SITE_URL}/avisos/${params.slug}` },
         openGraph: { title: aviso.nome, description: desc, url: `${SITE_URL}/avisos/${params.slug}`, locale: 'pt_PT' },
+        robots: fechadoAntigo || thin ? { index: false, follow: true } : undefined,
     }
 }
 

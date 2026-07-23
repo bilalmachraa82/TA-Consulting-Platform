@@ -37,6 +37,8 @@ const Schema = z.object({
     regiao: z.string().max(60).optional(),
     cae: z.string().max(20).optional(),
     consentMarketing: z.boolean().optional(),
+    // slug da página de aviso que originou o lead (atribuição da máquina SEO)
+    origem: z.string().max(160).optional(),
     // aviso concreto que despoletou o contacto (opcional)
     aviso: z.object({ id: z.string().max(60), nome: z.string().max(400), portal: z.string().max(40) }).optional(),
 });
@@ -75,6 +77,7 @@ export async function POST(request: NextRequest) {
             consentMarketing: d.consentMarketing ?? false,
             alertasAtivos: d.consentMarketing ?? false,
             matchesInfo,
+            origem: d.origem ?? null,
             status: 'NOVO',
         };
         const updateData = {

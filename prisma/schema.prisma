@@ -385,6 +385,9 @@ model Lead {
   // stateless (HMAC assinado) — não se guardam na BD.
   setorPreferido     String?
   alertasEstado      String    @default("NENHUM")
+  // Atribuição (fase B): slug da página de aviso que originou o lead — sem isto
+  // nunca saberemos se a máquina SEO funciona (finding #13 da voz externa).
+  origem             String?
   investimentoVal    Float?
   tipoProjeto        String?
   lastDripEmailId    String?
