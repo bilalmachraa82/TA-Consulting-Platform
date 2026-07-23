@@ -103,7 +103,8 @@ export default function PricingPage() {
         }
 
         if (planId === 'ENTERPRISE') {
-            window.location.href = 'mailto:vendas@aitipro.com?subject=Plano%20Enterprise%20Eligivo';
+            // info@ é o alias que já existe (vendas@ não tem mailbox)
+            window.location.href = 'mailto:info@aitipro.com?subject=Plano%20Enterprise%20Eligivo';
             return;
         }
 
