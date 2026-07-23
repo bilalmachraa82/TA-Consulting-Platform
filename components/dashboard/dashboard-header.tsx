@@ -41,12 +41,13 @@ export function DashboardHeader({ user }: DashboardHeaderProps) {
       <div className="flex h-16 items-center justify-between px-6">
         <div className="flex items-center space-x-4">
           <Link href="/dashboard" className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-lg bg-card border border-border flex items-center justify-center shadow-sm">
-              <span className="text-foreground font-bold text-lg">TA<span className="text-primary">.</span></span>
+            {/* Marca Eligivo — consistente com o site público (logo "e" emerald) */}
+            <div className="w-9 h-9 rounded-lg bg-emerald-500 flex items-center justify-center shadow-sm">
+              <span className="text-[#0a0b0f] font-bold text-lg">e</span>
             </div>
             <div>
-              <h1 className="text-lg font-bold text-foreground">TA Platform</h1>
-              <p className="text-xs text-primary">Consulting Console</p>
+              <h1 className="text-lg font-bold text-foreground">Eligivo</h1>
+              <p className="text-xs text-emerald-400">Consola de consultoria</p>
             </div>
           </Link>
         </div>

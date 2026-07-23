@@ -26,7 +26,7 @@ import { GlassIcon } from '@/components/ui/glass-icon'
 
 const navigationGroups = [
   {
-    title: 'Intelligence',
+    title: 'Inteligência',
     items: [
       { name: 'Consultor IA', href: '/dashboard/consultor', icon: Sparkles, isNew: true },
       { name: 'Recomendações', href: '/dashboard/recomendacoes', icon: Sparkles },
@@ -34,7 +34,7 @@ const navigationGroups = [
     ]
   },
   {
-    title: 'Workspace',
+    title: 'Espaço de trabalho',
     items: [
       { name: 'Dashboard', href: '/dashboard', icon: Home },
       { name: 'Minhas Empresas', href: '/dashboard/minhas-empresas', icon: Building2 },
@@ -66,7 +66,7 @@ const navigationGroups = [
 export function DashboardSidebar() {
   const pathname = usePathname()
   const [isCollapsed, setIsCollapsed] = useState(false)
-  const [openGroups, setOpenGroups] = useState<string[]>(['Intelligence', 'Workspace', 'Oportunidades', 'Gestão'])
+  const [openGroups, setOpenGroups] = useState<string[]>(['Inteligência', 'Espaço de trabalho', 'Oportunidades', 'Gestão'])
 
   const toggleGroup = (title: string) => {
     setOpenGroups(prev =>
@@ -84,7 +84,7 @@ export function DashboardSidebar() {
 
       <div className="flex items-center justify-between p-4 border-b border-border">
         {!isCollapsed && (
-          <h2 className="text-xs font-semibold text-muted-foreground uppercase tracking-widest px-2">Workspace</h2>
+          <h2 className="text-xs font-semibold text-muted-foreground uppercase tracking-widest px-2">Eligivo</h2>
         )}
         <Button
           variant="ghost"

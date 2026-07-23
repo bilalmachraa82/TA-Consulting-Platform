@@ -114,7 +114,7 @@ export function DashboardHome({ kpis, avisos, candidaturas, notificacoes, workfl
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-foreground tracking-tight">Dashboard Overview</h1>
+          <h1 className="text-3xl font-bold text-foreground tracking-tight">Visão geral</h1>
           <p className="text-muted-foreground mt-1">Visão geral da tua operação de fundos em tempo real</p>
         </div>
         <div className="flex gap-4">
@@ -181,10 +181,7 @@ export function DashboardHome({ kpis, avisos, candidaturas, notificacoes, workfl
                 <TrendingUp className="w-6 h-6" />
               </div>
               <p className="text-muted-foreground text-sm font-medium">Taxa Sucesso</p>
-              <div className="flex items-baseline gap-2">
-                <h3 className="text-3xl font-bold text-foreground mt-1">{kpis.taxaSucesso}%</h3>
-                <span className="text-emerald-500 text-sm">+2.4%</span>
-              </div>
+              <h3 className="text-3xl font-bold text-foreground mt-1">{kpis.taxaSucesso}%</h3>
             </div>
           </PremiumCard>
         </motion.div>
@@ -284,6 +281,13 @@ export function DashboardHome({ kpis, avisos, candidaturas, notificacoes, workfl
               </CardHeader>
               <CardContent>
                 <div className="h-[300px] flex items-center justify-center">
+                  {metricas.graficos.candidaturasPorStatus.length === 0 ? (
+                    <div className="text-center">
+                      <ClipboardList className="w-10 h-10 text-muted-foreground/40 mx-auto mb-3" />
+                      <p className="text-muted-foreground text-sm">Ainda sem candidaturas.</p>
+                      <p className="text-muted-foreground/70 text-xs mt-1">Cria a primeira em Candidaturas para veres o pipeline aqui.</p>
+                    </div>
+                  ) : (
                   <ChartDoughnut
                     data={{
                       labels: metricas.graficos.candidaturasPorStatus.map((c) => c.status),
@@ -320,6 +324,7 @@ export function DashboardHome({ kpis, avisos, candidaturas, notificacoes, workfl
                       },
                     }}
                   />
+                  )}
                 </div>
               </CardContent>
             </PremiumCard>
