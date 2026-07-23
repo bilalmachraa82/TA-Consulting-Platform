@@ -247,7 +247,7 @@ export function EmpresasComponent() {
   if (loading && !data) {
     return (
       <div className="flex items-center justify-center h-96">
-        <div className="animate-pulse text-muted-foreground">Carregando empresas...</div>
+        <div className="animate-pulse text-muted-foreground">A carregar empresas…</div>
       </div>
     )
   }

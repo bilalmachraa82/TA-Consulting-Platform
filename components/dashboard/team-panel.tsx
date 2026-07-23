@@ -169,7 +169,7 @@ export function TeamPanel() {
         return (
             <Card>
                 <CardContent className="py-8 text-center">
-                    <div className="animate-pulse text-muted-foreground">Carregando equipas...</div>
+                    <div className="animate-pulse text-muted-foreground">A carregar equipas…</div>
                 </CardContent>
             </Card>
         )

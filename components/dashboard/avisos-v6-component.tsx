@@ -346,7 +346,7 @@ export function AvisosV6Component() {
     if (loading && !data) {
         return (
             <div className="flex items-center justify-center h-96">
-                <div className="animate-pulse text-muted-foreground">Carregando avisos...</div>
+                <div className="animate-pulse text-muted-foreground">A carregar avisos…</div>
             </div>
         )
     }

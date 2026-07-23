@@ -315,7 +315,7 @@ export function CalendarioComponent() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-96">
-        <div className="animate-pulse text-muted-foreground">Carregando calendário...</div>
+        <div className="animate-pulse text-muted-foreground">A carregar calendário…</div>
       </div>
     )
   }

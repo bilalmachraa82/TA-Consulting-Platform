@@ -133,7 +133,7 @@ export function RelatoriosComponent() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-96">
-        <div className="animate-pulse text-muted-foreground">Gerando relatórios...</div>
+        <div className="animate-pulse text-muted-foreground">A gerar relatórios…</div>
       </div>
     )
   }

@@ -197,7 +197,7 @@ export function CandidaturasComponent() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-96">
-        <div className="animate-pulse text-muted-foreground">Carregando candidaturas...</div>
+        <div className="animate-pulse text-muted-foreground">A carregar candidaturas…</div>
       </div>
     )
   }

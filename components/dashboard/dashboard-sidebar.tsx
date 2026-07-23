@@ -80,7 +80,9 @@ export function DashboardSidebar() {
       isCollapsed ? 'w-16' : 'w-64'
     )}>
       {/* Noise Texture Overlay */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.03] z-[-1] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      {/* Grão inline (data-URI, igual ao .grain-overlay do site) — a versão externa
+          (grainy-gradients.vercel.app) era bloqueada pela CSP: 11 erros de consola. */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03] z-[-1] bg-[url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22140%22%20height=%22140%22%3E%3Cfilter%20id=%22n%22%3E%3CfeTurbulence%20type=%22fractalNoise%22%20baseFrequency=%220.85%22%20numOctaves=%222%22%20stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect%20width=%22100%25%22%20height=%22100%25%22%20filter=%22url(%23n)%22/%3E%3C/svg%3E')]" />
 
       <div className="flex items-center justify-between p-4 border-b border-border">
         {!isCollapsed && (

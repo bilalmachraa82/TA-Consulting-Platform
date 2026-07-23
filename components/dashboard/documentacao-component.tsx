@@ -81,9 +81,9 @@ const TIPOS_DOCUMENTO = {
 }
 
 const STATUS_COLORS = {
-  VALIDO: 'bg-green-100 text-green-800 border-green-200',
-  A_EXPIRAR: 'bg-yellow-100 text-yellow-800 border-yellow-200',
-  EXPIRADO: 'bg-red-100 text-red-800 border-red-200',
+  VALIDO: 'bg-green-500/15 text-green-300 border-green-500/30',
+  A_EXPIRAR: 'bg-yellow-500/15 text-yellow-300 border-yellow-500/30',
+  EXPIRADO: 'bg-red-500/15 text-red-300 border-red-500/30',
   EM_FALTA: 'bg-muted text-foreground border-border'
 }
 
@@ -260,7 +260,7 @@ export function DocumentacaoComponent() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-96">
-        <div className="animate-pulse text-muted-foreground">Carregando documentos...</div>
+        <div className="animate-pulse text-muted-foreground">A carregar documentos…</div>
       </div>
     )
   }
@@ -278,39 +278,39 @@ export function DocumentacaoComponent() {
           </CardContent>
         </Card>
 
-        <Card className="border-green-200 bg-green-50">
+        <Card className="border-green-500/30 bg-green-500/10">
           <CardHeader className="pb-3">
             <CardTitle className="text-sm flex items-center gap-1">
-              <CheckCircle className="h-4 w-4 text-green-600" />
+              <CheckCircle className="h-4 w-4 text-green-400" />
               Válidos
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-green-600">{data?.stats.validos || 0}</div>
+            <div className="text-3xl font-bold text-green-400">{data?.stats.validos || 0}</div>
           </CardContent>
         </Card>
 
-        <Card className="border-yellow-200 bg-yellow-50">
+        <Card className="border-yellow-500/30 bg-yellow-500/10">
           <CardHeader className="pb-3">
             <CardTitle className="text-sm flex items-center gap-1">
-              <Clock className="h-4 w-4 text-yellow-600" />
+              <Clock className="h-4 w-4 text-yellow-400" />
               A Expirar
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-yellow-600">{data?.stats.aExpirar || 0}</div>
+            <div className="text-3xl font-bold text-yellow-400">{data?.stats.aExpirar || 0}</div>
           </CardContent>
         </Card>
 
-        <Card className="border-red-200 bg-red-50">
+        <Card className="border-red-500/30 bg-red-500/10">
           <CardHeader className="pb-3">
             <CardTitle className="text-sm flex items-center gap-1">
-              <XCircle className="h-4 w-4 text-red-600" />
+              <XCircle className="h-4 w-4 text-red-400" />
               Expirados
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-red-600">{data?.stats.expirados || 0}</div>
+            <div className="text-3xl font-bold text-red-400">{data?.stats.expirados || 0}</div>
           </CardContent>
         </Card>
 
@@ -552,7 +552,7 @@ export function DocumentacaoComponent() {
         <div className="text-center py-12">
           <FileText className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
           <h3 className="text-lg font-medium text-foreground mb-2">Nenhum documento encontrado</h3>
-          <p className="text-muted-foreground">Comece adicionando documentos das empresas.</p>
+          <p className="text-muted-foreground">Começa por adicionar documentos das empresas.</p>
         </div>
       )}
 
