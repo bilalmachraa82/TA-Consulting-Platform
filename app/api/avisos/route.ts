@@ -6,6 +6,7 @@ import { prisma, isPrismaAvailable } from '@/lib/db'
 import { getCacheHeaders } from '@/lib/cache'
 import { revalidateAvisos } from '@/lib/revalidate'
 import { Prisma, Portal } from '@prisma/client'
+import { gerarSlugAviso, slugUnico } from '@/lib/slug'
 
 // Cache: Revalida a cada 5 minutos para GET
 export const revalidate = 300
@@ -136,8 +137,15 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Já existe um aviso com este código' }, { status: 409 })
     }
 
+    // slug SEO imutável, único contra a BD (fase B)
+    const slugBase = gerarSlugAviso(data.nome, data.codigo);
+    const usados = slugBase
+        ? new Set((await prisma.aviso.findMany!({ where: { slug: { startsWith: slugBase } }, select: { slug: true } })).map((a: { slug: string | null }) => a.slug as string))
+        : new Set<string>();
+    const slug = slugBase ? slugUnico(slugBase, usados) : null;
     const novoAviso = await prisma.aviso.create!({
       data: {
+        slug,
         nome: data.nome,
         portal: data.portal,
         programa: data.programa || '',

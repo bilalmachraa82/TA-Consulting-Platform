@@ -5,6 +5,7 @@
  */
 
 import * as dotenv from 'dotenv';
+import { backfillSlugsPendentes } from '../lib/slug-backfill';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -283,6 +284,7 @@ async function main() {
     console.log('Por portal:');
     byPortal.forEach(p => console.log(`   - ${p.portal}: ${p._count}`));
 
+    await backfillSlugsPendentes(prisma).then(r => console.log(`slugs novos: ${r.atualizados}`)).catch(() => {});
     await prisma.$disconnect();
 
     if (failedPortals.length > 0) {

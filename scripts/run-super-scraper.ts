@@ -7,6 +7,7 @@
  */
 
 import { PrismaClient } from '@prisma/client';
+import { backfillSlugsPendentes } from '../lib/slug-backfill';
 
 // Importar scrapers do super-scraper
 import {
@@ -174,6 +175,7 @@ async function main() {
         console.log(`  ${s.portal}: ${s._count.id}`);
     });
 
+    await backfillSlugsPendentes(prisma).then(r => console.log(`slugs novos: ${r.atualizados}`)).catch(() => {});
     await prisma.$disconnect();
 }
 

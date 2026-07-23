@@ -68,6 +68,10 @@ model Aviso {
   programa            String
   linha               String?
   codigo              String    @unique
+  // Slug SEO-friendly p/ páginas públicas /avisos/[slug] (fase B). Nullable:
+  // os write-paths novos preenchem; o backfill cobre o histórico; páginas e
+  // sitemap filtram slug != null. IMUTÁVEL após criação (URLs são para sempre).
+  slug                String?   @unique
   dataInicioSubmissao DateTime?
   dataFimSubmissao    DateTime?
   montanteMinimo      Float?
@@ -376,6 +380,11 @@ model Lead {
   alertasAtivos      Boolean   @default(false)
   consentMarketing   Boolean   @default(false)
   lastAlertSentAt    DateTime?
+  // Alertas por setor (fase B, double opt-in): NENHUM → PENDENTE (subscreveu,
+  // falta confirmar) → ATIVO → CANCELADO. Tokens de confirmação/unsubscribe são
+  // stateless (HMAC assinado) — não se guardam na BD.
+  setorPreferido     String?
+  alertasEstado      String    @default("NENHUM")
   investimentoVal    Float?
   tipoProjeto        String?
   lastDripEmailId    String?
