@@ -29,7 +29,7 @@ export const dynamic = "force-dynamic"
 
 // URL canónico do site para SEO/OG/sitemap. Aponta para eligivo.com quando o
 // domínio estiver ligado — basta definir NEXT_PUBLIC_SITE_URL no Vercel.
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ta-consulting-platform.vercel.app'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://eligivo.vercel.app'
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
