@@ -71,7 +71,7 @@ export async function chatCompletion(opts: ChatCompletionOptions): Promise<ChatC
         {
             headers: {
                 Authorization: `Bearer ${apiKey}`,
-                'HTTP-Referer': 'https://eligivo.vercel.app',
+                'HTTP-Referer': 'https://eligivo.aitipro.com',
                 'X-Title': 'Eligivo Platform',
             },
             timeout: 60000,

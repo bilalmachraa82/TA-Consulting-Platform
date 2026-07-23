@@ -100,7 +100,8 @@ export async function POST(request: NextRequest) {
         // Notifica o consultor por email — é o que garante que nenhuma lead se
         // perde. No-op gracioso se o domínio/chave ainda não estiverem prontos
         // (não bloqueia nem falha a resposta ao utilizador).
-        const notifyTo = process.env.ADMIN_EMAIL || process.env.NOTIFY_EMAIL;
+        // Fallback: info@aitipro.com (alias monitorizado) — um lead nunca fica sem notificação.
+        const notifyTo = process.env.ADMIN_EMAIL || process.env.NOTIFY_EMAIL || 'info@aitipro.com';
         const keyOk = !!process.env.RESEND_API_KEY && !process.env.RESEND_API_KEY.startsWith('re_mock');
         if (notifyTo && keyOk) {
             try {
