@@ -26,7 +26,7 @@ export function ChatInterface() {
         {
             id: 'welcome',
             role: 'assistant',
-            content: 'Olá! Sou o Auditor IA da TA Platform. 🛡️\n\nEstou ligado diretamente à base de dados oficial dos fundos europeus (PRR, PT2030, etc.).\n\n**O que queres verificar hoje?**\nEx: "A minha empresa de turismo é elegível para o aviso da descarbonização?"',
+            content: 'Olá! Sou o Consultor IA do Eligivo.\n\nEstou ligado à base de avisos atualizada diariamente a partir de 10 portais oficiais (Portugal 2030, PRR, Turismo de Portugal…). Respondo sempre com as fontes.\n\n**O que queres verificar hoje?**\nEx: "A minha empresa de turismo é elegível para o aviso da descarbonização?"',
             timestamp: new Date(),
         }
     ]);
@@ -68,8 +68,10 @@ export function ChatInterface() {
                 body: JSON.stringify({
                     question: userMsg.content,
                     portal: portal === 'ALL' ? undefined : portal,
+                    // A saudação inicial é chrome da UI, não conversa — no histórico
+                    // fazia o modelo às vezes responder só "Olá!" em vez da pergunta.
                     conversationHistory: messages
-                        .filter((m) => !m.isError)
+                        .filter((m) => !m.isError && m.id !== 'welcome')
                         .slice(-6)
                         .map((m) => ({ role: m.role, content: m.content })),
                 }),
@@ -117,7 +119,7 @@ export function ChatInterface() {
                         <FileSearch className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                        <h2 className="text-xl font-bold text-gray-900">Auditor IA</h2>
+                        <h2 className="text-xl font-bold text-foreground">Consultor IA</h2>
                         <div className="flex items-center text-xs text-green-600 font-medium">
                             <span className="w-2 h-2 bg-green-500 rounded-full mr-1 animate-pulse"></span>
                             Ligado à base de dados de avisos (atualizada diariamente)
@@ -266,7 +268,7 @@ export function ChatInterface() {
             <div className="mt-3 text-center">
                 <p className="text-xs text-slate-400 flex items-center justify-center gap-1">
                     <AlertCircle className="w-3 h-3" />
-                    O Auditor IA baseia-se em documentos oficiais, mas não substitui a validação humana final para submissão.
+                    O Consultor IA baseia-se em documentos oficiais, mas não substitui a validação humana final para submissão.
                 </p>
             </div>
         </div>

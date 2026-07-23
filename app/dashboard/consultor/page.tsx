@@ -2,7 +2,7 @@ import { ChatInterface } from '@/components/chat/chat-interface';
 import { Sparkles } from 'lucide-react';
 
 export const metadata = {
-    title: 'Consultor IA - TA Platform',
+    title: 'Consultor IA — Eligivo',
     description: 'Auditor de elegibilidade e conformidade com IA',
 };
 
@@ -15,7 +15,7 @@ export default function ConsultorPage() {
                     Consultor IA
                 </h1>
                 <p className="text-muted-foreground mt-1">
-                    Respostas com fontes oficiais, a partir dos avisos sincronizados diariamente de 9 portais nacionais e europeus.
+                    Respostas com fontes oficiais, a partir dos avisos sincronizados diariamente de 10 portais nacionais e europeus.
                 </p>
             </div>
 
