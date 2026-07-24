@@ -5,6 +5,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import { PORTAL_CONFIGS } from '@/lib/scraper/portal-configs';
 import { scrapeAvisos } from '@/lib/firecrawl';
+import { isAdmin } from '@/lib/auth/roles'
 
 export async function POST(req: Request) {
     try {
@@ -13,7 +14,7 @@ export async function POST(req: Request) {
         if (!session) {
             return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 });
         }
-        if (session.user.role !== 'admin') {
+        if (!isAdmin(session.user.role)) {
             return NextResponse.json({ success: false, error: 'Forbidden: requires admin role' }, { status: 403 });
         }
 

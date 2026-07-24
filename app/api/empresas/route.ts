@@ -6,6 +6,7 @@ import { isPrismaAvailable, prisma } from '@/lib/db'
 import { revalidateEmpresas } from '@/lib/revalidate'
 import { Prisma, DimensaoEmpresa } from '@prisma/client'
 import { empresaScope } from '@/lib/auth/tenant'
+import { podeEscrever } from '@/lib/auth/roles'
 
 // Dados por-tenant → dinâmico, sem cache partilhada (o CDN não pode servir
 // as empresas de um consultor a outro).
@@ -17,7 +18,7 @@ async function checkWritePermission() {
   if (!session) {
     return { authorized: false, error: NextResponse.json({ error: 'Unauthorized' }, { status: 401 }) }
   }
-  if (session.user.role !== 'admin' && session.user.role !== 'consultor') {
+  if (!podeEscrever(session.user.role)) {
     return { authorized: false, error: NextResponse.json({ error: 'Forbidden: requires admin or consultor role' }, { status: 403 }) }
   }
   return { authorized: true, session }

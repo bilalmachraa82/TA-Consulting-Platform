@@ -2,6 +2,7 @@ import type { Session } from 'next-auth'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { Prisma } from '@prisma/client'
+import { isAdmin as isAdminRole } from './roles'
 
 /**
  * Multi-tenant data scoping (transitional).
@@ -20,7 +21,8 @@ import { Prisma } from '@prisma/client'
  */
 
 export function isAdmin(session: Session | null): boolean {
-  return session?.user?.role === 'admin'
+  // comparação case-insensitive (a BD tem ADMIN; o check antigo era 'admin')
+  return isAdminRole(session?.user?.role)
 }
 
 /** Where-fragment for querying Empresa scoped to the caller's tenant. */

@@ -30,3 +30,13 @@
 - **What:** Botão removido a 24/07 porque o toast era FAKE ("consultor valida em 2h" sem processo por trás).
 - **Why:** Prometer SLA inexistente destrói confiança na demo.
 - **Contexto:** Quando voltar: criar registo de pedido (tabela + notificação email ao admin) e SLA honesto.
+
+## 6. Upload real de ficheiros de documentos
+- **What:** /api/documentos "simula" o upload (path fake `uploads/...`) — só grava metadados; nenhum ficheiro é armazenado.
+- **Why:** O módulo Documentação promete gestão documental; sem storage real é só um registo de validades.
+- **Contexto:** Integrar Vercel Blob (suporta privado) ou S3 já configurado no stack; aceitar multipart no endpoint. Descoberto no QA de 24/07.
+
+## 7. Persistência server-side das Configurações
+- **What:** "Guardar Configurações" gravava com toast FAKE (setTimeout); a 24/07 passou a localStorage (real mas por-dispositivo).
+- **Why:** Configurações de SMTP/alertas deviam viver no servidor por utilizador/tenant.
+- **Contexto:** Criar tabela settings ou campo JSON no User; migrar o load/save do localStorage.

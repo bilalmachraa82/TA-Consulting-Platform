@@ -240,11 +240,20 @@ export function ConfiguracoesComponent() {
 
   const [testando, setTestando] = useState<string | null>(null)
 
+  // Carrega as configurações gravadas neste dispositivo
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem('eligivo-configuracoes')
+      if (raw) setConfiguracoes((prev: any) => ({ ...prev, ...JSON.parse(raw) }))
+    } catch { /* ignora JSON inválido */ }
+  }, [])
+
+  // Persistência real em localStorage (o handler antigo era um setTimeout FAKE
+  // com toast de sucesso — não gravava nada). Server-side: TODOS.md.
   const handleSalvarConfiguracoes = async () => {
     try {
-      // Simular gravação das configurações
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      toast.success('Configurações guardadas com sucesso')
+      localStorage.setItem('eligivo-configuracoes', JSON.stringify(configuracoes))
+      toast.success('Configurações guardadas neste dispositivo')
     } catch (error) {
       toast.error('Erro ao guardar configurações')
     }

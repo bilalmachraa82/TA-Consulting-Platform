@@ -7,6 +7,7 @@ import { getCacheHeaders } from '@/lib/cache'
 import { revalidateAvisos } from '@/lib/revalidate'
 import { Prisma, Portal } from '@prisma/client'
 import { gerarSlugAviso, slugUnico } from '@/lib/slug'
+import { podeEscrever } from '@/lib/auth/roles'
 
 // Cache: Revalida a cada 5 minutos para GET
 export const revalidate = 300
@@ -19,7 +20,7 @@ async function checkWritePermission() {
   if (!session) {
     return { authorized: false, error: NextResponse.json({ error: 'Unauthorized' }, { status: 401 }) }
   }
-  if (session.user.role !== 'admin' && session.user.role !== 'consultor') {
+  if (!podeEscrever(session.user.role)) {
     return { authorized: false, error: NextResponse.json({ error: 'Forbidden: requires admin or consultor role' }, { status: 403 }) }
   }
   return { authorized: true, session }

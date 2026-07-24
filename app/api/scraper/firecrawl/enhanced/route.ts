@@ -5,6 +5,7 @@ import { scrapeAvisos } from '@/lib/firecrawl';
 import { scrapePRR } from '@/scripts/scrapers/prr-scraper';
 import { scrapePEPAC } from '@/scripts/scrapers/pepac-scraper';
 import { HorizonEuropeScraper } from '@/lib/scraper/strategies/horizon';
+import { isAdmin } from '@/lib/auth/roles'
 
 // Flag para desativar Puppeteer em produção (Vercel)
 // Set DISABLE_PUPPETEER=true in .env for production
@@ -77,7 +78,7 @@ export async function POST(req: Request) {
         if (!session) {
             return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 });
         }
-        if (session.user.role !== 'admin') {
+        if (!isAdmin(session.user.role)) {
             return NextResponse.json({ success: false, error: 'Forbidden: requires admin role' }, { status: 403 });
         }
 

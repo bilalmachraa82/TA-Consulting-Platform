@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
+import { isAdmin } from '@/lib/auth/roles'
 
 export async function POST(req: Request) {
     const startTime = Date.now();
@@ -11,7 +12,7 @@ export async function POST(req: Request) {
         if (!session) {
             return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 });
         }
-        if (session.user.role !== 'admin') {
+        if (!isAdmin(session.user.role)) {
             return NextResponse.json({ success: false, error: 'Forbidden: requires admin role' }, { status: 403 });
         }
 

@@ -72,12 +72,12 @@ const TIPOS_WORKFLOW = {
   SCRAPING_PORTUGAL2030: {
     nome: 'Scraping Portugal 2030',
     icone: '🔍',
-    cor: 'bg-blue-100 text-blue-800'
+    cor: 'bg-blue-500/15 text-blue-300'
   },
   SCRAPING_PEPAC: {
     nome: 'Scraping PEPAC',
     icone: '🌾',
-    cor: 'bg-green-100 text-green-800'
+    cor: 'bg-green-500/15 text-green-300'
   },
   SCRAPING_PRR: {
     nome: 'Scraping PRR',
@@ -87,12 +87,12 @@ const TIPOS_WORKFLOW = {
   NOTIFICACAO_EMAIL: {
     nome: 'Notificações Email',
     icone: '📧',
-    cor: 'bg-yellow-100 text-yellow-800'
+    cor: 'bg-yellow-500/15 text-yellow-300'
   },
   VALIDACAO_DOCUMENTOS: {
     nome: 'Validação Documentos',
     icone: '📋',
-    cor: 'bg-red-100 text-red-800'
+    cor: 'bg-red-500/15 text-red-300'
   },
   RELATORIO_MENSAL: {
     nome: 'Relatório Mensal',
@@ -214,7 +214,7 @@ export function WorkflowsComponent() {
     const ultimaExecucaoSucesso = workflow.estatisticas.ultimaExecucaoSucesso
     if (!ultimaExecucaoSucesso) {
       return (
-        <Badge className="bg-yellow-100 text-yellow-600 border-yellow-300">
+        <Badge className="bg-yellow-500/15 text-yellow-300 border-yellow-500/30">
           <Clock className="h-3 w-3 mr-1" />
           Aguardando
         </Badge>
@@ -223,7 +223,7 @@ export function WorkflowsComponent() {
 
     if (workflow.estatisticas.taxaSucesso >= 80) {
       return (
-        <Badge className="bg-green-100 text-green-600 border-green-300">
+        <Badge className="bg-green-500/15 text-green-300 border-green-500/30">
           <CheckCircle className="h-3 w-3 mr-1" />
           Funcionando
         </Badge>
@@ -292,15 +292,15 @@ export function WorkflowsComponent() {
           </CardContent>
         </Card>
 
-        <Card className="border-green-200 bg-green-50">
+        <Card className="bg-green-500/10 border-green-500/30">
           <CardHeader className="pb-3">
             <CardTitle className="text-sm flex items-center gap-1">
-              <CheckCircle className="h-4 w-4 text-green-600" />
+              <CheckCircle className="h-4 w-4 text-green-400" />
               Ativos
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold text-green-600">
+            <div className="text-3xl font-bold text-green-400">
               {workflows.filter(w => w.ativo).length}
             </div>
           </CardContent>
@@ -552,7 +552,7 @@ export function WorkflowsComponent() {
                   <div
                     key={log.id}
                     className={`p-4 rounded-lg border ${
-                      log.sucesso ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'
+                      log.sucesso ? 'bg-green-500/10 border-green-500/30 border-green-200' : 'bg-red-50 border-red-200'
                     }`}
                   >
                     <div className="flex items-center gap-2 mb-2">

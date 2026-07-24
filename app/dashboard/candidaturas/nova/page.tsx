@@ -269,7 +269,15 @@ export default function NovaCandidaturaPage() {
         : 0;
 
     if (status === 'loading') {
-        return <div className="flex items-center justify-center min-h-screen">A carregar...</div>;
+        // Skeleton branded (era texto seco "A carregar..." num ecrã vazio)
+        return (
+            <div className="flex flex-col items-center justify-center min-h-screen gap-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
+                    <div className="w-5 h-5 border-2 border-emerald-400 border-t-transparent rounded-full animate-spin" />
+                </div>
+                <p className="text-sm text-muted-foreground">A preparar a candidatura…</p>
+            </div>
+        );
     }
 
     return (
