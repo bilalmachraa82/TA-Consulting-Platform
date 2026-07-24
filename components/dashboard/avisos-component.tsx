@@ -2,7 +2,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { portalLabel } from '@/lib/portal-labels'
+import { portalLabel, PORTAL_LABELS } from '@/lib/portal-labels'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -296,9 +296,10 @@ export function AvisosComponent() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="TODOS">Todos os Portais</SelectItem>
-                  <SelectItem value="PORTUGAL2030">Portugal 2030</SelectItem>
-                  <SelectItem value="PRR">PRR</SelectItem>
-                  <SelectItem value="PEPAC">PEPAC</SelectItem>
+                  {/* Os 10 portais (estava hardcoded a 3 — mesmo bug do chat) */}
+                  {Object.entries(PORTAL_LABELS).map(([k, v]) => (
+                    <SelectItem key={k} value={k}>{v}</SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
