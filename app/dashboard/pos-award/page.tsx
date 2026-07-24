@@ -133,7 +133,7 @@ export default function PostAwardPage() {
                         <div className="p-2 bg-blue-500/20 rounded-lg">
                             <FileText className="w-5 h-5 text-blue-400" />
                         </div>
-                        <span className="text-muted-foreground">Projectos Activos</span>
+                        <span className="text-muted-foreground">Projetos Ativos</span>
                     </div>
                     <p className="text-3xl font-bold">{candidaturas.length}</p>
                 </div>
@@ -180,12 +180,12 @@ export default function PostAwardPage() {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {/* Projects List */}
                 <div className="bg-[#12121a] rounded-xl border border-white/10 p-4">
-                    <h2 className="text-lg font-semibold mb-4">Projectos Aprovados</h2>
+                    <h2 className="text-lg font-semibold mb-4">Projetos Aprovados</h2>
 
                     {candidaturas.length === 0 ? (
                         <div className="text-center py-8 text-muted-foreground">
                             <Target className="w-12 h-12 mx-auto mb-3 opacity-50" />
-                            <p>Sem projectos aprovados</p>
+                            <p>Sem projetos aprovados</p>
                         </div>
                     ) : (
                         <div className="space-y-2">
@@ -381,7 +381,7 @@ export default function PostAwardPage() {
                         <div className="flex items-center justify-center h-full text-muted-foreground">
                             <div className="text-center">
                                 <Target className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                                <p>Selecione um projecto para ver detalhes</p>
+                                <p>Selecione um projeto para ver detalhes</p>
                             </div>
                         </div>
                     )}

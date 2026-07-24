@@ -115,8 +115,8 @@ export function ChatInterface() {
             {/* Header / Controls */}
             <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-2">
-                    <div className="p-2 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg shadow-lg">
-                        <FileSearch className="w-6 h-6 text-white" />
+                    <div className="p-2 bg-emerald-500 rounded-lg shadow-lg">
+                        <FileSearch className="w-6 h-6 text-[#0a0b0f]" />
                     </div>
                     <div>
                         <h2 className="text-xl font-bold text-foreground">Consultor IA</h2>
@@ -128,23 +128,9 @@ export function ChatInterface() {
                 </div>
 
                 <div className="flex gap-2">
-                    <Button
-                        variant="ghost"
-                        size="sm"
-                        className="text-xs text-purple-600 bg-purple-50 border border-purple-200 hover:bg-purple-100 hidden md:flex items-center gap-1"
-                        onClick={() => {
-                            // Synergy Feature: Request Human Review
-                            toast.success('Pedido de revisão humana enviado!', {
-                                description: 'Um consultor sénior validará esta análise nas próximas 2h.'
-                            })
-                        }}
-                    >
-                        <Users className="w-3 h-3" />
-                        Solicitar Validação Humana
-                    </Button>
-
-                    <div className="h-6 w-px bg-slate-200 mx-1 hidden md:block"></div>
-
+                    {/* Botão "Validação Humana" removido: disparava um toast FALSO
+                        ("consultor valida em 2h") sem fluxo real por trás — anti-trust.
+                        Volta quando existir o processo (TODOS.md). */}
                     {['ALL', 'PRR', 'PT2030', 'HORIZON'].map((p) => (
                         <Button
                             key={p}
@@ -251,7 +237,7 @@ export function ChatInterface() {
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={(e) => e.key === 'Enter' && !e.shiftKey && handleSend()}
                         placeholder="Faça uma pergunta sobre elegibilidade, prazos ou regras..."
-                        className="min-h-[50px] py-3 bg-white shadow-sm border-slate-200 focus:ring-blue-500 focus:border-blue-500 font-medium"
+                        className="min-h-[50px] py-3 bg-white/[0.05] border-white/15 text-slate-100 placeholder:text-slate-500 focus-visible:ring-emerald-500 font-medium"
                         disabled={isLoading}
                     />
                     <Button

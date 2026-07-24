@@ -53,7 +53,7 @@ export function DashboardHeader({ user }: DashboardHeaderProps) {
         </div>
 
         <div className="flex items-center space-x-4">
-          <ThemeToggle />
+          {/* ThemeToggle removido: tema dark forçado até haver light completo */}
           <NotificationBell />
 
           <DropdownMenu>

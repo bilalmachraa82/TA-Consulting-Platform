@@ -735,7 +735,7 @@ export function ConfiguracoesComponent() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => setSecaoAtiva(secao.id)}
-                  className={`w-full text-left p-3 flex items-center gap-3 hover:bg-muted transition-colors ${secaoAtiva === secao.id ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-700' : ''
+                  className={`w-full text-left p-3 flex items-center gap-3 hover:bg-muted transition-colors ${secaoAtiva === secao.id ? 'bg-primary/10 text-primary border-r-2 border-blue-700' : ''
                     }`}
                 >
                   {secao.icone}
