@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Loader2, Search, ExternalLink, Sparkles, ArrowLeft, X, Send, CheckCircle2 } from 'lucide-react'
 import { toast } from 'sonner'
+import { portalLabel } from '@/lib/portal-labels'
 
 type Estado = 'ok' | 'atencao' | 'falha' | 'desconhecido'
 interface Criterio { dimensao: string; estado: Estado; explicacao: string }
@@ -174,6 +175,10 @@ export default function EncontrarFundosPage() {
 
       {dados && (
         <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+          <p className="text-xs text-slate-500 mb-3">
+            <b className="text-slate-300">Como ler:</b> a percentagem é a compatibilidade nos critérios que o aviso especifica ·
+            <span className="text-slate-300"> N/6</span> significa que o aviso ainda detalha poucos critérios — vale a pena confirmar na fonte.
+          </p>
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm mb-4">
             <span className="text-slate-500">{dados.resumo.totalAvisosAbertos} avisos abertos analisados</span>
             <span className="text-slate-700">·</span>
@@ -195,15 +200,24 @@ export default function EncontrarFundosPage() {
                       <div className="min-w-0">
                         <div className="flex flex-wrap items-center gap-2 mb-1.5">
                           <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full border ${v.badge}`}>{v.label}</span>
-                          <span className="text-[11px] font-medium text-slate-400 bg-white/5 rounded-full px-2 py-0.5">{r.portal}</span>
+                          <span className="text-[11px] font-medium text-slate-400 bg-white/5 rounded-full px-2 py-0.5">{portalLabel(r.portal)}</span>
                         </div>
                         <h3 className="font-semibold text-slate-100 leading-snug">{r.nome}</h3>
                       </div>
-                      <div className="text-right shrink-0" title="Score calculado sobre os critérios que o aviso especifica — os restantes ficam por confirmar.">
-                        {/* Honestidade do score: com <3 critérios avaliáveis, um "100%" verde
-                            lê-se como certeza que não temos — cor neutra + rótulo explícito. */}
-                        <div className={`text-2xl font-bold tabular-nums ${r.elegibilidade.criteriosAvaliados >= 3 ? v.score : 'text-slate-400'}`}>{r.elegibilidade.score}%</div>
-                        <div className="text-[10px] text-slate-500">com base em {r.elegibilidade.criteriosAvaliados} de {r.elegibilidade.criteriosTotal} critérios</div>
+                      <div className="text-right shrink-0">
+                        {/* Legibilidade (feedback do founder): % só com cobertura decente;
+                            com <3 critérios conhecidos mostra-se "N/6" — sem 100% enganadores. */}
+                        {r.elegibilidade.criteriosAvaliados >= 3 ? (
+                          <>
+                            <div className={`text-2xl font-bold tabular-nums ${v.score}`}>{r.elegibilidade.score}%</div>
+                            <div className="text-[10px] text-slate-500">{r.elegibilidade.criteriosAvaliados} de {r.elegibilidade.criteriosTotal} critérios ✓</div>
+                          </>
+                        ) : (
+                          <>
+                            <div className="text-2xl font-bold tabular-nums text-slate-300">{r.elegibilidade.criteriosAvaliados}<span className="text-slate-500">/{r.elegibilidade.criteriosTotal}</span></div>
+                            <div className="text-[10px] text-amber-400/90">aviso pouco detalhado</div>
+                          </>
+                        )}
                       </div>
                     </div>
                     <ul className="space-y-1.5 mb-3">
