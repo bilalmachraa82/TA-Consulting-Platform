@@ -76,7 +76,7 @@ export function DashboardSidebar() {
 
   return (
     <div className={cn(
-      'flex flex-col h-[calc(100vh-4rem)] bg-background/80 backdrop-blur-xl border-r border-border transition-all duration-500 ease-in-out relative z-30',
+      'flex flex-col h-[calc(100vh-4rem)] glass-side transition-all duration-500 ease-in-out relative z-30',
       isCollapsed ? 'w-16' : 'w-64'
     )}>
       {/* Noise Texture Overlay */}
