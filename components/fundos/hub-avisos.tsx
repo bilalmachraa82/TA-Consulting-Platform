@@ -28,7 +28,7 @@ export function HubAvisos({
 
     return (
         <div className="min-h-screen bg-[#0a0b0f] text-slate-100 antialiased">
-            <header className="sticky top-0 z-50 backdrop-blur-md bg-[#0a0b0f]/70 border-b border-white/5">
+            <header className="sticky top-0 z-50 glass">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
                     <Link href="/" className="flex items-center gap-2.5">
                         <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center">

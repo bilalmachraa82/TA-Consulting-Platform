@@ -66,9 +66,9 @@ export default function HomePage() {
   // Menu mobile: sem ele, "Entrar"/"Preços" ficavam inacessíveis em ecrãs pequenos.
   const [menuAberto, setMenuAberto] = useState(false)
   return (
-    <div className="min-h-screen bg-[#0a0b0f] text-slate-100 antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-[#0a0b0f] text-slate-100 antialiased overflow-x-clip">
       {/* NAV */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-[#0a0b0f]/70 border-b border-white/5">
+      <header className="sticky top-0 z-50 glass">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center">
@@ -97,7 +97,7 @@ export default function HomePage() {
         </div>
         {/* Painel mobile — links com alvo de toque ≥44px */}
         {menuAberto && (
-          <nav className="md:hidden border-t border-white/5 bg-[#0a0b0f]/95 backdrop-blur-md">
+          <nav className="md:hidden glass border-t-0">
             <div className="max-w-6xl mx-auto px-5 py-2 flex flex-col text-[15px] text-slate-300">
               <Link href="#como" onClick={() => setMenuAberto(false)} className="py-3 hover:text-white transition-colors">Como funciona</Link>
               <Link href="#quem" onClick={() => setMenuAberto(false)} className="py-3 hover:text-white transition-colors">Para quem</Link>
@@ -123,7 +123,7 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 w-full">
           <div className="max-w-xl animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 text-xs font-medium tracking-wide text-emerald-300 border border-emerald-500/25 bg-emerald-500/[0.08] rounded-full px-3 py-1 mb-6 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 text-xs font-medium tracking-wide text-emerald-300 glass-chip rounded-full px-3 py-1 mb-6">
               <Sparkles className="w-3.5 h-3.5" /> Análise grátis · sem registo
             </div>
             <h1 className="font-display text-[2.7rem] leading-[1.03] sm:text-6xl lg:text-[4.6rem] text-white tracking-tight [text-wrap:balance]">

@@ -104,9 +104,9 @@ export default function EncontrarFundosPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0b0f] text-slate-100 antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-[#0a0b0f] text-slate-100 antialiased overflow-x-clip">
       {/* Header — consistente com a homepage */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-[#0a0b0f]/70 border-b border-white/5">
+      <header className="sticky top-0 z-50 glass">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center">
@@ -127,7 +127,7 @@ export default function EncontrarFundosPage() {
         </div>
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 py-14 md:py-20">
           <div className="text-center mb-9">
-            <div className="inline-flex items-center gap-2 text-xs font-medium text-emerald-300 bg-emerald-500/[0.08] border border-emerald-500/25 rounded-full px-3 py-1 mb-5">
+            <div className="inline-flex items-center gap-2 text-xs font-medium text-emerald-300 glass-chip rounded-full px-3 py-1 mb-5">
               <Sparkles className="w-3.5 h-3.5" /> Análise grátis, sem registo
             </div>
             <h1 className="font-display text-3xl md:text-5xl text-white tracking-tight [text-wrap:balance]">
@@ -237,7 +237,7 @@ export default function EncontrarFundosPage() {
 
       {contacto.aberto && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onClick={fecharContacto}>
-          <div className="bg-[#12141a] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 w-full max-w-md p-6 relative" onClick={(e) => e.stopPropagation()}>
+          <div className="glass-panel rounded-2xl w-full max-w-md p-6 relative" onClick={(e) => e.stopPropagation()}>
             <button type="button" onClick={fecharContacto} aria-label="Fechar" className="absolute top-4 right-4 text-slate-500 hover:text-slate-200"><X className="w-5 h-5" /></button>
             {contacto.enviado ? (
               <div className="text-center py-6">
