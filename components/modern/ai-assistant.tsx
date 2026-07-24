@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, Loader2, ExternalLink, FileText, Quote, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -131,6 +132,11 @@ function parseAIResponse(text: string): React.ReactNode[] {
 
 // ============ Component ============
 export function AIAssistant() {
+    // Na página do Consultor IA o botão flutuante é redundante (já estás no chat)
+    // e sobrepunha o botão de enviar — esconde-se aí.
+    const pathname = usePathname()
+    if (pathname === '/dashboard/consultor') return null
+
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {

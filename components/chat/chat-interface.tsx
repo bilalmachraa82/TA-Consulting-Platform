@@ -9,6 +9,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Card } from '@/components/ui/card';
 import { CitationCard } from './citation-card';
 import ReactMarkdown from 'react-markdown';
+import { PORTAL_LABELS } from '@/lib/portal-labels';
 
 interface Message {
     id: string;
@@ -131,17 +132,18 @@ export function ChatInterface() {
                     {/* Botão "Validação Humana" removido: disparava um toast FALSO
                         ("consultor valida em 2h") sem fluxo real por trás — anti-trust.
                         Volta quando existir o processo (TODOS.md). */}
-                    {['ALL', 'PRR', 'PT2030', 'HORIZON'].map((p) => (
-                        <Button
-                            key={p}
-                            variant={portal === p ? 'default' : 'outline'}
-                            size="sm"
-                            onClick={() => setPortal(p)}
-                            className="text-xs"
-                        >
-                            {p === 'ALL' ? 'Todos' : p}
-                        </Button>
-                    ))}
+                    {/* Filtro por portal: os 10 disponíveis (era 3 chips arbitrários) */}
+                    <select
+                        value={portal}
+                        onChange={(e) => setPortal(e.target.value)}
+                        aria-label="Filtrar por portal"
+                        className="h-9 rounded-md bg-white/[0.05] border border-white/15 px-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    >
+                        <option value="ALL">Todos os portais</option>
+                        {Object.entries(PORTAL_LABELS).map(([k, v]) => (
+                            <option key={k} value={k}>{v}</option>
+                        ))}
+                    </select>
                 </div>
             </div>
 
@@ -231,7 +233,7 @@ export function ChatInterface() {
                 </ScrollArea>
 
                 {/* Input Area */}
-                <div className="p-4 bg-slate-50 border-t flex gap-3 items-end">
+                <div className="p-4 bg-[#0e1116] border-t border-white/10 flex gap-3 items-end">
                     <Input
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
@@ -243,7 +245,7 @@ export function ChatInterface() {
                     <Button
                         onClick={handleSend}
                         disabled={isLoading || !input.trim()}
-                        className="h-[50px] w-[50px] rounded-xl bg-blue-600 hover:bg-blue-700 shadow-md transition-all hover:scale-105 active:scale-95"
+                        className="h-[50px] w-[50px] rounded-xl bg-emerald-500 hover:bg-emerald-400 text-[#0a0b0f] shadow-md transition-all hover:scale-105 active:scale-95"
                     >
                         <Send className="w-5 h-5" />
                     </Button>
