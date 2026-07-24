@@ -582,3 +582,74 @@
 .score-ring {
   animation: scoreGlow 2s ease-in-out infinite;
 }
+/* ============================================================
+   LIQUID GLASS (2026) — tokens de vidro para o CHROME da app.
+   Princípios (Apple Liquid Glass + best practices web):
+   - vidro só em camadas flutuantes (nav, sidebar, modais, menus);
+     conteúdo continua em superfícies sólidas;
+   - blur + saturate (o "líquido"), borda clara (a aresta) e
+     highlight interno no topo (o reflexo de luz);
+   - texto sobre vidro exige film >=30% → os fundos abaixo cumprem;
+   - fallbacks: sem backdrop-filter e prefers-reduced-transparency
+     degradam para superfície sólida legível.
+   ============================================================ */
+
+.glass {
+  background: rgba(13, 15, 20, 0.55);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.glass-panel {
+  background: rgba(18, 21, 27, 0.62);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    0 8px 32px rgba(0, 0, 0, 0.45);
+}
+
+/* micro-vidro interativo (pills, badges flutuantes) */
+.glass-chip {
+  background: rgba(16, 185, 129, 0.10);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(16, 185, 129, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Sem suporte a backdrop-filter → superfície sólida (texto sempre legível) */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass { background: rgba(11, 13, 16, 0.97); }
+  .glass-panel { background: #12151b; }
+  .glass-chip { background: rgba(16, 185, 129, 0.16); }
+}
+
+/* Preferência do utilizador por menos transparência → sólido */
+@media (prefers-reduced-transparency: reduce) {
+  .glass, .glass-panel, .glass-chip {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .glass { background: rgba(11, 13, 16, 0.98); }
+  .glass-panel { background: #12151b; }
+  .glass-chip { background: rgba(16, 185, 129, 0.16); }
+}
+
+/* variante do chrome lateral (sidebar do back office): aresta à direita */
+.glass-side {
+  background: rgba(13, 15, 20, 0.55);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-side { background: rgba(11, 13, 16, 0.97); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .glass-side { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(11, 13, 16, 0.98); }
+}
