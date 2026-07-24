@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Sparkles, Check, Menu, X } from 'lucide-react'
 
@@ -109,10 +110,12 @@ export default function HomePage() {
 
       {/* HERO — imagem humana cinematográfica, texto no espaço negativo à esquerda */}
       <section className="relative min-h-[86vh] flex items-center overflow-hidden">
-        <img
+        {/* next/image + priority: o hero é o LCP — otimização e preload automáticos */}
+        <Image
           src="/generated/web-hero.jpg"
           alt="Empresária portuguesa na sua oficina, iluminada por luz quente"
-          className="absolute inset-0 w-full h-full object-cover object-right"
+          fill priority sizes="100vw"
+          className="object-cover object-right"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0b0f] via-[#0a0b0f]/90 to-[#0a0b0f]/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0b0f] via-transparent to-[#0a0b0f]/40" />
@@ -220,8 +223,9 @@ export default function HomePage() {
       <section id="como" className="border-t border-white/5 bg-white/[0.015]">
         <div className="max-w-6xl mx-auto px-5 sm:px-6 py-20 md:py-28 grid lg:grid-cols-2 gap-14 lg:gap-16 items-center">
           <div className="relative order-2 lg:order-1">
-            <div className="overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-2xl shadow-black/50">
-              <img src="/generated/web-hero-dossier.jpg" alt="Empresária a rever no portátil a análise de elegibilidade aos fundos" className="w-full h-full object-cover" loading="lazy" />
+            {/* relative + aspect: com fill, o container define a altura */}
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-2xl shadow-black/50">
+              <Image src="/generated/web-hero-dossier.jpg" alt="Empresária a rever no portátil a análise de elegibilidade aos fundos" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
             </div>
           </div>
           <div className="order-1 lg:order-2">
@@ -258,7 +262,7 @@ export default function HomePage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {SETORES.map((s) => (
             <div key={s.setor} className="group relative overflow-hidden rounded-2xl ring-1 ring-white/10 aspect-[4/5]">
-              <img src={s.img} alt={s.alt} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+              <Image src={s.img} alt={s.alt} fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0b0f] via-[#0a0b0f]/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-5">
                 <div className="text-white font-semibold leading-snug">{s.setor}</div>
@@ -295,7 +299,7 @@ export default function HomePage() {
 
       {/* CTA — com o momento de ajuda */}
       <section className="relative overflow-hidden border-t border-white/5">
-        <img src="/generated/web-ajuda.jpg" alt="Consultor e empresária a analisar os fundos disponíveis" className="absolute inset-0 w-full h-full object-cover object-center" loading="lazy" />
+        <Image src="/generated/web-ajuda.jpg" alt="Consultor e empresária a analisar os fundos disponíveis" fill sizes="100vw" className="object-cover object-center" />
         <div className="absolute inset-0 bg-[#0a0b0f]/85" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0b0f] via-[#0a0b0f]/70 to-[#0a0b0f]/90" />
         <div className="grain-overlay" />

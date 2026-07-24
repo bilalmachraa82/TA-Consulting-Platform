@@ -19,19 +19,14 @@ import { criteriosDoAviso } from '@/lib/aviso-criterios'
 import { EstadoAviso } from '@/components/aviso/estado-aviso'
 import { JsonLdScript } from '@/components/seo/json-ld-script'
 import { ArrowLeft, ArrowRight, ExternalLink } from 'lucide-react'
+import { portalLabel } from '@/lib/portal-labels'
 
 export const revalidate = 3600
 export const dynamicParams = true
 
 const prisma = new PrismaClient()
 
-const PORTAL_LABELS: Record<string, string> = {
-    PORTUGAL2030: 'Portugal 2030', PRR: 'PRR', PEPAC: 'PEPAC',
-    TURISMO_PORTUGAL: 'Turismo de Portugal', HORIZON_EUROPE: 'Horizon Europe',
-    IPDJ: 'IPDJ', FUNDO_AMBIENTAL: 'Fundo Ambiental', ACORES2030: 'Açores 2030',
-    LIFE: 'LIFE', EUROPA_CRIATIVA: 'Europa Criativa', DIGITAL_EUROPE: 'Digital Europe',
-}
-const portalLabel = (p: string) => PORTAL_LABELS[p] ?? p.replace(/_/g, ' ')
+
 
 async function getAviso(slug: string) {
     return prisma.aviso.findUnique({ where: { slug } })

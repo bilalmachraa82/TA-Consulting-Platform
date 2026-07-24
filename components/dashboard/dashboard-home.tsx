@@ -2,6 +2,7 @@
 'use client';
 
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { portalLabel } from '@/lib/portal-labels'
 import { PremiumCard } from '@/components/ui/premium-card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -204,7 +205,7 @@ export function DashboardHome({ kpis, avisos, candidaturas, notificacoes, workfl
                 <div className="h-[300px] flex items-center justify-center">
                   <ChartBar
                     data={{
-                      labels: metricas.graficos.avisosPorPortal.map((a) => a.portal),
+                      labels: metricas.graficos.avisosPorPortal.map((a) => portalLabel(a.portal)),
                       datasets: [
                         {
                           label: 'Avisos',
@@ -362,7 +363,7 @@ export function DashboardHome({ kpis, avisos, candidaturas, notificacoes, workfl
                     <div>
                       <h4 className="font-medium text-sm text-foreground group-hover:text-primary transition-colors">{aviso.nome}</h4>
                       <div className="flex items-center gap-2 mt-1">
-                        <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground bg-muted px-1.5 py-0.5 rounded">{aviso.portal}</span>
+                        <span className="text-[10px] uppercase font-bold tracking-wider text-muted-foreground bg-muted px-1.5 py-0.5 rounded">{portalLabel(aviso.portal)}</span>
                         <span className="text-xs text-muted-foreground">{aviso.programa}</span>
                       </div>
                     </div>

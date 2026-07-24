@@ -5,6 +5,7 @@
 import Link from 'next/link'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 import type { SetorHub } from '@/lib/setores'
+import { portalLabel } from '@/lib/portal-labels'
 import { AlertasForm } from '@/components/alertas/alertas-form'
 
 export interface AvisoHubItem {
@@ -16,7 +17,7 @@ export interface AvisoHubItem {
     taxaCofinanciamentoMax: number | null
 }
 
-const portalLabel = (p: string) => p.replace(/_/g, ' ').replace('PORTUGAL2030', 'Portugal 2030')
+
 
 export function HubAvisos({
     setor, regiaoLabel, avisos,

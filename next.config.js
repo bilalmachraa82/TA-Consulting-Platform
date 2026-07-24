@@ -60,6 +60,22 @@ const nextConfig = {
     }
     return config;
   },
+  // SEO (fase B, voz externa #12): os domínios *.vercel.app respondem com o
+  // mesmo conteúdo → risco de indexação dupla. 301 permanente para o domínio
+  // canónico. Previews (*-git-*.vercel.app) NÃO são redirecionados (hosts
+  // listados explicitamente). Quando eligivo.com entrar, muda o destino aqui
+  // e em lib/site-url.ts.
+  async redirects() {
+    const CANONICO = 'https://eligivo.aitipro.com';
+    const hostsAntigos = ['ta-consulting-platform.vercel.app', 'eligivo.vercel.app'];
+    return hostsAntigos.map((host) => ({
+      source: '/:path*',
+      has: [{ type: 'host', value: host }],
+      destination: `${CANONICO}/:path*`,
+      permanent: true,
+    }));
+  },
+
   // Security Headers (defense in depth - also set in middleware.ts)
   async headers() {
     const CSP_DIRECTIVES = [

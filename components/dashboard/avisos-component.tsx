@@ -2,6 +2,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { portalLabel } from '@/lib/portal-labels'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -463,7 +464,7 @@ export function AvisosComponent() {
                           {aviso.nome}
                         </div>
                         {density === 'compact' ? (
-                          <span className="text-[10px] px-1 bg-muted rounded text-muted-foreground">{aviso.portal}</span>
+                          <span className="text-[10px] px-1 bg-muted rounded text-muted-foreground">{portalLabel(aviso.portal)}</span>
                         ) : (
                           getPortalBadge(aviso.portal)
                         )}
@@ -563,7 +564,7 @@ export function AvisosComponent() {
                                 </DialogHeader>
                                 <div className="space-y-4">
                                   <div className="text-sm space-y-2">
-                                    <div><strong>Portal:</strong> {aviso.portal}</div>
+                                    <div><strong>Portal:</strong> {portalLabel(aviso.portal)}</div>
                                     <div><strong>Programa:</strong> {aviso.programa}</div>
                                     <div><strong>Deadline:</strong> {new Date(aviso.dataFimSubmissao).toLocaleDateString('pt-PT')}</div>
                                     <div><strong>Setores:</strong> {aviso.setoresElegiveis.join(', ')}</div>
